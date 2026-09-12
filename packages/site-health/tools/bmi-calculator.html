@@ -116,7 +116,7 @@
     return document.getElementById(id);
   }
   function calc() {
-var w=parseFloat($("weight").value)||0,h=(parseFloat($("height").value)||0)/100,bmi=w/(h*h),cat=";if(bmi<18.5)cat="Underweight";else if(bmi<25)cat="Normal weight";else if(bmi<30)cat="Overweight";else cat="Obese";var range=";if(bmi<18.5)range="18.5 —24.9";else if(bmi<25)range="18.5 —24.9";else if(bmi<30)range="25 —29.9";else range="30+";$("bmiVal").textContent=bmi.toFixed(1);$("catVal").textContent=cat;$("rangeVal").textContent=range;var meter=$("bmiMeter");if(meter){meter.setAttribute("data-value",bmi.toFixed(1));}if(window.__renderMeters)window.__renderMeters();$("result").classList.add("show");
+var w=parseFloat($("weight").value)||0,h=(parseFloat($("height").value)||0)/100,bmi=w/(h*h),cat="";if(bmi<18.5)cat="Underweight";else if(bmi<25)cat="Normal weight";else if(bmi<30)cat="Overweight";else cat="Obese";var range="";if(bmi<18.5)range="18.5 —24.9";else if(bmi<25)range="18.5 —24.9";else if(bmi<30)range="25 —29.9";else range="30+";$("bmiVal").textContent=bmi.toFixed(1);$("catVal").textContent=cat;$("rangeVal").textContent=range;var meter=$("bmiMeter");if(meter){meter.setAttribute("data-value",bmi.toFixed(1));}if(window.__renderMeters)window.__renderMeters();$("result").classList.add("show");
   }
   ['height', 'weight'].forEach(function (id) {
     var el = $(id);

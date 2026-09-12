@@ -98,14 +98,12 @@ function calc(){
   var d=parseFloat(_('diastolic').value)||80;
   var map=Math.round((2*d+s)/3);
   var pp=s-d;
-  var mapCls=";
-  if(map<60)mapCls="Low — may cause dizziness";
+  var mapCls="";if(map<60)mapCls="Low — may cause dizziness";
   else if(map<70)mapCls="Borderline low";
   else if(map<100)mapCls="Normal range";
   else if(map<110)mapCls="Elevated";
   else mapCls="High — consult a healthcare provider";
-  var ppCls=";
-  if(pp<30)ppCls="Narrow — check valve function";
+  var ppCls="";if(pp<30)ppCls="Narrow — check valve function";
   else if(pp<=40)ppCls="Normal";
   else if(pp<=60)ppCls="Wider than normal";
   else ppCls="Wide — may indicate arterial stiffness";

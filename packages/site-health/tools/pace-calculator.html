@@ -131,8 +131,7 @@ function fromMPM(mpm){
   });
   _('raceTimes').textContent=out;
   // effort rating
-  var eff=";
-  if(mpm<5)eff="Elite pace";
+  var eff="";if(mpm<5)eff="Elite pace";
   else if(mpm<6)eff="Very fast — experienced runner";
   else if(mpm<7)eff="Fast — regular runner";
   else if(mpm<9)eff="Moderate — casual runner";

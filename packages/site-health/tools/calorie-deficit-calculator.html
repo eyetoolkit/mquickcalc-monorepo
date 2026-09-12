@@ -120,8 +120,7 @@ function calc(){
   var fatPerWeek=deficit/7700*7;
   var fatPerMonth=deficit/7700*30;
   // LBM protected deficit max: no more than ~500/day unless >25% body fat
-  var note=";
-  if(deficit>1000)note="Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.";
+  var note="";if(deficit>1000)note="Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.";
   else if(deficit<0)note="You have a calorie surplus! You will gain weight at ~"+Math.abs(fatPerWeek).toFixed(2)+" kg/week.";
   else if(deficit<200)note="Small deficit — fat loss will be slow but muscle-friendly.";
   else note="Good deficit range for sustainable fat loss.";

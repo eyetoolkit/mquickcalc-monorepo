@@ -77,7 +77,7 @@
       health: {
         name:'m<b>Quick</b>Calc', tag:'Health',
         blurb:'Free health and wellness calculators — body metrics, nutrition, heart, fitness, pregnancy. Private by design.',
-        col1:'Popular Tools', col1Links: healLinks(''),
+        col1:'Popular Tools', col1Links: heaLinks(''),
         col2:'Resources', col2Links:[
           ['All Calculators','/'],['About','/about'],['Contact','/contact'],
           ['Privacy Policy','/privacy'],['Disclaimer','/disclaimer'],['Terms','/terms']
