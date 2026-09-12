@@ -89,6 +89,8 @@ jobs:
     if: needs.changes.outputs.site-main == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      DEPLOY_MSG: ${{ github.event.head_commit.message }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -104,12 +106,7 @@ jobs:
         run: npm install wrangler@4.131.1 --no-save
 
       - name: Deploy
-        run: |
-          npx wrangler pages deploy packages/site-main \
-            --project-name=mquickcalc \
-            --branch=main \
-            --commit-dirty=true \
-            --commit-message="${{ github.event.head_commit.message }}"
+        run: npx wrangler pages deploy packages/site-main --project-name=mquickcalc --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
@@ -119,6 +116,8 @@ jobs:
     if: needs.changes.outputs.site-finance == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      DEPLOY_MSG: ${{ github.event.head_commit.message }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -134,12 +133,7 @@ jobs:
         run: npm install wrangler@4.131.1 --no-save
 
       - name: Deploy
-        run: |
-          npx wrangler pages deploy packages/site-finance \
-            --project-name=mquickcalc-finance \
-            --branch=main \
-            --commit-dirty=true \
-            --commit-message="${{ github.event.head_commit.message }}"
+        run: npx wrangler pages deploy packages/site-finance --project-name=mquickcalc-finance --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
@@ -149,6 +143,8 @@ jobs:
     if: needs.changes.outputs.site-health == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      DEPLOY_MSG: ${{ github.event.head_commit.message }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -164,11 +160,6 @@ jobs:
         run: npm install wrangler@4.131.1 --no-save
 
       - name: Deploy
-        run: |
-          npx wrangler pages deploy packages/site-health \
-            --project-name=mquickcalc-health \
-            --branch=main \
-            --commit-dirty=true \
-            --commit-message="${{ github.event.head_commit.message }}"
+        run: npx wrangler pages deploy packages/site-health --project-name=mquickcalc-health --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
