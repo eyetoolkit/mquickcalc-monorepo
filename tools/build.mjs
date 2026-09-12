@@ -57,10 +57,15 @@ function copyFile(src, dst) {
  *   - brand-kit/_headers → 追加（site 包里如果有同名 _headers，保留 site 自己的；否则用 brand-kit 的）
  */
 function syncBrandKit(siteDir) {
-  // 1. 直接覆盖
+  // 1. 直接覆盖（css/, js/, fonts/）
   for (const sub of ['css', 'js', 'fonts']) {
     const src = path.join(BRAND_KIT, sub);
     if (exists(src)) copyDir(src, path.join(siteDir, sub));
+  }
+  // 1a. 删除 legacy site.js (single 22KB file replaced by site-core/icons/enhance/meters)
+  const legacySiteJs = path.join(siteDir, 'js', 'site.js');
+  if (exists(legacySiteJs)) {
+    fs.unlinkSync(legacySiteJs);
   }
   // 2. sw.js
   const swSrc = path.join(BRAND_KIT, 'sw.js');
@@ -90,6 +95,47 @@ function walk(dir, acc = []) {
   return acc;
 }
 
+/**
+ * Replace legacy <script src="/js/site.js"> with the 4-file split.
+ *
+ * Pattern A (homepage + non-tool pages, no #calcBtn):
+ *   <script src="/js/site.js"></script>
+ *     →
+ *   <script src="/js/site-core.js" defer></script>
+ *   <script src="/js/site-icons.js" defer></script>
+ *   <script src="/js/site-enhance.js" defer></script>
+ *
+ * Pattern B (tool pages, has #calcBtn / result area):
+ *   <script src="/js/site.js"></script>
+ *     →
+ *   <script src="/js/site-core.js" defer></script>
+ *   <script src="/js/site-enhance.js" defer></script>
+ *   <script src="/js/site-meters.js" defer></script>
+ *
+ * (Site-icons is omitted from tool pages because tool cards don't have emoji grids.)
+ *
+ * Idempotent: running twice is safe (the second pass finds no /js/site.js to replace).
+ */
+function replaceLegacySiteJs(siteDir) {
+  const htmlFiles = walk(siteDir).filter(p => p.endsWith('.html'));
+  let touched = 0;
+  for (const f of htmlFiles) {
+    let html = fs.readFileSync(f, 'utf8');
+    // match <script src="/js/site.js"> optionally with defer
+    const m = html.match(/<script\s+src=["']\/js\/site\.js["'](\s+defer)?\s*><\/script>/);
+    if (!m) continue;
+    // Detect tool page by presence of #calcBtn (heuristic)
+    const isToolPage = /id=["']calcBtn["']/.test(html) || /window\.__renderMeters/.test(html);
+    const replacement = isToolPage
+      ? '<script src="/js/site-core.js" defer></script>\n  <script src="/js/site-enhance.js" defer></script>\n  <script src="/js/site-meters.js" defer></script>'
+      : '<script src="/js/site-core.js" defer></script>\n  <script src="/js/site-icons.js" defer></script>\n  <script src="/js/site-enhance.js" defer></script>';
+    html = html.replace(m[0], replacement);
+    fs.writeFileSync(f, html);
+    touched++;
+  }
+  return touched;
+}
+
 // === Main ===
 const targetArg = process.argv[2];
 const sites = targetArg
@@ -111,8 +157,9 @@ for (const site of sites) {
     continue;
   }
   syncBrandKit(siteDir);
+  const replaced = replaceLegacySiteJs(siteDir);
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history
