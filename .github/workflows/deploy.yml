@@ -46,11 +46,13 @@ jobs:
         run: node tools/build.mjs
 
       - name: Setup Wrangler
-        run: npm install -g wrangler@4
+        # Install latest wrangler locally (not globally, to avoid Node version conflicts)
+        # Pin a known-good version: 4.131+ fixes account-token /memberships 9106 issue
+        run: npm install wrangler@4 --no-save
 
       - name: Deploy site-main → mquickcalc.com
         run: |
-          wrangler pages deploy packages/site-main \
+          npx wrangler pages deploy packages/site-main \
             --project-name=mquickcalc \
             --branch=main \
             --commit-dirty=true \
@@ -60,7 +62,7 @@ jobs:
 
       - name: Deploy site-finance → finance.mquickcalc.com
         run: |
-          wrangler pages deploy packages/site-finance \
+          npx wrangler pages deploy packages/site-finance \
             --project-name=mquickcalc-finance \
             --branch=main \
             --commit-dirty=true \
@@ -70,7 +72,7 @@ jobs:
 
       - name: Deploy site-health → health.mquickcalc.com
         run: |
-          wrangler pages deploy packages/site-health \
+          npx wrangler pages deploy packages/site-health \
             --project-name=mquickcalc-health \
             --branch=main \
             --commit-dirty=true \
