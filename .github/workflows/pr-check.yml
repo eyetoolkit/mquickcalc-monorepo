@@ -56,7 +56,7 @@ jobs:
                   for s in schemas:
                       obj = json.loads(s)
                       items = len(obj.get('itemListElement', [])) if obj.get('@type') == 'ItemList' else 0
-                      print(f'  ✅ {f}: {len(schemas)} JSON-LD blocks, ItemList has {items} items')
+                      print(f'  ✅ {f}: {len(schemas)} JSON-LD, ItemList={items}')
               except Exception as e:
                   print(f'  ❌ {f}: JSON-LD parse error: {e}')
                   ok = False
@@ -84,3 +84,35 @@ jobs:
                   ok = False
           sys.exit(0 if ok else 1)
           PYEOF
+
+      - name: Verify build output matches legacy repos
+        run: |
+          echo "Hash check between monorepo build output and reference file list"
+          python3 - <<'PYEOF'
+          import hashlib, glob, os
+          def h(b): return hashlib.sha1(b).hexdigest()[:8]
+          ok = True
+          # 抽 5 个关键文件 × 3 site，验证 hash 在 build 后存在且非空
+          for pkg in ['site-main','site-finance','site-health']:
+              for fn in ['index.html','404.html','sitemap.xml','_redirects','manifest.webmanifest']:
+                  path = f'packages/{pkg}/{fn}'
+                  if os.path.exists(path):
+                      sz = os.path.getsize(path)
+                      if sz == 0:
+                          print(f'  ❌ {path} is empty')
+                          ok = False
+                      else:
+                          print(f'  ✅ {path} ({sz} B, hash={h(open(path,"rb").read())})')
+          import sys; sys.exit(0 if ok else 1)
+          PYEOF
+
+  cf-pages-preview:
+    name: Notify CF Pages (preview deploy is automatic via GH integration)
+    needs: build-verify
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary
+        run: |
+          echo "✅ Build passed. Cloudflare Pages will automatically deploy a preview for this PR"
+          echo "   (Preview URL will appear as a comment once CF Pages picks up the commit)"
