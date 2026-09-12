@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Deficit Calculator —Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Calculate your weekly and monthly fat loss from a calorie deficit. Enter your TDEE and daily calorie intake to see how fast you'll reach your goal.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/calorie-deficit-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Deficit Calculator","url":"https://health.mquickcalc.com/tools/calorie-deficit-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate fat loss from your daily calorie deficit."}</script>
+<meta property="og:title" content="Calorie Deficit Calculator —Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Calculate your weekly and monthly fat loss from a calorie deficit. Enter your TDEE and daily calorie intake to see how fast you">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/calorie-deficit-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calorie Deficit Calculator —Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Calculate your weekly and monthly fat loss from a calorie deficit. Enter your TDEE and daily calorie intake to see how fast you'll reach your goal.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Calorie Deficit Calculator","item":"https://health.mquickcalc.com/tools/calorie-deficit-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#body">Body</a>
+      <a href="/#nutrition">Nutrition</a>
+      <a href="/#heart">Heart</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pregnancy">Pregnancy</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#nutrition'>Nutrition</a><span class='sep'>›</span><span class='current'>Calorie Deficit Calculator</span></nav></div>
+
+<main class="page"><div class="wrap">
+<div class='page-hero-emoji'>📉</div>
+<h1 class="page-title">Calorie Deficit Calculator</h1>
+<p class="lede">See how much fat you'll lose per week and month based on your calorie deficit. Enter your TDEE (total daily energy expenditure) and target calorie intake.</p>
+
+<div class="calc-card">
+<label for="tdee">Your TDEE (calories burned/day)</label>
+<input id="tdee" class="input" type="number" inputmode="decimal" min="500" step="10" value="2200">
+<label for="target">Target daily calorie intake</label>
+<input id="target" class="input" type="number" inputmode="decimal" min="300" step="10" value="1800">
+<label for="goal">Goal weight loss rate</label>
+<select id="goal" class="input">
+  <option value="deficit">Custom deficit (enter above)</option>
+  <option value="0.25">Very slow (0.25 kg/week)</option>
+  <option value="0.5">Slow (0.5 kg/week)</option>
+  <option value="0.75">Moderate (0.75 kg/week)</option>
+  <option value="1">Aggressive (1 kg/week)</option>
+  <option value="1.5">Very aggressive (1.5 kg/week)</option>
+</select>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+  <button id="calcBtn" class="btn">Calculate</button>
+  <button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result">
+  <div class="grid" id="stats"></div>
+  <div class="dim" id="note" style="margin-top:12px;"></div>
+</div>
+</div>
+    
+    <h2>How deficit translates to fat loss</h2><p>1 lb adipose tissue stores ~3,500 calories (though metabolically ~3,850). Weekly loss = daily deficit × 7 / 3,500. Sustainable range: 300-800 cal/day. >1,000 cal/day can trigger adaptive thermogenesis and muscle loss.</p>
+    <h2>Frequently asked questions</h2>
+<div class="faq-list">
+<h3>How accurate are the results?</h3>
+<p>Formulas used here are validated in population studies but cannot account for individual genetics, body composition, or medical conditions. Treat results as a starting point, not a medical diagnosis.</p>
+<h3>Should I consult a professional?</h3>
+<p>If you have specific health concerns, existing conditions, or are planning significant lifestyle changes, consult a qualified healthcare provider (doctor, dietitian, physiologist).</p>
+<h3>How often should I recalculate?</h3>
+<p>Recalculate when your weight changes more than 5%, activity level shifts significantly, or every 3-6 months for routine monitoring. Results are snapshots — your body changes daily.</p>
+</div>
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/bmr-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🔥</span><div class="tc-title">BMR Calculator</div></div><div class="tc-desc">Mifflin-St Jeor formula for calories burned at rest.</div></a>
+        <a href="/tools/tdee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⚡</span><div class="tc-title">TDEE Calculator</div></div><div class="tc-desc">Total Daily Energy Expenditure = BMR x activity.</div></a>
+        <a href="/tools/calorie-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🍽️</span><div class="tc-title">Calorie Calculator</div></div><div class="tc-desc">Daily calorie needs based on BMR + activity level.</div></a>
+        <a href="/tools/macro-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🥑</span><div class="tc-title">Macro Calculator</div></div><div class="tc-desc">Protein, carbs, and fat targets for your goal.</div></a>
+      </div>
+    </div>
+<p class="upd">Last updated <time datetime="2026-09-08">September 8, 2026</time></p>    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note"><a href="/">&larr; Back to all tools</a></p>
+</div></main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site.js"></script>
+<script>
+(function(){
+var _=function(id){return document.getElementById(id);};
+function calc(){
+  var tdee=parseFloat(_('tdee').value)||2200;
+  var target=parseFloat(_('target').value)||1800;
+  var goal=_('goal').value;
+  var deficit;
+  if(goal==='deficit'){
+    deficit=tdee-target;
+  }else{
+    // 1 kg fat = ~7700 calories
+    deficit=Math.round(parseFloat(goal)*7700/7);
+    target=Math.max(300,tdee-deficit);
+    _('target').value=target;
+  }
+  // 1 kg adipose tissue ~7700 kcal
+  var fatPerDay=deficit/7700;
+  var fatPerWeek=deficit/7700*7;
+  var fatPerMonth=deficit/7700*30;
+  // LBM protected deficit max: no more than ~500/day unless >25% body fat
+  var note=";
+  if(deficit>1000)note="Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.";
+  else if(deficit<0)note="You have a calorie surplus! You will gain weight at ~"+Math.abs(fatPerWeek).toFixed(2)+" kg/week.";
+  else if(deficit<200)note="Small deficit — fat loss will be slow but muscle-friendly.";
+  else note="Good deficit range for sustainable fat loss.";
+  var html=";
+  html+="<div class=\"cell\"><div class=\"lbl\">Daily deficit</div><div class=\"val\">"+deficit+" kcal</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Weekly fat loss</div><div class=\"val\">"+Math.abs(fatPerWeek).toFixed(2)+" kg</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Monthly fat loss</div><div class=\"val\">"+Math.abs(fatPerMonth).toFixed(1)+" kg</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Time to lose 5 kg</div><div class=\"val\">"+Math.round(5/Math.abs(fatPerWeek))+" weeks</div></div>";
+  _('stats').innerHTML=html;
+  _('note').textContent=note;
+  _('result').classList.add('show');
+}
+_('calcBtn').addEventListener('click',calc);
+_('resetBtn').addEventListener('click',function(){_('tdee').value="2200";_('target').value="1800";_('goal').value="deficit";calc();});
+['tdee','target','goal'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
+calc();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}
+</script></body>
+</html>

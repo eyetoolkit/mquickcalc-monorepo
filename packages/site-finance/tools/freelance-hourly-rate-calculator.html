@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Hourly Rate Calculator — Price Your Time | mQuickCalc</title>
+  <meta name="description" content="Turn a target annual income into a freelance hourly rate — factoring billable hours, overhead, and taxes. Free, instant results.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/freelance-hourly-rate-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Freelance Hourly Rate Calculator — Price Your Time | mQuickCalc">
+  <meta name="twitter:description" content="Turn a target annual income into a freelance hourly rate — factoring billable hours, overhead and taxes. See your hourly, monthly and required gross income. Free.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Freelance Hourly Rate Calculator — Price Your Time | mQuickCalc">
+  <meta property="og:description" content="Turn a target annual income into a freelance hourly rate — factoring billable hours, overhead and taxes. See your hourly, monthly and required gross i">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Hourly Rate Calculator","url":"https://finance.mquickcalc.com/tools/freelance-hourly-rate-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate a freelance hourly rate from target income."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many billable hours does a freelancer work?","acceptedAnswer":{"@type":"Answer","text":"Realistically 1,000–1,500 a year — the rest goes to admin, marketing and unpaid work. A 40-hour salaried equivalent is ~2,000 hours."}},{"@type":"Question","name":"Should my freelance rate include taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes — divide your required net by (1 − tax rate) so the gross rate covers what you'll owe. Many freelancers budget 20–35% for taxes."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/freelance-hourly-rate-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Freelance Hourly Rate Calculator","item":"https://finance.mquickcalc.com/tools/freelance-hourly-rate-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#business'>Business</a><span class='sep'>›</span><span class='current'>Freelance Hourly Rate Calculator</span></nav></div>
+
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>💼</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">Freelance Hourly Rate Calculator</h1>
+    <p class="lede">Find the hourly rate that meets your target income — accounting for billable hours, annual overhead and what you owe in taxes.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="target">Target annual net income</label>
+          <input id="target" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="60000">
+        </div>
+        <div class="field">
+          <label for="hours">Billable hours / week</label>
+          <input id="hours" class="input" type="number" inputmode="decimal" min="0" step="0.5" value="25">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="weeks">Weeks / year</label>
+          <input id="weeks" class="input" type="number" inputmode="decimal" min="0" step="1" value="48">
+        </div>
+        <div class="field">
+          <label for="overhead">Annual overhead</label>
+          <input id="overhead" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="5000">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="tax">Effective tax rate %</label>
+          <input id="tax" class="input" type="number" inputmode="decimal" min="0" max="100" step="0.5" value="25">
+        </div>
+        <div class="field"></div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">your freelance hourly rate</div>
+        <div class="big" id="rateVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Required gross income</div><div class="val" id="grossVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Billable hours / year</div><div class="val" id="billVal">0</div></div>
+          <div class="cell"><div class="lbl">Monthly gross</div><div class="val" id="monthVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Formula: (target + overhead) ÷ (1 − tax rate) = required gross; required gross ÷ billable hours = hourly rate. Salaried jobs bill ~2,000 hours; freelancers realistically bill 1,000–1,500.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Why freelancers charge more</div>
+      <p>You're paying for taxes, healthcare, equipment, downtime and non-billable work. Grossing up your target income by the tax rate and adding overhead ensures the hours you bill actually deliver the take-home you planned for.</p>
+    </div>
+
+    
+    <h2>How to set freelance rates</h2><p>Hourly rate calculation: (desired annual salary plus overhead plus business costs) divided by billable hours per year. Full-time has ~2080 hours but freelancers average only 1200-1600 billable hours due to admin, marketing, and downtime.</p>
+<h2>Frequently asked questions</h2>
+    <h3>How many billable hours does a freelancer work?</h3>
+    <p>Realistically 1,000–1,500 a year — the rest goes to admin, marketing and unpaid work. A 40-hour salaried equivalent is ~2,000 hours.</p>
+    <h3>Should my freelance rate include taxes?</h3>
+    <p>Yes — divide your required net by (1 − tax rate) so the gross rate covers what you'll owe. Many freelancers budget 20–35% for taxes.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/patreon-plan-comparison" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Patreon Plan Comparison</div></div><div class="tc-desc">Lite vs Pro vs Premium — which pays more?</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-08">Sep 8, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/vat-calculator">VAT Calculator &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
+  function calc() {
+    var target = parseFloat(document.getElementById('target').value) || 0;
+    var hours = parseFloat(document.getElementById('hours').value) || 0;
+    var weeks = parseFloat(document.getElementById('weeks').value) || 0;
+    var overhead = parseFloat(document.getElementById('overhead').value) || 0;
+    var tax = (parseFloat(document.getElementById('tax').value) || 0) / 100;
+    var billable = hours * weeks;
+    var gross = billable > 0 ? (target + overhead) / (1 - tax) : 0;
+    var rate = billable > 0 ? gross / billable : 0;
+    document.getElementById('rateVal').textContent = money(rate);
+    document.getElementById('grossVal').textContent = money(gross);
+    document.getElementById('billVal').textContent = Math.round(billable);
+    document.getElementById('monthVal').textContent = money(gross / 12);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('target').value = '60000'; document.getElementById('hours').value = '25'; document.getElementById('weeks').value = '48'; document.getElementById('overhead').value = '5000'; document.getElementById('tax').value = '25'; calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

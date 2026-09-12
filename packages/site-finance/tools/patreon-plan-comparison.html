@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patreon Plan Comparison | mQuickCalc Finance</title>
+  <meta name="description" content="Compare what you net on Patreon with monthly billing, annual billing, or selling directly with Stripe — fees included. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/patreon-plan-comparison">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Patreon Plan Comparison — Monthly vs Annual vs Direct | mQuickCalc">
+  <meta name="twitter:description" content="Compare what you net on Patreon with monthly billing, annual billing, or selling directly with Stripe — fees included. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Patreon Plan Comparison — Monthly vs Annual vs Direct | mQuickCalc">
+  <meta property="og:description" content="Compare what you net on Patreon with monthly billing, annual billing, or selling directly with Stripe — fees included. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Patreon Plan Comparison","url":"https://finance.mquickcalc.com/tools/patreon-plan-comparison","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare Patreon monthly, annual and direct earnings."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage does Patreon take?","acceptedAnswer":{"@type":"Answer","text":"Patreon charges a platform fee (commonly 5%) plus payment processing on top of each transaction. The exact processing rate depends on the member's card and country."}},{"@type":"Question","name":"Is Patreon annual billing better for creators?","acceptedAnswer":{"@type":"Answer","text":"It helps cash flow and retention, but the 2-months-free offer lowers annual gross — the net effect depends on your member count and average pledge. Compare both columns above."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/patreon-plan-comparison">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Patreon Plan Comparison","item":"https://finance.mquickcalc.com/tools/patreon-plan-comparison"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">Patreon Plan Comparison</h1>
+    <p class="lede">Should you bill members monthly, annually, or skip Patreon and charge directly? Compare net earnings across all three with fees included.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="revenue">Monthly revenue from members</label>
+          <input id="revenue" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
+        </div>
+        <div class="field">
+          <label for="members">Number of members</label>
+          <input id="members" class="input" type="number" inputmode="decimal" min="0" step="1" value="100">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="bestVal"></div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Patreon monthly</div><div class="val" id="netM">$0.00</div><div class="dim" id="feeM"></div></div>
+          <div class="cell"><div class="lbl">Patreon annual</div><div class="val" id="netA">$0.00</div><div class="dim" id="feeA"></div></div>
+          <div class="cell"><div class="lbl">Direct (Stripe)</div><div class="val" id="netD">$0.00</div><div class="dim" id="feeD"></div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Assumes a 5% platform fee, 2.9% + $0.30 per transaction, and annual members paying 10 months for 12 (the common 2-months-free offer). Direct selling skips the platform fee but you handle payments, billing and retention yourself.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">What the comparison shows</div>
+      <p><strong>Annual billing</strong> improves cash flow and retention but the 2-months-free discount usually lowers total net unless you raise prices. <strong>Selling direct</strong> with Stripe removes the platform fee entirely — worth it once your audience is big enough that you can manage memberships yourself.</p>
+    </div>
+
+    
+    <h2>How Patreon fees work</h2><p>Patreon takes a platform fee (5-12% depending on your plan) plus payment processing fees (typically 2.9% plus 0.30 per transaction). Fees are charged on each pledge, not just what Patreon keeps. You receive the pledge minus all fees.</p>
+<h2>Frequently asked questions</h2>
+    <h3>What percentage does Patreon take?</h3>
+    <p>Patreon charges a platform fee (commonly 5%) plus payment processing on top of each transaction. The exact processing rate depends on the member's card and country.</p>
+    <h3>Is Patreon annual billing better for creators?</h3>
+    <p>It helps cash flow and retention, but the 2-months-free offer lowers annual gross — the net effect depends on your member count and average pledge. Compare both columns above.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+        <a href="/tools/youtube-money" class="tool-card"><div class="icon-row"><span class="emoji">▶️</span><div class="tc-title">YouTube Money Calculator</div></div><div class="tc-desc">Estimate YouTube AdSense earnings by views.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-08">Sep 8, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/patreon-fee-calculator">Patreon Fee Calculator &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
+  function calc() {
+    var revenue = parseFloat(document.getElementById('revenue').value) || 0;
+    var members = parseFloat(document.getElementById('members').value) || 0;
+    // Patreon monthly: 5% platform + 2.9% + $0.30 per transaction
+    var platM = revenue * 0.05;
+    var procM = revenue * 0.029 + members * 0.30;
+    var feeM = platM + procM;
+    var netM = revenue - feeM;
+    // Patreon annual: gross is 10 months for 12, fees charged once per year -> monthly equivalent
+    var annualGross = revenue * 10;
+    var platA = annualGross * 0.05;
+    var procA = annualGross * 0.029 + members * 0.30;
+    var feeA = platA + procA;
+    var netA = (annualGross - feeA) / 12;
+    // Direct (Stripe): no platform fee, 2.9% + $0.30
+    var feeD = revenue * 0.029 + members * 0.30;
+    var netD = revenue - feeD;
+    document.getElementById('netM').textContent = money(netM);
+    document.getElementById('feeM').textContent = 'fees ' + money(feeM);
+    document.getElementById('netA').textContent = money(netA);
+    document.getElementById('feeA').textContent = 'fees ' + money(feeA);
+    document.getElementById('netD').textContent = money(netD);
+    document.getElementById('feeD').textContent = 'fees ' + money(feeD);
+    var best = netM >= netA && netM >= netD ? 'Patreon monthly nets the most this month.' : (netA >= netD ? 'Patreon annual nets the most (monthly equivalent).' : 'Selling direct nets the most this month.');
+    document.getElementById('bestVal').textContent = best;
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('revenue').value = '1000.00'; document.getElementById('members').value = '100'; calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

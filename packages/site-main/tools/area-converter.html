@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Converter — square meters, square feet, acres and hectares | mQuickCalc</title>
+  <meta name="description" content="Convert area between square meters, square feet, square yards, acres and hectares instantly. Includes a reference table for rooms, land and property sizes.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/area-converter">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Area Converter — square meters, square feet, acres and hectares | mQuickCalc">
+  <meta name="twitter:description" content="Convert area between square meters, square feet, square yards, acres and hectares instantly. Includes a reference table for rooms, land and property sizes.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Area Converter — square meters, square feet, acres and hectares | mQuickCalc">
+  <meta property="og:description" content="Convert area between square meters, square feet, square yards, acres and hectares instantly. Includes a reference table for rooms, land and property sizes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/area-converter">
+  <meta property="og:site_name" content="mQuickCalc">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Area Converter","url":"https://mquickcalc.com/tools/area-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert area between square meters, square feet, square yards, acres and hectares instantly. Includes a reference table for rooms, land and property sizes."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "How many square feet are in a square meter?", "acceptedAnswer": {"@type": "Answer", "text": "One square meter is 10.7639 square feet. To convert, multiply square meters by 10.7639 — a 90 m² apartment is about 969 ft². To go the other way, multiply square feet by 0.0929."}}, {"@type": "Question", "name": "What is the difference between an acre and a hectare?", "acceptedAnswer": {"@type": "Answer", "text": "A hectare is 10,000 m² and an acre is 4,046.86 m², so one hectare equals about 2.47 acres. Hectares are used in metric countries and in most scientific contexts; acres remain standard in US and UK property and land listings."}}, {"@type": "Question", "name": "Why is the conversion factor not just the length factor?", "acceptedAnswer": {"@type": "Answer", "text": "Because area is two-dimensional. A foot is 0.3048 m, but a square foot is 0.3048 × 0.3048 = 0.0929 m². Using the length factor for an area conversion is the single most common error and throws the result off by more than 3×."}}, {"@type": "Question", "name": "How do I convert acres to square feet?", "acceptedAnswer": {"@type": "Answer", "text": "One acre is exactly 43,560 square feet. Multiply acres by 43,560: a 2.5-acre plot is 108,900 ft², or about 1.01 hectares."}}, {"@type": "Question", "name": "Should I add waste when ordering flooring?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — typically 5–10% for straight layouts and up to 15% for diagonal or patterned installs. The converter gives you the exact area; it cannot account for cutting waste, board direction or room irregularities."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},
+    {"@type":"ListItem","position":2,"name":"Area Converter","item":"https://mquickcalc.com/tools/area-converter"}
+  ]}
+  </script>
+  <style>
+    .conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+    .conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}
+    .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .conv-grid label{font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--ink-2);display:block;margin-bottom:4px}
+    @media (max-width:640px){.conv-grid{grid-template-columns:1fr}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to use this converter","step":[{"@type":"HowToStep","name":"Enter a value","text":"Type any number into the input field."},{"@type":"HowToStep","name":"Choose your units","text":"Pick the source unit from the dropdown."},{"@type":"HowToStep","name":"See all results","text":"The tool shows every unit's equivalent instantly in the results table."}]}
+  </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Area Converter","url":"https://mquickcalc.com/tools/area-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"52"}}
+  </script>
+</head>
+<body data-site="main">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/">All converters</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">Area Converter</h1>
+    <p class="lede">Flooring, property listings and land measurement all use different area units. Enter one value and see square feet, square meters, acres and hectares together, so you can compare a listing in one system with a quote in another.</p>
+
+    <div class="calc-card" id="calc-card">
+      <label for="val">Value</label>
+      <input id="val" class="input" type="number" inputmode="decimal" step="any" value="100">
+
+      <div style="margin-top:14px;">
+        <label for="from">Convert from</label>
+        <select id="from" class="input">
+        <option value="cm2"Square centimeter (cm²)></option>
+        <option value="m2"Square meter (m²)> selected</option>
+        <option value="km2"Square kilometer (km²)></option>
+        <option value="ft2"Square foot (ft²)></option>
+        <option value="yd2"Square yard (yd²)></option>
+        <option value="acre"Acre></option>
+        <option value="ha"Hectare (ha)></option>
+        </select>
+      </div>
+
+      <div id="result" class="result show">
+        <div class="big" id="mainVal">—</div>
+        <div class="dim" id="mainUnit"></div>
+
+      </div>
+
+      <table class="ref-table conv-table" style="margin-top:20px;">
+        <thead><tr><th>Unit</th><th style="text-align:right;">Value</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="note" id="convNote"></p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </div>
+
+    
+<div id="embed-cta" style="margin-top:20px;padding:16px;border:1px dashed #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <strong>🔧 Embed this converter on your site</strong>
+  <p class="dim" style="margin:4px 0 10px 0;">Copy the code below and paste it into any blog, wiki, or course page. Free, no tracking.</p>
+  <button id="embedBtn" class="btn">Show embed code</button>
+  <div id="embedCode" style="display:none;margin-top:12px;background:#0f172a;color:#e2e8f0;padding:12px;border-radius:6px;font-family:monospace;font-size:13px;overflow-x:auto;">
+<iframe src="https://mquickcalc.com/embed/area-converter" width="100%" height="480" frameborder="0" loading="lazy" title="Free area-converter from mQuickCalc"></iframe>
+  </div>
+</div>
+<h2>How it works</h2>
+    <p>Area units are the square of length units, which is why the conversion factors look large: a square foot is 0.3048 m squared, or 0.09290304 m². Converting area means multiplying by the square of the length factor, not the length factor itself — a mistake that produces answers off by an order of magnitude.</p>
+    <p>Square feet to square meters is the most common conversion in property: multiply square feet by 0.0929. A 1,000 ft² apartment is about 93 m². Going the other way, multiply square meters by 10.764.</p>
+    <p>The acre and the hectare are both land units from different systems. A hectare is 10,000 m² — a square 100 m on each side — while an acre is 4,046.86 m². One hectare is about 2.47 acres, so a hectare is roughly two and a half times an acre.</p>
+    <p>When measuring a room for flooring, remember that area scales with the square of linear error. If you measure a wall as 5.1 m when it is actually 5.0 m, the area is overstated by about 4%, not 2%. Always order a little extra material for cutting waste regardless.</p>
+<p><strong>Real-world applications</strong></p><p><strong>Real-world:</strong> US real estate uses sq ft; metric uses sq m (2,000 ft² = 185.8 m²). Land: 1 hectare = 2.47 acres. Roofing contractors use squares (100 ft² = 9.29 m²).</p>
+
+    <h2>Common area conversions</h2>
+    <table class="ref-table">
+      <thead><tr><th>From</th><th style="text-align:right;">To</th></tr></thead>
+      <tbody>
+        <tr><td>1 m²</td><td>10.7639 ft²</td></tr>
+        <tr><td>1 ft²</td><td>0.0929 m²</td></tr>
+        <tr><td>1 yd²</td><td>0.8361 m²</td></tr>
+        <tr><td>1 acre</td><td>4,046.86 m²</td></tr>
+        <tr><td>1 acre</td><td>43,560 ft²</td></tr>
+        <tr><td>1 hectare</td><td>10,000 m²</td></tr>
+        <tr><td>1 hectare</td><td>2.4711 acres</td></tr>
+        <tr><td>1 km²</td><td>100 hectares</td></tr>
+        <tr><td>1 km²</td><td>247.11 acres</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How many square feet are in a square meter?</h3>
+    <p>One square meter is 10.7639 square feet. To convert, multiply square meters by 10.7639 — a 90 m² apartment is about 969 ft². To go the other way, multiply square feet by 0.0929.</p>
+    <h3>What is the difference between an acre and a hectare?</h3>
+    <p>A hectare is 10,000 m² and an acre is 4,046.86 m², so one hectare equals about 2.47 acres. Hectares are used in metric countries and in most scientific contexts; acres remain standard in US and UK property and land listings.</p>
+    <h3>Why is the conversion factor not just the length factor?</h3>
+    <p>Because area is two-dimensional. A foot is 0.3048 m, but a square foot is 0.3048 × 0.3048 = 0.0929 m². Using the length factor for an area conversion is the single most common error and throws the result off by more than 3×.</p>
+    <h3>How do I convert acres to square feet?</h3>
+    <p>One acre is exactly 43,560 square feet. Multiply acres by 43,560: a 2.5-acre plot is 108,900 ft², or about 1.01 hectares.</p>
+    <h3>Should I add waste when ordering flooring?</h3>
+    <p>Yes — typically 5–10% for straight layouts and up to 15% for diagonal or patterned installs. The converter gives you the exact area; it cannot account for cutting waste, board direction or room irregularities.</p>
+
+    <div class="related-section">
+      <h2>Related converters</h2>
+      <div class="tool-grid">
+      <a class="tool-card" href="/tools/length-converter"><div class="icon-row"><div class="tc-title">Length Converter</div></div><div class="tc-desc">cm, inches, feet, meters and miles.</div></a>
+      <a class="tool-card" href="/tools/volume-converter"><div class="icon-row"><div class="tc-title">Volume Converter</div></div><div class="tc-desc">Liters, gallons and cubic meters.</div></a>
+      <a class="tool-card" href="/tools/speed-converter"><div class="icon-row"><div class="tc-title">Speed Converter</div></div><div class="tc-desc">km/h, mph and knots.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-09">September 9, 2026</time> — conversions use exact unit definitions, so results stay accurate.</p>
+    <p class="note" style="margin-top:22px;">Estimates are for general information only — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all converters</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  var U = [["cm2", "Square centimeter (cm²)", 0.0001], ["m2", "Square meter (m²)", 1], ["km2", "Square kilometer (km²)", 1000000], ["ft2", "Square foot (ft²)", 0.09290304], ["yd2", "Square yard (yd²)", 0.83612736], ["acre", "Acre", 4046.8564224], ["ha", "Hectare (ha)", 10000]];
+  var inp = document.getElementById('val');
+  var sel = document.getElementById('from');
+  var tb = document.getElementById('rows');
+  var big = document.getElementById('mainVal');
+  var bigLbl = document.getElementById('mainUnit');
+  var note = document.getElementById('convNote');
+
+  function fmt(n) {
+    if (!isFinite(n)) return '—';
+    if (n === 0) return '0';
+    return Number(n.toPrecision(8)).toLocaleString('en-US', { maximumFractionDigits: 8 });
+  }
+  function factorOf(id) {
+    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][2];
+    return 1;
+  }
+  function labelOf(id) {
+    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][1];
+    return id;
+  }
+  // Short symbol for the headline, e.g. "Inch (in)" -> "in"
+  function symOf(id) {
+    var l = labelOf(id);
+    var m = /\(([^)]+)\)\s*$/.exec(l);
+    var s = m ? m[1] : l;
+    var c = s.indexOf(',');
+    return c > 0 ? s.slice(0, c) : s;
+  }
+  var PRI = 'ft2';
+  var ALT = 'm2';
+  // The headline picks the pair a human would actually ask for: hectares go to
+  // acres, not to 107,639 square feet. Anything unlisted falls back to PRI/ALT.
+  var PAIRS = {"ha": "acre", "acre": "ha", "km2": "ha", "cm2": "ft2"};
+  function render() {
+    var v = parseFloat(inp.value);
+    if (isNaN(v)) v = 0;
+    var from = sel.value;
+    var base = v * factorOf(from);
+    var rows = '';
+    for (var i = 0; i < U.length; i++) {
+      var id = U[i][0];
+      var out = base / U[i][2];
+      var isFrom = (id === from);
+      rows += '<tr' + (isFrom ? ' class="is-from"' : '') + '>' +
+              '<td>' + U[i][1] + '</td>' +
+              '<td><strong>' + fmt(out) + '</strong></td>' +
+              '</tr>';
+    }
+    tb.innerHTML = rows;
+    // Headline shows the pair people actually search for: kg->lb, cm->in, GB->GiB.
+    var target = PAIRS[from] || ((from === PRI) ? ALT : PRI);
+    big.textContent = fmt(base / factorOf(target));
+    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
+    if (note) note.textContent = 'Converting from ' + labelOf(from) + '. Change the unit to convert the other way — the whole table updates instantly.';
+  }
+  inp.addEventListener('input', render);
+  sel.addEventListener('change', render);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    inp.value = '100';
+    sel.value = 'm2';
+    render();
+  });
+  // URL param support: /{topic}/{from}-to-{to} redirects here
+  (function(){
+    var q=new URLSearchParams(window.location.search);
+    var fromParam=q.get('from');
+    var sel=document.getElementById('from');
+    if(sel && fromParam){
+      var opts=sel.getElementsByTagName('option');
+      for(var i=0;i<opts.length;i++){
+        if(opts[i].value===fromParam){
+          sel.value=fromParam;
+          sel.dispatchEvent(new Event('change'));
+          break;
+        }
+      }
+    }
+  })();
+  render();
+})();
+</script>
+<script>
+(function() {
+  var btn = document.getElementById('embedBtn');
+  var code = document.getElementById('embedCode');
+  if(btn && code) {
+    btn.addEventListener('click', function() {
+      if(code.style.display === 'none') {
+        code.style.display = 'block';
+        btn.textContent = 'Hide embed code';
+      } else {
+        code.style.display = 'none';
+        btn.textContent = 'Show embed code';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

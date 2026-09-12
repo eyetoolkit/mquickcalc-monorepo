@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Bits to USD Converter — Cheer Bits Value | mQuickCalc</title>
+  <meta name="description" content="Convert Twitch cheer bits to dollars instantly. See what a viewer pays for bits and approximately what a streamer receives. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/twitch-bits-to-usd">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Twitch Bits to USD Converter — Cheer Bits Value | mQuickCalc">
+  <meta name="twitter:description" content="Convert Twitch cheer bits to dollars instantly. See what a viewer pays for bits and approximately what a streamer receives. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Twitch Bits to USD Converter — Cheer Bits Value | mQuickCalc">
+  <meta property="og:description" content="Convert Twitch cheer bits to dollars instantly. See what a viewer pays for bits and approximately what a streamer receives. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Twitch Bits to USD Converter","url":"https://finance.mquickcalc.com/tools/twitch-bits-to-usd","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert Twitch cheer bits to US dollars."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is 1000 Twitch bits worth?","acceptedAnswer":{"@type":"Answer","text":"$10.00. That's the standard conversion: 1,000 bits ÷ 100."}},{"@type":"Question","name":"Do streamers get the full value of the bits?","acceptedAnswer":{"@type":"Answer","text":"Usually very close to it at the $0.01-per-bit rate. Twitch's fees, currency conversion and regional rules can reduce the final amount in some cases, so treat streamer payouts as approximate."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/twitch-bits-to-usd">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Twitch Bits to USD","item":"https://finance.mquickcalc.com/tools/twitch-bits-to-usd"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">Twitch Bits to USD</h1>
+    <p class="lede">Cheer bits are Twitch's virtual currency. Convert bits to dollars in one click — see what fans spend and roughly what the streamer takes home.</p>
+
+
+    <div class="calc-card">
+      <label for="bits">Amount in Bits</label>
+      <input id="bits" class="input" type="number" inputmode="numeric" min="0" step="1" value="1000">
+
+      <div style="margin-top:14px;">
+        <label for="buy">Viewer price per 100 bits ($)</label>
+        <input id="buy" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1.40">
+        <p class="note" style="margin-top:6px;">What a viewer actually pays at checkout. US web purchases are commonly around <strong>$1.40 per 100 bits</strong>; bulk packs and mobile in-app buying differ. Set it to <strong>1.00</strong> for the plain 1:1 rate.</p>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="usdVal">$10.00</div>
+        <div class="dim">bit value — what the streamer receives</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Viewer pays (at <span id="rateLbl">$1.40</span> / 100 bits)</div><div class="val" id="costVal">$14.00</div></div>
+          <div class="cell"><div class="lbl">Streamer receives (approx.)</div><div class="val" id="streamerVal">$10.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">1 bit = $0.01 to the streamer. What a viewer pays for those bits is usually higher, so the two figures differ. Twitch may apply currency, processing or regional fees, so exact payouts can differ — especially for pledges or gift bits.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Quick reference</div>
+      <p>100 bits = $1 &nbsp;·&nbsp; 1,000 bits = $10 &nbsp;·&nbsp; 5,000 bits = $50 &nbsp;·&nbsp; 10,000 bits = $100. That is the value paid <strong>out</strong> to the streamer. Buying bits costs the viewer more than that in most regions — small web packs run around <strong>$1.40 per 100 bits</strong>, while bulk packs and bonus-bit promos come closer to 1:1 — so the <strong>viewer cost</strong> and the <strong>bit value</strong> are not the same number.</p>
+    </div>
+
+    <h2>How Twitch bits work</h2>
+    <p><strong>Bits</strong> are a donation currency on Twitch. A viewer uses bits to "Cheer" in chat (spending recent donations buys cheer emotes and highlights). The streamer then receives a cash payout for the cheered bits.</p>
+    <p>At the standard rate, <strong>100 bits = $1.00</strong>, meaning the dollar value is <code>bits / 100</code>. Some countries and bulk packages shift the exact price a viewer pays, while the payout streamers receive is generally tied to that $0.01-per-bit value before platform deductions.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much is 1000 Twitch bits worth?</h3>
+    <p>$10.00. That's the standard conversion: 1,000 bits ÷ 100.</p>
+    <h3>Do streamers get the full value of the bits?</h3>
+    <p>Usually very close to it at the $0.01-per-bit rate. Twitch's fees, currency conversion and regional rules can reduce the final amount in some cases, so treat streamer payouts as approximate.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/patreon-plan-comparison" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Patreon Plan Comparison</div></div><div class="tc-desc">Lite vs Pro vs Premium — which pays more?</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/twitch-sub-revenue">Twitch Subscription Revenue Calculator &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function convert() {
+    const bits = Math.max(parseInt(document.getElementById('bits').value, 10) || 0, 0);
+    const usd = bits / 100;
+    const per100 = Math.max(parseFloat(document.getElementById('buy').value) || 0, 0);
+    const fmt = function (n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); };
+    document.getElementById('usdVal').textContent = fmt(usd);
+    // viewer cost uses the editable purchase rate (100 bits often costs more than $1);
+    // streamer payout stays tied to the $0.01-per-bit value.
+    document.getElementById('costVal').textContent = fmt(usd * per100);
+    document.getElementById('rateLbl').textContent = fmt(per100);
+    document.getElementById('streamerVal').textContent = fmt(usd);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', convert);
+  document.getElementById('buy').addEventListener('input', convert);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('bits').value = '1000'; document.getElementById('buy').value = '1.40'; convert(); });
+  convert();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), convert);
+})();
+</script>
+</body>
+</html>

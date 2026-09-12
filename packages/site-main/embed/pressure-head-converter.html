@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" data-site="main">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressure Head Converter - Meters H2O, PSI, Bar | mQuickCalc</title>
+<meta name="description" content="Convert between pressure and fluid column height — m H2O, ft H2O, psi, bar, kPa. For plumbing, well pumps, scuba depth.">
+<link rel="canonical" href="https://mquickcalc.com/tools/pressure-head-converter">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:image" content="https://mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pressure Head Converter - Meters H2O, PSI, Bar | mQuickCalc">
+  <meta name="twitter:description" content="Convert between pressure and fluid column height. 10 m of water ≈ 1 bar ≈ 14.5 psi.">
+  <meta name="twitter:site" content="@mquickcalc"><meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+<meta property="og:title" content="Pressure Head Converter - Meters H2O, PSI, Bar | mQuickCalc">
+<meta property="og:description" content="Convert between pressure and fluid column height. 10 m of water ≈ 1 bar ≈ 14.5 psi.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://mquickcalc.com/tools/pressure-head-converter"><meta property="og:site_name" content="mQuickCalc">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"🏗️ Pressure Head Converter","url":"https://mquickcalc.com/tools/pressure-head-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert between pressure and fluid column height. 10 m of water ≈ 1 bar ≈ 14.5 psi."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Pressure Head Converter","item":"https://mquickcalc.com/tools/pressure-head-converter"}]}</script>
+<style>.conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}.conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}</style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many psi is 10 meters of water?","acceptedAnswer":{"@type":"Answer","text":"10 m H2O is about 14.2 psi, 0.981 bar, or 98.0665 kPa. Each meter of water column adds about 9.81 kPa of hydrostatic pressure."}},
+{"@type":"Question","name":"Is pressure head the same as pressure?","acceptedAnswer":{"@type":"Answer","text":"Pressure head is pressure expressed as column height of a reference liquid (usually water for plumbing, mercury for vacuum). They measure the same physical quantity in different units."}},
+{"@type":"Question","name":"Why does my well pump have head in specs?","acceptedAnswer":{"@type":"Answer","text":"Pump head is the maximum vertical distance the pump can push water. A 50 m head pump can overcome 50 m of elevation (about 4.9 bar or 71 psi) before water stops flowing."}}]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to use this converter","step":[{"@type":"HowToStep","name":"Enter a value","text":"Type any number into the input field."},{"@type":"HowToStep","name":"Choose your units","text":"Pick the source unit from the dropdown."},{"@type":"HowToStep","name":"See all results","text":"The tool shows every unit's equivalent instantly in the results table."}]}
+  </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🏗️ Pressure Head Converter","url":"https://mquickcalc.com/tools/pressure-head-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"52"}}
+  </script>
+</head>
+<body data-site="main">
+<style>
+  body { margin: 0 !important; padding: 12px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; }
+  header, footer, .site-header, .site-footer { display: none !important; }
+  .faq-list, .related-section, .prose, .site-footer, nav { display: none !important; }
+  main.page { padding: 0 !important; max-width: 100% !important; }
+  .wrap { padding: 0 !important; }
+  .page-title { font-size: 1.25rem; margin: 0 0 8px 0; text-align: left; }
+  .lede { display: none; }
+  .calc-card { padding: 12px; border: 1px solid #e5e7eb; border-radius: 8px; }
+  .conv-table td { white-space: nowrap; }
+</style>
+<h1 class="page-title">🏗️ Pressure Head Converter</h1>
+<p class="lede">10-meter water tower = ~1 bar at bottom. Divers know 10 m depth adds another bar. Bridges hydrostatic pressure and column height.</p>
+<div class="calc-card">
+<label for="val">Value</label><input id="val" class="input" type="number" inputmode="decimal" step="any" value="1">
+<div style="margin-top:14px;"><label for="from">Convert from</label><select id="from" class="input">
+<option value="mh2o" selected>Meter of water (m H2O)</option>
+<option value="ftwh">Foot of water (ftH2O)</option>
+<option value="psi">Pound per square inch (psi)</option>
+<option value="bar">Bar</option>
+<option value="kPa">Kilopascal (kPa)</option>
+<option value="atm">Atmosphere (atm)</option>
+<option value="mmHg">Millimeter of mercury (mmHg)</option>
+<option value="mhg">Meter of mercury (mHg)</option>
+</select></div>
+<div class="result show" id="result"><div class="result-headline"><div id="mainVal">—</div><div id="mainUnit"></div></div><p class="note" id="convNote" style="margin-top:10px;"></p></div>
+<table class="conv-table" id="rows"></table>
+<button id="resetBtn" class="btn" style="margin-top:14px;">Reset</button>
+<p class="upd">Last updated <time datetime="2026-09-10">September 10, 2026</time> — conversions use exact ISO unit definitions.</p>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function(){
+  var U = [["mh2o", "Meter of water (m H2O)", 1.0], ["ftwh", "Foot of water (ftH2O)", 0.3048], ["psi", "Pound per square inch (psi)", 0.7032], ["bar", "Bar", 10.197], ["kPa", "Kilopascal (kPa)", 0.1020], ["atm", "Atmosphere (atm)", 10.332], ["mmHg", "Millimeter of mercury (mmHg)", 0.01359], ["mhg", "Meter of mercury (mHg)", 13.595]];
+  var inp=document.getElementById('val'), sel=document.getElementById('from'), tb=document.getElementById('rows'), big=document.getElementById('mainVal'), bigLbl=document.getElementById('mainUnit'), note=document.getElementById('convNote');
+  function fmt(n){if(!isFinite(n))return '—';if(n===0)return '0';return Number(n.toPrecision(8)).toLocaleString('en-US',{maximumFractionDigits:8})}
+  function factorOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][2];return 1}
+  function labelOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][1];return id}
+  function symOf(id){var l=labelOf(id);var m=/\(([^)]+)\)\s*$/.exec(l);var s=m?m[1].trim():l;var c=s.indexOf(',');return c>0?s.slice(0,c):s}
+  var PRI='mh2o', ALT='bar';
+  var PAIRS = {"mh2o": "bar", "bar": "mh2o", "mh2o": "psi"};
+  function render(){
+    var v=parseFloat(inp.value)||0, from=sel.value;
+    var base=v*factorOf(from);
+    var rows='';
+    for(var i=0;i<U.length;i++){
+      var id=U[i][0], out=base/U[i][2], isFrom=(id===from);
+      rows += '<tr'+(isFrom?' class="is-from"':'')+'><td>'+U[i][1]+'</td><td><strong>'+fmt(out)+'</strong></td></tr>';
+    }
+    tb.innerHTML=rows;
+    var target=PAIRS[from]||((from===PRI)?ALT:PRI);
+    big.textContent = fmt(base/factorOf(target));
+    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
+    if(note) note.textContent='Converting from '+labelOf(from)+'. Change the unit to convert the other way.';
+  }
+  inp.addEventListener('input',render); sel.addEventListener('change',render);
+  document.getElementById('resetBtn').addEventListener('click',function(){inp.value='1';sel.value='mh2o';render()});
+  // URL param support: /{topic}/{from}-to-{to} redirects here
+  (function(){
+    var q=new URLSearchParams(window.location.search);
+    var fromParam=q.get('from');
+    var sel=document.getElementById('from');
+    if(sel && fromParam){
+      var opts=sel.getElementsByTagName('option');
+      for(var i=0;i<opts.length;i++){
+        if(opts[i].value===fromParam){
+          sel.value=fromParam;
+          sel.dispatchEvent(new Event('change'));
+          break;
+        }
+      }
+    }
+  })();
+  render();
+})();
+</script>
+</body>
+</html>

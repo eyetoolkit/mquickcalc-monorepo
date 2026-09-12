@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBay Seller Fee Calculator | mQuickCalc Finance</title>
+  <meta name="description" content="Estimate eBay final value fees and how much you net from a sale. Includes the per-order fee and optional $7,500 tier. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/ebay-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="eBay Seller Fee Calculator — Final Value Fee &amp; Net | mQuickCalc">
+  <meta name="twitter:description" content="Estimate eBay final value fees and how much you net from a sale. Includes the per-order fee and optional $7,500 tier. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="eBay Seller Fee Calculator — Final Value Fee &amp; Net | mQuickCalc">
+  <meta property="og:description" content="Estimate eBay final value fees and how much you net from a sale. Includes the per-order fee and optional $7,500 tier. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"eBay Seller Fee Calculator","url":"https://finance.mquickcalc.com/tools/ebay-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate eBay final value fees and net proceeds."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does eBay take on a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"With a 13.25% rate, roughly $13.25 plus a $0.30 per-order fee, leaving about $86.45 before shipping costs and any extra fees."}},{"@type":"Question","name":"Does eBay charge a listing fee?","acceptedAnswer":{"@type":"Answer","text":"A limited number of free listings are included each month, after which insertion fees apply. Most advertised margins are driven by the final value fee instead."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/ebay-fee-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"eBay Seller Fee Calculator","item":"https://finance.mquickcalc.com/tools/ebay-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>eBay Seller Fee Calculator</span></nav></div>
+
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🅴🅱️</div>
+<h1 class="page-title">eBay Seller Fee Calculator</h1>
+    <p class="lede">Work out eBay's final value fee plus its flat per-order fee, then see your estimated net proceeds. Great for pricing items so you protect your margin.</p>
+
+
+    <div class="calc-card">
+<label for="market"><strong>📍 Market presets</strong> — eBay country-specific rates</label>
+<select id="market" class="input">
+<option value="us" selected>🇺🇸 eBay USA — 13.25% + <div class="calc-card">.30</option>
+<option value="toprated">⭐ eBay USA Top Rated — 9.15% + <div class="calc-card">.30</option>
+<option value="uk">🇬🇧 eBay UK — 12.8% + £0.30</option>
+<option value="de">🇩🇪 eBay Germany — 10.0% + €0.35</option>
+<option value="au">🇦🇺 eBay Australia — 12.8% + A<div class="calc-card">.30</option>
+<option value="ca">🇨🇦 eBay Canada — 12.8% + C<div class="calc-card">.30</option>
+<option value="custom">✏️ Custom rates</option>
+</select>
+<p class="dim" style="margin-top:6px;">eBay fees vary by category. These are general-purpose rates for most categories.</p>
+      <div class="row">
+        <div class="field">
+          <label for="price">Item sale price</label>
+          <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="100.00">
+        </div>
+        <div class="field">
+          <label for="shipping">Shipping cost (included)</label>
+          <input id="shipping" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="10.00">
+        </div>
+      </div>
+
+      <label for="rate">Final value fee %</label>
+      <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="13.25">
+
+      <div class="row">
+        <div class="field">
+          <label for="fixed">Per-order fee</label>
+          <input id="fixed" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0.30">
+        </div>
+        <div class="field">
+          <label for="tier" style="display:flex;align-items:center;gap:8px;"><input type="checkbox" id="tier" checked> Apply $7,500 threshold tiering</label>
+          <p class="dim" style="margin-top:4px;">Over $7,500 per order, a lower rate applies to the excess.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="grossLine"></div>
+        <div class="big" id="netVal">$0.00</div>
+        <div class="dim">estimated net proceeds</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Final value fee</div><div class="val" id="fvVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Per-order fee</div><div class="val" id="fixedVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Effective rate</div><div class="val" id="effVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">eBay charges final value fees with a per-order component, and rates differ by category and seller tier. This is an estimate — confirm against eBay's current fee table.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Fee basics</div>
+      <p>Most eBay categories charge a <strong>final value fee</strong> on the total amount (item + shipping + applicable taxes) plus a <strong>flat per-order fee</strong>. Above a certain amount per order, the excess is taxed at a lower rate in many setups. In seller-managed payments the payment processing is already folded into these numbers.</p>
+    </div>
+
+    <h2>How eBay seller fees work</h2>
+    <p>When an item sells, eBay deducts a final value fee as a percentage of the sale total plus a small fixed per-order fee. Add-ons like additional listing fees, promoted listings or international transaction fees can apply on top. Reserve the technical default threshold tier for high-ticket sales.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much does eBay take on a $100 sale?</h3>
+    <p>With a 13.25% rate, roughly $13.25 plus a $0.30 per-order fee, leaving about $86.45 before shipping costs and any extra fees.</p>
+    <h3>Does eBay charge a listing fee?</h3>
+    <p>A limited number of free listings are included each month, after which insertion fees apply. Most advertised margins are driven by the final value fee instead.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/etsy-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧶</span><div class="tc-title">Etsy Fee Calculator</div></div><div class="tc-desc">Calculate Etsy listing, transaction, and payment fees.</div></a>
+        <a href="/tools/etsy-eu-vat-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🇪🇺</span><div class="tc-title">Etsy EU VAT</div></div><div class="tc-desc">EU VAT impact on your Etsy sales price.</div></a>
+        <a href="/tools/etsy-offsite-ads-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📣</span><div class="tc-title">Etsy Offsite Ads</div></div><div class="tc-desc">ROI from Etsy's offsite ad program.</div></a>
+        <a href="/tools/ebay-international-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌍</span><div class="tc-title">eBay International Fees</div></div><div class="tc-desc">Global shipping and currency conversion fees.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/shopify-fees-calculator">Shopify Fees &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n, cur) { var c = cur || 'USD'; try { return n.toLocaleString('en-US', { style: 'currency', currency: c }); } catch(e) { return n.toFixed(2); } }
+  function pct(n) { return (n * 100).toFixed(2) + '%'; }
+    var MARKETS = {
+    "us":       { rate: "13.25", fixed: "0.30", currency: "USD", label: "eBay US" },
+    "toprated": { rate: "9.15",  fixed: "0.30", currency: "USD", label: "eBay US Top Rated" },
+    "uk":       { rate: "12.8",  fixed: "0.30", currency: "GBP", label: "eBay UK" },
+    "de":       { rate: "10.0",  fixed: "0.35", currency: "EUR", label: "eBay Germany" },
+    "au":       { rate: "12.8",  fixed: "0.30", currency: "AUD", label: "eBay Australia" },
+    "ca":       { rate: "12.8",  fixed: "0.30", currency: "CAD", label: "eBay Canada" },
+    "custom": null
+  };
+  function applyMarket(id) {
+    var m = MARKETS[id];
+    if(m) {
+      document.getElementById('rate').value = m.rate;
+      document.getElementById('fixed').value = m.fixed;
+    }
+  }
+  document.getElementById('market').addEventListener('change', function () { applyMarket(this.value); calc(); });
+  applyMarket('us');
+  function calc() {
+    var market = MARKETS[document.getElementById('market').value]; var cur = market ? market.currency : 'USD'; var price = parseFloat(document.getElementById('price').value) || 0;
+    var shipping = parseFloat(document.getElementById('shipping').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+    var tier = document.getElementById('tier').checked;
+    var gross = price + shipping;
+    var fvFee;
+    if (tier && gross > 7500) { fvFee = 7500 * rate + (gross - 7500) * 0.0235; }
+    else { fvFee = gross * rate; }
+    var total = fvFee + fixed;
+    var net = gross - total;
+    var eff = gross > 0 ? total / gross : 0;
+    document.getElementById('grossLine').textContent = 'Total sale amount: ' + money(gross, cur);
+    document.getElementById('netVal').textContent = money(net, cur);
+    document.getElementById('fvVal').textContent = money(fvFee, cur);
+    document.getElementById('fixedVal').textContent = money(fixed, cur);
+    document.getElementById('effVal').textContent = pct(eff);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('price').value = '100.00';
+    document.getElementById('shipping').value = '10.00';
+    document.getElementById('rate').value = MARKETS[document.getElementById('market').value] ? MARKETS[document.getElementById('market').value].rate : '13.25';
+    document.getElementById('fixed').value = '0.30';
+    document.getElementById('tier').checked = true;
+    calc();
+  });
+  calc();
+
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Commission Calculator — Earnings on a Sale | mQuickCalc</title>
+  <meta name="description" content="Calculate commission earned on a sale, total earnings with a base, or how much you must sell to hit an income target. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/sales-commission-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sales Commission Calculator — Earnings on a Sale | mQuickCalc">
+  <meta name="twitter:description" content="Calculate commission earned on a sale, total earnings with a base, or how much you must sell to hit an income target. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Sales Commission Calculator — Earnings on a Sale | mQuickCalc">
+  <meta property="og:description" content="Calculate commission earned on a sale, total earnings with a base, or how much you must sell to hit an income target. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Sales Commission Calculator","url":"https://finance.mquickcalc.com/tools/sales-commission-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate commission earned and earnings on a sale."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate a commission?","acceptedAnswer":{"@type":"Answer","text":"Multiply the sale amount by the commission rate. A $1,000 sale at 10% earns $100 in commission."}},{"@type":"Question","name":"How much do I need to sell to hit an income target?","acceptedAnswer":{"@type":"Answer","text":"Take the part of the target not covered by base pay and divide it by your commission rate. At 10%, $4,000 of target beyond a base needs $40,000 in sales."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/sales-commission-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Sales Commission Calculator","item":"https://finance.mquickcalc.com/tools/sales-commission-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">Sales Commission Calculator</h1>
+    <p class="lede">Work out commission earned on a deal, your total pay if you have a base, or the sales needed to hit an income target.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="sale">Sale amount</label>
+          <input id="sale" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
+        </div>
+        <div class="field">
+          <label for="rate">Commission %</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="10">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="base">Base / fixed pay (optional)</label>
+          <input id="base" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0">
+        </div>
+        <div class="field">
+          <label for="target">Income target (optional)</label>
+          <input id="target" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="5000.00">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">commission on this sale</div>
+        <div class="big" id="commVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Total pay (with base)</div><div class="val" id="payVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Sales needed for target</div><div class="val" id="needVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">"Sales needed" assumes your base is fixed and the full target above it comes from commission at the entered rate; tiers, caps and non-commission base pay will change it.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Commission vs. fixed pay</div>
+      <p>A pure commission role pays only on sales, so one large deal can cover many small ones. Add a base to see blended total earnings, or flip it around with the target to price the workload you need.</p>
+    </div>
+
+    
+    <h2>How sales commission works</h2><p>Commission = Sales amount times commission rate. Common structures: flat percentage, tiered rates (higher percent at higher volumes), or base salary plus commission. Works backwards too: target commission divided by rate equals required sales.</p>
+<h2>Frequently asked questions</h2>
+    <h3>How do I calculate a commission?</h3>
+    <p>Multiply the sale amount by the commission rate. A $1,000 sale at 10% earns $100 in commission.</p>
+    <h3>How much do I need to sell to hit an income target?</h3>
+    <p>Take the part of the target not covered by base pay and divide it by your commission rate. At 10%, $4,000 of target beyond a base needs $40,000 in sales.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">US sales tax by state and zip code.</div></a>
+        <a href="/tools/vat-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🇪🇺</span><div class="tc-title">VAT Calculator</div></div><div class="tc-desc">EU VAT add or reverse charge.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/stripe-fee-calculator">Stripe Fees &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function calc() {
+    var sale = parseFloat(document.getElementById('sale').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var base = parseFloat(document.getElementById('base').value) || 0;
+    var target = parseFloat(document.getElementById('target').value) || 0;
+    var comm = sale * rate;
+    var pay = base + comm;
+    var need = target > base && rate > 0 ? (target - base) / rate : 0;
+    document.getElementById('commVal').textContent = money(comm);
+    document.getElementById('payVal').textContent = money(pay);
+    document.getElementById('needVal').textContent = (need > 0 && document.getElementById('target').value !== '') ? money(need) : '—';
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('sale').value = '1000.00'; document.getElementById('rate').value = '10'; document.getElementById('base').value = '0'; document.getElementById('target').value = '5000.00'; calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

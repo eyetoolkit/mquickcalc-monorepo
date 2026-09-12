@@ -1,0 +1,13 @@
+{
+  "name": "mQuickCalc — Everyday Converters",
+  "short_name": "mQuickCalc",
+  "description": "Free, instant unit converters and everyday calculators. No sign-up, no tracking.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],`r`n  "service_worker": { "src": "/sw.js", "scope": "/", "type": "classic" },`r`n  "lang": "en"`r`n}

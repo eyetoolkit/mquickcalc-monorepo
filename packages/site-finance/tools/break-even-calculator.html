@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break-even Calculator — Units to Cover Costs | mQuickCalc</title>
+  <meta name="description" content="Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/break-even-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Break-even Calculator — Units to Cover Costs | mQuickCalc">
+  <meta name="twitter:description" content="Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Break-even Calculator — Units to Cover Costs | mQuickCalc">
+  <meta property="og:description" content="Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-u">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Break-even Calculator","url":"https://finance.mquickcalc.com/tools/break-even-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Units needed to break even and reach a target profit."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many units must I sell to break even?","acceptedAnswer":{"@type":"Answer","text":"Divide total fixed costs by the profit left on each unit after variable cost. With $1,000 fixed cost and $15 contribution, you need 67 units (~67)."}},{"@type":"Question","name":"What's contribution margin?","acceptedAnswer":{"@type":"Answer","text":"Price minus variable cost. It's the dollars each sale contributes toward covering fixed costs and, beyond break-even, profit."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/break-even-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Break-even Calculator","item":"https://finance.mquickcalc.com/tools/break-even-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance</a><span class='sep'>›</span><span class='current'>Break-even Calculator</span></nav></div>
+
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>📊</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">Break-even Calculator</h1>
+    <p class="lede">See how many units you need to sell before you stop losing money — and how many more to hit a target profit.</p>
+
+
+    <div class="calc-card">
+      <label for="fixed">Fixed costs (per period)</label>
+      <input id="fixed" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="var">Variable cost per unit</label>
+          <input id="var" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="5.00">
+        </div>
+        <div class="field">
+          <label for="price">Selling price per unit</label>
+          <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="20.00">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="target">Target profit (optional)</label>
+          <input id="target" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="500.00">
+        </div>
+        <div class="field">
+          <label for="volume">Units you expect to sell (optional)</label>
+          <input id="volume" class="input" type="number" inputmode="numeric" min="0" step="1" value="200">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="contribItem"></div>
+        <div class="big" id="unitVal">0</div>
+        <div class="dim">units to break even</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Contribution / unit</div><div class="val" id="contribVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Break-even revenue</div><div class="val" id="revVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Units for target profit</div><div class="val" id="targetVal">—</div></div>
+          <div class="cell"><div class="lbl">Profit at expected volume</div><div class="val" id="profVal">—</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">The formula</div>
+      <p><strong>Break-even units = fixed costs ÷ contribution per unit</strong>, where contribution = price − variable cost. Add a target to cover it on top: <em>(fixed + target) ÷ contribution</em>. Fixed costs typically include rent, software and salaries; variable costs scale with each unit sold.</p>
+    </div>
+
+    
+    <h2>How break-even is calculated</h2><p>Break-even point = Fixed Costs divided by (Price minus Variable Cost per Unit). The contribution margin (how much each sale contributes to covering fixed costs) is the key number. At break-even, profit equals zero.</p>
+<h2>Frequently asked questions</h2>
+    <h3>How many units must I sell to break even?</h3>
+    <p>Divide total fixed costs by the profit left on each unit after variable cost. With $1,000 fixed cost and $15 contribution, you need 67 units (~67).</p>
+    <h3>What's contribution margin?</h3>
+    <p>Price minus variable cost. It's the dollars each sale contributes toward covering fixed costs and, beyond break-even, profit.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/markup-margin-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📈</span><div class="tc-title">Markup &amp; Margin</div></div><div class="tc-desc">Calculate markup from cost or target margin.</div></a>
+        <a href="/tools/discount-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏷️</span><div class="tc-title">Discount Calculator</div></div><div class="tc-desc">Percent off or sale price calculation.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/markup-margin-calculator">Markup &amp; Margin &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function calc() {
+    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+    var vc = parseFloat(document.getElementById('var').value) || 0;
+    var price = parseFloat(document.getElementById('price').value) || 0;
+    var target = parseFloat(document.getElementById('target').value);
+    var volume = parseFloat(document.getElementById('volume').value);
+    var contrib = price - vc;
+    var units = contrib > 0 ? Math.ceil(fixed / contrib) : Infinity;
+    var targetUnits = (contrib > 0 && !isNaN(target) && target > 0) ? Math.ceil((fixed + target) / contrib) : null;
+    var profAtVolume = (!isNaN(volume) && volume >= 0 && contrib > 0) ? (volume * contrib) - fixed : null;
+    document.getElementById('contribItem').textContent = 'Contribution per unit: ' + money(contrib);
+    document.getElementById('unitVal').textContent = isFinite(units) ? units : '∞';
+    document.getElementById('contribVal').textContent = money(contrib);
+    document.getElementById('revVal').textContent = isFinite(units) ? money(units * price) : '—';
+    document.getElementById('targetVal').textContent = targetUnits ? targetUnits : '—';
+    document.getElementById('profVal').textContent = profAtVolume !== null ? money(profAtVolume) : '—';
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('fixed').value = '1000.00'; document.getElementById('var').value = '5.00'; document.getElementById('price').value = '20.00'; document.getElementById('target').value = '500.00'; document.getElementById('volume').value = '200'; calc(); });
+  calc();
+
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

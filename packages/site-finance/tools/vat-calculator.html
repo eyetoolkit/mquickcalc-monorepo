@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAT Calculator — Add or Remove UK &amp; EU VAT | mQuickCalc</title>
+  <meta name="description" content="Add or remove VAT on any amount in one click. Enter a net or gross figure, choose your rate, and see the VAT and the other figure instantly. Free.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/vat-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VAT Calculator — Add or Remove UK &amp; EU VAT | mQuickCalc">
+  <meta name="twitter:description" content="Add or remove VAT on any amount in one click. Enter a net or gross figure, choose your rate, and see the VAT and the other figure instantly. Free.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="VAT Calculator — Add or Remove UK &amp; EU VAT | mQuickCalc">
+  <meta property="og:description" content="Add or remove VAT on any amount in one click. Enter a net or gross figure, choose your rate, and see the VAT and the other figure instantly. Free.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"VAT Calculator","url":"https://finance.mquickcalc.com/tools/vat-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add or remove UK & EU VAT on any amount."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add VAT to a price?","acceptedAnswer":{"@type":"Answer","text":"Multiply the net price by 1 + the rate. At 20%, a £100 net price becomes £120 gross."}},{"@type":"Question","name":"How do I remove VAT from a total?","acceptedAnswer":{"@type":"Answer","text":"Divide the gross price by 1 + the rate. A £120 gross total at 20% is £100 net, with £20 VAT."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/vat-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"VAT Calculator","item":"https://finance.mquickcalc.com/tools/vat-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">VAT Calculator</h1>
+    <p class="lede">Add VAT to a net price, or remove it from a gross price. Enter either figure and see the VAT and the missing side instantly.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="mode">Direction</label>
+          <select id="mode" class="input">
+            <option value="add">Add VAT (net → gross)</option>
+            <option value="remove">Remove VAT (gross → net)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="rate">VAT rate %</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="20">
+        </div>
+      </div>
+      <label for="amount">Amount</label>
+      <input id="amount" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="100.00">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="whichLine">VAT amount</div>
+        <div class="big" id="vatVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Net (before VAT)</div><div class="val" id="netVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Gross (with VAT)</div><div class="val" id="grossVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">VAT rates differ by country and product (UK standard 20%, reduced 5%, zero-rated 0%). This tool is a neutral calculation — use the rate that applies to you.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Net vs. gross</div>
+      <p><strong>Net</strong> is the price before VAT; <strong>gross</strong> is the price with VAT included. Adding VAT multiplies net by (1 + rate); removing it divides gross by (1 + rate). Small-rate differences compound on large invoices, so it pays to get the direction right.</p>
+    </div>
+
+    
+    <h2>How EU VAT works</h2><p>VAT = Net price times tax rate (varies 17-27% by country). One Stop Shop (OSS) simplifies cross-border filing. Low-value goods (under 150 euro) may use IOSS for quick EU imports. Reverse charge applies to B2B intra-EU sales.</p>
+<h2>Frequently asked questions</h2>
+    <h3>How do I add VAT to a price?</h3>
+    <p>Multiply the net price by 1 + the rate. At 20%, a £100 net price becomes £120 gross.</p>
+    <h3>How do I remove VAT from a total?</h3>
+    <p>Divide the gross price by 1 + the rate. A £120 gross total at 20% is £100 net, with £20 VAT.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">US sales tax by state and zip code.</div></a>
+        <a href="/tools/sales-commission-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Sales Commission</div></div><div class="tc-desc">Calculate commission from sales rate and amount.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-08">Sep 8, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/freelance-hourly-rate-calculator">Freelance Hourly Rate &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function calc() {
+    var amount = parseFloat(document.getElementById('amount').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var mode = document.getElementById('mode').value;
+    var net, gross, vat;
+    if (mode === 'add') { net = amount; gross = amount * (1 + rate); vat = gross - net; }
+    else { gross = amount; net = amount / (1 + rate); vat = gross - net; }
+    document.getElementById('vatVal').textContent = money(vat);
+    document.getElementById('netVal').textContent = money(net);
+    document.getElementById('grossVal').textContent = money(gross);
+    document.getElementById('whichLine').textContent = mode === 'add' ? 'VAT added' : 'VAT included';
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('amount').value = '100.00'; document.getElementById('rate').value = '20'; document.getElementById('mode').value = 'add'; calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "mQuickCalc Health — Fitness & Nutrition Calculators",
+  "short_name": "mQuickCalc Health",
+  "description": "Evidence-based fitness, nutrition and everyday wellbeing calculators.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d9488",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],`r`n  "service_worker": { "src": "/sw.js", "scope": "/", "type": "classic" },`r`n  "lang": "en"`r`n}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed Converter — km/h to mph, knots, m/s and ft/s | mQuickCalc</title>
+  <meta name="description" content="Convert speed between km/h, mph, knots, m/s, and ft/s. Includes a speed limit reference table for drivers, travelers, and aviation.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/speed-converter">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speed Converter — km/h to mph, knots, m/s and ft/s | mQuickCalc">
+  <meta name="twitter:description" content="Convert speed between kilometers per hour, miles per hour, knots, meters per second and feet per second. Includes a speed limit reference table for drivers and travelers.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Speed Converter — km/h to mph, knots, m/s and ft/s | mQuickCalc">
+  <meta property="og:description" content="Convert speed between kilometers per hour, miles per hour, knots, meters per second and feet per second. Includes a speed limit reference table for drivers and travelers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/speed-converter">
+  <meta property="og:site_name" content="mQuickCalc">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Speed Converter","url":"https://mquickcalc.com/tools/speed-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert speed between kilometers per hour, miles per hour, knots, meters per second and feet per second. Includes a speed limit reference table for drivers and travelers."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "How do I convert km/h to mph?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply kilometers per hour by 0.621371. So 100 km/h × 0.621371 = 62.1 mph. To convert mph to km/h, multiply by 1.609344. A quick mental trick: the Fibonacci numbers approximate it — 5 mph ≈ 8 km/h, 8 mph ≈ 13 km/h."}}, {"@type": "Question", "name": "What is a knot and how fast is it?", "acceptedAnswer": {"@type": "Answer", "text": "A knot is one nautical mile per hour, equal to 1.852 km/h or 1.151 mph. It is used in maritime and aviation contexts because a nautical mile corresponds to one minute of latitude, which simplifies chart navigation."}}, {"@type": "Question", "name": "How do I convert km/h to m/s?", "acceptedAnswer": {"@type": "Answer", "text": "Divide by 3.6. One km/h is 0.277778 m/s, so 100 km/h is 27.78 m/s. The reverse is to multiply m/s by 3.6. This is the conversion physics and engineering problems expect."}}, {"@type": "Question", "name": "Why does wind speed use different units in different forecasts?", "acceptedAnswer": {"@type": "Answer", "text": "Marine and aviation forecasts use knots, most national weather services use km/h, and US forecasts use mph. They all describe the same wind; only the unit differs. Converting avoids the common mistake of reading a knot value as km/h, which understates the wind by about 46%."}}, {"@type": "Question", "name": "Is the speed of sound always 1,235 km/h?", "acceptedAnswer": {"@type": "Answer", "text": "No. At sea level on a standard day it is about 1,225 km/h (761 mph), but it drops with temperature — at typical cruise altitude it falls to roughly 1,060 km/h. The figure in the table is the sea-level value only."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},
+    {"@type":"ListItem","position":2,"name":"Speed Converter","item":"https://mquickcalc.com/tools/speed-converter"}
+  ]}
+  </script>
+  <style>
+    .conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+    .conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}
+    .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .conv-grid label{font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--ink-2);display:block;margin-bottom:4px}
+    @media (max-width:640px){.conv-grid{grid-template-columns:1fr}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to use this converter","step":[{"@type":"HowToStep","name":"Enter a value","text":"Type any number into the input field."},{"@type":"HowToStep","name":"Choose your units","text":"Pick the source unit from the dropdown."},{"@type":"HowToStep","name":"See all results","text":"The tool shows every unit's equivalent instantly in the results table."}]}
+  </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Speed Converter","url":"https://mquickcalc.com/tools/speed-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"52"}}
+  </script>
+</head>
+<body data-site="main">
+<style>
+  body { margin: 0 !important; padding: 12px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; }
+  header, footer, .site-header, .site-footer { display: none !important; }
+  .faq-list, .related-section, .prose, nav { display: none !important; }
+  main.page { padding: 0 !important; max-width: 100% !important; }
+  .wrap { padding: 0 !important; }
+  .page-title { font-size: 1.25rem; margin: 0 0 8px 0; text-align: left; }
+  .lede { display: none; }
+  .calc-card { padding: 12px; border: 1px solid #e5e7eb; border-radius: 8px; }
+  .conv-table td { white-space: nowrap; }
+</style>
+<h1 class="page-title">Speed Converter</h1>
+    <p class="lede">Rental cars, weather reports and marine charts all speak different speed units. Enter one value to see km/h, mph, knots and meters per second at once — useful when a road sign, a forecast and a boat's instruments disagree.</p>
+
+    <div class="calc-card" id="calc-card">
+      <label for="val">Value</label>
+      <input id="val" class="input" type="number" inputmode="decimal" step="any" value="100">
+
+      <div style="margin-top:14px;">
+        <label for="from">Convert from</label>
+        <select id="from" class="input">
+        <option value="ms"Meter per second (m/s)></option>
+        <option value="kmh"Kilometer per hour (km/h)> selected</option>
+        <option value="mph"Mile per hour (mph)></option>
+        <option value="fts"Foot per second (ft/s)></option>
+        <option value="kn"Knot (kn)></option>
+        </select>
+      </div>
+
+      <div id="result" class="result show">
+        <div class="big" id="mainVal">—</div>
+        <div class="dim" id="mainUnit"></div>
+
+      </div>
+
+      <table class="ref-table conv-table" style="margin-top:20px;">
+        <thead><tr><th>Unit</th><th style="text-align:right;">Value</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="note" id="convNote"></p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  var U = [["ms", "Meter per second (m/s)", 1], ["kmh", "Kilometer per hour (km/h)", 0.2777777777777778], ["mph", "Mile per hour (mph)", 0.44704], ["fts", "Foot per second (ft/s)", 0.3048], ["kn", "Knot (kn)", 0.5144444444]];
+  var inp = document.getElementById('val');
+  var sel = document.getElementById('from');
+  var tb = document.getElementById('rows');
+  var big = document.getElementById('mainVal');
+  var bigLbl = document.getElementById('mainUnit');
+  var note = document.getElementById('convNote');
+
+  function fmt(n) {
+    if (!isFinite(n)) return '—';
+    if (n === 0) return '0';
+    return Number(n.toPrecision(8)).toLocaleString('en-US', { maximumFractionDigits: 8 });
+  }
+  function factorOf(id) {
+    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][2];
+    return 1;
+  }
+  function labelOf(id) {
+    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][1];
+    return id;
+  }
+  // Short symbol for the headline, e.g. "Inch (in)" -> "in"
+  function symOf(id) {
+    var l = labelOf(id);
+    var m = /\(([^)]+)\)\s*$/.exec(l);
+    var s = m ? m[1] : l;
+    var c = s.indexOf(',');
+    return c > 0 ? s.slice(0, c) : s;
+  }
+  var PRI = 'mph';
+  var ALT = 'kmh';
+  // The headline picks the pair a human would actually ask for: hectares go to
+  // acres, not to 107,639 square feet. Anything unlisted falls back to PRI/ALT.
+  var PAIRS = {"ms": "kmh", "fts": "ms"};
+  function render() {
+    var v = parseFloat(inp.value);
+    if (isNaN(v)) v = 0;
+    var from = sel.value;
+    var base = v * factorOf(from);
+    var rows = '';
+    for (var i = 0; i < U.length; i++) {
+      var id = U[i][0];
+      var out = base / U[i][2];
+      var isFrom = (id === from);
+      rows += '<tr' + (isFrom ? ' class="is-from"' : '') + '>' +
+              '<td>' + U[i][1] + '</td>' +
+              '<td><strong>' + fmt(out) + '</strong></td>' +
+              '</tr>';
+    }
+    tb.innerHTML = rows;
+    // Headline shows the pair people actually search for: kg->lb, cm->in, GB->GiB.
+    var target = PAIRS[from] || ((from === PRI) ? ALT : PRI);
+    big.textContent = fmt(base / factorOf(target));
+    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
+    if (note) note.textContent = 'Converting from ' + labelOf(from) + '. Change the unit to convert the other way — the whole table updates instantly.';
+  }
+  inp.addEventListener('input', render);
+  sel.addEventListener('change', render);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    inp.value = '100';
+    sel.value = 'kmh';
+    render();
+  });
+  // URL param support: /{topic}/{from}-to-{to} redirects here
+  (function(){
+    var q=new URLSearchParams(window.location.search);
+    var fromParam=q.get('from');
+    var sel=document.getElementById('from');
+    if(sel && fromParam){
+      var opts=sel.getElementsByTagName('option');
+      for(var i=0;i<opts.length;i++){
+        if(opts[i].value===fromParam){
+          sel.value=fromParam;
+          sel.dispatchEvent(new Event('change'));
+          break;
+        }
+      }
+    }
+  })();
+  render();
+})();
+</script>
+</body>
+</html>

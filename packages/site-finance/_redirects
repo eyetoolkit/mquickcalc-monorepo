@@ -1,0 +1,2 @@
+# finance.mquickcalc.com extensionless URLs
+https://finance.mquickcalc.com/*.html  https://finance.mquickcalc.com/:splat  301

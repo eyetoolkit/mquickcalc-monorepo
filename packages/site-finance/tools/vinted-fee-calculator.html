@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinted Fee Calculator — What a Seller Keeps | mQuickCalc</title>
+  <meta name="description" content="See what a Vinted seller keeps (no selling fee) and what the buyer is charged with the buyer protection fee. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/vinted-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vinted Fee Calculator — What a Seller Keeps | mQuickCalc">
+  <meta name="twitter:description" content="See what a Vinted seller keeps (no selling fee) and what the buyer is charged with the buyer protection fee. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Vinted Fee Calculator — What a Seller Keeps | mQuickCalc">
+  <meta property="og:description" content="See what a Vinted seller keeps (no selling fee) and what the buyer is charged with the buyer protection fee. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Vinted Fee Calculator","url":"https://finance.mquickcalc.com/tools/vinted-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Show Vinted seller payout and buyer protection fee."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Vinted charge sellers a fee?","acceptedAnswer":{"@type":"Answer","text":"In most markets, no commission — sellers keep the listed price. Shipping and a buyer protection fee are handled on the buyer's side."}},{"@type":"Question","name":"What does a buyer pay on Vinted?","acceptedAnswer":{"@type":"Answer","text":"The item price plus shipping, and in many countries a small buyer protection fee. This is why sellers can offer lower net prices than on fee-taking marketplaces."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/vinted-fee-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Vinted Fee Calculator","item":"https://finance.mquickcalc.com/tools/vinted-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">Vinted Fee Calculator</h1>
+    <p class="lede">Vinted is the seller-friendly one: there's <strong>no selling fee</strong> for the seller, and the buyer pays a protection fee on top. Here's what each side pays.</p>
+
+
+    <div class="calc-card">
+      <label for="price">Item price</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="15.00">
+
+      <label for="ship">Shipping cost paid by you (seller, optional)</label>
+      <input id="ship" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0">
+      <p class="dim" style="margin-top:6px;">On Vinted buyers typically pay shipping via the label, so this is usually $0.</p>
+
+      <label for="protect" style="display:flex;align-items:center;gap:8px;margin-top:14px;"><input type="checkbox" id="protect" checked> Buyer protection fee is included in the listed price (adds to buyer total)</label>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">Seller keeps</div>
+        <div class="big" id="sellerVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Seller fee</div><div class="val" id="sellFeeVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Buyer protection (incl.)</div><div class="val" id="protectVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Buyer pays total</div><div class="val" id="buyerVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Vinted has no seller commission in most markets; sellers receive the full listed price. Roughly $0.70 (or a small %) is folded into the buyer's price as buyer protection in some countries. Confirm current rules locally.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Why sellers often pick Vinted</div>
+      <p>Unlike Depop or Poshmark, Vinted doesn't take a percentage of the sale. In most markets you keep the exact price you list. To fund protections and shipping, the <strong>buyer protection fee</strong> sits on the buyer's side — which is a lighter model for sellers.</p>
+    </div>
+
+    <h2>How Vinted fees work</h2>
+<p>Vinted operates on a buyer-protection model where the seller pays a service fee on each sale. The fee structure varies by country but typically ranges from 5% to 19% of the item price, with a minimum fee per transaction.</p>
+<p>Unlike Depop or Poshmark, Vinted's fee is automatically deducted from your sale price. There are no listing fees or monthly subscription costs, making it low-risk for casual sellers. However, the fee percentage is one of the highest among second-hand marketplaces.</p>
+<p>To maximize profits, consider bundling items to reach higher price points (reducing the percentage impact), pricing for offers (most buyers on Vinted expect discounts), and using Vinted's shipping labels which can sometimes reduce overall costs compared to postal services.</p>
+
+<h2>Frequently asked questions</h2>
+    <h3>Does Vinted charge sellers a fee?</h3>
+    <p>In most markets, no commission — sellers keep the listed price. Shipping and a buyer protection fee are handled on the buyer's side.</p>
+    <h3>What does a buyer pay on Vinted?</h3>
+    <p>The item price plus shipping, and in many countries a small buyer protection fee. This is why sellers can offer lower net prices than on fee-taking marketplaces.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/etsy-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧶</span><div class="tc-title">Etsy Fee Calculator</div></div><div class="tc-desc">Calculate Etsy listing, transaction, and payment fees.</div></a>
+        <a href="/tools/etsy-eu-vat-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🇪🇺</span><div class="tc-title">Etsy EU VAT</div></div><div class="tc-desc">EU VAT impact on your Etsy sales price.</div></a>
+        <a href="/tools/etsy-offsite-ads-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📣</span><div class="tc-title">Etsy Offsite Ads</div></div><div class="tc-desc">ROI from Etsy's offsite ad program.</div></a>
+        <a href="/tools/ebay-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🅴🅱️</span><div class="tc-title">eBay Fee Calculator</div></div><div class="tc-desc">Final value fees, insertion fees, and more.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/amazon-fba-revenue-calculator">Amazon FBA &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function calc() {
+    var price = parseFloat(document.getElementById('price').value) || 0;
+    var ship = parseFloat(document.getElementById('ship').value) || 0;
+    var withProtect = document.getElementById('protect').checked;
+    var sellerFee = 0;
+    var protect = withProtect ? Math.max(0.70, price * 0.05) : 0; // approx buyer protection
+    var seller = price - sellerFee - ship;
+    var buyer = price + protect;
+    document.getElementById('sellerVal').textContent = money(seller);
+    document.getElementById('sellFeeVal').textContent = money(sellerFee);
+    document.getElementById('protectVal').textContent = money(protect);
+    document.getElementById('buyerVal').textContent = money(buyer);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('price').value = '15.00'; document.getElementById('ship').value = '0'; document.getElementById('protect').checked = true; calc(); });
+  calc();
+
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

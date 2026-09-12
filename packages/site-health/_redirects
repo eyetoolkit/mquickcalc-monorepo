@@ -1,0 +1,2 @@
+# health.mquickcalc.com extensionless URLs
+https://health.mquickcalc.com/*.html  https://health.mquickcalc.com/:splat  301

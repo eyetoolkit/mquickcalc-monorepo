@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Money Calculator — Estimate Ad Revenue | mQuickCalc</title>
+  <meta name="description" content="Estimate how much a YouTube video or channel earns from views. Enter views and RPM for your niche to estimate ad revenue. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/youtube-money">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube Money Calculator — Estimate Ad Revenue | mQuickCalc">
+  <meta name="twitter:description" content="Estimate how much a YouTube video or channel earns from views. Enter views and RPM for your niche to estimate ad revenue. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="YouTube Money Calculator — Estimate Ad Revenue | mQuickCalc">
+  <meta property="og:description" content="Estimate how much a YouTube video or channel earns from views. Enter views and RPM for your niche to estimate ad revenue. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Money Calculator","url":"https://finance.mquickcalc.com/tools/youtube-money","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate YouTube ad revenue from views and RPM."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does YouTube pay per 1,000 views?","acceptedAnswer":{"@type":"Answer","text":"It depends on your niche and audience. Finance/B2B channels can earn $10–$20+ RPM, while general entertainment often sits around $1–$4. This calculator helps you compare scenarios."}},{"@type":"Question","name":"Do I get all of the RPM shown?","acceptedAnswer":{"@type":"Answer","text":"No. RPM already accounts for YouTube's revenue share and the fact that not all views are monetized, but ad blockers, low-ad-inventory regions and seasonal ad rates can still pull actual earnings below the estimate."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/youtube-money">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"YouTube Money Calculator","item":"https://finance.mquickcalc.com/tools/youtube-money"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">YouTube Money Calculator</h1>
+    <p class="lede">Estimate a YouTube video's ad revenue from total views and RPM. Use a preset niche RPM or enter your own.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="views">Total views</label>
+          <input id="views" class="input" type="number" inputmode="numeric" min="0" step="1" value="100000">
+        </div>
+        <div class="field">
+          <label for="niche">Niche / RPM preset</label>
+          <select id="niche" class="input">
+            <option value="3">General / entertainment (≈$3)</option>
+            <option value="10" selected>Finance &amp; investing (≈$10)</option>
+            <option value="8">Tech reviews (≈$8)</option>
+            <option value="15">Insurance / B2B (≈$15)</option>
+            <option value="4">Gaming (≈$4)</option>
+            <option value="6">Lifestyle &amp; DIY (≈$6)</option>
+            <option value="custom">Custom RPM</option>
+          </select>
+        </div>
+        <div class="field" id="customField" style="display:none;">
+          <label for="rpm">Custom RPM ($ per 1k views)</label>
+          <input id="rpm" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="10">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="rpmLine"></div>
+        <div class="big" id="revenueVal">$0.00</div>
+        <div class="dim">estimated creator revenue — YouTube's share already deducted</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">RPM</div><div class="val" id="rpmVal">$10.00</div></div>
+          <div class="cell"><div class="lbl">Est. advertiser spend (gross)</div><div class="val" id="cutVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">The big number is what you keep: RPM already reflects YouTube's cut and non-monetized views, so it is not deducted twice. The gross figure reverses out YouTube's ~45% share to show what advertisers roughly paid. Actual earnings depend on audience location, ad types and ad blockers — RPM is never guaranteed.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">About RPM</div>
+      <p><strong>RPM</strong> (revenue per mille) is total estimated revenue per <strong>1,000 views</strong>. Unlike CPM, RPM already reflects both what advertisers pay and YouTube's share. Niche RPMs vary widely, so treat presets as ballpark figures.</p>
+    </div>
+
+    <h2>How YouTube revenue works</h2>
+    <p>To earn from ads you need to join the YouTube Partner Program (roughly 1,000 subscribers and 4,000 watch hours in the past year, or 10 million Shorts views). Revenue comes from ads shown on your videos, with YouTube generally keeping roughly half of ad revenue (the effective split is reflected in your RPM).</p>
+    <p>Only <strong>monetized</strong> views generate income — views with ad blockers or on un-monetized videos count for nothing. That's why two videos with similar view counts can earn very different amounts.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much does YouTube pay per 1,000 views?</h3>
+    <p>It depends on your niche and audience. Finance/B2B channels can earn $10–$20+ RPM, while general entertainment often sits around $1–$4. This calculator helps you compare scenarios.</p>
+    <h3>Do I get all of the RPM shown?</h3>
+    <p>No. RPM already accounts for YouTube's revenue share and the fact that not all views are monetized, but ad blockers, low-ad-inventory regions and seasonal ad rates can still pull actual earnings below the estimate.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/patreon-plan-comparison" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Patreon Plan Comparison</div></div><div class="tc-desc">Lite vs Pro vs Premium — which pays more?</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/twitch-sub-revenue">Twitch Subscription Revenue &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function currentRpm() {
+    var sel = document.getElementById('niche').value;
+    if (sel === 'custom') { return parseFloat(document.getElementById('rpm').value) || 0; }
+    return parseFloat(sel) || 0;
+  }
+  function calc() {
+    var views = Math.max(parseInt(document.getElementById('views').value, 10) || 0, 0);
+    var rpm = currentRpm();
+    var revenue = (views / 1000) * rpm;
+    var cut = revenue / 0.55; // gross advertiser spend implied by creator RPM (YouTube keeps ~45%)
+    var fmt = function (n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); };
+    document.getElementById('rpmLine').textContent = views.toLocaleString('en-US') + ' views';
+    document.getElementById('revenueVal').textContent = fmt(revenue);
+    document.getElementById('rpmVal').textContent = fmt(rpm);
+    document.getElementById('cutVal').textContent = fmt(cut);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('niche').addEventListener('change', function () {
+    document.getElementById('customField').style.display = (this.value === 'custom') ? 'block' : 'none';
+  });
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('views').value = '100000';
+    document.getElementById('niche').value = '10';
+    document.getElementById('customField').style.display = 'none';
+    calc();
+  });
+  calc();
+
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

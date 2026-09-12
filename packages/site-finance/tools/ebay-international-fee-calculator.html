@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBay International Fee Calculator | mQuickCalc Finance</title>
+  <meta name="description" content="Estimate eBay fees for US domestic, US international and UK/DE/CA/AU sales: final value fee, international surcharge and fixed fee. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/ebay-international-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="eBay International Fee Calculator — Domestic &amp; Cross-Border | mQuickCalc">
+  <meta name="twitter:description" content="Estimate eBay fees for US domestic, US international and UK/DE/CA/AU sales: final value fee, international surcharge and fixed fee. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="eBay International Fee Calculator — Domestic &amp; Cross-Border | mQuickCalc">
+  <meta property="og:description" content="Estimate eBay fees for US domestic, US international and UK/DE/CA/AU sales: final value fee, international surcharge and fixed fee. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"eBay International Fee Calculator","url":"https://finance.mquickcalc.com/tools/ebay-international-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate eBay fees for domestic and cross-border sales."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is eBay's international fee for US sellers?","acceptedAnswer":{"@type":"Answer","text":"An extra percentage (commonly 1.65%) charged on top of the final value fee when a US seller's sale is to an international buyer."}},{"@type":"Question","name":"Do eBay UK and Germany fees differ from the US?","acceptedAnswer":{"@type":"Answer","text":"Yes. UK typically charges a percentage plus a fixed amount per sale, and Germany a similar structure — rates also vary by category. Always confirm the current fee table for your market."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/ebay-international-fee-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"eBay International Fee Calculator","item":"https://finance.mquickcalc.com/tools/ebay-international-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>eBay International Fee Calculator</span></nav></div>
+
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🌍</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">eBay International Fee Calculator</h1>
+    <p class="lede">Compare eBay fees on domestic vs. cross-border sales across the US, UK, Germany, Canada and Australia — including the US international sale surcharge.</p>
+
+
+    <div class="calc-card">
+      <label for="market">eBay market / sale type</label>
+      <select id="market" class="input">
+        <option value="us-dom">US — domestic sale</option>
+        <option value="us-intl">US — international sale</option>
+        <option value="uk">UK</option>
+        <option value="de">Germany</option>
+        <option value="ca">Canada</option>
+        <option value="au">Australia</option>
+      </select>
+
+      <label for="price">Sale price</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="100.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="feePct">Final value fee %</label>
+          <input id="feePct" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="13.25">
+        </div>
+        <div class="field">
+          <label for="intlPct">International surcharge %</label>
+          <input id="intlPct" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1.65">
+        </div>
+      </div>
+      <label for="fixed">Fixed fee per sale</label>
+      <input id="fixed" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0.30">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">total eBay fees</div>
+        <div class="big" id="totVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Final value fee</div><div class="val" id="feeVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">International surcharge</div><div class="val" id="intlVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Fixed fee</div><div class="val" id="fixedVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">You net</div><div class="val" id="netVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Rates vary by category, seller level and over time — the presets are starting points, not quotes. Results display in the currency you enter.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">The US international sale fee</div>
+      <p>For US sellers, eBay adds an <strong>international fee</strong> (commonly 1.65%) when the buyer is outside the US, on top of the standard final value fee. Other markets have their own structure — UK and Germany charge a percentage plus a fixed amount per sale. Category rates can differ, so check the fee table for your category.</p>
+    </div>
+
+    
+    <h2>How eBay fees work</h2><p>eBay charges an Insertion fee for listing (free for most categories within monthly free listing allowances) and a Final Value Fee (a percentage of the sale price including shipping). Managed Payments adds payment processing fees.</p>
+<h2>Frequently asked questions</h2>
+    <h3>What is eBay's international fee for US sellers?</h3>
+    <p>An extra percentage (commonly 1.65%) charged on top of the final value fee when a US seller's sale is to an international buyer.</p>
+    <h3>Do eBay UK and Germany fees differ from the US?</h3>
+    <p>Yes. UK typically charges a percentage plus a fixed amount per sale, and Germany a similar structure — rates also vary by category. Always confirm the current fee table for your market.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/etsy-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧶</span><div class="tc-title">Etsy Fee Calculator</div></div><div class="tc-desc">Calculate Etsy listing, transaction, and payment fees.</div></a>
+        <a href="/tools/etsy-eu-vat-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🇪🇺</span><div class="tc-title">Etsy EU VAT</div></div><div class="tc-desc">EU VAT impact on your Etsy sales price.</div></a>
+        <a href="/tools/etsy-offsite-ads-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📣</span><div class="tc-title">Etsy Offsite Ads</div></div><div class="tc-desc">ROI from Etsy's offsite ad program.</div></a>
+        <a href="/tools/ebay-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🅴🅱️</span><div class="tc-title">eBay Fee Calculator</div></div><div class="tc-desc">Final value fees, insertion fees, and more.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-08">Sep 8, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/ebay-fee-calculator">eBay Fee Calculator &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
+  function pct(n) { return (n * 100).toFixed(2) + '%'; }
+  var PRESETS = {
+    'us-dom':  { fee: '13.25', intl: '0',    fixed: '0.30' },
+    'us-intl': { fee: '13.25', intl: '1.65', fixed: '0.30' },
+    'uk':      { fee: '12.80', intl: '0',    fixed: '0.30' },
+    'de':      { fee: '12.00', intl: '0',    fixed: '0.35' },
+    'ca':      { fee: '13.25', intl: '0',    fixed: '0.30' },
+    'au':      { fee: '13.26', intl: '0',    fixed: '0.30' }
+  };
+  function applyPreset() {
+    var p = PRESETS[document.getElementById('market').value];
+    document.getElementById('feePct').value = p.fee;
+    document.getElementById('intlPct').value = p.intl;
+    document.getElementById('fixed').value = p.fixed;
+  }
+  function calc() {
+    var price = parseFloat(document.getElementById('price').value) || 0;
+    var fee = (parseFloat(document.getElementById('feePct').value) || 0) / 100;
+    var intl = (parseFloat(document.getElementById('intlPct').value) || 0) / 100;
+    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+    var feeVal = price * fee;
+    var intlVal = price * intl;
+    var total = feeVal + intlVal + fixed;
+    var net = price - total;
+    document.getElementById('totVal').textContent = money(total);
+    document.getElementById('feeVal').textContent = money(feeVal);
+    document.getElementById('intlVal').textContent = money(intlVal);
+    document.getElementById('fixedVal').textContent = money(fixed);
+    document.getElementById('netVal').textContent = money(net);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('market').addEventListener('change', function () { applyPreset(); calc(); });
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('market').value = 'us-intl'; document.getElementById('price').value = '100.00'; applyPreset(); calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

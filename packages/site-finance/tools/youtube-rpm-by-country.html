@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube RPM Calculator by Country | mQuickCalc Finance</title>
+  <meta name="description" content="See how your viewers' countries shape earnings: enter view share and RPM per region to get a blended RPM and estimated revenue. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/youtube-rpm-by-country">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube RPM by Country Calculator — Blended RPM From Your View Mix | mQuickCalc">
+  <meta name="twitter:description" content="See how your viewers' countries shape earnings: enter view share and RPM per region to get a blended RPM and estimated revenue. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="YouTube RPM by Country Calculator — Blended RPM From Your View Mix | mQuickCalc">
+  <meta property="og:description" content="See how your viewers">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube RPM by Country Calculator","url":"https://finance.mquickcalc.com/tools/youtube-rpm-by-country","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate blended YouTube RPM by geography."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's a good YouTube RPM?","acceptedAnswer":{"@type":"Answer","text":"US-heavy finance and tech channels can see $8–20+, while global general content often lands $1–4. Your blended RPM is a weighted average of your viewers' countries."}},{"@type":"Question","name":"How do I find my RPM by country?","acceptedAnswer":{"@type":"Answer","text":"In YouTube Studio, go to Analytics → Revenue and filter by country. Divide each country's revenue by its views (per 1,000) to get its RPM."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/youtube-rpm-by-country">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"YouTube RPM by Country Calculator","item":"https://finance.mquickcalc.com/tools/youtube-rpm-by-country"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on published platform fee rates. Actual fees may differ based on account type, location, volume, and platform changes. Always verify official documentation before financial decisions. See our <a href="/disclaimer">disclaimer</a>.
+</div>
+    <h1 class="page-title">YouTube RPM by Country Calculator</h1>
+    <p class="lede">US views pay far more per thousand than most other countries. Enter your view mix and per-region RPM to get a blended RPM and a realistic revenue estimate.</p>
+
+
+    <div class="calc-card">
+      <label for="views">Total views</label>
+      <input id="views" class="input" type="number" inputmode="decimal" min="0" step="1" value="100000">
+
+      <div class="geo-rows">
+        <div class="geo-row">
+          <div class="field"><label for="s1">US &amp; Canada — share %</label><input id="s1" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="50"></div>
+          <div class="field"><label for="r1">RPM ($)</label><input id="r1" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="8.00"></div>
+        </div>
+        <div class="geo-row">
+          <div class="field"><label for="s2">UK / AU / Western EU — share %</label><input id="s2" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="30"></div>
+          <div class="field"><label for="r2">RPM ($)</label><input id="r2" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="5.50"></div>
+        </div>
+        <div class="geo-row">
+          <div class="field"><label for="s3">Other EU / Japan / Korea — share %</label><input id="s3" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="10"></div>
+          <div class="field"><label for="r3">RPM ($)</label><input id="r3" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="3.00"></div>
+        </div>
+        <div class="geo-row">
+          <div class="field"><label for="s4">Rest of world — share %</label><input id="s4" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="10"></div>
+          <div class="field"><label for="r4">RPM ($)</label><input id="r4" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1.00"></div>
+        </div>
+      </div>
+      <p class="dim" style="margin-top:8px;">Shares are used as relative weights, so they don't need to add up to exactly 100.</p>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">blended RPM across your viewers</div>
+        <div class="big" id="rpmVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Estimated revenue</div><div class="val" id="revVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Revenue per 1k views</div><div class="val" id="perKVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">RPM varies hugely by niche, ad format and month — treat these as planning numbers, not guarantees. The biggest lever is the share of views from high-RPM countries.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Why geography matters for RPM</div>
+      <p>Advertisers pay far more for US, Canada, UK, Australia and Western EU viewers. Two channels with the same views can earn very different money — the one with the richer view mix wins. If most of your audience is low-RPM regions, niche-specific sponsors and memberships often beat pure ad revenue.</p>
+    </div>
+
+    
+    <h2>How YouTube revenue works</h2><p>YouTube pays from its ad revenue pool to creators in the Partner Program. AdSense RPM varies by viewer location, content type, and ad demand. This calculator estimates monthly earnings from views and RPM.</p>
+<h2>Frequently asked questions</h2>
+    <h3>What's a good YouTube RPM?</h3>
+    <p>US-heavy finance and tech channels can see $8–20+, while global general content often lands $1–4. Your blended RPM is a weighted average of your viewers' countries.</p>
+    <h3>How do I find my RPM by country?</h3>
+    <p>In YouTube Studio, go to Analytics → Revenue and filter by country. Divide each country's revenue by its views (per 1,000) to get its RPM.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/patreon-plan-comparison" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Patreon Plan Comparison</div></div><div class="tc-desc">Lite vs Pro vs Premium — which pays more?</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-08">Sep 8, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/youtube-money">YouTube Money &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
+  function calc() {
+    var views = parseFloat(document.getElementById('views').value) || 0;
+    var shares = [], rpms = [];
+    for (var i = 1; i <= 4; i++) {
+      shares.push(parseFloat(document.getElementById('s' + i).value) || 0);
+      rpms.push(parseFloat(document.getElementById('r' + i).value) || 0);
+    }
+    var totShare = shares.reduce(function (a, b) { return a + b; }, 0);
+    var blended = 0;
+    if (totShare > 0) {
+      var w = 0;
+      for (var j = 0; j < 4; j++) w += shares[j] * rpms[j];
+      blended = w / totShare;
+    }
+    var revenue = views / 1000 * blended;
+    document.getElementById('rpmVal').textContent = money(blended);
+    document.getElementById('revVal').textContent = money(revenue);
+    document.getElementById('perKVal').textContent = money(blended);
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('views').value = '100000';
+    document.getElementById('s1').value = '50'; document.getElementById('r1').value = '8.00';
+    document.getElementById('s2').value = '30'; document.getElementById('r2').value = '5.50';
+    document.getElementById('s3').value = '10'; document.getElementById('r3').value = '3.00';
+    document.getElementById('s4').value = '10'; document.getElementById('r4').value = '1.00';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

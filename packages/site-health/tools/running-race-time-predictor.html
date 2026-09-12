@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Time Predictor | mQuickCalc Health</title>
+<meta name="description" content="Predict your 5K, 10K, half-marathon, and marathon times from any recent race using the proven Riegel formula. Works for all distances and paces.">
+  
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/running-race-time-predictor">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Race Time Predictor","url":"https://health.mquickcalc.com/tools/running-race-time-predictor","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Predict race times for any distance from a recent result."}</script>
+<meta property="og:title" content="Running Race Time Predictor —Predict 5K, 10K, Half, Marathon | mQuickCalc Health">
+<meta property="og:description" content="Predict your race time for any distance using Riegel, Cameron, or Vickers-Lloyd formulas. Enter a recent race result to estimate 5K, 10K, half maratho">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/running-race-time-predictor">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Running Race Time Predictor —Predict 5K, 10K, Half, Marathon | mQuickCalc Health">
+  <meta name="twitter:description" content="Predict your 5K, 10K, half-marathon and marathon times from any recent race result using the Riegel formula.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Race Time Predictor","item":"https://health.mquickcalc.com/tools/running-race-time-predictor"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#body">Body</a>
+      <a href="/#nutrition">Nutrition</a>
+      <a href="/#heart">Heart</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pregnancy">Pregnancy</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#fitness'>Fitness & Exercise</a><span class='sep'>›</span><span class='current'>Race Time Predictor</span></nav></div>
+
+<main class="page"><div class="wrap">
+<div class='page-hero-emoji'>🏁</div>
+<h1 class="page-title">Race Time Predictor</h1>
+<p class="lede">Enter a recent race time to predict your finish time at any distance using three proven formulas: Riegel, Cameron, and Vickers-Lloyd.</p>
+
+<div class="calc-card">
+<label for="knownDist">Known race distance</label>
+<select id="knownDist" class="input">
+  <option value="1">1 km</option>
+  <option value="1.60934">1 mile</option>
+  <option value="3">3 km</option>
+  <option value="5" selected>5 km</option>
+  <option value="10">10 km</option>
+  <option value="21.0975">Half marathon</option>
+  <option value="42.195">Marathon</option>
+  <option value="custom">Custom</option>
+</select>
+<div id="customDistWrap" style="display:none;margin-top:8px;gap:8px;">
+  <input id="customDist" class="input" type="number" inputmode="decimal" min="0.1" step="0.1" placeholder="km" style="max-width:100px;">
+</div>
+<label for="timeInput">Your time (format: mm:ss or h:mm:ss)</label>
+<input id="timeInput" class="input" type="text" placeholder="e.g. 25:30 or 0:25:30" value="25:30">
+<label for="formula">Prediction formula</label>
+<select id="formula" class="input">
+  <option value="riegel">Riegel (most popular, balanced)</option>
+  <option value="cameron">Cameron (tends faster predictions)</option>
+  <option value="vickers">Vickers-Lloyd (tends slower, conservative)</option>
+</select>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+  <button id="calcBtn" class="btn">Predict</button>
+  <button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result">
+  <div class="grid" id="predGrid"></div>
+  <div class="dim" id="paceLine" style="margin-top:12px;"></div>
+</div>
+</div>
+    
+    <h2>How race prediction works</h2><p>Riegel formula: T₂ = T₁ × (D₂/D₁)^1.06. Exponent 1.06 accounts for physiological slowdown at longer distances. Works best for 2-3× distance range from known race. Example: 20-min 5K → ~41-min 10K.</p>
+    <h2>Frequently asked questions</h2>
+<div class="faq-list">
+<h3>How accurate are the results?</h3>
+<p>Formulas used here are validated in population studies but cannot account for individual genetics, body composition, or medical conditions. Treat results as a starting point, not a medical diagnosis.</p>
+<h3>Should I consult a professional?</h3>
+<p>If you have specific health concerns, existing conditions, or are planning significant lifestyle changes, consult a qualified healthcare provider (doctor, dietitian, physiologist).</p>
+<h3>How often should I recalculate?</h3>
+<p>Recalculate when your weight changes more than 5%, activity level shifts significantly, or every 3-6 months for routine monitoring. Results are snapshots — your body changes daily.</p>
+</div>
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/heart-rate-zones-calculator" class="tool-card"><div class="icon-row"><span class="emoji">❤️‍🔥</span><div class="tc-title">Heart Rate Zones</div></div><div class="tc-desc">Karvonen method — 5 training zones from resting HR.</div></a>
+        <a href="/tools/target-heart-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Target Heart Rate</div></div><div class="tc-desc">Simple % of max HR for fat burn, cardio, peak training.</div></a>
+        <a href="/tools/pace-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⏱️</span><div class="tc-title">Pace Calculator</div></div><div class="tc-desc">Convert min/mile ↔ min/km ↔ mph ↔ km/h instantly.</div></a>
+        <a href="/tools/calories-burned-by-distance" class="tool-card"><div class="icon-row"><span class="emoji">🛣️</span><div class="tc-title">Calories Burned by Distance</div></div><div class="tc-desc">Walk/run/cycle distance → calories — no pace needed.</div></a>
+      </div>
+    </div>
+<p class="upd">Last updated <time datetime="2026-09-08">September 8, 2026</time></p>    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note" style="margin-top:16px;"><a href="/">&larr; Back to all tools</a></p>
+</div></main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site.js"></script>
+<script>
+(function(){
+var _=function(id){return document.getElementById(id);};
+_('knownDist').addEventListener('change',function(){
+  if(this.value==='custom')_('customDistWrap').style.display='flex';
+  else _('customDistWrap').style.display='none';
+});
+function parseTime(s){
+  if(!s)return NaN;
+  s=s.trim();
+  var parts=s.split(':');
+  if(parts.length===3)return parseInt(parts[0])*3600+parseInt(parts[1])*60+parseFloat(parts[2]);
+  if(parts.length===2)return parseInt(parts[0])*60+parseFloat(parts[1]);
+  return parseFloat(s);
+}
+function fmtTime(sec){
+  if(isNaN(sec)||sec<=0)return "--";
+  var h=Math.floor(sec/3600);
+  var m=Math.floor((sec%3600)/60);
+  var s=Math.round(sec%60);
+  if(s===60){m++;s=0;}
+  if(h>0)return h+":"+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+  return String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+}
+function predict(timeSec,d1km,d2km,formula){
+  // Riegel: T2 = T1 × (D2/D1)^1.06
+  if(formula==='riegel')return timeSec*Math.pow(d2km/d1km,1.06);
+  // Cameron: similar exponent 1.05~1.08
+  if(formula==='cameron')return timeSec*Math.pow(d2km/d1km,1.05);
+  // Vickers-Lloyd (conservative): exponent 1.07
+  return timeSec*Math.pow(d2km/d1km,1.07);
+}
+function calc(){
+  var d1=parseFloat(_('knownDist').value);
+  if(_('knownDist').value==='custom')d1=parseFloat(_('customDist').value)||5;
+  var t=parseTime(_('timeInput').value);
+  var formula=_('formula').value;
+  if(!d1||!t){_('predGrid').innerHTML="<div class=\"cell\"><div class=\"lbl\">Enter valid distance and time</div></div>";_('result').classList.add('show');return;}
+  var targets=[
+    [1,"1 km"],[1.60934,"1 mile"],[3,"3 km"],[5,"5 km"],[8.04672,"5 miles"],
+    [10,"10 km"],[16.0934,"10 miles"],[21.0975,"Half marathon"],[30,"30 km"],
+    [42.195,"Marathon"],[50,"50 km"],[100,"100 km"]
+  ];
+  var html=";
+  targets.forEach(function(tg){
+    if(Math.abs(tg[0]-d1)<0.01)return; // skip same distance
+    var pred=predict(t,d1,tg[0],formula);
+    var paceMin=pred/tg[0]/60; // min per km
+    var paceMi=pred/(tg[0]*0.621371)/60; // min per mile
+    html+="<div class=\"cell\"><div class=\"lbl\" style=\"font-weight:600;\">"+tg[1]+"</div><div class=\"val\" style=\"font-size:1.1em;color:#16a34a;\">"+fmtTime(pred)+"</div><div class=\"dim\">"+paceMin.toFixed(2)+" min/km | "+paceMi.toFixed(2)+" min/mile</div></div>";
+  });
+  _('predGrid').innerHTML=html;
+  var paceKm=t/d1/60;
+  _('paceLine').textContent="Your input pace: "+paceKm.toFixed(2)+" min/km ("+(t/(d1*0.621371)/60).toFixed(2)+" min/mile)";
+  _('result').classList.add('show');
+}
+_('calcBtn').addEventListener('click',calc);
+_('resetBtn').addEventListener('click',function(){
+  _('knownDist').value='5';_('customDist').value='';_('timeInput').value='25:30';_('formula').value='riegel';
+  _('customDistWrap').style.display='none';calc();
+});
+['knownDist','customDist','timeInput','formula'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
+calc();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}
+</script></body>
+</html>

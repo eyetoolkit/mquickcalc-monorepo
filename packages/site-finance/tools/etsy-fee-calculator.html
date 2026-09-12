@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etsy Fee Calculator & Net Profit | mQuickCalc Finance</title>
+  <meta name="description" content="Calculate Etsy listing, transaction, payment processing, regulatory and off-site ad fees, then see your estimated net profit per sale. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/etsy-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Etsy Fee Calculator — Estimate Fees &amp; Take-Home Profit | mQuickCalc">
+  <meta name="twitter:description" content="Calculate Etsy listing, transaction, payment processing, regulatory and off-site ad fees, then see your estimated net profit per sale. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Etsy Fee Calculator — Estimate Fees &amp; Take-Home Profit | mQuickCalc">
+  <meta property="og:description" content="Calculate Etsy listing, transaction, payment processing, regulatory and off-site ad fees, then see your estimated net profit per sale. Free, no sign-u">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Etsy Fee Calculator","url":"https://finance.mquickcalc.com/tools/etsy-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Etsy selling fees and net profit."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does Etsy take per sale?","acceptedAnswer":{"@type":"Answer","text":"It varies. With a $25 item and defaults above, roughly $2.93–$3.00 is deducted in fees, leaving about $22.07–$22.08 before off-site ads. Adjust the editable fields to match your exact situation."}},{"@type":"Question","name":"Is the off-site ads fee always charged?","acceptedAnswer":{"@type":"Answer","text":"No. It only applies when the sale is attributed to Etsy's off-site ads program. If you sell all your items through your own traffic, keep it at 0%."}},{"@type":"Question","name":"Why is my net amount different from this?","acceptedAnswer":{"@type":"Answer","text":"Shipping fees, discounts, refunds, currency conversion and regional fees can all change the outcome. Treat this as a planning estimate."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/etsy-fee-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Etsy Fee Calculator","item":"https://finance.mquickcalc.com/tools/etsy-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>Etsy Fee Calculator</span></nav></div>
+
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🧶</div>
+<h1 class="page-title">Etsy Fee Calculator</h1>
+    <p class="lede">Enter your sale details to see the Etsy fees deducted and roughly how much you keep after a sale. All rates are editable so you can match your shop and currency.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="price">Item price</label>
+          <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="25.00">
+        </div>
+        <div class="field">
+          <label for="shipping">Shipping (per item)</label>
+          <input id="shipping" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0">
+        </div>
+        <div class="field">
+          <label for="qty">Quantity sold</label>
+          <input id="qty" class="input" type="number" inputmode="numeric" min="1" step="1" value="1">
+        </div>
+      </div>
+
+      <label for="trans">Transaction fee %</label>
+      <input id="trans" class="input" type="number" inputmode="decimal" step="0.01" value="6.5">
+
+      <div class="row">
+        <div class="field">
+          <label for="paypct">Payment processing %</label>
+          <input id="paypct" class="input" type="number" inputmode="decimal" step="0.01" value="3.0">
+        </div>
+        <div class="field">
+          <label for="payflat">Payment processing fixed</label>
+          <input id="payflat" class="input" type="number" inputmode="decimal" step="0.01" value="0.25">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="reg">Regulatory operating fee %</label>
+          <input id="reg" class="input" type="number" inputmode="decimal" step="0.01" value="0.25">
+        </div>
+        <div class="field">
+          <label for="listing">Listing fee</label>
+          <input id="listing" class="input" type="number" inputmode="decimal" step="0.01" value="0.20">
+        </div>
+        <div class="field">
+          <label for="offsite">Off-site ads fee %</label>
+          <input id="offsite" class="input" type="number" inputmode="decimal" step="0.01" value="0">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="grossLine"></div>
+        <div class="big" id="netVal">$0.00</div>
+        <div class="dim">estimated take-home profit</div>
+        <div class="grid" id="breakdown"></div>
+        <p class="note" style="margin-top:12px;">Fees are estimates. Etsy fee structure and rates change over time and vary by country — always confirm against Etsy's own fee information.</p>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="t">A note on accuracy</div>
+      <p>These defaults reflect commonly cited Etsy fees, but totals are approximate. Regulatory operating fees differ by country and can be 0% in some locations, and off-site ads only apply to orders attributed to Etsy's off-site ads program.</p>
+    </div>
+
+    <h2>How Etsy seller fees work</h2>
+    <p>Etsy deducts fees from each sale before you receive your payout. The main ones are a <strong>transaction fee</strong> on the item price, a <strong>payment processing fee</strong>, a <strong>listing fee</strong> per active listing, and in some countries a <strong>regulatory operating fee</strong>. Orders sent through <strong>off-site ads</strong> also incur an ad fee.</p>
+    <p>Use this tool to price products so you keep the margin you want after fees.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much does Etsy take per sale?</h3>
+    <p>It varies. With a $25 item and defaults above, roughly $2.93–$3.00 is deducted in fees, leaving about $22.07–$22.08 before off-site ads. Adjust the editable fields to match your exact situation.</p>
+    <h3>Is the off-site ads fee always charged?</h3>
+    <p>No. It only applies when the sale is attributed to Etsy's off-site ads program. If you sell all your items through your own traffic, keep it at 0%.</p>
+    <h3>Why is my net amount different from this?</h3>
+    <p>Shipping fees, discounts, refunds, currency conversion and regional fees can all change the outcome. Treat this as a planning estimate.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/etsy-eu-vat-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🇪🇺</span><div class="tc-title">Etsy EU VAT</div></div><div class="tc-desc">EU VAT impact on your Etsy sales price.</div></a>
+        <a href="/tools/etsy-offsite-ads-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📣</span><div class="tc-title">Etsy Offsite Ads</div></div><div class="tc-desc">ROI from Etsy's offsite ad program.</div></a>
+        <a href="/tools/ebay-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🅴🅱️</span><div class="tc-title">eBay Fee Calculator</div></div><div class="tc-desc">Final value fees, insertion fees, and more.</div></a>
+        <a href="/tools/ebay-international-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌍</span><div class="tc-title">eBay International Fees</div></div><div class="tc-desc">Global shipping and currency conversion fees.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  const $ = function (id) { return document.getElementById(id); };
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' (USD)'; }
+  function estimate() {
+    const price = parseFloat($('price').value) || 0;
+    const shipping = parseFloat($('shipping').value) || 0;
+    const qty = Math.max(parseInt($('qty').value, 10) || 1, 1);
+    const trans = (parseFloat($('trans').value) || 0) / 100;
+    const paypct = (parseFloat($('paypct').value) || 0) / 100;
+    const payflat = parseFloat($('payflat').value) || 0;
+    const reg = (parseFloat($('reg').value) || 0) / 100;
+    const listing = parseFloat($('listing').value) || 0;
+    const offsite = (parseFloat($('offsite').value) || 0) / 100;
+
+    const gross = (price + shipping) * qty;
+    const transFee = gross * trans;
+    const payFee = gross * paypct + payflat * qty;
+    const regFee = gross * reg;
+    const listingFee = listing * qty;
+    const offsiteFee = gross * offsite;
+    const total = transFee + payFee + regFee + listingFee + offsiteFee;
+    const net = gross - total;
+
+    $('grossLine').textContent = 'Gross revenue: ' + money(gross) + '  ·  ' + qty + ' item(s) at ' + money(price) + ' each';
+    $('netVal').textContent = money(net);
+
+    const cells = [
+      ['Transaction fee', money(transFee)],
+      ['Payment processing', money(payFee)],
+      ['Regulatory fee', money(regFee)],
+      ['Listing fee', money(listingFee)],
+      ['Off-site ads', money(offsiteFee)]
+    ];
+    $('breakdown').innerHTML = cells.map(function (c) {
+      return '<div class="cell"><div class="lbl">' + c[0] + '</div><div class="val">' + c[1] + '</div></div>';
+    }).join('') +
+      '<div class="cell"><div class="lbl">Total fees</div><div class="val">' + money(total) + '</div></div>';
+    $('result').classList.add('show');
+  }
+  $('calcBtn').addEventListener('click', estimate);
+  $('resetBtn').addEventListener('click', function () {
+    var def = { price:'25.00', shipping:'0', qty:'1', trans:'6.5', paypct:'3.0', payflat:'0.25', reg:'0.25', listing:'0.20', offsite:'0' };
+    Object.keys(def).forEach(function (id) { $(id).value = def[id]; });
+    estimate();
+  });
+  estimate(); // run once on load
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), estimate);
+})();
+</script>
+</body>
+</html>

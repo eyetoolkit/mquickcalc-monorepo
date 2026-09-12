@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Subscription Revenue Calculator — Sub Income | mQuickCalc</title>
+  <meta name="description" content="Estimate monthly income from Twitch Tier 1, 2 and 3 subscriptions plus Prime subs, with adjustable streamer revenue split. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/twitch-sub-revenue">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Twitch Subscription Revenue Calculator — Sub Income | mQuickCalc">
+  <meta name="twitter:description" content="Estimate monthly income from Twitch Tier 1, 2 and 3 subscriptions plus Prime subs, with adjustable streamer revenue split. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Twitch Subscription Revenue Calculator — Sub Income | mQuickCalc">
+  <meta property="og:description" content="Estimate monthly income from Twitch Tier 1, 2 and 3 subscriptions plus Prime subs, with adjustable streamer revenue split. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Twitch Subscription Revenue Calculator","url":"https://finance.mquickcalc.com/tools/twitch-sub-revenue","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate monthly Twitch subscription income."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a Twitch streamer make per sub?","acceptedAnswer":{"@type":"Answer","text":"At a 50/50 split, roughly $2.50 per Tier 1, $5.00 per Tier 2 and $12.50 per Tier 3. At 70/30 it's higher for qualifying channels."}},{"@type":"Question","name":"Do Prime subs make the streamer money?","acceptedAnswer":{"@type":"Answer","text":"Yes — a Prime sub is effectively a Tier 1 sub included with Amazon Prime, and the streamer is paid the same split as a paid Tier 1 sub would produce."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/twitch-sub-revenue">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Twitch Subscription Revenue Calculator","item":"https://finance.mquickcalc.com/tools/twitch-sub-revenue"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">Twitch Subscription Revenue Calculator</h1>
+    <p class="lede">Estimate how much a channel earns from subscriptions in a month. Enter sub counts per tier and set the revenue split that applies to your channel.</p>
+
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="t1">Tier 1 subs ($4.99)</label>
+          <input id="t1" class="input" type="number" inputmode="numeric" min="0" step="1" value="100">
+        </div>
+        <div class="field">
+          <label for="t2">Tier 2 subs ($9.99)</label>
+          <input id="t2" class="input" type="number" inputmode="numeric" min="0" step="1" value="0">
+        </div>
+        <div class="field">
+          <label for="t3">Tier 3 subs ($24.99)</label>
+          <input id="t3" class="input" type="number" inputmode="numeric" min="0" step="1" value="0">
+        </div>
+        <div class="field">
+          <label for="prime">Prime subs (valued at Tier 1)</label>
+          <input id="prime" class="input" type="number" inputmode="numeric" min="0" step="1" value="0">
+        </div>
+      </div>
+
+      <label for="split">Streamer revenue share %</label>
+      <input id="split" class="input" type="number" inputmode="decimal" min="0" max="100" step="1" value="50">
+      <p class="dim" style="margin-top:6px;">Common values: 50 (50/50) or 70 (70/30 share programs).</p>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim" id="totalSubsLine"></div>
+        <div class="big" id="streamerVal">$0.00</div>
+        <div class="dim">estimated streamer revenue / month</div>
+        <div class="grid" id="breakdown"></div>
+        <p class="note" style="margin-top:12px;">Prices and the revenue split vary by channel status and location. Twitch deducts taxes and may apply regional differences — treat this as an estimate.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Tier prices (per month)</div>
+      <p>Tier 1: $4.99 &nbsp;·&nbsp; Tier 2: $9.99 &nbsp;·&nbsp; Tier 3: $24.99. <strong>Prime subs</strong> are included with an Amazon Prime membership and count toward a channel's sub number; here they are valued at the Tier 1 rate for revenue purposes.</p>
+    </div>
+
+    <h2>How Twitch subscription revenue is split</h2>
+    <p>A streamer and Twitch share the subscription fee. The classic split is <strong>50/50</strong> (streamer keeps $2.50 of a $4.99 Tier 1). Larger or qualifying channels can move to a <strong>70/30</strong> split, which changes every payout up to a per-sub revenue cap.</p>
+    <p>Use the editable share to model either split, then combine with Bits income for a fuller picture of channel earnings.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much does a Twitch streamer make per sub?</h3>
+    <p>At a 50/50 split, roughly $2.50 per Tier 1, $5.00 per Tier 2 and $12.50 per Tier 3. At 70/30 it's higher for qualifying channels.</p>
+    <h3>Do Prime subs make the streamer money?</h3>
+    <p>Yes — a Prime sub is effectively a Tier 1 sub included with Amazon Prime, and the streamer is paid the same split as a paid Tier 1 sub would produce.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/patreon-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💖</span><div class="tc-title">Patreon Fee Calculator</div></div><div class="tc-desc">Patreon platform fees and what you keep.</div></a>
+        <a href="/tools/patreon-plan-comparison" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Patreon Plan Comparison</div></div><div class="tc-desc">Lite vs Pro vs Premium — which pays more?</div></a>
+        <a href="/tools/gumroad-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎨</span><div class="tc-title">Gumroad Fee Calculator</div></div><div class="tc-desc">Gumroad platform fees for digital products.</div></a>
+        <a href="/tools/kickstarter-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">Kickstarter Fee Calculator</div></div><div class="tc-desc">Crowdfunding platform fees and processing.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/twitch-bits-to-usd">Twitch Bits to USD &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  var tiers = { t1: 4.99, t2: 9.99, t3: 24.99, prime: 4.99 };
+  function calc() {
+    var share = (parseFloat(document.getElementById('split').value) || 50) / 100;
+    var gross = 0;
+    var rows = [];
+    var totalSubs = 0;
+    Object.keys(tiers).forEach(function (k) {
+      var count = Math.max(parseInt(document.getElementById(k).value, 10) || 0, 0);
+      var v = count * tiers[k];
+      gross += v;
+      totalSubs += count;
+      rows.push(['Tier ' + (k === 'prime' ? 'Prime' : k.replace('t', '')), count, v]);
+    });
+    var streamer = gross * share;
+    var fmt = function (n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); };
+    document.getElementById('totalSubsLine').textContent = totalSubs + ' total subscriptions · gross sub value ' + fmt(gross);
+    document.getElementById('streamerVal').textContent = fmt(streamer);
+    document.getElementById('breakdown').innerHTML = rows.map(function (r) {
+      return '<div class="cell"><div class="lbl">' + r[0] + ' · ' + r[1] + '</div><div class="val">' + fmt(r[2]) + '</div></div>';
+    }).join('');
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    ['t1','t2','t3','prime'].forEach(function (id) { document.getElementById(id).value = id === 't1' ? '100' : '0'; });
+    document.getElementById('split').value = '50';
+    calc();
+  });
+  calc();
+
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

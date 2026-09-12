@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MET to Calories Calculator —Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Convert MET (Metabolic Equivalent) values to calories burned for any activity. Enter body weight and activity intensity.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/met-to-calories-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MET to Calories Calculator","url":"https://health.mquickcalc.com/tools/met-to-calories-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate calories burned from MET values for any physical activity."}</script>
+<meta property="og:title" content="MET to Calories Calculator —Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Convert MET (Metabolic Equivalent) values to calories burned for any activity. Enter body weight and activity intensity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/met-to-calories-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MET to Calories Calculator —Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Convert MET (Metabolic Equivalent) values to calories burned for any activity. Enter body weight and activity intensity.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"MET to Calories Calculator","item":"https://health.mquickcalc.com/tools/met-to-calories-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#body">Body</a>
+      <a href="/#nutrition">Nutrition</a>
+      <a href="/#heart">Heart</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pregnancy">Pregnancy</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#fitness'>Fitness & Exercise</a><span class='sep'>›</span><span class='current'>MET to Calories Calculator</span></nav></div>
+
+<main class="page"><div class="wrap">
+<div class='page-hero-emoji'>🏊</div>
+<h1 class="page-title">MET to Calories Calculator</h1>
+<p class="lede">Estimate calories burned from physical activities using MET (Metabolic Equivalent) values. 1 MET = resting metabolic rate.</p>
+
+<div class="calc-card">
+<label for="weight">Body weight</label>
+<div style="display:flex;gap:8px;">
+  <select id="weightUnit" class="input" style="max-width:70px;">
+    <option value="kg">kg</option>
+    <option value="lb">lb</option>
+  </select>
+  <input id="weight" class="input" type="number" inputmode="decimal" min="20" step="0.1" value="70">
+</div>
+<label for="activity">Activity</label>
+<select id="activity" class="input">
+  <option value="0.8">Sleeping (0.8 MET)</option>
+  <option value="1.2">Sitting / watching TV (1.2 MET)</option>
+  <option value="1.5">Light office work / reading (1.5 MET)</option>
+  <option value="2.0">Standing / slow walking (2.0 MET)</option>
+  <option value="3.0">House cleaning / gardening (3.0 MET)</option>
+  <option value="3.5">Brisk walking (3.5 MET)</option>
+  <option value="4.0">Yoga / stretching (4.0 MET)</option>
+  <option value="5.0">Low-impact aerobics (5.0 MET)</option>
+  <option value="6.0">Tennis / dancing (6.0 MET)</option>
+  <option value="7.0">Jogging (7.0 MET)</option>
+  <option value="8.0">Cycling 14–16 mph (8.0 MET)</option>
+  <option value="8.5">Swimming laps (8.5 MET)</option>
+  <option value="9.0">Running 6 mph (9.0 MET)</option>
+  <option value="10.0">HIIT / CrossFit (10.0 MET)</option>
+  <option value="11.0">Running 8 mph (11.0 MET)</option>
+  <option value="12.0">Sprinting / competitive sports (12.0 MET)</option>
+  <option value="custom">Custom MET value</option>
+</select>
+<label for="customMet" id="customMetLabel" style="display:none;">Custom MET value</label>
+<input id="customMet" class="input" type="number" inputmode="decimal" min="0.5" step="0.1" value="3.5" style="display:none;">
+<label for="duration">Duration (minutes)</label>
+<input id="duration" class="input" type="number" inputmode="decimal" min="1" step="1" value="30">
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+  <button id="calcBtn" class="btn">Calculate</button>
+  <button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result">
+  <div class="dim">Calories burned: <span id="cal">--</span></div>
+  <div class="dim">METs × weight(kg) × time(hrs) = <span id="formula">--</span></div>
+  <div class="grid" id="quick"></div>
+</div>
+</div>
+    
+    <h2>How MET values estimate calories</h2><p>MET = energy cost relative to rest. 1 MET = resting metabolism (~3.5 ml O₂/kg/min). Calories = MET × kg × hours. Walking ~3 METs, cycling moderate ~6, running ~8-10. Values from Compendium of Physical Activities.</p>
+    <h2>Frequently asked questions</h2>
+<div class="faq-list">
+<h3>How accurate are the results?</h3>
+<p>Formulas used here are validated in population studies but cannot account for individual genetics, body composition, or medical conditions. Treat results as a starting point, not a medical diagnosis.</p>
+<h3>Should I consult a professional?</h3>
+<p>If you have specific health concerns, existing conditions, or are planning significant lifestyle changes, consult a qualified healthcare provider (doctor, dietitian, physiologist).</p>
+<h3>How often should I recalculate?</h3>
+<p>Recalculate when your weight changes more than 5%, activity level shifts significantly, or every 3-6 months for routine monitoring. Results are snapshots — your body changes daily.</p>
+</div>
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/heart-rate-zones-calculator" class="tool-card"><div class="icon-row"><span class="emoji">❤️‍🔥</span><div class="tc-title">Heart Rate Zones</div></div><div class="tc-desc">Karvonen method — 5 training zones from resting HR.</div></a>
+        <a href="/tools/target-heart-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Target Heart Rate</div></div><div class="tc-desc">Simple % of max HR for fat burn, cardio, peak training.</div></a>
+        <a href="/tools/pace-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⏱️</span><div class="tc-title">Pace Calculator</div></div><div class="tc-desc">Convert min/mile ↔ min/km ↔ mph ↔ km/h instantly.</div></a>
+        <a href="/tools/calories-burned-by-distance" class="tool-card"><div class="icon-row"><span class="emoji">🛣️</span><div class="tc-title">Calories Burned by Distance</div></div><div class="tc-desc">Walk/run/cycle distance → calories — no pace needed.</div></a>
+      </div>
+    </div>
+<p class="upd">Last updated <time datetime="2026-09-08">September 8, 2026</time></p>    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note"><a href="/">&larr; Back to all tools</a></p>
+</div></main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site.js"></script>
+<script>
+(function(){
+var _=function(id){return document.getElementById(id);};
+_('activity').addEventListener('change',function(){
+  var val=this.value;
+  if(val==='custom'){_('customMet').style.display='';_('customMetLabel').style.display='';}
+  else{_('customMet').style.display='none';_('customMetLabel').style.display='none';_('customMet').value=val;}
+});
+function calc(){
+  var w=parseFloat(_('weight').value)||70;
+  if(_('weightUnit').value==='lb')w=w*0.453592;
+  var act=_('activity').value;
+  var mets;
+  if(act==='custom')mets=parseFloat(_('customMet').value)||3.5;
+  else mets=parseFloat(act);
+  var dur=parseFloat(_('duration').value)||30;
+  var hrs=dur/60;
+  var cals=Math.round(mets*w*hrs);
+  _('cal').textContent=cals+" kcal";
+  _('formula').textContent=mets+" × "+w.toFixed(1)+" kg × "+hrs.toFixed(2)+" h = "+cals;
+  // quick comparisons
+  var html=";
+  var perMin=Math.round(cals/Math.max(dur,1));
+  html+="<div class=\"cell\"><div class=\"lbl\">Calories per minute</div><div class=\"val\">"+perMin+"</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Per hour</div><div class=\"val\">"+Math.round(mets*w)+" kcal</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Equivalent to walking</div><div class=\"val\">"+Math.round(cals/3.5/w*60)+" min</div></div>";
+  html+="<div class=\"cell\"><div class=\"lbl\">Equivalent to running</div><div class=\"val\">"+Math.round(cals/9/w*60)+" min</div></div>";
+  _('quick').innerHTML=html;
+  _('result').classList.add('show');
+}
+_('calcBtn').addEventListener('click',calc);
+_('resetBtn').addEventListener('click',function(){_('weightUnit').value='kg';_('weight').value='70';_('activity').value='3.5';_('customMet').value='3.5';_('duration').value='30';_('activity').dispatchEvent(new Event('change'));calc();});
+['weight','weightUnit','activity','customMet','duration'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
+calc();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}
+</script></body>
+</html>

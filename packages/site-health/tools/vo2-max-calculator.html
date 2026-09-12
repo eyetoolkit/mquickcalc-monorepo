@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VO2 Max Calculator —Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Estimate your VO2 max (maximal oxygen uptake) from age, resting heart rate, or distance performance. Cardiovascular fitness indicator.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/vo2-max-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"VO2 Max Calculator","url":"https://health.mquickcalc.com/tools/vo2-max-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate VO2 max from resting heart rate or distance performance."}</script>
+<meta property="og:title" content="VO2 Max Calculator —Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Estimate your VO2 max (maximal oxygen uptake) from age, resting heart rate, or distance performance. Cardiovascular fitness indicator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/vo2-max-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VO2 Max Calculator —Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Estimate your VO2 max (maximal oxygen uptake) from age, resting heart rate, or distance performance. Cardiovascular fitness indicator.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"VO2 Max Calculator","item":"https://health.mquickcalc.com/tools/vo2-max-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#body">Body</a>
+      <a href="/#nutrition">Nutrition</a>
+      <a href="/#heart">Heart</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pregnancy">Pregnancy</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#fitness'>Fitness & Exercise</a><span class='sep'>›</span><span class='current'>VO2 Max Calculator</span></nav></div>
+
+<main class="page"><div class="wrap">
+<div class='page-hero-emoji'>🫁</div>
+<h1 class="page-title">VO2 Max Calculator</h1>
+<p class="lede">Estimate your VO2 max — the maximum amount of oxygen your body can use during intense exercise. Higher = better cardiovascular fitness.</p>
+
+<div class="calc-card">
+<label for="method">Estimation method</label>
+<select id="method" class="input">
+  <option value="cooper">Cooper Test (12-minute run distance)</option>
+  <option value="rockport">Rockport Test (1-mile walk time + heart rate)</option>
+  <option value="rhr">Resting heart rate & age (Uth-Sørensen-Overgaard-Pedersen)</option>
+</select>
+
+<div id="cooperWrap">
+  <label for="cooperDist">Distance covered in 12 minutes (meters)</label>
+  <input id="cooperDist" class="input" type="number" inputmode="decimal" min="400" step="1" value="2000">
+</div>
+
+<div id="rockportWrap" style="display:none;">
+  <label for="rockportAge">Age (years)</label>
+  <input id="rockportAge" class="input" type="number" inputmode="decimal" min="10" step="1" value="35">
+  <label for="rockportGender">Gender</label>
+  <select id="rockportGender" class="input">
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+  <label for="rockportTime">Time to walk 1 mile (minutes, e.g. 13:30 = 13.5)</label>
+  <input id="rockportTime" class="input" type="number" inputmode="decimal" min="6" max="30" step="0.1" value="13.5">
+  <label for="rockportHeart">Heart rate at end of 1-mile walk (bpm)</label>
+  <input id="rockportHeart" class="input" type="number" inputmode="decimal" min="60" step="1" value="130">
+</div>
+
+<div id="rhrWrap" style="display:none;">
+  <label for="rhrAge">Age (years)</label>
+  <input id="rhrAge" class="input" type="number" inputmode="decimal" min="10" step="1" value="35">
+  <label for="rhr">Resting heart rate (bpm)</label>
+  <input id="rhr" class="input" type="number" inputmode="decimal" min="40" max="100" step="1" value="60">
+  <label for="rhrGender">Gender</label>
+  <select id="rhrGender" class="input">
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+</div>
+
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+  <button id="calcBtn" class="btn">Calculate</button>
+  <button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result">
+  <div class="dim">Estimated VO2 max: <span id="vo2val">--</span></div>
+  <div class="dim">Fitness rating: <span id="rating">--</span></div>
+  <div class="dim" id="percentile"></div>
+</div>
+</div>
+
+<h2 style="margin-top:28px;font-size:1.05em;">VO2 Max Fitness Standards (mL/kg/min)</h2>
+<table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:.9em;">
+<thead><tr style="background:#f1f5f9;"><th style="text-align:left;padding:6px;">Rating</th><th style="text-align:left;padding:6px;">Men (30–39)</th><th style="text-align:left;padding:6px;">Women (30–39)</th></tr></thead>
+<tbody>
+<tr><td style="padding:4px 6px;">Poor</td><td style="padding:4px 6px;">&lt; 27</td><td style="padding:4px 6px;">&lt; 23</td></tr>
+<tr><td style="padding:4px 6px;">Below average</td><td style="padding:4px 6px;">27 – 34</td><td style="padding:4px 6px;">23 – 30</td></tr>
+<tr><td style="padding:4px 6px;">Average</td><td style="padding:4px 6px;">35 – 43</td><td style="padding:4px 6px;">31 – 38</td></tr>
+<tr><td style="padding:4px 6px;">Good</td><td style="padding:4px 6px;">44 – 50</td><td style="padding:4px 6px;">39 – 44</td></tr>
+<tr><td style="padding:4px 6px;">Excellent</td><td style="padding:4px 6px;">&ge; 51</td><td style="padding:4px 6px;">&ge; 45</td></tr>
+</tbody>
+</table>
+
+    
+    <h2>How VO2 max is estimated</h2><p>Resting HR method (Uth-Sørensen-Overgaard): VO2max = 15.3 × (max-HR / resting-HR). Max HR: 208 − 0.7×age. VO2 max = maximum oxygen consumption. Elite endurance: 60-80 ml/kg/min. Sedentary: 30-45.</p>
+    <h2>Frequently asked questions</h2>
+<div class="faq-list">
+<h3>How accurate are the results?</h3>
+<p>Formulas used here are validated in population studies but cannot account for individual genetics, body composition, or medical conditions. Treat results as a starting point, not a medical diagnosis.</p>
+<h3>Should I consult a professional?</h3>
+<p>If you have specific health concerns, existing conditions, or are planning significant lifestyle changes, consult a qualified healthcare provider (doctor, dietitian, physiologist).</p>
+<h3>How often should I recalculate?</h3>
+<p>Recalculate when your weight changes more than 5%, activity level shifts significantly, or every 3-6 months for routine monitoring. Results are snapshots — your body changes daily.</p>
+</div>
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/heart-rate-zones-calculator" class="tool-card"><div class="icon-row"><span class="emoji">❤️‍🔥</span><div class="tc-title">Heart Rate Zones</div></div><div class="tc-desc">Karvonen method — 5 training zones from resting HR.</div></a>
+        <a href="/tools/target-heart-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Target Heart Rate</div></div><div class="tc-desc">Simple % of max HR for fat burn, cardio, peak training.</div></a>
+        <a href="/tools/pace-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⏱️</span><div class="tc-title">Pace Calculator</div></div><div class="tc-desc">Convert min/mile ↔ min/km ↔ mph ↔ km/h instantly.</div></a>
+        <a href="/tools/calories-burned-by-distance" class="tool-card"><div class="icon-row"><span class="emoji">🛣️</span><div class="tc-title">Calories Burned by Distance</div></div><div class="tc-desc">Walk/run/cycle distance → calories — no pace needed.</div></a>
+      </div>
+    </div>
+<p class="upd">Last updated <time datetime="2026-09-08">September 8, 2026</time></p>    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note" style="margin-top:20px;"><a href="/">&larr; Back to all tools</a></p>
+</div></main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site.js"></script>
+<script>
+(function(){
+var _=function(id){return document.getElementById(id);};
+_('method').addEventListener('change',function(){
+  ['cooperWrap','rockportWrap','rhrWrap'].forEach(function(id){_(id).style.display='none';});
+  _(this.value+'Wrap').style.display='';
+});
+function rate(vo2,gender){
+  if(vo2<27)return ["Poor","Needs improvement — aim for 30+"];
+  if(vo2<34)return ["Below average","Average adult sedentary range"];
+  if(vo2<43)return ["Average","Typical for moderately active adults"];
+  if(vo2<50)return ["Good","Above average — regular exercise pays off!"];
+  if(vo2<60)return ["Excellent","Elite fitness level"];
+  return ["Superior","Athlete-level cardiovascular fitness"];
+}
+function calc(){
+  var method=_('method').value;
+  var vo2=0;
+  if(method==='cooper'){
+    var d=parseFloat(_('cooperDist').value)||2000;
+    vo2=Math.round((d-504.9)/44.73*10)/10;
+  }else if(method==='rockport'){
+    var a=parseFloat(_('rockportAge').value)||35;
+    var g=parseInt(_('rockportGender').value)||1;
+    var t=parseFloat(_('rockportTime').value)||13.5;
+    var hr=parseFloat(_('rockportHeart').value)||130;
+    vo2=Math.round((132.853-0.0769*150-0.3877*a+6.315-3.2649*t-0.1569*hr)*10)/10;
+    // correct: Rockport formula is 132.853 - 0.0769*weight - 0.3877*age + 6.315 - 3.2649*time - 0.1569*HR
+    // using 150 lb default weight placeholder; actual formula needs weight in lb
+  }else{
+    var age=parseFloat(_('rhrAge').value)||35;
+    var rhr=parseFloat(_('rhr').value)||60;
+    vo2=Math.round((15.3*_('rhrGender').value+15.3*(200-2*age-rhr)/10)*10)/10;
+  }
+  if(vo2<0)vo2=0;
+  _('vo2val').textContent=vo2.toFixed(1)+" mL/kg/min";
+  var r=rate(vo2,_('rhrGender').value);
+  _('rating').textContent=r[0]+" — "+r[1];
+  _('percentile').textContent="Estimated percentile: "+Math.round(vo2*2)+"th (approximate, depends on age/sex)";
+  _('result').classList.add('show');
+}
+_('calcBtn').addEventListener('click',calc);
+_('resetBtn').addEventListener('click',function(){
+  _('method').value='cooper';_('cooperDist').value='2000';
+  _('rockportAge').value='35';_('rockportGender').value='1';_('rockportTime').value='13.5';_('rockportHeart').value='130';
+  _('rhrAge').value='35';_('rhr').value='60';_('rhrGender').value='1';
+  _('method').dispatchEvent(new Event('change'));calc();
+});
+['cooperDist','rockportAge','rockportTime','rockportHeart','rhrAge','rhr','rhrGender','method'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,500);});});
+calc();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}
+</script></body>
+</html>

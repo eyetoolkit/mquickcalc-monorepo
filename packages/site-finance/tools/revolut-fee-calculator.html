@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-site="finance">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolut Fee Calculator — Transfer &amp; FX Cost | mQuickCalc</title>
+  <meta name="description" content="Estimate Revolut transfer and currency conversion fees — markup percentage, fixed fees, and hidden charges explained.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/revolut-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revolut Fee Calculator — Transfer &amp; FX Cost | mQuickCalc">
+  <meta name="twitter:description" content="Estimate the fee Revolut charges on a transfer or currency conversion: markup %, fixed fee and whether it's above your free monthly allowance. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Revolut Fee Calculator — Transfer &amp; FX Cost | mQuickCalc">
+  <meta property="og:description" content="Estimate the fee Revolut charges on a transfer or currency conversion: markup %, fixed fee and whether it">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Revolut Fee Calculator","url":"https://finance.mquickcalc.com/tools/revolut-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Revolut transfer and FX fees."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Revolut charge a fee for currency conversion?","acceptedAnswer":{"@type":"Answer","text":"Within the monthly free allowance, conversions use the interbank rate with no markup. Above it, Revolut applies a percentage markup on top of the live rate."}},{"@type":"Question","name":"How much can I convert free on Revolut?","acceptedAnswer":{"@type":"Answer","text":"Standard plans typically include around €1,000 a month of no-markup FX; amounts beyond that incur the standard markup. Check your plan's current allowance."}}]}</script>
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/revolut-fee-calculator">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Revolut Fee Calculator","item":"https://finance.mquickcalc.com/tools/revolut-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/tools/etsy-fee-calculator">Etsy Fees</a>
+      <a href="/tools/twitch-bits-to-usd">Twitch Bits</a>
+      <a href="/tools/twitch-sub-revenue">Twitch Subs</a>
+      <a href="/tools/youtube-money">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <h1 class="page-title">Revolut Fee Calculator</h1>
+    <p class="lede">See what Revolut charges on a transfer or conversion — taking the FX markup, any fixed fee, and your free monthly allowance into account.</p>
+
+
+    <div class="calc-card">
+      <label for="amount">Amount to convert / send</label>
+      <input id="amount" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="markup">FX markup %</label>
+          <input id="markup" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0.5">
+        </div>
+        <div class="field">
+          <label for="fixed">Fixed fee ($)</label>
+          <input id="fixed" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="0">
+        </div>
+      </div>
+
+      <label style="display:flex;align-items:center;gap:8px;margin-top:14px;"><input type="checkbox" id="aboveFree" checked> This is above my free monthly FX allowance</label>
+      <p class="dim" style="margin-top:6px;">Standard plans include a monthly no-markup allowance (e.g. €1,000); amounts above it incur the markup.</p>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="dim">total Revolut fee</div>
+        <div class="big" id="feeVal">$0.00</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">You receive</div><div class="val" id="afterVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Effective rate</div><div class="val" id="effVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">If you're within the free allowance the markup is $0 regardless of this form's rate. Weekend conversions and some transfer methods add extra — your final quote in-app is authoritative.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How Revolut pricing works</div>
+      <p>Conversions use the interbank rate <strong>plus an FX markup</strong> when you're past your monthly free allowance. Revolut additionally charges fixed fees on some transfer types and currencies. The defaults above match a common Standard-plan setup.</p>
+    </div>
+
+    <h2>How Revolut fees work</h2>
+<p>Revolut charges a markup fee on international transfers and currency conversions, typically 0.4-3% depending on your plan (Standard, Plus, Premium, Metal). Some routes also have a fixed fee per transaction.</p>
+<p>The hidden cost is the exchange rate spread. Revolut uses the interbank rate as its base but then applies the markup. For large transfers, even a 1% markup can add up significantly — compare rates with Wise (TransferWise) or OFX for bigger amounts.</p>
+<p>Revolut also offers fee-free transfers at certain times of day for Plus and Premium customers. The weekday mid-market rate window (typically 9am-5pm local time) has the lowest markup.</p>
+
+<h2>Frequently asked questions</h2>
+    <h3>Does Revolut charge a fee for currency conversion?</h3>
+    <p>Within the monthly free allowance, conversions use the interbank rate with no markup. Above it, Revolut applies a percentage markup on top of the live rate.</p>
+    <h3>How much can I convert free on Revolut?</h3>
+    <p>Standard plans typically include around €1,000 a month of no-markup FX; amounts beyond that incur the standard markup. Check your plan's current allowance.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/stripe-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🟪</span><div class="tc-title">Stripe Fee Calculator</div></div><div class="tc-desc">Stripe 2.9% + 30¢ per transaction.</div></a>
+        <a href="/tools/paypal-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">PayPal Fee Calculator</div></div><div class="tc-desc">PayPal Goods &amp; Services fees.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/amazon-fbm-profit-calculator">Amazon FBM &rarr;</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function pct(n) { return (n * 100).toFixed(2) + '%'; }
+  function calc() {
+    var amount = parseFloat(document.getElementById('amount').value) || 0;
+    var markup = (parseFloat(document.getElementById('markup').value) || 0) / 100;
+    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+    var above = document.getElementById('aboveFree').checked;
+    var fee = above ? amount * markup + fixed : 0;
+    var after = amount - fee;
+    document.getElementById('feeVal').textContent = money(fee);
+    document.getElementById('afterVal').textContent = money(after);
+    document.getElementById('effVal').textContent = (above && amount > 0) ? pct(fee / amount) : '0.00%';
+    document.getElementById('result').classList.add('show');
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('amount').value = '1000.00'; document.getElementById('markup').value = '0.5'; document.getElementById('fixed').value = '0'; document.getElementById('aboveFree').checked = true; calc(); });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

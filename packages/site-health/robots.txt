@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# AI / LLM crawlers (content is factual and citable)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+
+Sitemap: https://mquickcalc.com/sitemap.xml
+Sitemap: https://finance.mquickcalc.com/sitemap.xml
+Sitemap: https://health.mquickcalc.com/sitemap.xml

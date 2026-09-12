@@ -1,0 +1,86 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-verify:
+    name: Build & verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build all sites
+        run: node tools/build.mjs
+
+      - name: Verify file counts
+        run: |
+          for pkg in site-main site-finance site-health; do
+            count=$(find "packages/$pkg" -type f | wc -l)
+            echo "📦 $pkg: $count files"
+            if [ "$pkg" = "site-main" ] && [ "$count" -lt 60 ]; then
+              echo "::error::site-main has too few files ($count), expected 70+"
+              exit 1
+            fi
+            if [ "$pkg" = "site-finance" ] && [ "$count" -lt 45 ]; then
+              echo "::error::site-finance has too few files ($count), expected 50+"
+              exit 1
+            fi
+            if [ "$pkg" = "site-health" ] && [ "$count" -lt 40 ]; then
+              echo "::error::site-health has too few files ($count), expected 45+"
+              exit 1
+            fi
+          done
+          echo "✅ All site packages have expected file counts"
+
+      - name: Check JSON-LD parses
+        run: |
+          python3 - <<'PYEOF'
+          import re, json, glob
+          ok = True
+          for f in sorted(glob.glob('packages/*/index.html')):
+              html = open(f).read()
+              schemas = re.findall(r'<script type="application/ld\+json">\s*(\{.*?\})\s*</script>', html, re.S)
+              try:
+                  for s in schemas:
+                      obj = json.loads(s)
+                      items = len(obj.get('itemListElement', [])) if obj.get('@type') == 'ItemList' else 0
+                      print(f'  ✅ {f}: {len(schemas)} JSON-LD blocks, ItemList has {items} items')
+              except Exception as e:
+                  print(f'  ❌ {f}: JSON-LD parse error: {e}')
+                  ok = False
+          import sys; sys.exit(0 if ok else 1)
+          PYEOF
+
+      - name: Check H1 has primary keyword
+        run: |
+          python3 - <<'PYEOF'
+          import re, sys
+          checks = {
+              'packages/site-main/index.html':    'Free Unit Converters',
+              'packages/site-finance/index.html': 'Free Fee & Profit Calculators',
+              'packages/site-health/index.html':  'Free Health & Wellness Calculators',
+          }
+          ok = True
+          for path, kw in checks.items():
+              html = open(path).read()
+              m = re.search(r'<h1[^>]*>(.*?)</h1>', html, re.S)
+              h1 = re.sub(r'<[^>]+>', '', m.group(1)) if m else ''
+              if kw in h1:
+                  print(f'  ✅ {path}: H1 contains "{kw}"')
+              else:
+                  print(f'  ❌ {path}: H1 missing "{kw}". got: {h1[:80]}')
+                  ok = False
+          sys.exit(0 if ok else 1)
+          PYEOF
