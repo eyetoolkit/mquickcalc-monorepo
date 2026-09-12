@@ -288,6 +288,23 @@ h1.page-title{font-size:clamp(28px,4.2vw,40px);letter-spacing:-.02em;line-height
 .footer-col a:hover{color:#fff}
 .copyright{margin-top:36px;padding-top:22px;border-top:1px solid #1e293b;font-size:var(--fs-xs);color:#64748b;text-align:center;line-height:1.7}
 
+/* ---------- Sister Sites (cross-link) ---------- */
+.sister-sites{margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.sister-sites h4{color:#94a3b8;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px;font-weight:var(--fw-semibold)}
+.sister-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.sister-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-md);text-decoration:none;color:#fff;transition:background .15s,border-color .15s,transform .15s}
+.sister-card:hover{background:rgba(255,255,255,.08);border-color:var(--sister-accent);transform:translateY(-1px)}
+.sister-dot{width:10px;height:10px;border-radius:50%;background:var(--sister-accent);flex-shrink:0;box-shadow:0 0 0 3px rgba(255,255,255,.05)}
+.sister-body{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.sister-name{font-size:var(--fs-sm);font-weight:var(--fw-medium);color:#fff;opacity:.95}
+.sister-name strong{font-weight:var(--fw-bold);color:#fff}
+.sister-tag{font-size:var(--fs-xs);color:#94a3b8}
+.sister-arrow{color:#94a3b8;font-size:18px;flex-shrink:0;transition:transform .15s,color .15s}
+.sister-card:hover .sister-arrow{color:var(--sister-accent);transform:translateX(2px)}
+@media (max-width:640px){
+  .sister-grid{grid-template-columns:1fr}
+}
+
 /* ---------- Cookie Bar ---------- */
 .cookiebar{position:fixed;left:12px;right:12px;bottom:12px;max-width:600px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:16px 20px;display:none;z-index:1000;font-size:var(--fs-sm)}
 .cookiebar.show{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}

@@ -39,44 +39,57 @@
     ];
   }
   var cfg = {
-    main: {
-      name:'m<b>Quick</b>Calc', tag:'Everyday',
-      blurb:'Free unit converters and everyday calculators — length, weight, temperature, volume, area, speed, data, time and cooking. Type one value, see every unit at once. No sign-up, nothing stored.',
-      col1:'Popular Converters', col1Links: [
-        ['Length Converter','/tools/length-converter'],
-        ['Weight Converter','/tools/weight-converter'],
-        ['Temperature Converter','/tools/temperature-converter'],
-        ['Height Converter','/tools/height-converter'],
-        ['Volume Converter','/tools/volume-converter'],
-        ['Data Storage Converter','/tools/data-storage-converter']
-      ],
-      col2:'Resources', col2Links:[
-        ['All Calculators','/'],['About','/about'],['Contact','/contact'],
-        ['Privacy Policy','/privacy'],['Disclaimer','/disclaimer']
-      ],
-      dis:'All calculators are for general information only. Estimates may differ from official sources — verify before relying on them.'
-    },
-    finance: {
-      name:'m<b>Quick</b>Calc', tag:'Finance',
-      blurb:'Free fee, profit and revenue calculators for creators, sellers and side-hustlers. No sign-up required — all math runs in your browser.',
-      col1:'Popular Tools', col1Links: finLinks(''),
-      col2:'Resources', col2Links:[
-        ['All Calculators','/'],['About','/about'],['Contact','/contact'],
-        ['Privacy Policy','/privacy'],['Terms','/terms']
-      ],
-      dis:'Fees and rates shown are estimates based on publicly published information and may change. Results are for informational purposes only, not financial advice.'
-    },
-    health: {
-      name:'m<b>Quick</b>Calc', tag:'Health',
-      blurb:'Free, fast health and wellness calculators for body metrics, nutrition, fitness and more. Private by design — calculator inputs stay on your device.',
-      col1:'Popular Tools', col1Links: heaLinks(''),
-      col2:'Resources', col2Links:[
-        ['All Calculators','/'],['About','/about'],['Contact','/contact'],
-        ['Privacy Policy','/privacy'],['Terms','/terms']
-      ],
-      dis:'All calculators are for general wellness and informational purposes only. They are not medical advice and do not diagnose or treat any condition.'
+      main: {
+        name:'m<b>Quick</b>Calc', tag:'Everyday',
+        blurb:'Free unit converters and everyday calculators — length, weight, temperature, volume, area, speed, data, time and cooking. Type one value, see every unit at once. No sign-up, nothing stored.',
+        col1:'Popular Converters', col1Links: [
+          ['Length Converter','/tools/length-converter'],
+          ['Weight Converter','/tools/weight-converter'],
+          ['Temperature Converter','/tools/temperature-converter'],
+          ['Height Converter','/tools/height-converter'],
+          ['Volume Converter','/tools/volume-converter'],
+          ['Data Storage Converter','/tools/data-storage-converter']
+        ],
+        col2:'Resources', col2Links:[
+          ['All Calculators','/'],['About','/about'],['Contact','/contact'],
+          ['Privacy Policy','/privacy'],['Disclaimer','/disclaimer']
+        ],
+        dis:'All calculators are for general information only. Estimates may differ from official sources — verify before relying on them.',
+        sisterSites:[
+          {name:'Finance', tag:'Marketplace & creator fees', url:'https://finance.mquickcalc.com/', color:'#059669'},
+          {name:'Health',  tag:'BMI, BMR, TDEE & fitness',  url:'https://health.mquickcalc.com/',  color:'#dc2626'}
+        ]
+      },
+      finance: {
+        name:'m<b>Quick</b>Calc', tag:'Finance',
+        blurb:'Free fee, profit and revenue calculators for creators, sellers and side-hustlers. No sign-up required — all math runs in your browser.',
+        col1:'Popular Tools', col1Links: finLinks(''),
+        col2:'Resources', col2Links:[
+          ['All Calculators','/'],['About','/about'],['Contact','/contact'],
+          ['Privacy Policy','/privacy'],['Terms','/terms']
+        ],
+        dis:'Fees and rates shown are estimates and may differ from official sources. Verify with the platform before relying on them.',
+        sisterSites:[
+          {name:'Main',   tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',           color:'#4f46e5'},
+          {name:'Health', tag:'BMI, BMR, TDEE & fitness',         url:'https://health.mquickcalc.com/',   color:'#dc2626'}
+        ]
+      },
+      health: {
+        name:'m<b>Quick</b>Calc', tag:'Health',
+        blurb:'Free health and wellness calculators — body metrics, nutrition, heart, fitness, pregnancy. Private by design.',
+        col1:'Popular Tools', col1Links: healLinks(''),
+        col2:'Resources', col2Links:[
+          ['All Calculators','/'],['About','/about'],['Contact','/contact'],
+          ['Privacy Policy','/privacy'],['Disclaimer','/disclaimer'],['Terms','/terms']
+        ],
+        dis:'All calculators are for general wellness and informational purposes only. They are not medical advice and do not diagnose or treat any condition.',
+        sisterSites:[
+          {name:'Main',    tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',          color:'#4f46e5'},
+          {name:'Finance', tag:'Marketplace & creator fees',       url:'https://finance.mquickcalc.com/', color:'#059669'}
+        ]
+      }
     }
-  }[site] || {name:'m<b>Quick</b>Calc',tag:'',blurb:'',col1:'',col1Links:[],col2:'',col2Links:[],dis:''};
+    cfg = cfg[site] || {name:'m<b>Quick</b>Calc',tag:'',blurb:'',col1:'',col1Links:[],col2:'',col2Links:[],dis:'',sisterSites:[]};
 
   // ---- Icon set -----------------------------------------------------------
   // Emoji look different on every OS and can't inherit a colour, which is why
@@ -198,6 +211,21 @@
 
   var f = document.getElementById('site-footer');
   if(f){
+    // Build sister-sites cards (only render if cfg has sisterSites)
+    var sisterHtml = '';
+    if(cfg.sisterSites && cfg.sisterSites.length){
+      var cards = cfg.sisterSites.map(function(s){
+        return '<a class="sister-card" href="'+s.url+'" rel="noopener" style="--sister-accent:'+s.color+'">' +
+               '<span class="sister-dot" aria-hidden="true"></span>' +
+               '<span class="sister-body">' +
+                 '<span class="sister-name">mQuickCalc <strong>'+s.name+'</strong></span>' +
+                 '<span class="sister-tag">'+s.tag+'</span>' +
+               '</span>' +
+               '<span class="sister-arrow" aria-hidden="true">→</span>' +
+               '</a>';
+      }).join('');
+      sisterHtml = '<div class="sister-sites"><h4>Also from mQuickCalc</h4><div class="sister-grid">' + cards + '</div></div>';
+    }
     f.innerHTML =
       '<div class="wrap"><div class="footer-grid">' +
         '<div class="footer-brand">' +
@@ -212,7 +240,8 @@
           '<li><a href="/privacy">Calculator inputs stay on-device</a></li>' +
         '</ul></div>' +
       '</div>' +
-      '<div class="copyright">&copy; '+Y+' mQuickCalc &middot; Operated by Jim (Maoming, Guangdong, China) &middot; mquickcalc.com &middot; finance.mquickcalc.com &middot; health.mquickcalc.com<br>'+cfg.dis+'</div>' +
+      sisterHtml +
+      '<div class="copyright">&copy; '+Y+' mQuickCalc &middot; Operated by Jim (Maoming, Guangdong, China)<br>'+cfg.dis+'</div>' +
       '</div>';
   }
 
