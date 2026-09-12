@@ -1,0 +1,23 @@
+[
+  { "namespace": "angle",              "tool": "angle-converter",              "pairs": [["grad", "deg"], ["rad", "deg"], ["turn", "deg"]] },
+  { "namespace": "area",               "tool": "area-converter",               "pairs": [["acre", "ha"], ["cm2", "ft2"], ["ha", "acre"], ["km2", "ha"]] },
+  { "namespace": "cooking",            "tool": "cooking-converter",            "pairs": [["tsp-us", "ml"], ["tbsp-us", "ml"], ["cup-us", "ml"]] },
+  { "namespace": "data-storage",       "tool": "data-storage-converter",       "pairs": [["bit", "b"], ["b", "bit"], ["kb", "kib"], ["mb", "mib"], ["pb", "tib"], ["tb", "tib"]] },
+  { "namespace": "data-transfer-rate", "tool": "data-transfer-rate-converter", "pairs": [["gbps", "GBps"], ["mbps", "MBps"]] },
+  { "namespace": "digital-storage",    "tool": "digital-storage-converter",    "pairs": [["GB", "GiB"], ["MB", "MiB"], ["TB", "TiB"], ["KB", "KiB"]] },
+  { "namespace": "energy",             "tool": "energy-converter",             "pairs": [["cal", "kj"], ["kcal", "kj"], ["wh", "kj"]] },
+  { "namespace": "flow-rate",          "tool": "flow-rate-converter",          "pairs": [["l-min", "gpm"], ["m3-h", "cfm"], ["l-s", "gpm"]] },
+  { "namespace": "force",              "tool": "force-converter",              "pairs": [["n", "lbf"], ["kgf", "n"], ["dyn", "n"]] },
+  { "namespace": "frequency",          "tool": "frequency-converter",          "pairs": [["hz", "rpm"], ["khz", "mhz"], ["ghz", "hz"]] },
+  { "namespace": "fuel-consumption",   "tool": "fuel-consumption-converter",   "pairs": [["mpg-us", "l-100km"], ["mpg-uk", "l-100km"], ["km-l", "mpg-us"], ["l-100km", "mpg-us"]] },
+  { "namespace": "fuel-volume",        "tool": "fuel-volume-converter",        "pairs": [["l", "gal-us"], ["l", "gal-uk"], ["qt", "l"]] },
+  { "namespace": "length",             "tool": "length-converter",             "pairs": [["cm", "in"], ["m", "ft"], ["km", "mi"], ["in", "cm"], ["ft", "m"], ["yd", "m"]] },
+  { "namespace": "power",              "tool": "power-converter",              "pairs": [["w", "hp"], ["kw", "hp"], ["hp", "w"], ["mw", "w"]] },
+  { "namespace": "pressure",           "tool": "pressure-converter",           "pairs": [["psi", "bar"], ["bar", "psi"], ["atm", "kpa"], ["mmhg", "kpa"]] },
+  { "namespace": "pressure-head",      "tool": "pressure-head-converter",      "pairs": [["m-h2o", "bar"], ["ft-h2o", "psi"], ["m-h2o", "psi"]] },
+  { "namespace": "speed",              "tool": "speed-converter",              "pairs": [["km-h", "mph"], ["m-s", "km-h"]] },
+  { "namespace": "temperature",        "tool": "temperature-converter",        "pairs": [["c", "f"], ["f", "c"], ["c", "k"]] },
+  { "namespace": "time",               "tool": "time-converter",               "pairs": [["s", "min"], ["min", "h"], ["h", "d"], ["d", "w"], ["w", "mo"], ["mo", "y"]] },
+  { "namespace": "wavelength-frequency","tool": "wavelength-frequency-converter","pairs": [["mhz", "m"], ["ghz", "cm"], ["thz", "um"]] },
+  { "namespace": "weight",             "tool": "weight-converter",             "pairs": [["kg", "lb"], ["g", "oz"], ["t", "kg"], ["st", "kg"], ["kg", "g"]] }
+]

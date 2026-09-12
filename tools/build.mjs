@@ -20,6 +20,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -112,6 +113,23 @@ for (const site of sites) {
   syncBrandKit(siteDir);
   const r = reportSite(site);
   console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+}
+
+// After build: regenerate sitemap.xml with real lastmod from git history
+console.log(`\n🗺  regenerating sitemaps...`);
+try {
+  execFileSync('node', [path.join(ROOT, 'tools', 'gen-sitemap.mjs')], { stdio: 'inherit' });
+} catch (e) {
+  console.error('   ⚠️ sitemap generation failed (non-fatal):', e.message);
+}
+
+// After sitemap: regenerate _redirects from JSON data (site-main only)
+// finance/health don't use SEO shortlinks (their URLs are /tools/<name>-calculator)
+console.log(`\n🔀 regenerating _redirects from data...`);
+try {
+  execFileSync('node', [path.join(ROOT, 'tools', 'gen-redirects.mjs')], { stdio: 'inherit' });
+} catch (e) {
+  console.error('   ⚠️ redirects generation failed (non-fatal):', e.message);
 }
 
 console.log(`\n🎉 done.`);
