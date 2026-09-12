@@ -131,7 +131,7 @@ function calc(){
   // Boyd (1935): older, includes children
   var boyd=0.0003207*Math.pow(hCm,0.3)*Math.pow(wLb,0.7285-(0.0188*Math.log(wLb)));
   var avg=(dubois+mosteller+haycock+gehan+boyd)/5;
-  var html=";
+  var html="";
   var results=[
     ["Du Bois (standard)",dubois,"Most widely cited formula"],
     ["Mosteller (simple)",mosteller,"Easy to calculate"],
@@ -141,7 +141,11 @@ function calc(){
   ];
   results.forEach(function(r){
     var highlight=r[0].indexOf("Du Bois")>=0;
-    html+="<div class=\"cell\"+(highlight?" style=\"border:2px solid #16a34a;border-radius:8px;\":")+"><div class=\"lbl\" style=\"font-weight:"+(highlight?"700":"500")+";\">"+r[0]+"</div><div class=\"val\">"+r[1].toFixed(3)+" m²</div><div class=\"dim\">"+r[2]+"</div></div>";
+    html += '<div class="cell' + (highlight?' highlight':'') + '">';
+    html += '<div class="lbl" style="font-weight:' + (highlight?'700':'500') + '">' + r[0] + '</div>';
+    html += '<div class="val">' + r[1].toFixed(3) + ' m²</div>';
+    html += '<div class="dim">' + r[2] + '</div>';
+    html += '</div>';
   });
   _('bsaGrid').innerHTML=html;
   _('avgLine').textContent="Average BSA: "+avg.toFixed(3)+" m² = "+(avg*10.7639).toFixed(1)+" ft²";

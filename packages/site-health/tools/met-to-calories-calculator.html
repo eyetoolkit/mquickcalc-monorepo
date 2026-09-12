@@ -140,7 +140,7 @@ function calc(){
   _('cal').textContent=cals+" kcal";
   _('formula').textContent=mets+" × "+w.toFixed(1)+" kg × "+hrs.toFixed(2)+" h = "+cals;
   // quick comparisons
-  var html=";
+  var html="";
   var perMin=Math.round(cals/Math.max(dur,1));
   html+="<div class=\"cell\"><div class=\"lbl\">Calories per minute</div><div class=\"val\">"+perMin+"</div></div>";
   html+="<div class=\"cell\"><div class=\"lbl\">Per hour</div><div class=\"val\">"+Math.round(mets*w)+" kcal</div></div>";

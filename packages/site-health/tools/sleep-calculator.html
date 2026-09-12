@@ -116,7 +116,7 @@
     return document.getElementById(id);
   }
   function calc() {
-var mode=$("mode").value;var base=new Date("2000/01/01 "+$("time").value);if(isNaN(base))return;var offset=mode=="wake"?-15*90*60000:15*90*60000;var results=[];for(var i=0;i<6;i++){var d=new Date(base.getTime()+offset*(i+1));var h=d.getHours(),m=d.getMinutes(),ampm=h>=12?"PM":"AM";h=h%12||12;results.push((h<10?"0":")+h+":"+(m<10?"0":")+m+" "+ampm);}$("s1").textContent=results[0];$("s2").textContent=results[1];$("s3").textContent=results[2];$("s4").textContent=results[3];$("result").classList.add("show");
+var mode=$("mode").value;var base=new Date("2000/01/01 "+$("time").value);if(isNaN(base))return;var offset=mode=="wake"?-15*90*60000:15*90*60000;var results=[];for(var i=0;i<6;i++){var d=new Date(base.getTime()+offset*(i+1));var h=d.getHours(),m=d.getMinutes(),ampm=h>=12?"PM":"AM";h=h%12||12;results.push((h<10?"0":"")+h+":"+(m<10?"0":"")+m+" "+ampm);}$("s1").textContent=results[0];$("s2").textContent=results[1];$("s3").textContent=results[2];$("s4").textContent=results[3];$("result").classList.add("show");
   }
   ['mode', 'time'].forEach(function (id) {
     var el = $(id);

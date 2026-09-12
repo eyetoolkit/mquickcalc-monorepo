@@ -114,7 +114,7 @@ function calc(){
     ["Peak","80%","90%"],
     ["Maximum","90%","100%"]
   ];
-  var html=";
+  var html="";
   zones.forEach(function(z){
     var lo,hi;
     if(rhr>0){
@@ -132,7 +132,7 @@ function calc(){
   _('result').classList.add('show');
 }
 _('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){_('age').value="35";_('rhr').value=";_('method').value="220";calc();});
+_('resetBtn').addEventListener('click',function(){_('age').value="35";_('rhr').value="";_('method').value="220";calc();});
 ['age','rhr','method'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
 calc();
 })();

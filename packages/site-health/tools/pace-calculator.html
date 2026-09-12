@@ -106,7 +106,7 @@ function fmtMin(n){
   var m=Math.floor(n);
   var s=Math.round((n-m)*60);
   if(s===60){m++;s=0;}
-  return m+":"+(s<10?"0":")+s;
+  return m+":"+(s<10?"0":"")+s;
 }
 function fromMPM(mpm){
   // mpm = minutes per mile
@@ -119,15 +119,15 @@ function fromMPM(mpm){
   _('kmh').value=kmh.toFixed(2);
   writing=false;
   // race times
-  var out=";
+  var out="";
   var races=[["1 km",mpk*1],["1 mile",mpm*1],["5 km",mpk*5],["10 km",mpk*10],["Half marathon (21.1 km)",mpk*21.1],["Marathon (42.2 km)",mpk*42.2]];
   races.forEach(function(r){
     var total=r[1];
     var h=Math.floor(total/60);
     var m=Math.floor(total%60);
     var s=Math.round((total-m*60-h*60)*60);
-    if(h>0)out+=r[0]+": "+h+"h "+m+"m "+(s<10?"0":")+s+"s | ";
-    else out+=r[0]+": "+m+":"+(s<10?"0":")+s+" | ";
+    if(h>0)out+=r[0]+": "+h+"h "+m+"m "+(s<10?"0":"")+s+"s | ";
+    else out+=r[0]+": "+m+":"+(s<10?"0":"")+s+" | ";
   });
   _('raceTimes').textContent=out;
   // effort rating

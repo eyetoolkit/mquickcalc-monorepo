@@ -152,7 +152,7 @@ function calc(){
     [10,"10 km"],[16.0934,"10 miles"],[21.0975,"Half marathon"],[30,"30 km"],
     [42.195,"Marathon"],[50,"50 km"],[100,"100 km"]
   ];
-  var html=";
+  var html="";
   targets.forEach(function(tg){
     if(Math.abs(tg[0]-d1)<0.01)return; // skip same distance
     var pred=predict(t,d1,tg[0],formula);

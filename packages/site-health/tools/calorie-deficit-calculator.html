@@ -124,7 +124,7 @@ function calc(){
   else if(deficit<0)note="You have a calorie surplus! You will gain weight at ~"+Math.abs(fatPerWeek).toFixed(2)+" kg/week.";
   else if(deficit<200)note="Small deficit — fat loss will be slow but muscle-friendly.";
   else note="Good deficit range for sustainable fat loss.";
-  var html=";
+  var html="";
   html+="<div class=\"cell\"><div class=\"lbl\">Daily deficit</div><div class=\"val\">"+deficit+" kcal</div></div>";
   html+="<div class=\"cell\"><div class=\"lbl\">Weekly fat loss</div><div class=\"val\">"+Math.abs(fatPerWeek).toFixed(2)+" kg</div></div>";
   html+="<div class=\"cell\"><div class=\"lbl\">Monthly fat loss</div><div class=\"val\">"+Math.abs(fatPerMonth).toFixed(1)+" kg</div></div>";
