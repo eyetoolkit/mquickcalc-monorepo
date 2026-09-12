@@ -48,13 +48,34 @@ Each output is byte-for-byte equivalent to what the old single-site repos used t
 
 ## Deploy
 
-GitHub Actions deploy on push to `main`:
+Cloudflare Pages is already integrated with GitHub for the three `mquickcalc*` projects. Once each project is re-pointed to `eyetoolkit/mquickcalc-monorepo` in the Cloudflare dashboard with the right `destination_dir`, every push to `main` triggers an automatic deploy — no wrangler, no GitHub Actions needed for deploys.
 
-- `.github/workflows/deploy.yml` — detects which `packages/site-*` changed and deploys only those
-- Each deploy uses `wrangler pages deploy <dir> --project-name=<name>`
-- CF API token + Account ID live as GitHub secrets
+What needs to happen (one-time, ~10 min in CF dashboard):
 
-Preview deploys are created for every PR via Cloudflare Pages' built-in preview system.
+| Pages project | Repo | Destination dir |
+|---|---|---|
+| `mquickcalc` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-main` |
+| `mquickcalc-finance` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-finance` |
+| `mquickcalc-health` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-health` |
+
+Steps in CF dashboard per project:
+1. Workers & Pages → `<project>` → Settings → Builds → Disconnect GitHub
+2. Re-connect GitHub app, choose `eyetoolkit/mquickcalc-monorepo`
+3. Set Build output directory to the per-site `packages/site-*` path
+4. Save. Next push to monorepo `main` will auto-deploy.
+
+Preview deploys on every PR come for free once the GH integration is re-pointed.
+
+## CI
+
+`.github/workflows/pr-check.yml` runs on every PR and push to `main`:
+- builds all three site packages with `tools/build.mjs`
+- verifies file counts are in expected ranges
+- parses every JSON-LD block
+- checks each H1 contains the primary keyword
+- sanity-checks build artifacts (size > 0, hash consistent)
+
+Runs entirely on GitHub-hosted runners — no secrets needed, no CF token required.
 
 ## Adding a new tool page
 
