@@ -116,3 +116,5 @@ The original three repos (`mquickcalc-pages`, `mquickcalc-finance`, `mquickcalc-
 ## License
 
 Internal — © mQuickCalc
+
+<!-- Last cutover smoke test: 2026-09-12T06:19:17Z -->
