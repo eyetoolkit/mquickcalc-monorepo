@@ -1,0 +1,79 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build all sites
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build
+        run: node tools/build.mjs
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build (again, since previous job's files aren't shared)
+        run: node tools/build.mjs
+
+      - name: Setup Wrangler
+        run: npm install -g wrangler@4
+
+      - name: Deploy site-main → mquickcalc.com
+        run: |
+          wrangler pages deploy packages/site-main \
+            --project-name=mquickcalc \
+            --branch=main \
+            --commit-dirty=true \
+            --commit-message="${{ github.event.head_commit.message }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Deploy site-finance → finance.mquickcalc.com
+        run: |
+          wrangler pages deploy packages/site-finance \
+            --project-name=mquickcalc-finance \
+            --branch=main \
+            --commit-dirty=true \
+            --commit-message="${{ github.event.head_commit.message }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Deploy site-health → health.mquickcalc.com
+        run: |
+          wrangler pages deploy packages/site-health \
+            --project-name=mquickcalc-health \
+            --branch=main \
+            --commit-dirty=true \
+            --commit-message="${{ github.event.head_commit.message }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

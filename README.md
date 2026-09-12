@@ -48,23 +48,37 @@ Each output is byte-for-byte equivalent to what the old single-site repos used t
 
 ## Deploy
 
-Cloudflare Pages is already integrated with GitHub for the three `mquickcalc*` projects. Once each project is re-pointed to `eyetoolkit/mquickcalc-monorepo` in the Cloudflare dashboard with the right `destination_dir`, every push to `main` triggers an automatic deploy — no wrangler, no GitHub Actions needed for deploys.
+GitHub Actions deploys to Cloudflare Pages on every push to `main`:
 
-What needs to happen (one-time, ~10 min in CF dashboard):
+- `.github/workflows/deploy.yml` — builds all three sites, then deploys each via `wrangler pages deploy`
+- Each site deploys to its own Cloudflare Pages project (`mquickcalc`, `mquickcalc-finance`, `mquickcalc-health`)
+- Concurrency: in-flight deploys cancel when a new commit lands
 
-| Pages project | Repo | Destination dir |
-|---|---|---|
-| `mquickcalc` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-main` |
-| `mquickcalc-finance` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-finance` |
-| `mquickcalc-health` | `eyetoolkit/mquickcalc-monorepo` | `packages/site-health` |
+**Required GitHub secret** (one-time setup):
+- `CLOUDFLARE_API_TOKEN` — account-scoped token with `Pages:Edit` permission. Get one from https://dash.cloudflare.com/profile/api-tokens.
 
-Steps in CF dashboard per project:
+### Preview URLs
+
+Verified working (2026-09-12):
+- `https://preview-test-monorepo.mquickcalc.pages.dev`
+- `https://preview-test-monorepo.mquickcalc-finance.pages.dev`
+- `https://preview-test-monorepo.mquickcalc-health.pages.dev`
+
+These previews were created by a manual `wrangler pages deploy --branch=preview-test-monorepo` during phase-2 smoke test. They'll persist until manually deleted.
+
+### One-time production cutover
+
+Before production deploys work, the CF Pages projects need to be re-pointed away from the legacy repos. Either:
+
+**Option A** — Disconnect and reconnect in CF dashboard:
 1. Workers & Pages → `<project>` → Settings → Builds → Disconnect GitHub
 2. Re-connect GitHub app, choose `eyetoolkit/mquickcalc-monorepo`
-3. Set Build output directory to the per-site `packages/site-*` path
-4. Save. Next push to monorepo `main` will auto-deploy.
+3. Production branch: `main`. Build command: empty. Build output dir: `packages/site-main` (or `site-finance`, `site-health`).
+4. Save. Next push to monorepo `main` triggers a build.
 
-Preview deploys on every PR come for free once the GH integration is re-pointed.
+**Option B** — Just let GitHub Actions deploy (after secret is set):
+- The Actions workflow calls `wrangler pages deploy` directly; it doesn't require any CF-GH integration.
+- This is the current default in `deploy.yml`.
 
 ## CI
 
