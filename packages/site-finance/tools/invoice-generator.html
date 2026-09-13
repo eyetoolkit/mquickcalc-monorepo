@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator (Pricing) — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/invoice-generator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Invoice Generator (Pricing)", "url": "https://finance.mquickcalc.com/tools/invoice-generator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days."}</script>
+<meta property="og:title" content="Invoice Generator (Pricing) — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/invoice-generator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Invoice Generator (Pricing) — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Invoice Generator (Pricing)", "item": "https://finance.mquickcalc.com/tools/invoice-generator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#tax">Tax</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#creators'>Freelance</a><span class='sep'>›</span><span class='current'>Invoice Generator (Pricing)</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🧾</div>
+<h1 class="page-title">Invoice Generator (Pricing)</h1>
+    <p class="lede">How much should you charge? Freelancers and agencies often underprice. This calculator works backwards from your desired take-home income to your hourly bill rate.</p>
+    <div class="calc-card">
+
+      <label for="annualTarget">Desired annual income ($, take-home)</label>
+      <input id="annualTarget" class="input" type="number" inputmode="numeric" min="0" step="1000" value="85000">
+      <label for="tax">Effective tax rate (%)</label>
+      <input id="tax" class="input" type="number" inputmode="decimal" min="0" max="60" step="any" value="25">
+      <label for="benefits">Benefits & overhead (% of gross)</label>
+      <input id="benefits" class="input" type="number" inputmode="decimal" min="0" max="50" step="any" value="15">
+      <label for="hours">Billable hours per week</label>
+      <input id="hours" class="input" type="number" inputmode="numeric" min="10" max="50" step="1" value="30">
+      <label for="vacation">Vacation + sick days per year</label>
+      <input id="vacation" class="input" type="number" inputmode="numeric" min="0" max="30" step="1" value="20">
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">$0/hr</div>
+      <div class="dim">Your recommended bill rate</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Billable hrs/yr</div><div class="val" id="billHrs">--</div></div>
+        <div class="cell"><div class="lbl">Gross needed</div><div class="val" id="grossNeed">--</div></div>
+        <div class="cell"><div class="lbl">Project monthly</div><div class="val" id="projMonth">--</div></div>
+        <div class="cell"><div class="lbl">Day rate (8hr)</div><div class="val" id="dayRate">--</div></div>
+      </div>
+      <canvas id="rateChart" style="max-width:320px;margin:16px auto 0;display:block;"></canvas>
+    </div>
+    </div>
+
+    <h2>Why most freelancers undercharge</h2>
+    <p>People tend to take their desired salary and divide by 40 hours a week — forgetting that 25-40% of their time is non-billable (invoicing, marketing, admin), plus taxes, benefits, and business expenses. We work backwards from your desired take-home to a rate that actually gets you there.</p>
+    
+    <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/paypal-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">PayPal Fee</div></div><div class="tc-desc">Processing eats into your rate.</div></a><a href="/tools/stripe-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🟪</span><div class="tc-title">Stripe Fee</div></div><div class="tc-desc">Alternatives to PayPal.</div></a><a href="/tools/multi-platform-fee-comparison" class="tool-card"><div class="icon-row"><span class="emoji">🔀</span><div class="tc-title">Fee Comparison</div></div><div class="tc-desc">All platforms side by side.</div></a></div></div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;">This is a simplified estimate. Actual taxes and costs vary by country, business structure, and personal deductions. Consult an accountant.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  var chartInstance = null;
+  function calc() {
+    var target = parseFloat($("annualTarget").value)||0, tax = (parseFloat($("tax").value)||0)/100;
+    var benefits = (parseFloat($("benefits").value)||0)/100, hours = parseFloat($("hours").value)||0;
+    var vacation = parseInt($("vacation").value)||0;
+    if (!target || !hours) return;
+    
+    var workingWeeks = 52 - vacation / 5; // rough: 5 days/week vacation
+    var billableHoursPerYear = hours * workingWeeks;
+    var grossBeforeTax = target / (1 - tax);
+    var grossWithBenefits = grossBeforeTax / (1 - benefits);
+    var hourlyRate = grossWithBenefits / billableHoursPerYear;
+    
+    $("bigVal").textContent = "$" + fmt(hourlyRate, 0) + "/hr";
+    $("billHrs").textContent = billableHoursPerYear.toLocaleString() + " hrs";
+    $("grossNeed").textContent = "$" + fmt(grossWithBenefits, 0);
+    $("projMonth").textContent = "$" + fmt(hourlyRate * hours * 4, 0);
+    $("dayRate").textContent = "$" + fmt(hourlyRate * 8, 0);
+    $("result").classList.add("show");
+    
+    // Chart: rate breakdown
+    if (window.Chart && $("rateChart")) {
+      if (chartInstance) chartInstance.destroy();
+      var ctx = $("rateChart").getContext("2d");
+      chartInstance = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Take-home income", "Tax", "Benefits/overhead"],
+          datasets: [{data: [target, grossBeforeTax - target, grossWithBenefits - grossBeforeTax],
+            backgroundColor: ["#059669","#dc2626","#d97706"], borderWidth: 0}]
+        },
+        options: {responsive:true, maintainAspectRatio:true, plugins:{legend:{position:"bottom",labels:{font:{size:11}}}}}
+      });
+    }
+  }
+  ["annualTarget","tax","benefits","hours","vacation"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("annualTarget").value="85000"; $("tax").value="25"; $("benefits").value="15"; $("hours").value="30"; $("vacation").value="20"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

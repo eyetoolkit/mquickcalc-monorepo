@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/retirement-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Retirement Calculator", "url": "https://finance.mquickcalc.com/tools/retirement-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included."}</script>
+<meta property="og:title" content="Retirement Calculator — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/retirement-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retirement Calculator — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Retirement Calculator", "item": "https://finance.mquickcalc.com/tools/retirement-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#tax">Tax</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#tax'>Finance</a><span class='sep'>›</span><span class='current'>Retirement Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🏖️</div>
+<h1 class="page-title">Retirement Calculator</h1>
+    <p class="lede">When can you retire? How much do you need? This calculator projects your retirement savings, monthly income, and tells you if you're ahead or behind schedule.</p>
+    <div class="calc-card">
+
+      <label for="age">Your current age</label>
+      <input id="age" class="input" type="number" inputmode="numeric" min="18" max="80" step="1" value="35">
+      <label for="retireAge">Desired retirement age</label>
+      <input id="retireAge" class="input" type="number" inputmode="numeric" min="50" max="80" step="1" value="65">
+      <label for="current">Current retirement savings ($)</label>
+      <input id="current" class="input" type="number" inputmode="decimal" min="0" step="any" value="15000">
+      <label for="monthly">Monthly contribution ($)</label>
+      <input id="monthly" class="input" type="number" inputmode="decimal" min="0" step="any" value="800">
+      <label for="return">Expected annual return (%)</label>
+      <input id="return" class="input" type="number" inputmode="decimal" min="0" max="15" step="any" value="7">
+      <label for="life">Life expectancy</label>
+      <input id="life" class="input" type="number" inputmode="numeric" min="70" max="100" step="1" value="90">
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">$0</div>
+      <div class="dim">Projected retirement balance</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Years investing</div><div class="val" id="yearsVal">--</div></div>
+        <div class="cell"><div class="lbl">Total contributed</div><div class="val" id="contribVal">--</div></div>
+        <div class="cell"><div class="lbl">Interest earned</div><div class="val" id="interestVal">--</div></div>
+        <div class="cell"><div class="lbl">Monthly in retirement</div><div class="val" id="monthlyRetire">--</div></div>
+        <div class="cell"><div class="lbl">Status</div><div class="val" id="statusVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+    <h2>Retirement math simplified</h2>
+    <p>We use the standard compound future-value formula for monthly contributions, then apply the <strong>4% rule</strong> to estimate safe annual withdrawal during retirement. The 4% rule says you can withdraw 4% of your nest egg each year and adjust for inflation, with a 95% chance the money lasts 30+ years. Social Security (if you're in the US) would supplement this — we don't include it here.</p>
+    
+    <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/refinance-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📉</span><div class="tc-title">Refinance</div></div><div class="tc-desc">Should you save vs refinance?</div></a><a href="/tools/auto-loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Auto Loan</div></div><div class="tc-desc">Pay off loans vs invest?</div></a><a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage</div></div><div class="tc-desc">Home loan amortization.</div></a></div></div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;">This is a simplified estimate. Actual results depend on market returns, inflation, taxes, fees, Social Security, and personal expenses. Consult a financial advisor.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function futureValue(pv, pmt, rate, months) {
+    var r = rate / 12;
+    if (r === 0) return pv + pmt * months;
+    return pv * Math.pow(1+r, months) + pmt * (Math.pow(1+r, months) - 1) / r;
+  }
+  function calc() {
+    var age = parseInt($("age").value)||0, retireAge = parseInt($("retireAge").value)||65;
+    var current = parseFloat($("current").value)||0, monthly = parseFloat($("monthly").value)||0;
+    var rate = parseFloat($("return").value)||0, life = parseInt($("life").value)||90;
+    var years = Math.max(0, retireAge - age);
+    var months = years * 12;
+    if (months === 0) return;
+    var fv = futureValue(current, monthly, rate, months);
+    var totalContrib = current + monthly * months;
+    var interest = fv - totalContrib;
+    // 4% rule: annual withdrawal = 4% of balance (adjusted for inflation simplified)
+    var retirementYears = Math.max(0, life - retireAge);
+    var monthlyRetire = retirementYears > 0 ? fv / (retirementYears * 12) : 0;
+    var annual = fv * 0.04;
+    var status;
+    if (years < 10) status = "🚨 Late start — consider increasing contributions significantly";
+    else if (fv < 100000) status = "⚠️  Below target — increase monthly savings";
+    else if (fv >= 1000000) status = "✅ On track for comfortable retirement";
+    else status = "📈 Keep going — progress is solid";
+    
+    $("bigVal").textContent = "$" + fmt(fv, 0);
+    $("yearsVal").textContent = years + " yrs";
+    $("contribVal").textContent = "$" + fmt(totalContrib, 0);
+    $("interestVal").textContent = "$" + fmt(interest, 0);
+    $("monthlyRetire").textContent = "$" + fmt(monthlyRetire, 0);
+    $("statusVal").textContent = annual >= 30000 ? "✅" : annual >= 15000 ? "📈" : "⚠️";
+    $("result").classList.add("show");
+  }
+  ["age","retireAge","current","monthly","return","life"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("age").value="35"; $("retireAge").value="65"; $("current").value="15000"; $("monthly").value="800"; $("return").value="7"; $("life").value="90"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>
