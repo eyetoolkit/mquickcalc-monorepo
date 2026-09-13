@@ -1,2 +1,10 @@
 # finance.mquickcalc.com extensionless URLs
 https://finance.mquickcalc.com/*.html  https://finance.mquickcalc.com/:splat  301
+
+# === Added 2026-09-13 (D-grade tool cleanup) ===
+/tools/mercari-fee-calculator         /tools/secondhand-platform-fee-calculator  301
+/tools/depop-fee-calculator           /tools/secondhand-platform-fee-calculator  301
+/tools/vinted-fee-calculator          /tools/secondhand-platform-fee-calculator  301
+/tools/grailed-fee-calculator         /tools/secondhand-platform-fee-calculator  301
+/tools/revolut-fee-calculator         /  301
+/tools/patreon-plan-comparison        /tools/patreon-fee-calculator  301
