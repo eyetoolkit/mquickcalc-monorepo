@@ -3,4 +3,3 @@ https://health.mquickcalc.com/*.html  https://health.mquickcalc.com/:splat  301
 
 # === Added 2026-09-13 (D-grade tool cleanup) ===
 /tools/healthy-weight-range-calculator  /tools/bmi-calculator#healthy-weight-range  301
-/tools/ideal-weight-calculator          /tools/bmi-calculator#ideal-weight  301
