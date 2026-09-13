@@ -23,7 +23,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"eBay Seller Fee Calculator","url":"https://finance.mquickcalc.com/tools/ebay-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate eBay final value fees and net proceeds."}
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does eBay take on a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"With a 13.25% rate, roughly $13.25 plus a $0.30 per-order fee, leaving about $86.45 before shipping costs and any extra fees."}},{"@type":"Question","name":"Does eBay charge a listing fee?","acceptedAnswer":{"@type":"Answer","text":"A limited number of free listings are included each month, after which insertion fees apply. Most advertised margins are driven by the final value fee instead."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does eBay take on a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"With a 13.6% rate on a $100 sale (13.6% + $0.40 per-order fee), roughly $14.00 in fees, leaving about $86.00 before shipping costs and any extra fees."}},{"@type":"Question","name":"Does eBay charge a listing fee?","acceptedAnswer":{"@type":"Answer","text":"A limited number of free listings are included each month, after which insertion fees apply. Most advertised margins are driven by the final value fee instead."}}]}</script>
 <meta property="og:url" content="https://finance.mquickcalc.com/tools/ebay-fee-calculator">
 <meta property="og:site_name" content="mQuickCalc Finance">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"eBay Seller Fee Calculator","item":"https://finance.mquickcalc.com/tools/ebay-fee-calculator"}]}</script>
@@ -61,7 +61,7 @@
     <div class="calc-card">
 <label for="market"><strong>📍 Market presets</strong> — eBay country-specific rates</label>
 <select id="market" class="input">
-<option value="us" selected>🇺🇸 eBay USA — 13.25% + $0.30</option>
+<option value="us" selected>🇺🇸 eBay USA — 13.6% + $0.40</option>
 <option value="toprated">⭐ eBay USA Top Rated — 9.15% + $0.30</option>
 <option value="uk">🇬🇧 eBay UK — 12.8% + £0.30</option>
 <option value="de">🇩🇪 eBay Germany — 10.0% + €0.35</option>
@@ -82,7 +82,7 @@
       </div>
 
       <label for="rate">Final value fee %</label>
-      <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="13.25">
+      <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="13.6">
 
       <div class="row">
         <div class="field">
@@ -109,7 +109,7 @@
           <div class="cell"><div class="lbl">Per-order fee</div><div class="val" id="fixedVal">$0.00</div></div>
           <div class="cell"><div class="lbl">Effective rate</div><div class="val" id="effVal">—</div></div>
         </div>
-        <p class="note" style="margin-top:12px;">eBay charges final value fees with a per-order component, and rates differ by category and seller tier. This is an estimate — confirm against eBay's current fee table.</p>
+        <p class="note" style="margin-top:12px;">eBay updated most category fees on Feb 14, 2025 (13.6% up from 13.25% for most categories, plus a $0.40 per-order fee on orders over $10). Rates differ by category and seller tier — confirm against eBay's current fee table.</p>
       </div>
     </div>
 
@@ -123,7 +123,7 @@
 
     <h2>Frequently asked questions</h2>
     <h3>How much does eBay take on a $100 sale?</h3>
-    <p>With a 13.25% rate, roughly $13.25 plus a $0.30 per-order fee, leaving about $86.45 before shipping costs and any extra fees.</p>
+    <p>With a 13.6% rate on a $100 sale (13.6% + $0.40 per-order fee), roughly $14.00 in fees, leaving about $86.00 before shipping costs and any extra fees.</p>
     <h3>Does eBay charge a listing fee?</h3>
     <p>A limited number of free listings are included each month, after which insertion fees apply. Most advertised margins are driven by the final value fee instead.</p>
 
@@ -136,7 +136,7 @@
         <a href="/tools/ebay-international-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌍</span><div class="tc-title">eBay International Fees</div></div><div class="tc-desc">Global shipping and currency conversion fees.</div></a>
       </div>
     </div>
-    <p class="upd">Last updated <time datetime="2026-09-07">Sep 7, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Figures are estimates for general information, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
     <p class="note"><a href="/">&larr; Back to all tools</a> · <a href="/tools/shopify-fees-calculator">Shopify Fees &rarr;</a></p>
   </div>
 </main>
@@ -154,12 +154,12 @@
   function money(n, cur) { var c = cur || 'USD'; try { return n.toLocaleString('en-US', { style: 'currency', currency: c }); } catch(e) { return n.toFixed(2); } }
   function pct(n) { return (n * 100).toFixed(2) + '%'; }
     var MARKETS = {
-    "us":       { rate: "13.25", fixed: "0.30", currency: "USD", label: "eBay US" },
-    "toprated": { rate: "9.15",  fixed: "0.30", currency: "USD", label: "eBay US Top Rated" },
-    "uk":       { rate: "12.8",  fixed: "0.30", currency: "GBP", label: "eBay UK" },
+    "us":       { rate: "13.6", fixed: "0.40", currency: "USD", label: "eBay US" },
+    "toprated": { rate: "8.7",  fixed: "0.40", currency: "USD", label: "eBay US Top Rated" },
+    "uk":       { rate: "12.8",  fixed: "0.40", currency: "GBP", label: "eBay UK" },
     "de":       { rate: "10.0",  fixed: "0.35", currency: "EUR", label: "eBay Germany" },
-    "au":       { rate: "12.8",  fixed: "0.30", currency: "AUD", label: "eBay Australia" },
-    "ca":       { rate: "12.8",  fixed: "0.30", currency: "CAD", label: "eBay Canada" },
+    "au":       { rate: "12.8",  fixed: "0.40", currency: "AUD", label: "eBay Australia" },
+    "ca":       { rate: "12.8",  fixed: "0.40", currency: "CAD", label: "eBay Canada" },
     "custom": null
   };
   function applyMarket(id) {
@@ -195,8 +195,8 @@
   document.getElementById('resetBtn').addEventListener('click', function () {
     document.getElementById('price').value = '100.00';
     document.getElementById('shipping').value = '10.00';
-    document.getElementById('rate').value = MARKETS[document.getElementById('market').value] ? MARKETS[document.getElementById('market').value].rate : '13.25';
-    document.getElementById('fixed').value = '0.30';
+    document.getElementById('rate').value = MARKETS[document.getElementById('market').value] ? MARKETS[document.getElementById('market').value].rate : '13.6';
+    document.getElementById('fixed').value = '0.40';
     document.getElementById('tier').checked = true;
     calc();
   });
