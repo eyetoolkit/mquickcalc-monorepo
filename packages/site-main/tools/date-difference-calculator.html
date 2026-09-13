@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Difference Calculator — Free Tool | mQuickCalc</title>
+  <meta name="description" content="Calculate the exact number of days, weeks, months, and years between two dates. Also find weekdays between dates.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/date-difference-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Date Difference Calculator", "url": "https://mquickcalc.com/tools/date-difference-calculator", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate the exact number of days, weeks, months, and years between two dates. Also find weekdays between dates."}</script>
+<meta property="og:title" content="Date Difference Calculator — Free Tool | mQuickCalc">
+<meta property="og:description" content="Calculate the exact number of days, weeks, months, and years between two dates. Also find weekdays between dates.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mquickcalc.com/tools/date-difference-calculator">
+<meta property="og:image" content="https://mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Date Difference Calculator — Free Tool | mQuickCalc">
+  <meta name="twitter:description" content="Calculate the exact number of days, weeks, months, and years between two dates. Also find weekdays between dates.">
+  <meta name="twitter:site" content="@mquickcalc">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Date Difference Calculator", "item": "https://mquickcalc.com/tools/date-difference-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Your result updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+</head>
+<body data-site="main">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Date Difference Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>📅</div>
+<h1 class="page-title">Date Difference Calculator</h1>
+    <p class="lede">From today to your birthday, from hire date to retirement — instantly see the gap between any two dates in every unit.</p>
+    <div class="calc-card">
+
+      <label for="date1">Start date</label>
+      <input id="date1" class="input" type="date">
+      <label for="date2">End date</label>
+      <input id="date2" class="input" type="date">
+      <label><input type="checkbox" id="includeEnd" checked> Include end date in count</label>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">-- days</div>
+      <div class="dim" id="dimVal">Difference</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Total weeks</div><div class="val" id="weeksVal">--</div></div>
+        <div class="cell"><div class="lbl">Months</div><div class="val" id="monthsVal">--</div></div>
+        <div class="cell"><div class="lbl">Years</div><div class="val" id="yearsVal">--</div></div>
+        <div class="cell"><div class="lbl">Weekdays only</div><div class="val" id="weekdaysVal">--</div></div>
+        <div class="cell"><div class="lbl">Saturdays + Sundays</div><div class="val" id="weekendVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+    <h2>How date counting works</h2>
+    <p>The tool subtracts two Unix timestamps (in milliseconds) and divides by 86,400,000 to get days. Years and months are computed by comparing calendar positions rather than raw days — this is why "1 year" is always 12 calendar months even in a leap year. The "include end date" toggle handles the common off-by-one question.</p>
+    
+    <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/age-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎂</span><div class="tc-title">Age Calculator</div></div><div class="tc-desc">Your exact age from birth date.</div></a><a href="/tools/time-converter" class="tool-card"><div class="icon-row"><span class="emoji">⏰</span><div class="tc-title">Time Converter</div></div><div class="tc-desc">Time zone and duration converter.</div></a><a href="/tools/sleep-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🔔</span><div class="tc-title">Sleep Calculator</div></div><div class="tc-desc">Best sleep/wake times.</div></a></div></div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function daysBetween(d1, d2) { return Math.round((d2 - d1) / 86400000); }
+  function countWeekdays(d1, d2) {
+    var count = 0, cur = new Date(d1);
+    while (cur <= d2) { if (cur.getDay() !== 0 && cur.getDay() !== 6) count++; cur.setDate(cur.getDate()+1); }
+    return count;
+  }
+  function calc() {
+    var d1 = new Date($("date1").value);
+    var d2 = new Date($("date2").value);
+    if (isNaN(d1.getTime()) || isNaN(d2.getTime())) return;
+    if (d1 > d2) { var t = d1; d1 = d2; d2 = t; }
+    var includeEnd = $("includeEnd").checked;
+    var days = daysBetween(d1, d2) + (includeEnd ? 1 : 0);
+    var weeks = days / 7;
+    // Years + months
+    var years = d2.getFullYear() - d1.getFullYear();
+    var months = d2.getMonth() - d1.getMonth();
+    if (d2.getDate() < d1.getDate()) months--;
+    if (months < 0) { years--; months += 12; }
+    var weekdays = countWeekdays(d1, d2) + (includeEnd ? 0 : 0);
+    var weekend = days - weekdays;
+    $("bigVal").textContent = days.toLocaleString() + " days";
+    $("dimVal").textContent = d1.toLocaleDateString() + " → " + d2.toLocaleDateString();
+    $("weeksVal").textContent = fmt(weeks, 1);
+    $("monthsVal").textContent = months;
+    $("yearsVal").textContent = years;
+    $("weekdaysVal").textContent = weekdays.toLocaleString();
+    $("weekendVal").textContent = weekend.toLocaleString();
+    $("result").classList.add("show");
+  }
+  ["date1","date2","includeEnd"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){
+    $("date1").value = new Date().toISOString().slice(0,10);
+    var d = new Date(); d.setDate(d.getDate()+30); $("date2").value = d.toISOString().slice(0,10);
+    calc();
+  });
+  // Auto-set defaults
+  var today = new Date();
+  var next = new Date(); next.setDate(next.getDate()+30);
+  $("date1").value = today.toISOString().slice(0,10);
+  $("date2").value = next.toISOString().slice(0,10);
+  calc();
+})();
+</script>
+</body>
+</html>

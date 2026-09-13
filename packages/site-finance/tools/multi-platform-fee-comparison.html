@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Platform Fee Comparison — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Compare seller fees across 6 platforms (eBay, Etsy, Amazon, Shopify, PayPal, Stripe) side-by-side. See which platform keeps the most for you.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/multi-platform-fee-comparison">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Multi-Platform Fee Comparison", "url": "https://finance.mquickcalc.com/tools/multi-platform-fee-comparison", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Compare seller fees across 6 platforms (eBay, Etsy, Amazon, Shopify, PayPal, Stripe) side-by-side. See which platform keeps the most for you."}</script>
+<meta property="og:title" content="Multi-Platform Fee Comparison — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Compare seller fees across 6 platforms (eBay, Etsy, Amazon, Shopify, PayPal, Stripe) side-by-side. See which platform keeps the most for you.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/multi-platform-fee-comparison">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multi-Platform Fee Comparison — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Compare seller fees across 6 platforms (eBay, Etsy, Amazon, Shopify, PayPal, Stripe) side-by-side. See which platform keeps the most for you.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Multi-Platform Fee Comparison", "item": "https://finance.mquickcalc.com/tools/multi-platform-fee-comparison"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Your result updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#tax">Tax</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Ecommerce</a><span class='sep'>›</span><span class='current'>Multi-Platform Fee Comparison</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🔀</div>
+<h1 class="page-title">Multi-Platform Fee Comparison</h1>
+    <p class="lede">ONE input, SIX results. Enter your sale amount once and instantly compare what you'd net on every major platform. The only calculator you need to decide where to sell.</p>
+    <div class="calc-card">
+
+      <label for="salePrice">Item sale price ($)</label>
+      <input id="salePrice" class="input" type="number" inputmode="decimal" min="0" step="any" value="100">
+      <label for="shipping">Shipping cost you charge ($) — optional</label>
+      <input id="shipping" class="input" type="number" inputmode="decimal" min="0" step="any" value="0">
+      <label for="quantity">Quantity sold</label>
+      <input id="quantity" class="input" type="number" inputmode="numeric" min="1" step="1" value="1">
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="grid" style="grid-template-columns:1fr;">
+        <div id="comparisonTable" style="overflow-x:auto;"></div>
+      </div>
+    </div>
+    </div>
+
+    <h2>How the comparison works</h2>
+    <p>Each platform uses a different fee structure: percentage of sale, fixed per-item, tiered by category, or combinations thereof. This tool applies each platform's standard rate to your input sale amount. Some platforms have category-specific exceptions (e.g., eBay Books, Amazon Jewelry) — check individual calculators for fine-grained numbers.</p>
+    
+    <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/ebay-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🅴🅱️</span><div class="tc-title">eBay Fee Calculator</div></div><div class="tc-desc">Precise eBay rates by category.</div></a><a href="/tools/etsy-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧶</span><div class="tc-title">Etsy Fee Calculator</div></div><div class="tc-desc">Etsy listing + transaction + payment.</div></a><a href="/tools/amazon-fba-revenue-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📦</span><div class="tc-title">Amazon FBA</div></div><div class="tc-desc">FBA + referral + shipping.</div></a></div></div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  var PLATFORMS = [
+    {
+      name: "eBay (US)", emoji: "🅴🅱️",
+      feePct: 0.136, fixedPerOrder: 0.40, label: "13.6% + $0.40",
+      note: "Most categories, orders > $10"
+    },
+    {
+      name: "Etsy", emoji: "🧶",
+      feePct: 0.065 + 0.03, fixedPerItem: 0.25, label: "9.5% + $0.25",
+      note: "6.5% transaction + 3% payment processing"
+    },
+    {
+      name: "Amazon FBA", emoji: "📦",
+      feePct: 0.15, fixedPerItem: 0, label: "15% referral fee + FBA",
+      note: "FBA fulfillment fee varies by size"
+    },
+    {
+      name: "Shopify Payments", emoji: "🛍️",
+      feePct: 0.029 + 0.003, fixedPerItem: 0.30, label: "3.2% + $0.30",
+      note: "2.9% card + 0.3% online rate"
+    },
+    {
+      name: "Stripe", emoji: "🟪",
+      feePct: 0.029, fixedPerItem: 0.30, label: "2.9% + $0.30",
+      note: "Standard card processing"
+    },
+    {
+      name: "PayPal (G&S)", emoji: "💳",
+      feePct: 0.0299, fixedPerItem: 0.49, label: "2.99% + $0.49",
+      note: "US domestic Goods & Services"
+    }
+  ];
+  
+  function calc() {
+    var price = parseFloat($("salePrice").value) || 0;
+    var shipping = parseFloat($("shipping").value) || 0;
+    var qty = parseInt($("quantity").value) || 1;
+    var subtotal = price * qty + shipping;
+    if (subtotal <= 0) return;
+    
+    var rows = [];
+    for (var p of PLATFORMS) {
+      var itemTotal = price * qty;
+      var feeAmt = itemTotal * p.feePct + (p.fixedPerOrder || p.fixedPerItem || 0);
+      var net = subtotal - feeAmt;
+      rows.push({platform: p.name, emoji: p.emoji, fee: feeAmt, net: net, rate: (feeAmt / subtotal * 100).toFixed(2), label: p.label, note: p.note});
+    }
+    rows.sort(function(a,b){ return b.net - a.net; });
+    
+    var maxNet = rows[0].net;
+    var html = '<table style="width:100%;border-collapse:collapse;font-size:14px;">';
+    html += '<thead><tr style="background:#f3f4f6;text-align:left;">';
+    html += '<th style="padding:10px;">Platform</th><th style="padding:10px;">Fee %</th><th style="padding:10px;">Fee $</th><th style="padding:10px;">Net</th><th style="padding:10px;">Savings vs Best</th>';
+    html += '</tr></thead><tbody>';
+    for (var i=0; i<rows.length; i++) {
+      var r = rows[i];
+      var savings = maxNet - r.net;
+      var bg = i === 0 ? 'background:#ecfdf5;' : '';
+      html += '<tr style="border-bottom:1px solid #e5e7eb;' + bg + '">';
+      html += '<td style="padding:10px;font-weight:600;">' + r.emoji + ' ' + r.platform + (i===0?' 🏆':'') + '</td>';
+      html += '<td style="padding:10px;">' + r.label + '</td>';
+      html += '<td style="padding:10px;">$' + r.fee.toFixed(2) + '</td>';
+      html += '<td style="padding:10px;font-weight:' + (i===0?'700':'400') + ';">$' + r.net.toFixed(2) + '</td>';
+      html += '<td style="padding:10px;color:#78716c;">' + (savings>0?'-$'+savings.toFixed(2):'Best') + '</td>';
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+    html += '<p style="font-size:12px;color:var(--muted);margin-top:10px;">Based on subtotal of <strong>$' + subtotal.toFixed(2) + '</strong>. Fees are estimates — platform policies change. See individual calculators for precision.</p>';
+    
+    $("comparisonTable").innerHTML = html;
+    $("result").classList.add("show");
+  }
+  
+  ["salePrice","shipping","quantity"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("salePrice").value="100"; $("shipping").value="0"; $("quantity").value="1"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

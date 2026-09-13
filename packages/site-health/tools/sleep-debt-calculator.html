@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Debt Calculator — Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Accumulate your sleep deficit over time and see how much catch-up sleep you need to feel rested again.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/sleep-debt-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Sleep Debt Calculator", "url": "https://health.mquickcalc.com/tools/sleep-debt-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Accumulate your sleep deficit over time and see how much catch-up sleep you need to feel rested again."}</script>
+<meta property="og:title" content="Sleep Debt Calculator — Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Accumulate your sleep deficit over time and see how much catch-up sleep you need to feel rested again.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/sleep-debt-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sleep Debt Calculator — Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Accumulate your sleep deficit over time and see how much catch-up sleep you need to feel rested again.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://health.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Sleep Debt Calculator", "item": "https://health.mquickcalc.com/tools/sleep-debt-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Your result updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#sleep">Sleep</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#sleep'>Sleep</a><span class='sep'>›</span><span class='current'>Sleep Debt Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>😴</div>
+<h1 class="page-title">Sleep Debt Calculator</h1>
+    <p class="lede">Missed sleep last night? This week? See your total sleep debt — and whether you can realistically pay it back.</p>
+    <div class="calc-card">
+
+      <label for="ideal">Your ideal sleep per night (hours)</label>
+      <input id="ideal" class="input" type="number" inputmode="decimal" min="4" max="12" step="0.5" value="7.5">
+      <label for="days">Days to calculate</label>
+      <select id="days" class="input">
+        <option value="7" selected>This week (7 days)</option>
+        <option value="14">Last 2 weeks</option>
+        <option value="30">Last month</option>
+        <option value="1">Last night only</option>
+      </select>
+      <label for="avg">Average actual sleep (hours/night)</label>
+      <input id="avg" class="input" type="number" inputmode="decimal" min="0" max="12" step="0.1" value="6.2">
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">-- hours</div>
+      <div class="dim" id="dimVal">Sleep debt accumulated</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Deficit/night</div><div class="val" id="perNight">--</div></div>
+        <div class="cell"><div class="lbl">Total deficit</div><div class="val" id="total">--</div></div>
+        <div class="cell"><div class="lbl">Payback nights</div><div class="val" id="payback">--</div></div>
+        <div class="cell"><div class="lbl">Severity</div><div class="val" id="severity">--</div></div>
+      </div>
+    </div>
+    </div>
+
+    <h2>What sleep debt means</h2>
+    <p>Sleep debt accumulates when you sleep less than your body needs. Research shows that while you can partially catch up by sleeping longer on weekends, chronic debt causes cognitive decline, metabolic disruption, and weakened immunity. Recovery is linear: about 1 hour of extra sleep per 1 hour of deficit, spread across several days.</p>
+    
+    <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/sleep-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌙</span><div class="tc-title">Sleep Calculator</div></div><div class="tc-desc">Best sleep/wake times in 90-min cycles.</div></a><a href="/tools/heart-rate-zones-calculator" class="tool-card"><div class="icon-row"><span class="emoji">❤️</span><div class="tc-title">HR Zones</div></div><div class="tc-desc">Karvonen training zones.</div></a><a href="/tools/calories-burned-by-heart-rate" class="tool-card"><div class="icon-row"><span class="emoji">🔥</span><div class="tc-title">Calories by HR</div></div><div class="tc-desc">Cardio burn estimation.</div></a></div></div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var ideal = parseFloat($("ideal").value) || 0;
+    var days = parseInt($("days").value) || 7;
+    var avg = parseFloat($("avg").value) || 0;
+    if (!ideal) return;
+    var deficitPerNight = Math.max(0, ideal - avg);
+    var totalDeficit = deficitPerNight * days;
+    // Assume you can "over-sleep" by ~1h per night to catch up
+    var paybackNights = deficitPerNight > 0 ? Math.ceil(totalDeficit / 1.0) : 0;
+    var severity;
+    if (totalDeficit <= 2) severity = "✅ Mild";
+    else if (totalDeficit <= 5) severity = "⚠️ Moderate";
+    else if (totalDeficit <= 10) severity = "🚨 Significant";
+    else severity = "🛑 Critical";
+    $("bigVal").textContent = fmt(totalDeficit, 1) + " hours";
+    $("dimVal").textContent = "Over " + days + " nights";
+    $("perNight").textContent = fmt(deficitPerNight, 1) + " h";
+    $("total").textContent = fmt(totalDeficit, 1) + " h";
+    $("payback").textContent = paybackNights + " extra hours";
+    $("severity").textContent = severity;
+    $("result").classList.add("show");
+  }
+  ["ideal","days","avg"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("ideal").value="7.5"; $("days").value="7"; $("avg").value="6.2"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>
