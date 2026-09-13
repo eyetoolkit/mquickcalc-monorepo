@@ -124,11 +124,11 @@
     if (bac < 0) bac = 0;
     var legal = bac > 0.05 ? "🚫 YES" : "✅ No";
     var sober = bac / 0.015; // hours to metabolize
-    $("bigVal").textContent = fmt(bac*100, 2) + "%";
+    $("bigVal").textContent = fmt(bac, 3) + "%";
     $("dimVal").textContent = "Estimated BAC after " + fmt(hours, 1) + "h";
     $("legalVal").textContent = legal;
     $("soberVal").textContent = fmt(sober, 1) + " hours";
-    $("peakVal").textContent = fmt(peak*100, 2) + "%";
+    $("peakVal").textContent = fmt(peak, 3) + "%";
     $("result").classList.add("show");
   }
   ["weight", "gender", "drinks", "hours"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
