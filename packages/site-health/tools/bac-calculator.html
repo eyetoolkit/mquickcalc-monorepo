@@ -119,7 +119,7 @@
     // grams alcohol = drinks * 14 (standard drink)
     var alcohol = drinks * 14; // grams
     var r = gender === "male" ? 0.68 : 0.55; // body water constant
-    var peak = alcohol / (r * w);
+    var peak = (alcohol / (r * w)) / 10; // Widmark returns g/kg; 00f710 for % BAC
     var bac = peak - 0.015 * hours;
     if (bac < 0) bac = 0;
     var legal = bac > 0.05 ? "🚫 YES" : "✅ No";
