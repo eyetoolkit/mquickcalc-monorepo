@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Calculator — Interest & Final Balance | mQuickCalc | mQuickCalc</title>
+  <meta name="description" content="Calculate how your savings grow with compound interest. Set principal, monthly contribution, interest rate, and years to see your final balance and total interest earned. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/savings-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Savings Calculator — Interest & Final Balance | mQuickCalc | mQuickCalc">
+  <meta name="twitter:description" content="Calculate how your savings grow with compound interest. Set principal, monthly contribution, interest rate, and years to see your final balance and total interest earned. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Savings Calculator — Interest & Final Balance | mQuickCalc">
+  <meta property="og:description" content="Calculate how your savings grow with compound interest. Set principal, monthly contribution, interest rate, and years to see your final balance and total interest earned. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/savings-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Savings Calculator — Interest & Final Balance","url":"https://finance.mquickcalc.com/tools/savings-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate how your savings grow with compound interest."}
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should I save each month?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is 10-15% of take-home pay for retirement, plus a separate emergency fund of 3-6 months of expenses. Whether you hit that target matters less than consistency \u2014 even $50/month over 30 years grows to six figures with average stock-market returns."}}, {"@type": "Question", "name": "What interest rate should I use?", "acceptedAnswer": {"@type": "Answer", "text": "For a high-yield savings account (HYSA) in 2024-2026, 4-4.5% APY was common. For a checking account it is often 0%. For a CD or treasury bill it can be 4-5%. For a stock portfolio, the long-term real return is about 7% nominal / 4.5% real, but year-to-year it varies wildly \u2014 this tool is for fixed-rate planning."}}, {"@type": "Question", "name": "Why does the balance grow so much in later years?", "acceptedAnswer": {"@type": "Answer", "text": "Because of compounding: the interest you earn in year 10 is itself earning interest in year 11, and so on. A 5% return on $10,000 is $500 in year 1 but $1,500+ in year 30, because the base is now $30,000. This is why starting early matters more than the amount."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Savings Calculator — Interest & Final Balance","item":"https://finance.mquickcalc.com/tools/savings-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Savings Calculator — Interest & Final Balance</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>💰</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are based on the interest rate and monthly contribution you enter. Real savings accounts compound differently (daily, monthly, quarterly). Use this for planning, not for exact account growth.
+</div>
+    <h1 class="page-title">Savings Calculator — Interest & Final Balance</h1>
+    <p class="lede">See how regular saving grows over time. Set a starting balance, a monthly contribution, an annual interest rate (savings accounts average 0.5-4.5% APY in 2024-2026), and a time horizon.</p>
+
+    <div class="calc-card">
+      <label for="principal">Starting balance</label>
+      <input id="principal" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
+
+      <label for="monthly">Monthly contribution</label>
+      <input id="monthly" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="200.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="rate">Annual interest rate (%)</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="5">
+        </div>
+        <div class="field">
+          <label for="years">Years</label>
+          <input id="years" class="input" type="number" min="1" step="1" value="10">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="finalVal">$0.00</div>
+        <div class="dim">final balance</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Total contributed</div><div class="val" id="contribVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Interest earned</div><div class="val" id="interestVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Compounded monthly. To model quarterly compounding or APY that includes fee effects, use the compound-interest tool with the same numbers.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How compound interest works</div>
+      <p>Compound interest means you earn interest on the interest you already earned. A savings account at 5% APY grows about 5% a year on average, but the actual curve steepens over time — most of the growth happens in the back half of the period.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>The calculator uses monthly compounding, which is the standard for high-yield savings accounts. Each month, your balance earns (rate / 12) interest, then your monthly contribution is added on top.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much should I save each month?</h3>    <p>A common guideline is 10-15% of take-home pay for retirement, plus a separate emergency fund of 3-6 months of expenses. Whether you hit that target matters less than consistency — even $50/month over 30 years grows to six figures with average stock-market returns.</p>
+    <h3>What interest rate should I use?</h3>    <p>For a high-yield savings account (HYSA) in 2024-2026, 4-4.5% APY was common. For a checking account it is often 0%. For a CD or treasury bill it can be 4-5%. For a stock portfolio, the long-term real return is about 7% nominal / 4.5% real, but year-to-year it varies wildly — this tool is for fixed-rate planning.</p>
+    <h3>Why does the balance grow so much in later years?</h3>    <p>Because of compounding: the interest you earn in year 10 is itself earning interest in year 11, and so on. A 5% return on $10,000 is $500 in year 1 but $1,500+ in year 30, because the base is now $30,000. This is why starting early matters more than the amount.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/compound-interest-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📈</span><div class="tc-title">Compound Interest</div></div><div class="tc-desc">Pure compound interest with no monthly contributions.</div></a>
+        <a href="/tools/loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Loan Calculator</div></div><div class="tc-desc">Monthly payment on any loan with fixed rate.</div></a>
+        <a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage Calculator</div></div><div class="tc-desc">PITI monthly payment for a home purchase.</div></a>
+        <a href="/tools/hourly-to-salary" class="tool-card"><div class="icon-row"><span class="emoji">⏰</span><div class="tc-title">Hourly to Salary</div></div><div class="tc-desc">Convert hourly wage to annual, monthly, weekly.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+
+  function calc() {
+    var principal = parseFloat(document.getElementById('principal').value) || 0;
+    var monthly = parseFloat(document.getElementById('monthly').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var years = parseFloat(document.getElementById('years').value) || 0;
+    var months = Math.max(years * 12, 0);
+    var monthlyRate = rate / 12;
+    var balance = principal;
+    var totalContrib = principal;
+    for (var m = 0; m < months; m++) {
+      balance = balance * (1 + monthlyRate) + monthly;
+      totalContrib += monthly;
+    }
+    var interest = balance - totalContrib;
+    document.getElementById('finalVal').textContent = money(balance);
+    document.getElementById('contribVal').textContent = money(totalContrib);
+    document.getElementById('interestVal').textContent = money(interest);
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('principal').value = '1000';
+    document.getElementById('monthly').value = '200';
+    document.getElementById('rate').value = '5';
+    document.getElementById('years').value = '10';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+
+</script>
+</body>
+</html>

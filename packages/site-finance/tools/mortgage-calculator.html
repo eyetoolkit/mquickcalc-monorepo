@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc | mQuickCalc</title>
+  <meta name="description" content="Calculate monthly mortgage payment including principal, interest, property tax, and insurance. Enter home price, down payment, interest rate, and term. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/mortgage-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc | mQuickCalc">
+  <meta name="twitter:description" content="Calculate monthly mortgage payment including principal, interest, property tax, and insurance. Enter home price, down payment, interest rate, and term. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc">
+  <meta property="og:description" content="Calculate monthly mortgage payment including principal, interest, property tax, and insurance. Enter home price, down payment, interest rate, and term. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/mortgage-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator — Monthly Payment & Total Cost","url":"https://finance.mquickcalc.com/tools/mortgage-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly mortgage payment including principal, interest, property tax, and insurance."}
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much house can I afford on my salary?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule is the 28/36 rule: housing costs (PITI) should not exceed 28% of gross monthly income, and total debt payments (including the mortgage) should not exceed 36%. So if you make $10,000/month gross, your housing budget is about $2,800. Real lenders also qualify based on credit score, down payment, and other debt."}}, {"@type": "Question", "name": "Should I put 20% down to avoid PMI?", "acceptedAnswer": {"@type": "Answer", "text": "Generally yes. PMI (private mortgage insurance) costs 0.5-1.5% of the loan annually and protects the lender, not you, if you default. Putting 20% down (or refinancing once you have 20% equity) lets you skip it entirely. Some loan types like VA loans waive PMI regardless."}}, {"@type": "Question", "name": "What is PMI and how do I avoid it?", "acceptedAnswer": {"@type": "Answer", "text": "Private mortgage insurance protects the lender if you stop paying. It typically costs 0.5-1.5% of the loan balance per year and is required when your down payment is below 20%. You can ask to remove PMI once your loan-to-value ratio drops below 80% \u2014 usually after 5-7 years of payments on a 30-year mortgage, depending on appreciation."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator — Monthly Payment & Total Cost","item":"https://finance.mquickcalc.com/tools/mortgage-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Mortgage Calculator — Monthly Payment & Total Cost</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🏠</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Mortgage estimates are based on the rate, term, and tax/insurance you enter. Real mortgages include closing costs, PMI (if down payment is under 20%), HOA fees, and varying property tax rates. Use this for planning, not for an official lender quote.
+</div>
+    <h1 class="page-title">Mortgage Calculator — Monthly Payment & Total Cost</h1>
+    <p class="lede">Work out your monthly mortgage payment including principal, interest, property tax, and home insurance. The classic PITI breakdown that lenders use.</p>
+
+    <div class="calc-card">
+      <label for="price">Home price</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="500000.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="down">Down payment</label>
+          <input id="down" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="100000.00">
+        </div>
+        <div class="field">
+          <label for="rate">Interest rate (%)</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="6.5">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="years">Term (years)</label>
+          <input id="years" class="input" type="number" min="1" step="1" value="30">
+        </div>
+        <div class="field">
+          <label for="tax">Property tax (%/year)</label>
+          <input id="tax" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1.2">
+        </div>
+        <div class="field">
+          <label for="insurance">Home insurance ($/year)</label>
+          <input id="insurance" class="input" type="number" inputmode="decimal" min="0" step="1" value="1800">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="totalVal">$0.00</div>
+        <div class="dim">total monthly payment (PITI)</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Principal &amp; interest</div><div class="val" id="piVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Total interest</div><div class="val" id="interestVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Loan amount</div><div class="val" id="loanVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Does not include PMI, HOA fees, or closing costs. Property tax defaults to 1.2% (US national average, 2024).</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">The real cost of a mortgage</div>
+      <p>A $400,000 30-year mortgage at 6.5% costs about $2,528/month PITI, but you pay back $910,000 over 30 years — $510,000 of that is interest, more than the original loan. A 15-year term at the same rate cuts the total interest to $260,000, but the monthly payment is $3,484. The 30-year is more affordable monthly; the 15-year is dramatically cheaper in total.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>PITI = Principal & Interest + monthly property tax + monthly insurance. Principal & Interest is calculated with the standard amortization formula. Property tax is (home price × rate) / 12; insurance is (annual premium) / 12.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much house can I afford on my salary?</h3>    <p>A common rule is the 28/36 rule: housing costs (PITI) should not exceed 28% of gross monthly income, and total debt payments (including the mortgage) should not exceed 36%. So if you make $10,000/month gross, your housing budget is about $2,800. Real lenders also qualify based on credit score, down payment, and other debt.</p>
+    <h3>Should I put 20% down to avoid PMI?</h3>    <p>Generally yes. PMI (private mortgage insurance) costs 0.5-1.5% of the loan annually and protects the lender, not you, if you default. Putting 20% down (or refinancing once you have 20% equity) lets you skip it entirely. Some loan types like VA loans waive PMI regardless.</p>
+    <h3>What is PMI and how do I avoid it?</h3>    <p>Private mortgage insurance protects the lender if you stop paying. It typically costs 0.5-1.5% of the loan balance per year and is required when your down payment is below 20%. You can ask to remove PMI once your loan-to-value ratio drops below 80% — usually after 5-7 years of payments on a 30-year mortgage, depending on appreciation.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Loan Calculator</div></div><div class="tc-desc">Auto, personal, or student loan monthly payment.</div></a>
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">See how saving grows with compound interest.</div></a>
+        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">Find how many units you need to sell to break even.</div></a>
+        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">Add or remove sales tax from a price.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+
+  function calc() {
+    var price = parseFloat(document.getElementById('price').value) || 0;
+    var down = parseFloat(document.getElementById('down').value) || 0;
+    var principal = Math.max(price - down, 0);
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var years = parseFloat(document.getElementById('years').value) || 30;
+    var propertyTax = (parseFloat(document.getElementById('tax').value) || 0) / 100;
+    var insurance = parseFloat(document.getElementById('insurance').value) || 0;
+    var months = Math.max(years * 12, 1);
+    var monthlyRate = rate / 12;
+    var pi;
+    if (rate === 0) {
+      pi = principal / months;
+    } else {
+      var factor = Math.pow(1 + monthlyRate, months);
+      pi = principal * (monthlyRate * factor) / (factor - 1);
+    }
+    var taxMonthly = price * propertyTax / 12;
+    var insuranceMonthly = insurance / 12;
+    var total = pi + taxMonthly + insuranceMonthly;
+    var totalInterest = (pi * months) - principal;
+    document.getElementById('piVal').textContent = money(pi);
+    document.getElementById('totalVal').textContent = money(total);
+    document.getElementById('interestVal').textContent = money(totalInterest);
+    document.getElementById('loanVal').textContent = money(principal);
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('price').value = '500000';
+    document.getElementById('down').value = '100000';
+    document.getElementById('rate').value = '6.5';
+    document.getElementById('years').value = '30';
+    document.getElementById('tax').value = '1.2';
+    document.getElementById('insurance').value = '1800';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+
+</script>
+</body>
+</html>

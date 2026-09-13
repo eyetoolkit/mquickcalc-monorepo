@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hourly to Salary Converter — Annual, Weekly, Daily Pay | mQuickCalc | mQuickCalc</title>
+  <meta name="description" content="Convert between hourly wage and annual salary. Account for overtime, unpaid time off, and weeks worked per year. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/hourly-to-salary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hourly to Salary Converter — Annual, Weekly, Daily Pay | mQuickCalc | mQuickCalc">
+  <meta name="twitter:description" content="Convert between hourly wage and annual salary. Account for overtime, unpaid time off, and weeks worked per year. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Hourly to Salary Converter — Annual, Weekly, Daily Pay | mQuickCalc">
+  <meta property="og:description" content="Convert between hourly wage and annual salary. Account for overtime, unpaid time off, and weeks worked per year. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/hourly-to-salary">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Hourly to Salary Converter — Annual, Weekly, Daily Pay","url":"https://finance.mquickcalc.com/tools/hourly-to-salary","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert between hourly wage and annual salary."}
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What counts as overtime in the US?", "acceptedAnswer": {"@type": "Answer", "text": "Federal law (FLSA) requires time-and-a-half (1.5x) for hours over 40 in a workweek, for non-exempt employees. Salaried employees earning above $684/week ($35,568/year) are usually exempt from overtime. Some states like California add daily overtime (over 8 hours/day) and double-time (over 12 hours/day)."}}, {"@type": "Question", "name": "Why use 50 weeks and not 52?", "acceptedAnswer": {"@type": "Answer", "text": "Most full-time US jobs give 10-15 days of paid vacation plus holidays. If those are unpaid time off \u2014 or you are a freelancer / gig worker \u2014 your actual work weeks are 48-50 per year, not 52. Using 50 weeks gives a more realistic number for a typical worker."}}, {"@type": "Question", "name": "Does this calculator account for taxes?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 this is gross pay only. Federal income tax (10-37% depending on bracket), state income tax (0-13.3%), FICA (7.65%), and benefits deductions all reduce take-home. A $60,000 gross salary is closer to $42,000-46,000 net depending on state and 401(k) contributions."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Hourly to Salary Converter — Annual, Weekly, Daily Pay","item":"https://finance.mquickcalc.com/tools/hourly-to-salary"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Hourly to Salary Converter — Annual, Weekly, Daily Pay</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>⏰</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> This is a rough estimate. Actual take-home pay depends on taxes, deductions, benefits, and whether the worker is salaried exempt or hourly non-exempt. Use it for planning, not for an offer evaluation.
+</div>
+    <h1 class="page-title">Hourly to Salary Converter — Annual, Weekly, Daily Pay</h1>
+    <p class="lede">Convert between hourly pay and annual salary, with options for overtime and weeks worked. Most full-time workers in the US get 2-3 weeks unpaid time off per year, so 49-50 weeks is a realistic default.</p>
+
+    <div class="calc-card">
+      <label for="hourly">Hourly wage</label>
+      <input id="hourly" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="25.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="hours">Hours per week</label>
+          <input id="hours" class="input" type="number" inputmode="decimal" min="0" step="1" value="40">
+        </div>
+        <div class="field">
+          <label for="weeks">Weeks worked per year</label>
+          <input id="weeks" class="input" type="number" min="1" step="1" value="50">
+        </div>
+        <div class="field">
+          <label for="overtime">Overtime hours per week (1.5x rate)</label>
+          <input id="overtime" class="input" type="number" inputmode="decimal" min="0" step="1" value="0">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="annualVal">$0.00</div>
+        <div class="dim">annual gross pay</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Monthly</div><div class="val" id="monthlyVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Bi-weekly</div><div class="val" id="biweeklyVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Weekly</div><div class="val" id="weeklyVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Daily (5-day week)</div><div class="val" id="dailyVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Gross pay only. Federal tax + state tax + FICA + benefits typically takes 25-35% off this number, depending on your bracket and state.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">Hourly vs salary trade-offs</div>
+      <p>A $50,000 annual salary equals about $24/hour at 40 hours/week for 52 weeks. A $25/hour job with 40 hours/week and 50 weeks is $50,000 — same money. Salaried positions usually include paid vacation, health insurance, and retirement match, while hourly jobs are more flexible and often pay overtime. Compare total compensation, not just the headline number.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>Annual = (hourly × hours/week × weeks/year) + (overtime hours × 1.5 × hourly). The 1.5x is the US federal overtime rate; some states (California) require 2x after 12 hours/day.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What counts as overtime in the US?</h3>    <p>Federal law (FLSA) requires time-and-a-half (1.5x) for hours over 40 in a workweek, for non-exempt employees. Salaried employees earning above $684/week ($35,568/year) are usually exempt from overtime. Some states like California add daily overtime (over 8 hours/day) and double-time (over 12 hours/day).</p>
+    <h3>Why use 50 weeks and not 52?</h3>    <p>Most full-time US jobs give 10-15 days of paid vacation plus holidays. If those are unpaid time off — or you are a freelancer / gig worker — your actual work weeks are 48-50 per year, not 52. Using 50 weeks gives a more realistic number for a typical worker.</p>
+    <h3>Does this calculator account for taxes?</h3>    <p>No — this is gross pay only. Federal income tax (10-37% depending on bracket), state income tax (0-13.3%), FICA (7.65%), and benefits deductions all reduce take-home. A $60,000 gross salary is closer to $42,000-46,000 net depending on state and 401(k) contributions.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/freelance-hourly-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💼</span><div class="tc-title">Freelance Hourly Rate</div></div><div class="tc-desc">Calculate the hourly rate you need to hit a target salary.</div></a>
+        <a href="/tools/sales-commission-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Sales Commission</div></div><div class="tc-desc">Calculate commission-based earnings.</div></a>
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">See how saving grows with compound interest.</div></a>
+        <a href="/tools/markup-margin-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Markup &amp; Margin</div></div><div class="tc-desc">Convert between markup and margin percentages.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+
+  function calc() {
+    var hourly = parseFloat(document.getElementById('hourly').value) || 0;
+    var hoursPerWeek = parseFloat(document.getElementById('hours').value) || 40;
+    var weeks = parseFloat(document.getElementById('weeks').value) || 50;
+    var overtime = parseFloat(document.getElementById('overtime').value) || 0;
+    var otRate = overtime * 1.5 * hourly;
+    var annual = hourly * hoursPerWeek * weeks + otRate;
+    var monthly = annual / 12;
+    var biweekly = annual / 26;
+    var weekly = annual / 52;
+    var daily = annual / (weeks * 5);
+    document.getElementById('annualVal').textContent = money(annual);
+    document.getElementById('monthlyVal').textContent = money(monthly);
+    document.getElementById('weeklyVal').textContent = money(weekly);
+    document.getElementById('dailyVal').textContent = money(daily);
+    document.getElementById('biweeklyVal').textContent = money(biweekly);
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('hourly').value = '25';
+    document.getElementById('hours').value = '40';
+    document.getElementById('weeks').value = '50';
+    document.getElementById('overtime').value = '0';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+
+</script>
+</body>
+</html>

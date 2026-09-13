@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator — Monthly Payment & Total Interest | mQuickCalc | mQuickCalc</title>
+  <meta name="description" content="Calculate monthly loan payment, total interest paid, and amortization. Enter principal, annual interest rate, and term in months or years. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/loan-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Loan Calculator — Monthly Payment & Total Interest | mQuickCalc | mQuickCalc">
+  <meta name="twitter:description" content="Calculate monthly loan payment, total interest paid, and amortization. Enter principal, annual interest rate, and term in months or years. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Loan Calculator — Monthly Payment & Total Interest | mQuickCalc">
+  <meta property="og:description" content="Calculate monthly loan payment, total interest paid, and amortization. Enter principal, annual interest rate, and term in months or years. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/loan-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Calculator — Monthly Payment & Total Interest","url":"https://finance.mquickcalc.com/tools/loan-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly loan payment, total interest paid, and amortization."}
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the loan term affect total interest?", "acceptedAnswer": {"@type": "Answer", "text": "A 5-year loan at 7% on $25,000 costs about $4,700 in interest. The same loan over 3 years costs about $2,700 in interest but the monthly payment is $775 instead of $495. Shorter terms save thousands but require higher monthly cash flow."}}, {"@type": "Question", "name": "What interest rate should I use for a car loan?", "acceptedAnswer": {"@type": "Answer", "text": "New car loans in the US were 6-7% in 2024-2025, used car loans 8-11%. Subprime borrowers (below 670 FICO) can pay 15-20%. Use your actual loan offer if you have one, or your credit tier estimate if you are pre-shopping."}}, {"@type": "Question", "name": "Should I make extra payments on my loan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, even one extra payment per year can shave 4-6 years off a 30-year mortgage and save tens of thousands in interest. Most loans accept early principal payments without penalty, but verify before making extras."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Loan Calculator — Monthly Payment & Total Interest","item":"https://finance.mquickcalc.com/tools/loan-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Loan Calculator — Monthly Payment & Total Interest</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>💰</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results are estimates based on a fixed interest rate and term. Real loans may have variable rates, fees, and different compounding. Use this for planning, not for an official loan quote.
+</div>
+    <h1 class="page-title">Loan Calculator — Monthly Payment & Total Interest</h1>
+    <p class="lede">Work out your monthly payment on any loan — auto, personal, or student. Enter the principal (amount borrowed), the annual interest rate, and the term in years.</p>
+
+    <div class="calc-card">
+      <label for="principal">Loan amount (principal)</label>
+      <input id="principal" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="25000.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="rate">Annual interest rate (%)</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="7">
+        </div>
+        <div class="field">
+          <label for="years">Loan term (years)</label>
+          <input id="years" class="input" type="number" min="1" step="1" value="5">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="monthlyVal">$0.00</div>
+        <div class="dim">monthly payment</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Total paid</div><div class="val" id="totalVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Total interest</div><div class="val" id="interestVal">$0.00</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Compounded monthly. To see how much of each payment is interest vs principal, get an official amortization schedule from the lender.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How loan payments are calculated</div>
+      <p>Each month the lender charges interest on the remaining principal, then applies the rest of your payment to the balance. Early in the term, most of your payment is interest; later, most is principal. A 7% loan on $25,000 over 5 years costs about $495/month, with $4,700 of that being interest — a reminder of why shorter terms save money.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>The standard formula is M = P × (r(1+r)ⁿ) / ((1+r)ⁿ - 1), where M is monthly payment, P is principal, r is monthly interest rate (annual / 12), and n is number of months.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How does the loan term affect total interest?</h3>    <p>A 5-year loan at 7% on $25,000 costs about $4,700 in interest. The same loan over 3 years costs about $2,700 in interest but the monthly payment is $775 instead of $495. Shorter terms save thousands but require higher monthly cash flow.</p>
+    <h3>What interest rate should I use for a car loan?</h3>    <p>New car loans in the US were 6-7% in 2024-2025, used car loans 8-11%. Subprime borrowers (below 670 FICO) can pay 15-20%. Use your actual loan offer if you have one, or your credit tier estimate if you are pre-shopping.</p>
+    <h3>Should I make extra payments on my loan?</h3>    <p>Yes, even one extra payment per year can shave 4-6 years off a 30-year mortgage and save tens of thousands in interest. Most loans accept early principal payments without penalty, but verify before making extras.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage Calculator</div></div><div class="tc-desc">Monthly mortgage payment with principal and interest breakdown.</div></a>
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">See how saving grows with compound interest over years.</div></a>
+        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">Add or remove sales tax from a price.</div></a>
+        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">Find how many units you need to sell to break even.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+
+  function calc() {
+    var principal = parseFloat(document.getElementById('principal').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var years = parseFloat(document.getElementById('years').value) || 0;
+    var months = Math.max(years * 12, 0);
+    var monthlyRate = rate / 12;
+    var monthlyPay;
+    if (rate === 0) {
+      monthlyPay = principal / Math.max(months, 1);
+    } else {
+      var factor = Math.pow(1 + monthlyRate, months);
+      monthlyPay = principal * (monthlyRate * factor) / (factor - 1);
+    }
+    var totalPaid = monthlyPay * months;
+    var totalInterest = totalPaid - principal;
+    document.getElementById('monthlyVal').textContent = money(monthlyPay);
+    document.getElementById('totalVal').textContent = money(totalPaid);
+    document.getElementById('interestVal').textContent = money(totalInterest);
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('principal').value = '25000';
+    document.getElementById('rate').value = '7';
+    document.getElementById('years').value = '5';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+
+</script>
+</body>
+</html>

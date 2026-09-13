@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator — Final Amount & APY | mQuickCalc | mQuickCalc</title>
+  <meta name="description" content="See how a single deposit grows with compound interest. Pick daily, monthly, quarterly, or annual compounding. Free, no sign-up.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/compound-interest-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compound Interest Calculator — Final Amount & APY | mQuickCalc | mQuickCalc">
+  <meta name="twitter:description" content="See how a single deposit grows with compound interest. Pick daily, monthly, quarterly, or annual compounding. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Compound Interest Calculator — Final Amount & APY | mQuickCalc">
+  <meta property="og:description" content="See how a single deposit grows with compound interest. Pick daily, monthly, quarterly, or annual compounding. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/compound-interest-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Compound Interest Calculator — Final Amount & APY","url":"https://finance.mquickcalc.com/tools/compound-interest-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"See how a single deposit grows with compound interest."}
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the rule of 72?", "acceptedAnswer": {"@type": "Answer", "text": "A quick mental math: 72 / interest rate = years to double your money. At 7% (stock market average), your money doubles every ~10 years. At 4% (HYSA), it takes 18 years. At 2% (checking account), 36 years. The rule is exact for 8% and reasonably accurate for rates between 4-12%."}}, {"@type": "Question", "name": "How often do real savings accounts compound?", "acceptedAnswer": {"@type": "Answer", "text": "Most US high-yield savings accounts (HYSAs) compound daily but credit interest monthly. So your balance accrues interest every day, but the actual deposit to your account happens once a month. CDs and bonds typically compound semi-annually. Stock dividends reinvest \u2014 for those, monthly or quarterly is a reasonable assumption."}}, {"@type": "Question", "name": "Why does more frequent compounding only help a little?", "acceptedAnswer": {"@type": "Answer", "text": "Compounding is the magic of earning interest on your interest. But that \"interest on interest\" only happens on interest that has already been credited. The difference between daily and monthly compounding is just whether that credit happens 365 or 12 times a year \u2014 at low rates the gap is tiny because each credit is small. At higher rates, the gap widens."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Compound Interest Calculator — Final Amount & APY","item":"https://finance.mquickcalc.com/tools/compound-interest-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Compound Interest Calculator — Final Amount & APY</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>📈</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results assume a fixed interest rate for the full period. Real investments vary year to year. Use this for fixed-rate planning (CDs, bonds, HYSA) or for rough long-term stock-market estimates.
+</div>
+    <h1 class="page-title">Compound Interest Calculator — Final Amount & APY</h1>
+    <p class="lede">See how a single deposit grows with compound interest. Pick how often the interest compounds — daily for crypto/stocks, monthly for HYSAs, quarterly for bonds.</p>
+
+    <div class="calc-card">
+      <label for="principal">Initial deposit</label>
+      <input id="principal" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="10000.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="rate">Annual interest rate (%)</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="7">
+        </div>
+        <div class="field">
+          <label for="years">Years</label>
+          <input id="years" class="input" type="number" min="1" step="1" value="20">
+        </div>
+        <div class="field">
+          <label for="freq">Compounding</label>
+          <select id="freq" class="input">
+            <option value="daily">Daily (365×/yr)</option>
+            <option value="monthly" selected>Monthly (12×/yr)</option>
+            <option value="quarterly">Quarterly (4×/yr)</option>
+            <option value="annually">Annually (1×/yr)</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="finalVal">$0.00</div>
+        <div class="dim">final amount</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Interest earned</div><div class="val" id="interestVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Growth multiple</div><div class="val" id="multipleVal">—</div></div>
+          <div class="cell"><div class="lbl">Effective APY</div><div class="val" id="effRateVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">More frequent compounding = slightly more interest, but the difference is small. The bigger factors are the interest rate and time horizon.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How compounding frequency matters</div>
+      <p>A 5% rate compounded daily yields 5.1267% APY; compounded monthly it is 5.116%; annually, 5.0%. The difference is small at low rates, but at 20% or higher, daily compounding can add 0.5-1% extra per year. For practical purposes, monthly is the right default for most savings accounts.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>Final = Principal × (1 + rate/n)^(n × years), where n is compounding periods per year. Effective APY = (1 + rate/n)^n - 1, the actual annual yield when compounding is more frequent than annual.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is the rule of 72?</h3>    <p>A quick mental math: 72 / interest rate = years to double your money. At 7% (stock market average), your money doubles every ~10 years. At 4% (HYSA), it takes 18 years. At 2% (checking account), 36 years. The rule is exact for 8% and reasonably accurate for rates between 4-12%.</p>
+    <h3>How often do real savings accounts compound?</h3>    <p>Most US high-yield savings accounts (HYSAs) compound daily but credit interest monthly. So your balance accrues interest every day, but the actual deposit to your account happens once a month. CDs and bonds typically compound semi-annually. Stock dividends reinvest — for those, monthly or quarterly is a reasonable assumption.</p>
+    <h3>Why does more frequent compounding only help a little?</h3>    <p>Compounding is the magic of earning interest on your interest. But that "interest on interest" only happens on interest that has already been credited. The difference between daily and monthly compounding is just whether that credit happens 365 or 12 times a year — at low rates the gap is tiny because each credit is small. At higher rates, the gap widens.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">Compound interest with monthly contributions.</div></a>
+        <a href="/tools/loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Loan Calculator</div></div><div class="tc-desc">Monthly payment on any loan with fixed rate.</div></a>
+        <a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage Calculator</div></div><div class="tc-desc">PITI monthly payment for a home purchase.</div></a>
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">See how saving grows with compound interest.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function pct(n) { return (n * 100).toFixed(2) + '%'; }
+
+  var periods = { daily: 365, monthly: 12, quarterly: 4, annually: 1 };
+
+  function calc() {
+    var principal = parseFloat(document.getElementById('principal').value) || 0;
+    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+    var years = parseFloat(document.getElementById('years').value) || 0;
+    var sel = document.getElementById('freq');
+    var n = periods[sel.value] || 12;
+    var final = principal * Math.pow(1 + rate / n, n * years);
+    var interest = final - principal;
+    document.getElementById('finalVal').textContent = money(final);
+    document.getElementById('interestVal').textContent = money(interest);
+    document.getElementById('multipleVal').textContent = principal > 0 ? (final / principal).toFixed(2) + 'x' : '—';
+    document.getElementById('effRateVal').textContent = pct(Math.pow(1 + rate / n, n) - 1);
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('principal').value = '10000';
+    document.getElementById('rate').value = '7';
+    document.getElementById('years').value = '20';
+    document.getElementById('freq').value = 'monthly';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calories Burned by Heart Rate — Cardio Calorie Calculator | mQuickCalc</title>
+  <meta name="description" content="Estimate calories burned during cardio exercise using the heart-rate based Keytel formula. Inputs: age, weight, heart rate during exercise, duration. Free, no sign-up.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/calories-burned-by-heart-rate">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#dc2626">
+  <meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calories Burned by Heart Rate — Cardio Calorie Calculator | mQuickCalc">
+  <meta name="twitter:description" content="Estimate calories burned during cardio using the Keytel heart-rate formula. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+  <meta name="twitter:image" content="https://health.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Calories Burned by Heart Rate — Cardio Calorie Calculator">
+  <meta property="og:description" content="Estimate calories burned during cardio using heart rate.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://health.mquickcalc.com/tools/calories-burned-by-heart-rate">
+  <meta property="og:site_name" content="mQuickCalc Health">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Calories Burned by Heart Rate","url":"https://health.mquickcalc.com/tools/calories-burned-by-heart-rate","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate calories burned during cardio exercise using heart rate."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which heart rate formula is most accurate?","acceptedAnswer":{"@type":"Answer","text":"The Keytel formula (2001) used here is one of the more accurate published equations for healthy adults doing steady-state cardio. It uses sex, age, weight, heart rate, and duration. It is less accurate for HIIT, very high-intensity intervals, or people with heart-rate conditions."}},{"@type":"Question","name":"Does a higher heart rate always mean more calories burned?","acceptedAnswer":{"@type":"Answer","text":"Mostly yes, but the relationship is not linear. Going from 120 to 140 bpm roughly doubles calorie burn, but going from 160 to 180 bpm adds only another 30-40%. The relationship flattens at very high heart rates because the body can no longer use all the oxygen being delivered."}},{"@type":"Question","name":"How accurate are these calorie estimates?","acceptedAnswer":{"@type":"Answer","text":"Typically within 10-20% of measured values for steady-state cardio in healthy adults. Accuracy drops for interval training, resistance exercise, and people who are not average body composition. Treat the result as a planning estimate, not a precise measurement."}}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Calories Burned by Heart Rate","item":"https://health.mquickcalc.com/tools/calories-burned-by-heart-rate"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#health">Health</a>
+      <a href="/#pregnancy">Pregnancy</a>
+      <a href="/#about">About</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#fitness'>Fitness</a><span class='sep'>›</span><span class='current'>Calories Burned by Heart Rate</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🔥</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Results use the Keytel heart-rate formula, accurate to roughly 10-20% for steady-state cardio. Treat as a planning estimate, not a precise measurement.
+</div>
+    <h1 class="page-title">Calories Burned by Heart Rate</h1>
+    <p class="lede">Estimate calories burned during cardio exercise using the Keytel heart-rate formula. More accurate than generic "METs" calculators for steady-state cardio because it uses your actual heart rate during the activity.</p>
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="sex">Sex</label>
+          <select id="sex" class="input">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="age">Age</label>
+          <input id="age" class="input" type="number" inputmode="decimal" min="0" step="1" value="30">
+        </div>
+        <div class="field">
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="70">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="hr">Heart rate during exercise (bpm)</label>
+          <input id="hr" class="input" type="number" inputmode="decimal" min="0" step="1" value="140">
+        </div>
+        <div class="field">
+          <label for="duration">Duration (minutes)</label>
+          <input id="duration" class="input" type="number" inputmode="decimal" min="0" step="1" value="30">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="kcalVal">0</div>
+        <div class="dim">calories burned</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Per minute</div><div class="val" id="perMinVal">0</div></div>
+          <div class="cell"><div class="lbl">Equivalent walking</div><div class="val" id="walkVal">0</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Walking equivalent assumes a 70 kg person at 3 mph burns about 4 kcal/min. Use this to compare sessions.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How the Keytel formula works</div>
+      <p>For men: (-55.0969 + 0.6309 × HR + 0.1988 × weight + 0.2017 × age) / 4.184 × duration. For women: (-20.4022 + 0.4472 × HR - 0.1263 × weight + 0.074 × age) / 4.184 × duration. Output is total kcal. The formula is calibrated for healthy adults during steady-state cardio, so HIIT or weight training will be less accurate.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>Heart rate is a proxy for oxygen consumption, which in turn is a proxy for calorie burn. The Keytel formula (published 2001 in Journal of Sports Sciences) takes your sex, age, weight, average heart rate during the activity, and duration, and produces an estimate in kcal. The denominator 4.184 converts from kJ to kcal.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Which heart rate formula is most accurate?</h3>
+    <p>The Keytel formula (2001) used here is one of the more accurate published equations for healthy adults doing steady-state cardio. It uses sex, age, weight, heart rate, and duration. It is less accurate for HIIT, very high-intensity intervals, or people with heart-rate conditions.</p>
+    <h3>Does a higher heart rate always mean more calories burned?</h3>
+    <p>Mostly yes, but the relationship is not linear. Going from 120 to 140 bpm roughly doubles calorie burn, but going from 160 to 180 bpm adds only another 30-40%. The relationship flattens at very high heart rates because the body can no longer use all the oxygen being delivered.</p>
+    <h3>How accurate are these calorie estimates?</h3>
+    <p>Typically within 10-20% of measured values for steady-state cardio in healthy adults. Accuracy drops for interval training, resistance exercise, and people who are not average body composition. Treat the result as a planning estimate, not a precise measurement.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/target-heart-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">❤️</span><div class="tc-title">Target Heart Rate</div></div><div class="tc-desc">Find your training zones by age and resting heart rate.</div></a>
+        <a href="/tools/calories-burned-by-distance" class="tool-card"><div class="icon-row"><span class="emoji">🏃</span><div class="tc-title">Calories Burned by Distance</div></div><div class="tc-desc">Calories burned running or walking a given distance.</div></a>
+        <a href="/tools/vo2-max-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🫁</span><div class="tc-title">VO2 Max Calculator</div></div><div class="tc-desc">Estimate your maximum oxygen uptake.</div></a>
+        <a href="/tools/calorie-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🍎</span><div class="tc-title">Calorie Calculator</div></div><div class="tc-desc">Daily calorie needs for weight maintenance, loss, or gain.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — formula based on Keytel 2001; typical accuracy ±15% for steady-state cardio in healthy adults.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general wellness information, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function calc() {
+    var sex = document.getElementById('sex').value;
+    var age = parseFloat(document.getElementById('age').value) || 0;
+    var weight = parseFloat(document.getElementById('weight').value) || 0;
+    var hr = parseFloat(document.getElementById('hr').value) || 0;
+    var duration = parseFloat(document.getElementById('duration').value) || 0;
+    var kcal;
+    if (sex === 'male') {
+      kcal = (-55.0969 + 0.6309 * hr + 0.1988 * weight + 0.2017 * age) * duration / 4.184;
+    } else {
+      kcal = (-20.4022 + 0.4472 * hr - 0.1263 * weight + 0.074 * age) * duration / 4.184;
+    }
+    kcal = Math.max(0, kcal);
+    var perMin = duration > 0 ? kcal / duration : 0;
+    var walk = perMin / 4;
+    document.getElementById('kcalVal').textContent = Math.round(kcal);
+    document.getElementById('perMinVal').textContent = perMin.toFixed(1);
+    document.getElementById('walkVal').textContent = walk.toFixed(1) + ' min';
+    document.getElementById('result').classList.add('show');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('sex').value = 'male';
+    document.getElementById('age').value = '30';
+    document.getElementById('weight').value = '70';
+    document.getElementById('hr').value = '140';
+    document.getElementById('duration').value = '30';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>

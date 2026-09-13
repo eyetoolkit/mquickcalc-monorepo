@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator — Restaurant Tip, Split & Round | mQuickCalc</title>
+  <meta name="description" content="Calculate restaurant tip by percentage, split the bill among friends, and round up or down. Free, no sign-up. Default tips 15% / 18% / 20% / 25% shown for quick comparison.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/tip-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tip Calculator — Restaurant Tip, Split & Round | mQuickCalc">
+  <meta name="twitter:description" content="Calculate restaurant tip by percentage, split the bill among friends, and round up or down. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Tip Calculator — Restaurant Tip, Split & Round | mQuickCalc">
+  <meta property="og:description" content="Calculate restaurant tip by percentage, split the bill among friends, and round up or down.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/tip-calculator">
+  <meta property="og:site_name" content="mQuickCalc">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+{"@context":"https://***@type":"WebApplication","name":"Tip Calculator","url":"https://mquickcalc.com/tools/tip-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate restaurant tip and split the bill among friends."}
+  </script>
+<script type="application/ld+json">{"@context":"https://***@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I tip?","acceptedAnswer":{"@type":"Answer","text":"A standard restaurant tip in the US is 15-20% of the pre-tax bill. 18% is a safe default for decent service. Anywhere below 15% reads as a complaint, above 22% is generous. For exceptional service (server remade your dish without complaint) 25% is fine."}},{"@type":"Question","name":"Should I tip on the pre-tax or post-tax amount?","acceptedAnswer":{"@type":"Answer","text":"Tip on the pre-tax amount. The sales tax is not service the restaurant provided, so adding 20% of the post-tax total effectively tips on the tax too. Most US tipping guides and etiquette columns recommend pre-tax."}},{"@type":"Question","name":"How do I split a bill with different tip percentages?","acceptedAnswer":{"@type":"Answer","text":"Compute the bill plus tip for the whole table, then divide by the number of people. If one person ordered an expensive dish and another a salad, splitting evenly is unfair. A reasonable middle ground: split the food and drink proportionally to what each ordered, but split the tip evenly."}}]}</script>
+<meta property="og:url" content="https://mquickcalc.com/tools/tip-calculator">
+<script type="application/ld+json">{"@context":"https://***@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Tip Calculator","item":"https://mquickcalc.com/tools/tip-calculator"}]}</script>
+  <script type="application/ld+json">
+{"@context":"https://***@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."]}
+  </script>
+</head>
+<body data-site="main">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#converters">Converters</a>
+      <a href="/#tools">All tools</a>
+      <a href="/#about">About</a>
+    </nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><span class='current'>Tip Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>💵</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Estimates only.</strong> Result is a tip suggestion based on a percentage of your bill. Actual tip is up to you and depends on service quality, location, and local custom.
+</div>
+    <h1 class="page-title">Tip Calculator</h1>
+    <p class="lede">Work out a tip at any percentage, split it across the table, and round up or down. Default presets 15%, 18%, 20%, 25% for quick comparison.</p>
+
+    <div class="calc-card">
+      <label for="amount">Bill amount (pre-tax)</label>
+      <input id="amount" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="80.00">
+
+      <div class="row">
+        <div class="field">
+          <label for="pct">Tip %</label>
+          <input id="pct" class="input" type="number" inputmode="decimal" min="0" step="0.5" value="18">
+        </div>
+        <div class="field">
+          <label for="people">Number of people</label>
+          <input id="people" class="input" type="number" min="1" step="1" value="2">
+        </div>
+      </div>
+
+      <div style="margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn ghost" data-pct="15">15%</button>
+        <button class="btn ghost" data-pct="18">18%</button>
+        <button class="btn ghost" data-pct="20">20%</button>
+        <button class="btn ghost" data-pct="25">25%</button>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="totalVal">$0.00</div>
+        <div class="dim">total with tip</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Tip amount</div><div class="val" id="tipVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Per person</div><div class="val" id="perVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Tip per person</div><div class="val" id="tipPerVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Effective %</div><div class="val" id="effVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;">Tip is calculated on the pre-tax amount. Split evenly across all people; if someone ordered much more, divide the food items by hand instead of trusting the even split.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">How much to tip</div>
+      <p>Standard US restaurant tipping is <strong>15-20%</strong> of the pre-tax bill. 18% is a safe default. Lower than 15% reads as a complaint; 25% is for genuinely excellent service. Outside the US, tipping norms differ wildly (often already included, or not expected) — adjust accordingly.</p>
+    </div>
+
+    <h2>How this calculator works</h2>
+    <p>Enter your bill, the tip percentage you want to leave, and how many people are splitting. The result shows the total with tip and how much each person owes. The "effective %" is the tip as a percentage of the pre-tax bill — useful when the bill includes tax that shouldn't be tipped on.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How much should I tip?</h3>
+    <p>A standard restaurant tip in the US is 15-20% of the pre-tax bill. 18% is a safe default for decent service. Anywhere below 15% reads as a complaint, above 22% is generous. For exceptional service (server remade your dish without complaint) 25% is fine.</p>
+    <h3>Should I tip on the pre-tax or post-tax amount?</h3>
+    <p>Tip on the pre-tax amount. The sales tax is not service the restaurant provided, so adding 20% of the post-tax total effectively tips on the tax too. Most US tipping guides and etiquette columns recommend pre-tax.</p>
+    <h3>How do I split a bill with different tip percentages?</h3>
+    <p>Compute the bill plus tip for the whole table, then divide by the number of people. If one person ordered an expensive dish and another a salad, splitting evenly is unfair. A reasonable middle ground: split the food and drink proportionally to what each ordered, but split the tip evenly.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/discount-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏷️</span><div class="tc-title">Discount Calculator</div></div><div class="tc-desc">Calculate sale price and savings from a percentage discount.</div></a>
+        <a href="/tools/markup-margin-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Markup &amp; Margin</div></div><div class="tc-desc">Convert between markup and margin percentages.</div></a>
+        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">Add or remove sales tax from a price.</div></a>
+        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">Find how many units you need to sell to break even.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — typical tip norms change slowly, but always use your judgment for the actual service you got.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+  <script src="/js/site-enhance.js" defer></script>
+  <script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
+  function pct(n) { return (n * 100).toFixed(2) + '%'; }
+
+  function calc() {
+    var amount = parseFloat(document.getElementById('amount').value) || 0;
+    var tipPct = (parseFloat(document.getElementById('pct').value) || 0) / 100;
+    var people = Math.max(parseInt(document.getElementById('people').value, 10) || 1, 1);
+    var tip = amount * tipPct;
+    var total = amount + tip;
+    var perPerson = total / people;
+    var tipPerPerson = tip / people;
+    var eff = amount > 0 ? tip / amount : 0;
+    document.getElementById('tipVal').textContent = money(tip);
+    document.getElementById('totalVal').textContent = money(total);
+    document.getElementById('perVal').textContent = money(perPerson);
+    document.getElementById('tipPerVal').textContent = money(tipPerPerson);
+    document.getElementById('effVal').textContent = amount > 0 ? pct(eff) : '—';
+    document.getElementById('result').classList.add('show');
+  }
+
+  // Quick-preset buttons
+  document.querySelectorAll('button[data-pct]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.getElementById('pct').value = btn.getAttribute('data-pct');
+      calc();
+    });
+  });
+
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    document.getElementById('amount').value = '80.00';
+    document.getElementById('pct').value = '18';
+    document.getElementById('people').value = '2';
+    calc();
+  });
+  calc();
+  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
+})();
+</script>
+</body>
+</html>
