@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideal Weight Calculator — Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller).">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/ideal-weight-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Ideal Weight Calculator", "url": "https://health.mquickcalc.com/tools/ideal-weight-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller)."}</script>
+<meta property="og:title" content="Ideal Weight Calculator — Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/ideal-weight-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ideal Weight Calculator — Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller).">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://health.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Ideal Weight Calculator", "item": "https://health.mquickcalc.com/tools/ideal-weight-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#body'>Body Composition</a><span class='sep'>›</span><span class='current'>Ideal Weight Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>⚖️</div>
+<h1 class="page-title">Ideal Weight Calculator</h1>
+    <p class="lede">There's no single 'ideal' weight — healthy is a range, not a number. This calculator shows three standard formulas plus your BMI-based healthy weight span.</p>
+
+    <div class="calc-card">
+
+      <label for="height">Height (cm)</label>
+      <input id="height" class="input" type="number" inputmode="decimal" min="0" step="any" value="175">
+
+      <label for="gender">Gender</label>
+      <select id="gender" class="input">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="frame">Body frame size</label>
+      <select id="frame" class="input">
+        <option value="small">Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large">Large</option>
+      </select>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="rangeVal">-- kg</div>
+      <div class="dim">Healthy weight range</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Devine</div><div class="val" id="devineVal">--</div></div>
+        <div class="cell"><div class="lbl">Robinson</div><div class="val" id="robVal">--</div></div>
+        <div class="cell"><div class="lbl">Miller</div><div class="val" id="millVal">--</div></div>
+        <div class="cell"><div class="lbl">BMI 18.5-24.9</div><div class="val" id="bmiRangeVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How these formulas work</h2>
+    <p>Devine (1974), Robinson (1983), and Miller (1990) were all developed from population data and are still used by hospitals for drug-dose calculations. They all assume a medium frame; we apply ±10% for small/large frames. The BMI range is the WHO standard healthy range.</p>
+    <p>No single formula accounts for muscle mass, ethnicity, or genetics — they are population estimates, not targets.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/bmi-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📏</span><div class="tc-title">BMI Calculator</div></div><div class="tc-desc">Body Mass Index with WHO categories.</div></a><a href="/tools/lean-body-mass-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💪</span><div class="tc-title">Lean Body Mass</div></div><div class="tc-desc">How much is muscle vs fat.</div></a><a href="/tools/reverse-bmi-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Reverse BMI</div></div><div class="tc-desc">Target weight from height + goal BMI.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var cm = parseFloat($("height").value) || 0;
+    var gender = $("gender").value;
+    var frame = $("frame").value;
+    if (!cm) return;
+    var inches = cm / 2.54;
+    var over5ft = Math.max(0, inches - 60);
+    var mult = frame === "large" ? 1.1 : frame === "small" ? 0.9 : 1.0;
+    // Devine
+    var devine = (gender === "male" ? 50 : 45.5) + 2.3 * over5ft;
+    // Robinson
+    var robinson = (gender === "male" ? 52 : 49) + 1.9 * over5ft;
+    // Miller
+    var miller = (gender === "male" ? 56.2 : 53.1) + 1.41 * over5ft;
+    // Apply frame multiplier
+    devine *= mult; robinson *= mult; miller *= mult;
+    // BMI range: 18.5 to 24.9
+    var m = cm / 100;
+    var low = 18.5 * m * m;
+    var high = 24.9 * m * m;
+    // Average ideal range from 3 formulas
+    var avg = (devine + robinson + miller) / 3;
+    var spread = avg * 0.05;
+    $("rangeVal").textContent = fmt(avg - spread, 1) + " – " + fmt(avg + spread, 1) + " kg";
+    $("devineVal").textContent = fmt(devine, 1) + " kg";
+    $("robVal").textContent = fmt(robinson, 1) + " kg";
+    $("millVal").textContent = fmt(miller, 1) + " kg";
+    $("bmiRangeVal").textContent = fmt(low, 1) + " – " + fmt(high, 1) + " kg";
+    $("result").classList.add("show");
+  }
+  ["height", "gender", "frame"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("height").value="175"; $("gender").value="male"; $("frame").value="medium"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

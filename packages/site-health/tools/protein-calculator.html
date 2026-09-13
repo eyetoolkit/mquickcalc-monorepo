@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protein Calculator — Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/protein-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Protein Calculator", "url": "https://health.mquickcalc.com/tools/protein-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included."}</script>
+<meta property="og:title" content="Protein Calculator — Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/protein-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protein Calculator — Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://health.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Protein Calculator", "item": "https://health.mquickcalc.com/tools/protein-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#nutrition'>Nutrition</a><span class='sep'>›</span><span class='current'>Protein Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🍗</div>
+<h1 class="page-title">Protein Calculator</h1>
+    <p class="lede">Protein needs vary from 0.8g/kg (sedentary) to 2.2g/kg (elite athletes). This calculator gives you a personalized range with three target levels.</p>
+
+    <div class="calc-card">
+
+      <label for="weight">Body weight (kg)</label>
+      <input id="weight" class="input" type="number" inputmode="decimal" min="0" step="any" value="70">
+
+      <label for="activity">Activity level</label>
+      <select id="activity" class="input">
+        <option value="0.8">Sedentary (office, no exercise)</option>
+        <option value="1.0">Light activity (1-2x/week)</option>
+        <option value="1.2" selected>Moderate (3-4x/week)</option>
+        <option value="1.6">Active (5x/week +)</option>
+        <option value="2.2">Elite athlete / heavy training</option>
+      </select>
+
+      <label for="goal">Goal</label>
+      <select id="goal" class="input">
+        <option value="maintain">Maintain muscle</option>
+        <option value="build" selected>Build muscle</option>
+        <option value="cut">Lose fat (preserve muscle)</option>
+      </select>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">-- g</div>
+      <div class="dim">Daily protein target</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">RDA minimum</div><div class="val" id="rdaVal">--</div></div>
+        <div class="cell"><div class="lbl">Your target</div><div class="val" id="tgtVal">--</div></div>
+        <div class="cell"><div class="lbl">Upper limit</div><div class="val" id="upperVal">--</div></div>
+        <div class="cell"><div class="lbl">Per meal (3 meals)</div><div class="val" id="perMeal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/macro-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🥗</span><div class="tc-title">Macro Calculator</div></div><div class="tc-desc">Protein, carbs, fat targets.</div></a><a href="/tools/tdee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🔥</span><div class="tc-title">TDEE Calculator</div></div><div class="tc-desc">Total daily energy expenditure.</div></a><a href="/tools/water-intake-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💧</span><div class="tc-title">Water Intake</div></div><div class="tc-desc">Daily hydration target.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general wellness information only, not medical advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var w = parseFloat($("weight").value) || 0;
+    var activity = parseFloat($("activity").value);
+    var goal = $("goal").value;
+    if (!w) return;
+    var rda = 0.8 * w;
+    var target = activity * w;
+    if (goal === "build") target = Math.max(target, 1.6 * w);
+    if (goal === "cut") target = Math.max(target, 1.8 * w);
+    target = Math.min(target, 2.2 * w); // safe upper
+    var upper = 2.2 * w;
+    var perMeal = target / 3;
+    $("bigVal").textContent = fmt(target, 0) + " g";
+    $("rdaVal").textContent = fmt(rda, 0) + " g";
+    $("tgtVal").textContent = fmt(target, 0) + " g";
+    $("upperVal").textContent = fmt(upper, 0) + " g";
+    $("perMeal").textContent = fmt(perMeal, 0) + " g";
+    $("result").classList.add("show");
+  }
+  ["weight", "activity", "goal"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("weight").value="70"; $("activity").value="1.2"; $("goal").value="build"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

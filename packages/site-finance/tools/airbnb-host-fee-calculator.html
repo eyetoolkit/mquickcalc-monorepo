@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Host Fee Calculator — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Airbnb Host Fee Calculator", "url": "https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods."}</script>
+<meta property="og:title" content="Airbnb Host Fee Calculator — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airbnb Host Fee Calculator — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Airbnb Host Fee Calculator", "item": "https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Ecommerce</a><span class='sep'>›</span><span class='current'>Airbnb Host Fee Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🏡</div>
+<h1 class="page-title">Airbnb Host Fee Calculator</h1>
+    <p class="lede">Airbnb charges a service fee to hosts in one of two ways: host-only fee (14%) paid entirely by the host, or split-fee (3% + guest service fee). See your net payout instantly.</p>
+
+    <div class="calc-card">
+
+      <label for="price">Nightly rate ($)</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="any" value="150">
+
+      <label for="nights">Nights booked</label>
+      <input id="nights" class="input" type="number" inputmode="decimal" min="1" step="1" value="5">
+
+      <label for="method">Fee collection method</label>
+      <select id="method" class="input">
+        <option value="host-only">Host-only (14% of subtotal)</option>
+        <option value="split" selected>Split-fee (3% host + guest pays rest)</option>
+      </select>
+
+      <label for="cleaning">Cleaning fee ($) — optional</label>
+      <input id="cleaning" class="input" type="number" inputmode="decimal" min="0" step="any" value="0">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="netVal">$0.00</div>
+      <div class="dim">Estimated net payout</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Subtotal</div><div class="val" id="subVal">$0</div></div>
+        <div class="cell"><div class="lbl">Host service fee</div><div class="val" id="feeVal">$0</div></div>
+        <div class="cell"><div class="lbl">Effective rate</div><div class="val" id="rateVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How Airbnb fees work</h2>
+    <p><strong>Host-only fee</strong> (14% of booking subtotal): the host absorbs the entire service fee. Airbnb displays all rates to guests without additional service charges. Best for shorter stays or when you want to keep listing rates simpler.</p>
+    <p><strong>Split-fee</strong> (3% host + guest service fee): hosts pay just 3% (to cover payment processing) and guests pay a separate 10-12% service fee at checkout. This is the default on most bookings.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/vrbo-host-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Vrbo Host Fee</div></div><div class="tc-desc">Vrbo pay-per-booking commissions.</div></a><a href="/tools/booking-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🛏️</span><div class="tc-title">Booking.com Fee</div></div><div class="tc-desc">Booking.com commission calculator.</div></a><a href="/tools/stripe-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">Stripe Fee</div></div><div class="tc-desc">Payment processing fees.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var price = parseFloat($("price").value) || 0;
+    var nights = parseFloat($("nights").value) || 0;
+    var method = $("method").value;
+    var cleaning = parseFloat($("cleaning").value) || 0;
+    var subtotal = price * nights + cleaning;
+    var fee, net;
+    if (method === "host-only") {
+      fee = subtotal * 0.14;
+      net = subtotal - fee;
+    } else {
+      fee = subtotal * 0.03;
+      net = subtotal - fee;
+    }
+    var effective = subtotal > 0 ? (fee / subtotal) * 100 : 0;
+    $("netVal").textContent = "$" + fmt(net, 2);
+    $("subVal").textContent = "$" + fmt(subtotal, 2);
+    $("feeVal").textContent = "$" + fmt(fee, 2);
+    $("rateVal").textContent = fmt(effective, 2) + "%";
+    $("result").classList.add("show");
+  }
+  ["price", "nights", "method", "cleaning"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("price").value="150"; $("nights").value="5"; $("method").value="split"; $("cleaning").value="0"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

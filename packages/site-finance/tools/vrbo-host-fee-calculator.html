@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vrbo Host Fee Calculator — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Vrbo Host Fee Calculator", "url": "https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout."}</script>
+<meta property="og:title" content="Vrbo Host Fee Calculator — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vrbo Host Fee Calculator — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Vrbo Host Fee Calculator", "item": "https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Ecommerce</a><span class='sep'>›</span><span class='current'>Vrbo Host Fee Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🏖️</div>
+<h1 class="page-title">Vrbo Host Fee Calculator</h1>
+    <p class="lede">Vrbo uses a pay-per-booking fee structure: you pay a percentage of the booking, plus a payment processing fee. See your net in seconds.</p>
+
+    <div class="calc-card">
+
+      <label for="price">Nightly rate ($)</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="any" value="180">
+
+      <label for="nights">Nights booked</label>
+      <input id="nights" class="input" type="number" inputmode="decimal" min="1" step="1" value="7">
+
+      <label for="commission">Vrbo commission rate (%)</label>
+      <input id="commission" class="input" type="number" inputmode="decimal" min="0" max="25" step="any" value="8">
+
+      <label for="processing">Payment processing fee (%)</label>
+      <input id="processing" class="input" type="number" inputmode="decimal" min="0" max="10" step="any" value="3">
+
+      <label for="servicePerBooking">Per-booking fixed fee ($)</label>
+      <input id="servicePerBooking" class="input" type="number" inputmode="decimal" min="0" step="any" value="0.50">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="netVal">$0.00</div>
+      <div class="dim">Estimated net payout</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Gross booking</div><div class="val" id="grossVal">$0</div></div>
+        <div class="cell"><div class="lbl">Vrbo commission</div><div class="val" id="commVal">$0</div></div>
+        <div class="cell"><div class="lbl">Processing fee</div><div class="val" id="procVal">$0</div></div>
+        <div class="cell"><div class="lbl">Effective rate</div><div class="val" id="effVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How Vrbo fees work</h2>
+    <p>Vrbo hosts on the pay-per-booking plan pay a commission (typically 5-14% depending on market + whether you use Vrbo's payment platform) plus payment processing if you use Vrbo Payments. Rates vary by country and time of year.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/airbnb-host-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏡</span><div class="tc-title">Airbnb Host Fee</div></div><div class="tc-desc">Airbnb host-only vs split-fee.</div></a><a href="/tools/booking-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🛏️</span><div class="tc-title">Booking.com Fee</div></div><div class="tc-desc">Booking.com commission calculator.</div></a><a href="/tools/paypal-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">PayPal Fee</div></div><div class="tc-desc">Payment processing alternatives.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var price = parseFloat($("price").value) || 0;
+    var nights = parseFloat($("nights").value) || 0;
+    var commPct = parseFloat($("commission").value) / 100;
+    var procPct = parseFloat($("processing").value) / 100;
+    var perBooking = parseFloat($("servicePerBooking").value) || 0;
+    var gross = price * nights;
+    var comm = gross * commPct;
+    var proc = gross * procPct + perBooking;
+    var net = gross - comm - proc;
+    var eff = gross > 0 ? ((comm + proc) / gross) * 100 : 0;
+    $("netVal").textContent = "$" + fmt(net, 2);
+    $("grossVal").textContent = "$" + fmt(gross, 2);
+    $("commVal").textContent = "$" + fmt(comm, 2);
+    $("procVal").textContent = "$" + fmt(proc, 2);
+    $("effVal").textContent = fmt(eff, 2) + "%";
+    $("result").classList.add("show");
+  }
+  ["price","nights","commission","processing","servicePerBooking"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("price").value="180"; $("nights").value="7"; $("commission").value="8"; $("processing").value="3"; $("servicePerBooking").value="0.50"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

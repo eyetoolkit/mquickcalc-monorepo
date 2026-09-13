@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refinance Calculator — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/refinance-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Refinance Calculator", "url": "https://finance.mquickcalc.com/tools/refinance-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved."}</script>
+<meta property="og:title" content="Refinance Calculator — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/refinance-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Refinance Calculator — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Refinance Calculator", "item": "https://finance.mquickcalc.com/tools/refinance-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#tax'>Finance</a><span class='sep'>›</span><span class='current'>Refinance Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>📉</div>
+<h1 class="page-title">Refinance Calculator</h1>
+    <p class="lede">Is refinancing worth it? Enter your current loan and new offer to see monthly savings, total interest saved, and your break-even month.</p>
+
+    <div class="calc-card">
+
+      <h3 style="margin:8px 0;">Current loan</h3>
+      <label for="curBalance">Remaining balance ($)</label>
+      <input id="curBalance" class="input" type="number" inputmode="decimal" min="0" step="any" value="18000">
+      <label for="curRate">Current rate (%)</label>
+      <input id="curRate" class="input" type="number" inputmode="decimal" min="0" max="30" step="any" value="7.5">
+      <label for="curMonths">Months left</label>
+      <input id="curMonths" class="input" type="number" inputmode="decimal" min="1" step="1" value="48">
+
+      <h3 style="margin:12px 0 4px;">New loan offer</h3>
+      <label for="newRate">New rate (%)</label>
+      <input id="newRate" class="input" type="number" inputmode="decimal" min="0" max="30" step="any" value="5.5">
+      <label for="newMonths">New loan term (months)</label>
+      <input id="newMonths" class="input" type="number" inputmode="decimal" min="1" step="1" value="48">
+      <label for="closing">Closing costs ($)</label>
+      <input id="closing" class="input" type="number" inputmode="decimal" min="0" step="any" value="500">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="saveVal">$0/month</div>
+      <div class="dim" id="dimVal">Monthly savings</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Current monthly</div><div class="val" id="curMonth">$0</div></div>
+        <div class="cell"><div class="lbl">New monthly</div><div class="val" id="newMonth">$0</div></div>
+        <div class="cell"><div class="lbl">Total interest saved</div><div class="val" id="totalSave">$0</div></div>
+        <div class="cell"><div class="lbl">Break-even</div><div class="val" id="breakEven">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How refinancing math works</h2>
+    <p>Refinancing replaces your existing loan with a new one. You save money when the total cost of the new loan (interest + closing costs) is less than the remaining interest you'd pay on the old loan. The break-even point tells you how long it takes to recoup closing costs from monthly savings.</p>
+    <p><strong>Rule of thumb</strong>: refinance if you can lower your rate by 1% or more AND you plan to keep the loan past the break-even point.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/auto-loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Auto Loan</div></div><div class="tc-desc">Original car loan payment.</div></a><a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage Calculator</div></div><div class="tc-desc">Home loan amortization.</div></a><a href="/tools/loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💵</span><div class="tc-title">Loan Calculator</div></div><div class="tc-desc">Loan payment basics.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function monthlyPayment(principal, ratePct, months) {
+    var r = ratePct / 100 / 12;
+    if (r === 0) return principal / months;
+    return principal * r * Math.pow(1 + r, months) / (Math.pow(1 + r, months) - 1);
+  }
+  function calc() {
+    var bal = parseFloat($("curBalance").value) || 0;
+    var curRate = parseFloat($("curRate").value) || 0;
+    var curMonths = parseFloat($("curMonths").value) || 0;
+    var newRate = parseFloat($("newRate").value) || 0;
+    var newMonths = parseFloat($("newMonths").value) || 0;
+    var closing = parseFloat($("closing").value) || 0;
+    var curMonthPay = monthlyPayment(bal, curRate, curMonths);
+    var newMonthPay = monthlyPayment(bal, newRate, newMonths);
+    var curTotalInterest = curMonthPay * curMonths - bal;
+    var newTotalInterest = newMonthPay * newMonths - bal + closing;
+    var totalSave = curTotalInterest - newTotalInterest;
+    var monthlySave = curMonthPay - newMonthPay;
+    var breakEven = monthlySave > 0 ? Math.ceil(closing / monthlySave) : Infinity;
+    $("saveVal").textContent = (monthlySave >= 0 ? "$" + fmt(monthlySave, 2) : "-$" + fmt(-monthlySave, 2)) + "/month";
+    $("dimVal").textContent = monthlySave >= 0 ? "Monthly savings" : "Monthly increase";
+    $("curMonth").textContent = "$" + fmt(curMonthPay, 2);
+    $("newMonth").textContent = "$" + fmt(newMonthPay, 2);
+    $("totalSave").textContent = (totalSave >= 0 ? "$" + fmt(totalSave, 2) : "-$" + fmt(-totalSave, 2));
+    $("breakEven").textContent = isFinite(breakEven) ? breakEven + " months" : "Never";
+    $("result").classList.add("show");
+  }
+  ["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("curBalance").value="18000"; $("curRate").value="7.5"; $("curMonths").value="48"; $("newRate").value="5.5"; $("newMonths").value="48"; $("closing").value="500"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAC Calculator (Blood Alcohol) — Free Tool | mQuickCalc Health</title>
+  <meta name="description" content="Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula.">
+  <link rel="canonical" href="https://health.mquickcalc.com/tools/bac-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BAC Calculator (Blood Alcohol)", "url": "https://health.mquickcalc.com/tools/bac-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula."}</script>
+<meta property="og:title" content="BAC Calculator (Blood Alcohol) — Free Tool | mQuickCalc Health">
+<meta property="og:description" content="Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/bac-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Health">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BAC Calculator (Blood Alcohol) — Free Tool | mQuickCalc Health">
+  <meta name="twitter:description" content="Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula.">
+  <meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://health.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "BAC Calculator (Blood Alcohol)", "item": "https://health.mquickcalc.com/tools/bac-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="health">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#body'>Other</a><span class='sep'>›</span><span class='current'>BAC Calculator (Blood Alcohol)</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🍺</div>
+<h1 class="page-title">BAC Calculator (Blood Alcohol)</h1>
+    <p class="lede">How many drinks puts you over the driving limit? This tool estimates BAC using the standard Widmark formula. For education only — never drink and drive.</p>
+
+    <div class="calc-card">
+
+      <label for="weight">Body weight (kg)</label>
+      <input id="weight" class="input" type="number" inputmode="decimal" min="0" step="any" value="70">
+
+      <label for="gender">Gender</label>
+      <select id="gender" class="input">
+        <option value="male" selected>Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="drinks">Standard drinks consumed</label>
+      <input id="drinks" class="input" type="number" inputmode="decimal" min="0" step="any" value="3">
+
+      <label for="hours">Hours since first drink</label>
+      <input id="hours" class="input" type="number" inputmode="decimal" min="0" step="any" value="2">
+
+      <div style="margin-top:8px;">
+        <p style="font-size:12px;color:var(--muted);margin:2px 0;">One standard drink ≈ 14g pure alcohol (330ml beer / 150ml wine / 45ml spirits).</p>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">--%</div>
+      <div class="dim" id="dimVal">Estimated BAC</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Driving limit</div><div class="val">0.05%</div></div>
+        <div class="cell"><div class="lbl">Over the limit?</div><div class="val" id="legalVal">--</div></div>
+        <div class="cell"><div class="lbl">Sober in approx.</div><div class="val" id="soberVal">--</div></div>
+        <div class="cell"><div class="lbl">Peak BAC</div><div class="val" id="peakVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How the Widmark formula works</h2>
+    <p>BAC = grams of alcohol ÷ (body water fraction × body weight in grams) − 0.015 × hours elapsed. The body metabolizes roughly 15mg% of alcohol per hour — about one standard drink per hour.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/sleep-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⏰</span><div class="tc-title">Sleep Calculator</div></div><div class="tc-desc">Optimal sleep cycles and wake times.</div></a><a href="/tools/water-intake-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💧</span><div class="tc-title">Water Intake</div></div><div class="tc-desc">Stay hydrated — alcohol dehydrates.</div></a><a href="/tools/heart-rate-zones-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💗</span><div class="tc-title">Heart Rate Zones</div></div><div class="tc-desc">Karvonen method training zones.</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;">EDUCATIONAL USE ONLY. Never drive after drinking. Actual BAC varies by metabolism, food, medications, and health. This is not medical or legal advice.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var w = parseFloat($("weight").value) || 0;
+    var gender = $("gender").value;
+    var drinks = parseFloat($("drinks").value) || 0;
+    var hours = parseFloat($("hours").value) || 0;
+    if (!w) return;
+    // Widmark: BAC = (grams alcohol / (body water * weight)) - 0.015 * hours
+    // grams alcohol = drinks * 14 (standard drink)
+    var alcohol = drinks * 14; // grams
+    var r = gender === "male" ? 0.68 : 0.55; // body water constant
+    var peak = alcohol / (r * w);
+    var bac = peak - 0.015 * hours;
+    if (bac < 0) bac = 0;
+    var legal = bac > 0.05 ? "🚫 YES" : "✅ No";
+    var sober = bac / 0.015; // hours to metabolize
+    $("bigVal").textContent = fmt(bac*100, 2) + "%";
+    $("dimVal").textContent = "Estimated BAC after " + fmt(hours, 1) + "h";
+    $("legalVal").textContent = legal;
+    $("soberVal").textContent = fmt(sober, 1) + " hours";
+    $("peakVal").textContent = fmt(peak*100, 2) + "%";
+    $("result").classList.add("show");
+  }
+  ["weight", "gender", "drinks", "hours"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("weight").value="70"; $("gender").value="male"; $("drinks").value="3"; $("hours").value="2"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking.com Fee Calculator — Free Tool | mQuickCalc Finance</title>
+  <meta name="description" content="Estimate Booking.com commission and your net revenue from hotel or short-stay bookings.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/booking-fee-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Booking.com Fee Calculator", "url": "https://finance.mquickcalc.com/tools/booking-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Booking.com commission and your net revenue from hotel or short-stay bookings."}</script>
+<meta property="og:title" content="Booking.com Fee Calculator — Free Tool | mQuickCalc Finance">
+<meta property="og:description" content="Estimate Booking.com commission and your net revenue from hotel or short-stay bookings.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/booking-fee-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="mQuickCalc Finance">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Booking.com Fee Calculator — Free Tool | mQuickCalc Finance">
+  <meta name="twitter:description" content="Estimate Booking.com commission and your net revenue from hotel or short-stay bookings.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://finance.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Booking.com Fee Calculator", "item": "https://finance.mquickcalc.com/tools/booking-fee-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+</head>
+<body data-site="finance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc <span style="color:var(--accent)">FINANCE</span></a>
+    <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Ecommerce</a><span class='sep'>›</span><span class='current'>Booking.com Fee Calculator</span></nav></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🛏️</div>
+<h1 class="page-title">Booking.com Fee Calculator</h1>
+    <p class="lede">Booking.com charges a commission per booking, typically 15-25% depending on your contract and how the guest pays. Compare different commission tiers.</p>
+
+    <div class="calc-card">
+
+      <label for="price">Nightly rate ($)</label>
+      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="any" value="200">
+
+      <label for="nights">Nights booked</label>
+      <input id="nights" class="input" type="number" inputmode="decimal" min="1" step="1" value="3">
+
+      <label for="commission">Commission rate (%)</label>
+      <select id="commission" class="input">
+        <option value="10">10% (direct booking)</option>
+        <option value="15">15% (Standard, OLB + OTA)</option>
+        <option value="18" selected>18% (Standard, guest pays at hotel)</option>
+        <option value="22">22% (Standard, online payments)</option>
+        <option value="25">25% (Premium / top placements)</option>
+      </select>
+
+      <label for="tax">VAT / Tax rate (%) — optional</label>
+      <input id="tax" class="input" type="number" inputmode="decimal" min="0" max="30" step="any" value="0">
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+
+    <div class="result" id="result">
+      <div class="big" id="netVal">$0.00</div>
+      <div class="dim">Net revenue after fees</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Gross booking</div><div class="val" id="grossVal">$0</div></div>
+        <div class="cell"><div class="lbl">Booking commission</div><div class="val" id="commVal">$0</div></div>
+        <div class="cell"><div class="lbl">VAT/Tax</div><div class="val" id="taxVal">$0</div></div>
+        <div class="cell"><div class="lbl">Effective cost</div><div class="val" id="effVal">--</div></div>
+      </div>
+    </div>
+    </div>
+
+
+    <h2>How Booking.com fees work</h2>
+    <p>Booking.com's commission varies based on how guests pay. When guests book and pay online (OLB), the commission is higher because Booking handles payment processing. When guests book through Booking.com but pay at the hotel (OTA), the rate is lower. The 15-25% range covers this spectrum.</p>
+    
+    
+<div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid"><a href="/tools/airbnb-host-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏡</span><div class="tc-title">Airbnb Host Fee</div></div><div class="tc-desc">Compare with Airbnb rates.</div></a><a href="/tools/vrbo-host-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏖️</span><div class="tc-title">Vrbo Host Fee</div></div><div class="tc-desc">Vrbo pay-per-booking fees.</div></a><a href="/tools/paypal-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">PayPal Fee</div></div><div class="tc-desc">Guest pays via PayPal — extra fees?</div></a></div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
+    <p class="note" style="margin-top:22px;"></p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-meters.js" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
+  
+  function calc() {
+    var price = parseFloat($("price").value) || 0;
+    var nights = parseFloat($("nights").value) || 0;
+    var comm = parseFloat($("commission").value) / 100;
+    var tax = parseFloat($("tax").value) / 100;
+    var gross = price * nights;
+    var commFee = gross * comm;
+    var taxAmt = (gross - commFee) * tax;
+    var net = gross - commFee - taxAmt;
+    var eff = gross > 0 ? ((commFee + taxAmt) / gross) * 100 : 0;
+    $("netVal").textContent = "$" + fmt(net, 2);
+    $("grossVal").textContent = "$" + fmt(gross, 2);
+    $("commVal").textContent = "$" + fmt(commFee, 2);
+    $("taxVal").textContent = "$" + fmt(taxAmt, 2);
+    $("effVal").textContent = fmt(eff, 2) + "%";
+    $("result").classList.add("show");
+  }
+  ["price","nights","commission","tax"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
+  $("calcBtn").addEventListener("click", calc);
+  $("resetBtn").addEventListener("click", function(){ $("price").value="200"; $("nights").value="3"; $("commission").value="18"; $("tax").value="0"; calc(); });
+  calc();
+})();
+</script>
+</body>
+</html>
