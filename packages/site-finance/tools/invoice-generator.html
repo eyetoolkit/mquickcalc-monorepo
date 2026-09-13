@@ -133,7 +133,18 @@
   ["annualTarget","tax","benefits","hours","vacation"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
   $("calcBtn").addEventListener("click", calc);
   $("resetBtn").addEventListener("click", function(){ $("annualTarget").value="85000"; $("tax").value="25"; $("benefits").value="15"; $("hours").value="30"; $("vacation").value="20"; calc(); });
-  calc();
+
+  // Wait for Chart.js (defer-loaded from CDN), then first run
+  function waitForChart(attempts) {
+    if (window.Chart) { calc(); return; }
+    if (attempts <= 0) { calc(); return; } // still calc even without chart
+    setTimeout(function(){ waitForChart(attempts - 1); }, 50);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function(){ waitForChart(10); });
+  } else {
+    waitForChart(10);
+  }
 })();
 </script>
 </body>
