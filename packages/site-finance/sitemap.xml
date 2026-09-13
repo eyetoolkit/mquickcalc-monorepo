@@ -133,6 +133,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finance.mquickcalc.com/tools/invoice-generator</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finance.mquickcalc.com/tools/kickstarter-fee-calculator</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -157,6 +163,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finance.mquickcalc.com/tools/multi-platform-fee-comparison</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finance.mquickcalc.com/tools/patreon-fee-calculator</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -176,6 +188,12 @@
   </url>
   <url>
     <loc>https://finance.mquickcalc.com/tools/refinance-calculator</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finance.mquickcalc.com/tools/retirement-calculator</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
