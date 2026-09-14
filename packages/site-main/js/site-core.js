@@ -62,8 +62,9 @@
         ],
         dis:'All calculators are for general information only. Estimates may differ from official sources — verify before relying on them.',
         sisterSites:[
-          {name:'Finance', tag:'Marketplace & creator fees', url:'https://finance.mquickcalc.com/', color:'#059669'},
-          {name:'Health',  tag:'BMI, BMR, TDEE & fitness',  url:'https://health.mquickcalc.com/',  color:'#dc2626'}
+          {name:'Finance',   tag:'Marketplace & creator fees',    url:'https://finance.mquickcalc.com/', color:'#059669'},
+          {name:'Health',    tag:'BMI, BMR, TDEE & fitness',     url:'https://health.mquickcalc.com/',  color:'#dc2626'},
+          {name:'Insurance', tag:'Auto, life, home & health',    url:'https://cover.mquickcalc.com/',   color:'#0f766e'}
         ]
       },
       finance: {
@@ -76,8 +77,9 @@
         ],
         dis:'Fees and rates shown are estimates and may differ from official sources. Verify with the platform before relying on them.',
         sisterSites:[
-          {name:'Main',   tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',           color:'#4f46e5'},
-          {name:'Health', tag:'BMI, BMR, TDEE & fitness',         url:'https://health.mquickcalc.com/',   color:'#dc2626'}
+          {name:'Main',      tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',           color:'#4f46e5'},
+          {name:'Health',    tag:'BMI, BMR, TDEE & fitness',         url:'https://health.mquickcalc.com/',   color:'#dc2626'},
+          {name:'Insurance', tag:'Auto, life, home & health',        url:'https://cover.mquickcalc.com/',    color:'#0f766e'}
         ]
       },
       health: {
@@ -90,8 +92,31 @@
         ],
         dis:'All calculators are for general wellness and informational purposes only. They are not medical advice and do not diagnose or treat any condition.',
         sisterSites:[
+          {name:'Main',      tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',          color:'#4f46e5'},
+          {name:'Finance',   tag:'Marketplace & creator fees',       url:'https://finance.mquickcalc.com/', color:'#059669'},
+          {name:'Insurance', tag:'Auto, life, home & health',         url:'https://cover.mquickcalc.com/',   color:'#0f766e'}
+        ]
+      },
+      insurance: {
+        name:'🛡️ Cover', tag:'Insurance',
+        blurb:'Free insurance cost estimators — ballpark premiums for auto, life, home, renters, health, pet, umbrella and business. No sign-up, no data collected.',
+        col1:'Popular Tools', col1Links:[
+          ['Car Insurance Premium','/tools/car-insurance-calculator'],
+          ['Life Insurance Needs','/tools/life-insurance-needs'],
+          ['Home Insurance Cost','/tools/home-insurance-estimator'],
+          ['Health Insurance Premium','/tools/health-insurance-premium'],
+          ['Renters Insurance','/tools/renters-insurance'],
+          ['Business Liability','/tools/business-liability']
+        ],
+        col2:'Resources', col2Links:[
+          ['All Calculators','/'],['About','/about'],['Contact','/contact'],
+          ['Privacy Policy','/privacy'],['Disclaimer','/disclaimer'],['Terms','/terms']
+        ],
+        dis:'All estimates are based on industry averages and publicly available data. Your actual premium depends on factors we cannot verify. This is not insurance advice — compare quotes from licensed carriers.',
+        sisterSites:[
           {name:'Main',    tag:'Unit converters & everyday tools', url:'https://mquickcalc.com/',          color:'#4f46e5'},
-          {name:'Finance', tag:'Marketplace & creator fees',       url:'https://finance.mquickcalc.com/', color:'#059669'}
+          {name:'Finance', tag:'Marketplace & creator fees',       url:'https://finance.mquickcalc.com/', color:'#059669'},
+          {name:'Health',  tag:'BMI, BMR, TDEE & fitness',         url:'https://health.mquickcalc.com/',  color:'#dc2626'}
         ]
       }
     }
@@ -113,6 +138,11 @@
       ['BMI','Body mass','/tools/bmi-calculator'],
       ['BMR','Mifflin-St','/tools/bmr-calculator'],
       ['TDEE','Daily energy','/tools/tdee-calculator']
+    ],
+    'Insurance': [
+      ['Car','Premiums','/tools/car-insurance-calculator'],
+      ['Life','Needs','/tools/life-insurance-needs'],
+      ['Home','Cost','/tools/home-insurance-estimator']
     ]
   };
   function matrixHtml(tag){

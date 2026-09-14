@@ -3,29 +3,11 @@
   <url>
     <loc>https://cover.mquickcalc.com/</loc>
     <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://cover.mquickcalc.com/about</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/privacy</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/disclaimer</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/terms</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -37,55 +19,55 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/car-insurance-calculator</loc>
+    <loc>https://cover.mquickcalc.com/disclaimer</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/deductible-tradeoff</loc>
+    <loc>https://cover.mquickcalc.com/privacy</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/terms</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cover.mquickcalc.com/tools/bundling-savings</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/tools/sr22-cost</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/tools/life-insurance-needs</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/tools/term-vs-whole</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cover.mquickcalc.com/tools/burial-expense</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/home-insurance-estimator</loc>
+    <loc>https://cover.mquickcalc.com/tools/business-liability</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/renters-insurance</loc>
+    <loc>https://cover.mquickcalc.com/tools/car-insurance-calculator</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/cyber-insurance</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/deductible-tradeoff</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -97,19 +79,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/umbrella-insurance</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://cover.mquickcalc.com/tools/health-insurance-premium</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/medigap-cost</loc>
+    <loc>https://cover.mquickcalc.com/tools/home-insurance-estimator</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/life-insurance-needs</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -121,25 +103,43 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://cover.mquickcalc.com/tools/medigap-cost</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://cover.mquickcalc.com/tools/pet-insurance</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cover.mquickcalc.com/tools/business-liability</loc>
+    <loc>https://cover.mquickcalc.com/tools/renters-insurance</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/sr22-cost</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/term-vs-whole</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cover.mquickcalc.com/tools/umbrella-insurance</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cover.mquickcalc.com/tools/workers-comp</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cover.mquickcalc.com/tools/cyber-insurance</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -52,6 +52,10 @@
   --brand:#0d9488;--brand-ink:#0f766e;--brand-bg:#f0fdfa;--brand-pill:#ccfbf1;
   --brand-grad-start:#0d9488;--brand-grad-end:#115e59;
 }
+[data-site="insurance"]{
+  --brand:#0f766e;--brand-ink:#0d5c55;--brand-bg:#f0fdfa;--brand-pill:#ccfbf1;
+  --brand-grad-start:#0f766e;--brand-grad-end:#059669;
+}
 
 /* ---------- Reset ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
