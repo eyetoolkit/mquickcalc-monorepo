@@ -484,3 +484,13 @@ input[type="number"]{appearance:textfield}
 @media (prefers-color-scheme: dark) {
   #embed-cta{background:rgba(79,70,229,.12);border-color:var(--brand)}
 }
+/* ---------- See Also (cross-link section) ---------- */
+.see-also{margin:40px auto 24px;max-width:760px;padding:24px 28px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--brand-bg, #f8fafc)}
+.see-also h2{font-size:18px;font-weight:var(--fw-bold);letter-spacing:-.01em;margin:0 0 14px;color:var(--brand-ink)}
+.see-also ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.see-also li a{display:block;padding:10px 14px;border-radius:var(--radius-md);text-decoration:none;color:var(--ink);font-weight:var(--fw-medium);transition:background .15s}
+.see-also li a:hover{background:var(--brand-pill);color:var(--brand-ink)}
+.see-also li:last-child a{border-top:1px dashed var(--line);margin-top:6px;padding-top:12px;color:var(--brand);font-weight:var(--fw-bold)}
+@media (max-width: 640px){
+  .see-also{padding:18px 16px;margin:28px 12px}
+}

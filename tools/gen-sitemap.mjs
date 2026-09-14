@@ -114,6 +114,16 @@ function buildSitemap(site) {
     entries.push(urlEntry(loc, lastmod, 'monthly', '0.6'));
   }
 
+  // 5. hubs/*.html (category hub pages)
+  const hubsDir = path.join(siteDir, 'hubs');
+  const hubs = listHtmlFiles(hubsDir);
+  for (const f of hubs) {
+    const name = path.basename(f, '.html');
+    const loc = `${site.origin}/${name}`;
+    const lastmod = gitLastModifiedDate(f);
+    entries.push(urlEntry(loc, lastmod, 'monthly', '0.7'));
+  }
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${entries.join('\n')}
