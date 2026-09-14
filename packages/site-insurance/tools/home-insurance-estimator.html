@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Insurance Cost Estimator — Cover by mQuickCalc</title>
+<meta name="description" content="Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/home-insurance-estimator">
+<meta property="og:title" content="Home Insurance Cost Estimator — Cover by mQuickCalc">
+<meta property="og:description" content="Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/home-insurance-estimator">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Home Insurance Cost Estimator", "url": "https://cover.mquickcalc.com/tools/home-insurance-estimator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Home Insurance Cost Estimator", "item": "https://cover.mquickcalc.com/tools/home-insurance-estimator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Home Insurance Cost Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields with your personal or property information."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate and understand the factors that affect it."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between replacement cost and market value?", "acceptedAnswer": {"@type": "Answer", "text": "Market value is what your home would sell for. Replacement cost is what it would cost to rebuild your home with similar materials today. Insurance is based on replacement cost, not market value \u2014 so a $500k home might only need $350k of coverage if the land is valuable but rebuilding costs less."}}, {"@type": "Question", "name": "Why is home insurance so expensive in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Florida has the highest home insurance rates in the U.S. (averaging $7.00 per $1,000 of value vs the national average of $3.50) due to hurricane risk, rising reinsurance costs, and a dysfunctional private market. Many Florida homeowners rely on Citizens Property Insurance, the state-run insurer of last resort."}}, {"@type": "Question", "name": "What discounts can I get?", "acceptedAnswer": {"@type": "Answer", "text": "Common discounts include: new roof (5-8%), security system (3-5%), bundled with auto (10-15%), no claims in 3+ years (5-10%), new home (up to 10%), and paying annually (usually 5%). Ask each carrier what they offer."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
+    <nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Home Insurance Cost Estimator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">🛡️</div>
+<h1 class="page-title">Home Insurance Cost Estimator</h1>
+<p class="lede">Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.</p>
+<div class="calc-card">
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="state">State</label><select id="state" class="input"></select></div>
+<div><label for="sqft">Square footage</label><input id="sqft" class="input" type="number" value="2000"></div>
+<div><label for="age">Home age</label><select id="age" class="input">
+<option value="new">Less than 10 years</option>
+<option value="10_years" selected>10-25 years</option>
+<option value="25_years">25-50 years</option>
+<option value="50_years">50-75 years</option>
+<option value="75_plus">75+ years</option>
+</select></div>
+<div><label for="rebuild">Rebuild cost (per sq ft, US avg ~$150)</label><input id="rebuild" class="input" type="number" value="150"></div>
+<div><label for="deductible">Deductible</label><select id="deductible" class="input">
+<option value="500">$500</option>
+<option value="1000" selected>$1,000</option>
+<option value="2500">$2,500</option>
+<option value="5000">$5,000</option>
+</select></div>
+<div><label for="safety">Safety features</label><select id="safety" class="input" multiple size="3">
+<option value="alarm">Security alarm</option>
+<option value="new_roof">New roof (&lt; 5 years)</option>
+<option value="bundled">Bundled with auto insurance</option>
+<option value="claims">No claims in 3 years</option>
+</select></div>
+</div>
+
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+<button id="calcBtn" class="btn">Calculate</button>
+<button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">
+⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. Your actual premium depends on factors we cannot verify (credit score, claims history, exact vehicle/property details, carrier underwriting). <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.
+</div>
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What's the difference between replacement cost and market value?</h3><p style="color:var(--ink-2);margin:0">Market value is what your home would sell for. Replacement cost is what it would cost to rebuild your home with similar materials today. Insurance is based on replacement cost, not market value — so a $500k home might only need $350k of coverage if the land is valuable but rebuilding costs less.</p>
+<h3 style="margin:16px 0 4px">Why is home insurance so expensive in Florida?</h3><p style="color:var(--ink-2);margin:0">Florida has the highest home insurance rates in the U.S. (averaging $7.00 per $1,000 of value vs the national average of $3.50) due to hurricane risk, rising reinsurance costs, and a dysfunctional private market. Many Florida homeowners rely on Citizens Property Insurance, the state-run insurer of last resort.</p>
+<h3 style="margin:16px 0 4px">What discounts can I get?</h3><p style="color:var(--ink-2);margin:0">Common discounts include: new roof (5-8%), security system (3-5%), bundled with auto (10-15%), no claims in 3+ years (5-10%), new home (up to 10%), and paying annually (usually 5%). Ask each carrier what they offer.</p>
+</details>
+</div></main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+    <p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+    <div class="footer-links">
+      <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a>
+      · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a>
+    </div>
+    <p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) {
+    if (n === null || isNaN(n) || !isFinite(n)) return "—";
+    return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0});
+  }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+  const STATES = {
+    "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California",
+    "CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia",
+    "HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa",
+    "KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland",
+    "MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri",
+    "MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey",
+    "NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio",
+    "OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina",
+    "SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont",
+    "VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
+  };
+  const STATE_SELECT = document.getElementById("state");
+  for (const [code, name] of Object.entries(STATES)) {
+    const o = document.createElement("option"); o.value = code; o.textContent = name;
+    if (code === "CA") o.selected = true;
+    STATE_SELECT.appendChild(o);
+  }
+
+  function calc() {
+    const D = window.COVER_DATA?.home_rates || null;
+    if (!D) { document.getElementById("result").innerHTML = "<p>Data loading...</p>"; return; }
+    
+    const state = document.getElementById("state").value;
+    const sqft = +document.getElementById("sqft").value;
+    const home_age = document.getElementById("age").value;
+    const rebuild = +document.getElementById("rebuild").value;
+    const deductible = document.getElementById("deductible").value;
+    const safety = Array.from(document.getElementById("safety").selectedOptions).map(o => o.value);
+    
+    const rebuild_cost = sqft * rebuild;
+    const rate_per_1000 = D.state_rates_per_1000[state] || D.national_average_per_1000;
+    const base = (rebuild_cost / 1000) * rate_per_1000;
+    
+    const ageFactor = D.age_factors[home_age] || 1.0;
+    const dedFactor = D.deductible_factors[deductible] || 1.0;
+    
+    let discount = 1.0;
+    for (const s of safety) {
+      if (D.discounts[s]) discount *= D.discounts[s];
+    }
+    
+    const annual = Math.round(base * ageFactor * dedFactor * discount);
+    const low = Math.round(annual * 0.8);
+    const high = Math.round(annual * 1.25);
+    const monthly = Math.round(annual / 12);
+    
+    document.getElementById("result").innerHTML = `
+      <h3 style="margin:0 0 12px;font-size:18px">🏠 Your ballpark estimate</h3>
+      <div style="font-size:28px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${currency(low)} – ${currency(high)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
+      <div style="color:var(--muted);margin-bottom:16px">Average: <strong>${currency(annual)}</strong>/year · <strong>${currency(monthly)}</strong>/month</div>
+      <details>
+        <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Breakdown</summary>
+        <table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+          <tr><td>Estimated rebuild cost</td><td style="text-align:right">${currency(rebuild_cost)}</td></tr>
+          <tr><td>${state} rate per $1,000</td><td style="text-align:right">$${rate_per_1000.toFixed(2)}</td></tr>
+          <tr><td>Home age (${home_age.replace("_","-")}) ×</td><td style="text-align:right">${ageFactor.toFixed(2)}</td></tr>
+          <tr><td>Deductible ($${deductible}) ×</td><td style="text-align:right">${dedFactor.toFixed(2)}</td></tr>
+          <tr><td>Discounts ×</td><td style="text-align-right">${discount.toFixed(2)}</td></tr>
+        </table>
+      </details>
+      <div style="margin-top:16px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
+        💡 <strong>Florida note:</strong> Average rates are artificially high due to hurricane risk and recent market conditions. Your quote may vary significantly.
+      </div>
+    `;
+  }
+  document.getElementById("calcBtn").addEventListener("click", calc);
+
+
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", calc);
+  } else {
+    calc();
+  }
+}})();
+</script>
+
+</body>
+</html>

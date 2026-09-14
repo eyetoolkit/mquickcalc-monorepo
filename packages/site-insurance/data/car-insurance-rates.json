@@ -1,0 +1,241 @@
+{
+  "national_average": 1771,
+  "state_data": {
+    "AL": {
+      "name": "Alabama",
+      "base": 1685
+    },
+    "AK": {
+      "name": "Alaska",
+      "base": 1583
+    },
+    "AZ": {
+      "name": "Arizona",
+      "base": 1953
+    },
+    "AR": {
+      "name": "Arkansas",
+      "base": 1593
+    },
+    "CA": {
+      "name": "California",
+      "base": 2515
+    },
+    "CO": {
+      "name": "Colorado",
+      "base": 1679
+    },
+    "CT": {
+      "name": "Connecticut",
+      "base": 1723
+    },
+    "DE": {
+      "name": "Delaware",
+      "base": 1465
+    },
+    "FL": {
+      "name": "Florida",
+      "base": 2267
+    },
+    "GA": {
+      "name": "Georgia",
+      "base": 1923
+    },
+    "HI": {
+      "name": "Hawaii",
+      "base": 1514
+    },
+    "ID": {
+      "name": "Idaho",
+      "base": 1456
+    },
+    "IL": {
+      "name": "Illinois",
+      "base": 1702
+    },
+    "IN": {
+      "name": "Indiana",
+      "base": 1528
+    },
+    "IA": {
+      "name": "Iowa",
+      "base": 1458
+    },
+    "KS": {
+      "name": "Kansas",
+      "base": 1483
+    },
+    "KY": {
+      "name": "Kentucky",
+      "base": 1611
+    },
+    "LA": {
+      "name": "Louisiana",
+      "base": 2175
+    },
+    "ME": {
+      "name": "Maine",
+      "base": 1496
+    },
+    "MD": {
+      "name": "Maryland",
+      "base": 1752
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "base": 1294
+    },
+    "MI": {
+      "name": "Michigan",
+      "base": 2105
+    },
+    "MN": {
+      "name": "Minnesota",
+      "base": 1438
+    },
+    "MS": {
+      "name": "Mississippi",
+      "base": 1625
+    },
+    "MO": {
+      "name": "Missouri",
+      "base": 1548
+    },
+    "MT": {
+      "name": "Montana",
+      "base": 1479
+    },
+    "NE": {
+      "name": "Nebraska",
+      "base": 1434
+    },
+    "NV": {
+      "name": "Nevada",
+      "base": 2312
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "base": 1352
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "base": 1838
+    },
+    "NM": {
+      "name": "New Mexico",
+      "base": 1578
+    },
+    "NY": {
+      "name": "New York",
+      "base": 2338
+    },
+    "NC": {
+      "name": "North Carolina",
+      "base": 1695
+    },
+    "ND": {
+      "name": "North Dakota",
+      "base": 1328
+    },
+    "OH": {
+      "name": "Ohio",
+      "base": 1485
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "base": 1592
+    },
+    "OR": {
+      "name": "Oregon",
+      "base": 1498
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "base": 1521
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "base": 1784
+    },
+    "SC": {
+      "name": "South Carolina",
+      "base": 1829
+    },
+    "SD": {
+      "name": "South Dakota",
+      "base": 1392
+    },
+    "TN": {
+      "name": "Tennessee",
+      "base": 1598
+    },
+    "TX": {
+      "name": "Texas",
+      "base": 1848
+    },
+    "UT": {
+      "name": "Utah",
+      "base": 1436
+    },
+    "VT": {
+      "name": "Vermont",
+      "base": 1375
+    },
+    "VA": {
+      "name": "Virginia",
+      "base": 1542
+    },
+    "WA": {
+      "name": "Washington",
+      "base": 1489
+    },
+    "WV": {
+      "name": "West Virginia",
+      "base": 1618
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "base": 1462
+    },
+    "WY": {
+      "name": "Wyoming",
+      "base": 1385
+    }
+  },
+  "age_factors": {
+    "16-19": 2.4,
+    "20-24": 2.1,
+    "25-29": 1.35,
+    "30-34": 1.2,
+    "35-44": 1.0,
+    "45-54": 0.95,
+    "55-64": 1.05,
+    "65+": 1.25
+  },
+  "record_factors": {
+    "clean": 1.0,
+    "one_ticket": 1.2,
+    "two_tickets": 1.45,
+    "accident": 1.4,
+    "dui": 2.5,
+    "sr22": 2.0
+  },
+  "coverage_factors": {
+    "minimum": 0.75,
+    "standard": 1.0,
+    "full": 1.4,
+    "premium": 1.7
+  },
+  "vehicle_factors": {
+    "sedan_compact": 0.95,
+    "sedan_midsize": 1.0,
+    "sedan_large": 1.1,
+    "suv_small": 1.05,
+    "suv_midsize": 1.15,
+    "suv_large": 1.25,
+    "truck": 1.2,
+    "sports_car": 1.5,
+    "electric": 1.1,
+    "luxury": 1.6
+  }
+}

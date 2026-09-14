@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bundling Home + Auto Insurance Savings Calculator — Cover by mQuickCalc</title>
+<meta name="description" content="How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/bundling-savings">
+<meta property="og:title" content="Bundling Home + Auto Insurance Savings Calculator — Cover by mQuickCalc">
+<meta property="og:description" content="How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/bundling-savings">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Bundling Home + Auto Insurance Savings Calculator", "url": "https://cover.mquickcalc.com/tools/bundling-savings", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Bundling Savings Calculator", "item": "https://cover.mquickcalc.com/tools/bundling-savings"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Bundling Home + Auto Insurance Savings Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's a typical bundling discount?", "acceptedAnswer": {"@type": "Answer", "text": "Most major carriers offer 10-15% off both policies when you bundle auto and home. Some carriers offer up to 20% if you add a third policy (motorcycle, boat, umbrella). The exact discount varies by carrier and state."}}, {"@type": "Question", "name": "Should I switch carriers just for bundling?", "acceptedAnswer": {"@type": "Answer", "text": "Not automatically. First, check if your current carriers offer bundling \u2014 you might already be eligible and just not asked. Then compare quotes with coverage matched exactly. Sometimes the bundling discount isn't worth switching if the other carrier's base rates are higher. And don't forget: loyalty discounts and accident forgiveness might disappear if you switch."}}, {"@type": "Question", "name": "What other discounts should I ask about?", "acceptedAnswer": {"@type": "Answer", "text": "Common stacking discounts: safe driver (auto), good student (auto, 10-25%), anti-theft/alarm (auto + home), new roof (home, 5-10%), E-ZPass/telematics (auto, up to 30%), pay-in-full (5%), paperless (2-3%), multi-vehicle (auto, 5-10%). Ask each carrier for their full discount menu \u2014 you might qualify for several."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#auto">Auto</a><span class="sep">›</span><span class="current">Bundling Home + Auto Insurance Savings Calculator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">📦</div>
+<h1 class="page-title">Bundling Home + Auto Insurance Savings Calculator</h1>
+<p class="lede">How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="auto_premium">Current auto premium (yearly)</label><input id="auto_premium" class="input" type="number" value="1800"></div>
+<div><label for="auto_carrier">Is your auto with a major carrier?</label><select id="auto_carrier" class="input"><option value="yes" selected>Yes (Geico, State Farm, Progressive, AllState, etc.)</option><option value="no">No</option></select></div>
+<div><label for="home_premium">Current home/renters premium (yearly)</label><input id="home_premium" class="input" type="number" value="1200"></div>
+<div><label for="bundled_now">Are they currently with the same carrier?</label><select id="bundled_now" class="input"><option value="no" selected>No (different carriers)</option><option value="yes">Yes (already bundled)</option></select></div>
+<div><label for="safety_bonus">Additional discounts you have</label><select id="safety_bonus" class="input" multiple size="3">
+<option value="alarm">Home: alarm/new roof</option>
+<option value="safe">Auto: safe driver / good student</option>
+<option value="paidfull">Pay in full discount</option>
+</select></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What's a typical bundling discount?</h3><p style="color:var(--ink-2);margin:0">Most major carriers offer 10-15% off both policies when you bundle auto and home. Some carriers offer up to 20% if you add a third policy (motorcycle, boat, umbrella). The exact discount varies by carrier and state.</p>
+<h3 style="margin:16px 0 4px">Should I switch carriers just for bundling?</h3><p style="color:var(--ink-2);margin:0">Not automatically. First, check if your current carriers offer bundling — you might already be eligible and just not asked. Then compare quotes with coverage matched exactly. Sometimes the bundling discount isn't worth switching if the other carrier's base rates are higher. And don't forget: loyalty discounts and accident forgiveness might disappear if you switch.</p>
+<h3 style="margin:16px 0 4px">What other discounts should I ask about?</h3><p style="color:var(--ink-2);margin:0">Common stacking discounts: safe driver (auto), good student (auto, 10-25%), anti-theft/alarm (auto + home), new roof (home, 5-10%), E-ZPass/telematics (auto, up to 30%), pay-in-full (5%), paperless (2-3%), multi-vehicle (auto, 5-10%). Ask each carrier for their full discount menu — you might qualify for several.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const auto = +document.getElementById("auto_premium").value;
+  const home = +document.getElementById("home_premium").value;
+  const bundled = document.getElementById("bundled_now").value;
+  
+  if (bundled === "yes") {
+    document.getElementById("result").innerHTML = `
+      <h3 style="margin:0 0 12px">📦 You're already bundled!</h3>
+      <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>
+    `; return;
+  }
+  
+  const total_current = auto + home;
+  const discount_rates = [0.10, 0.12, 0.15]; // 10%, 12%, 15%
+  const low_savings = Math.round(total_current * discount_rates[0]);
+  const mid_savings = Math.round(total_current * discount_rates[1]);
+  const high_savings = Math.round(total_current * discount_rates[2]);
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>
+    <table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+      <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${currency(total_current)}</td></tr>
+      <tr><td>Auto premium</td><td style="text-align:right">${currency(auto)}</td></tr>
+      <tr><td>Home premium</td><td style="text-align:right">${currency(home)}</td></tr>
+    </table>
+    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm)">
+      <div style="font-size:14px;color:var(--muted);margin-bottom:4px">Estimated annual savings (10-15% typical)</div>
+      <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(low_savings)} – ${currency(high_savings)}</div>
+      <div style="font-size:13px;color:var(--muted)">Save ${currency(Math.round(low_savings/12))} – ${currency(Math.round(high_savings/12))} per month</div>
+    </div>
+    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">
+      💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.
+    </div>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

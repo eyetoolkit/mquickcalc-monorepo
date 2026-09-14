@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medigap (Medicare Supplement) Cost Estimator — Cover by mQuickCalc</title>
+<meta name="description" content="Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/medigap-cost">
+<meta property="og:title" content="Medigap (Medicare Supplement) Cost Estimator — Cover by mQuickCalc">
+<meta property="og:description" content="Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/medigap-cost">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Medigap (Medicare Supplement) Cost Estimator", "url": "https://cover.mquickcalc.com/tools/medigap-cost", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Medigap Cost Estimator", "item": "https://cover.mquickcalc.com/tools/medigap-cost"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Medigap (Medicare Supplement) Cost Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does Medigap actually cover?", "acceptedAnswer": {"@type": "Answer", "text": "Medigap (Medicare Supplement) fills the gaps in Original Medicare. Medicare pays ~80% of covered costs; Medigap picks up the rest. Depending on the plan, it can cover: Medicare deductibles ($1,756 Part A, $226 Part B), copayments, coinsurance, foreign travel emergencies, and excess charges. It does NOT cover dental, vision, hearing, prescription drugs (Part D is separate), or long-term care."}}, {"@type": "Question", "name": "Should I choose Medigap or Medicare Advantage?", "acceptedAnswer": {"@type": "Answer", "text": "Medigap + Original Medicare gives you the widest choice of providers (any doctor that takes Medicare) with predictable out-of-pocket costs. Medicare Advantage (Part C) bundles hospital, medical, and often drug coverage into one plan, usually cheaper monthly, but typically uses HMO/PPO networks and has annual out-of-pocket maximums. Medigap is better if you travel, need specialist care, or want no network restrictions."}}, {"@type": "Question", "name": "Can I get Medigap if I have pre-existing conditions?", "acceptedAnswer": {"@type": "Answer", "text": "During your Medigap open enrollment period (6 months after turning 65 and getting Part B), carriers CANNOT deny you or charge extra for pre-existing conditions. After that window, they can use medical underwriting \u2014 and many carriers will deny or charge more. If you're 65 or approaching it, mark your calendar."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Medigap (Medicare Supplement) Cost Estimator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">👵</div>
+<h1 class="page-title">Medigap (Medicare Supplement) Cost Estimator</h1>
+<p class="lede">Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="age">Age (65+)</label><input id="age" class="input" type="number" value="70"></div>
+<div><label for="gender">Gender</label><select id="gender" class="input"><option value="female" selected>Female</option><option value="male">Male</option></select></div>
+<div><label for="plan">Medigap plan</label><select id="plan" class="input">
+<option value="A">Plan A (minimum benefits, lowest cost)</option>
+<option value="B">Plan B</option>
+<option value="C">Plan C (popular, comprehensive)</option>
+<option value="D">Plan D</option>
+<option value="F">Plan F (highest coverage — new enrollees after 2020: use G)</option>
+<option value="G" selected>Plan G (comprehensive, most popular for new enrollees)</option>
+<option value="K">Plan K (cost-sharing option)</option>
+<option value="N">Plan N (cost-sharing option)</option>
+</select></div>
+<div><label for="state">State</label><input id="state" class="input" type="text" value="CA" maxlength="2"></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What does Medigap actually cover?</h3><p style="color:var(--ink-2);margin:0">Medigap (Medicare Supplement) fills the gaps in Original Medicare. Medicare pays ~80% of covered costs; Medigap picks up the rest. Depending on the plan, it can cover: Medicare deductibles ($1,756 Part A, $226 Part B), copayments, coinsurance, foreign travel emergencies, and excess charges. It does NOT cover dental, vision, hearing, prescription drugs (Part D is separate), or long-term care.</p>
+<h3 style="margin:16px 0 4px">Should I choose Medigap or Medicare Advantage?</h3><p style="color:var(--ink-2);margin:0">Medigap + Original Medicare gives you the widest choice of providers (any doctor that takes Medicare) with predictable out-of-pocket costs. Medicare Advantage (Part C) bundles hospital, medical, and often drug coverage into one plan, usually cheaper monthly, but typically uses HMO/PPO networks and has annual out-of-pocket maximums. Medigap is better if you travel, need specialist care, or want no network restrictions.</p>
+<h3 style="margin:16px 0 4px">Can I get Medigap if I have pre-existing conditions?</h3><p style="color:var(--ink-2);margin:0">During your Medigap open enrollment period (6 months after turning 65 and getting Part B), carriers CANNOT deny you or charge extra for pre-existing conditions. After that window, they can use medical underwriting — and many carriers will deny or charge more. If you're 65 or approaching it, mark your calendar.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const age = +document.getElementById("age").value;
+  const gender = document.getElementById("gender").value;
+  const plan = document.getElementById("plan").value;
+  
+  // Base monthly rates (2026 averages, age 65 female)
+  const base_rates = {"A": 90, "B": 150, "C": 175, "D": 140, "F": 195, "G": 155, "K": 85, "N": 110};
+  let monthly = base_rates[plan] || 120;
+  
+  // Age adjustment: +5% per year after 65
+  const years_over_65 = Math.max(0, age - 65);
+  monthly *= Math.pow(1.05, years_over_65);
+  
+  // Gender: male +10%
+  if (gender === "male") monthly *= 1.1;
+  
+  const annual = Math.round(monthly * 12);
+  const monthly_rounded = Math.round(monthly);
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">👵 Medigap estimate</h3>
+    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(monthly_rounded)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>
+    <div style="color:var(--muted);margin-bottom:16px">${currency(annual)} / year — Plan ${plan}</div>
+    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">
+      💡 <strong>Plan G is the best value for most new enrollees.</strong> It covers everything Plan F covers except the Part B deductible ($226 in 2026). If you're in good health, the premium savings over Plan F usually exceed the Part B deductible cost.
+    </div>
+    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
+      📅 <strong>Open enrollment:</strong> You can sign up for Medigap during your Medigap open enrollment period — 6 months starting when you turn 65 and have Medicare Part B. During this time, carriers can't deny you coverage or charge more for pre-existing conditions. After that, they can.
+    </div>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

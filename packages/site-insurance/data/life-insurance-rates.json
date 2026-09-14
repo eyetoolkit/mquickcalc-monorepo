@@ -1,0 +1,116 @@
+{
+  "average_monthly_rates": {
+    "term_10": [
+      {
+        "age": 20,
+        "male": 14,
+        "female": 12
+      },
+      {
+        "age": 25,
+        "male": 17,
+        "female": 15
+      },
+      {
+        "age": 30,
+        "male": 20,
+        "female": 18
+      },
+      {
+        "age": 35,
+        "male": 24,
+        "female": 22
+      },
+      {
+        "age": 40,
+        "male": 31,
+        "female": 28
+      },
+      {
+        "age": 45,
+        "male": 45,
+        "female": 40
+      },
+      {
+        "age": 50,
+        "male": 62,
+        "female": 55
+      },
+      {
+        "age": 55,
+        "male": 82,
+        "female": 72
+      },
+      {
+        "age": 60,
+        "male": 112,
+        "female": 98
+      },
+      {
+        "age": 65,
+        "male": 168,
+        "female": 145
+      }
+    ],
+    "term_20": [
+      {
+        "age": 20,
+        "male": 19,
+        "female": 17
+      },
+      {
+        "age": 25,
+        "male": 24,
+        "female": 21
+      },
+      {
+        "age": 30,
+        "male": 29,
+        "female": 25
+      },
+      {
+        "age": 35,
+        "male": 36,
+        "female": 31
+      },
+      {
+        "age": 40,
+        "male": 46,
+        "female": 40
+      },
+      {
+        "age": 45,
+        "male": 68,
+        "female": 58
+      },
+      {
+        "age": 50,
+        "male": 95,
+        "female": 82
+      },
+      {
+        "age": 55,
+        "male": 135,
+        "female": 115
+      },
+      {
+        "age": 60,
+        "male": 188,
+        "female": 162
+      },
+      {
+        "age": 65,
+        "male": 275,
+        "female": 235
+      }
+    ]
+  },
+  "smoker_premium": 2.2,
+  "whole_life_multiplier": 3.5,
+  "dime_guide": {
+    "debt_ratio": 1.0,
+    "income_multiple": 10,
+    "mortgage_use": "remaining balance",
+    "education_per_child": 150000
+  }
+}

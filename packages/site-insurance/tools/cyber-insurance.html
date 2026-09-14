@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Insurance Cost Estimator (B2B) — Cover by mQuickCalc</title>
+<meta name="description" content="Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/cyber-insurance">
+<meta property="og:title" content="Cyber Insurance Cost Estimator (B2B) — Cover by mQuickCalc">
+<meta property="og:description" content="Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/cyber-insurance">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cyber Insurance Cost Estimator (B2B)", "url": "https://cover.mquickcalc.com/tools/cyber-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Cyber Insurance Cost Estimator (B2B)", "item": "https://cover.mquickcalc.com/tools/cyber-insurance"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Cyber Insurance Cost Estimator (B2B)", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does cyber insurance actually cover?", "acceptedAnswer": {"@type": "Answer", "text": "Policies typically cover: ransomware payments and negotiation, business interruption (lost revenue during outage), data breach response (forensics, remediation), regulatory fines (GDPR, CCPA), legal fees and settlements, credit monitoring for affected customers, and public relations. Exclusions include acts of war/terrorism, employee fraud, and fines from intentional violations."}}, {"@type": "Question", "name": "Is cyber insurance expensive?", "acceptedAnswer": {"@type": "Answer", "text": "For small businesses with good security, it's surprisingly affordable \u2014 $50-150/month for $1M coverage. But costs rise steeply with employee count, industry risk, and the amount of sensitive data you handle. Healthcare companies storing PHI pay 5x more than construction firms."}}, {"@type": "Question", "name": "Should every business buy cyber insurance?", "acceptedAnswer": {"@type": "Answer", "text": "If you have email or a website connected to the internet \u2014 yes. Ransomware is now a $300B/year global business and targets every industry. Even a 'small' breach (one employee clicks a phishing link) can cost $50k+ in downtime. Cyber insurance isn't just for tech companies \u2014 restaurants, dentists, accountants, and construction firms are all common targets."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#business">Business</a><span class="sep">›</span><span class="current">Cyber Insurance Cost Estimator (B2B)</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">💻</div>
+<h1 class="page-title">Cyber Insurance Cost Estimator (B2B)</h1>
+<p class="lede">Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="employees">Number of employees</label><select id="employees" class="input">
+<option value="<10">Under 10 (micro)</option><option value="10-50" selected>10-50 (small)</option>
+<option value="50-200">50-200 (medium)</option>
+<option value="200+">200+ (enterprise)</option>
+</select></div>
+<div><label for="industry">Industry / risk level</label><select id="industry" class="input">
+<option value="low">Low-risk (construction, retail non-PII)</option>
+<option value="medium" selected>Medium-risk (professional services, education)</option>
+<option value="high">High-risk (healthcare, fintech, legal)</option>
+<option value="very_high">Very high (critical infrastructure, payment processing)</option>
+</select></div>
+<div><label for="data">Do you store sensitive customer data?</label><select id="data" class="input">
+<option value="no">No (no PII, no payment processing)</option>
+<option value="basic" selected>Basic (email/name)</option>
+<option value="pii">PII (SSN, phone, address)</option>
+<option value="phi">PHI (health data) or PCI (payment cards)</option>
+</select></div>
+<div><label for="security">Current security maturity</label><select id="security" class="input">
+<option value="basic">Basic (antivirus, no MFA, no training)</option>
+<option value="standard" selected>Standard (MFA, employee training, daily backups)</option>
+<option value="advanced">Advanced (SOC2 or ISO 27001, red teaming)</option>
+</select></div>
+<div><label for="limit">Coverage limit</label><select id="limit" class="input"><option value="500k">$500,000</option><option value="1m" selected>$1M</option><option value="5m">$5M</option></select></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What does cyber insurance actually cover?</h3><p style="color:var(--ink-2);margin:0">Policies typically cover: ransomware payments and negotiation, business interruption (lost revenue during outage), data breach response (forensics, remediation), regulatory fines (GDPR, CCPA), legal fees and settlements, credit monitoring for affected customers, and public relations. Exclusions include acts of war/terrorism, employee fraud, and fines from intentional violations.</p>
+<h3 style="margin:16px 0 4px">Is cyber insurance expensive?</h3><p style="color:var(--ink-2);margin:0">For small businesses with good security, it's surprisingly affordable — $50-150/month for $1M coverage. But costs rise steeply with employee count, industry risk, and the amount of sensitive data you handle. Healthcare companies storing PHI pay 5x more than construction firms.</p>
+<h3 style="margin:16px 0 4px">Should every business buy cyber insurance?</h3><p style="color:var(--ink-2);margin:0">If you have email or a website connected to the internet — yes. Ransomware is now a $300B/year global business and targets every industry. Even a 'small' breach (one employee clicks a phishing link) can cost $50k+ in downtime. Cyber insurance isn't just for tech companies — restaurants, dentists, accountants, and construction firms are all common targets.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const employees = document.getElementById("employees").value;
+  const industry = document.getElementById("industry").value;
+  const data = document.getElementById("data").value;
+  const security = document.getElementById("security").value;
+  const limit = document.getElementById("limit").value;
+  
+  // Base rates per $1M coverage
+  const base = {
+    "low": 500, "medium": 1000, "high": 2000, "very_high": 4000
+  };
+  
+  let annual = base[industry] || 1000;
+  
+  // Size multiplier
+  const sizeMult = {"<10":0.7,"10-50":1.0,"50-200":1.8,"200+":3.0};
+  annual *= sizeMult[employees] || 1.0;
+  
+  // Data sensitivity
+  const dataMult = {"no":0.5,"basic":1.0,"pii":1.5,"phi":2.5};
+  annual *= dataMult[data] || 1.0;
+  
+  // Security maturity (discount for good practices)
+  const secMult = {"basic":1.3,"standard":1.0,"advanced":0.6};
+  annual *= secMult[security] || 1.0;
+  
+  // Coverage limit
+  annual *= (limit === "500k" ? 0.7 : limit === "5m" ? 2.5 : 1.0);
+  
+  const monthly = Math.round(annual / 12);
+  const annual_rounded = Math.round(annual);
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">💻 Your cyber insurance estimate</h3>
+    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(annual_rounded)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
+    <div style="color:var(--muted);margin-bottom:16px">≈ ${currency(monthly)} / month · ${limit} coverage</div>
+    <div style="padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">
+      ⚠️ <strong>Why you need this:</strong> The average ransomware payment is ~$2M + downtime costs + regulatory fines (GDPR fines up to 4% of global revenue, California CCPA penalties). Cyber insurance covers ransom negotiations, legal fees, customer notification, credit monitoring for affected customers, and public relations. For 60% of SMBs, a major breach leads to closure within 6 months.
+    </div>
+    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">
+      💡 <strong>Reduce your premium:</strong> Add MFA everywhere, train employees on phishing, encrypt sensitive data, and maintain daily offsite backups. Carriers will verify these — having them reduces both your premium AND your breach risk.
+    </div>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

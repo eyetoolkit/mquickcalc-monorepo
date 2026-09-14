@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High vs Low Deductible Trade-off Calculator — Cover by mQuickCalc</title>
+<meta name="description" content="The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/deductible-tradeoff">
+<meta property="og:title" content="High vs Low Deductible Trade-off Calculator — Cover by mQuickCalc">
+<meta property="og:description" content="The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/deductible-tradeoff">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "High vs Low Deductible Trade-off Calculator", "url": "https://cover.mquickcalc.com/tools/deductible-tradeoff", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "High vs Low Deductible Trade-off Calculator", "item": "https://cover.mquickcalc.com/tools/deductible-tradeoff"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the High vs Low Deductible Trade-off Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is a lower deductible worth paying extra for?", "acceptedAnswer": {"@type": "Answer", "text": "The math is simple: if the premium difference over 3 years is less than the deductible difference times the number of claims you expect to file, go with the lower deductible. For example: $300/year premium delta \u00d7 3 years = $900. If deductible difference is $500 and you expect 2+ claims in 3 years (2 \u00d7 $500 = $1,000), then lower deductible saves you money."}}, {"@type": "Question", "name": "Should I worry about a high deductible I can't afford?", "acceptedAnswer": {"@type": "Answer", "text": "This is the real psychological factor. If you couldn't write a $2,500 check tomorrow after a car accident, a $2,500 deductible is dangerous \u2014 even if the math says it saves you money. The trade-off isn't just financial: it's risk tolerance. The premium savings is worth less if a single event causes financial stress."}}, {"@type": "Question", "name": "How often do people actually file claims?", "acceptedAnswer": {"@type": "Answer", "text": "According to industry data, the average driver files a claim every 7-10 years, and the average homeowner files every 18-20 years. If you're a safe driver with a clean record, you'll likely go years without a claim \u2014 making a higher deductible mathematically optimal. But all it takes is one at-fault accident to flip the calculation."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#auto">Auto</a><span class="sep">›</span><span class="current">High vs Low Deductible Trade-off Calculator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">⚖️</div>
+<h1 class="page-title">High vs Low Deductible Trade-off Calculator</h1>
+<p class="lede">The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="grid-column:1/-1"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">Your current plan</h3></div>
+<div><label for="cur_premium">Your current annual premium</label><input id="cur_premium" class="input" type="number" value="1800"></div>
+<div><label for="cur_deductible">Current deductible</label><input id="cur_deductible" class="input" type="number" value="1000"></div>
+<div style="grid-column:1/-1;margin-top:8px"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">Alternative plan</h3></div>
+<div><label for="alt_premium">Alternative annual premium</label><input id="alt_premium" class="input" type="number" value="2200"></div>
+<div><label for="alt_deductible">Alternative deductible</label><input id="alt_deductible" class="input" type="number" value="500"></div>
+<div style="grid-column:1/-1;margin-top:8px"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">Claims scenario</h3></div>
+<div><label for="claim_count">Expected number of claims in 3 years</label><input id="claim_count" class="input" type="number" value="1"></div>
+<div><label for="claim_amount">Average claim size</label><input id="claim_amount" class="input" type="number" value="3000"></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">When is a lower deductible worth paying extra for?</h3><p style="color:var(--ink-2);margin:0">The math is simple: if the premium difference over 3 years is less than the deductible difference times the number of claims you expect to file, go with the lower deductible. For example: $300/year premium delta × 3 years = $900. If deductible difference is $500 and you expect 2+ claims in 3 years (2 × $500 = $1,000), then lower deductible saves you money.</p>
+<h3 style="margin:16px 0 4px">Should I worry about a high deductible I can't afford?</h3><p style="color:var(--ink-2);margin:0">This is the real psychological factor. If you couldn't write a $2,500 check tomorrow after a car accident, a $2,500 deductible is dangerous — even if the math says it saves you money. The trade-off isn't just financial: it's risk tolerance. The premium savings is worth less if a single event causes financial stress.</p>
+<h3 style="margin:16px 0 4px">How often do people actually file claims?</h3><p style="color:var(--ink-2);margin:0">According to industry data, the average driver files a claim every 7-10 years, and the average homeowner files every 18-20 years. If you're a safe driver with a clean record, you'll likely go years without a claim — making a higher deductible mathematically optimal. But all it takes is one at-fault accident to flip the calculation.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const cur_premium = +document.getElementById("cur_premium").value;
+  const cur_deductible = +document.getElementById("cur_deductible").value;
+  const alt_premium = +document.getElementById("alt_premium").value;
+  const alt_deductible = +document.getElementById("alt_deductible").value;
+  const claim_count = +document.getElementById("claim_count").value;
+  const claim_amount = +document.getElementById("claim_amount").value;
+  
+  const premium_diff = alt_premium - cur_premium;
+  const deductible_diff = cur_deductible - alt_deductible; // low ded saves this per claim
+  const net_savings_3y = -(premium_diff * 3) + (claim_count * deductible_diff);
+  
+  let verdict;
+  if (net_savings_3y > 0) verdict = "✅ The alternative (lower deductible) saves you money";
+  else if (net_savings_3y < -premium_diff * 2) verdict = "❌ Stick with your current plan";
+  else verdict = "⚖️ Close call — consider your peace of mind";
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">⚖️ Trade-off analysis (3-year horizon)</h3>
+    <table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+      <tr><td>Premium difference (alt − cur)</td><td style="text-align:right">${currency(premium_diff)} / year</td></tr>
+      <tr><td>Deductible difference per claim</td><td style="text-align:right">${currency(deductible_diff)}</td></tr>
+      <tr><td>Expected claim savings (${claim_count} × ${currency(deductible_diff)})</td><td style="text-align:right">${currency(claim_count * deductible_diff)}</td></tr>
+      <tr><td><strong>Net 3-year result</strong></td><td style="text-align:right;font-weight:700;color:${net_savings_3y >= 0 ? 'var(--ok)' : 'var(--danger)'}">${currency(Math.abs(net_savings_3y))} ${net_savings_3y >= 0 ? 'savings' : 'loss'}</td></tr>
+    </table>
+    <div style="font-size:18px;font-weight:600;margin-bottom:8px">${verdict}</div>
+    <details>
+      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Break-even analysis</summary>
+      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">
+        <p style="margin:0">How many claims to break even? <strong>${Math.ceil(Math.abs(premium_diff) * 3 / deductible_diff)}</strong> claims over 3 years</p>
+        <p style="margin:4px 0">${premium_diff > 0 ? "If you file more claims than that, the lower deductible pays off. If fewer, stick with higher deductible + lower premium." : "Wait — the alternative premium is actually cheaper! Both premium and deductible are better, so it's clearly the better choice."}</p>
+      </div>
+    </details>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

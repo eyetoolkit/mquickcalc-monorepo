@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flood Insurance Cost Estimator — Cover by mQuickCalc</title>
+<meta name="description" content="Estimate annual flood insurance premiums based on your FEMA NFIP zone, building height, and replacement cost. Flood insurance is separate from home insurance.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/flood-insurance">
+<meta property="og:title" content="Flood Insurance Cost Estimator — Cover by mQuickCalc">
+<meta property="og:description" content="Estimate annual flood insurance premiums based on your FEMA NFIP zone, building height, and replacement cost. Flood insurance is separate from home insurance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/flood-insurance">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Flood Insurance Cost Estimator", "url": "https://cover.mquickcalc.com/tools/flood-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate annual flood insurance premiums based on your FEMA NFIP zone, building height, and replacement cost. Flood insurance is separate from home insurance."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Flood Insurance Cost Estimator", "item": "https://cover.mquickcalc.com/tools/flood-insurance"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Flood Insurance Cost Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is flood insurance really required?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 if your home is in a FEMA Special Flood Hazard Area (Zone A, AE, AH, AO, VE) and you have a mortgage backed by Fannie Mae, Freddie Mac, or any federally insured lender, flood insurance is mandatory. Even in Zone X, if you've had a flood in the past or are getting a federally backed mortgage, you may need it."}}, {"@type": "Question", "name": "Why is flood insurance so expensive?", "acceptedAnswer": {"@type": "Answer", "text": "Flood insurance was originally designed by FEMA to cover catastrophic flood events that private insurers won't touch. If your home is below the Base Flood Elevation (BFE) and in a high-risk zone, premiums are steep \u2014 $1,500-3,000/year is not uncommon. Elevating your home above BFE can cut costs dramatically."}}, {"@type": "Question", "name": "Can I get private flood insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 the private market has grown significantly since 2020. Private flood may be cheaper than NFIP for well-elevated homes or properties outside the riskiest zones. But private carriers don't have the same guaranteed coverage as NFIP. Always get both quotes."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Flood Insurance Cost Estimator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">🌊</div>
+<h1 class="page-title">Flood Insurance Cost Estimator</h1>
+<p class="lede">Estimate annual flood insurance premiums based on your FEMA NFIP zone, building height, and replacement cost. Flood insurance is separate from home insurance.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="zone">FEMA flood zone</label><select id="zone" class="input">
+<option value="A">Zone A (Special Flood Hazard Area, 100-year)</option>
+<option value="AE" selected>Zone AE (1% annual chance)</option>
+<option value="AO">Zone AO (shallow flooding)</option>
+<option value="AH">Zone AH (flood depths 1-3ft)</option>
+<option value="X500">Zone X (outside 100-year, 0.2-1% chance)</option>
+<option value="Xopen">Zone X (outside flood zones)</option>
+<option value="VE">Zone VE (coastal, high hazard)</option>
+</select></div>
+<div><label for="height">Building height relative to BFE (Base Flood Elevation)</label><select id="height" class="input">
+<option value="-2">2 ft BELOW BFE</option>
+<option value="0">At BFE</option>
+<option value="2" selected>2 ft ABOVE BFE</option>
+<option value="4">4 ft ABOVE BFE</option>
+<option value="8">8+ ft ABOVE BFE</option>
+</select></div>
+<div><label for="rebuild">Replacement cost of structure</label><input id="rebuild" class="input" type="number" value="400000"></div>
+<div><label for="contents">Contents value</label><input id="contents" class="input" type="number" value="100000"></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">Is flood insurance really required?</h3><p style="color:var(--ink-2);margin:0">Yes — if your home is in a FEMA Special Flood Hazard Area (Zone A, AE, AH, AO, VE) and you have a mortgage backed by Fannie Mae, Freddie Mac, or any federally insured lender, flood insurance is mandatory. Even in Zone X, if you've had a flood in the past or are getting a federally backed mortgage, you may need it.</p>
+<h3 style="margin:16px 0 4px">Why is flood insurance so expensive?</h3><p style="color:var(--ink-2);margin:0">Flood insurance was originally designed by FEMA to cover catastrophic flood events that private insurers won't touch. If your home is below the Base Flood Elevation (BFE) and in a high-risk zone, premiums are steep — $1,500-3,000/year is not uncommon. Elevating your home above BFE can cut costs dramatically.</p>
+<h3 style="margin:16px 0 4px">Can I get private flood insurance?</h3><p style="color:var(--ink-2);margin:0">Yes — the private market has grown significantly since 2020. Private flood may be cheaper than NFIP for well-elevated homes or properties outside the riskiest zones. But private carriers don't have the same guaranteed coverage as NFIP. Always get both quotes.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const zone = document.getElementById("zone").value;
+  const height = +document.getElementById("height").value;
+  const rebuild = +document.getElementById("rebuild").value;
+  const contents = +document.getElementById("contents").value;
+  
+  // Simplified NFIP rate model
+  let base_rate = 500;
+  if (zone === "VE") base_rate = 3000;
+  else if (zone === "AE") base_rate = 1200;
+  else if (zone === "A") base_rate = 1000;
+  else if (zone === "AH") base_rate = 1100;
+  else if (zone === "AO") base_rate = 900;
+  else if (zone === "X500") base_rate = 350;
+  else if (zone === "Xopen") base_rate = 150;
+  
+  // Height adjustment
+  if (height < 0) base_rate *= 1.6;
+  else if (height === 0) base_rate *= 1.3;
+  else if (height >= 4) base_rate *= 0.7;
+  else if (height >= 8) base_rate *= 0.5;
+  
+  const structure_cost = Math.round(base_rate * (rebuild / 500000));
+  const contents_cost = Math.round(base_rate * 0.3 * (contents / 100000));
+  const annual = Math.round(structure_cost + contents_cost);
+  const monthly = Math.round(annual / 12);
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">🌊 Your flood insurance estimate</h3>
+    <div style="font-size:28px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${currency(annual)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
+    <div style="color:var(--muted);margin-bottom:16px">≈ ${currency(monthly)} / month (direct pay)</div>
+    <table style="width:100%;font-size:14px;border-collapse:collapse">
+      <tr><td>Structure coverage (~${currency(rebuild)})</td><td style="text-align:right">${currency(structure_cost)}</td></tr>
+      <tr><td>Contents coverage (~${currency(contents)})</td><td style="text-align:right">${currency(contents_cost)}</td></tr>
+      <tr style="border-top:2px solid var(--line);font-weight:600"><td>Total annual premium</td><td style="text-align:right">${currency(annual)}</td></tr>
+    </table>
+    <div style="margin-top:16px;padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">
+      ⚠️ <strong>Important:</strong> Standard homeowners insurance does NOT cover flood damage. NFIP policies have a 30-day waiting period after purchase. If you live in Zone A/AE/VE and have a mortgage, flood insurance is <strong>required by law</strong>.
+    </div>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

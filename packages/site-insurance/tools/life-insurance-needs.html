@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance Needs Calculator — Cover by mQuickCalc</title>
+<meta name="description" content="Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/life-insurance-needs">
+<meta property="og:title" content="Life Insurance Needs Calculator — Cover by mQuickCalc">
+<meta property="og:description" content="Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/life-insurance-needs">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Life Insurance Needs Calculator", "url": "https://cover.mquickcalc.com/tools/life-insurance-needs", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Use the DIME method (Debts + Income \u00d7 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Life Insurance Needs Calculator", "item": "https://cover.mquickcalc.com/tools/life-insurance-needs"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Life Insurance Needs Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields with your personal or property information."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate and understand the factors that affect it."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the DIME method?", "acceptedAnswer": {"@type": "Answer", "text": "DIME stands for Debts, Income (\u00d710), Mortgage, and Education. It's a simple formula popularized by life insurance experts: add up all debts, multiply annual income by 10, add remaining mortgage balance, and add projected college costs for kids. The result is a practical starting point."}}, {"@type": "Question", "name": "Term vs whole life \u2014 which should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "Term life is dramatically cheaper because it only pays out if you die during the term (10, 20, or 30 years). Whole life is permanent and has a cash-value component, but costs 3-5\u00d7 more. For most young families, a large 20-30 year term policy is the better value."}}, {"@type": "Question", "name": "Is this estimate accurate?", "acceptedAnswer": {"@type": "Answer", "text": "Our rate tables are based on industry averages for healthy non-smokers. Your actual rate depends on underwriting factors we can't know: medical history, family health, occupation risk, hobbies (skydiving, etc.), and the specific carrier's pricing. Always get multiple actual quotes."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
+    <nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#life">Life</a><span class="sep">›</span><span class="current">Life Insurance Needs Calculator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">🛡️</div>
+<h1 class="page-title">Life Insurance Needs Calculator</h1>
+<p class="lede">Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.</p>
+<div class="calc-card">
+
+<h3 style="margin:0 0 4px;font-size:14px;color:var(--muted)">Your situation</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="age">Your age</label><input id="age" class="input" type="number" value="35"></div>
+<div><label for="gender">Gender (for rate estimate)</label><select id="gender" class="input"><option value="male" selected>Male</option><option value="female">Female</option></select></div>
+<div><label for="smoker">Do you smoke?</label><select id="smoker" class="input"><option value="no" selected>No</option><option value="yes">Yes</option></select></div>
+<div><label for="income">Annual household income</label><input id="income" class="input" type="number" value="75000"></div>
+<div><label for="debt">Outstanding debts (credit cards, loans, etc.)</label><input id="debt" class="input" type="number" value="15000"></div>
+<div><label for="mortgage">Remaining mortgage balance</label><input id="mortgage" class="input" type="number" value="250000"></div>
+<div><label for="kids">Number of kids needing college funds</label><input id="kids" class="input" type="number" value="2"></div>
+<div><label for="existing">Existing life insurance coverage</label><input id="existing" class="input" type="number" value="50000"></div>
+<div><label for="term">Term length (years)</label><select id="term" class="input"><option value="10">10 years</option><option value="20" selected>20 years</option><option value="30">30 years</option></select></div>
+</div>
+
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+<button id="calcBtn" class="btn">Calculate</button>
+<button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">
+⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. Your actual premium depends on factors we cannot verify (credit score, claims history, exact vehicle/property details, carrier underwriting). <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.
+</div>
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What is the DIME method?</h3><p style="color:var(--ink-2);margin:0">DIME stands for Debts, Income (×10), Mortgage, and Education. It's a simple formula popularized by life insurance experts: add up all debts, multiply annual income by 10, add remaining mortgage balance, and add projected college costs for kids. The result is a practical starting point.</p>
+<h3 style="margin:16px 0 4px">Term vs whole life — which should I choose?</h3><p style="color:var(--ink-2);margin:0">Term life is dramatically cheaper because it only pays out if you die during the term (10, 20, or 30 years). Whole life is permanent and has a cash-value component, but costs 3-5× more. For most young families, a large 20-30 year term policy is the better value.</p>
+<h3 style="margin:16px 0 4px">Is this estimate accurate?</h3><p style="color:var(--ink-2);margin:0">Our rate tables are based on industry averages for healthy non-smokers. Your actual rate depends on underwriting factors we can't know: medical history, family health, occupation risk, hobbies (skydiving, etc.), and the specific carrier's pricing. Always get multiple actual quotes.</p>
+</details>
+</div></main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+    <p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+    <div class="footer-links">
+      <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a>
+      · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a>
+    </div>
+    <p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) {
+    if (n === null || isNaN(n) || !isFinite(n)) return "—";
+    return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0});
+  }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+  function calc() {
+    const age = +document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const smoker = document.getElementById("smoker").value;
+    const income = +document.getElementById("income").value;
+    const debt = +document.getElementById("debt").value;
+    const mortgage = +document.getElementById("mortgage").value;
+    const kids = +document.getElementById("kids").value;
+    const existing = +document.getElementById("existing").value;
+    const term = +document.getElementById("term").value;
+    
+    // DIME method
+    const education_cost = kids * 150000;
+    const dime_total = debt + (income * 10) + mortgage + education_cost;
+    const recommended = Math.max(0, dime_total - existing);
+    
+    // Find nearest age rate
+    const rates = window.COVER_DATA?.life_rates?.average_monthly_rates || {term_20: []};
+    const rate_key = term <= 10 ? "term_10" : "term_20";
+    const rate_data = rates[rate_key] || [];
+    let rate = 30; // fallback
+    for (const r of rate_data) {
+      if (age >= r.age - 3 && age <= r.age + 3) {
+        rate = r[gender]; break;
+      }
+    }
+    if (smoker === "yes") rate *= 2.2;
+    
+    const monthly = (rate / 500000) * recommended; // rate is per $500k
+    const whole_monthly = monthly * 3.5;
+    
+    document.getElementById("result").innerHTML = `
+      <h3 style="margin:0 0 12px;font-size:18px">📋 DIME breakdown</h3>
+      <table style="width:100%;margin-bottom:16px;font-size:14px;border-collapse:collapse">
+        <tr><td>💳 Debts</td><td style="text-align:right">${currency(debt)}</td></tr>
+        <tr><td>💼 Income × 10 (${currency(income)} × 10)</td><td style="text-align:right">${currency(income*10)}</td></tr>
+        <tr><td>🏠 Mortgage balance</td><td style="text-align:right">${currency(mortgage)}</td></tr>
+        <tr><td>🎓 Education (${kids} kids × ${currency(150000)})</td><td style="text-align:right">${currency(education_cost)}</td></tr>
+        <tr style="border-top:2px solid var(--line);font-weight:600"><td>DIME total</td><td style="text-align:right">${currency(dime_total)}</td></tr>
+        <tr><td>➖ Existing coverage</td><td style="text-align:right">-${currency(existing)}</td></tr>
+        <tr style="font-weight:700;background:var(--brand-bg)"><td>✅ <strong>Recommended coverage</strong></td><td style="text-align:right;color:var(--brand-ink)"><strong>${currency(recommended)}</strong></td></tr>
+      </table>
+      <h4 style="margin-bottom:8px">💰 Estimated monthly premium</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="padding:12px;border:1px solid var(--line);border-radius:var(--radius-sm)">
+          <div style="font-size:13px;color:var(--muted)">Term (${term} yr)</div>
+          <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency2(monthly)}<span style="font-size:13px;color:var(--muted)">/mo</span></div>
+        </div>
+        <div style="padding:12px;border:1px solid var(--line);border-radius:var(--radius-sm)">
+          <div style="font-size:13px;color:var(--muted)">Whole Life</div>
+          <div style="font-size:22px;font-weight:var(--fw-black)">${currency2(whole_monthly)}<span style="font-size:13px;color:var(--muted)">/mo</span></div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
+        💡 <strong>Tip:</strong> The DIME method is a starting point. If you have a stay-at-home spouse, add coverage for their replacement value. Review annually as debts and children change.
+      </div>
+    `;
+  }
+  document.getElementById("calcBtn").addEventListener("click", calc);
+
+
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", calc);
+  } else {
+    calc();
+  }
+}})();
+</script>
+
+</body>
+</html>

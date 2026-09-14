@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Insurance Premium Estimator — Cover by mQuickCalc</title>
+<meta name="description" content="Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/health-insurance-premium">
+<meta property="og:title" content="Health Insurance Premium Estimator — Cover by mQuickCalc">
+<meta property="og:description" content="Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/health-insurance-premium">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Health Insurance Premium Estimator", "url": "https://cover.mquickcalc.com/tools/health-insurance-premium", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Health Insurance Premium Estimator", "item": "https://cover.mquickcalc.com/tools/health-insurance-premium"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Health Insurance Premium Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields with your personal or property information."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate and understand the factors that affect it."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between Bronze, Silver, Gold, and Platinum?", "acceptedAnswer": {"@type": "Answer", "text": "Metal tiers represent how you and the insurer split costs. Bronze plans have the lowest monthly premium (you pay ~40% of costs) but the highest deductibles. Platinum plans have the highest premium (you pay ~10%) but lowest out-of-pocket costs. Silver is the ACA benchmark used for subsidy calculations."}}, {"@type": "Question", "name": "Will I qualify for a government subsidy?", "acceptedAnswer": {"@type": "Answer", "text": "The Affordable Care Act provides premium tax credits for households earning between 100% and 400% of the Federal Poverty Level. Our calculator gives a rough estimate \u2014 the actual subsidy depends on your state, plan choice, and exact household situation."}}, {"@type": "Question", "name": "Why are premiums so different by state?", "acceptedAnswer": {"@type": "Answer", "text": "Each state runs its own insurance marketplace with different regulations, competition levels, provider costs, and health trends. Massachusetts, Oregon, and California have well-functioning markets; others like Alabama and Oklahoma have fewer options and higher prices."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
+    <nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Health Insurance Premium Estimator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">🛡️</div>
+<h1 class="page-title">Health Insurance Premium Estimator</h1>
+<p class="lede">Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate.</p>
+<div class="calc-card">
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="state">State</label><select id="state" class="input"></select></div>
+<div><label for="age">Your age (or oldest adult)</label><input id="age" class="input" type="number" value="35"></div>
+<div><label for="metal">Metal tier</label><select id="metal" class="input">
+<option value="bronze">Bronze (lowest premium, highest deductible)</option>
+<option value="silver" selected>Silver (ACA benchmark)</option>
+<option value="gold">Gold (mid premium, lower deductible)</option>
+<option value="platinum">Platinum (highest premium, lowest deductible)</option>
+</select></div>
+<div><label for="smoker">Tobacco use?</label><select id="smoker" class="input"><option value="no" selected>No</option><option value="yes">Yes (+20% surcharge in most states)</option></select></div>
+<div><label for="family">Family structure</label><select id="family" class="input">
+<option value="single" selected>Single adult</option>
+<option value="couple">Two adults</option>
+<option value="family_3">One adult + child</option>
+<option value="family_4">Two adults + 1-2 children</option>
+<option value="family_5">Two adults + 3+ children</option>
+</select></div>
+<div><label for="income">Annual household income</label><input id="income" class="input" type="number" value="75000"></div>
+</div>
+
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+<button id="calcBtn" class="btn">Calculate</button>
+<button id="resetBtn" class="btn ghost">Reset</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">
+⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. Your actual premium depends on factors we cannot verify (credit score, claims history, exact vehicle/property details, carrier underwriting). <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.
+</div>
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What's the difference between Bronze, Silver, Gold, and Platinum?</h3><p style="color:var(--ink-2);margin:0">Metal tiers represent how you and the insurer split costs. Bronze plans have the lowest monthly premium (you pay ~40% of costs) but the highest deductibles. Platinum plans have the highest premium (you pay ~10%) but lowest out-of-pocket costs. Silver is the ACA benchmark used for subsidy calculations.</p>
+<h3 style="margin:16px 0 4px">Will I qualify for a government subsidy?</h3><p style="color:var(--ink-2);margin:0">The Affordable Care Act provides premium tax credits for households earning between 100% and 400% of the Federal Poverty Level. Our calculator gives a rough estimate — the actual subsidy depends on your state, plan choice, and exact household situation.</p>
+<h3 style="margin:16px 0 4px">Why are premiums so different by state?</h3><p style="color:var(--ink-2);margin:0">Each state runs its own insurance marketplace with different regulations, competition levels, provider costs, and health trends. Massachusetts, Oregon, and California have well-functioning markets; others like Alabama and Oklahoma have fewer options and higher prices.</p>
+</details>
+</div></main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+    <p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+    <div class="footer-links">
+      <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a>
+      · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a>
+    </div>
+    <p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) {
+    if (n === null || isNaN(n) || !isFinite(n)) return "—";
+    return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0});
+  }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+  const STATES = {
+    "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California",
+    "CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia",
+    "HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa",
+    "KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland",
+    "MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri",
+    "MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey",
+    "NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio",
+    "OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina",
+    "SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont",
+    "VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
+  };
+  const STATE_SELECT = document.getElementById("state");
+  for (const [code, name] of Object.entries(STATES)) {
+    const o = document.createElement("option"); o.value = code; o.textContent = name;
+    if (code === "CA") o.selected = true;
+    STATE_SELECT.appendChild(o);
+  }
+
+  function calc() {
+    const D = window.COVER_DATA?.health_rates || null;
+    if (!D) { document.getElementById("result").innerHTML = "<p>Data loading...</p>"; return; }
+    
+    const state = document.getElementById("state").value;
+    const age = +document.getElementById("age").value;
+    const metal = document.getElementById("metal").value;
+    const smoker = document.getElementById("smoker").value;
+    const family = document.getElementById("family").value;
+    const income = +document.getElementById("income").value;
+    
+    const base = D.state_base_rates_2026[state] || 500;
+    const metalMult = D.metal_tier_multipliers[metal] || 1.0;
+    
+    // Age factor approximation
+    let ageFactor = 1.0;
+    if (age <= 18) ageFactor = 0.63;
+    else if (age <= 21) ageFactor = 1.0;
+    else if (age <= 30) ageFactor = 1.0;
+    else if (age <= 40) ageFactor = 1.25;
+    else if (age <= 50) ageFactor = 1.75;
+    else if (age <= 60) ageFactor = 2.5;
+    else ageFactor = 3.0;
+    
+    const smokerMult = smoker === "yes" ? 1.2 : 1.0;
+    
+    // Family multiplier
+    let familyMult = 1.0;
+    if (family === "couple") familyMult = 1.8;
+    else if (family === "family_3") familyMult = 1.3;
+    else if (family === "family_4") familyMult = 2.2;
+    else if (family === "family_5") familyMult = 2.5;
+    
+    const monthly = base * metalMult * ageFactor * smokerMult * familyMult;
+    const monthly_rounded = Math.round(monthly);
+    const yearly = monthly_rounded * 12;
+    
+    // Subsidy estimate (simplified)
+    const fpl = family === "couple" ? 19620 : family.startsWith("family") ? 29700 : 14580;
+    const fpl_pct = income / fpl;
+    let subsidy = 0;
+    if (fpl_pct <= 1.5) subsidy = monthly * 0.8;
+    else if (fpl_pct <= 2.0) subsidy = monthly * 0.6;
+    else if (fpl_pct <= 2.5) subsidy = monthly * 0.4;
+    else if (fpl_pct <= 3.0) subsidy = monthly * 0.2;
+    subsidy = Math.round(subsidy);
+    const net_premium = monthly_rounded - subsidy;
+    
+    document.getElementById("result").innerHTML = `
+      <h3 style="margin:0 0 12px;font-size:18px">🏥 Your ballpark premium</h3>
+      <div style="font-size:28px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${currency(monthly_rounded)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>
+      <div style="color:var(--muted);margin-bottom:16px">${currency(yearly)} / year — ${metal.charAt(0).toUpperCase() + metal.slice(1)} plan, ${state}, ${family.replace("_", " ")}</div>
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Subsidy estimate (if qualifying)</summary>
+        <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:14px">
+          <p style="margin:0">Federal Poverty Level: <strong>${currency(fpl)}</strong> (for your household size)</p>
+          <p style="margin:4px 0">Your income is <strong>${(fpl_pct*100).toFixed(0)}%</strong> of FPL</p>
+          <p style="margin:4px 0">Estimated monthly subsidy: <strong>${currency(subsidy)}</strong></p>
+          <p style="margin:4px 0;font-weight:600">Net premium you'd pay: <strong>${currency(net_premium)}</strong> / month</p>
+          <p style="margin-top:8px;font-size:12px;color:var(--muted)">Subsidy is simplified and only applies if you buy on HealthCare.gov or your state marketplace. Not all states expanded Medicaid.</p>
+        </div>
+      </details>
+    `;
+  }
+  document.getElementById("calcBtn").addEventListener("click", calc);
+
+
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", calc);
+  } else {
+    calc();
+  }
+}})();
+</script>
+
+</body>
+</html>

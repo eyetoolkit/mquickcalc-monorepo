@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renters Insurance Coverage Calculator — Cover by mQuickCalc</title>
+<meta name="description" content="Estimate how much renters insurance coverage you need and what it might cost per year. Covers personal property, liability, and additional living expenses.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/renters-insurance">
+<meta property="og:title" content="Renters Insurance Coverage Calculator — Cover by mQuickCalc">
+<meta property="og:description" content="Estimate how much renters insurance coverage you need and what it might cost per year. Covers personal property, liability, and additional living expenses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/renters-insurance">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Renters Insurance Coverage Calculator", "url": "https://cover.mquickcalc.com/tools/renters-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate how much renters insurance coverage you need and what it might cost per year. Covers personal property, liability, and additional living expenses."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Renters Insurance Coverage Calculator", "item": "https://cover.mquickcalc.com/tools/renters-insurance"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Renters Insurance Coverage Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does renters insurance actually cover?", "acceptedAnswer": {"@type": "Answer", "text": "Three main things: (1) Personal property \u2014 your furniture, electronics, clothing, kitchenware if stolen/damaged. (2) Liability \u2014 if someone gets hurt in your apartment and sues you. (3) Additional living expenses \u2014 if your place is unlivable after a fire/flood, it pays for a hotel. It does NOT cover flood or earthquake \u2014 you need separate policies for those."}}, {"@type": "Question", "name": "Do I really need renters insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, probably. Your landlord's insurance only covers the building structure, not your stuff. If a pipe bursts and ruins everything, that's your problem without coverage. And liability coverage protects you if a guest slips and falls. At $15-30/month, it's one of the cheapest forms of insurance you can buy."}}, {"@type": "Question", "name": "How do I know how much coverage I need for my stuff?", "acceptedAnswer": {"@type": "Answer", "text": "Walk through each room and add up: cost of replacing your furniture, electronics (laptop, TV, phone), kitchen appliances, clothing (dozens of items!), bedding, and anything else you'd have to replace. Most people underestimate \u2014 start with $15,000 minimum for a one-bedroom."}}]}</script>
+</head>
+<body data-site="insurance">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Renters Insurance Coverage Calculator</span></nav></div>
+<main class="page"><div class="wrap">
+<div class="page-hero-emoji">📦</div>
+<h1 class="page-title">Renters Insurance Coverage Calculator</h1>
+<p class="lede">Estimate how much renters insurance coverage you need and what it might cost per year. Covers personal property, liability, and additional living expenses.</p>
+<div class="calc-card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label for="rent">Monthly rent</label><input id="rent" class="input" type="number" value="1800"></div>
+<div><label for="state">State</label><input id="state" class="input" type="text" placeholder="e.g. CA" value="CA" maxlength="2"></div>
+<div><label for="content">Estimated value of all your personal belongings</label><input id="content" class="input" type="number" value="25000"></div>
+<div><label for="liability">Liability coverage</label><select id="liability" class="input"><option value="100000">$100,000</option><option value="300000" selected>$300,000</option><option value="500000">$500,000</option></select></div>
+<div><label for="deductible">Deductible</label><select id="deductible" class="input"><option value="250">$250</option><option value="500" selected>$500</option><option value="1000">$1,000</option></select></div>
+<div><label for="pet">Do you have a dog or cat?</label><select id="pet" class="input"><option value="no" selected>No</option><option value="yes">Yes (add ~10% for liability)</option></select></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This calculator provides a ballpark estimate based on industry averages and publicly available data. <strong>This is not insurance advice</strong>. Compare actual quotes from licensed carriers before purchasing. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What does renters insurance actually cover?</h3><p style="color:var(--ink-2);margin:0">Three main things: (1) Personal property — your furniture, electronics, clothing, kitchenware if stolen/damaged. (2) Liability — if someone gets hurt in your apartment and sues you. (3) Additional living expenses — if your place is unlivable after a fire/flood, it pays for a hotel. It does NOT cover flood or earthquake — you need separate policies for those.</p>
+<h3 style="margin:16px 0 4px">Do I really need renters insurance?</h3><p style="color:var(--ink-2);margin:0">Yes, probably. Your landlord's insurance only covers the building structure, not your stuff. If a pipe bursts and ruins everything, that's your problem without coverage. And liability coverage protects you if a guest slips and falls. At $15-30/month, it's one of the cheapest forms of insurance you can buy.</p>
+<h3 style="margin:16px 0 4px">How do I know how much coverage I need for my stuff?</h3><p style="color:var(--ink-2);margin:0">Walk through each room and add up: cost of replacing your furniture, electronics (laptop, TV, phone), kitchen appliances, clothing (dozens of items!), bedding, and anything else you'd have to replace. Most people underestimate — start with $15,000 minimum for a one-bedroom.</p>
+</details>
+
+</div></main>
+<footer class="site-footer"><div class="wrap">
+<p><strong>🛡️ Cover</strong> by mQuickCalc — Free insurance cost estimators for budgeting and planning.</p>
+<p class="disclaimer-inline">⚠️ All estimates are based on industry averages and publicly available data. Not insurance advice. <a href="/disclaimer">Full disclaimer</a>.</p>
+<div class="footer-links"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/contact">Contact</a> · <a href="https://mquickcalc.com" rel="noopener">mQuickCalc</a> · <a href="https://finance.mquickcalc.com" rel="noopener">Finance</a> · <a href="https://health.mquickcalc.com" rel="noopener">Health</a></div>
+<p class="copy">&copy; 2026 Cover by mQuickCalc. All rights reserved.</p>
+</div></footer>
+<script src="/js/insurance-data.js" defer></script>
+<script src="/js/site-core.js" defer></script>
+<script src="/js/site-enhance.js" defer></script>
+<script>
+(function(){
+  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
+  function currency(n) { return "$" + fmt(n, 0); }
+  function currency2(n) { return "$" + fmt(n, 2); }
+
+
+function calc() {
+  const rent = +document.getElementById("rent").value;
+  const content = +document.getElementById("content").value;
+  const liability = +document.getElementById("liability").value;
+  const pet = document.getElementById("pet").value;
+  
+  const monthly_cost = rent * 12 * 0.05;
+  const content_cost = content * 0.008; // ~$8 per $1000/year
+  const liability_cost = liability * 0.0005; // ~$0.50 per $1000/year
+  let annual = Math.round(content_cost + liability_cost);
+  if (pet === "yes") annual = Math.round(annual * 1.1);
+  annual = Math.max(annual, 120); // minimum $10/month
+  
+  const monthly = Math.round(annual / 12);
+  
+  document.getElementById("result").innerHTML = `
+    <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>
+    <table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+      <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${currency(content)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>
+      <tr><td>Liability</td><td style="text-align:right;font-weight:600">${currency(liability)}</td><td style="text-align:right;color:var(--muted)">< ${currency(100000)} is risky</td></tr>
+      <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${currency(rent*3)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>
+    </table>
+    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(monthly)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span> <span style="font-size:13px;color:var(--muted)">(${currency(annual)}/year)</span></div>
+    <div style="margin-top:12px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
+      💡 Renters insurance is <strong>incredibly cheap</strong> — $15-30/month for most people. Your landlord's insurance does NOT cover your belongings. If you have anything worth more than $5,000 total, renters insurance pays for itself after one incident.
+    </div>
+  `;
+}
+
+  document.getElementById("calcBtn")?.addEventListener("click", calc);
+  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
+  else { calc(); }
+})();
+</script>
+</body></html>

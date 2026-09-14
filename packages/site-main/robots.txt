@@ -32,3 +32,4 @@ Allow: /
 Sitemap: https://mquickcalc.com/sitemap.xml
 Sitemap: https://finance.mquickcalc.com/sitemap.xml
 Sitemap: https://health.mquickcalc.com/sitemap.xml
+Sitemap: https://cover.mquickcalc.com/sitemap.xml
