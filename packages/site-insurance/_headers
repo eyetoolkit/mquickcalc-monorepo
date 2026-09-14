@@ -4,25 +4,38 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+*/
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https: pagead2.googlesyndication.com tpc.googlesyndication.com; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; frame-src pagead2.googlesyndication.com;
 
 /*.html
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /sitemap.xml
   Cache-Control: public, max-age=3600
+
 /robots.txt
   Cache-Control: public, max-age=86400
+
+/sw.js
+  Cache-Control: no-cache
+
 /css/*
   Cache-Control: public, max-age=31536000, immutable
+
 /js/*
   Cache-Control: public, max-age=31536000, immutable
+
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
+
 /*.png
   Cache-Control: public, max-age=31536000, immutable
+
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
+
 /*.webmanifest
   Cache-Control: public, max-age=86400
