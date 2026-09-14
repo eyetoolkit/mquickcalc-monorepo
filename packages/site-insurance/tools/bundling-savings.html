@@ -77,7 +77,8 @@ function calc() {
     document.getElementById("result").innerHTML = `
       <h3 style="margin:0 0 12px">📦 You're already bundled!</h3>
       <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>
-    `; return;
+    `;
+    document.getElementById("result").classList.add("show"); return;
   }
   
   const total_current = auto + home;
@@ -102,6 +103,7 @@ function calc() {
       💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.
     </div>
   `;
+    document.getElementById("result").classList.add("show");
 }
 
   document.getElementById("calcBtn")?.addEventListener("click", calc);
