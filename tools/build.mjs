@@ -28,9 +28,10 @@ const ROOT = path.resolve(__dirname, '..');
 const BRAND_KIT = path.join(ROOT, 'packages', 'brand-kit');
 
 const SITES = [
-  { pkg: 'site-main',    cfProject: 'mquickcalc' },
-  { pkg: 'site-finance', cfProject: 'mquickcalc-finance' },
-  { pkg: 'site-health',  cfProject: 'mquickcalc-health' },
+  { pkg: 'site-main',      cfProject: 'mquickcalc' },
+  { pkg: 'site-finance',   cfProject: 'mquickcalc-finance' },
+  { pkg: 'site-health',    cfProject: 'mquickcalc-health' },
+  { pkg: 'site-insurance', cfProject: 'mquickcalc-cover' },
 ];
 
 function exists(p) { try { fs.accessSync(p); return true; } catch { return false; } }

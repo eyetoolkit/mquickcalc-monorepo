@@ -22,9 +22,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
 const SITES = [
-  { pkg: 'site-main',    origin: 'https://mquickcalc.com' },
-  { pkg: 'site-finance', origin: 'https://finance.mquickcalc.com' },
-  { pkg: 'site-health',  origin: 'https://health.mquickcalc.com' },
+  { pkg: 'site-main',      origin: 'https://mquickcalc.com' },
+  { pkg: 'site-finance',   origin: 'https://finance.mquickcalc.com' },
+  { pkg: 'site-health',    origin: 'https://health.mquickcalc.com' },
+  { pkg: 'site-insurance', origin: 'https://cover.mquickcalc.com' },
 ];
 
 const TARGET_ARG = process.argv[2];
