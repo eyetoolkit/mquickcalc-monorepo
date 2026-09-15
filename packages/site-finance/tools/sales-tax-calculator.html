@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sales Tax Calculator | mQuickCalc Finance</title>
-  <meta name="description" content="Add sales tax to a price or back the tax out of an inclusive amount. Pick a US state rate or enter your own. Free, no sign-up.">
+  <meta name="description" content="Free sales tax calculator: add or back out US sales tax on any price. Includes state/local rate breakdown, VAT vs sales tax comparison, economic nexus rules post-Wayfair, and tax remittance schedule guide. No sign-up.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/sales-tax-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta name="theme-color" content="#2563eb">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sales Tax Calculator — Add &amp; Remove Tax from a Price | mQuickCalc">
@@ -23,7 +26,15 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Sales Tax Calculator","url":"https://finance.mquickcalc.com/tools/sales-tax-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add or back out sales tax on any price."}
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add sales tax to a price?","acceptedAnswer":{"@type":"Answer","text":"Multiply the price by 1 plus the rate as a decimal. For 8.25%, multiply by 1.0825. A $100 item becomes $108.25."}},{"@type":"Question","name":"How do I get tax out of an already-taxed total?","acceptedAnswer":{"@type":"Answer","text":"Divide the total by 1 plus the rate. A $108.25 total at 8.25% has $100 pre-tax and $8.25 of tax."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How do I add sales tax to a price?","acceptedAnswer":{"@type":"Answer","text":"Multiply the price by 1 plus the rate as a decimal. For 8.25%, multiply by 1.0825. A $100 item becomes $108.25. For quick mental math, 8% is approximately 1/12, so a $100 item at 8% is about $108. When setting prices in a POS system, enter the pre-tax price and let the system calculate the tax."}},
+  {"@type":"Question","name":"How do I get tax out of an already-taxed total?","acceptedAnswer":{"@type":"Answer","text":"Divide the total by 1 plus the rate. A $108.25 total at 8.25% has $100 pre-tax and $8.25 tax. Formula: pre-tax = total / (1 + rate). If you have a receipt for $154.75 at 7.5%, the pre-tax amount is $154.75 / 1.075 = $143.95."}},
+  {"@type":"Question","name":"Why do tax rates change by ZIP code?","acceptedAnswer":{"@type":"Answer","text":"US sales tax is layered: state base rate + county + city + special district. A ZIP code on one side of a street might be in a different city, county, or district than the other side, resulting in different combined rates for adjacent addresses."}},
+  {"@type":"Question","name":"What items are exempt from sales tax?","acceptedAnswer":{"@type":"Answer","text":"Most states exempt prescription medications, grocery food, and clothing under a certain price threshold. Other exemptions include medical equipment, agricultural supplies, and educational materials. B2B transactions with a valid resale certificate are generally exempt. Exemptions vary significantly by state."}},
+  {"@type":"Question","name":"Do I need to collect tax as an online seller?","acceptedAnswer":{"@type":"Answer","text":"Probably yes if you have significant sales. Post-Wayfair (2018), economic nexus thresholds apply in most states: $100,000 in gross revenue or 200 transactions in the state triggers collection requirements. If you sell through Amazon FBA, FBA handles tax collection in most states automatically."}},
+  {"@type":"Question","name":"What is the difference between sales tax and VAT?","acceptedAnswer":{"@type":"Answer","text":"VAT is applied at every stage of production and distribution, with each business remitting only the difference between what they collected and what they paid. US sales tax is a single-stage tax collected only at the point of final sale to the consumer. VAT is used by over 170 countries; the US relies primarily on income taxes at the federal level."}},
+  {"@type":"Question","name":"How often must I remit sales tax?","acceptedAnswer":{"@type":"Answer","text":"Most states use a tiered system based on total tax liability: new or low-volume sellers file quarterly or annually; larger sellers file monthly. Most states require filing even with zero sales. Penalties for late filing are typically 5-10% of tax due per month."}}
+]}</script>
 <meta property="og:url" content="https://finance.mquickcalc.com/tools/sales-tax-calculator">
 <meta property="og:site_name" content="mQuickCalc Finance">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Sales Tax Calculator","item":"https://finance.mquickcalc.com/tools/sales-tax-calculator"}]}</script>
@@ -111,12 +122,26 @@
     </div>
 
     
-    <h2>How US sales tax works</h2><p>Tax = Pre-tax amount times combined rate (state plus local). Rates vary by state from 0% to over 10%. Some items are exempt. Remote sellers must collect tax in states where they have nexus (physical or economic presence).</p>
-<h2>Frequently asked questions</h2>
+    <h2>How US sales tax works</h2>
+    <p>Sales tax in the United States is a consumption tax added at the point of sale for tangible personal property and selected services. Unlike the VAT (Value Added Tax) systems used in Europe and most other countries, US sales tax is applied only to the final consumer — businesses buying from other businesses generally purchase tax-free using a resale certificate. The combined tax rate is the sum of the state rate, county rate, city rate, and sometimes special district rates, which can result in very different total rates for locations just a few miles apart. As of 2024, five states have no state-level sales tax at all (Oregon, New Hampshire, Montana, Delaware, and Alaska), though Alaska allows local jurisdictions to levy their own taxes.</p>
+    <p>Tax nexus is the connection between a seller and a state that requires the seller to collect tax. Historically, nexus required a physical presence — a store, warehouse, or employee. After the 2018 South Dakota v. Wayfair Supreme Court decision, economic nexus — simply exceeding a certain revenue or transaction threshold in a state — now triggers tax collection obligations for out-of-state sellers. This is critical for e-commerce sellers: if you sell more than $100,000 in gross revenue or 200 separate transactions in a state in a calendar year, you are likely required to collect and remit sales tax in that state, even if you have no physical presence there.</p>
+
+    <h2>Frequently asked questions</h2>
     <h3>How do I add sales tax to a price?</h3>
-    <p>Multiply the price by 1 plus the rate as a decimal. For 8.25%, multiply by 1.0825. A $100 item becomes $108.25.</p>
+    <p>Multiply the price by 1 plus the rate as a decimal. For 8.25%, multiply by 1.0825. A $100 item becomes $108.25. For quick mental math, 8% is approximately 1/12, so a $100 item at 8% is about $108 — close enough to check the calculator's answer. When setting prices in a point-of-sale system, you generally enter the pre-tax price and let the system calculate the tax, rather than pricing inclusively of tax.</p>
     <h3>How do I get tax out of an already-taxed total?</h3>
-    <p>Divide the total by 1 plus the rate. A $108.25 total at 8.25% has $100 pre-tax and $8.25 of tax.</p>
+    <p>Divide the total by 1 plus the rate. A $108.25 total at 8.25% has $100 pre-tax and $8.25 of tax. The formula is: pre-tax = total / (1 + rate). For example, if you have a receipt for $154.75 and know the rate was 7.5%, the pre-tax amount is $154.75 / 1.075 = $143.95, and the tax is $154.75 - $143.95 = $10.80. This is useful for reconciling credit card statements or calculating taxes paid for business expense reports.</p>
+    <h3>Why do tax rates change by ZIP code?</h3>
+    <p>US sales tax is a layered system: the state sets a base rate, then counties add a local rate, then cities add another, then special districts (transit authorities, school districts, fire districts) can add more. A ZIP code on one side of a street might be in a different city, county, or special district than a ZIP code on the other side, resulting in different combined rates for adjacent addresses. This is why geolocation-based tax calculation (rather than ZIP-code-based) is increasingly used in e-commerce — the exact address determines the precise combined rate.</p>
+    <h3>What items are exempt from sales tax?</h3>
+    <p>Most states exempt prescription medications, grocery food (though some states tax prepared foods like restaurant meals), and clothing under a certain price threshold (varies by state — New York's clothing exemption is under $110 per item, while New Jersey exempts clothing under $110 as well). Other exemptions include medical equipment, agricultural supplies, educational materials, and in some states, digital goods like e-books. Business-to-business transactions where the buyer has a valid resale certificate are generally exempt. Because exemptions vary significantly by state, e-commerce sellers should use a tax automation tool (such as Avalara, TaxJar, or Vertex) rather than trying to track exemptions manually.</p>
+    <h3>Do I need to collect tax as an online seller?</h3>
+    <p>Probably yes if you have significant sales. Post-Wayfair (2018), economic nexus thresholds apply in most states: typically $100,000 in gross revenue or 200 transactions in the state triggers collection requirements. If you sell through Amazon FBA, FBA handles sales tax collection in most states automatically. If you sell directly on your own website, you are responsible for determining nexus and collecting the correct rate — failure to collect can result in back taxes, penalties, and interest. A tax automation tool is strongly recommended for any e-commerce business with non-trivial sales volume.</p>
+    <h3>What is the difference between sales tax and VAT?</h3>
+    <p>VAT (Value Added Tax) is applied at every stage of production and distribution — the manufacturer pays VAT on inputs, the wholesaler pays VAT on the margin, and the retailer collects VAT from the consumer but remits only the difference between what they collected and what they paid. This makes VAT more invisible to consumers and harder to evade, because each business in the chain has an incentive to verify that their suppliers reported the transaction correctly. US sales tax is a single-stage tax collected only at the point of final sale to the consumer. VAT is used by over 170 countries; the United States is notable for its reliance on income taxes rather than consumption taxes at the federal level.</p>
+    <h3>How often must I remit sales tax?</h3>
+    <p>Remittance frequency depends on your total tax liability. Most states use a tiered system: new or low-volume sellers file quarterly or annually; larger sellers file monthly. Most states require filing even with zero sales. Penalties for late filing are typically 5-10% of tax due per month.</p>
+</div>
 
     <div class="related-section">
       <h2>Related calculators</h2>
