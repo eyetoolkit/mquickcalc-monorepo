@@ -104,15 +104,10 @@ function buildSitemap(site) {
     entries.push(urlEntry(loc, lastmod, 'monthly', priority));
   }
 
-  // 4. embed/*.html (main site only)
-  const embedDir = path.join(siteDir, 'embed');
-  const embeds = listHtmlFiles(embedDir);
-  for (const f of embeds) {
-    const name = path.basename(f, '.html');
-    const loc = `${site.origin}/embed/${name}`;
-    const lastmod = gitLastModifiedDate(f);
-    entries.push(urlEntry(loc, lastmod, 'monthly', '0.6'));
-  }
+  // 4. embed/*.html — intentionally NOT included: embed pages are full
+  // duplicates of tool pages (canonicalized) and are marked noindex.
+  // Keeping them out of the sitemap saves crawl budget and avoids
+  // duplicate-URL signals.
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

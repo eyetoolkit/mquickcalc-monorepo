@@ -1,13 +1,29 @@
 {
-  "name": "mQuickCalc Finance — Fee & Pricing Calculators",
+  "name": "mQuickCalc Finance — Fee & Profit Calculators",
   "short_name": "mQuickCalc Finance",
-  "description": "Platform-accurate fee, payout and pricing calculators for sellers and creators.",
+  "description": "Free fee, profit and revenue calculators for sellers and creators. No sign-up, no tracking.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#059669",
   "icons": [
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
-  ],`r`n  "service_worker": { "src": "/sw.js", "scope": "/", "type": "classic" },`r`n  "lang": "en"`r`n}
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "service_worker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "type": "classic"
+  },
+  "lang": "en"
+}

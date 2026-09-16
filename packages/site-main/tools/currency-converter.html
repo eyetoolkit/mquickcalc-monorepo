@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Length Converter — cm, inches, feet, meters, miles and more | mQuickCalc</title>
-  <meta name="description" content="Convert length between centimeters, inches, feet, meters, yards, kilometers and miles instantly. Type one value and see every unit at once, with a quick-reference table.">
-  <link rel="canonical" href="https://mquickcalc.com/tools/length-converter">
+  <title>Currency Converter — Free USD, EUR, GBP &amp; JPY Exchange Rates | mQuickCalc</title>
+  <meta name="description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/currency-converter">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
@@ -14,47 +14,59 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Length Converter — cm, inches, feet, meters, miles and more | mQuickCalc">
-  <meta name="twitter:description" content="Convert length between centimeters, inches, feet, meters, yards, kilometers and miles instantly. Type one value and see every unit at once, with a quick-reference table.">
+  <meta name="twitter:title" content="Currency Converter — Free USD, EUR, GBP &amp; JPY Exchange Rates | mQuickCalc">
+  <meta name="twitter:description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
   <meta name="twitter:site" content="@mquickcalc">
   <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
-  <meta property="og:title" content="Length Converter — cm, inches, feet, meters, miles and more | mQuickCalc">
-  <meta property="og:description" content="Convert length between centimeters, inches, feet, meters, yards, kilometers and miles instantly. Type one value and see every unit at once, with a quick-reference table.">
+  <meta property="og:title" content="Currency Converter — Free USD, EUR, GBP &amp; JPY Exchange Rates | mQuickCalc">
+  <meta property="og:description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mquickcalc.com/tools/length-converter">
+  <meta property="og:url" content="https://mquickcalc.com/tools/currency-converter">
   <meta property="og:site_name" content="mQuickCalc">
   <link rel="stylesheet" href="/css/site.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Length Converter","url":"https://mquickcalc.com/tools/length-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert length between centimeters, inches, feet, meters, yards, kilometers and miles instantly. Type one value and see every unit at once, with a quick-reference table."}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Currency Converter","url":"https://mquickcalc.com/tools/currency-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert money between 40+ currencies with indicative mid-market exchange rates. Enter an amount, pick the currency, and see every value instantly — free, no sign-up."}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "How many inches is 1 cm?", "acceptedAnswer": {"@type": "Answer", "text": "One centimeter is 0.3937 inches, because an inch is defined as exactly 2.54 cm. To convert any value, divide centimeters by 2.54. For example, 30 cm ÷ 2.54 = 11.81 inches."}}, {"@type": "Question", "name": "How do I convert cm to feet and inches?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the centimeters by 2.54 to get total inches, then divide by 12: the whole number is feet and the remainder is inches. 180 cm is 70.87 inches, which is 5 feet and 10.87 inches. Our height converter does this split automatically."}}, {"@type": "Question", "name": "Is a meter longer than a yard?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but only slightly. A meter is 39.37 inches while a yard is 36 inches, so a meter is about 8.6% longer. For rough mental math, treat 1 meter as 1.1 yards."}}, {"@type": "Question", "name": "What is the difference between a mile and a nautical mile?", "acceptedAnswer": {"@type": "Answer", "text": "A statute mile (used on roads) is 1,609.344 m; a nautical mile is 1,852 m. The nautical mile is based on the Earth's geometry and is used for sea and air navigation. Using the wrong one introduces a 15% error."}}, {"@type": "Question", "name": "Why does my conversion show so many decimal places?", "acceptedAnswer": {"@type": "Answer", "text": "The tool keeps eight significant digits so small units stay meaningful — 1 mm in miles is a very small number. Nothing is rounded behind the scenes; the precision of your answer still depends on how precisely you measured the original value."}}]}
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do currency conversions work?", "acceptedAnswer": {"@type": "Answer", "text": "All rates are anchored to one unit — the US dollar — so any currency can be converted to any other. To convert an amount, multiply it by the target rate divided by the source rate. For example, with 1 USD = 0.8667 EUR and 1 USD = 155.08 JPY, 100 EUR = 100 × (155.08 ÷ 0.8667) ≈ 17,897 JPY."}},
+      {"@type": "Question", "name": "Are these the live exchange rates?", "acceptedAnswer": {"@type": "Answer", "text": "The rates shown are indicative mid-market rates provided by exchangerate-api.com, last updated 16 September 2026. They are a reference point, not a guarantee — the rate your bank or card issuer applies will include their own spread and fees."}},
+      {"@type": "Question", "name": "Why does my bank show a different rate?", "acceptedAnswer": {"@type": "Answer", "text": "Banks and payment processors add a spread on top of the mid-market rate to cover their costs and risk. The published mid-market rate never includes that markup, so the amount actually charged on a card or wire transfer is usually a little worse than the rate you see here."}},
+      {"@type": "Question", "name": "What are mid-market rates?", "acceptedAnswer": {"@type": "Answer", "text": "Mid-market rates are the midpoint between the buy and sell prices on the global currency market — the rate traders use with each other, not the rate consumers get. They are the fairest reference for comparing conversions across providers."}}
+    ]
+  }
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},
-    {"@type":"ListItem","position":2,"name":"Length Converter","item":"https://mquickcalc.com/tools/length-converter"}
+    {"@type":"ListItem","position":2,"name":"Currency Converter","item":"https://mquickcalc.com/tools/currency-converter"}
   ]}
   </script>
   <style>
     .conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
     .conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}
-    .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-    .conv-grid label{font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--ink-2);display:block;margin-bottom:4px}
-    @media (max-width:640px){.conv-grid{grid-template-columns:1fr}}
+    .conv-table tr.is-to td{background:#eef2ff}
+    .swap-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-top:14px}
+    .swap-wrap > div{flex:1;min-width:200px}
+    .swap-btn{margin-bottom:1px}
+    .swap-btn svg{display:inline-block;vertical-align:-2px;margin-right:4px}
+    @media (max-width:640px){.swap-wrap{flex-direction:column}.swap-wrap > div{min-width:0}}
   </style>
 
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to use this converter",
-  "step": [
-    {"@type": "HowToStep", "name": "Enter a value", "text": "Type any number into the input field."},
-    {"@type": "HowToStep", "name": "Choose your units", "text": "Pick the source unit from the dropdown."},
-    {"@type": "HowToStep", "name": "See all results", "text": "The tool shows every unit equivalent instantly in the results table."}
-  ]
-}
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use this converter",
+    "step": [
+      {"@type": "HowToStep", "name": "Enter an amount", "text": "Type the amount you want to convert into the amount field."},
+      {"@type": "HowToStep", "name": "Pick your currencies", "text": "Choose the source currency and the target currency from the dropdowns, or use the swap button to exchange them."},
+      {"@type": "HowToStep", "name": "Read the results", "text": "The headline shows the converted value and the full table lists every currency at a glance."}
+    ]
+  }
   </script>
 </head>
 <body data-site="main">
@@ -71,36 +83,32 @@
 
 <main class="page">
   <div class="wrap">
-    <h1 class="page-title">Length Converter</h1>
-    <p class="lede">Convert between metric and imperial length in one place. Enter a value, pick the unit you are starting from, and the full table updates as you type — no need to run the same search twice for "cm to inches" and "inches to cm".</p>
+    <h1 class="page-title">Currency Converter</h1>
+    <p class="lede">Convert money between 40+ currencies in one place. Enter an amount, pick the source currency, and the table updates as you type — no need to run the same search twice for "USD to EUR" and "EUR to USD".</p>
 
     <div class="calc-card" id="calc-card">
-      <label for="val">Value</label>
-      <input id="val" class="input" type="number" inputmode="decimal" step="any" value="180">
+      <label for="val">Amount</label>
+      <input id="val" class="input" type="number" inputmode="decimal" step="any" value="100">
 
-      <div style="margin-top:14px;">
-        <label for="from">Convert from</label>
-        <select id="from" class="input">
-        <option value="mm"Millimeter (mm)></option>
-        <option value="cm"Centimeter (cm)> selected</option>
-        <option value="m"Meter (m)></option>
-        <option value="km"Kilometer (km)></option>
-        <option value="in"Inch (in)></option>
-        <option value="ft"Foot (ft)></option>
-        <option value="yd"Yard (yd)></option>
-        <option value="mi"Mile (mi)></option>
-        <option value="nmi"Nautical mile (nmi)></option>
-        </select>
+      <div class="swap-wrap">
+        <div>
+          <label for="from">Convert from</label>
+          <select id="from" class="input"></select>
+        </div>
+        <button id="swapBtn" class="btn ghost swap-btn" type="button" title="Swap currencies" aria-label="Swap currencies"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4M7 4L3 8M7 4l4 4"/><path d="M17 8v12M17 20l4-4M17 20l-4-4"/></svg>Swap</button>
+        <div>
+          <label for="to">Convert to</label>
+          <select id="to" class="input"></select>
+        </div>
       </div>
 
       <div id="result" class="result show">
         <div class="big" id="mainVal">—</div>
         <div class="dim" id="mainUnit"></div>
-
       </div>
 
       <table class="ref-table conv-table" style="margin-top:20px;">
-        <thead><tr><th>Unit</th><th style="text-align:right;">Value</th></tr></thead>
+        <thead><tr><th>Currency</th><th style="text-align:right;">Value</th></tr></thead>
         <tbody id="rows"></tbody>
       </table>
       <p class="note" id="convNote"></p>
@@ -110,58 +118,59 @@
       </div>
     </div>
 
-    
+
 <div id="embed-cta" style="margin-top:20px;padding:16px;border:1px dashed #cbd5e1;border-radius:8px;background:#f8fafc;">
   <strong>🔧 Embed this converter on your site</strong>
   <p class="dim" style="margin:4px 0 10px 0;">Copy the code below and paste it into any blog, wiki, or course page. Free, no tracking.</p>
   <button id="embedBtn" class="btn">Show embed code</button>
   <div id="embedCode" style="display:none;margin-top:12px;background:#0f172a;color:#e2e8f0;padding:12px;border-radius:6px;font-family:monospace;font-size:13px;overflow-x:auto;">
-<iframe src="https://mquickcalc.com/embed/currency-converter" width="100%" height="480" frameborder="0" loading="lazy" title="Free currency-converter from mQuickCalc"></iframe>
+<iframe src="https://mquickcalc.com/tools/currency-converter" width="100%" height="480" frameborder="0" loading="lazy" title="Free currency converter from mQuickCalc"></iframe>
   </div>
 </div>
 <h2>How it works</h2>
-    <p>Every conversion here runs through one base unit: the meter. Each unit has a fixed factor — an inch is exactly 0.0254 m, a foot is exactly 0.3048 m, and a mile is exactly 1,609.344 m. To convert, we multiply your number by the factor of the unit you typed, then divide by the factor of the unit you want. That two-step route means any unit can reach any other unit without a separate formula for each pair.</p>
-    <p>The imperial factors above are exact because they are defined in terms of metric units, not measured. The inch was redefined as exactly 25.4 mm in 1959, which is why the conversion never drifts. Centimeters to inches is therefore a clean division: inches = cm ÷ 2.54. Going the other way, cm = inches × 2.54.</p>
-    <p>Precision is capped at eight significant digits, which is more than any tape measure or laser distance meter can deliver. If you are converting a manufacturing tolerance, note that the tool cannot tell you how precise your original measurement was — a value quoted to two decimal places will not become more accurate by being converted.</p>
-    <p>A note on the nautical mile: it is 1,852 m exactly and is used in aviation and maritime navigation because it maps to one minute of latitude. It is not interchangeable with the statute mile used on roads, which is about 15% shorter.</p>
+    <p>Every conversion on this page runs through one base currency: the US dollar. Each currency has a rate — how many units of it equal one US dollar — so converting between any two currencies is a single calculation: amount × (target rate ÷ source rate). There is no separate formula for each currency pair, because every rate is anchored to the same dollar.</p>
+    <p>The rates used here are mid-market rates, the midpoint between the buy and sell prices on the global currency market. That is the rate traders use with each other, and it is the fairest reference point for comparing what different providers charge. It is not the rate you will actually get: banks, card issuers and transfer services add a spread and sometimes fees on top, so the amount charged for a real transaction is usually a little worse than the rate shown here.</p>
+    <p>Rates are updated regularly from exchangerate-api.com. Because exchange rates move with markets, always check the live rate before making a large transfer or signing a contract in a foreign currency.</p>
 
-    <h2>Common length conversions</h2>
+    <h2>Real-world applications</h2>
+    <p>Currency conversion is a daily necessity in online shopping, travel and cross-border business. When you buy from an overseas store, the price in your currency tells you what you will actually pay — and whether a bargain in dollars is still a bargain after conversion. Travelers use it to budget for trips and to spot unreasonable ATM or airport exchange rates.</p>
+    <p>Freelancers and sellers earning in foreign currencies need to know what a payment is worth in their home currency before accepting a rate. E-commerce sellers pricing products for multiple markets also rely on conversion to keep margins consistent across currencies. For anything beyond a quick check, compare against your bank or card provider's actual rate, since that is the number that will appear on your statement.</p>
+
+    <h2>Common currency conversions</h2>
     <table class="ref-table">
-      <thead><tr><th>From</th><th style="text-align:right;">To</th></tr></thead>
+      <thead><tr><th>1 USD in</th><th style="text-align:right;">Value</th></tr></thead>
       <tbody>
-        <tr><td>1 cm</td><td>0.3937 in</td></tr>
-        <tr><td>1 inch</td><td>2.54 cm</td></tr>
-        <tr><td>1 foot</td><td>30.48 cm</td></tr>
-        <tr><td>1 meter</td><td>3.2808 ft</td></tr>
-        <tr><td>1 meter</td><td>39.370 in</td></tr>
-        <tr><td>1 yard</td><td>0.9144 m</td></tr>
-        <tr><td>1 kilometer</td><td>0.6214 mi</td></tr>
-        <tr><td>1 mile</td><td>1.6093 km</td></tr>
-        <tr><td>1 nautical mile</td><td>1.852 km</td></tr>
+        <tr><td>Euro (EUR)</td><td>0.8667</td></tr>
+        <tr><td>British pound (GBP)</td><td>0.7420</td></tr>
+        <tr><td>Japanese yen (JPY)</td><td>155.08</td></tr>
+        <tr><td>Chinese yuan (CNY)</td><td>6.7268</td></tr>
+        <tr><td>Indian rupee (INR)</td><td>95.99</td></tr>
+        <tr><td>Australian dollar (AUD)</td><td>1.4031</td></tr>
+        <tr><td>Canadian dollar (CAD)</td><td>1.3913</td></tr>
+        <tr><td>Swiss franc (CHF)</td><td>0.8190</td></tr>
       </tbody>
     </table>
 
     <h2>Frequently asked questions</h2>
-    <h3>How many inches is 1 cm?</h3>
-    <p>One centimeter is 0.3937 inches, because an inch is defined as exactly 2.54 cm. To convert any value, divide centimeters by 2.54. For example, 30 cm ÷ 2.54 = 11.81 inches.</p>
-    <h3>How do I convert cm to feet and inches?</h3>
-    <p>Divide the centimeters by 2.54 to get total inches, then divide by 12: the whole number is feet and the remainder is inches. 180 cm is 70.87 inches, which is 5 feet and 10.87 inches. Our height converter does this split automatically.</p>
-    <h3>Is a meter longer than a yard?</h3>
-    <p>Yes, but only slightly. A meter is 39.37 inches while a yard is 36 inches, so a meter is about 8.6% longer. For rough mental math, treat 1 meter as 1.1 yards.</p>
-    <h3>What is the difference between a mile and a nautical mile?</h3>
-    <p>A statute mile (used on roads) is 1,609.344 m; a nautical mile is 1,852 m. The nautical mile is based on the Earth's geometry and is used for sea and air navigation. Using the wrong one introduces a 15% error.</p>
-    <h3>Why does my conversion show so many decimal places?</h3>
-    <p>The tool keeps eight significant digits so small units stay meaningful — 1 mm in miles is a very small number. Nothing is rounded behind the scenes; the precision of your answer still depends on how precisely you measured the original value.</p>
+    <h3>How do currency conversions work?</h3>
+    <p>Every currency has a rate relative to the US dollar, so conversion between any two currencies is a simple multiplication and division. Multiply your amount by the target currency's rate, then divide by the source currency's rate. For example, to find what 100 euros is in yen when 1 USD = 0.8667 EUR and 1 USD = 155.08 JPY, compute 100 × (155.08 ÷ 0.8667), which gives about 17,897 yen. This works in reverse for any currency pair without needing a separate table for each combination.</p>
+    <h3>Are these the live exchange rates?</h3>
+    <p>The rates shown are indicative mid-market rates sourced from exchangerate-api.com, last updated on 16 September 2026. They give you a fair reference for comparing conversions, but they are not a guarantee of the rate any provider will apply to your transaction. Exchange rates also move with markets throughout the day, so for large amounts, check the current rate before committing.</p>
+    <h3>Why does my bank show a different rate?</h3>
+    <p>Banks and payment processors add a spread on top of the mid-market rate to cover their costs and risk. The rate published here never includes that markup, so the amount actually charged on a card, ATM withdrawal or wire transfer is usually a little worse than what you see here. Some providers also charge a fixed fee per transaction, which makes the effective rate worse again for small amounts.</p>
+    <h3>What are mid-market rates?</h3>
+    <p>Mid-market rates are the midpoint between the buy and sell prices on the global currency market — the rate that traders exchange currencies at with each other. They are the fairest reference for comparing how much different providers charge, because every provider starts from the same mid-market number and then adds their own spread and fees on top.</p>
+    <h3>Can I convert between any two currencies?</h3>
+    <p>Yes. Because every currency in the table is anchored to the US dollar, any currency can be converted to any other in a single step — including currencies that rarely trade directly against each other, such as the Nigerian naira and the Thai baht. Pick both currencies above, enter an amount, and the result updates instantly.</p>
 
     <div class="related-section">
-      <h2>Related converters</h2>
+      <h2>Related calculators</h2>
       <div class="tool-grid">
-      <a class="tool-card" href="/tools/height-converter"><div class="icon-row"><div class="tc-title">Height Converter</div></div><div class="tc-desc">cm to feet and inches, with the inch remainder worked out.</div></a>
-      <a class="tool-card" href="/tools/area-converter"><div class="icon-row"><div class="tc-title">Area Converter</div></div><div class="tc-desc">Square meters, square feet, acres and hectares.</div></a>
-      <a class="tool-card" href="/tools/speed-converter"><div class="icon-row"><div class="tc-title">Speed Converter</div></div><div class="tc-desc">km/h, mph, knots and meters per second.</div></a>
+      <a class="tool-card" href="/tools/percentage-calculator"><div class="icon-row"><div class="tc-title">Percentage Calculator</div></div><div class="tc-desc">X% of Y, what % is X of Y, % change — all modes in one.</div></a>
+      <a class="tool-card" href="/tools/tip-calculator"><div class="icon-row"><div class="tc-title">Tip Calculator</div></div><div class="tc-desc">Calculate tip and split the bill among friends.</div></a>
       </div>
     </div>
-    <p class="upd">Last updated <time datetime="2026-09-09">September 9, 2026</time> — conversions use exact unit definitions, so results stay accurate.</p>
+    <p class="upd">Last updated <time datetime="2026-09-16">September 16, 2026</time> — exchange rates are indicative mid-market rates from exchangerate-api.com.</p>
     <p class="note" style="margin-top:22px;">Estimates are for general information only — see our <a href="/disclaimer">disclaimer</a>.</p>
     <p class="note"><a href="/">&larr; Back to all converters</a></p>
   </div>
@@ -170,8 +179,7 @@
   <h2>See also</h2>
   <ul>
       <li><a href="/tools/percentage-calculator">Percentage Calculator</a></li>
-      <li><a href="/tools/tip-calculator">Tip Calculator</a></li>
-      <li><a href="/everyday-math">📂 All Everyday Math Calculators</a></li>
+      <li><a href="/everyday-math">📂 All Everyday Calculators</a></li>
   </ul>
 </section>
 
@@ -187,9 +195,13 @@
   <script src="/js/site-enhance.js" defer></script>
 <script>
 (function () {
-  var U = [["mm", "Millimeter (mm)", 0.001], ["cm", "Centimeter (cm)", 0.01], ["m", "Meter (m)", 1], ["km", "Kilometer (km)", 1000], ["in", "Inch (in)", 0.0254], ["ft", "Foot (ft)", 0.3048], ["yd", "Yard (yd)", 0.9144], ["mi", "Mile (mi)", 1609.344], ["nmi", "Nautical mile (nmi)", 1852]];
+  var R = {"USD":1,"EUR":0.86671,"GBP":0.742032,"JPY":155.07604,"CNY":6.726834,"AUD":1.403148,"CAD":1.391261,"CHF":0.818951,"HKD":7.844364,"SGD":1.272718,"INR":95.989284,"KRW":1360.361778,"MXN":17.157696,"BRL":5.150194,"RUB":84.303527,"ZAR":16.265398,"TWD":31.840364,"SEK":9.778398,"NOK":9.347332,"DKK":6.478292,"NZD":1.737448,"THB":33.294422,"AED":3.6725,"SAR":3.75,"TRY":48.664559,"ILS":3.040812,"PLN":3.763082,"CZK":21.059591,"HUF":317.094461,"IDR":17688.127123,"PHP":62.869248,"MYR":4.084433,"VND":25904.220782,"VES":846.5131,"UAH":44.670612,"NGN":1328.880494,"ARS":1506.6836,"CLP":957.185297,"COP":3103.999022,"EGP":52.063931,"RON":4.559762};
+  var C = [["USD","United States dollar (USD)"],["EUR","Euro (EUR)"],["GBP","British pound (GBP)"],["JPY","Japanese yen (JPY)"],["CNY","Chinese yuan (CNY)"],["AUD","Australian dollar (AUD)"],["CAD","Canadian dollar (CAD)"],["CHF","Swiss franc (CHF)"],["HKD","Hong Kong dollar (HKD)"],["SGD","Singapore dollar (SGD)"],["INR","Indian rupee (INR)"],["KRW","South Korean won (KRW)"],["MXN","Mexican peso (MXN)"],["BRL","Brazilian real (BRL)"],["RUB","Russian ruble (RUB)"],["ZAR","South African rand (ZAR)"],["TWD","New Taiwan dollar (TWD)"],["SEK","Swedish krona (SEK)"],["NOK","Norwegian krone (NOK)"],["DKK","Danish krone (DKK)"],["NZD","New Zealand dollar (NZD)"],["THB","Thai baht (THB)"],["AED","UAE dirham (AED)"],["SAR","Saudi riyal (SAR)"],["TRY","Turkish lira (TRY)"],["ILS","Israeli shekel (ILS)"],["PLN","Polish zloty (PLN)"],["CZK","Czech koruna (CZK)"],["HUF","Hungarian forint (HUF)"],["IDR","Indonesian rupiah (IDR)"],["PHP","Philippine peso (PHP)"],["MYR","Malaysian ringgit (MYR)"],["VND","Vietnamese dong (VND)"],["VES","Venezuelan bolivar (VES)"],["UAH","Ukrainian hryvnia (UAH)"],["NGN","Nigerian naira (NGN)"],["ARS","Argentine peso (ARS)"],["CLP","Chilean peso (CLP)"],["COP","Colombian peso (COP)"],["EGP","Egyptian pound (EGP)"],["RON","Romanian leu (RON)"]];
+  var PAIRS = {"USD":"EUR","EUR":"USD","GBP":"USD","JPY":"USD","CNY":"USD","AUD":"USD","CAD":"USD","CHF":"USD","HKD":"USD","SGD":"USD","INR":"USD","KRW":"USD","MXN":"USD","BRL":"USD","RUB":"USD","ZAR":"USD","TWD":"USD","SEK":"USD","NOK":"USD","DKK":"USD","NZD":"USD","THB":"USD","AED":"USD","SAR":"USD","TRY":"USD","ILS":"USD","PLN":"USD","CZK":"USD","HUF":"USD","IDR":"USD","PHP":"USD","MYR":"USD","VND":"USD","VES":"USD","UAH":"USD","NGN":"USD","ARS":"USD","CLP":"USD","COP":"USD","EGP":"USD","RON":"USD"};
+
   var inp = document.getElementById('val');
-  var sel = document.getElementById('from');
+  var fromSel = document.getElementById('from');
+  var toSel = document.getElementById('to');
   var tb = document.getElementById('rows');
   var big = document.getElementById('mainVal');
   var bigLbl = document.getElementById('mainUnit');
@@ -198,58 +210,85 @@
   function fmt(n) {
     if (!isFinite(n)) return '—';
     if (n === 0) return '0';
-    return Number(n.toPrecision(8)).toLocaleString('en-US', { maximumFractionDigits: 8 });
-  }
-  function factorOf(id) {
-    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][2];
-    return 1;
+    return Number(n.toPrecision(8)).toLocaleString('en-US', { maximumFractionDigits: 4 });
   }
   function labelOf(id) {
-    for (var i = 0; i < U.length; i++) if (U[i][0] === id) return U[i][1];
+    for (var i = 0; i < C.length; i++) if (C[i][0] === id) return C[i][1];
     return id;
   }
-  // Short symbol for the headline, e.g. "Inch (in)" -> "in"
-  function symOf(id) {
-    var l = labelOf(id);
-    var m = /\(([^)]+)\)\s*$/.exec(l);
-    var s = m ? m[1] : l;
-    var c = s.indexOf(',');
-    return c > 0 ? s.slice(0, c) : s;
+  function buildOptions(sel, selected) {
+    var html = '';
+    for (var i = 0; i < C.length; i++) {
+      html += '<option value="' + C[i][0] + '"' + (C[i][0] === selected ? ' selected' : '') + '>' + C[i][1] + '</option>';
+    }
+    sel.innerHTML = html;
   }
-  var PRI = 'in';
-  var ALT = 'cm';
-  // The headline picks the pair a human would actually ask for: hectares go to
-  // acres, not to 107,639 square feet. Anything unlisted falls back to PRI/ALT.
-  var PAIRS = {"m": "ft", "km": "mi", "mi": "km", "nmi": "km", "yd": "m", "mm": "in"};
   function render() {
     var v = parseFloat(inp.value);
     if (isNaN(v)) v = 0;
-    var from = sel.value;
-    var base = v * factorOf(from);
+    var from = fromSel.value;
+    var to = toSel.value;
+    var rf = R[from] || 1;
+    var rt = R[to] || 1;
     var rows = '';
-    for (var i = 0; i < U.length; i++) {
-      var id = U[i][0];
-      var out = base / U[i][2];
-      var isFrom = (id === from);
-      rows += '<tr' + (isFrom ? ' class="is-from"' : '') + '>' +
-              '<td>' + U[i][1] + '</td>' +
-              '<td><strong>' + fmt(out) + '</strong></td>' +
-              '</tr>';
+    for (var i = 0; i < C.length; i++) {
+      var id = C[i][0];
+      var out = v * (R[id] || 0) / rf;
+      var cls = '';
+      if (id === from) cls = ' class="is-from"';
+      else if (id === to) cls = ' class="is-to"';
+      rows += '<tr' + cls + '><td>' + C[i][1] + '</td><td><strong>' + fmt(out) + '</strong></td></tr>';
     }
     tb.innerHTML = rows;
-    // Headline shows the pair people actually search for: kg->lb, cm->in, GB->GiB.
-    var target = PAIRS[from] || ((from === PRI) ? ALT : PRI);
-    big.textContent = fmt(base / factorOf(target));
-    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
-    if (note) note.textContent = 'Converting from ' + labelOf(from) + '. Change the unit to convert the other way — the whole table updates instantly.';
+    big.textContent = fmt(v * rt / rf);
+    bigLbl.textContent = fmt(v) + ' ' + from + ' in ' + labelOf(to);
+    if (note) note.textContent = 'Mid-market rates from exchangerate-api.com, updated 16 Sep 2026. Banks and card providers add spreads and fees, so actual charged amounts differ.';
   }
+
+  buildOptions(fromSel, 'USD');
+  buildOptions(toSel, 'EUR');
   inp.addEventListener('input', render);
-  sel.addEventListener('change', render);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    inp.value = '180';
-    sel.value = 'cm';
+  fromSel.addEventListener('change', function(){
+    if (toSel.value === 'EUR' && fromSel.value === 'USD') return; // keep pair when it matches default
+    if (toSel.value === 'USD' && fromSel.value === 'EUR') return;
+    var old = toSel.value;
+    toSel.value = (PAIRS[fromSel.value] || 'USD') === old ? (fromSel.value === 'USD' ? 'EUR' : 'USD') : (PAIRS[fromSel.value] || 'USD');
     render();
   });
+  toSel.addEventListener('change', render);
+  document.getElementById('swapBtn').addEventListener('click', function () {
+    var f = fromSel.value, t = toSel.value;
+    fromSel.value = t;
+    toSel.value = f;
+    render();
+  });
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    inp.value = '100';
+    fromSel.value = 'USD';
+    toSel.value = 'EUR';
+    render();
+  });
+  // URL param support: /tools/currency-converter?from=USD&to=EUR
+  (function(){
+    var q = new URLSearchParams(window.location.search);
+    var fromParam = q.get('from');
+    var toParam = q.get('to');
+    if (fromParam) {
+      var opts = fromSel.getElementsByTagName('option');
+      for (var i = 0; i < opts.length; i++) {
+        if (opts[i].value === fromParam) { fromSel.value = fromParam; break; }
+      }
+    }
+    if (toParam) {
+      var opts2 = toSel.getElementsByTagName('option');
+      for (var j = 0; j < opts2.length; j++) {
+        if (opts2[j].value === toParam) { toSel.value = toParam; break; }
+      }
+    } else if (fromParam) {
+      toSel.value = (PAIRS[fromParam] || 'USD') === fromParam ? 'USD' : (PAIRS[fromParam] || 'USD');
+    }
+    render();
+  })();
   render();
 })();
 </script>

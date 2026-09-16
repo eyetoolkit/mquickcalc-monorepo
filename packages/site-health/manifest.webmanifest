@@ -1,13 +1,29 @@
 {
-  "name": "mQuickCalc Health — Fitness & Nutrition Calculators",
+  "name": "mQuickCalc Health — Wellness Calculators",
   "short_name": "mQuickCalc Health",
-  "description": "Evidence-based fitness, nutrition and everyday wellbeing calculators.",
+  "description": "Free health and wellness calculators: BMI, calories, heart rate and more. No sign-up, no tracking.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#dc2626",
   "icons": [
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
-  ],`r`n  "service_worker": { "src": "/sw.js", "scope": "/", "type": "classic" },`r`n  "lang": "en"`r`n}
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "service_worker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "type": "classic"
+  },
+  "lang": "en"
+}
