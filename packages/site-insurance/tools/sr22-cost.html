@@ -27,7 +27,26 @@
 <h3 style="margin:16px 0 4px">What is an SR-22?</h3><p style="color:var(--ink-2);margin:0">An SR-22 is a certificate from your insurance company proving you meet the state's minimum liability requirements. It's required after serious violations (DUI, reckless driving, driving without insurance). Your insurance company files it with the DMV, and you pay a filing fee ($25-$75/year depending on state).</p>
 <h3 style="margin:16px 0 4px">Does an SR-22 make my insurance more expensive?</h3><p style="color:var(--ink-2);margin:0">Yes — significantly. A DUI typically doubles or triples your premium. The SR-22 form itself costs very little ($25-75/year), but the insurance surcharge is the real cost. You'll carry this penalty for 3-10 years depending on your state and violation.</p>
 <h3 style="margin:16px 0 4px">What's non-owner SR-22 insurance?</h3><p style="color:var(--ink-2);margin:0">If you don't own a car but need an SR-22 (common after a DUI where you drove someone else's car), you can buy a non-owner policy. It only covers liability when you're driving someone else's car. It's cheaper than a regular policy but still has the high-risk surcharge.</p>
-</details></div></main>
+</details>
+    <div class="tc-desc">Ballpark annual cost by state, age, driving record.</div></a>
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling home + auto.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/car-insurance-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Car Insurance Premium Estimator</div></div><div class="tc-desc">Ballpark annual cost by state, age, driving record.</div></a>
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling home + auto.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -50,7 +69,7 @@ function calc(){const v=document.getElementById("violation").value;const state=d
 <h3 style="margin:0 0 12px">📋 SR-22 cost estimate</h3>
 <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(annual)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year premium</span></div>
 <div style="color:var(--muted);margin-bottom:16px">+ ${currency(filing_fee)} state filing fee / year</div>
-<table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px"><tr><td>Violation surcharge (${v})</td><td style="text-align:right">${surcharge.toFixed(1)}×</td></tr><tr><td>Base ${nonowner?"non-owner":"personal"} premium</td><td style="text-align:right">${currency(base_premium)}</td></tr><tr><td>Annual premium</td><td style="text-align:right;font-weight:600">${currency(annual)}</td></tr><tr style="border-top:2px solid var(--line)"><td>Total over ${years} years (premium + filing)</td><td style="text-align:right;font-weight:700">${currency(total)}</td></tr></table>
+<table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px"><tr><td>Violation surcharge (${v})</td><td style="text-align:right">${surcharge.toFixed(1)}×</td></tr><tr><td>Base ${nonowner?"non-owner":"personal"} premium</td><td style="text-align:right">${currency(base_premium)}</td></tr><tr><td>Annual premium</td><td style="text-align:right;font-weight:600">${currency(annual)}</td></tr><tr style="border-top:2px solid var(--line)"><td>Total over ${years} years (premium + filing)</td><td style="text-align:right;font-weight:700">${currency(total)}</td></tr></table>
 <div style="padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px">⚠️ SR-22 is not insurance — it's a form proving you have insurance. Your actual premium <strong>doubles or triples</strong> because insurance companies classify you as high-risk. Shop around — rates vary dramatically. Some carriers specialize in high-risk drivers.</div>`;
     document.getElementById("result").classList.add("show");}document.getElementById("calcBtn")?.addEventListener("click",calc);
 document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload());

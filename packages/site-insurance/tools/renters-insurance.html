@@ -56,7 +56,25 @@
 <h3 style="margin:16px 0 4px">How do I know how much coverage I need for my stuff?</h3><p style="color:var(--ink-2);margin:0">Walk through each room and add up: cost of replacing your furniture, electronics (laptop, TV, phone), kitchen appliances, clothing (dozens of items!), bedding, and anything else you'd have to replace. Most people underestimate — start with $15,000 minimum for a one-bedroom.</p>
 </details>
 
-</div></main>
+
+    <div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+        <a href="/tools/umbrella-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🛡️</span><div class="tc-title">Umbrella Liability Calculator</div></div><div class="tc-desc">How much extra liability coverage you need.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/home-insurance-estimator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Home Insurance Cost Estimator</div></div><div class="tc-desc">Annual premiums by state and home value.</div></a>
+        <a href="/tools/flood-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🌊</span><div class="tc-title">Flood Insurance Cost Estimator</div></div><div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+        <a href="/tools/umbrella-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🛡️</span><div class="tc-title">Umbrella Liability Calculator</div></div><div class="tc-desc">How much extra liability coverage you need.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -96,7 +114,7 @@ function calc() {
   
   document.getElementById("result").innerHTML = `
     <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>
-    <table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
       <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${currency(content)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>
       <tr><td>Liability</td><td style="text-align:right;font-weight:600">${currency(liability)}</td><td style="text-align:right;color:var(--muted)">< ${currency(100000)} is risky</td></tr>
       <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${currency(rent*3)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>

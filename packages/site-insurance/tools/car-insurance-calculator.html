@@ -93,7 +93,26 @@
 <h3 style="margin:16px 0 4px">Why does my state have higher average rates?</h3><p style="color:var(--ink-2);margin:0">Insurance prices vary by state because each state has different regulations, minimum coverage requirements, average claim costs, fraud rates, and weather risks. For example, Florida's average is high due to hurricane risk, while Massachusetts is lower because state regulations limit certain rating factors.</p>
 <h3 style="margin:16px 0 4px">Should I get full coverage or state minimum?</h3><p style="color:var(--ink-2);margin:0">Full coverage (comprehensive + collision + liability) costs about 40% more than state minimum, but protects your own vehicle regardless of who's at fault. If your car is worth more than $5,000 or you have a loan/lease, full coverage is usually worth it.</p>
 </details>
-</div></main>
+
+    <div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling home + auto.</div></a>
+        <a href="/tools/sr22-cost" class="tool-card"><div class="icon-row"><span class="emoji">📋</span><div class="tc-title">SR-22 Insurance Cost Estimator</div></div><div class="tc-desc">Non-owner SR-22 requirements and costs.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling home + auto.</div></a>
+        <a href="/tools/sr22-cost" class="tool-card"><div class="icon-row"><span class="emoji">📋</span><div class="tc-title">SR-22 Insurance Cost Estimator</div></div><div class="tc-desc">Non-owner SR-22 requirements and costs.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -165,7 +184,7 @@
       <div style="color:var(--muted);margin-bottom:16px">Average: <strong>${currency(mid)}</strong> per year · <strong>${currency(monthlyAvg)}</strong> per month</div>
       <details style="margin-top:8px">
         <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Breakdown by factor</summary>
-        <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+        <table class="conv-table" style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
           <tr><td style="padding:4px 0">Base rate (${state} avg)</td><td style="text-align:right">${currency(base)}</td></tr>
           <tr><td>Age (${age}) ×</td><td style="text-align:right">${ageFactor.toFixed(2)}</td></tr>
           <tr><td>Record (${record}) ×</td><td style="text-align:right">${recordFactor.toFixed(2)}</td></tr>

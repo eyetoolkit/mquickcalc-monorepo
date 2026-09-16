@@ -63,7 +63,24 @@
 <h3 style="margin:16px 0 4px">Can I skip workers' comp?</h3><p style="color:var(--ink-2);margin:0">No — it's required by law for employers with employees in every state except Texas. Even in Texas, certain industries (construction, maritime) require it. The penalties for not having workers' comp are severe: fines, back payments, stop-work orders, and personal liability for you and your corporate officers.</p>
 </details>
 
-</div></main>
+
+    <div class="tc-desc">General liability costs by business type.</div></a>
+        <a href="/tools/cyber-insurance" class="tool-card"><div class="icon-row"><span class="emoji">💻</span><div class="tc-title">Cyber Insurance Cost Estimator (B2B)</div></div><div class="tc-desc">Ransomware and breach coverage costs.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/business-liability" class="tool-card"><div class="icon-row"><span class="emoji">🏢</span><div class="tc-title">Business Liability Insurance Premium Estimator</div></div><div class="tc-desc">General liability costs by business type.</div></a>
+        <a href="/tools/cyber-insurance" class="tool-card"><div class="icon-row"><span class="emoji">💻</span><div class="tc-title">Cyber Insurance Cost Estimator (B2B)</div></div><div class="tc-desc">Ransomware and breach coverage costs.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -106,7 +123,7 @@ function calc() {
   document.getElementById("result").innerHTML = `
     <h3 style="margin:0 0 12px">👷 Workers' Comp estimate</h3>
     <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(Math.round(premium))}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
-    <table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">
+    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">
       <tr><td>Total annual payroll</td><td style="text-align:right">${currency(total_payroll)}</td></tr>
       <tr><td>Rate per $100 payroll</td><td style="text-align:right">$${rate_per_100.toFixed(2)}</td></tr>
       <tr><td>Cost per employee</td><td style="text-align:right">${currency(Math.round(per_employee))}/year</td></tr>

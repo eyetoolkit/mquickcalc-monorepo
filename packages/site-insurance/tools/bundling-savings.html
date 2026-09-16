@@ -59,7 +59,26 @@
 <h3 style="margin:16px 0 4px">What other discounts should I ask about?</h3><p style="color:var(--ink-2);margin:0">Common stacking discounts: safe driver (auto), good student (auto, 10-25%), anti-theft/alarm (auto + home), new roof (home, 5-10%), E-ZPass/telematics (auto, up to 30%), pay-in-full (5%), paperless (2-3%), multi-vehicle (auto, 5-10%). Ask each carrier for their full discount menu — you might qualify for several.</p>
 </details>
 
-</div></main>
+
+    <div class="tc-desc">Ballpark annual cost by state, age, driving record.</div></a>
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/sr22-cost" class="tool-card"><div class="icon-row"><span class="emoji">📋</span><div class="tc-title">SR-22 Insurance Cost Estimator</div></div><div class="tc-desc">Non-owner SR-22 requirements and costs.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/car-insurance-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Car Insurance Premium Estimator</div></div><div class="tc-desc">Ballpark annual cost by state, age, driving record.</div></a>
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">Math behind choosing high vs low deductible.</div></a>
+        <a href="/tools/sr22-cost" class="tool-card"><div class="icon-row"><span class="emoji">📋</span><div class="tc-title">SR-22 Insurance Cost Estimator</div></div><div class="tc-desc">Non-owner SR-22 requirements and costs.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -103,7 +122,7 @@ function calc() {
   
   document.getElementById("result").innerHTML = `
     <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>
-    <table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
       <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${currency(total_current)}</td></tr>
       <tr><td>Auto premium</td><td style="text-align:right">${currency(auto)}</td></tr>
       <tr><td>Home premium</td><td style="text-align:right">${currency(home)}</td></tr>

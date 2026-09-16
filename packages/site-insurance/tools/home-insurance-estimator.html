@@ -82,7 +82,26 @@
 <h3 style="margin:16px 0 4px">Why is home insurance so expensive in Florida?</h3><p style="color:var(--ink-2);margin:0">Florida has the highest home insurance rates in the U.S. (averaging $7.00 per $1,000 of value vs the national average of $3.50) due to hurricane risk, rising reinsurance costs, and a dysfunctional private market. Many Florida homeowners rely on Citizens Property Insurance, the state-run insurer of last resort.</p>
 <h3 style="margin:16px 0 4px">What discounts can I get?</h3><p style="color:var(--ink-2);margin:0">Common discounts include: new roof (5-8%), security system (3-5%), bundled with auto (10-15%), no claims in 3+ years (5-10%), new home (up to 10%), and paying annually (usually 5%). Ask each carrier what they offer.</p>
 </details>
-</div></main>
+
+    <div class="tc-desc">How much coverage you need for personal property.</div></a>
+        <a href="/tools/flood-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🌊</span><div class="tc-title">Flood Insurance Cost Estimator</div></div><div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+        <a href="/tools/umbrella-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🛡️</span><div class="tc-title">Umbrella Liability Calculator</div></div><div class="tc-desc">How much extra liability coverage you need.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/renters-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🏢</span><div class="tc-title">Renters Insurance Coverage Calculator</div></div><div class="tc-desc">How much coverage you need for personal property.</div></a>
+        <a href="/tools/flood-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🌊</span><div class="tc-title">Flood Insurance Cost Estimator</div></div><div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+        <a href="/tools/umbrella-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🛡️</span><div class="tc-title">Umbrella Liability Calculator</div></div><div class="tc-desc">How much extra liability coverage you need.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -161,7 +180,7 @@
       <div style="color:var(--muted);margin-bottom:16px">Average: <strong>${currency(annual)}</strong>/year · <strong>${currency(monthly)}</strong>/month</div>
       <details>
         <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Breakdown</summary>
-        <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+        <table class="conv-table" style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
           <tr><td>Estimated rebuild cost</td><td style="text-align:right">${currency(rebuild_cost)}</td></tr>
           <tr><td>${state} rate per $1,000</td><td style="text-align:right">$${rate_per_1000.toFixed(2)}</td></tr>
           <tr><td>Home age (${home_age.replace("_","-")}) ×</td><td style="text-align:right">${ageFactor.toFixed(2)}</td></tr>

@@ -56,7 +56,25 @@
 <h3 style="margin:16px 0 4px">Can anyone buy umbrella insurance?</h3><p style="color:var(--ink-2);margin:0">You need at least auto insurance and usually homeowners or renters insurance as a base. Most carriers require you to have specific minimum liability limits on your base policies before they'll sell you an umbrella. If you drive or own property, ask your auto/home carrier about adding umbrella — it's almost always cheaper through your existing carrier.</p>
 </details>
 
-</div></main>
+
+    <div class="tc-desc">How much coverage you need for personal property.</div></a>
+        <a href="/tools/flood-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🌊</span><div class="tc-title">Flood Insurance Cost Estimator</div></div><div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/home-insurance-estimator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Home Insurance Cost Estimator</div></div><div class="tc-desc">Annual premiums by state and home value.</div></a>
+        <a href="/tools/renters-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🏢</span><div class="tc-title">Renters Insurance Coverage Calculator</div></div><div class="tc-desc">How much coverage you need for personal property.</div></a>
+        <a href="/tools/flood-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🌊</span><div class="tc-title">Flood Insurance Cost Estimator</div></div><div class="tc-desc">NFIP rates by flood zone and coverage level.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -104,7 +122,7 @@ function calc() {
     <div style="color:var(--muted);margin-bottom:16px">Estimated annual cost: <strong>${currency(annual_cost)}</strong> (≈$17/month per $1M)</div>
     <details>
       <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">How we got here</summary>
-      <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+      <table class="conv-table" style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
         <tr><td>Total assets</td><td style="text-align:right">${currency(total_assets)}</td></tr>
         <tr><td>Annual income × 5</td><td style="text-align:right">${currency(income*5)}</td></tr>
         <tr><td><strong>Need to protect</strong></td><td style="text-align:right"><strong>${currency(minimum_umbrella)}</strong></td></tr>

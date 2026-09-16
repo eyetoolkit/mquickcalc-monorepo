@@ -27,7 +27,23 @@
 <h3 style="margin:16px 0 4px">How much does a funeral actually cost?</h3><p style="color:var(--ink-2);margin:0">The 2024 national average is $9,480 for a traditional funeral with viewing and burial, according to NFDA. Add a cemetery plot ($2,000-10,000) and headstone ($1,000-5,000) and the total is easily $15,000+. Direct cremation without any service is $1,500-3,500.</p>
 <h3 style="margin:16px 0 4px">Do I need burial insurance?</h3><p style="color:var(--ink-2);margin:0">If you have $10,000+ in liquid savings earmarked for this, no. If you don't, a small whole life or final-expense policy ($10k-$25k) can give your family peace of mind and avoid financial stress at an emotional time. Shop around — final expense policies vary a lot.</p>
 <h3 style="margin:16px 0 4px">What's a 'pre-need' funeral plan?</h3><p style="color:var(--ink-2);margin:0">Pre-need plans let you lock in prices at today's rates and make payments over time. They're regulated by state insurance departments but have a bad reputation for sales tactics. If you consider one, get a price list first, understand all fees, and make sure you can cancel if you change your mind.</p>
-</details></div></main>
+</details>
+    <div class="tc-desc">Cost and benefit tradeoffs between term and whole.</div></a>
+      </div>
+    </div>
+    
+  
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/life-insurance-needs" class="tool-card"><div class="icon-row"><span class="emoji">💀</span><div class="tc-title">Life Insurance Needs Calculator</div></div><div class="tc-desc">DIME method: how much coverage you need.</div></a>
+        <a href="/tools/term-vs-whole" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Term vs Whole Life Insurance Comparison</div></div><div class="tc-desc">Cost and benefit tradeoffs between term and whole.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-16">Sep 16, 2026</time> — insurance rates and factors change over time, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div></main>
 <section class="see-also">
   <h2>See also</h2>
   <ul>
@@ -48,7 +64,7 @@ function currency(n){return"$"+fmt(n,0);}
 function calc(){const type=document.getElementById("type").value;const loc=document.getElementById("location").value;const plot=document.getElementById("plot").value;const headstone=document.getElementById("headstone").value;let base={"traditional":8000,"cremation":3500,"direct_cremation":1500,"celebration":6000}[type];const locMult={"rural":0.85,"suburban":1.0,"urban":1.4}[loc];let plotCost={"basic":3000,"premium":8000,"none":0}[plot];let headCost={"basic":500,"upright":2500,"custom":5000,"none":0}[headstone];const total=Math.round((base+plotCost+headCost)*locMult);document.getElementById("result").innerHTML=`
 <h3 style="margin:0 0 12px">⚰️ Estimated final expenses</h3>
 <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(total)}</div>
-<table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px"><tr><td>${type.replace("_"," ")} service base</td><td style="text-align:right">${currency(Math.round(base*locMult))}</td></tr><tr><td>Cemetery plot</td><td style="text-align:right">${currency(plotCost)}</td></tr><tr><td>Headstone / marker</td><td style="text-align:right">${currency(headCost)}</td></tr><tr><td style="border-top:2px solid var(--line);font-weight:600"><td><strong>Total</strong></td><td style="text-align:right;font-weight:700;color:var(--brand-ink)">${currency(total)}</td></tr></table>
+<table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px"><tr><td>${type.replace("_"," ")} service base</td><td style="text-align:right">${currency(Math.round(base*locMult))}</td></tr><tr><td>Cemetery plot</td><td style="text-align:right">${currency(plotCost)}</td></tr><tr><td>Headstone / marker</td><td style="text-align:right">${currency(headCost)}</td></tr><tr><td style="border-top:2px solid var(--line);font-weight:600"><td><strong>Total</strong></td><td style="text-align:right;font-weight:700;color:var(--brand-ink)">${currency(total)}</td></tr></table>
 <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">💡 <strong>Beware funeral home upsells:</strong> The average American funeral costs $9,500 (NFDA 2024), but many families spend $15k+ because of pressure sales. Ask for a <strong>General Price List (GPL)</strong> — federal law requires funeral homes to show you all prices upfront. Direct cremation is the most affordable option at $1,500-3,000.</div>`;
     document.getElementById("result").classList.add("show");}document.getElementById("calcBtn")?.addEventListener("click",calc);
 document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload());
