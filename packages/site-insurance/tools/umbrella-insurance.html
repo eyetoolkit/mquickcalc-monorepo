@@ -27,9 +27,11 @@
 <meta name="twitter:description" content="How much umbrella insurance do you need? Calculate based on your total assets and annual income. Umbrella coverage kicks in when your auto/home liability limits max out.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Umbrella Liability Calculator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">☂️</div>
 <h1 class="page-title">Umbrella Liability Calculator</h1>
 <p class="lede">How much umbrella insurance do you need? Calculate based on your total assets and annual income. Umbrella coverage kicks in when your auto/home liability limits max out.</p>
@@ -102,7 +104,7 @@ function calc() {
     <div style="color:var(--muted);margin-bottom:16px">Estimated annual cost: <strong>${currency(annual_cost)}</strong> (≈$17/month per $1M)</div>
     <details>
       <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">How we got here</summary>
-      <table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+      <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
         <tr><td>Total assets</td><td style="text-align:right">${currency(total_assets)}</td></tr>
         <tr><td>Annual income × 5</td><td style="text-align:right">${currency(income*5)}</td></tr>
         <tr><td><strong>Need to protect</strong></td><td style="text-align:right"><strong>${currency(minimum_umbrella)}</strong></td></tr>

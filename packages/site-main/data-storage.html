@@ -46,8 +46,58 @@
         "item": "https://mquickcalc.com/tools/digital-storage-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Data & Storage",
+      "item": "https://mquickcalc.com/data-storage"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many megabytes are in a gigabyte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are 1,024 megabytes in a gigabyte when using binary (IEC) units, or 1,000 megabytes in the decimal (SI) system. Storage manufacturers use decimal, while operating systems often show binary values."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a megabit and a megabyte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A megabit (Mb) is 8 times smaller than a megabyte (MB). Internet speeds are quoted in megabits per second, so a 100 Mbps connection delivers about 12.5 MB per second."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert kilobytes to megabytes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide kilobytes by 1,024 (binary) or 1,000 (decimal). The data storage converter handles both binary (KiB, MiB) and decimal (KB, MB) units automatically."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Data & Storage</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/data-storage-converter">
       <h3>Data Storage Converter</h3>

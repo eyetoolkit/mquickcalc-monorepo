@@ -46,8 +46,58 @@
         "item": "https://mquickcalc.com/tools/force-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pressure & Force",
+      "item": "https://mquickcalc.com/pressure-force"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert PSI to bar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply PSI by 0.0689476 to get bar. One PSI equals about 0.0689 bar. Tire pressure of 32 PSI is about 2.2 bar. The pressure converter handles PSI, bar, atm, kPa and mmHg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between force and pressure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Force is a push or pull measured in newtons. Pressure is force spread over an area, measured in pascals (N/m^2). Pushing a thumbtack with 10 N of force creates high pressure because the area is tiny."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert newtons to pounds-force?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply newtons by 0.224809 to get pounds-force (lbf). One newton equals about 0.225 lbf. The pressure & force converter handles this conversion."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Pressure & Force</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/pressure-converter">
       <h3>🌡️ Pressure Converter</h3>

@@ -61,8 +61,58 @@
         "item": "https://finance.mquickcalc.com/tools/hourly-to-salary"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://finance.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pricing & Sales",
+      "item": "https://finance.mquickcalc.com/pricing-sales"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my break-even point?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even units = fixed costs / (price - variable cost). If fixed costs are $5,000, price is $25, and variable cost is $10, you break even at 334 units. The break-even calculator handles this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate profit margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Profit margin = (revenue - cost) / revenue x 100. Selling at $50 with a $30 cost gives a 40% margin. The profit margin calculator handles markup and margin conversions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I set prices for maximum profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Price higher than break-even where demand still allows. Use the pricing calculator to test different price points against volume and costs to find your optimal price."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="finance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -70,12 +120,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Pricing & Sales</h1>
     <p>6 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/markup-margin-calculator">
       <h3>Markup &amp; Margin Calculator</h3>

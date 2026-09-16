@@ -46,8 +46,58 @@
         "item": "https://health.mquickcalc.com/tools/mean-arterial-pressure-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Heart & Cardio",
+      "item": "https://health.mquickcalc.com/heart-cardio"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my maximum heart rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Max HR = 220 - age. A 35-year-old has a max HR of about 185 bpm. The target heart rate calculator shows zones for fat burn, cardio and peak training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use the Karvonen method for heart rate zones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Karvonen uses heart rate reserve: target HR = ((max HR - resting HR) x intensity%) + resting HR. The heart rate zones calculator does this for accurate training zones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories does heart-rate-based cardio burn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calories = MET x weight (kg) x time (hours). The calories burned calculator estimates calories from heart rate during cardio sessions."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Heart & Cardio</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/heart-rate-zones-calculator">
       <h3>Heart Rate Zones Calculator</h3>

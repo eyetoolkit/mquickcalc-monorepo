@@ -46,8 +46,58 @@
         "item": "https://cover.mquickcalc.com/tools/cyber-insurance"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cover.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Insurance",
+      "item": "https://cover.mquickcalc.com/business-insurance"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does small business insurance cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "General liability costs $300-1,000/year for small businesses. The business insurance calculator estimates premiums based on business type, revenue, payroll and coverage needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of business insurance do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most small businesses need general liability, professional liability (E&O), workers comp (if employees), and property insurance. The business liability calculator estimates your costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is workers compensation insurance priced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Workers comp = payroll x classification rate (0.2-20% depending on risk). A construction worker may cost 10% of payroll, while an office worker costs about 0.5%. The calculator estimates this."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Business Insurance</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/business-liability">
       <h3>Business Liability Insurance Premium Estimator</h3>

@@ -27,6 +27,8 @@
 <meta name="twitter:description" content="Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
@@ -34,7 +36,7 @@
   </div>
 </header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Home Insurance Cost Estimator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">🛡️</div>
 <h1 class="page-title">Home Insurance Cost Estimator</h1>
 <p class="lede">Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.</p>
@@ -159,7 +161,7 @@
       <div style="color:var(--muted);margin-bottom:16px">Average: <strong>${currency(annual)}</strong>/year · <strong>${currency(monthly)}</strong>/month</div>
       <details>
         <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Breakdown</summary>
-        <table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+        <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
           <tr><td>Estimated rebuild cost</td><td style="text-align:right">${currency(rebuild_cost)}</td></tr>
           <tr><td>${state} rate per $1,000</td><td style="text-align:right">$${rate_per_1000.toFixed(2)}</td></tr>
           <tr><td>Home age (${home_age.replace("_","-")}) ×</td><td style="text-align:right">${ageFactor.toFixed(2)}</td></tr>

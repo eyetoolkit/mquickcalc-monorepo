@@ -51,8 +51,58 @@
         "item": "https://cover.mquickcalc.com/tools/umbrella-insurance"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cover.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Home Insurance",
+      "item": "https://cover.mquickcalc.com/home-insurance"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much is homeowners insurance per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Average US home insurance costs $1,300-2,000/year (about 0.5-1% of home value). The home insurance calculator estimates premiums from home value, location and coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much home insurance coverage do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dwelling coverage should match rebuild cost (not purchase price). The home insurance calculator estimates your needed coverage from square footage, materials and local costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between replacement cost and actual cash value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Replacement cost pays to rebuild at today's prices. Actual cash value deducts depreciation. Replacement cost is recommended, and the home insurance calculator estimates both."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Home Insurance</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/home-insurance-estimator">
       <h3>Home Insurance Cost Estimator</h3>

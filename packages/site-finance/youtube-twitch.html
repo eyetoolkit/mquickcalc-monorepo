@@ -51,8 +51,58 @@
         "item": "https://finance.mquickcalc.com/tools/twitch-sub-revenue"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://finance.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YouTube & Twitch",
+      "item": "https://finance.mquickcalc.com/youtube-twitch"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does YouTube pay per 1,000 views?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RPM (revenue per mille) varies by niche and audience, typically $1-10 for most channels, with tech and finance niches reaching $15+. The YouTube RPM calculator estimates earnings by country and niche."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Twitch pay streamers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twitch Partner revenue depends on subscriptions (50/50 split with Twitch), bits (1 cent per bit, $1.40 per 100 bits), and ads. Average RPM is $2-5. The Twitch calculator estimates your income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my YouTube channel earnings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply average RPM by views / 1,000, then subtract taxes (about 30% for US creators). The YouTube earnings calculator estimates net income from views and engagement."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="finance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>YouTube & Twitch</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/youtube-money">
       <h3>YouTube Money Calculator</h3>

@@ -36,8 +36,58 @@
         "item": "https://mquickcalc.com/tools/weight-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Weight & Mass",
+      "item": "https://mquickcalc.com/weight-mass"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many pounds are in a kilogram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One kilogram equals 2.20462 pounds. To convert kg to lbs, multiply by 2.20462. A 70 kg person weighs about 154.3 lbs. The weight converter handles kg, lbs, ounces, grams, stone and tons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between mass and weight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mass is the amount of matter in an object (measured in kilograms) and never changes. Weight is the force gravity exerts on that mass (measured in newtons or pounds) and varies by location, so you weigh less on the Moon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert grams to ounces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply grams by 0.035274 to get ounces. One gram equals about 0.0353 oz. A 100 g chocolate bar weighs about 3.53 oz."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -45,12 +95,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Weight & Mass</h1>
     <p>1 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/weight-converter">
       <h3>Weight Converter</h3>

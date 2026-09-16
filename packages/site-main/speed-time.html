@@ -51,8 +51,58 @@
         "item": "https://mquickcalc.com/tools/age-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Speed & Time",
+      "item": "https://mquickcalc.com/speed-time"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert kilometers per hour to miles per hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply km/h by 0.621371 to get mph. A car at 100 km/h travels about 62.14 mph. The speed converter handles km/h, mph, m/s and knots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert seconds to minutes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide seconds by 60. 90 seconds equals 1.5 minutes. The time converter handles seconds, minutes, hours, days, weeks and years, including between time zones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate speed from distance and time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speed = distance / time. Driving 150 km in 2 hours gives 75 km/h. The speed & time converter handles all common units and combinations."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Speed & Time</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/speed-converter">
       <h3>Speed Converter</h3>

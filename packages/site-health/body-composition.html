@@ -76,8 +76,58 @@
         "item": "https://health.mquickcalc.com/tools/waist-to-height-ratio-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Body Composition",
+      "item": "https://health.mquickcalc.com/body-composition"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI = weight (kg) / height (m)^2. A BMI of 18.5-24.9 is healthy, 25-29.9 is overweight, and 30+ is obese. The BMI calculator handles kg/lbs and metric/imperial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I measure my body fat percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The US Navy method uses neck, waist and hip circumference. The body fat calculator estimates it in seconds. Healthy ranges are 14-20% for men and 21-33% for women."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy waist-to-height ratio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aim for under 0.5, your waist should measure less than half your height. The waist-to-height calculator checks your risk level and is considered more accurate than BMI alone."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -85,12 +135,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Body Composition</h1>
     <p>9 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/bmi-calculator">
       <h3>BMI Calculator</h3>

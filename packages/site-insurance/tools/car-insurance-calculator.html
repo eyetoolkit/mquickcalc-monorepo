@@ -27,6 +27,8 @@
 <meta name="twitter:description" content="Ballpark annual car insurance cost based on your state, age, driving record, vehicle type, and coverage level. Free, no sign-up, no data collected.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
@@ -34,7 +36,7 @@
   </div>
 </header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#auto">Auto</a><span class="sep">›</span><span class="current">Car Insurance Premium Estimator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">🛡️</div>
 <h1 class="page-title">Car Insurance Premium Estimator</h1>
 <p class="lede">Ballpark annual car insurance cost based on your state, age, driving record, vehicle type, and coverage level. Free, no sign-up, no data collected.</p>
@@ -163,7 +165,7 @@
       <div style="color:var(--muted);margin-bottom:16px">Average: <strong>${currency(mid)}</strong> per year · <strong>${currency(monthlyAvg)}</strong> per month</div>
       <details style="margin-top:8px">
         <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Breakdown by factor</summary>
-        <table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
+        <table class="conv-table style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
           <tr><td style="padding:4px 0">Base rate (${state} avg)</td><td style="text-align:right">${currency(base)}</td></tr>
           <tr><td>Age (${age}) ×</td><td style="text-align:right">${ageFactor.toFixed(2)}</td></tr>
           <tr><td>Record (${record}) ×</td><td style="text-align:right">${recordFactor.toFixed(2)}</td></tr>

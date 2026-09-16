@@ -51,8 +51,58 @@
         "item": "https://cover.mquickcalc.com/tools/pet-insurance"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cover.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Health & Pet Insurance",
+      "item": "https://cover.mquickcalc.com/health-pet-insurance"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does pet insurance cost per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pet insurance averages $15-50/month for dogs and $10-30/month for cats, depending on age, breed and coverage. The pet insurance calculator estimates your premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does health insurance cost without employer coverage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marketplace plans average $300-600/month for a 40-year-old. The health insurance calculator estimates premiums by age, location and plan level (bronze, silver, gold)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does pet insurance cover pre-existing conditions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, pet insurance does not cover conditions that started before enrollment. Some providers cover curable conditions after a waiting period. The pet insurance calculator estimates your out-of-pocket costs."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Health & Pet Insurance</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/health-insurance-premium">
       <h3>Health Insurance Premium Estimator</h3>

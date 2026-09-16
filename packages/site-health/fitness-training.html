@@ -51,8 +51,58 @@
         "item": "https://health.mquickcalc.com/tools/running-race-time-predictor"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fitness & Training",
+      "item": "https://health.mquickcalc.com/fitness-training"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my one-rep max?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Brzycki formula: 1RM = weight / (1.0278 - 0.0278 x reps). If you lift 80 kg for 5 reps, your estimated 1RM is about 93 kg. The 1RM calculator handles multiple formulas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert running pace between units?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pace conversion: min/mile x 1.609 = min/km. An 8-minute-mile pace is about 4:58 min/km. The pace calculator converts between min/mile, min/km, mph and kph."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I predict my race time for a different distance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Riegel formula: T2 = T1 x (D2/D1)^1.665. If you run a 5K in 25:00, your predicted 10K time is about 52:40. The race predictor handles multiple formulas."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Fitness & Training</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/one-rep-max-calculator">
       <h3>One Rep Max (1RM) Calculator</h3>

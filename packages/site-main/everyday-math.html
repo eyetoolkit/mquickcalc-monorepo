@@ -46,8 +46,58 @@
         "item": "https://mquickcalc.com/tools/currency-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Everyday Math",
+      "item": "https://mquickcalc.com/everyday-math"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate a percentage of a number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the number by the percentage and divide by 100. For example, 20% of 80 is (80 x 20) / 100 = 16. The percentage calculator does this instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the percentage increase between two numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract the old value from the new value, divide by the old value, and multiply by 100. A price rising from $50 to $65 is a 30% increase: ((65 - 50) / 50) x 100."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my age in days or hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply your age in years by 365.25 to get days (accounting for leap years), then by 24 for hours. The age calculator handles exact dates including leap years."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Everyday Math</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/percentage-calculator">
       <h3>Percentage Calculator</h3>

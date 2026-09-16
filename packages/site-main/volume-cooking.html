@@ -46,8 +46,58 @@
         "item": "https://mquickcalc.com/tools/fuel-volume-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Volume & Cooking",
+      "item": "https://mquickcalc.com/volume-cooking"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many milliliters are in a cup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One US cup equals 236.588 milliliters (or 240 mL for nutrition labeling). The cooking converter handles cups, spoons, milliliters, fluid ounces and liters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert teaspoons to milliliters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One teaspoon equals about 4.93 mL (or 5 mL for culinary use). Three teaspoons make one tablespoon (about 15 mL). The cooking converter handles tsp, tbsp, cups and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert Fahrenheit to Celsius for baking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Celsius = (Fahrenheit - 32) x 5/9. A 350 F oven is 175 C. The cooking converter handles oven temperatures in both scales."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Volume & Cooking</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/volume-converter">
       <h3>Volume Converter</h3>

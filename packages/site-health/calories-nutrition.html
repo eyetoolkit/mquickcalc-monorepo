@@ -81,8 +81,58 @@
         "item": "https://health.mquickcalc.com/tools/tdee-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calories & Nutrition",
+      "item": "https://health.mquickcalc.com/calories-nutrition"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many calories should I eat per day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use TDEE (total daily energy expenditure) = BMR x activity level. A 70 kg woman with moderate activity needs about 2,100 calories. The calorie calculator estimates your TDEE."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories do I burn per day at rest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMR (basal metabolic rate) is the calories your body needs at rest. For men: 10 x weight(kg) + 6.25 x height(cm) - 5 x age + 5. The BMR calculator does this automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate a calorie deficit for weight loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A deficit of 500 calories/day leads to about 0.5 kg (1 lb) loss per week. The calorie deficit calculator shows your weekly and monthly fat loss projections."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -90,12 +140,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Calories & Nutrition</h1>
     <p>10 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/calorie-calculator">
       <h3>Calorie Calculator</h3>

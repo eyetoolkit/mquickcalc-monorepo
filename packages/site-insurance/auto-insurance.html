@@ -51,8 +51,58 @@
         "item": "https://cover.mquickcalc.com/tools/sr22-cost"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cover.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Auto Insurance",
+      "item": "https://cover.mquickcalc.com/auto-insurance"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does car insurance cost per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Average US auto insurance costs $50-150/month for full coverage, depending on age, location, car and driving history. The auto insurance calculator estimates your premium from your details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What factors affect my car insurance rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Age, driving record, location, car type, credit score (in most states), mileage and coverage levels all affect rates. Young drivers and those with accidents pay 2-3x more than average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much liability insurance do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most states require 25/50/25 minimum (per-person injury, per-accident injury, property damage). Experts recommend 100/300/100 for adequate protection. The calculator estimates your cost."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Auto Insurance</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/car-insurance-calculator">
       <h3>Car Insurance Premium Estimator</h3>

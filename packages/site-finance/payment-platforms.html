@@ -41,8 +41,58 @@
         "item": "https://finance.mquickcalc.com/tools/paypal-fee-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://finance.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Payment Platforms",
+      "item": "https://finance.mquickcalc.com/payment-platforms"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does PayPal charge per transaction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PayPal charges 2.9% + $0.30 for standard transactions, or 3.49% + $0.49 for commercial invoices. International sales add about 1.5%. The PayPal fee calculator reverse-calculates your net from the charged amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Stripe charge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stripe charges 2.9% + $0.30 for standard cards, 0.8% + $0.30 for Amex, and additional fees for international and recurring billing. The Stripe fee calculator estimates your costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Shopify charge per sale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shopify Payments charges 2.9% + $0.30 for Basic, 2.6% + $0.30 for Shopify, and 2.4% + $0.30 for Advanced plans. Third-party gateways add about 2%. The Shopify fee calculator shows your net."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="finance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -50,12 +100,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Payment Platforms</h1>
     <p>2 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/stripe-fee-calculator">
       <h3>Stripe Fee Calculator</h3>

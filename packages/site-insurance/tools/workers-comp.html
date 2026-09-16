@@ -27,9 +27,11 @@
 <meta name="twitter:description" content="Estimate workers' compensation insurance premiums per employee and total annual cost based on your industry code and payroll.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#business">Business</a><span class="sep">›</span><span class="current">Workers' Compensation Premium Calculator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">👷</div>
 <h1 class="page-title">Workers' Compensation Premium Calculator</h1>
 <p class="lede">Estimate workers' compensation insurance premiums per employee and total annual cost based on your industry code and payroll.</p>
@@ -104,7 +106,7 @@ function calc() {
   document.getElementById("result").innerHTML = `
     <h3 style="margin:0 0 12px">👷 Workers' Comp estimate</h3>
     <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(Math.round(premium))}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
-    <table style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">
+    <table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">
       <tr><td>Total annual payroll</td><td style="text-align:right">${currency(total_payroll)}</td></tr>
       <tr><td>Rate per $100 payroll</td><td style="text-align:right">$${rate_per_100.toFixed(2)}</td></tr>
       <tr><td>Cost per employee</td><td style="text-align:right">${currency(Math.round(per_employee))}/year</td></tr>

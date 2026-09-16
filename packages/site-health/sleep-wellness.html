@@ -46,8 +46,58 @@
         "item": "https://health.mquickcalc.com/tools/water-intake-calculator"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sleep & Wellness",
+      "item": "https://health.mquickcalc.com/sleep-wellness"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much sleep do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adults need 7-9 hours. The sleep calculator estimates your ideal bedtime and wake time based on sleep cycles (90 minutes each) to wake during light sleep."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my sleep debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sleep debt = (ideal hours x days) - (actual hours x days). If you need 8 hours but sleep 6 for 5 days, your debt is 10 hours. The sleep debt calculator tracks this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my sleep efficiency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sleep efficiency = (total sleep time / time in bed) x 100. Over 85% is good. The sleep calculator estimates your efficiency from bedtime and actual sleep."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Sleep & Wellness</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/sleep-calculator">
       <h3>Sleep Calculator</h3>

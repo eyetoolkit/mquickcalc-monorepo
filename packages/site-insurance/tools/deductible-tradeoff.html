@@ -27,9 +27,11 @@
 <meta name="twitter:description" content="The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#auto">Auto</a><span class="sep">›</span><span class="current">High vs Low Deductible Trade-off Calculator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">⚖️</div>
 <h1 class="page-title">High vs Low Deductible Trade-off Calculator</h1>
 <p class="lede">The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost.</p>
@@ -99,7 +101,7 @@ function calc() {
   
   document.getElementById("result").innerHTML = `
     <h3 style="margin:0 0 12px">⚖️ Trade-off analysis (3-year horizon)</h3>
-    <table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
+    <table class="conv-table style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
       <tr><td>Premium difference (alt − cur)</td><td style="text-align:right">${currency(premium_diff)} / year</td></tr>
       <tr><td>Deductible difference per claim</td><td style="text-align:right">${currency(deductible_diff)}</td></tr>
       <tr><td>Expected claim savings (${claim_count} × ${currency(deductible_diff)})</td><td style="text-align:right">${currency(claim_count * deductible_diff)}</td></tr>

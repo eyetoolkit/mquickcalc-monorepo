@@ -51,8 +51,58 @@
         "item": "https://health.mquickcalc.com/tools/blood-sugar-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://health.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Specialized",
+      "item": "https://health.mquickcalc.com/specialized"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my body surface area (BSA)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du Bois formula: BSA = 0.007184 x weight(kg)^0.425 x height(cm)^0.725. The BSA calculator handles Du Bois, Mosteller, Haycock and other formulas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert blood sugar between mg/dL and mmol/L?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "mmol/L = mg/dL / 18.0182. A blood sugar of 100 mg/dL equals about 5.56 mmol/L. The blood sugar converter handles both units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my daily protein needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Protein = body weight (kg) x 1.2-2.2 g/kg depending on activity. A 70 kg athlete needs 84-154 g daily. The protein calculator estimates your target from weight and goals."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -60,12 +110,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Specialized</h1>
     <p>4 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/pregnancy-due-date-calculator">
       <h3>Pregnancy Due Date Calculator</h3>

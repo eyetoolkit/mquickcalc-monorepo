@@ -41,8 +41,58 @@
         "item": "https://mquickcalc.com/tools/fuel-consumption-converter"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Flow & Fuel",
+      "item": "https://mquickcalc.com/flow-fuel"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert gallons per minute to liters per second?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply gallons per minute (US) by 0.06309 to get liters per second. One US gallon per minute equals about 0.063 liters per second."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many liters are in a gallon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One US gallon equals 3.78541 liters. One UK (imperial) gallon equals 4.54609 liters. The flow & fuel converter handles both US and UK gallons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert fuel consumption between MPG and L/100km?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L/100km = 235.215 / MPG (US). A car with 30 MPG gets about 7.84 L/100km. Lower L/100km means better fuel economy."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -50,12 +100,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Flow & Fuel</h1>
     <p>2 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/flow-rate-converter">
       <h3>💧 Flow Rate Converter</h3>

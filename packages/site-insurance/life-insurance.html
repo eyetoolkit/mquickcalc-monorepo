@@ -46,8 +46,58 @@
         "item": "https://cover.mquickcalc.com/tools/burial-expense"
       }]
 }</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cover.mquickcalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Life Insurance",
+      "item": "https://cover.mquickcalc.com/life-insurance"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much life insurance do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common rule is 10-12x your annual income, plus debts and college costs. The life insurance calculator estimates your needed coverage from income, debts and dependents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does life insurance cost per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Term life for a 30-year-old in good health costs $15-30/month for $500,000 coverage. The life insurance calculator estimates premiums by age, health and coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between term and whole life insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Term life covers a fixed period (10-30 years) and is cheaper. Whole life covers your entire life with a cash value component but costs 5-15x more. The term vs whole calculator compares costs."
+      }
+    }
+  ]
+}</script>
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <a href="/" class="brand">mQuickCalc</a>
@@ -55,12 +105,13 @@
   </div>
 </header>
 
-<main class="wrap">
+<main id="main-content" class="wrap">
   <section class="hero">
     <h1>Life Insurance</h1>
     <p>3 free calculators & converters. Every tool runs entirely in your browser — nothing you type is uploaded.</p>
   </section>
 
+    <h2 class="feat-grid-title">Available calculators</h2>
   <section class="feat-grid">
     <a class="feat-card" href="/tools/life-insurance-needs">
       <h3>Life Insurance Needs Calculator</h3>

@@ -27,6 +27,8 @@
 <meta name="twitter:description" content="Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.">
 </head>
 <body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a>
@@ -34,7 +36,7 @@
   </div>
 </header>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#life">Life</a><span class="sep">›</span><span class="current">Life Insurance Needs Calculator</span></nav></div>
-<main class="page"><div class="wrap">
+<main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">🛡️</div>
 <h1 class="page-title">Life Insurance Needs Calculator</h1>
 <p class="lede">Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.</p>
@@ -126,7 +128,7 @@
     
     document.getElementById("result").innerHTML = `
       <h3 style="margin:0 0 12px;font-size:18px">📋 DIME breakdown</h3>
-      <table style="width:100%;margin-bottom:16px;font-size:14px;border-collapse:collapse">
+      <table class="conv-table style="width:100%;margin-bottom:16px;font-size:14px;border-collapse:collapse">
         <tr><td>💳 Debts</td><td style="text-align:right">${currency(debt)}</td></tr>
         <tr><td>💼 Income × 10 (${currency(income)} × 10)</td><td style="text-align:right">${currency(income*10)}</td></tr>
         <tr><td>🏠 Mortgage balance</td><td style="text-align:right">${currency(mortgage)}</td></tr>
