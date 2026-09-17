@@ -10,10 +10,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Step 1: detect which sites changed
   changes:
     name: Detect changes
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       site-main: ${{ steps.filter.outputs.site-main }}
       site-finance: ${{ steps.filter.outputs.site-finance }}
@@ -25,13 +24,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - uses: dorny/paths-filter@v3
         id: filter
         with:
-          # If brand-kit, tools, or workflows change, deploy ALL sites
-          # (any of these affects everything). If only one site-* changed,
-          # deploy only that one.
           filters: |
             site-main:
               - 'packages/site-main/**'
@@ -66,22 +61,18 @@ jobs:
     name: Build all sites
     needs: changes
     if: needs.changes.outputs.any == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          # wrangler 4.131+ requires Node >=22
           node-version: '22'
-
       - name: Build
         run: node tools/build.mjs
-
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -93,7 +84,7 @@ jobs:
     name: Deploy site-main → mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-main == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -102,15 +93,12 @@ jobs:
         with:
           name: site-builds
           path: packages/
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Setup Wrangler
         run: npm install wrangler@4.131.1 --no-save
-
       - name: Deploy
         run: npx wrangler pages deploy packages/site-main --project-name=mquickcalc --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
@@ -120,7 +108,7 @@ jobs:
     name: Deploy site-finance → finance.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-finance == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -129,15 +117,12 @@ jobs:
         with:
           name: site-builds
           path: packages/
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Setup Wrangler
         run: npm install wrangler@4.131.1 --no-save
-
       - name: Deploy
         run: npx wrangler pages deploy packages/site-finance --project-name=mquickcalc-finance --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
@@ -147,7 +132,7 @@ jobs:
     name: Deploy site-health → health.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-health == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -156,15 +141,12 @@ jobs:
         with:
           name: site-builds
           path: packages/
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Setup Wrangler
         run: npm install wrangler@4.131.1 --no-save
-
       - name: Deploy
         run: npx wrangler pages deploy packages/site-health --project-name=mquickcalc-health --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
@@ -174,7 +156,7 @@ jobs:
     name: Deploy site-insurance → cover.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-insurance == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -183,15 +165,12 @@ jobs:
         with:
           name: site-builds
           path: packages/
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Setup Wrangler
         run: npm install wrangler@4.131.1 --no-save
-
       - name: Deploy
         run: npx wrangler pages deploy packages/site-insurance --project-name=mquickcalc-cover --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
         env:
