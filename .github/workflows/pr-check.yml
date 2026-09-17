@@ -9,7 +9,7 @@ on:
 jobs:
   build-verify:
     name: Build & verify
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -27,22 +27,22 @@ jobs:
       - name: Verify file counts
         run: |
           for pkg in site-main site-finance site-health; do
-            count=$(find "packages/$pkg" -type f | wc -l)
-            echo "📦 $pkg: $count files"
-            if [ "$pkg" = "site-main" ] && [ "$count" -lt 60 ]; then
-              echo "::error::site-main has too few files ($count), expected 70+"
-              exit 1
-            fi
-            if [ "$pkg" = "site-finance" ] && [ "$count" -lt 45 ]; then
-              echo "::error::site-finance has too few files ($count), expected 50+"
-              exit 1
-            fi
-            if [ "$pkg" = "site-health" ] && [ "$count" -lt 40 ]; then
-              echo "::error::site-health has too few files ($count), expected 45+"
-              exit 1
-            fi
-          done
-          echo "✅ All site packages have expected file counts"
+              count=$(find "packages/$pkg" -type f | wc -l)
+              echo "📦 $pkg: $count files"
+              if [ "$pkg" = "site-main" ] && [ "$count" -lt 60 ]; then
+                echo "::error::site-main has too few files ($count), expected 70+"
+                exit 1
+              fi
+              if [ "$pkg" = "site-finance" ] && [ "$count" -lt 45 ]; then
+                echo "::error::site-finance has too few files ($count), expected 50+"
+                exit 1
+              fi
+              if [ "$pkg" = "site-health" ] && [ "$count" -lt 40 ]; then
+                echo "::error::site-health has too few files ($count), expected 45+"
+                exit 1
+              fi
+            done
+            echo "✅ All site packages have expected file counts"
 
       - name: Check JSON-LD parses
         run: |
@@ -92,7 +92,6 @@ jobs:
           import hashlib, glob, os
           def h(b): return hashlib.sha1(b).hexdigest()[:8]
           ok = True
-          # 抽 5 个关键文件 × 3 site，验证 hash 在 build 后存在且非空
           for pkg in ['site-main','site-finance','site-health']:
               for fn in ['index.html','404.html','sitemap.xml','_redirects','manifest.webmanifest']:
                   path = f'packages/{pkg}/{fn}'
@@ -110,7 +109,7 @@ jobs:
     name: Notify CF Pages (preview deploy is automatic via GH integration)
     needs: build-verify
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Summary
         run: |
