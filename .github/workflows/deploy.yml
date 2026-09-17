@@ -12,7 +12,7 @@ concurrency:
 jobs:
   changes:
     name: Detect changes
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     outputs:
       site-main: ${{ steps.filter.outputs.site-main }}
       site-finance: ${{ steps.filter.outputs.site-finance }}
@@ -61,7 +61,7 @@ jobs:
     name: Build all sites
     needs: changes
     if: needs.changes.outputs.any == 'true'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -84,7 +84,7 @@ jobs:
     name: Deploy site-main → mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-main == 'true'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -108,7 +108,7 @@ jobs:
     name: Deploy site-finance → finance.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-finance == 'true'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -132,7 +132,7 @@ jobs:
     name: Deploy site-health → health.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-health == 'true'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
@@ -156,7 +156,7 @@ jobs:
     name: Deploy site-insurance → cover.mquickcalc.com
     needs: [changes, build]
     if: needs.changes.outputs.site-insurance == 'true'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       DEPLOY_MSG: ${{ github.event.head_commit.message }}
