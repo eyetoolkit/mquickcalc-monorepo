@@ -9,7 +9,7 @@ on:
 jobs:
   build-verify:
     name: Build & verify
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Build all sites
         run: node tools/build.mjs
@@ -109,7 +109,7 @@ jobs:
     name: Notify CF Pages (preview deploy is automatic via GH integration)
     needs: build-verify
     if: github.event_name == 'pull_request'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Summary
         run: |
