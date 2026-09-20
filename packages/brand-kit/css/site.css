@@ -36,6 +36,27 @@
   --bg:#ffffff;--bg-soft:#f8fafc;--bg-muted:#eef2f7;
   --ink:#0b1220;--ink-2:#1e293b;--muted:#5b6b82;--line:#e5eaf1;--line-strong:#cbd5e1;
   --ok:#16a34a;--ok-bg:#f0fdf4;--warn:#d97706;--warn-bg:#fffbeb;--danger:#dc2626;--danger-bg:#fef2f2;
+
+  /* === Brand Matrix Shared Tokens (2026-09-20 phase 3) ===
+     Mirrors tokens in jsonversal base.css + EyeToolkit globals.css.
+     Authoring happens in this brand-kit file; site-* copies are
+     overwritten by tools/build.mjs on each rebuild. */
+  --matrix-container-max: 1160px;
+  --matrix-radius-sm: 8px;
+  --matrix-radius-md: 12px;
+  --matrix-radius-lg: 16px;
+  --matrix-radius-xl: 24px;
+  --matrix-radius-pill: 999px;
+  --matrix-space-1: 4px;
+  --matrix-space-2: 8px;
+  --matrix-space-3: 12px;
+  --matrix-space-4: 16px;
+  --matrix-space-6: 24px;
+  --matrix-space-8: 32px;
+  --matrix-fs-xs: 12px;
+  --matrix-fs-sm: 13.5px;
+  --matrix-fs-base: 15.5px;
+  --matrix-fs-lg: 17.5px;
 }
 /* ---------- Site Themes (matrix identity) ---------- */
 [data-site="main"]{--brand:#4f46e5;--brand-ink:#4338ca;--brand-bg:#eef2ff;--brand-pill:#e0e7ff;--brand-grad-start:#4f46e5;--brand-grad-end:#7c3aed}
