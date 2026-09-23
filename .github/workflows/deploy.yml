@@ -1,177 +1,46 @@
-name: Deploy to Cloudflare Pages
+name: mQuickCalc Deploy
 
+# Build monorepo + deploy all 4 sites to Cloudflare Pages
+# Trigger: push to main, or manual dispatch
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-concurrency:
-  group: deploy-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  changes:
-    name: Detect changes
-    runs-on: ubuntu-latest
-    outputs:
-      site-main: ${{ steps.filter.outputs.site-main }}
-      site-finance: ${{ steps.filter.outputs.site-finance }}
-      site-health: ${{ steps.filter.outputs.site-health }}
-      site-insurance: ${{ steps.filter.outputs.site-insurance }}
-      brand-kit: ${{ steps.filter.outputs.brand-kit }}
-      any: ${{ steps.filter.outputs.any }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            site-main:
-              - 'packages/site-main/**'
-              - 'packages/brand-kit/**'
-              - 'tools/**'
-              - '.github/workflows/**'
-            site-finance:
-              - 'packages/site-finance/**'
-              - 'packages/brand-kit/**'
-              - 'tools/**'
-              - '.github/workflows/**'
-            site-health:
-              - 'packages/site-health/**'
-              - 'packages/brand-kit/**'
-              - 'tools/**'
-              - '.github/workflows/**'
-            site-insurance:
-              - 'packages/site-insurance/**'
-              - 'packages/brand-kit/**'
-              - 'tools/**'
-              - '.github/workflows/**'
-            brand-kit:
-              - 'packages/brand-kit/**'
-            any:
-              - 'packages/**'
-              - 'tools/**'
-              - '.github/workflows/**'
-              - 'README.md'
-              - '.gitignore'
-
-  build:
-    name: Build all sites
-    needs: changes
-    if: needs.changes.outputs.any == 'true'
+  deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      CF_ACCOUNT_ID: 00cb5cd6be4881053e57a338ce62de2f
+      # CF API Token (Scoped, Pages write) — stored in repo secrets
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Setup Node
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Build
+
+      - name: Build monorepo
         run: node tools/build.mjs
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-builds
-          path: packages/
-          retention-days: 1
 
-  deploy-main:
-    name: Deploy site-main → mquickcalc.com
-    needs: [changes, build]
-    if: needs.changes.outputs.site-main == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      DEPLOY_MSG: ${{ github.event.head_commit.message }}
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site-builds
-          path: packages/
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
       - name: Setup Wrangler
-        run: npm install wrangler@4.131.1 --no-save
-      - name: Deploy
-        run: npx wrangler pages deploy packages/site-main --project-name=mquickcalc --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npm install -g wrangler@latest
 
-  deploy-finance:
-    name: Deploy site-finance → finance.mquickcalc.com
-    needs: [changes, build]
-    if: needs.changes.outputs.site-finance == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      DEPLOY_MSG: ${{ github.event.head_commit.message }}
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site-builds
-          path: packages/
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Setup Wrangler
-        run: npm install wrangler@4.131.1 --no-save
-      - name: Deploy
-        run: npx wrangler pages deploy packages/site-finance --project-name=mquickcalc-finance --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Deploy site-main → mquickcalc
+        run: wrangler pages deploy packages/site-main --project-name=mquickcalc --commit-hash=${{ github.sha }}
 
-  deploy-health:
-    name: Deploy site-health → health.mquickcalc.com
-    needs: [changes, build]
-    if: needs.changes.outputs.site-health == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      DEPLOY_MSG: ${{ github.event.head_commit.message }}
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site-builds
-          path: packages/
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Setup Wrangler
-        run: npm install wrangler@4.131.1 --no-save
-      - name: Deploy
-        run: npx wrangler pages deploy packages/site-health --project-name=mquickcalc-health --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Deploy site-finance → mquickcalc-finance
+        run: wrangler pages deploy packages/site-finance --project-name=mquickcalc-finance --commit-hash=${{ github.sha }}
 
-  deploy-insurance:
-    name: Deploy site-insurance → cover.mquickcalc.com
-    needs: [changes, build]
-    if: needs.changes.outputs.site-insurance == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      DEPLOY_MSG: ${{ github.event.head_commit.message }}
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site-builds
-          path: packages/
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Setup Wrangler
-        run: npm install wrangler@4.131.1 --no-save
-      - name: Deploy
-        run: npx wrangler pages deploy packages/site-insurance --project-name=mquickcalc-cover --branch=main --commit-dirty=true --commit-message="$DEPLOY_MSG"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Deploy site-health → mquickcalc-health
+        run: wrangler pages deploy packages/site-health --project-name=mquickcalc-health --commit-hash=${{ github.sha }}
+
+      - name: Deploy site-insurance → mquickcalc-cover
+        run: wrangler pages deploy packages/site-insurance --project-name=mquickcalc-cover --commit-hash=${{ github.sha }}
