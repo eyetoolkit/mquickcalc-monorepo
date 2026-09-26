@@ -33,15 +33,16 @@
   --fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;--fw-extrabold:800;--fw-black:900;
   --brand:#2563eb;--brand-ink:#1d4ed8;--brand-600:#2563eb;--brand-700:#1d4ed8;
   --brand-bg:#eff6ff;--brand-pill:#dbeafe;--brand-grad-start:#2563eb;--brand-grad-end:#1e40af;
+  --hero-glow:rgba(79,70,229,.14);
   --bg:#ffffff;--bg-soft:#f8fafc;--bg-muted:#eef2f7;
   --ink:#0b1220;--ink-2:#1e293b;--muted:#5b6b82;--line:#e5eaf1;--line-strong:#cbd5e1;
   --ok:#16a34a;--ok-bg:#f0fdf4;--warn:#d97706;--warn-bg:#fffbeb;--danger:#dc2626;--danger-bg:#fef2f2;
 }
 /* ---------- Site Themes (matrix identity) ---------- */
-[data-site="main"]{--brand:#4f46e5;--brand-ink:#4338ca;--brand-bg:#eef2ff;--brand-pill:#e0e7ff;--brand-grad-start:#4f46e5;--brand-grad-end:#7c3aed}
-[data-site="finance"]{--brand:#059669;--brand-ink:#047857;--brand-bg:#ecfdf5;--brand-pill:#d1fae5;--brand-grad-start:#059669;--brand-grad-end:#064e3b}
-[data-site="health"]{--brand:#dc2626;--brand-ink:#b91c1c;--brand-bg:#fef2f2;--brand-pill:#fee2e2;--brand-grad-start:#dc2626;--brand-grad-end:#991b1b}
-[data-site="insurance"]{--brand:#0f766e;--brand-ink:#0d5c55;--brand-bg:#f0fdfa;--brand-pill:#ccfbf1;--brand-grad-start:#0f766e;--brand-grad-end:#059669}
+[data-site="main"]{--brand:#4f46e5;--brand-ink:#4338ca;--brand-bg:#eef2ff;--brand-pill:#e0e7ff;--brand-grad-start:#4f46e5;--brand-grad-end:#7c3aed;--hero-glow:rgba(79,70,229,.14)}
+[data-site="finance"]{--brand:#059669;--brand-ink:#047857;--brand-bg:#ecfdf5;--brand-pill:#d1fae5;--brand-grad-start:#059669;--brand-grad-end:#064e3b;--hero-glow:rgba(5,150,105,.14)}
+[data-site="health"]{--brand:#dc2626;--brand-ink:#b91c1c;--brand-bg:#fef2f2;--brand-pill:#fee2e2;--brand-grad-start:#dc2626;--brand-grad-end:#991b1b;--hero-glow:rgba(220,38,38,.14)}
+[data-site="insurance"]{--brand:#0f766e;--brand-ink:#0d5c55;--brand-bg:#f0fdfa;--brand-pill:#ccfbf1;--brand-grad-start:#0f766e;--brand-grad-end:#059669;--hero-glow:rgba(15,118,110,.14)}
 
 /* Reset + base */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -198,7 +199,7 @@ button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 :root[data-theme="dark"] .success-pill{color:#34d399;background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.3)}
 
 /* Hero + search */
-.hero{position:relative;overflow:hidden;padding:72px 0 56px;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 0%,color-mix(in srgb,var(--brand) 14%,transparent) 0%,transparent 65%),linear-gradient(180deg,var(--brand-bg) 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.hero{position:relative;overflow:hidden;padding:72px 0 56px;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 0%,var(--hero-glow) 0%,transparent 65%),linear-gradient(180deg,var(--brand-bg) 0%,#fff 100%);border-bottom:1px solid var(--line)}
 .hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.06;letter-spacing:-.03em;font-weight:var(--fw-black);color:var(--ink);margin:0 auto;max-width:900px}
 .hero{margin-bottom:var(--space-12)}
 .hero p.sub{color:var(--muted);max-width:660px;margin:18px auto 0;font-size:var(--fs-lg);line-height:1.65}
