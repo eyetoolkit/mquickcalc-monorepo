@@ -138,7 +138,7 @@ button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 
 /* ========== Dark mode — hero + tool-card + result + footer ========== */
 @media (prefers-color-scheme: dark) {
-  .hero{background:radial-gradient(ellipse 60% 50% at 50% 0%,color-mix(in srgb,var(--brand) 20%,transparent) 0%,transparent 65%),linear-gradient(180deg,color-mix(in srgb,var(--brand) 10%,#0f172a) 0%,#0f172a 100%);border-bottom-color:var(--line)}
+  .hero{background:radial-gradient(ellipse 60% 50% at 50% 0%,color-mix(in srgb,var(--hero-glow) 70%,transparent) 0%,transparent 65%),linear-gradient(180deg,color-mix(in srgb,var(--hero-glow) 50%,#0f172a) 0%,#0f172a 100%);border-bottom-color:var(--line)}
   .hero h1,.hero p.sub{color:var(--ink)}
   .hero-search input{background:var(--bg-muted);border-color:var(--line);color:var(--ink)}
   .tool-card{background:#1e293b;border-color:var(--line)}
