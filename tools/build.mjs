@@ -21,6 +21,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { execFileSync as run } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -50,6 +51,25 @@ function copyFile(src, dst) {
   fs.mkdirSync(path.dirname(dst), { recursive: true });
   fs.copyFileSync(src, dst);
 }
+/**
+ * Terser minify a JS file in-place.
+ */
+function minifyJs(filePath) {
+  const { execFileSync } = await import('node:child_process');
+  try {
+    const terserPath = require.resolve('terser/bin/terser');
+    const result = execFileSync(
+      'node',
+      [terserPath, filePath, '-c', '-m', '--output', filePath, '--quiet'],
+      { timeout: 15000 }
+    );
+    return true;
+  } catch (e) {
+    // terser 没装或失败就跳过
+    return false;
+  }
+}
+
 
 /**
  * 同步 brand-kit → site 包。
