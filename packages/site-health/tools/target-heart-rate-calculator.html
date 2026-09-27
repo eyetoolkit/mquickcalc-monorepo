@@ -120,46 +120,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-function calc(){
-  var age=parseInt(_('age').value)||35;
-  var rhr=parseFloat(_('rhr').value)||0;
-  var method=_('method').value;
-  var mhr;
-  if(method==='220')mhr=220-age;
-  else if(method==='208')mhr=Math.round(208-0.7*age);
-  else mhr=Math.round(211-0.64*age);
-  var zones=[
-    ["Warm-up","50%","60%"],
-    ["Fat burn","60%","70%"],
-    ["Cardio","70%","80%"],
-    ["Peak","80%","90%"],
-    ["Maximum","90%","100%"]
-  ];
-  var html="";
-  zones.forEach(function(z){
-    var lo,hi;
-    if(rhr>0){
-      // Karvonen: target = RHR + (MHR-RHR)×%
-      lo=Math.round(rhr+(mhr-rhr)*parseFloat(z[1])/100);
-      hi=Math.round(rhr+(mhr-rhr)*parseFloat(z[2])/100);
-    }else{
-      lo=Math.round(mhr*parseFloat(z[1])/100);
-      hi=Math.round(mhr*parseFloat(z[2])/100);
-    }
-    html+="<div class=\"cell\"><div class=\"lbl\">"+z[0]+" ("+z[1]+"-"+z[2]+"%)</div><div class=\"val\">"+lo+"—"+hi+" bpm</div></div>";
-  });
-  _('mhr').textContent=mhr+" bpm";
-  _('zones').innerHTML=html;
-  _('result').classList.add('show');
-}
-_('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){_('age').value="35";_('rhr').value="";_('method').value="220";calc();});
-['age','rhr','method'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
-calc();
-})();
+<script>!function(){var a=function(a){return document.getElementById(a)};function t(){var t,e=parseInt(a("age").value)||35,n=parseFloat(a("rhr").value)||0,r=a("method").value;t="220"===r?220-e:"208"===r?Math.round(208-.7*e):Math.round(211-.64*e);var o="";[["Warm-up","50%","60%"],["Fat burn","60%","70%"],["Cardio","70%","80%"],["Peak","80%","90%"],["Maximum","90%","100%"]].forEach(function(a){var e,r;n>0?(e=Math.round(n+(t-n)*parseFloat(a[1])/100),r=Math.round(n+(t-n)*parseFloat(a[2])/100)):(e=Math.round(t*parseFloat(a[1])/100),r=Math.round(t*parseFloat(a[2])/100)),o+='<div class="cell"><div class="lbl">'+a[0]+" ("+a[1]+"-"+a[2]+'%)</div><div class="val">'+e+"—"+r+" bpm</div></div>"}),a("mhr").textContent=t+" bpm",a("zones").innerHTML=o,a("result").classList.add("show")}a("calcBtn").addEventListener("click",t),a("resetBtn").addEventListener("click",function(){a("age").value="35",a("rhr").value="",a("method").value="220",t()}),["age","rhr","method"].forEach(function(e){a(e).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(t,400)})}),t()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

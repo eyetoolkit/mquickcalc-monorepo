@@ -98,50 +98,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const age = +document.getElementById("age").value;
-  const gender = document.getElementById("gender").value;
-  const plan = document.getElementById("plan").value;
-  
-  // Base monthly rates (2026 averages, age 65 female)
-  const base_rates = {"A": 90, "B": 150, "C": 175, "D": 140, "F": 195, "G": 155, "K": 85, "N": 110};
-  let monthly = base_rates[plan] || 120;
-  
-  // Age adjustment: +5% per year after 65
-  const years_over_65 = Math.max(0, age - 65);
-  monthly *= Math.pow(1.05, years_over_65);
-  
-  // Gender: male +10%
-  if (gender === "male") monthly *= 1.1;
-  
-  const annual = Math.round(monthly * 12);
-  const monthly_rounded = Math.round(monthly);
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">👵 Medigap estimate</h3>
-    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(monthly_rounded)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>
-    <div style="color:var(--muted);margin-bottom:16px">${currency(annual)} / year — Plan ${plan}</div>
-    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">
-      💡 <strong>Plan G is the best value for most new enrollees.</strong> It covers everything Plan F covers except the Part B deductible ($226 in 2026). If you're in good health, the premium savings over Plan F usually exceed the Part B deductible cost.
-    </div>
-    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
-      📅 <strong>Open enrollment:</strong> You can sign up for Medigap during your Medigap open enrollment period — 6 months starting when you turn 65 and have Medicare Part B. During this time, carriers can't deny you coverage or charge more for pre-existing conditions. After that, they can.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=+document.getElementById("age").value,t=document.getElementById("gender").value,r=document.getElementById("plan").value;let a={A:90,B:150,C:175,D:140,F:195,G:155,K:85,N:110}[r]||120;const o=Math.max(0,e-65);a*=Math.pow(1.05,o),"male"===t&&(a*=1.1);const i=Math.round(12*a),d=Math.round(a);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">👵 Medigap estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${n(d)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">${n(i)} / year — Plan ${r}</div>\n    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Plan G is the best value for most new enrollees.</strong> It covers everything Plan F covers except the Part B deductible ($226 in 2026). If you're in good health, the premium savings over Plan F usually exceed the Part B deductible cost.\n    </div>\n    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n      📅 <strong>Open enrollment:</strong> You can sign up for Medigap during your Medigap open enrollment period — 6 months starting when you turn 65 and have Medicare Part B. During this time, carriers can't deny you coverage or charge more for pre-existing conditions. After that, they can.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
 </body></html>

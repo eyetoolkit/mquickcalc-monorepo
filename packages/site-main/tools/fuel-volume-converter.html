@@ -110,66 +110,8 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  var U = [["l", "Liter (L)", 1.0], ["gal_us", "Gallon (US)", 3.7854], ["gal_uk", "Gallon (UK)", 4.5461], ["qt_us", "Quart (US)", 0.9464], ["qt_uk", "Quart (UK)", 1.1365], ["pt_us", "Pint (US)", 0.4732], ["pt_uk", "Pint (UK)", 0.5683], ["floz_us", "Fluid ounce (US)", 0.02957], ["floz_uk", "Fluid ounce (UK)", 0.02841]];
-  var inp=document.getElementById('val'), sel=document.getElementById('from'), tb=document.getElementById('rows'), big=document.getElementById('mainVal'), bigLbl=document.getElementById('mainUnit'), note=document.getElementById('convNote');
-  function fmt(n){if(!isFinite(n))return '—';if(n===0)return '0';return Number(n.toPrecision(8)).toLocaleString('en-US',{maximumFractionDigits:8})}
-  function factorOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][2];return 1}
-  function labelOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][1];return id}
-  function symOf(id){var l=labelOf(id);var m=/\(([^)]+)\)\s*$/.exec(l);var s=m?m[1].trim():l;var c=s.indexOf(',');return c>0?s.slice(0,c):s}
-  var PRI='gal_us', ALT='l';
-  var PAIRS = {"gal_us": "gal_uk", "gal_uk": "gal_us", "l": "gal_us"};
-  function render(){
-    var v=parseFloat(inp.value)||0, from=sel.value;
-    var base=v*factorOf(from);
-    var rows='';
-    for(var i=0;i<U.length;i++){
-      var id=U[i][0], out=base/U[i][2], isFrom=(id===from);
-      rows += '<tr'+(isFrom?' class="is-from"':'')+'><td>'+U[i][1]+'</td><td><strong>'+fmt(out)+'</strong></td></tr>';
-    }
-    tb.innerHTML=rows;
-    var target=PAIRS[from]||((from===PRI)?ALT:PRI);
-    big.textContent = fmt(base/factorOf(target));
-    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
-    if(note) note.textContent='Converting from '+labelOf(from)+'. Change the unit to convert the other way.';
-  }
-  inp.addEventListener('input',render); sel.addEventListener('change',render);
-  document.getElementById('resetBtn').addEventListener('click',function(){inp.value='1';sel.value='gal_us';render()});
-  // URL param support: /{topic}/{from}-to-{to} redirects here
-  (function(){
-    var q=new URLSearchParams(window.location.search);
-    var fromParam=q.get('from');
-    var sel=document.getElementById('from');
-    if(sel && fromParam){
-      var opts=sel.getElementsByTagName('option');
-      for(var i=0;i<opts.length;i++){
-        if(opts[i].value===fromParam){
-          sel.value=fromParam;
-          sel.dispatchEvent(new Event('change'));
-          break;
-        }
-      }
-    }
-  })();
-  render();
-})();
+<script>!function(){var t=[["l","Liter (L)",1],["gal_us","Gallon (US)",3.7854],["gal_uk","Gallon (UK)",4.5461],["qt_us","Quart (US)",.9464],["qt_uk","Quart (UK)",1.1365],["pt_us","Pint (US)",.4732],["pt_uk","Pint (UK)",.5683],["floz_us","Fluid ounce (US)",.02957],["floz_uk","Fluid ounce (UK)",.02841]],e=document.getElementById("val"),n=document.getElementById("from"),r=document.getElementById("rows"),a=document.getElementById("mainVal"),o=document.getElementById("mainUnit"),u=document.getElementById("convNote");function i(t){return isFinite(t)?0===t?"0":Number(t.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:8}):"—"}function l(e){for(var n=0;n<t.length;n++)if(t[n][0]===e)return t[n][2];return 1}function c(e){for(var n=0;n<t.length;n++)if(t[n][0]===e)return t[n][1];return e}var g="gal_us",d={gal_us:"gal_uk",gal_uk:"gal_us",l:"gal_us"};function m(){for(var m=parseFloat(e.value)||0,s=n.value,v=m*l(s),f="",_=0;_<t.length;_++){var E=t[_][0],h=v/t[_][2];f+="<tr"+(E===s?' class="is-from"':"")+"><td>"+t[_][1]+"</td><td><strong>"+i(h)+"</strong></td></tr>"}r.innerHTML=f;var U=d[s]||(s===g?"l":g);a.textContent=i(v/l(U)),o.textContent=i(m)+" "+function(t){var e=c(t),n=/\(([^)]+)\)\s*$/.exec(e),r=n?n[1].trim():e,a=r.indexOf(",");return a>0?r.slice(0,a):r}(s)+" in "+c(U),u&&(u.textContent="Converting from "+c(s)+". Change the unit to convert the other way.")}e.addEventListener("input",m),n.addEventListener("change",m),document.getElementById("resetBtn").addEventListener("click",function(){e.value="1",n.value="gal_us",m()}),function(){var t=new URLSearchParams(window.location.search).get("from"),e=document.getElementById("from");if(e&&t)for(var n=e.getElementsByTagName("option"),r=0;r<n.length;r++)if(n[r].value===t){e.value=t,e.dispatchEvent(new Event("change"));break}}(),m()}();
 </script>
-<script>
-(function() {
-  var btn = document.getElementById('embedBtn');
-  var code = document.getElementById('embedCode');
-  if(btn && code) {
-    btn.addEventListener('click', function() {
-      if(code.style.display === 'none') {
-        code.style.display = 'block';
-        btn.textContent = 'Hide embed code';
-      } else {
-        code.style.display = 'none';
-        btn.textContent = 'Show embed code';
-      }
-    });
-  }
-})();
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
 </script>
 </body></html>

@@ -132,39 +132,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var mode = $("mode").value;
-    var a = parseFloat($("a").value) || 0;
-    var b = parseFloat($("b").value) || 0;
-    var result, label;
-    if (mode === "percent-of") {
-      result = b * a / 100;
-      label = a + "% of " + b + " = " + fmt(result);
-    } else if (mode === "what-percent") {
-      result = b === 0 ? 0 : (a / b) * 100;
-      label = a + " is " + fmt(result) + "% of " + b;
-    } else if (mode === "original") {
-      result = a === 0 ? 0 : (b / a) * 100;
-      label = a + " is " + b + "% of " + fmt(result);
-    } else {
-      result = a === 0 ? 0 : ((b - a) / a) * 100;
-      var sign = result >= 0 ? "+" : "";
-      label = fmt(result) + "% change (" + fmt(a) + " → " + fmt(b) + ")";
-    }
-    $("bigVal").textContent = fmt(result, result % 1 === 0 ? 0 : 2);
-    $("dimVal").textContent = label;
-    $("result").classList.add("show");
-  }
-  ["a", "b", "mode"].forEach(function(id) { var el = $(id); if(el) el.addEventListener("input", calc); });
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function() { $("mode").value="percent-of"; $("a").value="25"; $("b").value="200"; calc(); });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n,a,i=e("mode").value,o=parseFloat(e("a").value)||0,l=parseFloat(e("b").value)||0;if("percent-of"===i)a=o+"% of "+l+" = "+t(n=l*o/100);else if("what-percent"===i)a=o+" is "+t(n=0===l?0:o/l*100)+"% of "+l;else if("original"===i)a=o+" is "+l+"% of "+t(n=0===o?0:l/o*100);else{n=0===o?0:(l-o)/o*100;a=t(n)+"% change ("+t(o)+" → "+t(l)+")"}e("bigVal").textContent=t(n,n%1==0?0:2),e("dimVal").textContent=a,e("result").classList.add("show")}["a","b","mode"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("mode").value="percent-of",e("a").value="25",e("b").value="200",n()}),n()}();
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [

@@ -105,63 +105,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const employees = document.getElementById("employees").value;
-  const industry = document.getElementById("industry").value;
-  const data = document.getElementById("data").value;
-  const security = document.getElementById("security").value;
-  const limit = document.getElementById("limit").value;
-  
-  // Base rates per $1M coverage
-  const base = {
-    "low": 500, "medium": 1000, "high": 2000, "very_high": 4000
-  };
-  
-  let annual = base[industry] || 1000;
-  
-  // Size multiplier
-  const sizeMult = {"<10":0.7,"10-50":1.0,"50-200":1.8,"200+":3.0};
-  annual *= sizeMult[employees] || 1.0;
-  
-  // Data sensitivity
-  const dataMult = {"no":0.5,"basic":1.0,"pii":1.5,"phi":2.5};
-  annual *= dataMult[data] || 1.0;
-  
-  // Security maturity (discount for good practices)
-  const secMult = {"basic":1.3,"standard":1.0,"advanced":0.6};
-  annual *= secMult[security] || 1.0;
-  
-  // Coverage limit
-  annual *= (limit === "500k" ? 0.7 : limit === "5m" ? 2.5 : 1.0);
-  
-  const monthly = Math.round(annual / 12);
-  const annual_rounded = Math.round(annual);
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">💻 Your cyber insurance estimate</h3>
-    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(annual_rounded)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
-    <div style="color:var(--muted);margin-bottom:16px">≈ ${currency(monthly)} / month · ${limit} coverage</div>
-    <div style="padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">
-      ⚠️ <strong>Why you need this:</strong> The average ransomware payment is ~$2M + downtime costs + regulatory fines (GDPR fines up to 4% of global revenue, California CCPA penalties). Cyber insurance covers ransom negotiations, legal fees, customer notification, credit monitoring for affected customers, and public relations. For 60% of SMBs, a major breach leads to closure within 6 months.
-    </div>
-    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">
-      💡 <strong>Reduce your premium:</strong> Add MFA everywhere, train employees on phishing, encrypt sensitive data, and maintain daily offsite backups. Carriers will verify these — having them reduces both your premium AND your breach risk.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=document.getElementById("employees").value,t=document.getElementById("industry").value,i=document.getElementById("data").value,r=document.getElementById("security").value,a=document.getElementById("limit").value;let o={low:500,medium:1e3,high:2e3,very_high:4e3}[t]||1e3;o*={"<10":.7,"10-50":1,"50-200":1.8,"200+":3}[e]||1;o*={no:.5,basic:1,pii:1.5,phi:2.5}[i]||1;o*={basic:1.3,standard:1,advanced:.6}[r]||1,o*="500k"===a?.7:"5m"===a?2.5:1;const d=Math.round(o/12),s=Math.round(o);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">💻 Your cyber insurance estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${n(s)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">≈ ${n(d)} / month · ${a} coverage</div>\n    <div style="padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">\n      ⚠️ <strong>Why you need this:</strong> The average ransomware payment is ~$2M + downtime costs + regulatory fines (GDPR fines up to 4% of global revenue, California CCPA penalties). Cyber insurance covers ransom negotiations, legal fees, customer notification, credit monitoring for affected customers, and public relations. For 60% of SMBs, a major breach leads to closure within 6 months.\n    </div>\n    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Reduce your premium:</strong> Add MFA everywhere, train employees on phishing, encrypt sensitive data, and maintain daily offsite backups. Carriers will verify these — having them reduces both your premium AND your breach risk.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
 </body></html>

@@ -101,58 +101,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const industry = document.getElementById("industry").value;
-  const revenue = document.getElementById("revenue").value;
-  const employees = +document.getElementById("employees").value;
-  const limit = document.getElementById("limit").value;
-  
-  // Industry risk base rates (per $1M coverage, annual)
-  const industry_base = {
-    "tech": 700, "retail": 650, "restaurant": 850, "construction": 1200,
-    "professional": 600, "freelance": 500, "beauty": 750, "manufacturing": 1100
-  };
-  let annual = industry_base[industry] || 700;
-  
-  // Revenue adjustment
-  const revMult = {"<100k":0.8,"100k-500k":1.0,"500k-1m":1.3,"1m-5m":1.7,"5m+":2.2};
-  annual *= revMult[revenue] || 1.0;
-  
-  // Employee count
-  annual *= 1 + (employees * 0.02);
-  
-  // Coverage limit
-  const limitMult = {"1m":1.0,"2m":1.4,"5m":2.0};
-  annual *= limitMult[limit] || 1.0;
-  
-  const low = Math.round(annual * 0.8);
-  const high = Math.round(annual * 1.5); // B2B has more variance
-  const monthly = Math.round(annual / 12);
-  
-  const industry_name = document.getElementById("industry").selectedOptions[0].text;
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">🏢 Your B2B insurance estimate</h3>
-    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${currency(low)} – ${currency(high)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
-    <div style="color:var(--muted);margin-bottom:16px">≈ ${currency(Math.round(annual/12))} / month · ${industry_name} · ${limit} liability</div>
-    <div style="padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">
-      💡 <strong>Common B2B coverages (in addition to general liability):</strong> Workers' comp (legally required in most states), professional liability / E&O (if you give advice), product liability (if you make/sell products), cyber liability (if you hold customer data), and commercial auto. Each adds cost. Get a bundled BOP (Business Owner's Policy) for the best value.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function e(e,t){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:t||0,maximumFractionDigits:t||0})}function t(t){return"$"+e(t,0)}function n(){const e=document.getElementById("industry").value,n=document.getElementById("revenue").value,i=+document.getElementById("employees").value,o=document.getElementById("limit").value;let a={tech:700,retail:650,restaurant:850,construction:1200,professional:600,freelance:500,beauty:750,manufacturing:1100}[e]||700;a*={"<100k":.8,"100k-500k":1,"500k-1m":1.3,"1m-5m":1.7,"5m+":2.2}[n]||1,a*=1+.02*i;a*={"1m":1,"2m":1.4,"5m":2}[o]||1;const d=Math.round(.8*a),r=Math.round(1.5*a),l=(Math.round(a/12),document.getElementById("industry").selectedOptions[0].text);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">🏢 Your B2B insurance estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${t(d)} – ${t(r)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">≈ ${t(Math.round(a/12))} / month · ${l} · ${o} liability</div>\n    <div style="padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Common B2B coverages (in addition to general liability):</strong> Workers' comp (legally required in most states), professional liability / E&O (if you give advice), product liability (if you make/sell products), cyber liability (if you hold customer data), and commercial auto. Each adds cost. Get a bundled BOP (Business Owner's Policy) for the best value.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

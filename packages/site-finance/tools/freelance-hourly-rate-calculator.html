@@ -154,29 +154,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
-  function calc() {
-    var target = parseFloat(document.getElementById('target').value) || 0;
-    var hours = parseFloat(document.getElementById('hours').value) || 0;
-    var weeks = parseFloat(document.getElementById('weeks').value) || 0;
-    var overhead = parseFloat(document.getElementById('overhead').value) || 0;
-    var tax = (parseFloat(document.getElementById('tax').value) || 0) / 100;
-    var billable = hours * weeks;
-    var gross = billable > 0 ? (target + overhead) / (1 - tax) : 0;
-    var rate = billable > 0 ? gross / billable : 0;
-    document.getElementById('rateVal').textContent = money(rate);
-    document.getElementById('grossVal').textContent = money(gross);
-    document.getElementById('billVal').textContent = Math.round(billable);
-    document.getElementById('monthVal').textContent = money(gross / 12);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('target').value = '60000'; document.getElementById('hours').value = '25'; document.getElementById('weeks').value = '48'; document.getElementById('overhead').value = '5000'; document.getElementById('tax').value = '25'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){var t=parseFloat(document.getElementById("target").value)||0,n=parseFloat(document.getElementById("hours").value)||0,d=parseFloat(document.getElementById("weeks").value)||0,l=parseFloat(document.getElementById("overhead").value)||0,a=(parseFloat(document.getElementById("tax").value)||0)/100,o=n*d,m=o>0?(t+l)/(1-a):0,u=o>0?m/o:0;document.getElementById("rateVal").textContent=e(u),document.getElementById("grossVal").textContent=e(m),document.getElementById("billVal").textContent=Math.round(o),document.getElementById("monthVal").textContent=e(m/12),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("target").value="60000",document.getElementById("hours").value="25",document.getElementById("weeks").value="48",document.getElementById("overhead").value="5000",document.getElementById("tax").value="25",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

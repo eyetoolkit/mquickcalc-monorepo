@@ -144,39 +144,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var price = parseFloat($("price").value) || 0;
-    var down = parseFloat($("down").value) || 0;
-    var trade = parseFloat($("trade").value) || 0;
-    var rate = parseFloat($("rate").value) || 0;
-    var term = parseInt($("term").value) || 60;
-    var principal = price - down - trade;
-    var monthlyRate = rate / 100 / 12;
-    var monthly;
-    if (monthlyRate === 0) {
-      monthly = principal / term;
-    } else {
-      monthly = principal * monthlyRate * Math.pow(1 + monthlyRate, term) / (Math.pow(1 + monthlyRate, term) - 1);
-    }
-    var totalPaid = monthly * term;
-    var totalInterest = totalPaid - principal;
-    $("monthVal").textContent = "$" + fmt(monthly, 2);
-    $("loanVal").textContent = "$" + fmt(principal, 2);
-    $("intVal").textContent = "$" + fmt(totalInterest, 2);
-    $("totalVal").textContent = "$" + fmt(down + trade + totalPaid, 2);
-    $("dpVal").textContent = "$" + fmt(down + trade, 2);
-    $("result").classList.add("show");
-  }
-  ["price","down","trade","rate","term"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("price").value="25000"; $("down").value="5000"; $("trade").value="0"; $("rate").value="5.5"; $("term").value="60"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a,n=parseFloat(t("price").value)||0,r=parseFloat(t("down").value)||0,l=parseFloat(t("trade").value)||0,o=parseFloat(t("rate").value)||0,u=parseInt(t("term").value)||60,i=n-r-l,c=o/100/12,d=(a=0===c?i/u:i*c*Math.pow(1+c,u)/(Math.pow(1+c,u)-1))*u,s=d-i;t("monthVal").textContent="$"+e(a,2),t("loanVal").textContent="$"+e(i,2),t("intVal").textContent="$"+e(s,2),t("totalVal").textContent="$"+e(r+l+d,2),t("dpVal").textContent="$"+e(r+l,2),t("result").classList.add("show")}["price","down","trade","rate","term"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("price").value="25000",t("down").value="5000",t("trade").value="0",t("rate").value="5.5",t("term").value="60",a()}),a()}();
 </script>
 </body>
 </html>

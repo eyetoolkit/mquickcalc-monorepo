@@ -165,52 +165,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-
-  function calc() {
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var down = parseFloat(document.getElementById('down').value) || 0;
-    var principal = Math.max(price - down, 0);
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var years = parseFloat(document.getElementById('years').value) || 30;
-    var propertyTax = (parseFloat(document.getElementById('tax').value) || 0) / 100;
-    var insurance = parseFloat(document.getElementById('insurance').value) || 0;
-    var months = Math.max(years * 12, 1);
-    var monthlyRate = rate / 12;
-    var pi;
-    if (rate === 0) {
-      pi = principal / months;
-    } else {
-      var factor = Math.pow(1 + monthlyRate, months);
-      pi = principal * (monthlyRate * factor) / (factor - 1);
-    }
-    var taxMonthly = price * propertyTax / 12;
-    var insuranceMonthly = insurance / 12;
-    var total = pi + taxMonthly + insuranceMonthly;
-    var totalInterest = (pi * months) - principal;
-    document.getElementById('piVal').textContent = money(pi);
-    document.getElementById('totalVal').textContent = money(total);
-    document.getElementById('interestVal').textContent = money(totalInterest);
-    document.getElementById('loanVal').textContent = money(principal);
-    document.getElementById('result').classList.add('show');
-  }
-
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('price').value = '500000';
-    document.getElementById('down').value = '100000';
-    document.getElementById('rate').value = '6.5';
-    document.getElementById('years').value = '30';
-    document.getElementById('tax').value = '1.2';
-    document.getElementById('insurance').value = '1800';
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
-
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n=parseFloat(document.getElementById("price").value)||0,a=parseFloat(document.getElementById("down").value)||0,l=Math.max(n-a,0),d=(parseFloat(document.getElementById("rate").value)||0)/100,m=parseFloat(document.getElementById("years").value)||30,o=(parseFloat(document.getElementById("tax").value)||0)/100,c=parseFloat(document.getElementById("insurance").value)||0,u=Math.max(12*m,1),r=d/12;if(0===d)t=l/u;else{var y=Math.pow(1+r,u);t=l*(r*y)/(y-1)}var i=t+n*o/12+c/12,B=t*u-l;document.getElementById("piVal").textContent=e(t),document.getElementById("totalVal").textContent=e(i),document.getElementById("interestVal").textContent=e(B),document.getElementById("loanVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="500000",document.getElementById("down").value="100000",document.getElementById("rate").value="6.5",document.getElementById("years").value="30",document.getElementById("tax").value="1.2",document.getElementById("insurance").value="1800",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

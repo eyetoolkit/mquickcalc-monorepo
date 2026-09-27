@@ -162,61 +162,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n, cur) { var c = cur || 'USD'; try { return n.toLocaleString('en-US', { style: 'currency', currency: c }); } catch(e) { return n.toFixed(2); } }
-  function pct(n) { return (n * 100).toFixed(2) + '%'; }
-    var MARKETS = {
-    "us":       { rate: "13.6", fixed: "0.40", currency: "USD", label: "eBay US" },
-    "toprated": { rate: "8.7",  fixed: "0.40", currency: "USD", label: "eBay US Top Rated" },
-    "uk":       { rate: "12.8",  fixed: "0.40", currency: "GBP", label: "eBay UK" },
-    "de":       { rate: "10.0",  fixed: "0.35", currency: "EUR", label: "eBay Germany" },
-    "au":       { rate: "12.8",  fixed: "0.40", currency: "AUD", label: "eBay Australia" },
-    "ca":       { rate: "12.8",  fixed: "0.40", currency: "CAD", label: "eBay Canada" },
-    "custom": null
-  };
-  function applyMarket(id) {
-    var m = MARKETS[id];
-    if(m) {
-      document.getElementById('rate').value = m.rate;
-      document.getElementById('fixed').value = m.fixed;
-    }
-  }
-  document.getElementById('market').addEventListener('change', function () { applyMarket(this.value); calc(); });
-  applyMarket('us');
-  function calc() {
-    var market = MARKETS[document.getElementById('market').value]; var cur = market ? market.currency : 'USD'; var price = parseFloat(document.getElementById('price').value) || 0;
-    var shipping = parseFloat(document.getElementById('shipping').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
-    var tier = document.getElementById('tier').checked;
-    var gross = price + shipping;
-    var fvFee;
-    if (tier && gross > 7500) { fvFee = 7500 * rate + (gross - 7500) * 0.0235; }
-    else { fvFee = gross * rate; }
-    var total = fvFee + fixed;
-    var net = gross - total;
-    var eff = gross > 0 ? total / gross : 0;
-    document.getElementById('grossLine').textContent = 'Total sale amount: ' + money(gross, cur);
-    document.getElementById('netVal').textContent = money(net, cur);
-    document.getElementById('fvVal').textContent = money(fvFee, cur);
-    document.getElementById('fixedVal').textContent = money(fixed, cur);
-    document.getElementById('effVal').textContent = pct(eff);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('price').value = '100.00';
-    document.getElementById('shipping').value = '10.00';
-    document.getElementById('rate').value = MARKETS[document.getElementById('market').value] ? MARKETS[document.getElementById('market').value].rate : '13.6';
-    document.getElementById('fixed').value = '0.40';
-    document.getElementById('tier').checked = true;
-    calc();
-  });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e,t){var n=t||"USD";try{return e.toLocaleString("en-US",{style:"currency",currency:n})}catch(t){return e.toFixed(2)}}var t={us:{rate:"13.6",fixed:"0.40",currency:"USD",label:"eBay US"},toprated:{rate:"8.7",fixed:"0.40",currency:"USD",label:"eBay US Top Rated"},uk:{rate:"12.8",fixed:"0.40",currency:"GBP",label:"eBay UK"},de:{rate:"10.0",fixed:"0.35",currency:"EUR",label:"eBay Germany"},au:{rate:"12.8",fixed:"0.40",currency:"AUD",label:"eBay Australia"},ca:{rate:"12.8",fixed:"0.40",currency:"CAD",label:"eBay Canada"},custom:null};function n(e){var n=t[e];n&&(document.getElementById("rate").value=n.rate,document.getElementById("fixed").value=n.fixed)}function a(){var n,a=t[document.getElementById("market").value],d=a?a.currency:"USD",l=parseFloat(document.getElementById("price").value)||0,c=parseFloat(document.getElementById("shipping").value)||0,u=(parseFloat(document.getElementById("rate").value)||0)/100,r=parseFloat(document.getElementById("fixed").value)||0,m=l+c,o=(n=document.getElementById("tier").checked&&m>7500?7500*u+.0235*(m-7500):m*u)+r,i=m-o,y=m>0?o/m:0;document.getElementById("grossLine").textContent="Total sale amount: "+e(m,d),document.getElementById("netVal").textContent=e(i,d),document.getElementById("fvVal").textContent=e(n,d),document.getElementById("fixedVal").textContent=e(r,d),document.getElementById("effVal").textContent=(100*y).toFixed(2)+"%",document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){n(this.value),a()}),n("us"),document.getElementById("calcBtn").addEventListener("click",a),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="100.00",document.getElementById("shipping").value="10.00",document.getElementById("rate").value=t[document.getElementById("market").value]?t[document.getElementById("market").value].rate:"13.6",document.getElementById("fixed").value="0.40",document.getElementById("tier").checked=!0,a()}),a(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),a)}();
 </script>
 </body>
 </html>

@@ -148,33 +148,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var units = Math.max(parseInt(document.getElementById('units').value, 10) || 0, 0);
-    var service = (parseFloat(document.getElementById('service').value) || 0) / 100;
-    var proc = (parseFloat(document.getElementById('proc').value) || 0) / 100;
-    var flat = parseFloat(document.getElementById('flat').value) || 0;
-    var perFee = price * service + price * proc + flat;
-    var perNet = price - perFee;
-    var gross = price * units;
-    var totalFees = perFee * units;
-    var totalNet = perNet * units;
-    document.getElementById('perLine').textContent = money(price) + ' per sale · ' + units + ' unit(s)'; 
-    document.getElementById('totalVal').textContent = money(totalNet);
-    document.getElementById('perFeeVal').textContent = money(perFee);
-    document.getElementById('perNetVal').textContent = money(perNet);
-    document.getElementById('totVal').textContent = money(totalFees);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('price').value = '15.00'; document.getElementById('units').value = '50'; document.getElementById('service').value = '10'; document.getElementById('proc').value = '2.9'; document.getElementById('flat').value = '0.30'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=Math.max(parseInt(document.getElementById("units").value,10)||0,0),l=t*((parseFloat(document.getElementById("service").value)||0)/100)+t*((parseFloat(document.getElementById("proc").value)||0)/100)+(parseFloat(document.getElementById("flat").value)||0),d=t-l,c=l*n,m=d*n;document.getElementById("perLine").textContent=e(t)+" per sale · "+n+" unit(s)",document.getElementById("totalVal").textContent=e(m),document.getElementById("perFeeVal").textContent=e(l),document.getElementById("perNetVal").textContent=e(d),document.getElementById("totVal").textContent=e(c),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="15.00",document.getElementById("units").value="50",document.getElementById("service").value="10",document.getElementById("proc").value="2.9",document.getElementById("flat").value="0.30",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

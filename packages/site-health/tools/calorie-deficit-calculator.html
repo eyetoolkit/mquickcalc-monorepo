@@ -116,45 +116,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-function calc(){
-  var tdee=parseFloat(_('tdee').value)||2200;
-  var target=parseFloat(_('target').value)||1800;
-  var goal=_('goal').value;
-  var deficit;
-  if(goal==='deficit'){
-    deficit=tdee-target;
-  }else{
-    // 1 kg fat = ~7700 calories
-    deficit=Math.round(parseFloat(goal)*7700/7);
-    target=Math.max(300,tdee-deficit);
-    _('target').value=target;
-  }
-  // 1 kg adipose tissue ~7700 kcal
-  var fatPerDay=deficit/7700;
-  var fatPerWeek=deficit/7700*7;
-  var fatPerMonth=deficit/7700*30;
-  // LBM protected deficit max: no more than ~500/day unless >25% body fat
-  var note="";if(deficit>1000)note="Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.";
-  else if(deficit<0)note="You have a calorie surplus! You will gain weight at ~"+Math.abs(fatPerWeek).toFixed(2)+" kg/week.";
-  else if(deficit<200)note="Small deficit — fat loss will be slow but muscle-friendly.";
-  else note="Good deficit range for sustainable fat loss.";
-  var html="";
-  html+="<div class=\"cell\"><div class=\"lbl\">Daily deficit</div><div class=\"val\">"+deficit+" kcal</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Weekly fat loss</div><div class=\"val\">"+Math.abs(fatPerWeek).toFixed(2)+" kg</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Monthly fat loss</div><div class=\"val\">"+Math.abs(fatPerMonth).toFixed(1)+" kg</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Time to lose 5 kg</div><div class=\"val\">"+Math.round(5/Math.abs(fatPerWeek))+" weeks</div></div>";
-  _('stats').innerHTML=html;
-  _('note').textContent=note;
-  _('result').classList.add('show');
-}
-_('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){_('tdee').value="2200";_('target').value="1800";_('goal').value="deficit";calc();});
-['tdee','target','goal'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
-calc();
-})();
+<script>!function(){var a=function(a){return document.getElementById(a)};function e(){var e,l=parseFloat(a("tdee").value)||2200,t=parseFloat(a("target").value)||1800,i=a("goal").value;"deficit"===i?e=l-t:(e=Math.round(7700*parseFloat(i)/7),t=Math.max(300,l-e),a("target").value=t);var s=e/7700*7,d=e/7700*30,c="";c=e>1e3?"Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.":e<0?"You have a calorie surplus! You will gain weight at ~"+Math.abs(s).toFixed(2)+" kg/week.":e<200?"Small deficit — fat loss will be slow but muscle-friendly.":"Good deficit range for sustainable fat loss.";var o="";o+='<div class="cell"><div class="lbl">Daily deficit</div><div class="val">'+e+" kcal</div></div>",o+='<div class="cell"><div class="lbl">Weekly fat loss</div><div class="val">'+Math.abs(s).toFixed(2)+" kg</div></div>",o+='<div class="cell"><div class="lbl">Monthly fat loss</div><div class="val">'+Math.abs(d).toFixed(1)+" kg</div></div>",o+='<div class="cell"><div class="lbl">Time to lose 5 kg</div><div class="val">'+Math.round(5/Math.abs(s))+" weeks</div></div>",a("stats").innerHTML=o,a("note").textContent=c,a("result").classList.add("show")}a("calcBtn").addEventListener("click",e),a("resetBtn").addEventListener("click",function(){a("tdee").value="2200",a("target").value="1800",a("goal").value="deficit",e()}),["tdee","target","goal"].forEach(function(l){a(l).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

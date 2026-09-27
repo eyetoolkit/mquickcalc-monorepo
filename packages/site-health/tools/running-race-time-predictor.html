@@ -126,70 +126,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-_('knownDist').addEventListener('change',function(){
-  if(this.value==='custom')_('customDistWrap').style.display='flex';
-  else _('customDistWrap').style.display='none';
-});
-function parseTime(s){
-  if(!s)return NaN;
-  s=s.trim();
-  var parts=s.split(':');
-  if(parts.length===3)return parseInt(parts[0])*3600+parseInt(parts[1])*60+parseFloat(parts[2]);
-  if(parts.length===2)return parseInt(parts[0])*60+parseFloat(parts[1]);
-  return parseFloat(s);
-}
-function fmtTime(sec){
-  if(isNaN(sec)||sec<=0)return "--";
-  var h=Math.floor(sec/3600);
-  var m=Math.floor((sec%3600)/60);
-  var s=Math.round(sec%60);
-  if(s===60){m++;s=0;}
-  if(h>0)return h+":"+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-  return String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-}
-function predict(timeSec,d1km,d2km,formula){
-  // Riegel: T2 = T1 × (D2/D1)^1.06
-  if(formula==='riegel')return timeSec*Math.pow(d2km/d1km,1.06);
-  // Cameron: similar exponent 1.05~1.08
-  if(formula==='cameron')return timeSec*Math.pow(d2km/d1km,1.05);
-  // Vickers-Lloyd (conservative): exponent 1.07
-  return timeSec*Math.pow(d2km/d1km,1.07);
-}
-function calc(){
-  var d1=parseFloat(_('knownDist').value);
-  if(_('knownDist').value==='custom')d1=parseFloat(_('customDist').value)||5;
-  var t=parseTime(_('timeInput').value);
-  var formula=_('formula').value;
-  if(!d1||!t){_('predGrid').innerHTML="<div class=\"cell\"><div class=\"lbl\">Enter valid distance and time</div></div>";_('result').classList.add('show');return;}
-  var targets=[
-    [1,"1 km"],[1.60934,"1 mile"],[3,"3 km"],[5,"5 km"],[8.04672,"5 miles"],
-    [10,"10 km"],[16.0934,"10 miles"],[21.0975,"Half marathon"],[30,"30 km"],
-    [42.195,"Marathon"],[50,"50 km"],[100,"100 km"]
-  ];
-  var html="";
-  targets.forEach(function(tg){
-    if(Math.abs(tg[0]-d1)<0.01)return; // skip same distance
-    var pred=predict(t,d1,tg[0],formula);
-    var paceMin=pred/tg[0]/60; // min per km
-    var paceMi=pred/(tg[0]*0.621371)/60; // min per mile
-    html+="<div class=\"cell\"><div class=\"lbl\" style=\"font-weight:600;\">"+tg[1]+"</div><div class=\"val\" style=\"font-size:1.1em;color:#16a34a;\">"+fmtTime(pred)+"</div><div class=\"dim\">"+paceMin.toFixed(2)+" min/km | "+paceMi.toFixed(2)+" min/mile</div></div>";
-  });
-  _('predGrid').innerHTML=html;
-  var paceKm=t/d1/60;
-  _('paceLine').textContent="Your input pace: "+paceKm.toFixed(2)+" min/km ("+(t/(d1*0.621371)/60).toFixed(2)+" min/mile)";
-  _('result').classList.add('show');
-}
-_('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){
-  _('knownDist').value='5';_('customDist').value='';_('timeInput').value='25:30';_('formula').value='riegel';
-  _('customDistWrap').style.display='none';calc();
-});
-['knownDist','customDist','timeInput','formula'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
-calc();
-})();
+<script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e=parseFloat(t("knownDist").value);"custom"===t("knownDist").value&&(e=parseFloat(t("customDist").value)||5);var i=function(t){if(!t)return NaN;var e=(t=t.trim()).split(":");return 3===e.length?3600*parseInt(e[0])+60*parseInt(e[1])+parseFloat(e[2]):2===e.length?60*parseInt(e[0])+parseFloat(e[1]):parseFloat(t)}(t("timeInput").value),n=t("formula").value;if(!e||!i)return t("predGrid").innerHTML='<div class="cell"><div class="lbl">Enter valid distance and time</div></div>',void t("result").classList.add("show");var a="";[[1,"1 km"],[1.60934,"1 mile"],[3,"3 km"],[5,"5 km"],[8.04672,"5 miles"],[10,"10 km"],[16.0934,"10 miles"],[21.0975,"Half marathon"],[30,"30 km"],[42.195,"Marathon"],[50,"50 km"],[100,"100 km"]].forEach(function(t){if(!(Math.abs(t[0]-e)<.01)){var r=function(t,e,i,n){return"riegel"===n?t*Math.pow(i/e,1.06):"cameron"===n?t*Math.pow(i/e,1.05):t*Math.pow(i/e,1.07)}(i,e,t[0],n),s=r/t[0]/60,l=r/(.621371*t[0])/60;a+='<div class="cell"><div class="lbl" style="font-weight:600;">'+t[1]+'</div><div class="val" style="font-size:1.1em;color:#16a34a;">'+function(t){if(isNaN(t)||t<=0)return"--";var e=Math.floor(t/3600),i=Math.floor(t%3600/60),n=Math.round(t%60);return 60===n&&(i++,n=0),e>0?e+":"+String(i).padStart(2,"0")+":"+String(n).padStart(2,"0"):String(i).padStart(2,"0")+":"+String(n).padStart(2,"0")}(r)+'</div><div class="dim">'+s.toFixed(2)+" min/km | "+l.toFixed(2)+" min/mile</div></div>"}}),t("predGrid").innerHTML=a;var r=i/e/60;t("paceLine").textContent="Your input pace: "+r.toFixed(2)+" min/km ("+(i/(.621371*e)/60).toFixed(2)+" min/mile)",t("result").classList.add("show")}t("knownDist").addEventListener("change",function(){"custom"===this.value?t("customDistWrap").style.display="flex":t("customDistWrap").style.display="none"}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("knownDist").value="5",t("customDist").value="",t("timeInput").value="25:30",t("formula").value="riegel",t("customDistWrap").style.display="none",e()}),["knownDist","customDist","timeInput","formula"].forEach(function(i){t(i).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

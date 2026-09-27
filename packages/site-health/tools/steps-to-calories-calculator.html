@@ -103,36 +103,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var steps = parseFloat($("steps").value) || 0;
-    var w = parseFloat($("weight").value) || 0;
-    var rate = parseFloat($("pace").value) || 0.055;
-    if (!steps || !w) return;
-    // 1 step ≈ 0.7m average. 1 mile ≈ 2000 steps.
-    // Calories = weight(kg) × steps × rate_factor
-    var calories = w * steps * rate;
-    var km = steps * 0.0007;
-    var mph = 3.0; // moderate default
-    var pace_min_per_km = (60 / (mph * 1.609));
-    var minutes = km * pace_min_per_km;
-    var per1k = w * 1000 * rate;
-    $("bigVal").textContent = fmt(calories, 0) + " kcal";
-    $("dimVal").textContent = fmt(steps, 0) + " steps";
-    $("distVal").textContent = fmt(km, 2) + " km";
-    $("minVal").textContent = fmt(minutes, 0) + " min";
-    $("per1k").textContent = fmt(per1k, 0) + " kcal";
-    $("result").classList.add("show");
-  }
-  ["steps","weight","pace"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("steps").value="8000"; $("weight").value="70"; $("pace").value="0.055"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n=parseFloat(t("steps").value)||0,a=parseFloat(t("weight").value)||0,i=parseFloat(t("pace").value)||.055;if(n&&a){var s=a*n*i,l=7e-4*n,c=l*(60/4.827),o=1e3*a*i;t("bigVal").textContent=e(s,0)+" kcal",t("dimVal").textContent=e(n,0)+" steps",t("distVal").textContent=e(l,2)+" km",t("minVal").textContent=e(c,0)+" min",t("per1k").textContent=e(o,0)+" kcal",t("result").classList.add("show")}}["steps","weight","pace"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("steps").value="8000",t("weight").value="70",t("pace").value="0.055",n()}),n()}();
 </script>
 </body>
 </html>

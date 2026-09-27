@@ -152,42 +152,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-
-  function calc() {
-    var principal = parseFloat(document.getElementById('principal').value) || 0;
-    var monthly = parseFloat(document.getElementById('monthly').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var years = parseFloat(document.getElementById('years').value) || 0;
-    var months = Math.max(years * 12, 0);
-    var monthlyRate = rate / 12;
-    var balance = principal;
-    var totalContrib = principal;
-    for (var m = 0; m < months; m++) {
-      balance = balance * (1 + monthlyRate) + monthly;
-      totalContrib += monthly;
-    }
-    var interest = balance - totalContrib;
-    document.getElementById('finalVal').textContent = money(balance);
-    document.getElementById('contribVal').textContent = money(totalContrib);
-    document.getElementById('interestVal').textContent = money(interest);
-    document.getElementById('result').classList.add('show');
-  }
-
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('principal').value = '1000';
-    document.getElementById('monthly').value = '200';
-    document.getElementById('rate').value = '5';
-    document.getElementById('years').value = '10';
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
-
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){for(var t=parseFloat(document.getElementById("principal").value)||0,n=parseFloat(document.getElementById("monthly").value)||0,l=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("years").value)||0,a=Math.max(12*d,0),c=l/12,m=t,o=t,u=0;u<a;u++)m=m*(1+c)+n,o+=n;var r=m-o;document.getElementById("finalVal").textContent=e(m),document.getElementById("contribVal").textContent=e(o),document.getElementById("interestVal").textContent=e(r),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="1000",document.getElementById("monthly").value="200",document.getElementById("rate").value="5",document.getElementById("years").value="10",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

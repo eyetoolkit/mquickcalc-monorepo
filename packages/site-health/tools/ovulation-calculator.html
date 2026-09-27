@@ -165,31 +165,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var d=new Date($("lmp").value);if(!d||isNaN(d))return;var cycle=parseInt($("cycle").value)||28;var ov=d;ov.setDate(ov.getDate()+cycle-14);var fertileStart=new Date(ov);fertileStart.setDate(fertileStart.getDate()-5);var months=["January","February","March","April","May","June","July","August","September","October","November","December"];function fmt(date){return months[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear();}$("ovVal").textContent=fmt(ov);$("fertileVal").textContent=fmt(fertileStart)+" —"+fmt(ov);$("result").classList.add("show");
-  }
-  ['cycle', 'lmp'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {lmp:'2026-08-25',cycle:'28'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(){var t=new Date(e("lmp").value);if(t&&!isNaN(t)){var a=parseInt(e("cycle").value)||28,n=t;n.setDate(n.getDate()+a-14);var r=new Date(n);r.setDate(r.getDate()-5);var c=["January","February","March","April","May","June","July","August","September","October","November","December"];e("ovVal").textContent=l(n),e("fertileVal").textContent=l(r)+" —"+l(n),e("result").classList.add("show")}function l(e){return c[e.getMonth()]+" "+e.getDate()+", "+e.getFullYear()}}["cycle","lmp"].forEach(function(a){var n=e(a);n&&n.addEventListener("input",t)});var a=e("calcBtn");a&&a.addEventListener("click",t);var n=e("resetBtn");n&&n.addEventListener("click",function(){var a={lmp:"2026-08-25",cycle:"28"};Object.keys(a).forEach(function(t){var n=e(t);n&&(n.value=a[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

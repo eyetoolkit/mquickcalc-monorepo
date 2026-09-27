@@ -99,55 +99,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function daysBetween(d1, d2) { return Math.round((d2 - d1) / 86400000); }
-  function countWeekdays(d1, d2) {
-    var count = 0, cur = new Date(d1);
-    while (cur <= d2) { if (cur.getDay() !== 0 && cur.getDay() !== 6) count++; cur.setDate(cur.getDate()+1); }
-    return count;
-  }
-  function calc() {
-    var d1 = new Date($("date1").value);
-    var d2 = new Date($("date2").value);
-    if (isNaN(d1.getTime()) || isNaN(d2.getTime())) return;
-    if (d1 > d2) { var t = d1; d1 = d2; d2 = t; }
-    var includeEnd = $("includeEnd").checked;
-    var days = daysBetween(d1, d2) + (includeEnd ? 1 : 0);
-    var weeks = days / 7;
-    // Years + months
-    var years = d2.getFullYear() - d1.getFullYear();
-    var months = d2.getMonth() - d1.getMonth();
-    if (d2.getDate() < d1.getDate()) months--;
-    if (months < 0) { years--; months += 12; }
-    var weekdays = countWeekdays(d1, d2) + (includeEnd ? 0 : 0);
-    var weekend = days - weekdays;
-    $("bigVal").textContent = days.toLocaleString() + " days";
-    $("dimVal").textContent = d1.toLocaleDateString() + " → " + d2.toLocaleDateString();
-    $("weeksVal").textContent = fmt(weeks, 1);
-    $("monthsVal").textContent = months;
-    $("yearsVal").textContent = years;
-    $("weekdaysVal").textContent = weekdays.toLocaleString();
-    $("weekendVal").textContent = weekend.toLocaleString();
-    $("result").classList.add("show");
-  }
-  ["date1","date2","includeEnd"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){
-    $("date1").value = new Date().toISOString().slice(0,10);
-    var d = new Date(); d.setDate(d.getDate()+30); $("date2").value = d.toISOString().slice(0,10);
-    calc();
-  });
-  // Auto-set defaults
-  var today = new Date();
-  var next = new Date(); next.setDate(next.getDate()+30);
-  $("date1").value = today.toISOString().slice(0,10);
-  $("date2").value = next.toISOString().slice(0,10);
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=new Date(t("date1").value),n=new Date(t("date2").value);if(!isNaN(e.getTime())&&!isNaN(n.getTime())){if(e>n){var a=e;e=n,n=a}var i=t("includeEnd").checked,o=function(t,e){return Math.round((e-t)/864e5)}(e,n)+(i?1:0),r=o/7,l=n.getFullYear()-e.getFullYear(),c=n.getMonth()-e.getMonth();n.getDate()<e.getDate()&&c--,c<0&&(l--,c+=12);var d=function(t,e){for(var n=0,a=new Date(t);a<=e;)0!==a.getDay()&&6!==a.getDay()&&n++,a.setDate(a.getDate()+1);return n}(e,n)+0,u=o-d;t("bigVal").textContent=o.toLocaleString()+" days",t("dimVal").textContent=e.toLocaleDateString()+" → "+n.toLocaleDateString(),t("weeksVal").textContent=function(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}(r,1),t("monthsVal").textContent=c,t("yearsVal").textContent=l,t("weekdaysVal").textContent=d.toLocaleString(),t("weekendVal").textContent=u.toLocaleString(),t("result").classList.add("show")}}["date1","date2","includeEnd"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("date1").value=(new Date).toISOString().slice(0,10);var n=new Date;n.setDate(n.getDate()+30),t("date2").value=n.toISOString().slice(0,10),e()});var n=new Date,a=new Date;a.setDate(a.getDate()+30),t("date1").value=n.toISOString().slice(0,10),t("date2").value=a.toISOString().slice(0,10),e()}();
 </script>
 </body>
 </html>

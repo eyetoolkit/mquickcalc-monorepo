@@ -122,49 +122,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-_('hUnit').addEventListener('change',function(){
-  if(this.value==='cm'){_('hCm').style.display='';_('ftWrap').style.display='none';}
-  else{_('hCm').style.display='none';_('ftWrap').style.display='flex';}
-});
-_('bmi').addEventListener('change',function(){
-  if(this.value==='custom'){_('bmiCustom').style.display='';_('bmiCustomLabel').style.display='';}
-  else{_('bmiCustom').style.display='none';_('bmiCustomLabel').style.display='none';}
-});
-function calc(){
-  var unit=_('hUnit').value;
-  var hM;
-  if(unit==='cm'){hM=(parseFloat(_('hCm').value)||175)/100;}
-  else{var ft=parseFloat(_('hFt').value)||5;var inc=parseFloat(_('hIn').value)||8;hM=(ft*12+inc)*0.0254;}
-  var target;
-  if(_('bmi').value==='custom')target=parseFloat(_('bmiCustom').value)||22;
-  else target=parseFloat(_('bmi').value);
-  var kg=target*hM*hM;
-  var lb=kg*2.20462;
-  // full BMI table
-  var cats=[
-    ["Underweight","< 18.5",18.5,"Pre-overweight"],
-    ["Normal low","18.5 – 21",21,"Pre-overweight"],
-    ["Normal middle","21 – 23",23,"Popular ideal"],
-    ["Normal high","23 – 25",25,"Upper healthy"],
-    ["Overweight","25 – 30",30,"Consult provider"],
-    ["Obese I","30 – 35",35,"Consult provider"],
-    ["Obese II","35 – 40",40,"Consult provider"]
-  ];
-  var html="<div class=\"cell\" style=\"border:2px solid #16a34a;border-radius:8px;background:#f0fdf4;\"><div class=\"lbl\" style=\"font-weight:700;\">Your target (BMI "+target+")</div><div class=\"val\" style=\"font-size:1.25em;color:#16a34a;\">"+kg.toFixed(1)+" kg</div><div class=\"dim\">"+lb.toFixed(1)+" lbs</div></div>";
-  cats.forEach(function(c){
-    var w=c[2]*hM*hM;
-    var wlb=w*2.20462;
-    html+="<div class=\"cell\"><div class=\"lbl\">"+c[0]+" ("+c[1]+")</div><div class=\"val\">"+w.toFixed(1)+" kg</div><div class=\"dim\">"+wlb.toFixed(1)+" lbs</div></div>";
-  });
-  _('bmiTable').innerHTML=html;
-  _('result').classList.add('show');
-}
-['hUnit','hCm','hFt','hIn','bmi','bmiCustom'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,300);});});
-calc();
-})();
+<script>!function(){var e=function(e){return document.getElementById(e)};function i(){var i,t;if("cm"===e("hUnit").value)i=(parseFloat(e("hCm").value)||175)/100;else{var l=parseFloat(e("hFt").value)||5,a=parseFloat(e("hIn").value)||8;i=.0254*(12*l+a)}var s=(t="custom"===e("bmi").value?parseFloat(e("bmiCustom").value)||22:parseFloat(e("bmi").value))*i*i,o=2.20462*s,d='<div class="cell" style="border:2px solid #16a34a;border-radius:8px;background:#f0fdf4;"><div class="lbl" style="font-weight:700;">Your target (BMI '+t+')</div><div class="val" style="font-size:1.25em;color:#16a34a;">'+s.toFixed(1)+' kg</div><div class="dim">'+o.toFixed(1)+" lbs</div></div>";[["Underweight","< 18.5",18.5,"Pre-overweight"],["Normal low","18.5 – 21",21,"Pre-overweight"],["Normal middle","21 – 23",23,"Popular ideal"],["Normal high","23 – 25",25,"Upper healthy"],["Overweight","25 – 30",30,"Consult provider"],["Obese I","30 – 35",35,"Consult provider"],["Obese II","35 – 40",40,"Consult provider"]].forEach(function(e){var t=e[2]*i*i,l=2.20462*t;d+='<div class="cell"><div class="lbl">'+e[0]+" ("+e[1]+')</div><div class="val">'+t.toFixed(1)+' kg</div><div class="dim">'+l.toFixed(1)+" lbs</div></div>"}),e("bmiTable").innerHTML=d,e("result").classList.add("show")}e("hUnit").addEventListener("change",function(){"cm"===this.value?(e("hCm").style.display="",e("ftWrap").style.display="none"):(e("hCm").style.display="none",e("ftWrap").style.display="flex")}),e("bmi").addEventListener("change",function(){"custom"===this.value?(e("bmiCustom").style.display="",e("bmiCustomLabel").style.display=""):(e("bmiCustom").style.display="none",e("bmiCustomLabel").style.display="none")}),["hUnit","hCm","hFt","hIn","bmi","bmiCustom"].forEach(function(t){e(t).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(i,300)})}),i()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

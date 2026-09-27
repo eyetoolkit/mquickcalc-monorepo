@@ -126,31 +126,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("weight").value)||0,r=Math.max(1,parseInt($("reps").value)||1);var orm=w*Math.pow(1.0278,r-1);var epley=w*(1+r/30);var brzycki=w*36/(37-r);$("ormVal").textContent=Math.round(orm);$("epleyVal").textContent=Math.round(epley);$("brzyckiVal").textContent=Math.round(brzycki);$("result").classList.add("show");
-  }
-  ['reps', 'weight'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {reps:'8',weight:'80'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,n=Math.max(1,parseInt(t("reps").value)||1),a=e*Math.pow(1.0278,n-1),r=e*(1+n/30),o=36*e/(37-n);t("ormVal").textContent=Math.round(a),t("epleyVal").textContent=Math.round(r),t("brzyckiVal").textContent=Math.round(o),t("result").classList.add("show")}["reps","weight"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)});var n=t("calcBtn");n&&n.addEventListener("click",e);var a=t("resetBtn");a&&a.addEventListener("click",function(){var n={reps:"8",weight:"80"};Object.keys(n).forEach(function(e){var a=t(e);a&&(a.value=n[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

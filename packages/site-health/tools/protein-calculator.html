@@ -117,35 +117,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var w = parseFloat($("weight").value) || 0;
-    var activity = parseFloat($("activity").value);
-    var goal = $("goal").value;
-    if (!w) return;
-    var rda = 0.8 * w;
-    var target = activity * w;
-    if (goal === "build") target = Math.max(target, 1.6 * w);
-    if (goal === "cut") target = Math.max(target, 1.8 * w);
-    target = Math.min(target, 2.2 * w); // safe upper
-    var upper = 2.2 * w;
-    var perMeal = target / 3;
-    $("bigVal").textContent = fmt(target, 0) + " g";
-    $("rdaVal").textContent = fmt(rda, 0) + " g";
-    $("tgtVal").textContent = fmt(target, 0) + " g";
-    $("upperVal").textContent = fmt(upper, 0) + " g";
-    $("perMeal").textContent = fmt(perMeal, 0) + " g";
-    $("result").classList.add("show");
-  }
-  ["weight", "activity", "goal"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("weight").value="70"; $("activity").value="1.2"; $("goal").value="build"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("weight").value)||0,n=parseFloat(t("activity").value),i=t("goal").value;if(a){var l=.8*a,u=n*a;"build"===i&&(u=Math.max(u,1.6*a)),"cut"===i&&(u=Math.max(u,1.8*a));var o=2.2*a,r=(u=Math.min(u,2.2*a))/3;t("bigVal").textContent=e(u,0)+" g",t("rdaVal").textContent=e(l,0)+" g",t("tgtVal").textContent=e(u,0)+" g",t("upperVal").textContent=e(o,0)+" g",t("perMeal").textContent=e(r,0)+" g",t("result").classList.add("show")}}["weight","activity","goal"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("weight").value="70",t("activity").value="1.2",t("goal").value="build",a()}),a()}();
 </script>
 </body>
 </html>

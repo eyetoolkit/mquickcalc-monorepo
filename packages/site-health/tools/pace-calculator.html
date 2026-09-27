@@ -107,78 +107,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-var writing=false;
-function parseMinColon(s){
-  if(!s)return NaN;
-  s=s.trim();
-  var parts=s.split(':');
-  if(parts.length===2)return parseFloat(parts[0])+parseFloat(parts[1])/60;
-  return parseFloat(s);
-}
-function fmtMin(n){
-  if(isNaN(n)||!isFinite(n))return "--";
-  var m=Math.floor(n);
-  var s=Math.round((n-m)*60);
-  if(s===60){m++;s=0;}
-  return m+":"+(s<10?"0":"")+s;
-}
-function fromMPM(mpm){
-  // mpm = minutes per mile
-  var mph=60/mpm;
-  var kmh=mph*1.60934;
-  var mpk=mpm/1.60934;
-  writing=true;
-  _('mpk').value=fmtMin(mpk);
-  _('mph').value=mph.toFixed(2);
-  _('kmh').value=kmh.toFixed(2);
-  writing=false;
-  // race times
-  var out="";
-  var races=[["1 km",mpk*1],["1 mile",mpm*1],["5 km",mpk*5],["10 km",mpk*10],["Half marathon (21.1 km)",mpk*21.1],["Marathon (42.2 km)",mpk*42.2]];
-  races.forEach(function(r){
-    var total=r[1];
-    var h=Math.floor(total/60);
-    var m=Math.floor(total%60);
-    var s=Math.round((total-m*60-h*60)*60);
-    if(h>0)out+=r[0]+": "+h+"h "+m+"m "+(s<10?"0":"")+s+"s | ";
-    else out+=r[0]+": "+m+":"+(s<10?"0":"")+s+" | ";
-  });
-  _('raceTimes').textContent=out;
-  // effort rating
-  var eff="";if(mpm<5)eff="Elite pace";
-  else if(mpm<6)eff="Very fast — experienced runner";
-  else if(mpm<7)eff="Fast — regular runner";
-  else if(mpm<9)eff="Moderate — casual runner";
-  else if(mpm<11)eff="Easy walk-jog";
-  else eff="Brisk walking pace";
-  _('effort').textContent="Effort level: "+eff;
-  _('result').classList.add('show');
-}
-_('mpm').addEventListener('input',function(){
-  if(writing)return;
-  var v=parseMinColon(this.value);
-  if(!isNaN(v)&&v>0)fromMPM(v);
-});
-_('mpk').addEventListener('input',function(){
-  if(writing)return;
-  var v=parseMinColon(this.value);
-  if(!isNaN(v)&&v>0)fromMPM(v*1.60934);
-});
-_('mph').addEventListener('input',function(){
-  if(writing)return;
-  var v=parseFloat(this.value);
-  if(!isNaN(v)&&v>0)fromMPM(60/v);
-});
-_('kmh').addEventListener('input',function(){
-  if(writing)return;
-  var v=parseFloat(this.value);
-  if(!isNaN(v)&&v>0)fromMPM(60/(v/1.60934));
-});
-fromMPM(parseMinColon("8:30"));
-})();
+<script>!function(){var t=function(t){return document.getElementById(t)},a=!1;function e(t){if(!t)return NaN;var a=(t=t.trim()).split(":");return 2===a.length?parseFloat(a[0])+parseFloat(a[1])/60:parseFloat(t)}function n(e){var n=60/e,r=1.60934*n,i=e/1.60934;a=!0,t("mpk").value=function(t){if(isNaN(t)||!isFinite(t))return"--";var a=Math.floor(t),e=Math.round(60*(t-a));return 60===e&&(a++,e=0),a+":"+(e<10?"0":"")+e}(i),t("mph").value=n.toFixed(2),t("kmh").value=r.toFixed(2),a=!1;var o="";[["1 km",1*i],["1 mile",1*e],["5 km",5*i],["10 km",10*i],["Half marathon (21.1 km)",21.1*i],["Marathon (42.2 km)",42.2*i]].forEach(function(t){var a=t[1],e=Math.floor(a/60),n=Math.floor(a%60),r=Math.round(60*(a-60*n-60*e));o+=e>0?t[0]+": "+e+"h "+n+"m "+(r<10?"0":"")+r+"s | ":t[0]+": "+n+":"+(r<10?"0":"")+r+" | "}),t("raceTimes").textContent=o;var u="";u=e<5?"Elite pace":e<6?"Very fast — experienced runner":e<7?"Fast — regular runner":e<9?"Moderate — casual runner":e<11?"Easy walk-jog":"Brisk walking pace",t("effort").textContent="Effort level: "+u,t("result").classList.add("show")}t("mpm").addEventListener("input",function(){if(!a){var t=e(this.value);!isNaN(t)&&t>0&&n(t)}}),t("mpk").addEventListener("input",function(){if(!a){var t=e(this.value);!isNaN(t)&&t>0&&n(1.60934*t)}}),t("mph").addEventListener("input",function(){if(!a){var t=parseFloat(this.value);!isNaN(t)&&t>0&&n(60/t)}}),t("kmh").addEventListener("input",function(){if(!a){var t=parseFloat(this.value);!isNaN(t)&&t>0&&n(60/(t/1.60934))}}),n(e("8:30"))}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

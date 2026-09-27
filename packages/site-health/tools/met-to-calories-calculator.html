@@ -136,41 +136,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-_('activity').addEventListener('change',function(){
-  var val=this.value;
-  if(val==='custom'){_('customMet').style.display='';_('customMetLabel').style.display='';}
-  else{_('customMet').style.display='none';_('customMetLabel').style.display='none';_('customMet').value=val;}
-});
-function calc(){
-  var w=parseFloat(_('weight').value)||70;
-  if(_('weightUnit').value==='lb')w=w*0.453592;
-  var act=_('activity').value;
-  var mets;
-  if(act==='custom')mets=parseFloat(_('customMet').value)||3.5;
-  else mets=parseFloat(act);
-  var dur=parseFloat(_('duration').value)||30;
-  var hrs=dur/60;
-  var cals=Math.round(mets*w*hrs);
-  _('cal').textContent=cals+" kcal";
-  _('formula').textContent=mets+" × "+w.toFixed(1)+" kg × "+hrs.toFixed(2)+" h = "+cals;
-  // quick comparisons
-  var html="";
-  var perMin=Math.round(cals/Math.max(dur,1));
-  html+="<div class=\"cell\"><div class=\"lbl\">Calories per minute</div><div class=\"val\">"+perMin+"</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Per hour</div><div class=\"val\">"+Math.round(mets*w)+" kcal</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Equivalent to walking</div><div class=\"val\">"+Math.round(cals/3.5/w*60)+" min</div></div>";
-  html+="<div class=\"cell\"><div class=\"lbl\">Equivalent to running</div><div class=\"val\">"+Math.round(cals/9/w*60)+" min</div></div>";
-  _('quick').innerHTML=html;
-  _('result').classList.add('show');
-}
-_('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){_('weightUnit').value='kg';_('weight').value='70';_('activity').value='3.5';_('customMet').value='3.5';_('duration').value='30';_('activity').dispatchEvent(new Event('change'));calc();});
-['weight','weightUnit','activity','customMet','duration'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
-calc();
-})();
+<script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e=parseFloat(t("weight").value)||70;"lb"===t("weightUnit").value&&(e*=.453592);var a,i=t("activity").value;a="custom"===i?parseFloat(t("customMet").value)||3.5:parseFloat(i);var l=parseFloat(t("duration").value)||30,n=l/60,s=Math.round(a*e*n);t("cal").textContent=s+" kcal",t("formula").textContent=a+" × "+e.toFixed(1)+" kg × "+n.toFixed(2)+" h = "+s;var v="";v+='<div class="cell"><div class="lbl">Calories per minute</div><div class="val">'+Math.round(s/Math.max(l,1))+"</div></div>",v+='<div class="cell"><div class="lbl">Per hour</div><div class="val">'+Math.round(a*e)+" kcal</div></div>",v+='<div class="cell"><div class="lbl">Equivalent to walking</div><div class="val">'+Math.round(s/3.5/e*60)+" min</div></div>",v+='<div class="cell"><div class="lbl">Equivalent to running</div><div class="val">'+Math.round(s/9/e*60)+" min</div></div>",t("quick").innerHTML=v,t("result").classList.add("show")}t("activity").addEventListener("change",function(){var e=this.value;"custom"===e?(t("customMet").style.display="",t("customMetLabel").style.display=""):(t("customMet").style.display="none",t("customMetLabel").style.display="none",t("customMet").value=e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("weightUnit").value="kg",t("weight").value="70",t("activity").value="3.5",t("customMet").value="3.5",t("duration").value="30",t("activity").dispatchEvent(new Event("change")),e()}),["weight","weightUnit","activity","customMet","duration"].forEach(function(a){t(a).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

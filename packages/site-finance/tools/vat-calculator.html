@@ -136,27 +136,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var amount = parseFloat(document.getElementById('amount').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var mode = document.getElementById('mode').value;
-    var net, gross, vat;
-    if (mode === 'add') { net = amount; gross = amount * (1 + rate); vat = gross - net; }
-    else { gross = amount; net = amount / (1 + rate); vat = gross - net; }
-    document.getElementById('vatVal').textContent = money(vat);
-    document.getElementById('netVal').textContent = money(net);
-    document.getElementById('grossVal').textContent = money(gross);
-    document.getElementById('whichLine').textContent = mode === 'add' ? 'VAT added' : 'VAT included';
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('amount').value = '100.00'; document.getElementById('rate').value = '20'; document.getElementById('mode').value = 'add'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,l=parseFloat(document.getElementById("amount").value)||0,c=(parseFloat(document.getElementById("rate").value)||0)/100,m=document.getElementById("mode").value;d="add"===m?(n=l*(1+c))-(t=l):(n=l)-(t=l/(1+c)),document.getElementById("vatVal").textContent=e(d),document.getElementById("netVal").textContent=e(t),document.getElementById("grossVal").textContent=e(n),document.getElementById("whichLine").textContent="add"===m?"VAT added":"VAT included",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("rate").value="20",document.getElementById("mode").value="add",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

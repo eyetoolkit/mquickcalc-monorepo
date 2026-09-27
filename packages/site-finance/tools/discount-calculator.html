@@ -167,37 +167,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var amount = parseFloat(document.getElementById('amount').value) || 0;
-    var disc = (Math.min(parseFloat(document.getElementById('disc').value) || 0, 100)) / 100;
-    var mode = document.getElementById('mode').value;
-    var orig, sale, discountAmt, mainLbl, mainVal, subLbl;
-    if (mode === 'sale') { orig = amount; sale = orig * (1 - disc); }
-    else { sale = amount; orig = amount / (1 - disc); }
-    discountAmt = orig - sale;
-    mainLbl = mode === 'sale' ? 'Discount of ' + (disc * 100).toFixed(2) + '% on ' + money(orig) : 'Recovering original after ' + (disc * 100).toFixed(2) + '% off ' + money(sale);
-    mainVal = money(mode === 'sale' ? sale : orig);
-    subLbl = mode === 'sale' ? 'sale price' : 'original price';
-    document.getElementById('mainLbl').textContent = mainLbl;
-    document.getElementById('mainVal').textContent = mainVal;
-    document.getElementById('subLbl').textContent = subLbl;
-    document.getElementById('discAmt').textContent = money(discountAmt);
-    document.getElementById('payVal').textContent = money(sale);
-    document.getElementById('saveVal').textContent = money(discountAmt);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('mode').addEventListener('change', function () {
-    document.getElementById('amountLbl').textContent = this.value === 'sale' ? 'Original price' : 'Discount price (what you paid)';
-  });
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('amount').value = '80.00'; document.getElementById('disc').value = '20'; document.getElementById('mode').value = 'sale'; document.getElementById('amountLbl').textContent = 'Original price'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,o,l,c,m=parseFloat(document.getElementById("amount").value)||0,a=Math.min(parseFloat(document.getElementById("disc").value)||0,100)/100,i=document.getElementById("mode").value;"sale"===i?n=(t=m)*(1-a):(n=m,t=m/(1-a)),d=t-n,o="sale"===i?"Discount of "+(100*a).toFixed(2)+"% on "+e(t):"Recovering original after "+(100*a).toFixed(2)+"% off "+e(n),l=e("sale"===i?n:t),c="sale"===i?"sale price":"original price",document.getElementById("mainLbl").textContent=o,document.getElementById("mainVal").textContent=l,document.getElementById("subLbl").textContent=c,document.getElementById("discAmt").textContent=e(d),document.getElementById("payVal").textContent=e(n),document.getElementById("saveVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("mode").addEventListener("change",function(){document.getElementById("amountLbl").textContent="sale"===this.value?"Original price":"Discount price (what you paid)"}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="80.00",document.getElementById("disc").value="20",document.getElementById("mode").value="sale",document.getElementById("amountLbl").textContent="Original price",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

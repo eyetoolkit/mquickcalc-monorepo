@@ -184,72 +184,9 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function () {
-  var cmIn = document.getElementById('cm');
-  var ftIn = document.getElementById('ft');
-  var inIn = document.getElementById('in');
-  var big = document.getElementById('mainVal');
-  var bigLbl = document.getElementById('mainUnit');
-  var outFt = document.getElementById('ftVal');
-  var outIn = document.getElementById('inVal');
-  var outM = document.getElementById('mVal');
-
-  function fmt(n) {
-    if (!isFinite(n)) return '—';
-    return Number(n.toPrecision(7)).toLocaleString('en-US', { maximumFractionDigits: 4 });
-  }
-  function paint(cm, ft, inches, totalIn) {
-    big.textContent = fmt(cm);
-    bigLbl.textContent = 'centimeters (cm)';
-    outFt.textContent = ft + ' ft ' + fmt(inches) + ' in';
-    outIn.textContent = fmt(totalIn) + ' in';
-    outM.textContent = fmt(cm / 100) + ' m';
-  }
-  function fromCm() {
-    var cm = parseFloat(cmIn.value);
-    if (isNaN(cm)) cm = 0;
-    var totalIn = cm / 2.54;
-    var ft = Math.floor(totalIn / 12);
-    var inches = totalIn - ft * 12;
-    ftIn.value = String(ft);
-    inIn.value = Number(inches.toFixed(2));
-    paint(cm, ft, inches, totalIn);
-  }
-  function toCm() {
-    var ft = parseFloat(ftIn.value) || 0;
-    var inches = parseFloat(inIn.value) || 0;
-    var totalIn = ft * 12 + inches;
-    var cm = totalIn * 2.54;
-    cmIn.value = Number(cm.toFixed(2));
-    paint(cm, ft, inches, totalIn);
-  }
-  cmIn.addEventListener('input', fromCm);
-  ftIn.addEventListener('input', toCm);
-  inIn.addEventListener('input', toCm);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    cmIn.value = '175';
-    fromCm();
-  });
-  fromCm();
-})();
+<script>!function(){var t=document.getElementById("cm"),e=document.getElementById("ft"),n=document.getElementById("in"),i=document.getElementById("mainVal"),a=document.getElementById("mainUnit"),o=document.getElementById("ftVal"),m=document.getElementById("inVal"),u=document.getElementById("mVal");function d(t){return isFinite(t)?Number(t.toPrecision(7)).toLocaleString("en-US",{maximumFractionDigits:4}):"—"}function l(t,e,n,l){i.textContent=d(t),a.textContent="centimeters (cm)",o.textContent=e+" ft "+d(n)+" in",m.textContent=d(l)+" in",u.textContent=d(t/100)+" m"}function c(){var i=parseFloat(t.value);isNaN(i)&&(i=0);var a=i/2.54,o=Math.floor(a/12),m=a-12*o;e.value=String(o),n.value=Number(m.toFixed(2)),l(i,o,m,a)}function r(){var i=parseFloat(e.value)||0,a=parseFloat(n.value)||0,o=12*i+a,m=2.54*o;t.value=Number(m.toFixed(2)),l(m,i,a,o)}t.addEventListener("input",c),e.addEventListener("input",r),n.addEventListener("input",r),document.getElementById("resetBtn").addEventListener("click",function(){t.value="175",c()}),c()}();
 </script>
-<script>
-(function() {
-  var btn = document.getElementById('embedBtn');
-  var code = document.getElementById('embedCode');
-  if(btn && code) {
-    btn.addEventListener('click', function() {
-      if(code.style.display === 'none') {
-        code.style.display = 'block';
-        btn.textContent = 'Hide embed code';
-      } else {
-        code.style.display = 'none';
-        btn.textContent = 'Show embed code';
-      }
-    });
-  }
-})();
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
 </script>
 </body>
 </html>

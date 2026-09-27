@@ -141,31 +141,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var mode=$("mode").value;var base=new Date("2000/01/01 "+$("time").value);if(isNaN(base))return;var offset=mode=="wake"?-15*90*60000:15*90*60000;var results=[];for(var i=0;i<6;i++){var d=new Date(base.getTime()+offset*(i+1));var h=d.getHours(),m=d.getMinutes(),ampm=h>=12?"PM":"AM";h=h%12||12;results.push((h<10?"0":"")+h+":"+(m<10?"0":"")+m+" "+ampm);}$("s1").textContent=results[0];$("s2").textContent=results[1];$("s3").textContent=results[2];$("s4").textContent=results[3];$("result").classList.add("show");
-  }
-  ['mode', 'time'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {time:'07:00',mode:'wake'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(){var t=e("mode").value,n=new Date("2000/01/01 "+e("time").value);if(!isNaN(n)){for(var a="wake"==t?-81e6:81e6,i=[],o=0;o<6;o++){var r=new Date(n.getTime()+a*(o+1)),s=r.getHours(),c=r.getMinutes(),u=s>=12?"PM":"AM";s=s%12||12,i.push((s<10?"0":"")+s+":"+(c<10?"0":"")+c+" "+u)}e("s1").textContent=i[0],e("s2").textContent=i[1],e("s3").textContent=i[2],e("s4").textContent=i[3],e("result").classList.add("show")}}["mode","time"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={time:"07:00",mode:"wake"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

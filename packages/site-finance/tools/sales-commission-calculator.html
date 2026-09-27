@@ -141,27 +141,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var sale = parseFloat(document.getElementById('sale').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var base = parseFloat(document.getElementById('base').value) || 0;
-    var target = parseFloat(document.getElementById('target').value) || 0;
-    var comm = sale * rate;
-    var pay = base + comm;
-    var need = target > base && rate > 0 ? (target - base) / rate : 0;
-    document.getElementById('commVal').textContent = money(comm);
-    document.getElementById('payVal').textContent = money(pay);
-    document.getElementById('needVal').textContent = (need > 0 && document.getElementById('target').value !== '') ? money(need) : '—';
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('sale').value = '1000.00'; document.getElementById('rate').value = '10'; document.getElementById('base').value = '0'; document.getElementById('target').value = '5000.00'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("sale").value)||0,n=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("base").value)||0,l=parseFloat(document.getElementById("target").value)||0,a=t*n,c=d+a,m=l>d&&n>0?(l-d)/n:0;document.getElementById("commVal").textContent=e(a),document.getElementById("payVal").textContent=e(c),document.getElementById("needVal").textContent=m>0&&""!==document.getElementById("target").value?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sale").value="1000.00",document.getElementById("rate").value="10",document.getElementById("base").value="0",document.getElementById("target").value="5000.00",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

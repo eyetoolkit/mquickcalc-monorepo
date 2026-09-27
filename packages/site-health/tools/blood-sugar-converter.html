@@ -112,39 +112,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-var MGL_TO_MMOL=1/18.0159; // Glucose molar mass
-var MMOL_TO_MGL=18.0159;
-function interpret(mg){
-  if(mg<70)return "Low blood sugar (hypoglycemia) — seek medical attention";
-  if(mg<100)return "Normal fasting range";
-  if(mg<126)return "Prediabetic range — consider lifestyle changes";
-  if(mg<200)return "Diabetic range (fasting) — consult a healthcare provider";
-  return "High blood sugar — seek medical advice";
-}
-function syncMgdl(){
-  var mg=parseFloat(_('mgdl').value);
-  if(!isNaN(mg)){
-    var mmol=mg*MGL_TO_MMOL;
-    _('mmoll').value=mmol.toFixed(2);
-    _('interpret').textContent=interpret(mg);
-  }
-}
-function syncMmol(){
-  var mmol=parseFloat(_('mmoll').value);
-  if(!isNaN(mmol)){
-    var mg=mmol*MMOL_TO_MGL;
-    _('mgdl').value=mg.toFixed(1);
-    _('interpret').textContent=interpret(mg);
-  }
-}
-_('mgdl').addEventListener('input',syncMgdl);
-_('mmoll').addEventListener('input',syncMmol);
-_('resetBtn').addEventListener('click',function(){_('mgdl').value='95';_('mmoll').value='5.28';_('interpret').textContent='Normal fasting range';});
-syncMgdl();
-})();
+<script>!function(){var e=function(e){return document.getElementById(e)},t=1/18.0159;function n(e){return e<70?"Low blood sugar (hypoglycemia) — seek medical attention":e<100?"Normal fasting range":e<126?"Prediabetic range — consider lifestyle changes":e<200?"Diabetic range (fasting) — consult a healthcare provider":"High blood sugar — seek medical advice"}function a(){var a=parseFloat(e("mgdl").value);if(!isNaN(a)){var i=a*t;e("mmoll").value=i.toFixed(2),e("interpret").textContent=n(a)}}e("mgdl").addEventListener("input",a),e("mmoll").addEventListener("input",function(){var t=parseFloat(e("mmoll").value);if(!isNaN(t)){var a=18.0159*t;e("mgdl").value=a.toFixed(1),e("interpret").textContent=n(a)}}),e("resetBtn").addEventListener("click",function(){e("mgdl").value="95",e("mmoll").value="5.28",e("interpret").textContent="Normal fasting range"}),a()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

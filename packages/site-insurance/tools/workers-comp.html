@@ -95,51 +95,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const industry = document.getElementById("industry").value;
-  const payroll = +document.getElementById("payroll").value;
-  const employees = +document.getElementById("employees").value;
-  
-  // NCCI rate per $100 of payroll (approx 2026 averages)
-  const rates = {
-    "software": 0.35, "retail": 1.85, "restaurant": 2.15,
-    "construction": 13.20, "electrical": 9.50, "landscaping": 5.40,
-    "healthcare": 3.20, "freight": 11.80
-  };
-  const rate_per_100 = rates[industry] || 2.0;
-  
-  const total_payroll = payroll * employees;
-  const premium = (total_payroll / 100) * rate_per_100;
-  const per_employee = premium / Math.max(employees, 1);
-  const monthly = premium / 12;
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">👷 Workers' Comp estimate</h3>
-    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(Math.round(premium))}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>
-    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">
-      <tr><td>Total annual payroll</td><td style="text-align:right">${currency(total_payroll)}</td></tr>
-      <tr><td>Rate per $100 payroll</td><td style="text-align:right">$${rate_per_100.toFixed(2)}</td></tr>
-      <tr><td>Cost per employee</td><td style="text-align:right">${currency(Math.round(per_employee))}/year</td></tr>
-      <tr><td>Monthly (pay-as-you-go)</td><td style="text-align:right">${currency(Math.round(monthly))}</td></tr>
-    </table>
-    <div style="margin-top:16px;padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">
-      ⚠️ Workers' compensation is <strong>legally required</strong> for businesses with employees in every state except Texas. Rates shown are industry averages — your actual rate depends on your claims history (EMR), specific class codes, and whether you use payroll integration. Class codes and rates vary by state.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=document.getElementById("industry").value,n=+document.getElementById("payroll").value,a=+document.getElementById("employees").value,r={software:.35,retail:1.85,restaurant:2.15,construction:13.2,electrical:9.5,landscaping:5.4,healthcare:3.2,freight:11.8}[t]||2,o=n*a,i=o/100*r,s=i/Math.max(a,1),d=i/12;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">👷 Workers' Comp estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(Math.round(i))}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">\n      <tr><td>Total annual payroll</td><td style="text-align:right">${e(o)}</td></tr>\n      <tr><td>Rate per $100 payroll</td><td style="text-align:right">$${r.toFixed(2)}</td></tr>\n      <tr><td>Cost per employee</td><td style="text-align:right">${e(Math.round(s))}/year</td></tr>\n      <tr><td>Monthly (pay-as-you-go)</td><td style="text-align:right">${e(Math.round(d))}</td></tr>\n    </table>\n    <div style="margin-top:16px;padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">\n      ⚠️ Workers' compensation is <strong>legally required</strong> for businesses with employees in every state except Texas. Rates shown are industry averages — your actual rate depends on your claims history (EMR), specific class codes, and whether you use payroll integration. Class codes and rates vary by state.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

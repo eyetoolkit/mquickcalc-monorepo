@@ -125,31 +125,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("waist").value)||0,h=parseFloat($("height").value)||0;if(h<=0)return;var r=w/h;var cat=r<0.4?"Too low":r<0.5?"Healthy":r<0.6?"Overweight":"Obese";var risk=r<0.5?"Lower health risk":"Increased health risk";$("rVal").textContent=r.toFixed(2);$("catVal").textContent=cat;$("riskVal").textContent=risk;$("result").classList.add("show");
-  }
-  ['height', 'waist'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {height:'175',waist:'85'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("waist").value)||0,a=parseFloat(t("height").value)||0;if(!(a<=0)){var n=e/a,i=n<.4?"Too low":n<.5?"Healthy":n<.6?"Overweight":"Obese",r=n<.5?"Lower health risk":"Increased health risk";t("rVal").textContent=n.toFixed(2),t("catVal").textContent=i,t("riskVal").textContent=r,t("result").classList.add("show")}}["height","waist"].forEach(function(a){var n=t(a);n&&n.addEventListener("input",e)});var a=t("calcBtn");a&&a.addEventListener("click",e);var n=t("resetBtn");n&&n.addEventListener("click",function(){var a={height:"175",waist:"85"};Object.keys(a).forEach(function(e){var n=t(e);n&&(n.value=a[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

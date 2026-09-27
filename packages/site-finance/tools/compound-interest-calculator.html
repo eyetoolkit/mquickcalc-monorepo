@@ -164,40 +164,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(2) + '%'; }
-
-  var periods = { daily: 365, monthly: 12, quarterly: 4, annually: 1 };
-
-  function calc() {
-    var principal = parseFloat(document.getElementById('principal').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var years = parseFloat(document.getElementById('years').value) || 0;
-    var sel = document.getElementById('freq');
-    var n = periods[sel.value] || 12;
-    var final = principal * Math.pow(1 + rate / n, n * years);
-    var interest = final - principal;
-    document.getElementById('finalVal').textContent = money(final);
-    document.getElementById('interestVal').textContent = money(interest);
-    document.getElementById('multipleVal').textContent = principal > 0 ? (final / principal).toFixed(2) + 'x' : '—';
-    document.getElementById('effRateVal').textContent = pct(Math.pow(1 + rate / n, n) - 1);
-    document.getElementById('result').classList.add('show');
-  }
-
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('principal').value = '10000';
-    document.getElementById('rate').value = '7';
-    document.getElementById('years').value = '20';
-    document.getElementById('freq').value = 'monthly';
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
-
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}var t={daily:365,monthly:12,quarterly:4,annually:1};function n(){var n=parseFloat(document.getElementById("principal").value)||0,l=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("years").value)||0,a=document.getElementById("freq"),o=t[a.value]||12,c=n*Math.pow(1+l/o,o*d),m=c-n;document.getElementById("finalVal").textContent=e(c),document.getElementById("interestVal").textContent=e(m),document.getElementById("multipleVal").textContent=n>0?(c/n).toFixed(2)+"x":"—",document.getElementById("effRateVal").textContent=function(e){return(100*e).toFixed(2)+"%"}(Math.pow(1+l/o,o)-1),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",n),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="10000",document.getElementById("rate").value="7",document.getElementById("years").value="20",document.getElementById("freq").value="monthly",n()}),n(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),n)}();
 </script>
 </body>
 </html>

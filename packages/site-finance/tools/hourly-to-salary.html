@@ -143,41 +143,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-
-  function calc() {
-    var hourly = parseFloat(document.getElementById('hourly').value) || 0;
-    var hoursPerWeek = parseFloat(document.getElementById('hours').value) || 40;
-    var weeks = parseFloat(document.getElementById('weeks').value) || 50;
-    var overtime = parseFloat(document.getElementById('overtime').value) || 0;
-    var otRate = overtime * 1.5 * hourly;
-    var annual = hourly * hoursPerWeek * weeks + otRate;
-    var monthly = annual / 12;
-    var biweekly = annual / 26;
-    var weekly = annual / 52;
-    var daily = annual / (weeks * 5);
-    document.getElementById('annualVal').textContent = money(annual);
-    document.getElementById('monthlyVal').textContent = money(monthly);
-    document.getElementById('weeklyVal').textContent = money(weekly);
-    document.getElementById('dailyVal').textContent = money(daily);
-    document.getElementById('biweeklyVal').textContent = money(biweekly);
-    document.getElementById('result').classList.add('show');
-  }
-
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('hourly').value = '25';
-    document.getElementById('hours').value = '40';
-    document.getElementById('weeks').value = '50';
-    document.getElementById('overtime').value = '0';
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
-
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("hourly").value)||0,n=parseFloat(document.getElementById("hours").value)||40,l=parseFloat(document.getElementById("weeks").value)||50,d=t*n*l+1.5*(parseFloat(document.getElementById("overtime").value)||0)*t,o=d/12,m=d/26,u=d/52,c=d/(5*l);document.getElementById("annualVal").textContent=e(d),document.getElementById("monthlyVal").textContent=e(o),document.getElementById("weeklyVal").textContent=e(u),document.getElementById("dailyVal").textContent=e(c),document.getElementById("biweeklyVal").textContent=e(m),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("hourly").value="25",document.getElementById("hours").value="40",document.getElementById("weeks").value="50",document.getElementById("overtime").value="0",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

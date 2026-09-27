@@ -94,68 +94,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const start_age = +document.getElementById("current_age").value;
-  const benefit_age = +document.getElementById("coverage_age").value;
-  const daily = +document.getElementById("benefit").value;
-  const years = document.getElementById("years").value;
-  
-  // Base rates (2026, 55yo, $200/day, 4-yr, couple discount)
-  const base_at_55 = 1800;
-  const base_at_65 = 3800;
-  
-  // Age interpolation
-  let rate_55 = base_at_55;
-  let rate_current = rate_55 * Math.pow(1.07, start_age - 55);
-  let rate_65 = base_at_65;
-  
-  // Benefit multiplier
-  const benefitMult = daily / 200;
-  
-  // Period multiplier
-  const periodMult = {"2":0.7,"3":0.85,"4":1.0,"5":1.15,"lifetime":2.5};
-  
-  let annual_now = Math.round(rate_current * benefitMult * (periodMult[years] || 1.0));
-  let annual_if_wait = Math.round(rate_65 * benefitMult * (periodMult[years] || 1.0));
-  
-  const monthly_now = Math.round(annual_now / 12);
-  const monthly_wait = Math.round(annual_if_wait / 12);
-  const savings_per_year = annual_if_wait - annual_now;
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">🏥 LTC insurance estimate</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-      <div style="padding:12px;border:2px solid var(--ok);border-radius:var(--radius-md);background:var(--ok-bg)">
-        <div style="font-size:13px;color:var(--muted)">If you start now (age ${start_age})</div>
-        <div style="font-size:22px;font-weight:var(--fw-black);color:var(--ok)">${currency(monthly_now)}<span style="font-size:12px;color:var(--muted)">/mo</span></div>
-        <div style="font-size:13px;color:var(--muted)">${currency(annual_now)}/year</div>
-      </div>
-      <div style="padding:12px;border:1px solid var(--line);border-radius:var(--radius-md)">
-        <div style="font-size:13px;color:var(--muted)">If you wait until 65</div>
-        <div style="font-size:22px;font-weight:var(--fw-black)">${currency(monthly_wait)}<span style="font-size:12px;color:var(--muted)">/mo</span></div>
-        <div style="font-size:13px;color:var(--muted)">${currency(annual_if_wait)}/year</div>
-      </div>
-    </div>
-    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">
-      <p style="margin:0"><strong>Early-bird savings:</strong> Buy at ${start_age} vs wait until 65 saves you <strong>${currency(savings_per_year)}/year</strong>.</p>
-      <p style="margin:4px 0">Over 30 years of premiums, that's <strong>${currency(savings_per_year * 30)}</strong> — not counting growth you'd have if you invested the difference.</p>
-      <p style="margin:4px 0;color:var(--muted)">⚠️ And buying younger means better health ratings — if you develop a condition by 55+ you might get denied or charged even more.</p>
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function e(e,t){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:t||0,maximumFractionDigits:t||0})}function t(t){return"$"+e(t,0)}function n(){const e=+document.getElementById("current_age").value,n=(document.getElementById("coverage_age").value,+document.getElementById("benefit").value),o=document.getElementById("years").value;let i=1800*Math.pow(1.07,e-55);const r=n/200,d={2:.7,3:.85,4:1,5:1.15,lifetime:2.5};let a=Math.round(i*r*(d[o]||1)),s=Math.round(3800*r*(d[o]||1));const l=Math.round(a/12),u=Math.round(s/12),v=s-a;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">🏥 LTC insurance estimate</h3>\n    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">\n      <div style="padding:12px;border:2px solid var(--ok);border-radius:var(--radius-md);background:var(--ok-bg)">\n        <div style="font-size:13px;color:var(--muted)">If you start now (age ${e})</div>\n        <div style="font-size:22px;font-weight:var(--fw-black);color:var(--ok)">${t(l)}<span style="font-size:12px;color:var(--muted)">/mo</span></div>\n        <div style="font-size:13px;color:var(--muted)">${t(a)}/year</div>\n      </div>\n      <div style="padding:12px;border:1px solid var(--line);border-radius:var(--radius-md)">\n        <div style="font-size:13px;color:var(--muted)">If you wait until 65</div>\n        <div style="font-size:22px;font-weight:var(--fw-black)">${t(u)}<span style="font-size:12px;color:var(--muted)">/mo</span></div>\n        <div style="font-size:13px;color:var(--muted)">${t(s)}/year</div>\n      </div>\n    </div>\n    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n      <p style="margin:0"><strong>Early-bird savings:</strong> Buy at ${e} vs wait until 65 saves you <strong>${t(v)}/year</strong>.</p>\n      <p style="margin:4px 0">Over 30 years of premiums, that's <strong>${t(30*v)}</strong> — not counting growth you'd have if you invested the difference.</p>\n      <p style="margin:4px 0;color:var(--muted)">⚠️ And buying younger means better health ratings — if you develop a condition by 55+ you might get denied or charged even more.</p>\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

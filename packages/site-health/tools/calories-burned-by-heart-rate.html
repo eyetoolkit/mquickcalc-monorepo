@@ -156,41 +156,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function calc() {
-    var sex = document.getElementById('sex').value;
-    var age = parseFloat(document.getElementById('age').value) || 0;
-    var weight = parseFloat(document.getElementById('weight').value) || 0;
-    var hr = parseFloat(document.getElementById('hr').value) || 0;
-    var duration = parseFloat(document.getElementById('duration').value) || 0;
-    var kcal;
-    if (sex === 'male') {
-      kcal = (-55.0969 + 0.6309 * hr + 0.1988 * weight + 0.2017 * age) * duration / 4.184;
-    } else {
-      kcal = (-20.4022 + 0.4472 * hr - 0.1263 * weight + 0.074 * age) * duration / 4.184;
-    }
-    kcal = Math.max(0, kcal);
-    var perMin = duration > 0 ? kcal / duration : 0;
-    var walk = perMin / 4;
-    document.getElementById('kcalVal').textContent = Math.round(kcal);
-    document.getElementById('perMinVal').textContent = perMin.toFixed(1);
-    document.getElementById('walkVal').textContent = walk.toFixed(1) + ' min';
-    document.getElementById('result').classList.add('show');
-  }
-
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('sex').value = 'male';
-    document.getElementById('age').value = '30';
-    document.getElementById('weight').value = '70';
-    document.getElementById('hr').value = '140';
-    document.getElementById('duration').value = '30';
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(){var e,t=document.getElementById("sex").value,n=parseFloat(document.getElementById("age").value)||0,d=parseFloat(document.getElementById("weight").value)||0,l=parseFloat(document.getElementById("hr").value)||0,a=parseFloat(document.getElementById("duration").value)||0;e="male"===t?(.6309*l-55.0969+.1988*d+.2017*n)*a/4.184:(.4472*l-20.4022-.1263*d+.074*n)*a/4.184,e=Math.max(0,e);var m=a>0?e/a:0,o=m/4;document.getElementById("kcalVal").textContent=Math.round(e),document.getElementById("perMinVal").textContent=m.toFixed(1),document.getElementById("walkVal").textContent=o.toFixed(1)+" min",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sex").value="male",document.getElementById("age").value="30",document.getElementById("weight").value="70",document.getElementById("hr").value="140",document.getElementById("duration").value="30",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
 </body>
 </html>

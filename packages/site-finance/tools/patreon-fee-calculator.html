@@ -145,38 +145,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var income = parseFloat(document.getElementById('income').value) || 0;
-    var plat = (parseFloat(document.getElementById('plat').value) || 0) / 100;
-    var paypct = (parseFloat(document.getElementById('paypct').value) || 0) / 100;
-    var payflat = parseFloat(document.getElementById('payflat').value) || 0;
-    var txcount = Math.max(parseInt(document.getElementById('txcount').value, 10) || 0, 0);
-    var platFee = income * plat;
-    var payFee = income * paypct + payflat * txcount;
-    var total = platFee + payFee;
-    var net = income - total;
-    document.getElementById('netVal').textContent = money(net);
-    document.getElementById('platVal').textContent = money(platFee);
-    document.getElementById('payVal').textContent = money(payFee);
-    document.getElementById('totVal').textContent = money(total);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('income').value = '1000.00';
-    document.getElementById('plat').value = '5';
-    document.getElementById('paypct').value = '2.9';
-    document.getElementById('payflat').value = '0.30';
-    document.getElementById('txcount').value = '100';
-    calc();
-  });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("income").value)||0,n=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("paypct").value)||0)/100)+(parseFloat(document.getElementById("payflat").value)||0)*Math.max(parseInt(document.getElementById("txcount").value,10)||0,0),d=n+l,a=t-d;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(n),document.getElementById("payVal").textContent=e(l),document.getElementById("totVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("income").value="1000.00",document.getElementById("plat").value="5",document.getElementById("paypct").value="2.9",document.getElementById("payflat").value="0.30",document.getElementById("txcount").value="100",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

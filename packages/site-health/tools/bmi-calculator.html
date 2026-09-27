@@ -168,31 +168,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("weight").value)||0,h=(parseFloat($("height").value)||0)/100,bmi=w/(h*h),cat="";if(bmi<18.5)cat="Underweight";else if(bmi<25)cat="Normal weight";else if(bmi<30)cat="Overweight";else cat="Obese";var range="";if(bmi<18.5)range="18.5 —24.9";else if(bmi<25)range="18.5 —24.9";else if(bmi<30)range="25 —29.9";else range="30+";$("bmiVal").textContent=bmi.toFixed(1);$("catVal").textContent=cat;$("rangeVal").textContent=range;var meter=$("bmiMeter");if(meter){meter.setAttribute("data-value",bmi.toFixed(1));}if(window.__renderMeters)window.__renderMeters();$("result").classList.add("show");
-  }
-  ['height', 'weight'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {height:'175',weight:'70'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(){var t=parseFloat(e("weight").value)||0,n=(parseFloat(e("height").value)||0)/100,a=t/(n*n),r="";r=a<18.5?"Underweight":a<25?"Normal weight":a<30?"Overweight":"Obese";var i="";i=a<18.5||a<25?"18.5 —24.9":a<30?"25 —29.9":"30+",e("bmiVal").textContent=a.toFixed(1),e("catVal").textContent=r,e("rangeVal").textContent=i;var o=e("bmiMeter");o&&o.setAttribute("data-value",a.toFixed(1)),window.__renderMeters&&window.__renderMeters(),e("result").classList.add("show")}["height","weight"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={height:"175",weight:"70"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

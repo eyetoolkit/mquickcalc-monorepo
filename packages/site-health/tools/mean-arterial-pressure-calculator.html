@@ -106,34 +106,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-function calc(){
-  var s=parseFloat(_('systolic').value)||120;
-  var d=parseFloat(_('diastolic').value)||80;
-  var map=Math.round((2*d+s)/3);
-  var pp=s-d;
-  var mapCls="";if(map<60)mapCls="Low — may cause dizziness";
-  else if(map<70)mapCls="Borderline low";
-  else if(map<100)mapCls="Normal range";
-  else if(map<110)mapCls="Elevated";
-  else mapCls="High — consult a healthcare provider";
-  var ppCls="";if(pp<30)ppCls="Narrow — check valve function";
-  else if(pp<=40)ppCls="Normal";
-  else if(pp<=60)ppCls="Wider than normal";
-  else ppCls="Wide — may indicate arterial stiffness";
-  _('mapVal').textContent=map+" mmHg";
-  _('ppVal').textContent=pp+" mmHg";
-  _('mapClass').textContent=mapCls;
-  _('ppClass').textContent=ppCls;
-  _('result').classList.add('show');
-}
-_('calcBtn').addEventListener('click',calc);
-_('resetBtn').addEventListener('click',function(){_('systolic').value="120";_('diastolic').value="80";calc();});
-['systolic','diastolic'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,400);});});
-calc();
-})();
+<script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e=parseFloat(t("systolic").value)||120,a=parseFloat(t("diastolic").value)||80,n=Math.round((2*a+e)/3),i=e-a,o="";o=n<60?"Low — may cause dizziness":n<70?"Borderline low":n<100?"Normal range":n<110?"Elevated":"High — consult a healthcare provider";var l="";l=i<30?"Narrow — check valve function":i<=40?"Normal":i<=60?"Wider than normal":"Wide — may indicate arterial stiffness",t("mapVal").textContent=n+" mmHg",t("ppVal").textContent=i+" mmHg",t("mapClass").textContent=o,t("ppClass").textContent=l,t("result").classList.add("show")}t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("systolic").value="120",t("diastolic").value="80",e()}),["systolic","diastolic"].forEach(function(a){t(a).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

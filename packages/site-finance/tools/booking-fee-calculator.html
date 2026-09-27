@@ -118,33 +118,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var price = parseFloat($("price").value) || 0;
-    var nights = parseFloat($("nights").value) || 0;
-    var comm = parseFloat($("commission").value) / 100;
-    var tax = parseFloat($("tax").value) / 100;
-    var gross = price * nights;
-    var commFee = gross * comm;
-    var taxAmt = (gross - commFee) * tax;
-    var net = gross - commFee - taxAmt;
-    var eff = gross > 0 ? ((commFee + taxAmt) / gross) * 100 : 0;
-    $("netVal").textContent = "$" + fmt(net, 2);
-    $("grossVal").textContent = "$" + fmt(gross, 2);
-    $("commVal").textContent = "$" + fmt(commFee, 2);
-    $("taxVal").textContent = "$" + fmt(taxAmt, 2);
-    $("effVal").textContent = fmt(eff, 2) + "%";
-    $("result").classList.add("show");
-  }
-  ["price","nights","commission","tax"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("price").value="200"; $("nights").value="3"; $("commission").value="18"; $("tax").value="0"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n=(parseFloat(t("price").value)||0)*(parseFloat(t("nights").value)||0),a=n*(parseFloat(t("commission").value)/100),i=(n-a)*(parseFloat(t("tax").value)/100),o=n-a-i,s=n>0?(a+i)/n*100:0;t("netVal").textContent="$"+e(o,2),t("grossVal").textContent="$"+e(n,2),t("commVal").textContent="$"+e(a,2),t("taxVal").textContent="$"+e(i,2),t("effVal").textContent=e(s,2)+"%",t("result").classList.add("show")}["price","nights","commission","tax"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("price").value="200",t("nights").value="3",t("commission").value="18",t("tax").value="0",n()}),n()}();
 </script>
 </body>
 </html>

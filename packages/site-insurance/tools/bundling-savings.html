@@ -94,55 +94,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const auto = +document.getElementById("auto_premium").value;
-  const home = +document.getElementById("home_premium").value;
-  const bundled = document.getElementById("bundled_now").value;
-  
-  if (bundled === "yes") {
-    document.getElementById("result").innerHTML = `
-      <h3 style="margin:0 0 12px">📦 You're already bundled!</h3>
-      <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>
-    `;
-    document.getElementById("result").classList.add("show"); return;
-  }
-  
-  const total_current = auto + home;
-  const discount_rates = [0.10, 0.12, 0.15]; // 10%, 12%, 15%
-  const low_savings = Math.round(total_current * discount_rates[0]);
-  const mid_savings = Math.round(total_current * discount_rates[1]);
-  const high_savings = Math.round(total_current * discount_rates[2]);
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>
-    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
-      <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${currency(total_current)}</td></tr>
-      <tr><td>Auto premium</td><td style="text-align:right">${currency(auto)}</td></tr>
-      <tr><td>Home premium</td><td style="text-align:right">${currency(home)}</td></tr>
-    </table>
-    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm)">
-      <div style="font-size:14px;color:var(--muted);margin-bottom:4px">Estimated annual savings (10-15% typical)</div>
-      <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(low_savings)} – ${currency(high_savings)}</div>
-      <div style="font-size:13px;color:var(--muted)">Save ${currency(Math.round(low_savings/12))} – ${currency(Math.round(high_savings/12))} per month</div>
-    </div>
-    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">
-      💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=+document.getElementById("auto_premium").value,n=+document.getElementById("home_premium").value;if("yes"===document.getElementById("bundled_now").value)return document.getElementById("result").innerHTML="\n      <h3 style=\"margin:0 0 12px\">📦 You're already bundled!</h3>\n      <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>\n    ",void document.getElementById("result").classList.add("show");const r=t+n,i=[.1,.12,.15],o=Math.round(r*i[0]),d=(Math.round(r*i[1]),Math.round(r*i[2]));document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${e(r)}</td></tr>\n      <tr><td>Auto premium</td><td style="text-align:right">${e(t)}</td></tr>\n      <tr><td>Home premium</td><td style="text-align:right">${e(n)}</td></tr>\n    </table>\n    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm)">\n      <div style="font-size:14px;color:var(--muted);margin-bottom:4px">Estimated annual savings (10-15% typical)</div>\n      <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(o)} – ${e(d)}</div>\n      <div style="font-size:13px;color:var(--muted)">Save ${e(Math.round(o/12))} – ${e(Math.round(d/12))} per month</div>\n    </div>\n    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

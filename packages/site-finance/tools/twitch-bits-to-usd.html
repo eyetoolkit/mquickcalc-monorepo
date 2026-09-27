@@ -129,27 +129,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function convert() {
-    const bits = Math.max(parseInt(document.getElementById('bits').value, 10) || 0, 0);
-    const usd = bits / 100;
-    const per100 = Math.max(parseFloat(document.getElementById('buy').value) || 0, 0);
-    const fmt = function (n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); };
-    document.getElementById('usdVal').textContent = fmt(usd);
-    // viewer cost uses the editable purchase rate (100 bits often costs more than $1);
-    // streamer payout stays tied to the $0.01-per-bit value.
-    document.getElementById('costVal').textContent = fmt(usd * per100);
-    document.getElementById('rateLbl').textContent = fmt(per100);
-    document.getElementById('streamerVal').textContent = fmt(usd);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', convert);
-  document.getElementById('buy').addEventListener('input', convert);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('bits').value = '1000'; document.getElementById('buy').value = '1.40'; convert(); });
-  convert();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), convert);
-})();
+<script>!function(){function e(){const e=Math.max(parseInt(document.getElementById("bits").value,10)||0,0)/100,t=Math.max(parseFloat(document.getElementById("buy").value)||0,0),n=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("usdVal").textContent=n(e),document.getElementById("costVal").textContent=n(e*t),document.getElementById("rateLbl").textContent=n(t),document.getElementById("streamerVal").textContent=n(e),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("buy").addEventListener("input",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("bits").value="1000",document.getElementById("buy").value="1.40",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
 </body>
 </html>

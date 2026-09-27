@@ -134,31 +134,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var c=parseFloat($("calories").value)||2000,p=parseFloat($("protein").value)||30,carb=parseFloat($("carbs").value)||40,f=parseFloat($("fat").value)||30;var ptot=p+carb+f;if(ptot!==100){p=p/ptot*100;carb=carb/ptot*100;f=f/ptot*100;}$("proVal").textContent=Math.round(c*p/100/4)+"g ("+p+"%)";$("carbVal").textContent=Math.round(c*carb/100/4)+"g ("+carb+"%)";$("fatVal").textContent=Math.round(c*f/100/9)+"g ("+f+"%)";$("result").classList.add("show");
-  }
-  ['calories', 'carbs', 'fat', 'protein'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {calories:'2000',protein:'30',carbs:'40',fat:'30'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function a(){var a=parseFloat(t("calories").value)||2e3,e=parseFloat(t("protein").value)||30,n=parseFloat(t("carbs").value)||40,r=parseFloat(t("fat").value)||30,o=e+n+r;100!==o&&(e=e/o*100,n=n/o*100,r=r/o*100),t("proVal").textContent=Math.round(a*e/100/4)+"g ("+e+"%)",t("carbVal").textContent=Math.round(a*n/100/4)+"g ("+n+"%)",t("fatVal").textContent=Math.round(a*r/100/9)+"g ("+r+"%)",t("result").classList.add("show")}["calories","carbs","fat","protein"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)});var e=t("calcBtn");e&&e.addEventListener("click",a);var n=t("resetBtn");n&&n.addEventListener("click",function(){var e={calories:"2000",protein:"30",carbs:"40",fat:"30"};Object.keys(e).forEach(function(a){var n=t(a);n&&(n.value=e[a])}),a()}),a()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

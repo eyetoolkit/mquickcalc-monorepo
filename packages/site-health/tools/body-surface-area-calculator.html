@@ -121,55 +121,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-_('hUnit').addEventListener('change',function(){
-  if(this.value==='cm'){_('hCm').style.display='';_('ftWrap').style.display='none';}
-  else{_('hCm').style.display='none';_('ftWrap').style.display='flex';}
-});
-function calc(){
-  var hCm;
-  if(_('hUnit').value==='cm'){hCm=parseFloat(_('hCm').value)||170;}
-  else{var ft=parseFloat(_('hFt').value)||5;var inc=parseFloat(_('hIn').value)||7;hCm=(ft*12+inc)*2.54;}
-  var wKg=parseFloat(_('weight').value)||65;
-  if(_('wUnit').value==='lb')wKg=wKg*0.453592;
-  var hIn=hCm/2.54;
-  var wLb=wKg*2.20462;
-  // Du Bois (1916): most cited, good for adults
-  var dubois=0.007184*Math.pow(wKg,0.425)*Math.pow(hCm,0.725);
-  // Mosteller (1987): very simple, popular
-  var mosteller=Math.sqrt((hCm*wKg)/3600);
-  // Haycock (1978): good for children to adults
-  var haycock=0.024265*Math.pow(wKg,0.5378)*Math.pow(hCm,0.3964);
-  // Gehan-George (1970): simple, good all ages
-  var gehan=0.0235*Math.pow(hCm,0.42246)*Math.pow(wKg,0.51456);
-  // Boyd (1935): older, includes children
-  var boyd=0.0003207*Math.pow(hCm,0.3)*Math.pow(wLb,0.7285-(0.0188*Math.log(wLb)));
-  var avg=(dubois+mosteller+haycock+gehan+boyd)/5;
-  var html="";
-  var results=[
-    ["Du Bois (standard)",dubois,"Most widely cited formula"],
-    ["Mosteller (simple)",mosteller,"Easy to calculate"],
-    ["Haycock",haycock,"Good for all ages"],
-    ["Gehan-George",gehan,"Good for children"],
-    ["Boyd",boyd,"Older formula, includes children"]
-  ];
-  results.forEach(function(r){
-    var highlight=r[0].indexOf("Du Bois")>=0;
-    html += '<div class="cell' + (highlight?' highlight':'') + '">';
-    html += '<div class="lbl" style="font-weight:' + (highlight?'700':'500') + '">' + r[0] + '</div>';
-    html += '<div class="val">' + r[1].toFixed(3) + ' m²</div>';
-    html += '<div class="dim">' + r[2] + '</div>';
-    html += '</div>';
-  });
-  _('bsaGrid').innerHTML=html;
-  _('avgLine').textContent="Average BSA: "+avg.toFixed(3)+" m² = "+(avg*10.7639).toFixed(1)+" ft²";
-  _('result').classList.add('show');
-}
-['hUnit','hCm','hFt','hIn','weight','wUnit'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,300);});});
-calc();
-})();
+<script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e;"cm"===t("hUnit").value?e=parseFloat(t("hCm").value)||170:e=2.54*(12*(parseFloat(t("hFt").value)||5)+(parseFloat(t("hIn").value)||7));var a=parseFloat(t("weight").value)||65;"lb"===t("wUnit").value&&(a*=.453592);var i=2.20462*a,l=.007184*Math.pow(a,.425)*Math.pow(e,.725),o=Math.sqrt(e*a/3600),n=.024265*Math.pow(a,.5378)*Math.pow(e,.3964),s=.0235*Math.pow(e,.42246)*Math.pow(a,.51456),d=3207e-7*Math.pow(e,.3)*Math.pow(i,.7285-.0188*Math.log(i)),h=(l+o+n+s+d)/5,r="";[["Du Bois (standard)",l,"Most widely cited formula"],["Mosteller (simple)",o,"Easy to calculate"],["Haycock",n,"Good for all ages"],["Gehan-George",s,"Good for children"],["Boyd",d,"Older formula, includes children"]].forEach(function(t){var e=t[0].indexOf("Du Bois")>=0;r+='<div class="cell'+(e?" highlight":"")+'">',r+='<div class="lbl" style="font-weight:'+(e?"700":"500")+'">'+t[0]+"</div>",r+='<div class="val">'+t[1].toFixed(3)+" m²</div>",r+='<div class="dim">'+t[2]+"</div>",r+="</div>"}),t("bsaGrid").innerHTML=r,t("avgLine").textContent="Average BSA: "+h.toFixed(3)+" m² = "+(10.7639*h).toFixed(1)+" ft²",t("result").classList.add("show")}t("hUnit").addEventListener("change",function(){"cm"===this.value?(t("hCm").style.display="",t("ftWrap").style.display="none"):(t("hCm").style.display="none",t("ftWrap").style.display="flex")}),["hUnit","hCm","hFt","hIn","weight","wUnit"].forEach(function(a){t(a).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,300)})}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

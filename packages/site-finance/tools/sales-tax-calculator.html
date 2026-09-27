@@ -176,38 +176,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var amount = parseFloat(document.getElementById('amount').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var inclusive = document.getElementById('mode').checked;
-    var firstLine, secondVal, secondLbl, tax, pre, total;
-    if (!inclusive) {
-      tax = amount * rate; total = amount + tax; pre = amount;
-      firstLine = 'Adding ' + (rate * 100).toFixed(2) + '% tax to ' + money(amount);
-      secondVal = money(total); secondLbl = 'total including tax';
-    } else {
-      pre = amount / (1 + rate); tax = amount - pre; total = amount;
-      firstLine = 'Backing ' + (rate * 100).toFixed(2) + '% tax out of ' + money(amount);
-      secondVal = money(pre); secondLbl = 'pre-tax amount';
-    }
-    document.getElementById('firstLine').textContent = firstLine;
-    document.getElementById('secondVal').textContent = secondVal;
-    document.getElementById('secondLbl').textContent = secondLbl;
-    document.getElementById('taxVal').textContent = money(tax);
-    document.getElementById('preVal').textContent = money(pre);
-    document.getElementById('totalVal').textContent = money(total);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('state').addEventListener('change', function () { if (this.value !== '') document.getElementById('rate').value = this.value; });
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('amount').value = '100.00'; document.getElementById('rate').value = '8.25'; document.getElementById('mode').checked = false; document.getElementById('state').value = '8.25'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,o,c,l,a=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;document.getElementById("mode").checked?(o=a-(c=a/(1+m)),l=a,t="Backing "+(100*m).toFixed(2)+"% tax out of "+e(a),n=e(c),d="pre-tax amount"):(l=a+(o=a*m),c=a,t="Adding "+(100*m).toFixed(2)+"% tax to "+e(a),n=e(l),d="total including tax"),document.getElementById("firstLine").textContent=t,document.getElementById("secondVal").textContent=n,document.getElementById("secondLbl").textContent=d,document.getElementById("taxVal").textContent=e(o),document.getElementById("preVal").textContent=e(c),document.getElementById("totalVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("state").addEventListener("change",function(){""!==this.value&&(document.getElementById("rate").value=this.value)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("rate").value="8.25",document.getElementById("mode").checked=!1,document.getElementById("state").value="8.25",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

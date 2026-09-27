@@ -90,57 +90,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const home_value = +document.getElementById("home_value").value;
-  const investments = +document.getElementById("investments").value;
-  const cash = +document.getElementById("cash").value;
-  const other = +document.getElementById("other").value;
-  const income = +document.getElementById("income").value;
-  const current_auto = +document.getElementById("current_auto").value;
-  
-  const total_assets = home_value + investments + cash + other;
-  const minimum_umbrella = Math.max(total_assets, income * 5);
-  
-  let recommended;
-  if (minimum_umbrella <= 500000) recommended = 1000000;
-  else if (minimum_umbrella <= 1500000) recommended = 2000000;
-  else if (minimum_umbrella <= 3000000) recommended = 3000000;
-  else recommended = Math.ceil(minimum_umbrella / 1000000) * 1000000;
-  
-  const annual_cost = recommended / 1000000 * 200;
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">☂️ Your recommended umbrella coverage</h3>
-    <div style="font-size:32px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${currency(recommended)}</div>
-    <div style="color:var(--muted);margin-bottom:16px">Estimated annual cost: <strong>${currency(annual_cost)}</strong> (≈$17/month per $1M)</div>
-    <details>
-      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">How we got here</summary>
-      <table class="conv-table" style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">
-        <tr><td>Total assets</td><td style="text-align:right">${currency(total_assets)}</td></tr>
-        <tr><td>Annual income × 5</td><td style="text-align:right">${currency(income*5)}</td></tr>
-        <tr><td><strong>Need to protect</strong></td><td style="text-align:right"><strong>${currency(minimum_umbrella)}</strong></td></tr>
-        <tr><td>Current auto liability</td><td style="text-align:right">${currency(current_auto)}</td></tr>
-        <tr><td>Suggested umbrella</td><td style="text-align:right;font-weight:600">${currency(recommended)}</td></tr>
-      </table>
-    </details>
-    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
-      ⚠️ Umbrella coverage is <strong>not cheap</strong> — expect $150-350/year for $1M. You must have both auto and homeowners (or renters) insurance first; umbrella rides on top. It's worth it if you have significant assets to protect from lawsuits.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=+document.getElementById("home_value").value,n=+document.getElementById("investments").value,r=+document.getElementById("cash").value,o=+document.getElementById("other").value,a=+document.getElementById("income").value,d=+document.getElementById("current_auto").value,i=t+n+r+o,l=Math.max(i,5*a);let s;s=l<=5e5?1e6:l<=15e5?2e6:l<=3e6?3e6:1e6*Math.ceil(l/1e6);const m=s/1e6*200;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">☂️ Your recommended umbrella coverage</h3>\n    <div style="font-size:32px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${e(s)}</div>\n    <div style="color:var(--muted);margin-bottom:16px">Estimated annual cost: <strong>${e(m)}</strong> (≈$17/month per $1M)</div>\n    <details>\n      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">How we got here</summary>\n      <table class="conv-table" style="width:100%;margin-top:10px;font-size:14px;border-collapse:collapse">\n        <tr><td>Total assets</td><td style="text-align:right">${e(i)}</td></tr>\n        <tr><td>Annual income × 5</td><td style="text-align:right">${e(5*a)}</td></tr>\n        <tr><td><strong>Need to protect</strong></td><td style="text-align:right"><strong>${e(l)}</strong></td></tr>\n        <tr><td>Current auto liability</td><td style="text-align:right">${e(d)}</td></tr>\n        <tr><td>Suggested umbrella</td><td style="text-align:right;font-weight:600">${e(s)}</td></tr>\n      </table>\n    </details>\n    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n      ⚠️ Umbrella coverage is <strong>not cheap</strong> — expect $150-350/year for $1M. You must have both auto and homeowners (or renters) insurance first; umbrella rides on top. It's worth it if you have significant assets to protect from lawsuits.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

@@ -107,66 +107,8 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  var U = [["Lmin", "Liter per minute (L/min)", 1.0], ["Lh", "Liter per hour (L/h)", 1/60], ["galmin_us", "Gallon (US) per minute", 3.7854], ["galmin_uk", "Gallon (UK) per minute", 4.5461], ["m3h", "Cubic meter per hour", 16.6667], ["CFM", "Cubic foot per minute (CFM)", 28.3168], ["in3s", "Cubic inch per second", 0.016387]];
-  var inp=document.getElementById('val'), sel=document.getElementById('from'), tb=document.getElementById('rows'), big=document.getElementById('mainVal'), bigLbl=document.getElementById('mainUnit'), note=document.getElementById('convNote');
-  function fmt(n){if(!isFinite(n))return '—';if(n===0)return '0';return Number(n.toPrecision(8)).toLocaleString('en-US',{maximumFractionDigits:8})}
-  function factorOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][2];return 1}
-  function labelOf(id){for(var i=0;i<U.length;i++)if(U[i][0]===id)return U[i][1];return id}
-  function symOf(id){var l=labelOf(id);var m=/\(([^)]+)\)\s*$/.exec(l);var s=m?m[1].trim():l;var c=s.indexOf(',');return c>0?s.slice(0,c):s}
-  var PRI='Lmin', ALT='galmin_us';
-  var PAIRS = {"Lmin": "galmin_us", "galmin_us": "Lmin", "m3h": "CFM"};
-  function render(){
-    var v=parseFloat(inp.value)||0, from=sel.value;
-    var base=v*factorOf(from);
-    var rows='';
-    for(var i=0;i<U.length;i++){
-      var id=U[i][0], out=base/U[i][2], isFrom=(id===from);
-      rows += '<tr'+(isFrom?' class="is-from"':'')+'><td>'+U[i][1]+'</td><td><strong>'+fmt(out)+'</strong></td></tr>';
-    }
-    tb.innerHTML=rows;
-    var target=PAIRS[from]||((from===PRI)?ALT:PRI);
-    big.textContent = fmt(base/factorOf(target));
-    bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
-    if(note) note.textContent='Converting from '+labelOf(from)+'. Change the unit to convert the other way.';
-  }
-  inp.addEventListener('input',render); sel.addEventListener('change',render);
-  document.getElementById('resetBtn').addEventListener('click',function(){inp.value='1';sel.value='Lmin';render()});
-  // URL param support: /{topic}/{from}-to-{to} redirects here
-  (function(){
-    var q=new URLSearchParams(window.location.search);
-    var fromParam=q.get('from');
-    var sel=document.getElementById('from');
-    if(sel && fromParam){
-      var opts=sel.getElementsByTagName('option');
-      for(var i=0;i<opts.length;i++){
-        if(opts[i].value===fromParam){
-          sel.value=fromParam;
-          sel.dispatchEvent(new Event('change'));
-          break;
-        }
-      }
-    }
-  })();
-  render();
-})();
+<script>!function(){var e=[["Lmin","Liter per minute (L/min)",1],["Lh","Liter per hour (L/h)",1/60],["galmin_us","Gallon (US) per minute",3.7854],["galmin_uk","Gallon (UK) per minute",4.5461],["m3h","Cubic meter per hour",16.6667],["CFM","Cubic foot per minute (CFM)",28.3168],["in3s","Cubic inch per second",.016387]],n=document.getElementById("val"),t=document.getElementById("from"),r=document.getElementById("rows"),i=document.getElementById("mainVal"),o=document.getElementById("mainUnit"),a=document.getElementById("convNote");function m(e){return isFinite(e)?0===e?"0":Number(e.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:8}):"—"}function u(n){for(var t=0;t<e.length;t++)if(e[t][0]===n)return e[t][2];return 1}function c(n){for(var t=0;t<e.length;t++)if(e[t][0]===n)return e[t][1];return n}var l="Lmin",d={Lmin:"galmin_us",galmin_us:"Lmin",m3h:"CFM"};function g(){for(var g=parseFloat(n.value)||0,s=t.value,v=g*u(s),f="",h=0;h<e.length;h++){var L=e[h][0],E=v/e[h][2];f+="<tr"+(L===s?' class="is-from"':"")+"><td>"+e[h][1]+"</td><td><strong>"+m(E)+"</strong></td></tr>"}r.innerHTML=f;var p=d[s]||(s===l?"galmin_us":l);i.textContent=m(v/u(p)),o.textContent=m(g)+" "+function(e){var n=c(e),t=/\(([^)]+)\)\s*$/.exec(n),r=t?t[1].trim():n,i=r.indexOf(",");return i>0?r.slice(0,i):r}(s)+" in "+c(p),a&&(a.textContent="Converting from "+c(s)+". Change the unit to convert the other way.")}n.addEventListener("input",g),t.addEventListener("change",g),document.getElementById("resetBtn").addEventListener("click",function(){n.value="1",t.value="Lmin",g()}),function(){var e=new URLSearchParams(window.location.search).get("from"),n=document.getElementById("from");if(n&&e)for(var t=n.getElementsByTagName("option"),r=0;r<t.length;r++)if(t[r].value===e){n.value=e,n.dispatchEvent(new Event("change"));break}}(),g()}();
 </script>
-<script>
-(function() {
-  var btn = document.getElementById('embedBtn');
-  var code = document.getElementById('embedCode');
-  if(btn && code) {
-    btn.addEventListener('click', function() {
-      if(code.style.display === 'none') {
-        code.style.display = 'block';
-        btn.textContent = 'Hide embed code';
-      } else {
-        code.style.display = 'none';
-        btn.textContent = 'Show embed code';
-      }
-    });
-  }
-})();
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
 </script>
 </body></html>

@@ -144,39 +144,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function currentRpm() {
-    var sel = document.getElementById('niche').value;
-    if (sel === 'custom') { return parseFloat(document.getElementById('rpm').value) || 0; }
-    return parseFloat(sel) || 0;
-  }
-  function calc() {
-    var views = Math.max(parseInt(document.getElementById('views').value, 10) || 0, 0);
-    var rpm = currentRpm();
-    var revenue = (views / 1000) * rpm;
-    var cut = revenue / 0.55; // gross advertiser spend implied by creator RPM (YouTube keeps ~45%)
-    var fmt = function (n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); };
-    document.getElementById('rpmLine').textContent = views.toLocaleString('en-US') + ' views';
-    document.getElementById('revenueVal').textContent = fmt(revenue);
-    document.getElementById('rpmVal').textContent = fmt(rpm);
-    document.getElementById('cutVal').textContent = fmt(cut);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('niche').addEventListener('change', function () {
-    document.getElementById('customField').style.display = (this.value === 'custom') ? 'block' : 'none';
-  });
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('views').value = '100000';
-    document.getElementById('niche').value = '10';
-    document.getElementById('customField').style.display = 'none';
-    calc();
-  });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(){var e,t=Math.max(parseInt(document.getElementById("views").value,10)||0,0),n="custom"===(e=document.getElementById("niche").value)?parseFloat(document.getElementById("rpm").value)||0:parseFloat(e)||0,d=t/1e3*n,c=d/.55,l=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("rpmLine").textContent=t.toLocaleString("en-US")+" views",document.getElementById("revenueVal").textContent=l(d),document.getElementById("rpmVal").textContent=l(n),document.getElementById("cutVal").textContent=l(c),document.getElementById("result").classList.add("show")}document.getElementById("niche").addEventListener("change",function(){document.getElementById("customField").style.display="custom"===this.value?"block":"none"}),document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("niche").value="10",document.getElementById("customField").style.display="none",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
 </body>
 </html>

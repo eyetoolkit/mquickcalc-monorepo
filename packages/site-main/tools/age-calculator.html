@@ -126,39 +126,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var bd = new Date($("birthdate").value);
-    var now = new Date();
-    if (isNaN(bd.getTime())) return;
-    var years = now.getFullYear() - bd.getFullYear();
-    var months = now.getMonth() - bd.getMonth();
-    var days = now.getDate() - bd.getDate();
-    if (days < 0) { months--; var pm = new Date(now.getFullYear(), now.getMonth(), 0); days += pm.getDate(); }
-    if (months < 0) { years--; months += 12; }
-    var totalDays = Math.floor((now - bd) / 86400000);
-    // Next birthday
-    var nextBd = new Date(now.getFullYear(), bd.getMonth(), bd.getDate());
-    if (nextBd <= now) nextBd.setFullYear(now.getFullYear() + 1);
-    var daysUntil = Math.ceil((nextBd - now) / 86400000);
-    var nbStr = nextBd.toLocaleDateString(undefined, {year:"numeric", month:"long", day:"numeric"});
-    $("bigVal").textContent = years;
-    $("dimVal").textContent = "years, " + months + " months, " + days + " days";
-    $("monthsVal").textContent = (years*12 + months) + " total";
-    $("daysVal").textContent = totalDays.toLocaleString();
-    $("nextVal").textContent = nbStr;
-    $("daysUntil").textContent = daysUntil + " days";
-    $("result").classList.add("show");
-  }
-  ["birthdate"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("birthdate").value="1995-06-15"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=new Date(t("birthdate").value),n=new Date;if(!isNaN(e.getTime())){var a=n.getFullYear()-e.getFullYear(),l=n.getMonth()-e.getMonth(),o=n.getDate()-e.getDate();if(o<0)l--,o+=new Date(n.getFullYear(),n.getMonth(),0).getDate();l<0&&(a--,l+=12);var r=Math.floor((n-e)/864e5),i=new Date(n.getFullYear(),e.getMonth(),e.getDate());i<=n&&i.setFullYear(n.getFullYear()+1);var d=Math.ceil((i-n)/864e5),c=i.toLocaleDateString(void 0,{year:"numeric",month:"long",day:"numeric"});t("bigVal").textContent=a,t("dimVal").textContent="years, "+l+" months, "+o+" days",t("monthsVal").textContent=12*a+l+" total",t("daysVal").textContent=r.toLocaleString(),t("nextVal").textContent=c,t("daysUntil").textContent=d+" days",t("result").classList.add("show")}}["birthdate"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("birthdate").value="1995-06-15",e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

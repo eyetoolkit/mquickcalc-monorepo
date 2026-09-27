@@ -90,47 +90,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const rent = +document.getElementById("rent").value;
-  const content = +document.getElementById("content").value;
-  const liability = +document.getElementById("liability").value;
-  const pet = document.getElementById("pet").value;
-  
-  const monthly_cost = rent * 12 * 0.05;
-  const content_cost = content * 0.008; // ~$8 per $1000/year
-  const liability_cost = liability * 0.0005; // ~$0.50 per $1000/year
-  let annual = Math.round(content_cost + liability_cost);
-  if (pet === "yes") annual = Math.round(annual * 1.1);
-  annual = Math.max(annual, 120); // minimum $10/month
-  
-  const monthly = Math.round(annual / 12);
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>
-    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
-      <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${currency(content)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>
-      <tr><td>Liability</td><td style="text-align:right;font-weight:600">${currency(liability)}</td><td style="text-align:right;color:var(--muted)">< ${currency(100000)} is risky</td></tr>
-      <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${currency(rent*3)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>
-    </table>
-    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${currency(monthly)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span> <span style="font-size:13px;color:var(--muted)">(${currency(annual)}/year)</span></div>
-    <div style="margin-top:12px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">
-      💡 Renters insurance is <strong>incredibly cheap</strong> — $15-30/month for most people. Your landlord's insurance does NOT cover your belongings. If you have anything worth more than $5,000 total, renters insurance pays for itself after one incident.
-    </div>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=+document.getElementById("rent").value,n=+document.getElementById("content").value,o=+document.getElementById("liability").value,r=document.getElementById("pet").value,i=.008*n,d=5e-4*o;let a=Math.round(i+d);"yes"===r&&(a=Math.round(1.1*a)),a=Math.max(a,120);const l=Math.round(a/12);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${e(n)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>\n      <tr><td>Liability</td><td style="text-align:right;font-weight:600">${e(o)}</td><td style="text-align:right;color:var(--muted)">< ${e(1e5)} is risky</td></tr>\n      <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${e(3*t)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>\n    </table>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(l)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span> <span style="font-size:13px;color:var(--muted)">(${e(a)}/year)</span></div>\n    <div style="margin-top:12px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n      💡 Renters insurance is <strong>incredibly cheap</strong> — $15-30/month for most people. Your landlord's insurance does NOT cover your belongings. If you have anything worth more than $5,000 total, renters insurance pays for itself after one incident.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

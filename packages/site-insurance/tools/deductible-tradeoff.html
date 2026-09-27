@@ -94,54 +94,6 @@
 <script src="/js/insurance-data.js" defer></script>
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-  function fmt(n, d) { if (n === null || isNaN(n) || !isFinite(n)) return "—"; return n.toLocaleString("en-US", {minimumFractionDigits: d||0, maximumFractionDigits: d||0}); }
-  function currency(n) { return "$" + fmt(n, 0); }
-  function currency2(n) { return "$" + fmt(n, 2); }
-
-
-function calc() {
-  const cur_premium = +document.getElementById("cur_premium").value;
-  const cur_deductible = +document.getElementById("cur_deductible").value;
-  const alt_premium = +document.getElementById("alt_premium").value;
-  const alt_deductible = +document.getElementById("alt_deductible").value;
-  const claim_count = +document.getElementById("claim_count").value;
-  const claim_amount = +document.getElementById("claim_amount").value;
-  
-  const premium_diff = alt_premium - cur_premium;
-  const deductible_diff = cur_deductible - alt_deductible; // low ded saves this per claim
-  const net_savings_3y = -(premium_diff * 3) + (claim_count * deductible_diff);
-  
-  let verdict;
-  if (net_savings_3y > 0) verdict = "✅ The alternative (lower deductible) saves you money";
-  else if (net_savings_3y < -premium_diff * 2) verdict = "❌ Stick with your current plan";
-  else verdict = "⚖️ Close call — consider your peace of mind";
-  
-  document.getElementById("result").innerHTML = `
-    <h3 style="margin:0 0 12px">⚖️ Trade-off analysis (3-year horizon)</h3>
-    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">
-      <tr><td>Premium difference (alt − cur)</td><td style="text-align:right">${currency(premium_diff)} / year</td></tr>
-      <tr><td>Deductible difference per claim</td><td style="text-align:right">${currency(deductible_diff)}</td></tr>
-      <tr><td>Expected claim savings (${claim_count} × ${currency(deductible_diff)})</td><td style="text-align:right">${currency(claim_count * deductible_diff)}</td></tr>
-      <tr><td><strong>Net 3-year result</strong></td><td style="text-align:right;font-weight:700;color:${net_savings_3y >= 0 ? 'var(--ok)' : 'var(--danger)'}">${currency(Math.abs(net_savings_3y))} ${net_savings_3y >= 0 ? 'savings' : 'loss'}</td></tr>
-    </table>
-    <div style="font-size:18px;font-weight:600;margin-bottom:8px">${verdict}</div>
-    <details>
-      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Break-even analysis</summary>
-      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">
-        <p style="margin:0">How many claims to break even? <strong>${Math.ceil(Math.abs(premium_diff) * 3 / deductible_diff)}</strong> claims over 3 years</p>
-        <p style="margin:4px 0">${premium_diff > 0 ? "If you file more claims than that, the lower deductible pays off. If fewer, stick with higher deductible + lower premium." : "Wait — the alternative premium is actually cheaper! Both premium and deductible are better, so it's clearly the better choice."}</p>
-      </div>
-    </details>
-  `;
-    document.getElementById("result").classList.add("show");
-}
-
-  document.getElementById("calcBtn")?.addEventListener("click", calc);
-  document.getElementById("resetBtn")?.addEventListener("click", () => location.reload());
-  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", calc); }
-  else { calc(); }
-})();
+<script>!function(){function e(e,t){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:t||0,maximumFractionDigits:t||0})}function t(t){return"$"+e(t,0)}function n(){const e=+document.getElementById("cur_premium").value,n=+document.getElementById("cur_deductible").value,a=+document.getElementById("alt_premium").value,i=+document.getElementById("alt_deductible").value,r=+document.getElementById("claim_count").value,l=(document.getElementById("claim_amount").value,a-e),d=n-i,o=-3*l+r*d;let s;s=o>0?"✅ The alternative (lower deductible) saves you money":o<2*-l?"❌ Stick with your current plan":"⚖️ Close call — consider your peace of mind",document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">⚖️ Trade-off analysis (3-year horizon)</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Premium difference (alt − cur)</td><td style="text-align:right">${t(l)} / year</td></tr>\n      <tr><td>Deductible difference per claim</td><td style="text-align:right">${t(d)}</td></tr>\n      <tr><td>Expected claim savings (${r} × ${t(d)})</td><td style="text-align:right">${t(r*d)}</td></tr>\n      <tr><td><strong>Net 3-year result</strong></td><td style="text-align:right;font-weight:700;color:${o>=0?"var(--ok)":"var(--danger)"}">${t(Math.abs(o))} ${o>=0?"savings":"loss"}</td></tr>\n    </table>\n    <div style="font-size:18px;font-weight:600;margin-bottom:8px">${s}</div>\n    <details>\n      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Break-even analysis</summary>\n      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n        <p style="margin:0">How many claims to break even? <strong>${Math.ceil(3*Math.abs(l)/d)}</strong> claims over 3 years</p>\n        <p style="margin:4px 0">${l>0?"If you file more claims than that, the lower deductible pays off. If fewer, stick with higher deductible + lower premium.":"Wait — the alternative premium is actually cheaper! Both premium and deductible are better, so it's clearly the better choice."}</p>\n      </div>\n    </details>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

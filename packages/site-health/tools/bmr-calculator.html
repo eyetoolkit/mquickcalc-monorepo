@@ -142,31 +142,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("weight").value)||0,h=parseFloat($("height").value)||0,a=parseInt($("age").value)||0,s=$("sex").value;var bmr=s=="male"?10*w+6.25*h-5*a+5:10*w+6.25*h-5*a-161;var tdee=bmr*1.55;$("bmrVal").textContent=Math.round(bmr);$("tdeeVal").textContent=Math.round(tdee);$("result").classList.add("show");
-  }
-  ['age', 'height', 'sex', 'weight'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {weight:'70',sex:'male',age:'30',height:'175'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(){var t=parseFloat(e("weight").value)||0,a=parseFloat(e("height").value)||0,n=parseInt(e("age").value)||0,r="male"==e("sex").value?10*t+6.25*a-5*n+5:10*t+6.25*a-5*n-161,i=1.55*r;e("bmrVal").textContent=Math.round(r),e("tdeeVal").textContent=Math.round(i),e("result").classList.add("show")}["age","height","sex","weight"].forEach(function(a){var n=e(a);n&&n.addEventListener("input",t)});var a=e("calcBtn");a&&a.addEventListener("click",t);var n=e("resetBtn");n&&n.addEventListener("click",function(){var a={weight:"70",sex:"male",age:"30",height:"175"};Object.keys(a).forEach(function(t){var n=e(t);n&&(n.value=a[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

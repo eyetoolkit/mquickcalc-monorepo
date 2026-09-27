@@ -107,49 +107,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function futureValue(pv, pmt, rate, months) {
-    var r = rate / 12;
-    if (r === 0) return pv + pmt * months;
-    return pv * Math.pow(1+r, months) + pmt * (Math.pow(1+r, months) - 1) / r;
-  }
-  function calc() {
-    var age = parseInt($("age").value)||0, retireAge = parseInt($("retireAge").value)||65;
-    var current = parseFloat($("current").value)||0, monthly = parseFloat($("monthly").value)||0;
-    var rate = parseFloat($("return").value)||0, life = parseInt($("life").value)||90;
-    var years = Math.max(0, retireAge - age);
-    var months = years * 12;
-    if (months === 0) return;
-    var fv = futureValue(current, monthly, rate, months);
-    var totalContrib = current + monthly * months;
-    var interest = fv - totalContrib;
-    // 4% rule: annual withdrawal = 4% of balance (adjusted for inflation simplified)
-    var retirementYears = Math.max(0, life - retireAge);
-    var monthlyRetire = retirementYears > 0 ? fv / (retirementYears * 12) : 0;
-    var annual = fv * 0.04;
-    var status;
-    if (years < 10) status = "🚨 Late start — consider increasing contributions significantly";
-    else if (fv < 100000) status = "⚠️  Below target — increase monthly savings";
-    else if (fv >= 1000000) status = "✅ On track for comfortable retirement";
-    else status = "📈 Keep going — progress is solid";
-    
-    $("bigVal").textContent = "$" + fmt(fv, 0);
-    $("yearsVal").textContent = years + " yrs";
-    $("contribVal").textContent = "$" + fmt(totalContrib, 0);
-    $("interestVal").textContent = "$" + fmt(interest, 0);
-    $("monthlyRetire").textContent = "$" + fmt(monthlyRetire, 0);
-    $("statusVal").textContent = annual >= 30000 ? "✅" : annual >= 15000 ? "📈" : "⚠️";
-    $("result").classList.add("show");
-  }
-  ["age","retireAge","current","monthly","return","life"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("age").value="35"; $("retireAge").value="65"; $("current").value="15000"; $("monthly").value="800"; $("return").value="7"; $("life").value="90"; calc(); });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseInt(e("age").value)||0,a=parseInt(e("retireAge").value)||65,r=parseFloat(e("current").value)||0,l=parseFloat(e("monthly").value)||0,u=parseFloat(e("return").value)||0,i=parseInt(e("life").value)||90,o=Math.max(0,a-n),s=12*o;if(0!==s){var c=function(e,t,n,a){var r=n/12;return 0===r?e+t*a:e*Math.pow(1+r,a)+t*(Math.pow(1+r,a)-1)/r}(r,l,u,s),v=r+l*s,f=c-v,d=Math.max(0,i-a),h=d>0?c/(12*d):0,m=.04*c;e("bigVal").textContent="$"+t(c,0),e("yearsVal").textContent=o+" yrs",e("contribVal").textContent="$"+t(v,0),e("interestVal").textContent="$"+t(f,0),e("monthlyRetire").textContent="$"+t(h,0),e("statusVal").textContent=m>=3e4?"✅":m>=15e3?"📈":"⚠️",e("result").classList.add("show")}}["age","retireAge","current","monthly","return","life"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("age").value="35",e("retireAge").value="65",e("current").value="15000",e("monthly").value="800",e("return").value="7",e("life").value="90",n()}),n()}();
 </script>
 </body>
 </html>

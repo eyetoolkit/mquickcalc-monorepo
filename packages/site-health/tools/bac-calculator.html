@@ -119,38 +119,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var w = parseFloat($("weight").value) || 0;
-    var gender = $("gender").value;
-    var drinks = parseFloat($("drinks").value) || 0;
-    var hours = parseFloat($("hours").value) || 0;
-    if (!w) return;
-    // Widmark: BAC = (grams alcohol / (body water * weight)) - 0.015 * hours
-    // grams alcohol = drinks * 14 (standard drink)
-    var alcohol = drinks * 14; // grams
-    var r = gender === "male" ? 0.68 : 0.55; // body water constant
-    var peak = (alcohol / (r * w)) / 10;
-    var bac = peak - 0.015 * hours;
-    if (bac < 0) bac = 0;
-    var legal = bac > 0.05 ? "🚫 YES" : "✅ No";
-    var sober = bac / 0.015; // hours to metabolize
-    $("bigVal").textContent = fmt(bac, 3) + "%";
-    $("dimVal").textContent = "Estimated BAC after " + fmt(hours, 1) + "h";
-    $("legalVal").textContent = legal;
-    $("soberVal").textContent = fmt(sober, 1) + " hours";
-    $("peakVal").textContent = fmt(peak, 3) + "%";
-    $("result").classList.add("show");
-  }
-  ["weight", "gender", "drinks", "hours"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("weight").value="70"; $("gender").value="male"; $("drinks").value="3"; $("hours").value="2"; calc(); });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("weight").value)||0,a=e("gender").value,r=parseFloat(e("drinks").value)||0,i=parseFloat(e("hours").value)||0;if(n){var l=14*r/(("male"===a?.68:.55)*n)/10,o=l-.015*i;o<0&&(o=0);var u=o>.05?"🚫 YES":"✅ No",s=o/.015;e("bigVal").textContent=t(o,3)+"%",e("dimVal").textContent="Estimated BAC after "+t(i,1)+"h",e("legalVal").textContent=u,e("soberVal").textContent=t(s,1)+" hours",e("peakVal").textContent=t(l,3)+"%",e("result").classList.add("show")}}["weight","gender","drinks","hours"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("weight").value="70",e("gender").value="male",e("drinks").value="3",e("hours").value="2",n()}),n()}();
 </script>
 </body>
 </html>

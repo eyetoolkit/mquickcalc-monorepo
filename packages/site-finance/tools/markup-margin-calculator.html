@@ -142,34 +142,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(2) + '%'; }
-  function calc() {
-    var cost = parseFloat(document.getElementById('cost').value) || 0;
-    var p = (parseFloat(document.getElementById('pct').value) || 0) / 100;
-    var setby = document.getElementById('setby').value;
-    var price, marginDec, markupDec;
-    if (setby === 'markup') { markupDec = p; price = cost * (1 + p); marginDec = price > 0 ? (price - cost) / price : 0; }
-    else {
-      marginDec = Math.min(Math.max(p, 0), 0.9999);
-      price = cost / (1 - marginDec);
-      markupDec = price > 0 ? (price - cost) / cost : 0;
-    }
-    var profit = price - cost;
-    document.getElementById('priceVal').textContent = money(price);
-    document.getElementById('profitVal').textContent = money(profit);
-    document.getElementById('marginVal').textContent = pct(marginDec);
-    document.getElementById('markupVal').textContent = pct(markupDec);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('cost').value = '20.00'; document.getElementById('pct').value = '50'; document.getElementById('setby').value = 'markup'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(e){return(100*e).toFixed(2)+"%"}function n(){var n,d,c,l=parseFloat(document.getElementById("cost").value)||0,m=(parseFloat(document.getElementById("pct").value)||0)/100;"markup"===document.getElementById("setby").value?(c=m,d=(n=l*(1+m))>0?(n-l)/n:0):c=(n=l/(1-(d=Math.min(Math.max(m,0),.9999))))>0?(n-l)/l:0;var o=n-l;document.getElementById("priceVal").textContent=e(n),document.getElementById("profitVal").textContent=e(o),document.getElementById("marginVal").textContent=t(d),document.getElementById("markupVal").textContent=t(c),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",n),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("cost").value="20.00",document.getElementById("pct").value="50",document.getElementById("setby").value="markup",n()}),n(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),n)}();
 </script>
 </body>
 </html>

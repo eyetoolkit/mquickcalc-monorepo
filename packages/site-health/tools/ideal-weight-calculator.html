@@ -149,46 +149,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var cm = parseFloat($("height").value) || 0;
-    var gender = $("gender").value;
-    var frame = $("frame").value;
-    if (!cm) return;
-    var inches = cm / 2.54;
-    var over5ft = Math.max(0, inches - 60);
-    var mult = frame === "large" ? 1.1 : frame === "small" ? 0.9 : 1.0;
-    // Devine
-    var devine = (gender === "male" ? 50 : 45.5) + 2.3 * over5ft;
-    // Robinson
-    var robinson = (gender === "male" ? 52 : 49) + 1.9 * over5ft;
-    // Miller
-    var miller = (gender === "male" ? 56.2 : 53.1) + 1.41 * over5ft;
-    // Apply frame multiplier
-    devine *= mult; robinson *= mult; miller *= mult;
-    // BMI range: 18.5 to 24.9
-    var m = cm / 100;
-    var low = 18.5 * m * m;
-    var high = 24.9 * m * m;
-    // Average ideal range from 3 formulas
-    var avg = (devine + robinson + miller) / 3;
-    var spread = avg * 0.05;
-    $("rangeVal").textContent = fmt(avg - spread, 1) + " – " + fmt(avg + spread, 1) + " kg";
-    $("devineVal").textContent = fmt(devine, 1) + " kg";
-    $("robVal").textContent = fmt(robinson, 1) + " kg";
-    $("millVal").textContent = fmt(miller, 1) + " kg";
-    $("bmiRangeVal").textContent = fmt(low, 1) + " – " + fmt(high, 1) + " kg";
-    $("result").classList.add("show");
-  }
-  ["height", "gender", "frame"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("height").value="175"; $("gender").value="male"; $("frame").value="medium"; calc(); });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("height").value)||0,a=e("gender").value,l=e("frame").value;if(n){var i=n/2.54,r=Math.max(0,i-60),u="large"===l?1.1:"small"===l?.9:1,o=("male"===a?50:45.5)+2.3*r,d=("male"===a?52:49)+1.9*r,m=("male"===a?56.2:53.1)+1.41*r,c=n/100,g=18.5*c*c,v=24.9*c*c,s=((o*=u)+(d*=u)+(m*=u))/3,f=.05*s;e("rangeVal").textContent=t(s-f,1)+" – "+t(s+f,1)+" kg",e("devineVal").textContent=t(o,1)+" kg",e("robVal").textContent=t(d,1)+" kg",e("millVal").textContent=t(m,1)+" kg",e("bmiRangeVal").textContent=t(g,1)+" – "+t(v,1)+" kg",e("result").classList.add("show")}}["height","gender","frame"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("height").value="175",e("gender").value="male",e("frame").value="medium",n()}),n()}();
 </script>
 </body>
 </html>

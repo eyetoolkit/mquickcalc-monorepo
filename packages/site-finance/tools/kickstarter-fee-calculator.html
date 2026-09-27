@@ -155,32 +155,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(2) + '%'; }
-  function calc() {
-    var raised = parseFloat(document.getElementById('raised').value) || 0;
-    var pledges = parseFloat(document.getElementById('pledges').value) || 0;
-    var plat = (parseFloat(document.getElementById('plat').value) || 0) / 100;
-    var proc = (parseFloat(document.getElementById('proc').value) || 0) / 100;
-    var perPledge = parseFloat(document.getElementById('perPledge').value) || 0;
-    var platFee = raised * plat;
-    var procFee = raised * proc + pledges * perPledge;
-    var total = platFee + procFee;
-    var net = raised - total;
-    document.getElementById('netVal').textContent = money(net);
-    document.getElementById('platVal').textContent = money(platFee);
-    document.getElementById('procVal').textContent = money(procFee);
-    document.getElementById('totVal').textContent = money(total);
-    document.getElementById('effVal').textContent = raised > 0 ? pct(total / raised) : '—';
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('raised').value = '10000.00'; document.getElementById('pledges').value = '500'; document.getElementById('plat').value = '5'; document.getElementById('proc').value = '3'; document.getElementById('perPledge').value = '0.20'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("raised").value)||0,n=parseFloat(document.getElementById("pledges").value)||0,d=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("proc").value)||0)/100)+n*(parseFloat(document.getElementById("perPledge").value)||0),o=d+l,a=t-o;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(d),document.getElementById("procVal").textContent=e(l),document.getElementById("totVal").textContent=e(o),document.getElementById("effVal").textContent=t>0?(100*(o/t)).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("raised").value="10000.00",document.getElementById("pledges").value="500",document.getElementById("plat").value="5",document.getElementById("proc").value="3",document.getElementById("perPledge").value="0.20",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

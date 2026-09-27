@@ -103,38 +103,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var ideal = parseFloat($("ideal").value) || 0;
-    var days = parseInt($("days").value) || 7;
-    var avg = parseFloat($("avg").value) || 0;
-    if (!ideal) return;
-    var deficitPerNight = Math.max(0, ideal - avg);
-    var totalDeficit = deficitPerNight * days;
-    // Assume you can "over-sleep" by ~1h per night to catch up
-    var paybackNights = deficitPerNight > 0 ? Math.ceil(totalDeficit / 1.0) : 0;
-    var severity;
-    if (totalDeficit <= 2) severity = "✅ Mild";
-    else if (totalDeficit <= 5) severity = "⚠️ Moderate";
-    else if (totalDeficit <= 10) severity = "🚨 Significant";
-    else severity = "🛑 Critical";
-    $("bigVal").textContent = fmt(totalDeficit, 1) + " hours";
-    $("dimVal").textContent = "Over " + days + " nights";
-    $("perNight").textContent = fmt(deficitPerNight, 1) + " h";
-    $("total").textContent = fmt(totalDeficit, 1) + " h";
-    $("payback").textContent = paybackNights + " extra hours";
-    $("severity").textContent = severity;
-    $("result").classList.add("show");
-  }
-  ["ideal","days","avg"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("ideal").value="7.5"; $("days").value="7"; $("avg").value="6.2"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("ideal").value)||0,n=parseInt(t("days").value)||7,i=parseFloat(t("avg").value)||0;if(a){var r,l=Math.max(0,a-i),o=l*n,d=l>0?Math.ceil(o/1):0;r=o<=2?"✅ Mild":o<=5?"⚠️ Moderate":o<=10?"🚨 Significant":"🛑 Critical",t("bigVal").textContent=e(o,1)+" hours",t("dimVal").textContent="Over "+n+" nights",t("perNight").textContent=e(l,1)+" h",t("total").textContent=e(o,1)+" h",t("payback").textContent=d+" extra hours",t("severity").textContent=r,t("result").classList.add("show")}}["ideal","days","avg"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("ideal").value="7.5",t("days").value="7",t("avg").value="6.2",a()}),a()}();
 </script>
 </body>
 </html>

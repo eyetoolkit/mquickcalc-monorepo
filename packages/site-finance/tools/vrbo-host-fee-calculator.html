@@ -115,34 +115,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function calc() {
-    var price = parseFloat($("price").value) || 0;
-    var nights = parseFloat($("nights").value) || 0;
-    var commPct = parseFloat($("commission").value) / 100;
-    var procPct = parseFloat($("processing").value) / 100;
-    var perBooking = parseFloat($("servicePerBooking").value) || 0;
-    var gross = price * nights;
-    var comm = gross * commPct;
-    var proc = gross * procPct + perBooking;
-    var net = gross - comm - proc;
-    var eff = gross > 0 ? ((comm + proc) / gross) * 100 : 0;
-    $("netVal").textContent = "$" + fmt(net, 2);
-    $("grossVal").textContent = "$" + fmt(gross, 2);
-    $("commVal").textContent = "$" + fmt(comm, 2);
-    $("procVal").textContent = "$" + fmt(proc, 2);
-    $("effVal").textContent = fmt(eff, 2) + "%";
-    $("result").classList.add("show");
-  }
-  ["price","nights","commission","processing","servicePerBooking"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("price").value="180"; $("nights").value="7"; $("commission").value="8"; $("processing").value="3"; $("servicePerBooking").value="0.50"; calc(); });
-  calc();
-})();
+<script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=(parseFloat(e("price").value)||0)*(parseFloat(e("nights").value)||0),i=n*(parseFloat(e("commission").value)/100),o=n*(parseFloat(e("processing").value)/100)+(parseFloat(e("servicePerBooking").value)||0),s=n-i-o,a=n>0?(i+o)/n*100:0;e("netVal").textContent="$"+t(s,2),e("grossVal").textContent="$"+t(n,2),e("commVal").textContent="$"+t(i,2),e("procVal").textContent="$"+t(o,2),e("effVal").textContent=t(a,2)+"%",e("result").classList.add("show")}["price","nights","commission","processing","servicePerBooking"].forEach(function(t){var i=e(t);i&&i.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("price").value="180",e("nights").value="7",e("commission").value="8",e("processing").value="3",e("servicePerBooking").value="0.50",n()}),n()}();
 </script>
 </body>
 </html>

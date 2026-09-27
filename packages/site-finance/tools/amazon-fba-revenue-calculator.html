@@ -192,38 +192,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(1) + '%'; }
-  function calc() {
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var cogs = parseFloat(document.getElementById('cogs').value) || 0;
-    var shipin = parseFloat(document.getElementById('shipin').value) || 0;
-    var referral = (parseFloat(document.getElementById('referral').value) || 0) / 100;
-    var fbaFee = parseFloat(document.getElementById('fbaFee').value) || 0;
-    var refFee = price * referral;
-    var totalFees = refFee + fbaFee;
-    var cost = cogs + shipin;
-    var profit = price - totalFees - cost;
-    var roi = cost > 0 ? profit / cost : 0;
-    document.getElementById('grossLine').textContent = 'Sale ' + money(price) + ' · goods+inbound ' + money(cost);
-    document.getElementById('profitVal').textContent = money(profit);
-    document.getElementById('refVal').textContent = money(refFee);
-    document.getElementById('fbaFeeVal').textContent = money(fbaFee);
-    document.getElementById('totVal').textContent = money(totalFees);
-    document.getElementById('roiVal').textContent = pct(roi);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('tier').addEventListener('change', function () { document.getElementById('fbaFee').value = this.value; });
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('price').value = '29.99'; document.getElementById('cogs').value = '8.00'; document.getElementById('shipin').value = '1.50'; document.getElementById('referral').value = '15'; document.getElementById('tier').value = '4.50'; document.getElementById('fbaFee').value = '4.50'; calc();
-  });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=parseFloat(document.getElementById("cogs").value)||0,d=parseFloat(document.getElementById("shipin").value)||0,l=(parseFloat(document.getElementById("referral").value)||0)/100,o=parseFloat(document.getElementById("fbaFee").value)||0,a=t*l,c=a+o,m=n+d,u=t-c-m,r=m>0?u/m:0;document.getElementById("grossLine").textContent="Sale "+e(t)+" · goods+inbound "+e(m),document.getElementById("profitVal").textContent=e(u),document.getElementById("refVal").textContent=e(a),document.getElementById("fbaFeeVal").textContent=e(o),document.getElementById("totVal").textContent=e(c),document.getElementById("roiVal").textContent=(100*r).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("tier").addEventListener("change",function(){document.getElementById("fbaFee").value=this.value}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="29.99",document.getElementById("cogs").value="8.00",document.getElementById("shipin").value="1.50",document.getElementById("referral").value="15",document.getElementById("tier").value="4.50",document.getElementById("fbaFee").value="4.50",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

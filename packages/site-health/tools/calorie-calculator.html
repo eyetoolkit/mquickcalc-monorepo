@@ -150,31 +150,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("weight").value)||0,h=parseFloat($("height").value)||0,a=parseInt($("age").value)||0,s=$("sex").value,act=parseFloat($("activity").value)||1.55;var bmr=s=="male"?10*w+6.25*h-5*a+5:10*w+6.25*h-5*a-161;var tdee=bmr*act;$("maintainVal").textContent=Math.round(tdee);$("loseVal").textContent=Math.round(tdee-500);$("gainVal").textContent=Math.round(tdee+500);$("result").classList.add("show");
-  }
-  ['activity', 'age', 'height', 'sex', 'weight'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {weight:'70',sex:'male',age:'30',height:'175',activity:'1.55'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,a=parseFloat(t("height").value)||0,n=parseInt(t("age").value)||0,i=("male"==t("sex").value?10*e+6.25*a-5*n+5:10*e+6.25*a-5*n-161)*(parseFloat(t("activity").value)||1.55);t("maintainVal").textContent=Math.round(i),t("loseVal").textContent=Math.round(i-500),t("gainVal").textContent=Math.round(i+500),t("result").classList.add("show")}["activity","age","height","sex","weight"].forEach(function(a){var n=t(a);n&&n.addEventListener("input",e)});var a=t("calcBtn");a&&a.addEventListener("click",e);var n=t("resetBtn");n&&n.addEventListener("click",function(){var a={weight:"70",sex:"male",age:"30",height:"175",activity:"1.55"};Object.keys(a).forEach(function(e){var n=t(e);n&&(n.value=a[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[

@@ -152,33 +152,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(1) + '%'; }
-  function calc() {
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var referral = (parseFloat(document.getElementById('referral').value) || 0) / 100;
-    var cogs = parseFloat(document.getElementById('cogs').value) || 0;
-    var packaging = parseFloat(document.getElementById('packaging').value) || 0;
-    var shipping = parseFloat(document.getElementById('shipping').value) || 0;
-    var refFee = price * referral;
-    var cost = cogs + packaging + shipping;
-    var profit = price - refFee - cost;
-    var roi = cost > 0 ? profit / cost : 0;
-    document.getElementById('grossLine').textContent = 'Sale ' + money(price) + ' · referral ' + money(refFee);
-    document.getElementById('profitVal').textContent = money(profit);
-    document.getElementById('refVal').textContent = money(refFee);
-    document.getElementById('costVal').textContent = money(cost);
-    document.getElementById('totVal').textContent = money(price - refFee);
-    document.getElementById('roiVal').textContent = pct(roi);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('price').value = '24.99'; document.getElementById('referral').value = '15'; document.getElementById('cogs').value = '7.00'; document.getElementById('packaging').value = '0.50'; document.getElementById('shipping').value = '3.00'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=t*((parseFloat(document.getElementById("referral").value)||0)/100),l=(parseFloat(document.getElementById("cogs").value)||0)+(parseFloat(document.getElementById("packaging").value)||0)+(parseFloat(document.getElementById("shipping").value)||0),d=t-n-l,o=l>0?d/l:0;document.getElementById("grossLine").textContent="Sale "+e(t)+" · referral "+e(n),document.getElementById("profitVal").textContent=e(d),document.getElementById("refVal").textContent=e(n),document.getElementById("costVal").textContent=e(l),document.getElementById("totVal").textContent=e(t-n),document.getElementById("roiVal").textContent=(100*o).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="24.99",document.getElementById("referral").value="15",document.getElementById("cogs").value="7.00",document.getElementById("packaging").value="0.50",document.getElementById("shipping").value="3.00",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

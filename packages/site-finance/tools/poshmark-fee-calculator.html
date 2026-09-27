@@ -128,28 +128,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var ship = parseFloat(document.getElementById('ship').value) || 0;
-    var fee, rate;
-    if (price < 15) { fee = 2.95; rate = 'Flat $2.95'; }
-    else { fee = price * 0.20; rate = '20%'; }
-    var net = price - fee - ship;
-    document.getElementById('ruleLine').textContent = price < 15 ? 'Under $15 · flat fee tier' : '$15+ · percentage tier';
-    document.getElementById('netVal').textContent = money(net);
-    document.getElementById('feeVal').textContent = money(fee);
-    document.getElementById('rateVal').textContent = rate + (ship > 0 ? ' · then − ' + money(ship) + ' shipping' : '');
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('price').value = '30.00'; document.getElementById('ship').value = '0'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d=parseFloat(document.getElementById("price").value)||0,c=parseFloat(document.getElementById("ship").value)||0;d<15?(t=2.95,n="Flat $2.95"):(t=.2*d,n="20%");var l=d-t-c;document.getElementById("ruleLine").textContent=d<15?"Under $15 · flat fee tier":"$15+ · percentage tier",document.getElementById("netVal").textContent=e(l),document.getElementById("feeVal").textContent=e(t),document.getElementById("rateVal").textContent=n+(c>0?" · then − "+e(c)+" shipping":""),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="30.00",document.getElementById("ship").value="0",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

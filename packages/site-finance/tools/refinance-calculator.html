@@ -117,43 +117,7 @@
 <script src="/js/site-core.js" defer></script>
 <script src="/js/site-enhance.js" defer></script>
 <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) { return document.getElementById(id); }
-  function fmt(n, d=2) { if(!isFinite(n)) return "--"; return Number(n).toFixed(d); }
-  
-  function monthlyPayment(principal, ratePct, months) {
-    var r = ratePct / 100 / 12;
-    if (r === 0) return principal / months;
-    return principal * r * Math.pow(1 + r, months) / (Math.pow(1 + r, months) - 1);
-  }
-  function calc() {
-    var bal = parseFloat($("curBalance").value) || 0;
-    var curRate = parseFloat($("curRate").value) || 0;
-    var curMonths = parseFloat($("curMonths").value) || 0;
-    var newRate = parseFloat($("newRate").value) || 0;
-    var newMonths = parseFloat($("newMonths").value) || 0;
-    var closing = parseFloat($("closing").value) || 0;
-    var curMonthPay = monthlyPayment(bal, curRate, curMonths);
-    var newMonthPay = monthlyPayment(bal, newRate, newMonths);
-    var curTotalInterest = curMonthPay * curMonths - bal;
-    var newTotalInterest = newMonthPay * newMonths - bal + closing;
-    var totalSave = curTotalInterest - newTotalInterest;
-    var monthlySave = curMonthPay - newMonthPay;
-    var breakEven = monthlySave > 0 ? Math.ceil(closing / monthlySave) : Infinity;
-    $("saveVal").textContent = (monthlySave >= 0 ? "$" + fmt(monthlySave, 2) : "-$" + fmt(-monthlySave, 2)) + "/month";
-    $("dimVal").textContent = monthlySave >= 0 ? "Monthly savings" : "Monthly increase";
-    $("curMonth").textContent = "$" + fmt(curMonthPay, 2);
-    $("newMonth").textContent = "$" + fmt(newMonthPay, 2);
-    $("totalSave").textContent = (totalSave >= 0 ? "$" + fmt(totalSave, 2) : "-$" + fmt(-totalSave, 2));
-    $("breakEven").textContent = isFinite(breakEven) ? breakEven + " months" : "Never";
-    $("result").classList.add("show");
-  }
-  ["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(id){var el=$(id);if(el)el.addEventListener("input",calc);});
-  $("calcBtn").addEventListener("click", calc);
-  $("resetBtn").addEventListener("click", function(){ $("curBalance").value="18000"; $("curRate").value="7.5"; $("curMonths").value="48"; $("newRate").value="5.5"; $("newMonths").value="48"; $("closing").value="500"; calc(); });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(t,e,n){var a=e/100/12;return 0===a?t/n:t*a*Math.pow(1+a,n)/(Math.pow(1+a,n)-1)}function a(){var a=parseFloat(t("curBalance").value)||0,o=parseFloat(t("curRate").value)||0,l=parseFloat(t("curMonths").value)||0,u=parseFloat(t("newRate").value)||0,r=parseFloat(t("newMonths").value)||0,c=parseFloat(t("closing").value)||0,s=n(a,o,l),i=n(a,u,r),v=s*l-a-(i*r-a+c),h=s-i,M=h>0?Math.ceil(c/h):1/0;t("saveVal").textContent=(h>=0?"$"+e(h,2):"-$"+e(-h,2))+"/month",t("dimVal").textContent=h>=0?"Monthly savings":"Monthly increase",t("curMonth").textContent="$"+e(s,2),t("newMonth").textContent="$"+e(i,2),t("totalSave").textContent=v>=0?"$"+e(v,2):"-$"+e(-v,2),t("breakEven").textContent=isFinite(M)?M+" months":"Never",t("result").classList.add("show")}["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("curBalance").value="18000",t("curRate").value="7.5",t("curMonths").value="48",t("newRate").value="5.5",t("newMonths").value="48",t("closing").value="500",a()}),a()}();
 </script>
 </body>
 </html>

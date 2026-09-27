@@ -174,89 +174,9 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function () {
-  var inp = document.getElementById('val');
-  var sel = document.getElementById('from');
-  var tb = document.getElementById('rows');
-  var big = document.getElementById('mainVal');
-  var bigLbl = document.getElementById('mainUnit');
-  var UNITS = [['c', 'Celsius (°C)'], ['f', 'Fahrenheit (°F)'], ['k', 'Kelvin (K)']];
-
-  function toC(v, from) {
-    if (from === 'c') return v;
-    if (from === 'f') return (v - 32) * 5 / 9;
-    return v - 273.15;
-  }
-  function fromC(c, to) {
-    if (to === 'c') return c;
-    if (to === 'f') return c * 9 / 5 + 32;
-    return c + 273.15;
-  }
-  function fmt(n) {
-    if (!isFinite(n)) return '—';
-    return Number(n.toPrecision(8)).toLocaleString('en-US', { maximumFractionDigits: 6 });
-  }
-  function render() {
-    var v = parseFloat(inp.value);
-    if (isNaN(v)) v = 0;
-    var from = sel.value;
-    var c = toC(v, from);
-    var rows = '';
-    for (var i = 0; i < UNITS.length; i++) {
-      var id = UNITS[i][0];
-      var out = fromC(c, id);
-      rows += '<tr' + (id === from ? ' class="is-from"' : '') + '><td>' + UNITS[i][1] +
-              '</td><td><strong>' + fmt(out) + '</strong></td></tr>';
-    }
-    tb.innerHTML = rows;
-    // C<->F is the pair people search for; Kelvin reads better against Celsius.
-    var target = (from === 'c') ? 'f' : 'c';
-    big.textContent = fmt(fromC(c, target));
-    bigLbl.textContent = 'in ' + (target === 'c' ? 'Celsius (°C)' : 'Fahrenheit (°F)');
-  }
-  inp.addEventListener('input', render);
-  sel.addEventListener('change', render);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    inp.value = '100';
-    sel.value = 'c';
-    render();
-  });
-  // URL param support: /{topic}/{from}-to-{to} redirects here
-  (function(){
-    var q=new URLSearchParams(window.location.search);
-    var fromParam=q.get('from');
-    var sel=document.getElementById('from');
-    if(sel && fromParam){
-      var opts=sel.getElementsByTagName('option');
-      for(var i=0;i<opts.length;i++){
-        if(opts[i].value===fromParam){
-          sel.value=fromParam;
-          sel.dispatchEvent(new Event('change'));
-          break;
-        }
-      }
-    }
-  })();
-  render();
-})();
+<script>!function(){var e=document.getElementById("val"),t=document.getElementById("from"),n=document.getElementById("rows"),a=document.getElementById("mainVal"),i=document.getElementById("mainUnit"),r=[["c","Celsius (°C)"],["f","Fahrenheit (°F)"],["k","Kelvin (K)"]];function o(e,t){return"c"===t?e:"f"===t?9*e/5+32:e+273.15}function c(e){return isFinite(e)?Number(e.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:6}):"—"}function u(){var u=parseFloat(e.value);isNaN(u)&&(u=0);for(var m=t.value,d=function(e,t){return"c"===t?e:"f"===t?5*(e-32)/9:e-273.15}(u,m),l="",s=0;s<r.length;s++){var v=r[s][0],f=o(d,v);l+="<tr"+(v===m?' class="is-from"':"")+"><td>"+r[s][1]+"</td><td><strong>"+c(f)+"</strong></td></tr>"}n.innerHTML=l;var g="c"===m?"f":"c";a.textContent=c(o(d,g)),i.textContent="in "+("c"===g?"Celsius (°C)":"Fahrenheit (°F)")}e.addEventListener("input",u),t.addEventListener("change",u),document.getElementById("resetBtn").addEventListener("click",function(){e.value="100",t.value="c",u()}),function(){var e=new URLSearchParams(window.location.search).get("from"),t=document.getElementById("from");if(t&&e)for(var n=t.getElementsByTagName("option"),a=0;a<n.length;a++)if(n[a].value===e){t.value=e,t.dispatchEvent(new Event("change"));break}}(),u()}();
 </script>
-<script>
-(function() {
-  var btn = document.getElementById('embedBtn');
-  var code = document.getElementById('embedCode');
-  if(btn && code) {
-    btn.addEventListener('click', function() {
-      if(code.style.display === 'none') {
-        code.style.display = 'block';
-        btn.textContent = 'Hide embed code';
-      } else {
-        code.style.display = 'none';
-        btn.textContent = 'Show embed code';
-      }
-    });
-  }
-})();
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
 </script>
 </body>
 </html>

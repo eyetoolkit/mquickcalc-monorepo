@@ -135,31 +135,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function $(id) {
-    return document.getElementById(id);
-  }
-  function calc() {
-var w=parseFloat($("weight").value)||0,h=parseFloat($("height").value)||0,a=parseInt($("age").value)||0,s=$("sex").value,act=parseFloat($("activity").value)||1.55;var bmr=s=="male"?10*w+6.25*h-5*a+5:10*w+6.25*h-5*a-161;var tdee=bmr*act;var cat=act<1.3?"Sedentary":act<1.5?"Lightly active":act<1.7?"Moderately active":act<1.9?"Very active":"Extra active";$("tdeeVal").textContent=Math.round(tdee);$("bmrVal").textContent=Math.round(bmr);$("catVal").textContent=cat;$("result").classList.add("show");
-  }
-  ['activity', 'age', 'height', 'sex', 'weight'].forEach(function (id) {
-    var el = $(id);
-    if (el) el.addEventListener('input', calc);
-  });
-  var btn = $('calcBtn');
-  if (btn) btn.addEventListener('click', calc);
-  var reset = $('resetBtn');
-  if (reset) reset.addEventListener('click', function () {
-    var map = {weight:'70',sex:'male',age:'30',height:'175',activity:'1.55'};
-    Object.keys(map).forEach(function (k) {
-      var el = $(k);
-      if (el) el.value = map[k];
-    });
-    calc();
-  });
-  calc();
-})();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,a=parseFloat(t("height").value)||0,n=parseInt(t("age").value)||0,i=t("sex").value,r=parseFloat(t("activity").value)||1.55,c="male"==i?10*e+6.25*a-5*n+5:10*e+6.25*a-5*n-161,l=c*r,v=r<1.3?"Sedentary":r<1.5?"Lightly active":r<1.7?"Moderately active":r<1.9?"Very active":"Extra active";t("tdeeVal").textContent=Math.round(l),t("bmrVal").textContent=Math.round(c),t("catVal").textContent=v,t("result").classList.add("show")}["activity","age","height","sex","weight"].forEach(function(a){var n=t(a);n&&n.addEventListener("input",e)});var a=t("calcBtn");a&&a.addEventListener("click",e);var n=t("resetBtn");n&&n.addEventListener("click",function(){var a={weight:"70",sex:"male",age:"30",height:"175",activity:"1.55"};Object.keys(a).forEach(function(e){var n=t(e);n&&(n.value=a[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

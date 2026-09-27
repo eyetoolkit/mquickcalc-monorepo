@@ -117,41 +117,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function(){
-var _=function(id){return document.getElementById(id);};
-function calc(){
-  var dist=parseFloat(_('distance').value)||5;
-  if(_('distUnit').value==='mi')dist=dist*1.60934; // convert to km
-  var w=parseFloat(_('weight').value)||70;
-  if(_('wUnit').value==='lb')w=w*0.453592; // convert to kg
-  // Activities with MET values and typical km/h speed
-  var acts=[
-    ["Walking (slow, 3 km/h)", 3.0, 3],
-    ["Walking (moderate, 5 km/h)", 3.5, 5],
-    ["Walking (fast, 6.5 km/h)", 4.5, 6.5],
-    ["Jogging (8 km/h)", 8.0, 8],
-    ["Running (10 km/h)", 10.0, 10],
-    ["Running fast (12 km/h)", 12.0, 12],
-    ["Sprinting (16 km/h)", 15.0, 16],
-    ["Cycling casual (12 km/h)", 5.0, 12],
-    ["Cycling moderate (18 km/h)", 7.0, 18],
-    ["Cycling fast (25 km/h)", 10.0, 25]
-  ];
-  var html="";
-  acts.forEach(function(a){
-    var mets=a[1], speed=a[2];
-    var hours=dist/speed;
-    var cals=Math.round(mets*w*hours);
-    var mins=Math.round(hours*60);
-    html+="<div class=\"cell\"><div class=\"lbl\">"+a[0]+"</div><div class=\"val\">"+cals+" kcal</div><div class=\"dim\">~"+mins+" min</div></div>";
-  });
-  _('burnGrid').innerHTML=html;
-  _('result').classList.add('show');
-}
-['distance','distUnit','weight','wUnit'].forEach(function(id){_(id).addEventListener('input',function(){clearTimeout(window._t);window._t=setTimeout(calc,300);});});
-calc();
-})();
+<script>!function(){var i=function(i){return document.getElementById(i)};function n(){var n=parseFloat(i("distance").value)||5;"mi"===i("distUnit").value&&(n*=1.60934);var t=parseFloat(i("weight").value)||70;"lb"===i("wUnit").value&&(t*=.453592);var a="";[["Walking (slow, 3 km/h)",3,3],["Walking (moderate, 5 km/h)",3.5,5],["Walking (fast, 6.5 km/h)",4.5,6.5],["Jogging (8 km/h)",8,8],["Running (10 km/h)",10,10],["Running fast (12 km/h)",12,12],["Sprinting (16 km/h)",15,16],["Cycling casual (12 km/h)",5,12],["Cycling moderate (18 km/h)",7,18],["Cycling fast (25 km/h)",10,25]].forEach(function(i){var e=i[1],l=i[2],d=n/l,s=Math.round(e*t*d),c=Math.round(60*d);a+='<div class="cell"><div class="lbl">'+i[0]+'</div><div class="val">'+s+' kcal</div><div class="dim">~'+c+" min</div></div>"}),i("burnGrid").innerHTML=a,i("result").classList.add("show")}["distance","distUnit","weight","wUnit"].forEach(function(t){i(t).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(n,300)})}),n()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

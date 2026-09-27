@@ -135,25 +135,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function pct(n) { return (n * 100).toFixed(1) + '%'; }
-  function calc() {
-    var order = parseFloat(document.getElementById('order').value) || 0;
-    var rate = (parseFloat(document.getElementById('tier').value) || 15) / 100;
-    var adFee = order * rate;
-    var after = order - adFee;
-    document.getElementById('adFeeVal').textContent = money(adFee);
-    document.getElementById('afterVal').textContent = money(after);
-    document.getElementById('rateVal').textContent = pct(rate);
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('order').value = '50.00'; document.getElementById('tier').value = '15'; calc(); });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("order").value)||0,n=(parseFloat(document.getElementById("tier").value)||15)/100,d=t*n,c=t-d;document.getElementById("adFeeVal").textContent=e(d),document.getElementById("afterVal").textContent=e(c),document.getElementById("rateVal").textContent=(100*n).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("order").value="50.00",document.getElementById("tier").value="15",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

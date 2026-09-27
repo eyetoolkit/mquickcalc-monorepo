@@ -151,33 +151,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); }
-  function calc() {
-    var fixed = parseFloat(document.getElementById('fixed').value) || 0;
-    var vc = parseFloat(document.getElementById('var').value) || 0;
-    var price = parseFloat(document.getElementById('price').value) || 0;
-    var target = parseFloat(document.getElementById('target').value);
-    var volume = parseFloat(document.getElementById('volume').value);
-    var contrib = price - vc;
-    var units = contrib > 0 ? Math.ceil(fixed / contrib) : Infinity;
-    var targetUnits = (contrib > 0 && !isNaN(target) && target > 0) ? Math.ceil((fixed + target) / contrib) : null;
-    var profAtVolume = (!isNaN(volume) && volume >= 0 && contrib > 0) ? (volume * contrib) - fixed : null;
-    document.getElementById('contribItem').textContent = 'Contribution per unit: ' + money(contrib);
-    document.getElementById('unitVal').textContent = isFinite(units) ? units : '∞';
-    document.getElementById('contribVal').textContent = money(contrib);
-    document.getElementById('revVal').textContent = isFinite(units) ? money(units * price) : '—';
-    document.getElementById('targetVal').textContent = targetUnits ? targetUnits : '—';
-    document.getElementById('profVal').textContent = profAtVolume !== null ? money(profAtVolume) : '—';
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () { document.getElementById('fixed').value = '1000.00'; document.getElementById('var').value = '5.00'; document.getElementById('price').value = '20.00'; document.getElementById('target').value = '500.00'; document.getElementById('volume').value = '200'; calc(); });
-  calc();
-
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("fixed").value)||0,n=parseFloat(document.getElementById("var").value)||0,l=parseFloat(document.getElementById("price").value)||0,d=parseFloat(document.getElementById("target").value),o=parseFloat(document.getElementById("volume").value),u=l-n,a=u>0?Math.ceil(t/u):1/0,c=u>0&&!isNaN(d)&&d>0?Math.ceil((t+d)/u):null,m=!isNaN(o)&&o>=0&&u>0?o*u-t:null;document.getElementById("contribItem").textContent="Contribution per unit: "+e(u),document.getElementById("unitVal").textContent=isFinite(a)?a:"∞",document.getElementById("contribVal").textContent=e(u),document.getElementById("revVal").textContent=isFinite(a)?e(a*l):"—",document.getElementById("targetVal").textContent=c||"—",document.getElementById("profVal").textContent=null!==m?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("fixed").value="1000.00",document.getElementById("var").value="5.00",document.getElementById("price").value="20.00",document.getElementById("target").value="500.00",document.getElementById("volume").value="200",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

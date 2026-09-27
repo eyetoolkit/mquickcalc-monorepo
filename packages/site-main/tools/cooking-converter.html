@@ -183,83 +183,9 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-icons.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
-<script>
-(function () {
-  var CUPS = { 'ml': 1, 'l': 1000, 'tsp-us': 4.92892159375, 'tbsp-us': 14.78676478125,
-               'floz-us': 29.5735295625, 'cup-us': 236.5882365, 'floz-uk': 28.4130625,
-               'cup-uk': 284.130625, 'pt-us': 473.176473 };
-  var inp = document.getElementById('val');
-  var sel = document.getElementById('from');
-  var tb = document.getElementById('rows');
-  var big = document.getElementById('mainVal');
-  var bigLbl = document.getElementById('mainUnit');
-  var LABEL = { 'ml': 'Milliliter (mL)', 'l': 'Liter (L)', 'tsp-us': 'Teaspoon (US)',
-                'tbsp-us': 'Tablespoon (US)', 'floz-us': 'Fluid ounce (US)',
-                'cup-us': 'Cup (US, 240 mL recipe cup)', 'floz-uk': 'Fluid ounce (UK)',
-                'cup-uk': 'Cup (UK / metric, 250 mL)', 'pt-us': 'Pint (US)' };
-
-  function fmt(n) {
-    if (!isFinite(n)) return '—';
-    if (n === 0) return '0';
-    return Number(n.toPrecision(7)).toLocaleString('en-US', { maximumFractionDigits: 4 });
-  }
-  function render() {
-    var v = parseFloat(inp.value);
-    if (isNaN(v)) v = 0;
-    var from = sel.value;
-    var ml = v * CUPS[from];
-    var rows = '';
-    for (var k in CUPS) {
-      rows += '<tr' + (k === from ? ' class="is-from"' : '') + '><td>' + LABEL[k] +
-              '</td><td><strong>' + fmt(ml / CUPS[k]) + '</strong></td></tr>';
-    }
-    tb.innerHTML = rows;
-    var target = from === 'cup-us' ? 'ml' : 'cup-us';
-    big.textContent = fmt(ml / CUPS[target]);
-    bigLbl.textContent = (target === 'ml' ? 'in milliliters (mL)' : 'in US cups');
-  }
-  inp.addEventListener('input', render);
-  sel.addEventListener('change', render);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    inp.value = '1';
-    sel.value = 'cup-us';
-    render();
-  });
-  // URL param support: /{topic}/{from}-to-{to} redirects here
-  (function(){
-    var q=new URLSearchParams(window.location.search);
-    var fromParam=q.get('from');
-    var sel=document.getElementById('from');
-    if(sel && fromParam){
-      var opts=sel.getElementsByTagName('option');
-      for(var i=0;i<opts.length;i++){
-        if(opts[i].value===fromParam){
-          sel.value=fromParam;
-          sel.dispatchEvent(new Event('change'));
-          break;
-        }
-      }
-    }
-  })();
-  render();
-})();
+<script>!function(){var e={ml:1,l:1e3,"tsp-us":4.92892159375,"tbsp-us":14.78676478125,"floz-us":29.5735295625,"cup-us":236.5882365,"floz-uk":28.4130625,"cup-uk":284.130625,"pt-us":473.176473},t=document.getElementById("val"),n=document.getElementById("from"),u=document.getElementById("rows"),i=document.getElementById("mainVal"),o=document.getElementById("mainUnit"),l={ml:"Milliliter (mL)",l:"Liter (L)","tsp-us":"Teaspoon (US)","tbsp-us":"Tablespoon (US)","floz-us":"Fluid ounce (US)","cup-us":"Cup (US, 240 mL recipe cup)","floz-uk":"Fluid ounce (UK)","cup-uk":"Cup (UK / metric, 250 mL)","pt-us":"Pint (US)"};function a(e){return isFinite(e)?0===e?"0":Number(e.toPrecision(7)).toLocaleString("en-US",{maximumFractionDigits:4}):"—"}function s(){var s=parseFloat(t.value);isNaN(s)&&(s=0);var r=n.value,c=s*e[r],m="";for(var d in e)m+="<tr"+(d===r?' class="is-from"':"")+"><td>"+l[d]+"</td><td><strong>"+a(c/e[d])+"</strong></td></tr>";u.innerHTML=m;var p="cup-us"===r?"ml":"cup-us";i.textContent=a(c/e[p]),o.textContent="ml"===p?"in milliliters (mL)":"in US cups"}t.addEventListener("input",s),n.addEventListener("change",s),document.getElementById("resetBtn").addEventListener("click",function(){t.value="1",n.value="cup-us",s()}),function(){var e=new URLSearchParams(window.location.search).get("from"),t=document.getElementById("from");if(t&&e)for(var n=t.getElementsByTagName("option"),u=0;u<n.length;u++)if(n[u].value===e){t.value=e,t.dispatchEvent(new Event("change"));break}}(),s()}();
 </script>
-<script>
-(function() {
-  var btn = document.getElementById('embedBtn');
-  var code = document.getElementById('embedCode');
-  if(btn && code) {
-    btn.addEventListener('click', function() {
-      if(code.style.display === 'none') {
-        code.style.display = 'block';
-        btn.textContent = 'Hide embed code';
-      } else {
-        code.style.display = 'none';
-        btn.textContent = 'Show embed code';
-      }
-    });
-  }
-})();
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
 </script>
 </body>
 </html>

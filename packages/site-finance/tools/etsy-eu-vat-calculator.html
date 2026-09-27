@@ -164,42 +164,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
-  function calc() {
-    var amount = parseFloat(document.getElementById('amount').value) || 0;
-    var rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-    var incl = document.getElementById('inclVat').checked;
-    var gross, net, vat;
-    if (incl) { gross = amount; net = amount / (1 + rate); vat = gross - net; }
-    else { net = amount; gross = amount * (1 + rate); vat = gross - net; }
-    var showFees = document.getElementById('showFees').checked;
-    var etsyFee = showFees ? gross * 0.065 + gross * 0.03 + 0.25 : 0;
-    var finalNet = net - etsyFee;
-    document.getElementById('vatVal').textContent = money(vat);
-    document.getElementById('netVal').textContent = money(net);
-    document.getElementById('grossVal').textContent = money(gross);
-    document.getElementById('feeVal').textContent = showFees ? money(etsyFee) : '—';
-    document.getElementById('finalVal').textContent = showFees ? money(finalNet) : '—';
-    document.getElementById('result').classList.add('show');
-  }
-  document.getElementById('country').addEventListener('change', function () {
-    var v = document.getElementById('country').value;
-    if (v !== '') document.getElementById('rate').value = v;
-  });
-  document.getElementById('calcBtn').addEventListener('click', calc);
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    document.getElementById('amount').value = '120.00';
-    document.getElementById('country').value = '';
-    document.getElementById('rate').value = '20';
-    document.getElementById('inclVat').checked = true;
-    document.getElementById('showFees').checked = false;
-    calc();
-  });
-  calc();
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), calc);
-})();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){var t,n,d,c=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;d=document.getElementById("inclVat").checked?(t=c)-(n=c/(1+m)):(t=c*(1+m))-(n=c);var l=document.getElementById("showFees").checked,o=l?.065*t+.03*t+.25:0,u=n-o;document.getElementById("vatVal").textContent=e(d),document.getElementById("netVal").textContent=e(n),document.getElementById("grossVal").textContent=e(t),document.getElementById("feeVal").textContent=l?e(o):"—",document.getElementById("finalVal").textContent=l?e(u):"—",document.getElementById("result").classList.add("show")}document.getElementById("country").addEventListener("change",function(){var e=document.getElementById("country").value;""!==e&&(document.getElementById("rate").value=e)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="120.00",document.getElementById("country").value="",document.getElementById("rate").value="20",document.getElementById("inclVat").checked=!0,document.getElementById("showFees").checked=!1,t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>
 </html>

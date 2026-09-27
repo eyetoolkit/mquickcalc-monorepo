@@ -189,55 +189,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>
-(function () {
-  const $ = function (id) { return document.getElementById(id); };
-  function money(n) { return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' (USD)'; }
-  function estimate() {
-    const price = parseFloat($('price').value) || 0;
-    const shipping = parseFloat($('shipping').value) || 0;
-    const qty = Math.max(parseInt($('qty').value, 10) || 1, 1);
-    const trans = (parseFloat($('trans').value) || 0) / 100;
-    const paypct = (parseFloat($('paypct').value) || 0) / 100;
-    const payflat = parseFloat($('payflat').value) || 0;
-    const reg = (parseFloat($('reg').value) || 0) / 100;
-    const listing = parseFloat($('listing').value) || 0;
-    const offsite = (parseFloat($('offsite').value) || 0) / 100;
-
-    const gross = (price + shipping) * qty;
-    const transFee = gross * trans;
-    const payFee = gross * paypct + payflat * qty;
-    const regFee = gross * reg;
-    const listingFee = listing * qty;
-    const offsiteFee = gross * offsite;
-    const total = transFee + payFee + regFee + listingFee + offsiteFee;
-    const net = gross - total;
-
-    $('grossLine').textContent = 'Gross revenue: ' + money(gross) + '  ·  ' + qty + ' item(s) at ' + money(price) + ' each';
-    $('netVal').textContent = money(net);
-
-    const cells = [
-      ['Transaction fee', money(transFee)],
-      ['Payment processing', money(payFee)],
-      ['Regulatory fee', money(regFee)],
-      ['Listing fee', money(listingFee)],
-      ['Off-site ads', money(offsiteFee)]
-    ];
-    $('breakdown').innerHTML = cells.map(function (c) {
-      return '<div class="cell"><div class="lbl">' + c[0] + '</div><div class="val">' + c[1] + '</div></div>';
-    }).join('') +
-      '<div class="cell"><div class="lbl">Total fees</div><div class="val">' + money(total) + '</div></div>';
-    $('result').classList.add('show');
-  }
-  $('calcBtn').addEventListener('click', estimate);
-  $('resetBtn').addEventListener('click', function () {
-    var def = { price:'25.00', shipping:'0', qty:'1', trans:'6.5', paypct:'3.0', payflat:'0.25', reg:'0.25', listing:'0.20', offsite:'0' };
-    Object.keys(def).forEach(function (id) { $(id).value = def[id]; });
-    estimate();
-  });
-  estimate(); // run once on load
-  window.__bindRealtime && window.__bindRealtime(document.getElementById('calc-card'), estimate);
-})();
+<script>!function(){const e=function(e){return document.getElementById(e)};function t(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})+" (USD)"}function a(){const a=parseFloat(e("price").value)||0,n=parseFloat(e("shipping").value)||0,s=Math.max(parseInt(e("qty").value,10)||1,1),l=(a+n)*s,i=l*((parseFloat(e("trans").value)||0)/100),c=l*((parseFloat(e("paypct").value)||0)/100)+(parseFloat(e("payflat").value)||0)*s,r=l*((parseFloat(e("reg").value)||0)/100),o=(parseFloat(e("listing").value)||0)*s,d=l*((parseFloat(e("offsite").value)||0)/100),v=i+c+r+o+d,u=l-v;e("grossLine").textContent="Gross revenue: "+t(l)+"  ·  "+s+" item(s) at "+t(a)+" each",e("netVal").textContent=t(u);const p=[["Transaction fee",t(i)],["Payment processing",t(c)],["Regulatory fee",t(r)],["Listing fee",t(o)],["Off-site ads",t(d)]];e("breakdown").innerHTML=p.map(function(e){return'<div class="cell"><div class="lbl">'+e[0]+'</div><div class="val">'+e[1]+"</div></div>"}).join("")+'<div class="cell"><div class="lbl">Total fees</div><div class="val">'+t(v)+"</div></div>",e("result").classList.add("show")}e("calcBtn").addEventListener("click",a),e("resetBtn").addEventListener("click",function(){var t={price:"25.00",shipping:"0",qty:"1",trans:"6.5",paypct:"3.0",payflat:"0.25",reg:"0.25",listing:"0.20",offsite:"0"};Object.keys(t).forEach(function(a){e(a).value=t[a]}),a()}),a(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),a)}();
 </script>
 </body>
 </html>
