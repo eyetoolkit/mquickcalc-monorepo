@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lean Body Mass Calculator — Free Tool | mQuickCalc Health</title>
-  <meta name="description" content="Free lean body mass calculator. Enter your weight and body fat percentage to estimate how much of your weight is lean tissue vs fat mass.">
+  <meta name="description" content="Free lean body mass calculator using the Boer formula. Enter sex, weight, and height to estimate your lean body mass — muscle, bone, and organs.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/lean-body-mass-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/css/site.css">
@@ -12,7 +12,7 @@
   {"@context":"https://schema.org","@type":"WebApplication","name":"Lean Body Mass Calculator","url":"https://health.mquickcalc.com/tools/lean-body-mass-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free lean body mass calculator. Enter your weight and body fat percentage to estimate how much of your weight is lean tissue vs fat mass."}
   </script>
 <meta property="og:title" content="Lean Body Mass Calculator —Free Tool | mQuickCalc Health">
-<meta property="og:description" content="Free lean body mass calculator. Enter your weight and body fat percentage to estimate how much of your weight is lean tissue vs fat mass.">
+<meta property="og:description" content="Free lean body mass calculator using the Boer formula. Enter sex, weight, and height to estimate your lean body mass — muscle, bone, and organs.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://health.mquickcalc.com/tools/lean-body-mass-calculator">
 <meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="mQuickCalc Health">
 <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lean Body Mass Calculator —Free Tool | mQuickCalc Health">
-  <meta name="twitter:description" content="Free lean body mass calculator. Enter your weight and body fat percentage to estimate how much of your weight is lean tissue vs fat mass.">
+  <meta name="twitter:description" content="Free lean body mass calculator using the Boer formula. Enter sex, weight, and height to estimate your lean body mass — muscle, bone, and organs.">
   <meta name="twitter:site" content="@mquickcalchealth">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Lean Body Mass Calculator","item":"https://health.mquickcalc.com/tools/lean-body-mass-calculator"}]}</script>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -59,12 +59,17 @@
     <p class="lede">Calculate how much of your body weight is lean tissue —muscle, bone, and organs —versus fat mass. A key metric for athletes and body composition tracking.</p>
 
     <div class="calc-card">
+      <label for="sex">Biological sex</label>
+      <select id="sex" class="input">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
       <label for="weight">Body weight (kg)</label>
       <input id="weight" class="input" type="number" inputmode="decimal" min="0" step="any" value="75">
 
-      <label for="bodyfat">Body fat % (%)</label>
-      <input id="bodyfat" class="input" type="number" inputmode="decimal" min="0" step="any" value="20">
-
+      <label for="height">Height (cm)</label>
+      <input id="height" class="input" type="number" inputmode="decimal" min="0" step="any" value="175">
 
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
         <button id="calcBtn" class="btn">Calculate</button>
@@ -73,7 +78,7 @@
 
     <div class="result" id="result">
       <div class="big" id="lbmVal">--</div>
-      <div class="dim">Lean body mass</div>
+      <div class="dim">Lean body mass (Boer formula)</div>
       <div class="grid">
         <div class="cell"><div class="lbl">Fat mass</div><div class="val" id="fatVal">--</div></div>
         <div class="cell"><div class="lbl">Lean %</div><div class="val" id="lbmPctVal">--</div></div>
@@ -82,11 +87,11 @@
     </div>
 
     
-    <h2>How lean body mass is estimated</h2><p>LBM = total weight minus fat mass. Uses Boer equation: Men = 0.407×kg + 0.267×cm − 19.2. Women = 0.252×kg + 0.473×cm − 48.3. Or simply subtract estimated fat from total weight.</p>
+    <h2>How lean body mass is estimated</h2><p>Uses the Boer formula — a population-validated LBM regression developed against DEXA scan data. Male: <strong>0.407 × weight(kg) + 0.267 × height(cm) − 19.2</strong>. Female: <strong>0.252 × weight(kg) + 0.473 × height(cm) − 48.3</strong>. Fat mass = total weight − LBM.</p>
     <h2>Frequently asked questions</h2>
 <div class="faq-list">
 <h3>How accurate are the results?</h3>
-<p>Formulas used here are validated in population studies but cannot account for individual genetics, body composition, or medical conditions. Treat results as a starting point, not a medical diagnosis.</p>
+<p>This calculator uses the Boer formula, one of the most accurate LBM estimates validated against DEXA scans. It requires sex, weight, and height — no skinfold measurements needed. Results are population-validated estimates, not medical measurements.</p>
 <h3>Should I consult a professional?</h3>
 <p>If you have specific health concerns, existing conditions, or are planning significant lifestyle changes, consult a qualified healthcare provider (doctor, dietitian, physiologist).</p>
 <h3>How often should I recalculate?</h3>
@@ -125,7 +130,7 @@
 <script src="/js/site-core.js" defer></script>
   <script src="/js/site-enhance.js" defer></script>
   <script src="/js/site-meters.js" defer></script>
-<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,n=parseFloat(t("bodyfat").value)||0,a=e*(100-n)/100,o=e*n/100;t("lbmVal").textContent=a.toFixed(1)+" kg",t("fatVal").textContent=o.toFixed(1)+" kg",t("lbmPctVal").textContent=(100-n).toFixed(1)+"%",t("result").classList.add("show")}["bodyfat","weight"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)});var n=t("calcBtn");n&&n.addEventListener("click",e);var a=t("resetBtn");a&&a.addEventListener("click",function(){var n={weight:"75",bodyfat:"20"};Object.keys(n).forEach(function(e){var a=t(e);a&&(a.value=n[e])}),e()}),e()}();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,a=parseFloat(t("height").value)||0,n=t("sex").value;if(!(e<=0||a<=0)){var i="male"==n?.407*e+.267*a-19.2:.252*e+.473*a-48.3,l=Math.max(0,i),c=Math.max(0,e-l),o=(l/e*100).toFixed(1);t("lbmVal").textContent=l.toFixed(1)+" kg",t("fatVal").textContent=c.toFixed(1)+" kg",t("lbmPctVal").textContent=o+"%",t("result").classList.add("show")}}["height","sex","weight"].forEach(function(a){var n=t(a);n&&n.addEventListener("input",e)});var a=t("calcBtn");a&&a.addEventListener("click",e);var n=t("resetBtn");n&&n.addEventListener("click",function(){var a={height:"175",sex:"male",weight:"75"};Object.keys(a).forEach(function(e){var n=t(e);n&&(n.value=a[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

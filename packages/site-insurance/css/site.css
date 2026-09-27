@@ -244,7 +244,7 @@ button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 .trust-label{font-size:var(--fs-xs);font-weight:var(--fw-semibold);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:24px}
 .trust-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px}
 .trust{display:inline-flex;align-items:center;gap:5px;font-size:var(--fs-sm);color:var(--muted);font-weight:var(--fw-medium)}
-.trust svg{color:#059669}
+.trust svg{color:var(--brand)}
 
 /* Hero decorative blobs (pure CSS, site-specific via data-site) */
 .hero::before,.hero::after{content:"";position:absolute;pointer-events:none;z-index:0;opacity:.4}
