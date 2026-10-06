@@ -104,7 +104,22 @@ function buildSitemap(site) {
     entries.push(urlEntry(loc, lastmod, 'monthly', priority));
   }
 
-  // 4. embed/*.html — intentionally NOT included: embed pages are full
+  // 4. compare/*/index.html — GEO pages, ordinary indexable content.
+  const compareDir = path.join(siteDir, 'compare');
+  if (fs.existsSync(compareDir)) {
+    for (const slug of fs.readdirSync(compareDir, { withFileTypes: true })) {
+      if (!slug.isDirectory()) continue;
+      const page = path.join(compareDir, slug.name, 'index.html');
+      if (!fs.existsSync(page)) continue;
+      entries.push(urlEntry(`${site.origin}/compare/${slug.name}/`, gitLastModifiedDate(page), 'monthly', '0.7'));
+    }
+    const hub = path.join(compareDir, 'index.html');
+    if (fs.existsSync(hub)) {
+      entries.push(urlEntry(`${site.origin}/compare/`, gitLastModifiedDate(hub), 'monthly', '0.8'));
+    }
+  }
+
+  // 5. embed/*.html — intentionally NOT included: embed pages are full
   // duplicates of tool pages (canonicalized) and are marked noindex.
   // Keeping them out of the sitemap saves crawl budget and avoids
   // duplicate-URL signals.

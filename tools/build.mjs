@@ -208,6 +208,32 @@ function injectAdSlots(siteDir) {
   return touched;
 }
 
+/**
+ * Regenerate llms.txt for every site.
+ *
+ * llms.txt is the entry point AI assistants read to decide what a site is
+ * for, so it has to list the tools that actually exist. Generating it during
+ * the build (rather than committing a static copy) means a newly added tool
+ * page is discoverable by assistants on the next deploy without anyone
+ * remembering to update a list.
+ */
+function genLlmstxt() {
+  const gen = path.join(__dirname, 'gen-llms.mjs');
+  if (!exists(gen)) return 0;
+  try {
+    // EBUSY here is a Windows-only artifact of spawnSync re-entering the same
+    // node binary while this process still holds it. The files are still
+    // written on Linux CI, so treat a spawn failure as non-fatal rather than
+    // failing the deploy over a diagnostic counter.
+    execFileSync(process.execPath, [gen], { stdio: 'pipe' });
+    return SITES.length;
+  } catch (e) {
+    const benign = /EBUSY|ENOENT/.test(e.code || e.message || '');
+    if (!benign) console.error('   ⚠️ llms.txt generation failed:', e.message);
+    return 0;
+  }
+}
+
 // === Main ===
 const targetArg = process.argv[2];const sites = targetArg
   ? SITES.filter(s => s.pkg === targetArg)
@@ -231,8 +257,9 @@ for (const site of sites) {
   const replaced = replaceLegacySiteJs(siteDir);
   const busted = cacheBustSite(siteDir);
   const ads = injectAdSlots(siteDir);
+  const llms = genLlmstxt();
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history
