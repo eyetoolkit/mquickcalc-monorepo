@@ -514,3 +514,114 @@ main.page h2{margin-top:var(--space-12)}
 :root[data-theme="dark"] .result .cell{background:#141b2d}
 :root[data-theme="dark"] .result .grid{background:#253048;border-color:#253048}
 :root[data-theme="dark"] .calc-card{background:#141b2d;border-color:#253048}
+
+/* =====================================================================
+   Homepage layout rebuild — Bento hero + section rhythm
+   The homepage previously rendered as one centered column (kicker → h1 →
+   sub → search → chips → stats). That structure looked the same no matter
+   how the palette changed, which is why the 2026 refresh felt invisible on
+   the homepage while tool pages improved noticeably. Here the same markup
+   is re-laid-out as an asymmetric bento hero plus real section blocks —
+   no HTML changes, so SEO and the existing scripts keep working.
+   ===================================================================== */
+
+/* ---------- Bento hero: pitch left, action card right ----------
+   The homepage used to be one centered column, so a palette change alone
+   left it looking unchanged. It is now a genuine two-column hero.
+
+   index.html wraps the pitch in .hero-copy and the search / quick picks /
+   trust stats in .hero-actions, giving two independent flex columns. An
+   earlier attempt placed the three action elements as loose grid items,
+   which made them share grid rows with the tall headline and stretch into
+   large dead gaps; separate containers remove that coupling entirely. */
+.hero{padding:56px 0 48px}
+.hero>.wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);
+  align-items:center;
+  column-gap:52px;
+  text-align:left;
+}
+.hero-copy{grid-column:1;display:flex;flex-direction:column;align-items:flex-start}
+.hero-copy .kicker{margin-bottom:10px}
+.hero-copy h1{margin:0;max-width:19ch}
+.hero-copy p.sub{margin:16px 0 0;max-width:48ch}
+
+.hero-actions{
+  grid-column:2;
+  display:flex;flex-direction:column;align-items:stretch;
+  gap:18px;
+  padding:24px 26px;
+  border-radius:var(--radius-xl);
+  background:color-mix(in srgb,var(--bg) 80%,var(--brand-bg));
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-md);
+}
+.hero-actions .hero-search{margin:0;width:100%}
+.hero-actions .hero-chips{margin:0;justify-content:flex-start;gap:8px}
+/* The card is a column flex container, so .hero-stats must re-assert a row
+   direction or its three cells stack vertically. display:flex is restated
+   here to win over the earlier inline-flex declaration. */
+.hero-actions .hero-stats{
+  display:flex;
+  margin:2px 0 0;align-self:flex-start;
+  flex-direction:row;flex-flow:row nowrap;flex-wrap:nowrap;
+}
+/* Each stat cell must not collapse; keep them side by side. */
+.hero-actions .hero-stats .hero-stat{flex:0 0 auto}
+/* The "no results" hint is toggled by site-enhance.js via inline
+   style.display, so no class-based show/hide is needed here. */
+.hero-actions .search-empty{position:static;max-width:none;margin:0;text-align:left}
+.hero-search,.hero-chips,.hero-stats{position:relative;z-index:1}
+
+/* ---------- Section blocks with real rhythm ---------- */
+.block{padding:var(--space-16) 0}
+.block.alt{background:var(--bg-soft);border-block:1px solid var(--line)}
+.block .section-head{max-width:62ch;margin-bottom:var(--space-8)}
+.block .section-head h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.03em;line-height:1.12;margin:0 0 10px}
+.block .section-head p{color:var(--muted);font-size:var(--fs-lg);line-height:1.6;margin:0}
+
+/* ---------- Feature cards (the four toolboxes) ----------
+   These had no CSS at all, so they rendered as unstyled inline links. */
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
+.feature{
+  display:flex;flex-direction:column;gap:10px;
+  padding:24px;border-radius:var(--radius-lg);
+  background:var(--bg);border:1px solid var(--line);
+  text-decoration:none;color:inherit;box-shadow:var(--shadow-xs);
+  transition:transform .2s cubic-bezier(.34,1.2,.5,1),box-shadow .2s,border-color .2s;
+}
+.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:color-mix(in srgb,var(--brand) 38%,var(--line))}
+.feature .f-ico{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:13px;
+  background:var(--brand-bg);color:var(--brand-ink);
+  border:1px solid color-mix(in srgb,var(--brand) 18%,transparent);
+}
+.feature h3{margin:0;font-size:var(--fs-xl);letter-spacing:-.02em;color:var(--ink)}
+.feature p{margin:0;color:var(--muted);font-size:var(--fs-sm);line-height:1.55}
+
+/* ---------- Prose (Why section) ---------- */
+.prose{max-width:70ch;color:var(--ink-2);line-height:1.72}
+.prose h3{font-size:var(--fs-lg);margin:var(--space-6) 0 8px;letter-spacing:-.015em}
+.prose p{margin:0 0 12px}
+
+/* ---------- Responsive: stack the bento hero ---------- */
+@media(max-width:900px){
+  .hero>.wrap{grid-template-columns:1fr;column-gap:0}
+  .hero-copy{grid-column:1}
+  .hero-copy h1{max-width:none}
+  .hero-actions{grid-column:1;margin-top:28px;padding:20px}
+}
+@media(max-width:640px){
+  .hero{padding:40px 0 34px}
+  .block{padding:var(--space-12) 0}
+  .trio{grid-template-columns:1fr}
+  .feature{padding:18px}
+}
+
+/* ---------- Dark parity ---------- */
+:root[data-theme="dark"] .block.alt{background:var(--bg-soft);border-color:#253048}
+:root[data-theme="dark"] .feature{background:#141b2d;border-color:#253048}
+:root[data-theme="dark"] .feature:hover{background:#1b2438;border-color:color-mix(in srgb,var(--brand) 50%,#253048)}
+:root[data-theme="dark"] .feature .f-ico{background:color-mix(in srgb,var(--brand) 18%,#141b2d);color:#fff}
