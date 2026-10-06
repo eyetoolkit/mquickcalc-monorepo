@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your exact age in years, months, and days from your birth date. Also shows your next birthday countdown and life milestone.">
   <link rel="canonical" href="https://mquickcalc.com/tools/age-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
+  <link rel="stylesheet" href="/css/site.css?v=97548aac">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Age Calculator", "url": "https://mquickcalc.com/tools/age-calculator", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your exact age in years, months, and days from your birth date. Also shows your next birthday countdown and life milestone."}</script>
 <meta property="og:title" content="Age Calculator — Free Tool | mQuickCalc">
 <meta property="og:description" content="Calculate your exact age in years, months, and days from your birth date. Also shows your next birthday countdown and life milestone.">
@@ -128,7 +128,7 @@
 <script src="/js/site-core.js?v=f5a9998e" defer></script>
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script src="/js/site-meters.js?v=3b464033" defer></script>
-<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=new Date(t("birthdate").value),n=new Date;if(!isNaN(e.getTime())){var a=n.getFullYear()-e.getFullYear(),l=n.getMonth()-e.getMonth(),o=n.getDate()-e.getDate();if(o<0)l--,o+=new Date(n.getFullYear(),n.getMonth(),0).getDate();l<0&&(a--,l+=12);var r=Math.floor((n-e)/864e5),i=new Date(n.getFullYear(),e.getMonth(),e.getDate());i<=n&&i.setFullYear(n.getFullYear()+1);var d=Math.ceil((i-n)/864e5),c=i.toLocaleDateString(void 0,{year:"numeric",month:"long",day:"numeric"});t("bigVal").textContent=a,t("dimVal").textContent="years, "+l+" months, "+o+" days",t("monthsVal").textContent=12*a+l+" total",t("daysVal").textContent=r.toLocaleString(),t("nextVal").textContent=c,t("daysUntil").textContent=d+" days",t("result").classList.add("show")}}["birthdate"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("birthdate").value="1995-06-15",e()}),e()}();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=new Date(t("birthdate").value),n=new Date;if(!isNaN(e.getTime())){var a=n.getFullYear()-e.getFullYear(),l=n.getMonth()-e.getMonth(),o=n.getDate()-e.getDate();if(o<0)l--,o+=new Date(n.getFullYear(),n.getMonth(),0).getDate();l<0&&(a--,l+=12);var r=Math.floor((n-e)/864e5),i=new Date(n.getFullYear(),e.getMonth(),e.getDate());i<=n&&i.setFullYear(n.getFullYear()+1);var d=Math.ceil((i-n)/864e5),c=i.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});t("bigVal").textContent=a,t("dimVal").textContent="years, "+l+" months, "+o+" days",t("monthsVal").textContent=12*a+l+" total",t("daysVal").textContent=r.toLocaleString(),t("nextVal").textContent=c,t("daysUntil").textContent=d+" days",t("result").classList.add("show")}}["birthdate"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("birthdate").value="1995-06-15",e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
