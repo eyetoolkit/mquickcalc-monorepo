@@ -552,6 +552,86 @@ main.page h3{letter-spacing:-.015em}
 /* Dark parity */
 :root[data-theme="dark"] #all-tools .tool-card{background:#141b2d;border-color:#253048}
 
+/* ---------- Bento grids for the sister sites ----------
+   main uses #all-tools, but the finance/health/insurance homepages are split
+   into category sections (#marketplace / #creator / #tax, #body /
+   #nutrition / #fitness, …). The card markup is identical to main's, so the
+   same bento treatment is applied per section via attribute selector rather
+   than duplicating a long id list. */
+[data-site="finance"] .block .tool-grid,
+[data-site="health"] .block .tool-grid,
+[data-site="insurance"] .block .tool-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+}
+[data-site="finance"] .block .tool-card,
+[data-site="health"] .block .tool-card,
+[data-site="insurance"] .block .tool-card{
+  grid-column:span 2;padding:20px 18px 18px;min-height:0;
+}
+[data-site="finance"] .block .tool-card:nth-child(1),
+[data-site="health"] .block .tool-card:nth-child(1),
+[data-site="insurance"] .block .tool-card:nth-child(1){grid-column:span 4}
+[data-site="finance"] .block .tool-card:nth-child(1) .tc-title,
+[data-site="health"] .block .tool-card:nth-child(1) .tc-title,
+[data-site="insurance"] .block .tool-card:nth-child(1) .tc-title{font-size:1.24rem}
+[data-site="finance"] .block .tool-card .icon-row,
+[data-site="health"] .block .tool-card .icon-row,
+[data-site="insurance"] .block .tool-card .icon-row{min-height:2.5em}
+[data-site="finance"] .block .tool-card .icon-row svg[viewBox],
+[data-site="health"] .block .tool-card .icon-row svg[viewBox],
+[data-site="insurance"] .block .tool-card .icon-row svg[viewBox]{width:1.7em;height:1.7em}
+
+@media(max-width:1000px){
+  [data-site="finance"] .block .tool-grid,
+  [data-site="health"] .block .tool-grid,
+  [data-site="insurance"] .block .tool-grid{grid-template-columns:repeat(4,1fr)}
+  [data-site="finance"] .block .tool-card,
+  [data-site="health"] .block .tool-card,
+  [data-site="insurance"] .block .tool-card,
+  [data-site="finance"] .block .tool-card:nth-child(1),
+  [data-site="health"] .block .tool-card:nth-child(1),
+  [data-site="insurance"] .block .tool-card:nth-child(1){grid-column:span 2}
+}
+@media(max-width:640px){
+  [data-site="finance"] .block .tool-grid,
+  [data-site="health"] .block .tool-grid,
+  [data-site="insurance"] .block .tool-grid{grid-template-columns:1fr 1fr;gap:10px}
+  [data-site="finance"] .block .tool-card,
+  [data-site="health"] .block .tool-card,
+  [data-site="insurance"] .block .tool-card{grid-column:span 1;padding:14px 12px;border-radius:var(--radius-md)}
+  [data-site="finance"] .block .tool-card .tc-title,
+  [data-site="health"] .block .tool-card .tc-title,
+  [data-site="insurance"] .block .tool-card .tc-title{font-size:.95rem}
+  [data-site="finance"] .block .tool-card .tc-desc,
+  [data-site="health"] .block .tool-card .tc-desc,
+  [data-site="insurance"] .block .tool-card .tc-desc{display:none}
+  [data-site="insurance"] .block .tool-grid{grid-template-columns:1fr}
+  [data-site="insurance"] .block .tool-card{grid-column:span 1}
+  [data-site="insurance"] .block .tool-card .tc-desc{display:block}
+}
+
+/* ---------- Dark-mode polish for the bento layer ---------- */
+:root[data-theme="dark"] .tool-card{
+  background:#141b2d;border-color:#253048;
+}
+:root[data-theme="dark"] .tool-card:hover{
+  background:#1b2438;border-color:color-mix(in srgb,var(--brand) 50%,#253048);
+}
+:root[data-theme="dark"] .tool-card::after{opacity:0}
+:root[data-theme="dark"] .tool-card:hover::after{opacity:1}
+/* Feature tiles read as slightly elevated surfaces in dark mode */
+:root[data-theme="dark"] #all-tools .tool-card:nth-child(1),
+:root[data-theme="dark"] [data-site="finance"] .block .tool-card:nth-child(1),
+:root[data-theme="dark"] [data-site="health"] .block .tool-card:nth-child(1),
+:root[data-theme="dark"] [data-site="insurance"] .block .tool-card:nth-child(1){
+  background:linear-gradient(160deg,#1a2338 0%,#141b2d 100%);
+  border-color:color-mix(in srgb,var(--brand) 26%,#253048);
+}
+:root[data-theme="dark"] .hero-actions{
+  background:color-mix(in srgb,#141b2d 88%,var(--brand));
+  border-color:#253048;
+}
+
 
 /* ---------- Section rhythm ---------- */
 main.page{padding-bottom:var(--space-16)}
