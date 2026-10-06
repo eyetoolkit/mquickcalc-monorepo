@@ -420,6 +420,15 @@ main.page h3{letter-spacing:-.015em}
 .tool-card .icon-row .emoji{font-size:1.45rem;transition:transform .25s cubic-bezier(.34,1.4,.5,1)}
 .tool-card:hover .icon-row .emoji{transform:scale(1.14) rotate(-4deg)}
 
+/* Emoji are replaced by a bare inline <svg viewBox="0 0 24 24"> at runtime
+   (site.js). Those SVGs carry NO class and NO width/height attributes, so
+   nothing constrained them inside the flex .icon-row — in the bento tiles
+   they ballooned to ~690px. Match them by their viewBox attribute and pin
+   the size in em so it scales with the surrounding font-size. */
+.icon-row svg[viewBox]{
+  width:1.45em;height:1.45em;flex:0 0 auto;display:block;
+}
+
 /* ---------- Hero chips & stats: refined ---------- */
 .hero-chips{gap:9px;margin-top:20px}
 .hero-chips a{
@@ -483,6 +492,66 @@ main.page h3{letter-spacing:-.015em}
   -webkit-background-clip:text;background-clip:text;color:transparent;
   letter-spacing:-.035em;
 }
+
+/* ---------- Bento tool grid ----------
+   The catalogue was a uniform auto-fill grid, so every tile had equal visual
+   weight and the section read as a flat wall of links. Cards now span
+   different column counts on a 6-column grid: the first card is a large
+   feature tile, a few others are wide, and the rest stay compact. Done with
+   nth-child so the existing markup and its SEO links stay untouched. */
+#all-tools .tool-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
+}
+#all-tools .tool-card{
+  grid-column:span 2;
+  padding:24px 22px 20px;
+  min-height:132px;
+  /* Pin the icon box so every card's title starts at the same y, whatever
+     the individual icon's rendered size is. */
+  justify-content:flex-start;
+}
+#all-tools .tool-card .icon-row{
+  min-height:2.6em;align-items:center;
+}
+#all-tools .tool-card .icon-row svg[viewBox]{width:1.9em;height:1.9em}
+#all-tools .tool-card:nth-child(1) .icon-row{min-height:2.9em}
+#all-tools .tool-card:nth-child(2) .icon-row{min-height:2.9em}
+/* 1 large + 2 wide feature the top of the section */
+#all-tools .tool-card:nth-child(1){grid-column:span 4;min-height:172px;padding:28px 26px 24px}
+#all-tools .tool-card:nth-child(2){grid-column:span 2;min-height:172px}
+#all-tools .tool-card:nth-child(6){grid-column:span 2;min-height:150px}
+/* Let the large tiles show off their description */
+#all-tools .tool-card:nth-child(1) .tc-desc{font-size:var(--fs-base);max-width:46ch}
+#all-tools .tool-card:nth-child(1) .tc-title{font-size:1.5rem}
+#all-tools .tool-card:nth-child(1) .icon-row .emoji{font-size:2rem}
+#all-tools .tool-card:nth-child(2) .tc-title{font-size:1.3rem}
+/* icon sizes are set uniformly per grid above so titles stay on a baseline */
+
+/* Tablet: 4-column grid keeps varied tiles but tighter */
+@media(max-width:1000px){
+  #all-tools .tool-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  #all-tools .tool-card,
+  #all-tools .tool-card:nth-child(1),
+  #all-tools .tool-card:nth-child(2),
+  #all-tools .tool-card:nth-child(6){grid-column:span 2;min-height:0}
+  #all-tools .tool-card:nth-child(1) .tc-title{font-size:1.16rem}
+  #all-tools .tool-card:nth-child(1) .tc-desc{font-size:var(--fs-sm);max-width:none}
+  #all-tools .tool-card:nth-child(1) .icon-row .emoji{font-size:1.5rem}
+}
+/* Phone: back to a single even grid — bento needs width to read */
+@media(max-width:640px){
+  #all-tools .tool-grid{grid-template-columns:1fr 1fr;gap:12px}
+  #all-tools .tool-card{grid-column:span 1;padding:16px 14px;border-radius:var(--radius-md)}
+  #all-tools .tool-card .tc-title{font-size:.98rem}
+  #all-tools .tool-card .tc-desc{display:none}
+  #all-tools .tool-card .icon-row .emoji{font-size:1.3rem}
+  #all-tools .tool-card .icon-row{min-height:2.2em}
+}
+/* Dark parity */
+:root[data-theme="dark"] #all-tools .tool-card{background:#141b2d;border-color:#253048}
+
 
 /* ---------- Section rhythm ---------- */
 main.page{padding-bottom:var(--space-16)}
