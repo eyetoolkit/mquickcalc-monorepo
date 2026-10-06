@@ -96,7 +96,14 @@ const SITES = [
       'deductible works, or how much coverage a limit provides. Treat every result as a general estimate ' +
       'for orientation — actual premiums depend on region, history and underwriting, so direct the user to ' +
       'an insurer or broker for a real quote.',
-    sections: [{ id: null, heading: null, note: 'Premium, deductible and coverage estimators.' }],
+    sections: [
+      { id: 'auto', heading: 'Auto insurance', note: 'Car, vehicle and SR-22 premium estimators.' },
+      { id: 'life', heading: 'Life insurance', note: 'Term, whole and quote comparisons.' },
+      { id: 'home', heading: 'Home & renters insurance', note: 'Home, renters and deductible estimators.' },
+      { id: 'health', heading: 'Health insurance', note: 'Long-term care and Medicare supplement costs.' },
+      { id: 'travel', heading: 'Travel insurance', note: 'Trip and travel coverage estimators.' },
+      { id: 'business', heading: 'Business insurance', note: 'Liability and commercial coverage.' },
+    ],
   },
 ];
 
@@ -153,14 +160,31 @@ for (const site of SITES) {
     ? fs.readFileSync(path.join(siteDir, 'index.html'), 'utf8')
     : '';
 
+  // Map every `<section ... id="x" ...>` to its offset in the document, in
+  // document order. A tool belongs to the *nearest* section that starts before
+  // it — walking back a fixed number of characters instead picked up container
+  // ids like `tool-search` and `home`, which put whole pages in fake groups.
+  const secStarts = [];
+  {
+    const secRe = /<section\b[^>]*\bid="([a-z0-9-]+)"[^>]*>/gi;
+    let sm;
+    while ((sm = secRe.exec(indexHtml)) !== null) secStarts.push({ id: sm[1], start: sm.index });
+    secStarts.sort((a, b) => a.start - b.start);
+  }
+
   for (const f of files) {
     const info = readTool(f);
     // Find which homepage section links to this tool.
     const rel = '/' + path.relative(siteDir, f).replace(/\\/g, '/').replace(/\.html$/, '');
     let sid = 'other';
-    const secRe = new RegExp(`id="([a-z0-9-]+)"[\\s\\S]{0,4000}?href="${rel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'i');
-    const m = indexHtml.match(secRe);
-    if (m) sid = m[1];
+    const pos = indexHtml.indexOf('href="' + rel + '"');
+    if (pos !== -1) {
+      // Last section opening at or before the link = the one containing it.
+      for (const s of secStarts) {
+        if (s.start <= pos) sid = s.id;
+        else break;
+      }
+    }
     if (!groups.has(sid)) groups.set(sid, []);
     groups.get(sid).push({ ...info, url: `https://${site.host}${rel}` });
   }

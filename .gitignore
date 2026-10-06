@@ -32,3 +32,12 @@ npm-debug.log*
 *.p12
 .env
 .env.*
+
+# Local scratch / one-off agent scripts — not part of the project (added during ③c recovery)
+_*.mjs
+_*.ps1
+_*.sh
+_*.css
+.mqc_inspect.ps1
+.tmp/
+packages/site-main/probe.mjs

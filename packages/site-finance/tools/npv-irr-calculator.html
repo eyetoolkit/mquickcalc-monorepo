@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPV &amp; IRR Calculator — Net Present Value and Rate of Return | mQuickCalc</title>
+  <meta name="description" content="Free NPV and IRR calculator: net present value, internal rate of return, profitability index and payback period from a list of yearly cash flows. Compare an investment against your discount rate instantly.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/npv-irr-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NPV &amp; IRR Calculator — Net Present Value and Rate of Return | mQuickCalc">
+  <meta name="twitter:description" content="Compute NPV, IRR, profitability index and payback period from your own yearly cash flows, all in the browser. Free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="NPV &amp; IRR Calculator — Net Present Value and Rate of Return | mQuickCalc">
+  <meta property="og:description" content="Compute NPV, IRR, profitability index and payback period from your own yearly cash flows, all in the browser. Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/npv-irr-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"NPV & IRR Calculator — Net Present Value and Rate of Return","url":"https://finance.mquickcalc.com/tools/npv-irr-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate net present value, internal rate of return, profitability index and payback period from a series of periodic cash flows."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What does NPV tell me?","acceptedAnswer":{"@type":"Answer","text":"Net present value is the value today of all future cash flows minus what you pay now, discounted at your required rate of return. Positive NPV means the project beats that required return and adds value; negative means it destroys value. For a project costing $100,000 returning $30,000, $40,000, $50,000 and $60,000 over four years, discounted at 10%, NPV is about +$38,877 — accept."}},
+  {"@type":"Question","name":"What is the difference between NPV and IRR?","acceptedAnswer":{"@type":"Answer","text":"NPV answers Does this beat my required return, giving a dollar figure. IRR answers What return exactly, giving a percentage: the discount rate at which NPV equals zero. IRR is easier to compare against a hurdle rate, but it can be misleading for projects whose cash flows change sign more than once, because multiple IRRs can exist. When the two disagree, NPV is the more reliable decision rule."}},
+  {"@type":"Question","name":"What discount rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use your opportunity cost — the return you would earn on the next best use of the same money at similar risk. For a company that is usually the weighted average cost of capital; for an individual it might be the return on a broad stock index or the interest rate on the debt taken to fund it. Higher risk means a higher discount rate, which lowers NPV. A project that only works at a 5% discount rate is weaker than one that works at 15%."}},
+  {"@type":"Question","name":"Why does my investment have no IRR?","acceptedAnswer":{"@type":"Answer","text":"IRR only exists when cash flows change sign at least once, switching from an outflow to eventual inflows. If every flow is positive, or if every future flow is negative, no discount rate can bring NPV to zero and this calculator reports it as not available. A project with several sign changes — a mine with expensive remediation at the end, for example — can have more than one IRR, which is another reason to lean on NPV instead."}},
+  {"@type":"Question","name":"What is the profitability index?","acceptedAnswer":{"@type":"Answer","text":"Profitability index is the present value of future cash flows divided by the initial cost. Above 1.0 means the project pays back more than it costs in present-value terms. It is most useful when capital is rationed: PI ranks competing projects by value created per dollar invested, so with a limited budget you fund the highest-scoring projects first rather than simply the largest NPV."}},
+  {"@type":"Question","name":"Are these the same as the Excel NPV and IRR functions?","acceptedAnswer":{"@type":"Answer","text":"IRR matches Excel closely, but Excel's NPV function assumes the first cash flow is already discounted at period 1, so a common error is to include the initial outflow inside the range. Here the outflow is entered separately as the investment at time zero and is never discounted. This calculator additionally reports the simple payback period, which Excel's NPV function does not return."}}
+]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"NPV & IRR Calculator — Net Present Value and Rate of Return","item":"https://finance.mquickcalc.com/tools/npv-irr-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>NPV &amp; IRR Calculator — Net Present Value and Rate of Return</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>📊</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Model output, not a forecast.</strong> NPV and IRR depend entirely on the cash flows and discount rate you enter — the rate you choose can flip a project from good to bad. Enter flows one per period, at equal spacing (usually years). Estimates only; not investment advice. Everything runs in your browser.
+</div>
+    <h1 class="page-title">NPV &amp; IRR Calculator — Net Present Value and Rate of Return</h1>
+    <p class="lede">Enter what a project costs today and what it returns period by period. Get net present value, internal rate of return, profitability index and payback period — plus a table showing every flow discounted back to today.</p>
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="init">Initial investment today (cash outflow)</label>
+          <input id="init" class="input" type="number" inputmode="decimal" min="0" step="100" value="100000">
+        </div>
+        <div class="field">
+          <label for="disc">Discount rate / required return (%)</label>
+          <input id="disc" class="input" type="number" inputmode="decimal" step="0.5" value="10">
+        </div>
+      </div>
+      <label for="flows">Cash flows after the investment — one per period, new line or comma separated</label>
+      <textarea id="flows" class="input" rows="5" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;">30000
+40000
+50000
+60000</textarea>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="npvVal">$0.00</div>
+        <div class="dim" id="npvLbl">net present value</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">IRR</div><div class="val" id="irrVal">—</div></div>
+          <div class="cell"><div class="lbl">Profitability index</div><div class="val" id="piVal">—</div></div>
+          <div class="cell"><div class="lbl">Total cash returned</div><div class="val" id="totVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Net cash gain</div><div class="val" id="gainVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Payback period</div><div class="val" id="payVal">—</div></div>
+          <div class="cell"><div class="lbl">Decision at this rate</div><div class="val" id="verdictVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;" id="detailNote"></p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:26px;">Discounted cash flow table</h2>
+    <div id="tblwrap" style="max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin-top:12px;"></div>
+
+    <div class="callout">
+      <div class="t">The worked example</div>
+      <p>A $100,000 project returning $30,000, $40,000, $50,000 and $60,000 over four years, discounted at 10%, has an NPV of about <strong>$38,877</strong> and an IRR of about <strong>24.9%</strong>. Because the IRR exceeds the 10% required return, the project creates value — and you would still accept it at any discount rate below 24.9%.</p>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
+    <p><strong>Net present value</strong> discounts every future cash flow back to today and subtracts the initial outlay. The formula is NPV = Σ F<sub>t</sub> ÷ (1 + r)<sup>t</sup>, where F<sub>t</sub> is the cash flow in period t and r is your discount rate. The initial investment sits at t = 0, so it is added at full value with no discounting. Positive NPV means the project beats your required return; zero means it exactly matches it; negative means it destroys value relative to simply leaving the money in your next-best option.</p>
+    <p><strong>Internal rate of return</strong> is the one number that makes NPV equal zero. There is no closed-form solution for a general cash flow series, so this calculator searches for it numerically: it scans discount rates from −99% upward for a sign change in NPV, then bisects repeatedly to narrow the rate to within a fraction of a basis point. Search matters rather than formula: IRR can be absent when flows never change sign, and there can be more than one IRR when they change sign repeatedly.</p>
+    <p><strong>Profitability index</strong> divides the present value of future flows by the initial cost, ranking projects by value per dollar invested. <strong>Payback</strong> counts how many periods of nominal cash flow are needed to recover the outlay — it ignores the time value of money, which is exactly why it is shown alongside NPV rather than instead of it.</p>
+
+    <h2>Choosing inputs that mean something</h2>
+    <p>The discount rate is doing most of the work in any NPV calculation, and it should be an opportunity cost rather than a guess. A company uses its weighted average cost of capital for average-risk projects and a premium for riskier ones; an individual compares against what the same money would earn elsewhere at comparable risk. Test sensitivity by re-running at several rates — a project whose NPV swings from strongly positive to strongly negative between 8% and 15% deserves more scrutiny than the size of its headline return suggests.</p>
+    <p>Cash flows should be incremental and after tax, counting only what changes because you took the project. Two mistakes dominate real-world models: including sunk costs already spent before the decision, and forgetting working capital or maintenance spending that arrives mid-project. Uneven spacing is another trap — if your flows are monthly rather than yearly, either convert the period count into years or treat each row as one month and use a monthly discount rate.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What does NPV tell me?</h3>    <p>Net present value is the value today of all future cash flows minus what you pay now, discounted at your required rate of return. Positive NPV means the project beats that required return and adds value; negative means it destroys value even if the nominal cash returned exceeds what you spent. For a project costing $100,000 and returning $30,000, $40,000, $50,000 and $60,000 over four years, discounted at 10%, NPV is about +$38,877 — accept it. Raise the discount rate to 25% and NPV turns slightly negative, showing that the same physical project is simply not worth doing against a higher opportunity cost.</p>
+    <h3>What is the difference between NPV and IRR?</h3>    <p>NPV answers "does this beat my required return," giving a dollar figure. IRR answers "what return exactly," giving a percentage — the discount rate at which NPV equals zero. IRR is easier to compare against a hurdle rate and easier to communicate, but it assumes interim cash flows can be reinvested at the IRR itself, which is often unrealistic, and it can misbehave when flows change sign more than once. When NPV and IRR rankings disagree between two projects, the NPV ranking is the one that maximizes value.</p>
+    <h3>What discount rate should I use?</h3>    <p>Use your opportunity cost: the return you would earn on the next best use of the same money at similar risk. For a company that is usually the weighted average cost of capital, adjusted upward for project-specific risk. For an individual it might be the return on a broad index fund or the interest rate on the debt used to fund the purchase. Higher risk means a higher discount rate, which lowers NPV — that is the mechanism, not a penalty. Compare sensitivity across rates rather than trusting one figure.</p>
+    <h3>Why does my investment have no IRR?</h3>    <p>IRR only exists when cash flows change sign at least once — typically a negative outflow followed by net inflows. If every flow is positive, or every future flow negative, no discount rate can bring NPV to zero, and this calculator reports IRR as not available. A project with several sign changes, such as equipment that requires costly remediation in its final year, can have multiple IRRs, in which case none of them should be used for decisions and NPV should carry the argument on its own.</p>
+    <h3>What is the profitability index?</h3>    <p>Profitability index is the present value of future cash flows divided by the initial cost. Above 1.0 means the project pays back more than it costs in present-value terms, exactly the same accept signal as positive NPV. Its advantage appears when capital is rationed: PI ranks competing projects by value created per dollar invested, so with a limited budget you fund the highest-scoring projects first. With no budget constraint and projects of very different sizes, NPV itself is the better ruler.</p>
+    <h3>Are these the same as the Excel NPV and IRR functions?</h3>    <p>IRR matches Excel closely, since both search numerically for the root. Excel's NPV function is subtly different: it assumes the first value in the range belongs to period 1, so a very common error is to include the initial outflow inside the range and thereby discount it. Here the outflow is entered separately as the investment at time zero and is never discounted. This calculator additionally reports the simple payback period, which Excel's NPV function does not calculate.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/roi-cagr-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚀</span><div class="tc-title">ROI &amp; CAGR Calculator</div></div><div class="tc-desc">Return on investment and annualized growth rate.</div></a>
+        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">How many units you need to sell to break even.</div></a>
+        <a href="/tools/compound-interest-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📈</span><div class="tc-title">Compound Interest</div></div><div class="tc-desc">How a single deposit grows with compounding.</div></a>
+        <a href="/tools/markup-margin-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📈</span><div class="tc-title">Markup &amp; Margin</div></div><div class="tc-desc">Calculate markup from cost or target margin.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-10-06">Oct 6, 2026</time> — results depend entirely on the inputs you supply, so sanity-check every assumption.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/roi-cagr-calculator">ROI &amp; CAGR Calculator — Return on Investment</a></li>
+      <li><a href="/tools/break-even-calculator">Break-even Calculator — Units to Cover Costs</a></li>
+      <li><a href="/tools/loan-calculator">Loan Calculator — Monthly Payment &amp; Total Interest</a></li>
+      <li><a href="/pricing-sales">📂 All Pricing &amp; Sales Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>!function(){function m(n){return n.toLocaleString("en-US",{style:"currency",currency:"USD"})}function $(i){return document.getElementById(i)}function parse(s){return s.split(/[\n,;]+/).map(function(v){return parseFloat(v.replace(/[^0-9eE\.\-]/g,""))}).filter(function(v){return isFinite(v)})}function npv(r,c){var v=0;for(var t=0;t<c.length;t++)v+=c[t]/Math.pow(1+r,t);return v}function irr(c){var lo=null,hi=null,pv=null,pvV=null;for(var k=0;k<=4000;k++){var r=-.99+k*(10+.99)/4e3,v=npv(r,c);if(null!==pvV&&(pvV>0&&v<=0||pvV<0&&v>=0)){lo=pv,hi=r;break}pv=r,pvV=v}if(null===lo)return null;for(var i=0;i<200;i++){var md=(lo+hi)/2;(npv(lo,c)>0)===(npv(md,c)>0)?lo=md:hi=md}return(lo+hi)/2}function calc(){var init=parseFloat($("init").value)||0,d=(parseFloat($("disc").value)||0)/100,fl=parse($("flows").value),c=[-init].concat(fl),v=npv(d,c),ir=irr(c),pvIn=0;for(var t=1;t<c.length;t++)pvIn+=c[t]/Math.pow(1+d,t);var tot=fl.reduce(function(a,b){return a+b},0),gain=tot-init,cum=0,pb=null;for(var i=0;i<fl.length;i++){cum+=fl[i];if(null===pb&&cum>=init)pb=i+1}$("npvVal").textContent=m(v);$("npvLbl").textContent="net present value at "+(100*d).toFixed(2)+"% discount rate";$("irrVal").textContent=null===ir?"not available":(100*ir).toFixed(2)+"%";$("piVal").textContent=init>0?(pvIn/init).toFixed(3):"—";$("totVal").textContent=m(tot);$("gainVal").textContent=m(gain);$("payVal").textContent=null===pb?"never within "+fl.length+" periods":pb+" period"+(pb>1?"s":"");$("verdictVal").textContent=v>0?"Accept":v<0?"Reject":"Indifferent";$("detailNote").textContent=null===ir?"No IRR exists for this pattern: cash flows never switch sign, so no discount rate can bring NPV to zero. Use NPV at your own required rate instead.":"IRR of "+(100*ir).toFixed(2)+"% versus your "+(100*d).toFixed(2)+"% required return: "+(ir>d?"the project clears the hurdle.":"the project falls short of the hurdle.")+" All "+fl.length+" flows discounted at equal periods.";var h='<table style="width:100%;border-collapse:collapse;font-size:0.85rem;"><thead style="position:sticky;top:0;"><tr style="background:#f3f4f6;text-align:left;"><th style="padding:8px;">Period</th><th style="padding:8px;">Cash flow</th><th style="padding:8px;">Discount factor</th><th style="padding:8px;">Present value</th></tr></thead><tbody>';h+='<tr style="border-bottom:1px solid #e5e7eb;background:#fef2f2;"><td style="padding:8px;">0</td><td style="padding:8px;color:#b91c1c;">'+m(-init)+'</td><td style="padding:8px;">1.0000</td><td style="padding:8px;color:#b91c1c;">'+m(-init)+"</td></tr>";for(var j=1;j<c.length;j++)h+='<tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:8px;">'+j+'</td><td style="padding:8px;">'+m(c[j])+'</td><td style="padding:8px;">'+Math.pow(1+d,-j).toFixed(4)+'</td><td style="padding:8px;">'+m(c[j]/Math.pow(1+d,j))+"</td></tr>";h+='</tbody></table><p style="font-size:0.8rem;color:#78716c;padding:8px;">Present values in the last column add up to the NPV of '+m(v)+".</p>",$("tblwrap").innerHTML=h,$("result").classList.add("show")}["init","disc","flows"].forEach(function(i){$(i).addEventListener("input",calc);$(i).addEventListener("change",calc)}),$("calcBtn").addEventListener("click",calc),$("resetBtn").addEventListener("click",function(){$("init").value="100000",$("disc").value="10",$("flows").value="30000\n40000\n50000\n60000",calc()}),calc(),window.__bindRealtime&&window.__bindRealtime(document.querySelector(".calc-card"),calc)}();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>

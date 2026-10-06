@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Grade Calculator — What You Need on the Final Exam | mQuickCalc</title>
+  <meta name="description" content="Work out the exam score you need to hit a target course grade. Enter your current grade, your target and how much the final exam is worth to see the required score, your best possible grade and a what-if table.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/final-grade-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Final Grade Calculator","url":"https://mquickcalc.com/tools/final-grade-calculator","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Work out the exam score you need to hit a target course grade. Enter your current grade, your target and how much the final exam is worth to see the required score, your best possible grade and a what-if table."}</script>
+  <meta property="og:title" content="Final Grade Calculator — What You Need on the Final Exam | mQuickCalc">
+  <meta property="og:description" content="Work out the exam score you need to hit a target course grade. Enter your current grade, your target and how much the final exam is worth to see the required score, your best possible grade and a what-if table.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/final-grade-calculator">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="mQuickCalc">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Final Grade Calculator — What You Need on the Final Exam | mQuickCalc">
+  <meta name="twitter:description" content="Work out the exam score you need to hit a target course grade. Enter your current grade, your target and how much the final exam is worth to see the required score, your best possible grade and a what-if table.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Final Grade Calculator","item":"https://mquickcalc.com/tools/final-grade-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Final Grade Calculator","step":[{"@type":"HowToStep","name":"Enter your current grade","text":"Type the percentage you have in the course right now, before the final exam."},{"@type":"HowToStep","name":"Enter your target","text":"Type the overall course percentage you want to finish with."},{"@type":"HowToStep","name":"Enter the final exam weight","text":"Type how much of the total course grade the final exam is worth, as a percentage."},{"@type":"HowToStep","name":"Read the required score","text":"The result shows the exam score you need, plus a what-if table for other scores."}]}</script>
+</head><body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a><a href="/embed">Embeds</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Final Grade Calculator</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🎓</div>
+<h1 class="page-title">Final Grade Calculator</h1>
+    <p class="lede">Do you know what you need on the final? Put in your current grade, the target you want and how much the exam is worth — the answer is one line of arithmetic away.</p>
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="current">Current grade (%)</label>
+          <input id="current" class="input" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="84">
+        </div>
+        <div class="field">
+          <label for="target">Target course grade (%)</label>
+          <input id="target" class="input" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="85">
+        </div>
+        <div class="field">
+          <label for="weight">Final exam weight (%)</label>
+          <input id="weight" class="input" type="number" inputmode="decimal" min="0" max="100" step="1" value="40">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">--</div>
+      <div class="dim" id="dimVal">Enter your grades above</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Banked already</div><div class="val" id="bankedVal">--</div></div>
+        <div class="cell"><div class="lbl">Final can add</div><div class="val" id="worthVal">--</div></div>
+        <div class="cell"><div class="lbl">Best possible total</div><div class="val" id="bestVal">--</div></div>
+        <div class="cell"><div class="lbl">Floor if you score 0</div><div class="val" id="floorVal">--</div></div>
+      </div>
+      <p class="note" style="margin-top:12px;" id="verdict"></p>
+      <div id="tableWrap"></div>
+    </div>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>The formula</h2>
+    <p>A course total is a <strong>weighted average</strong> of everything that has been graded. Split it into everything that already happened and the exam that has not:</p>
+    <p><code>final total = current × (1 − w) + exam × w</code></p>
+    <p>Here <code>w</code> is the exam weight written as a decimal, so a final worth 40% of the course is <code>w = 0.40</code> and everything before it is worth <code>1 − w = 0.60</code>. You know the target total and you want the exam score, so solve the same equation backwards:</p>
+    <p><code>required exam score = (target − current × (1 − w)) ÷ w</code></p>
+    <p>Two numbers fall straight out of this and they bracket what is possible. <strong>Banked already</strong> is <code>current × (1 − w)</code> — the points you cannot lose, and also your floor if the exam goes badly. <strong>Best possible total</strong> is that same banked figure plus the whole weight of the exam, <code>current × (1 − w) + 100 × w</code>. If your target sits above the best possible total, no result on the exam gets you there.</p>
+
+<h2>A worked example</h2>
+    <p>Say you are sitting at <strong>84%</strong>, you want to finish at <strong>85%</strong>, and the final is worth <strong>40%</strong> of the course.</p>
+    <ul>
+      <li>Banked: 84 × 0.60 = <strong>50.4 points</strong> are already locked in.</li>
+      <li>The exam controls the remaining <strong>40 points</strong>, so your ceiling is 50.4 + 40 = <strong>90.4%</strong>.</li>
+      <li>Required exam score: (85 − 50.4) ÷ 0.40 = 34.6 ÷ 0.40 = <strong>86.5%</strong>.</li>
+    </ul>
+    <p>So a B-grade student needs a solid B+ on the exam to move the needle by a single point, because most of the mark is already banked. Contrast that with an ambitious retake: sitting at 82% and aiming for 90% with an exam worth 30% requires (90 − 82 × 0.70) ÷ 0.30 = (90 − 57.4) ÷ 0.30 = <strong>108.7%</strong>, which is above anything the exam can deliver — the ceiling there is 57.4 + 30 = 87.4%, so reaching 90% is off the table no matter how the exam goes.</p>
+
+<h2>Limitations</h2>
+    <p>This model assumes <strong>one</strong> remaining graded item. Real syllabi are messier: if homework, a project and the final are all still open, put them together as a single "remaining weight" and read the result as the average you need across everything remaining. It also assumes the percentages you enter are the ones your school actually uses — some systems keep points rather than percentages, some drop the lowest quiz score, and some curve the final.</p>
+    <p>Nothing here accounts for extra credit, participation marks, rounding policies or whether your instructor rounds 89.5 up to 90. The arithmetic is exact; the inputs come from your syllabus, so read that first.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+    <h3>It says I need more than 100% — what does that mean?</h3>
+    <p>Exactly what it sounds like: your target is beyond reach even with a perfect exam. Compare it with the "Best possible total" figure to see the highest grade you can still finish with, and check whether extra credit or a curve applies before giving up on the higher mark.</p>
+    <h3>What if I have several assignments left, not just a final?</h3>
+    <p>Add their weights together and enter the total as the exam weight. The number you get back is the <em>average</em> score you need across everything remaining, which is often more useful than looking at each item separately.</p>
+    <h3>Does it handle letter grades?</h3>
+    <p>Convert to percentages first, using your own school's scale. A common US default is A 93, A− 90, B+ 87, B 83, B− 80, C+ 77, C 73, C− 70, but plenty of institutions use 90/80/70 instead.</p>
+    <h3>Do teachers round up?</h3>
+    <p>Some do, some do not, and the cutoff varies — 89.5 becomes 90 at some schools and stays a B+ at others. Ask rather than assume, and treat anything within about half a point of a boundary as genuinely borderline.</p>
+    <h3>My current grade includes participation I cannot change. Does that matter?</h3>
+    <p>No, as long as you enter the current percentage as-is. Whatever is already earned sits inside the banked figure, whether or not you can still influence it.</p>
+    </div>
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/gpa-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">GPA Calculator</div></div><div class="tc-desc">Weighted GPA from letter grades and credits.</div></a>
+        <a href="/tools/percentage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧮</span><div class="tc-title">Percentage Calculator</div></div><div class="tc-desc">X% of Y, % change and ratio modes.</div></a>
+        <a href="/tools/unit-price-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏷️</span><div class="tc-title">Unit Price</div></div><div class="tc-desc">Which pack is the better deal.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-10-07">Oct 7, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general calculations only. Always check your course syllabus for the actual weighting — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+
+    <div id="tool-share" class="tool-share-mount" aria-label="Share this calculator"></div>
+    <div id="tool-prev-next" data-prev="/tools/gpa-calculator"></div>
+  </main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/gpa-calculator">GPA Calculator</a></li>
+      <li><a href="/tools/percentage-calculator">Percentage Calculator</a></li>
+      <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a></li>
+      <li><a href="/#everyday">📊 All Everyday Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id){return document.getElementById(id);}
+  function num(n, d){ return isFinite(n) ? Number(n).toFixed(d) : '--'; }
+
+  function calc(){
+    var current = parseFloat($('current').value);
+    var target = parseFloat($('target').value);
+    var wPct = parseFloat($('weight').value);
+
+    if (!isFinite(current) || !isFinite(target) || !isFinite(wPct)) {
+      $('bigVal').textContent = '--';
+      $('dimVal').textContent = 'Enter your grades above';
+      $('bankedVal').textContent = '--'; $('worthVal').textContent = '--';
+      $('bestVal').textContent = '--'; $('floorVal').textContent = '--';
+      $('verdict').textContent = '';
+      $('tableWrap').innerHTML = '';
+      return;
+    }
+    var w = wPct / 100;
+    if (w <= 0 || w > 1) {
+      $('bigVal').textContent = '--';
+      $('dimVal').textContent = 'Final exam weight must be above 0% and at most 100%';
+      $('bankedVal').textContent = '--'; $('worthVal').textContent = '--';
+      $('bestVal').textContent = '--'; $('floorVal').textContent = '--';
+      $('verdict').textContent = '';
+      $('tableWrap').innerHTML = '';
+      return;
+    }
+
+    var banked = current * (1 - w);
+    var best = banked + 100 * w;
+    var needed = (target - banked) / w;
+
+    $('bankedVal').textContent = num(banked, 2) + ' pts';
+    $('worthVal').textContent = num(100 * w, 2) + ' pts';
+    $('bestVal').textContent = num(best, 2) + '%';
+    $('floorVal').textContent = num(banked, 2) + '%';
+
+    if (needed > 100) {
+      $('bigVal').textContent = 'Not achievable';
+      $('dimVal').textContent = 'You would need ' + num(needed, 1) + '% on the final';
+      $('verdict').textContent = 'Even a perfect exam leaves you at ' + num(best, 2) + '%, short of your '
+        + num(target, 2) + '% target by ' + num(target - best, 2) + ' points.';
+    } else if (needed < 0) {
+      $('bigVal').textContent = 'Already there';
+      $('dimVal').textContent = 'You clear ' + num(target, 2) + '% even with 0% on the final';
+      $('verdict').textContent = 'Your banked ' + num(banked, 2) + '% already exceeds the target by '
+        + num(banked - target, 2) + ' points.';
+    } else {
+      $('bigVal').textContent = num(needed, 1) + '%';
+      $('dimVal').textContent = 'Needed on the final to finish with ' + num(target, 2) + '%';
+      var gap = best - target;
+      $('verdict').textContent = 'You have ' + num(gap, 2) + ' points of headroom: even ' + num(needed, 1)
+        + '% on the final keeps you on target.';
+    }
+
+    /* What-if table: overall course grade for a range of exam scores. */
+    var scores = [0, 50, 60, 70, 80, 90, 100];
+    var rows = scores.map(function (s){
+      var total = banked + s * w;
+      var hit = total >= target ? ' ✓' : '';
+      return '<tr><td>' + s + '%</td><td>' + num(total, 2) + '%</td><td>' + num(total - banked, 2) + '</td><td>' + hit + '</td></tr>';
+    }).join('');
+    $('tableWrap').innerHTML =
+      '<table style="width:100%;font-size:14px;border-collapse:collapse;margin-top:16px">'
+      + '<thead><tr style="border-bottom:1px solid var(--line)">'
+      + '<th style="text-align:left;padding:6px 0">If the final is</th>'
+      + '<th style="text-align:right;padding:6px 0">Course total</th>'
+      + '<th style="text-align:right;padding:6px 0">Added</th>'
+      + '<th style="text-align:right;padding:6px 0">Target?</th>'
+      + '</tr></thead><tbody>' + rows + '</tbody></table>';
+
+    $('result').classList.add('show');
+  }
+
+  ['current', 'target', 'weight'].forEach(function (id){ $(id).addEventListener('input', calc); });
+  $('calcBtn').addEventListener('click', calc);
+  $('resetBtn').addEventListener('click', function (){
+    $('current').value = '84'; $('target').value = '85'; $('weight').value = '40';
+    calc();
+  });
+  calc();
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"It says I need more than 100% — what does that mean?","acceptedAnswer":{"@type":"Answer","text":"Exactly what it sounds like: your target is beyond reach even with a perfect exam. Compare it with the \"Best possible total\" figure to see the highest grade you can still finish with, and check whether extra credit or a curve applies before giving up on the higher mark."}},{"@type":"Question","name":"What if I have several assignments left, not just a final?","acceptedAnswer":{"@type":"Answer","text":"Add their weights together and enter the total as the exam weight. The number you get back is the average score you need across everything remaining, which is often more useful than looking at each item separately."}},{"@type":"Question","name":"Does it handle letter grades?","acceptedAnswer":{"@type":"Answer","text":"Convert to percentages first, using your own school's scale. A common US default is A 93, A− 90, B+ 87, B 83, B− 80, C+ 77, C 73, C− 70, but plenty of institutions use 90/80/70 instead."}},{"@type":"Question","name":"Do teachers round up?","acceptedAnswer":{"@type":"Answer","text":"Some do, some do not, and the cutoff varies — 89.5 becomes 90 at some schools and stays a B+ at others. Ask rather than assume, and treat anything within about half a point of a boundary as genuinely borderline."}},{"@type":"Question","name":"My current grade includes participation I cannot change. Does that matter?","acceptedAnswer":{"@type":"Answer","text":"No, as long as you enter the current percentage as-is. Whatever is already earned sits inside the banked figure, whether or not you can still influence it."}}]}
+</script>

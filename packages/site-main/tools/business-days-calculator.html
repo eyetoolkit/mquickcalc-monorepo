@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Days Calculator — Working Days Between Two Dates | mQuickCalc</title>
+  <meta name="description" content="Count the business days between two dates, excluding weekends and US federal holidays. Choose which weekdays count as working days, add your own closures, and include or exclude the end date.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/business-days-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Business Days Calculator","url":"https://mquickcalc.com/tools/business-days-calculator","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Count the business days between two dates, excluding weekends and US federal holidays. Choose which weekdays count as working days, add your own closures, and include or exclude the end date."}</script>
+  <meta property="og:title" content="Business Days Calculator — Working Days Between Two Dates | mQuickCalc">
+  <meta property="og:description" content="Count the business days between two dates, excluding weekends and US federal holidays. Choose which weekdays count as working days, add your own closures, and include or exclude the end date.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/business-days-calculator">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="mQuickCalc">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Business Days Calculator — Working Days Between Two Dates | mQuickCalc">
+  <meta name="twitter:description" content="Count the business days between two dates, excluding weekends and US federal holidays. Choose which weekdays count as working days, add your own closures, and include or exclude the end date.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Business Days Calculator","item":"https://mquickcalc.com/tools/business-days-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Business Days Calculator","step":[{"@type":"HowToStep","name":"Pick your two dates","text":"Enter a start date and an end date. If they are reversed we sort them for you."},{"@type":"HowToStep","name":"Set your working week","text":"Tick the weekdays that count as working days. Monday to Friday is the default."},{"@type":"HowToStep","name":"Choose what to exclude","text":"Toggle US federal holidays and optionally list extra closure dates."},{"@type":"HowToStep","name":"Read the working-day count","text":"The result updates as you type and breaks down every day that was removed."}]}</script>
+</head><body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a><a href="/embed">Embeds</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Business Days Calculator</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🗓️</div>
+<h1 class="page-title">Business Days Calculator</h1>
+    <p class="lede">How many working days are there between two dates? Count Monday–Friday (or any weekly pattern), subtract holidays, and see exactly which days were removed.</p>
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="start">Start date</label>
+          <input id="start" class="input" type="date">
+        </div>
+        <div class="field">
+          <label for="end">End date</label>
+          <input id="end" class="input" type="date">
+        </div>
+      </div>
+
+      <label>Working week — which days count as business days?</label>
+      <div class="row" id="wkRow">
+        <label class="field"><input type="checkbox" id="d1" checked> Mon</label>
+        <label class="field"><input type="checkbox" id="d2" checked> Tue</label>
+        <label class="field"><input type="checkbox" id="d3" checked> Wed</label>
+        <label class="field"><input type="checkbox" id="d4" checked> Thu</label>
+        <label class="field"><input type="checkbox" id="d5" checked> Fri</label>
+        <label class="field"><input type="checkbox" id="d6"> Sat</label>
+        <label class="field"><input type="checkbox" id="d0"> Sun</label>
+      </div>
+
+      <label><input type="checkbox" id="federal" checked> Exclude US federal holidays</label>
+      <label><input type="checkbox" id="inclusive" checked> Include the end date in the count</label>
+
+      <div class="field" style="margin-top:12px;">
+        <label for="extra">Extra non-working dates (optional)</label>
+        <input id="extra" class="input" type="text" placeholder="2026-07-17, 2026-11-27" autocomplete="off">
+        <p class="note" style="margin:6px 0 0;">Comma-separated, YYYY-MM-DD. Use this for company shutdowns, regional holidays or personal leave.</p>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+    <div class="result" id="result">
+      <div class="big" id="bigVal">--</div>
+      <div class="dim" id="dimVal">Pick two dates to start</div>
+      <div class="grid">
+        <div class="cell"><div class="lbl">Calendar days</div><div class="val" id="totalVal">--</div></div>
+        <div class="cell"><div class="lbl">Weekend / off days</div><div class="val" id="offVal">--</div></div>
+        <div class="cell"><div class="lbl">Federal holidays</div><div class="val" id="holVal">--</div></div>
+        <div class="cell"><div class="lbl">Extra dates removed</div><div class="val" id="extraVal">--</div></div>
+        <div class="cell"><div class="lbl">Equivalent 5-day weeks</div><div class="val" id="weekVal">--</div></div>
+      </div>
+      <p class="note" style="margin-top:12px;" id="holList"></p>
+    </div>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How business days are counted</h2>
+    <p>A business day is any date that survives two filters. First the date has to fall on a weekday you have ticked as working. Then it has to avoid the holiday list. Everything else is removed:</p>
+    <p><code>business days = calendar days − off-week days − federal holidays − extra closures</code></p>
+    <p>The loop is deliberately simple: we walk one calendar day at a time from the start date to the end date and count what passes both filters. That is slower than a formula based on week arithmetic, but it is the only way to stay correct once holidays enter the picture — holidays land on different weekdays every year, so there is no clean closed-form shortcut.</p>
+    <p>Dates are handled in UTC rather than local time. Counting in local time breaks twice a year wherever daylight saving applies, because one day per year is only 23 hours long and the difference divided by 24 hours lands a fraction short. UTC avoids that entirely.</p>
+
+<h2>A worked example</h2>
+    <p>Take <strong>Thu 1 January 2026</strong> to <strong>Sat 31 January 2026</strong> inclusive, with a Monday–Friday week and US federal holidays switched on.</p>
+    <p>The span is <strong>31 calendar days</strong>. Of those, <strong>22</strong> fall on a Monday through Friday and <strong>9</strong> are weekend days (5 Saturdays and 4 Sundays). January 2026 contains two federal holidays: <strong>New Year's Day</strong> on Thursday 1 January and <strong>Martin Luther King Jr. Day</strong> on Monday 19 January — both fall on working days, so both count as removals. Result: 22 − 2 = <strong>20 business days</strong>.     <p>Switch the end date off and the answer stays 20: 31 January is a Saturday, so removing it takes away a day that was never in the working-day pool. Inclusive versus exclusive only changes the result when the end date is itself a working day — end the same span on Friday 30 January with exclusive counting and you drop a real working day, leaving 19.</p>
+    <p>Start instead on 2 January and keep 31 January as the end date: New Year's Day now falls outside the span, so only MLK Day is subtracted — 30 calendar days, 21 weekdays, 1 holiday, giving 20 business days again.</p></p>
+
+<h2>Which holidays are excluded</h2>
+    <p>The built-in list follows the US federal schedule, using the same observance rules the government applies: when a fixed-date holiday falls on a Saturday it is observed on the preceding Friday, and when it falls on a Sunday it is observed on the following Monday.</p>
+    <ul>
+      <li><strong>Fixed dates:</strong> New Year's Day (1 Jan), Juneteenth (19 Jun), Independence Day (4 Jul), Veterans Day (11 Nov), Christmas Day (25 Dec).</li>
+      <li><strong>Day-of-week rules:</strong> Martin Luther King Jr. Day (3rd Mon Jan), Washington's Birthday (3rd Mon Feb), Memorial Day (last Mon May), Labor Day (1st Mon Sep), Columbus Day (2nd Mon Oct), Thanksgiving (4th Thu Nov).</li>
+      <li><strong>Start dates honoured:</strong> MLK Day from 1986 and Juneteenth from 2022 are not applied to earlier years.</li>
+    </ul>
+
+<h2>Limitations</h2>
+    <p>This is a US-centric count. State holidays (such as Texas Rifles Day or Virginia's Lee-Jackson Day) and non-US public holidays are not included — list them in the extra-dates field instead. Bank or religious calendars that move with the lunar cycle are not modelled either.</p>
+    <p>Half-days and holiday-eve early closes are whole days here. A contract that says "ten business days" may also start counting on the following working day rather than on the date of the agreement itself, and some jurisdictions exclude the start day while others exclude holidays only if they fall within the term. When the date genuinely matters legally, check the wording of the contract and confirm against an official calendar.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+    <h3>Is the end date included?</h3>
+    <p>You decide. With "Include the end date" ticked, a Monday-to-Friday span counts 5 days; untick it and the same span counts 4. Inclusive counting is the more common convention for "how many working days do I have", exclusive is the convention for measuring elapsed intervals.</p>
+    <h3>Why is my count one lower than my payroll system says?</h3>
+    <p>Usually one of three things: your system includes a state holiday we do not carry, it treats the start date differently, or it counts a holiday that fell on a weekend as observed on a working day. Add the missing date to the extra field and the two will agree.</p>
+    <h3>Does it handle the Sunday–Thursday working week?</h3>
+    <p>Yes — uncheck Saturday and Sunday, then tick Sunday and leave Monday to Thursday ticked. Any weekly pattern works, including six-day schedules.</p>
+    <h3>What about leap years?</h3>
+    <p>They are handled automatically. 2028 has 366 days, and 29 February counts as a business day if it lands on a working weekday. Nothing special is required from you.</p>
+    <h3>How many business days are in a typical year?</h3>
+    <p>A year is 52 whole weeks plus one spare day — two in a leap year — so the weekday count is either 260 or 261 depending on which weekday those spare days land on. 2026 starts on a Thursday and has <strong>261 weekdays</strong>; after the eleven federal holidays that leaves <strong>250</strong>. Leap years are not automatically higher: 2028 starts on a Saturday, so both spare days are weekend days and the total is back to 260 before holidays.</p>
+    </div>
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/date-difference-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📅</span><div class="tc-title">Date Difference</div></div><div class="tc-desc">Days, weeks, months, years between two dates.</div></a>
+        <a href="/tools/work-hours-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⏰</span><div class="tc-title">Work Hours</div></div><div class="tc-desc">Clock-in / clock-out timesheets.</div></a>
+        <a href="/tools/day-of-week-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📆</span><div class="tc-title">Day of Week</div></div><div class="tc-desc">What weekday was any date?</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-10-07">Oct 7, 2026</time> — holiday rules change, so double-check against an official calendar before relying on a count.</p>
+    <p class="note" style="margin-top:22px;">For general planning only. Contract deadlines are governed by the wording of the contract, not by this count — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+
+    <div id="tool-share" class="tool-share-mount" aria-label="Share this calculator"></div>
+    <div id="tool-prev-next" data-prev="/tools/date-difference-calculator"></div>
+  </main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a></li>
+      <li><a href="/tools/work-hours-calculator">Work Hours Calculator</a></li>
+      <li><a href="/tools/week-number-calculator">Week Number Calculator</a></li>
+      <li><a href="/#everyday">📊 All Everyday Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id){return document.getElementById(id);}
+  var DAY = 86400000;
+
+  /* Dates are handled in UTC so daylight-saving shifts never change a count. */
+  function keyOf(t){
+    var d = new Date(t);
+    return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0');
+  }
+  function parseDate(s){
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '').trim());
+    if (!m) return null;
+    var y = +m[1], mo = +m[2], d = +m[3];
+    var t = Date.UTC(y, mo - 1, d);
+    var back = new Date(t);
+    if (back.getUTCFullYear() !== y || back.getUTCMonth() !== mo - 1 || back.getUTCDate() !== d) return null;
+    return t;
+  }
+
+  /* 1-based nth (1..4) or -1 for the last one; month is 0-based. */
+  function nthWeekday(year, month, dow, nth){
+    if (nth > 0) {
+      var firstDow = new Date(Date.UTC(year, month, 1)).getUTCDay();
+      var day = 1 + ((dow - firstDow + 7) % 7) + (nth - 1) * 7;
+      return Date.UTC(year, month, day);
+    }
+    var lastDay = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    var lastDow = new Date(Date.UTC(year, month, lastDay)).getUTCDay();
+    return Date.UTC(year, month, lastDay - ((lastDow - dow + 7) % 7));
+  }
+
+  function federalHolidays(year, map){
+    function put(t, name){ map[keyOf(t)] = name; }
+    /* Fixed-date holidays: observed Fri when they fall Sat, Mon when they fall Sun. */
+    var fixed = [
+      [0, 1, "New Year's Day"], [6, 4, 'Independence Day'],
+      [10, 11, 'Veterans Day'], [11, 25, 'Christmas Day']
+    ];
+    if (year >= 2022) fixed.push([5, 19, 'Juneteenth']);
+    fixed.forEach(function (f){
+      var t = Date.UTC(year, f[0], f[1]);
+      var dow = new Date(t).getUTCDay();
+      if (dow === 6) t -= DAY;
+      else if (dow === 0) t += DAY;
+      put(t, f[2]);
+    });
+    if (year >= 1986) put(nthWeekday(year, 0, 1, 3), 'Martin Luther King Jr. Day');
+    put(nthWeekday(year, 1, 1, 3), "Washington's Birthday");
+    put(nthWeekday(year, 4, 1, -1), 'Memorial Day');
+    put(nthWeekday(year, 8, 1, 1), 'Labor Day');
+    put(nthWeekday(year, 9, 1, 2), 'Columbus Day');
+    put(nthWeekday(year, 10, 4, 4), 'Thanksgiving Day');
+    return map;
+  }
+
+  function holidayMap(a, b){
+    var map = {};
+    var y1 = new Date(a).getUTCFullYear(), y2 = new Date(b).getUTCFullYear();
+    for (var y = y1 - 1; y <= y2 + 1; y++) federalHolidays(y, map);
+    return map;
+  }
+
+  function parseExtra(){
+    var out = {};
+    ($('extra').value || '').split(',').forEach(function (piece){
+      var t = parseDate(piece);
+      if (t !== null) out[keyOf(t)] = (out[keyOf(t)] || 0) + 1;
+    });
+    return out;
+  }
+
+  function workingDow(){
+    var set = [];
+    for (var i = 0; i < 7; i++) { if ($('d' + i).checked) set.push(i); }
+    return set;
+  }
+
+  function fmtDate(t){
+    return new Date(t).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  }
+
+  function calc(){
+    var a = parseDate($('start').value), b = parseDate($('end').value);
+    var named = holidayMap(a === null ? Date.now() : a, b === null ? Date.now() : b);
+    if (a === null || b === null) {
+      $('bigVal').textContent = '--';
+      $('dimVal').textContent = 'Pick two dates to start';
+      $('holList').textContent = '';
+      return;
+    }
+    if (b < a) { var swap = a; a = b; b = swap; }
+
+    var inclusive = $('inclusive').checked;
+    var useFed = $('federal').checked;
+    var work = workingDow();
+    var extra = parseExtra();
+
+    if (!work.length) {
+      $('bigVal').textContent = '0';
+      $('dimVal').textContent = 'No weekday is marked as working';
+      $('holList').textContent = '';
+      return;
+    }
+
+    var last = inclusive ? b : b - DAY;
+    if (last < a) {
+      $('bigVal').textContent = '0';
+      $('dimVal').textContent = 'End date is excluded and falls before the start date';
+      $('holList').textContent = '';
+      return;
+    }
+
+    var calendar = Math.round((last - a) / DAY) + 1;
+    var kept = 0, offWeek = 0, holRemoved = 0, extraRemoved = 0;
+    var found = [];
+
+    for (var t = a; t <= last; t += DAY) {
+      var dow = new Date(t).getUTCDay();
+      if (work.indexOf(dow) === -1) { offWeek++; continue; }
+      var k = keyOf(t);
+      if (Object.prototype.hasOwnProperty.call(extra, k)) { extraRemoved++; continue; }
+      if (useFed && named[k]) { holRemoved++; found.push(named[k] + ' (' + k + ')'); continue; }
+      kept++;
+    }
+
+    $('bigVal').textContent = kept.toLocaleString() + (kept === 1 ? ' business day' : ' business days');
+    $('dimVal').textContent = fmtDate(a) + ' → ' + fmtDate(b) + (inclusive ? ' · inclusive' : ' · end date excluded');
+    $('totalVal').textContent = calendar.toLocaleString();
+    $('offVal').textContent = offWeek.toLocaleString();
+    $('holVal').textContent = useFed ? holRemoved.toLocaleString() : 'off';
+    $('extraVal').textContent = extraRemoved.toLocaleString();
+    $('weekVal').textContent = (kept / 5).toFixed(1);
+    $('holList').textContent = found.length
+      ? 'Holidays removed: ' + found.join(', ') + '.'
+      : (useFed ? 'No federal holidays fall on a working day inside this span.' : 'Federal holidays are switched off.');
+    $('result').classList.add('show');
+  }
+
+  ['start', 'end', 'federal', 'inclusive', 'extra'].forEach(function (id){
+    $(id).addEventListener('input', calc);
+  });
+  ['federal', 'inclusive'].forEach(function (id){ $(id).addEventListener('change', calc); });
+  for (var i = 0; i < 7; i++) { $('d' + i).addEventListener('change', calc); }
+
+  $('calcBtn').addEventListener('click', calc);
+  $('resetBtn').addEventListener('click', function (){
+    $('d0').checked = false; $('d6').checked = false;
+    $('d1').checked = true; $('d2').checked = true; $('d3').checked = true; $('d4').checked = true; $('d5').checked = true;
+    $('federal').checked = true; $('inclusive').checked = true; $('extra').value = '';
+    var today = new Date();
+    var start = new Date(Date.UTC(today.getFullYear(), today.getMonth(), 1));
+    var end = new Date(Date.UTC(today.getFullYear(), today.getMonth() + 1, 0));
+    $('start').value = keyOf(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), 1));
+    $('end').value = keyOf(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate()));
+    calc();
+  });
+
+  var now = new Date();
+  $('start').value = keyOf(Date.UTC(now.getFullYear(), now.getMonth(), 1));
+  $('end').value = keyOf(Date.UTC(now.getFullYear(), now.getMonth() + 1, 0));
+  calc();
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the end date included?","acceptedAnswer":{"@type":"Answer","text":"You decide. With \"Include the end date\" ticked, a Monday-to-Friday span counts 5 days; untick it and the same span counts 4. Inclusive counting is the more common convention for \"how many working days do I have\", exclusive is the convention for measuring elapsed intervals."}},{"@type":"Question","name":"Why is my count one lower than my payroll system says?","acceptedAnswer":{"@type":"Answer","text":"Usually one of three things: your system includes a state holiday we do not carry, it treats the start date differently, or it counts a holiday that fell on a weekend as observed on a working day. Add the missing date to the extra field and the two will agree."}},{"@type":"Question","name":"Does it handle the Sunday–Thursday working week?","acceptedAnswer":{"@type":"Answer","text":"Yes — uncheck Saturday and Sunday, then tick Sunday and leave Monday to Thursday ticked. Any weekly pattern works, including six-day schedules."}},{"@type":"Question","name":"What about leap years?","acceptedAnswer":{"@type":"Answer","text":"They are handled automatically. 2028 has 366 days, and 29 February counts as a business day if it lands on a working weekday. Nothing special is required from you."}},{"@type":"Question","name":"How many business days are in a typical year?","acceptedAnswer":{"@type":"Answer","text":"A year is 52 whole weeks plus one spare day — two in a leap year — so the weekday count is either 260 or 261 depending on which weekday those spare days land on. 2026 starts on a Thursday and has 261 weekdays; after the eleven federal holidays that leaves 250. Leap years are not automatically higher: 2028 starts on a Saturday, so both spare days are weekend days and the total is back to 260 before holidays."}}]}
+</script>

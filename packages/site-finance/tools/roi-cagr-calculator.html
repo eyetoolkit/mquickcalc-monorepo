@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI &amp; CAGR Calculator — Return on Investment | mQuickCalc</title>
+  <meta name="description" content="Free ROI and CAGR calculator: total return on investment plus the annualized compound growth rate between two values. Includes dividends or income received, gain multiple and doubling time. Runs entirely in your browser.">
+  <link rel="canonical" href="https://finance.mquickcalc.com/tools/roi-cagr-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#059669">
+  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ROI &amp; CAGR Calculator — Return on Investment | mQuickCalc">
+  <meta name="twitter:description" content="Calculate return on investment and compound annual growth rate between any two values, with optional income received. Free, no sign-up, nothing uploaded.">
+  <meta name="twitter:site" content="@mquickcalcfinance">
+  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+  <meta property="og:title" content="ROI &amp; CAGR Calculator — Return on Investment | mQuickCalc">
+  <meta property="og:description" content="Calculate return on investment and compound annual growth rate between any two values, with optional income received. Free, no sign-up, nothing uploaded.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finance.mquickcalc.com/tools/roi-cagr-calculator">
+  <meta property="og:site_name" content="mQuickCalc Finance">
+  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"ROI & CAGR Calculator — Return on Investment","url":"https://finance.mquickcalc.com/tools/roi-cagr-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total return on investment and the compound annual growth rate between two values, optionally including income such as dividends."}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is the difference between ROI and CAGR?","acceptedAnswer":{"@type":"Answer","text":"ROI measures total percentage gain over the whole holding period, ignoring how long it took. CAGR converts the same gain into an annualized rate you can compare against other investments or against a benchmark. An investment that grows from $25,000 to $41,000 has an ROI of 64%, but if that took 6 years the CAGR is only about 8.6% per year — the honest figure to compare with an index fund."}},
+  {"@type":"Question","name":"How do I calculate CAGR?","acceptedAnswer":{"@type":"Answer","text":"CAGR = (ending value divided by beginning value) raised to the power of 1 divided by the number of years, minus 1. For growth from $25,000 to $41,000 over 6 years: (41,000 / 25,000) to the power of 1/6, minus 1 equals about 0.0859, or 8.59% per year. Both values must be positive and the periods must be equal, normally years."}},
+  {"@type":"Question","name":"Should dividends be included in ROI?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you actually received them, because they are part of your return. Add all distributions — dividends, rent, interest — to the ending value before calculating. Leaving them out understates the result, sometimes severely: an index fund returning 8% a year in price often delivers another 1.5 to 2 percentage points in dividends, which reinvested is a large part of long-run compounding."}},
+  {"@type":"Question","name":"Why is my CAGR lower than my average annual return?","acceptedAnswer":{"@type":"Answer","text":"Because CAGR reflects compounding while a simple arithmetic average ignores sequence. A 50% gain followed by a 40% loss averages 5% a year, but your money actually went from 100 to 150 to 90 — a CAGR of about minus 5.1%. Whenever returns are volatile, CAGR is below the arithmetic average, and the gap widens with volatility. Always compare CAGR to CAGR."}},
+  {"@type":"Question","name":"Is a negative CAGR possible?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the ending value is below the beginning value, CAGR is negative: $50,000 falling to $35,000 over four years is a minus 30% total return and about minus 8.5% per year. The CAGR formula needs both values to be positive, so a total wipeout to zero gives -100% ROI but no meaningful annualized rate, which this calculator reports as not applicable."}},
+  {"@type":"Question","name":"What counts as a good ROI?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on risk and time horizon, which is why comparing raw percentages misleads. The S&P 500 has returned about 10% a year nominally since 1926, roughly 7% after inflation, so beating that is hard without taking more risk. A business investment typically needs to clear its cost of capital, often 8 to 15%. Cash and short-term government bills sit near money-market yields, so any ROI above that comes with added risk somewhere."}}
+]}</script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"ROI & CAGR Calculator — Return on Investment","item":"https://finance.mquickcalc.com/tools/roi-cagr-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
+  </script>
+</head>
+<body data-site="finance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#ecommerce">Ecommerce</a>
+      <a href="/#fees">Fees</a>
+      <a href="/#finance">Finance</a>
+      <a href="/#tax">Tax</a>
+      <a href="/#creator">Creator</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>ROI &amp; CAGR Calculator — Return on Investment</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🚀</div>
+<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
+<strong>Historical arithmetic, not a forecast.</strong> ROI and CAGR describe what already happened between two values — they say nothing about the future and they ignore taxes, fees, inflation and the timing of money you added along the way. Estimates only; not investment advice. Everything is calculated in your browser.
+</div>
+    <h1 class="page-title">ROI &amp; CAGR Calculator — Return on Investment</h1>
+    <p class="lede">Find total return on investment and the annualized growth rate between any two values — an investment, a house, a business or an ad campaign. Optionally include dividends, rent or other income received along the way.</p>
+
+    <div class="calc-card">
+      <div class="row">
+        <div class="field">
+          <label for="start">Starting value (what you put in)</label>
+          <input id="start" class="input" type="number" inputmode="decimal" min="0" step="100" value="25000">
+        </div>
+        <div class="field">
+          <label for="end">Ending value (what it is worth now)</label>
+          <input id="end" class="input" type="number" inputmode="decimal" min="0" step="100" value="41000">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="yrs">Years held</label>
+          <input id="yrs" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="6">
+        </div>
+        <div class="field">
+          <label for="inc">Income received meanwhile (dividends, rent, interest)</label>
+          <input id="inc" class="input" type="number" inputmode="decimal" min="0" step="50" value="0">
+        </div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <div class="big" id="roiVal">0.00%</div>
+        <div class="dim" id="roiLbl">total return on investment</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">CAGR (annualized)</div><div class="val" id="cagrVal">—</div></div>
+          <div class="cell"><div class="lbl">Net gain</div><div class="val" id="gainVal">$0.00</div></div>
+          <div class="cell"><div class="lbl">Growth multiple</div><div class="val" id="multVal">—</div></div>
+          <div class="cell"><div class="lbl">Average gain per year</div><div class="val" id="avgVal">—</div></div>
+          <div class="cell"><div class="lbl">Years to double at this CAGR</div><div class="val" id="dblVal">—</div></div>
+          <div class="cell"><div class="lbl">Real return after 3% inflation</div><div class="val" id="realVal">—</div></div>
+        </div>
+        <p class="note" style="margin-top:12px;" id="detailNote"></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">A 64% return is not 64% a year</div>
+      <p>An investment that grows from <strong>$25,000</strong> to <strong>$41,000</strong> has a total ROI of <strong>64%</strong>. But spread over six years the annualized rate — the CAGR — is only about <strong>8.6% a year</strong>. Same money, very different yardstick: ROI flatters long holds, CAGR lets you compare honestly against a benchmark.</p>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
+    <p><strong>Return on investment</strong> is the total percentage gain over the holding period: ROI = (ending value + income received − starting value) ÷ starting value. Including income matters because distributions are part of your return even though they are no longer reflected in the current price.</p>
+    <p><strong>Compound annual growth rate</strong> rescales that same journey into a per-year rate: CAGR = (ending ÷ beginning)<sup>1/years</sup> − 1. The exponent is what separates it from a simple average of yearly returns — it assumes gains compound, so each year's return builds on the last. Both values must be positive, and the periods must be equal for the annual figure to mean anything.</p>
+    <p>The remaining outputs are derived for context. The growth multiple is ending divided by beginning. Average gain per year spreads the dollar gain evenly, ignoring compounding. Doubling time uses ln 2 ÷ ln(1 + CAGR), the exact version of the Rule of 72 shortcut. The real-return cell deflates the CAGR by a 3% inflation assumption, giving a rough sense of purchasing-power growth.</p>
+
+    <h2>Comparing investments honestly</h2>
+    <p>The two numbers answer different questions, and using the wrong one is the most common mistake in personal finance comparisons. ROI tells you what happened in total and is fine for a one-off purchase with an obvious start and finish. CAGR is the figure to compare against benchmarks, since indices are quoted as annualized returns; comparing a five-year total return against a one-year market return is meaningless.</p>
+    <p>Volatility widens the gap between the two in ways that mislead. A portfolio that gained 50% then lost 40% has an average annual return of +5%, yet $100 becomes $150 and then $90 — a CAGR of about −5.1% a year. The more variable your returns, the further the arithmetic average sits above what you actually earned. Compare CAGR against CAGR, over identical periods, using real rather than nominal figures if the period spans years of meaningful inflation.</p>
+    <p>Taxes and fees sit outside both formulas. A 10% nominal CAGR in a taxable account may be a 7% real after-tax return once capital gains and dividend taxes are paid, and expense ratios quietly subtract from the compounding base every year. For anything taxable, treat these outputs as pre-cost upper bounds.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is the difference between ROI and CAGR?</h3>    <p>ROI measures total percentage gain over the whole holding period and ignores how long it took. CAGR converts the same gain into an annualized rate you can compare against other investments or against a benchmark. An investment that grows from $25,000 to $41,000 has an ROI of 64%, but if that took 6 years the CAGR is only about 8.6% per year — the honest figure to compare with an index fund. Use ROI for "did this work" and CAGR for "was this the best available use of the money."</p>
+    <h3>How do I calculate CAGR?</h3>    <p>CAGR = (ending value divided by beginning value) raised to the power of 1 divided by the number of years, minus 1. For growth from $25,000 to $41,000 over 6 years: (41,000 ÷ 25,000) to the power of 1/6, minus 1, equals about 0.0859, or 8.59% per year. Both values must be positive and the periods equal, normally whole years — a fractional year such as 2.5 works fine as long as you are consistent when comparing.</p>
+    <h3>Should dividends be included in ROI?</h3>    <p>Yes, if you actually received them, because they are part of your return. Add all distributions — dividends, rent, interest — using the income field before calculating. Leaving them out understates the result, sometimes severely: an index fund returning about 8% a year in price has historically delivered roughly another 1.5 to 2 percentage points in dividends, and reinvesting them is a large part of long-run compounding. If you spent the income rather than reinvesting it, include it anyway — you received value, just not compounding.</p>
+    <h3>Why is my CAGR lower than my average annual return?</h3>    <p>Because CAGR reflects compounding while a simple arithmetic average ignores the sequence of outcomes. A 50% gain followed by a 40% loss averages 5% a year, but your money went from 100 to 150 to 90 — a CAGR of about −5.1% per year. Whenever returns are volatile, CAGR sits below the arithmetic average and the gap widens with volatility. This is not rounding noise: it is the arithmetic cost of losing a percentage of a larger base. Always quote the compound figure.</p>
+    <h3>Is a negative CAGR possible?</h3>    <p>Yes. If the ending value is below the beginning value, CAGR is negative: $50,000 falling to $35,000 over four years is a −30% total return and about −8.5% per year. The CAGR formula needs both endpoints positive, so a total wipeout to zero yields −100% ROI but no meaningful annualized rate, which this calculator reports as not applicable rather than inventing a number. Negative starting values — a position shorted or a loss-making project — also break the ratio.</p>
+    <h3>What counts as a good ROI?</h3>    <p>It depends entirely on risk and time horizon, which is why comparing raw percentages misleads. The S&P 500 has returned about 10% a year nominally since 1926, roughly 7% after inflation, so beating that sustainably is hard without taking more risk. A business investment typically needs to clear its cost of capital, often 8 to 15% depending on the firm. Cash and short-term Treasury bills sit near current money-market yields, so any ROI above that comes with risk somewhere in the structure.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/npv-irr-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">NPV &amp; IRR Calculator</div></div><div class="tc-desc">Net present value and internal rate of return.</div></a>
+        <a href="/tools/compound-interest-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📈</span><div class="tc-title">Compound Interest</div></div><div class="tc-desc">How a single deposit grows over time.</div></a>
+        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">Growth from regular monthly contributions.</div></a>
+        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">Units you must sell to cover your costs.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-10-06">Oct 6, 2026</time> — past returns never guarantee future performance; verify every figure you enter.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+</main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/npv-irr-calculator">NPV &amp; IRR Calculator — Net Present Value</a></li>
+      <li><a href="/tools/compound-interest-calculator">Compound Interest Calculator — Final Amount &amp; APY</a></li>
+      <li><a href="/tools/markup-margin-calculator">Markup &amp; Margin Calculator</a></li>
+      <li><a href="/pricing-sales">📂 All Pricing &amp; Sales Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>!function(){function m(n){return n.toLocaleString("en-US",{style:"currency",currency:"USD"})}function p(n){return(100*n).toFixed(2)+"%"}function $(i){return document.getElementById(i)}function calc(){var s=parseFloat($("start").value)||0,e=parseFloat($("end").value)||0,y=parseFloat($("yrs").value)||0,ic=parseFloat($("inc").value)||0,tot=e+ic,gain=tot-s,roi=s>0?gain/s:NaN,cagr=s>0&&tot>0&&y>0?Math.pow(tot/s,1/y)-1:NaN,dbl=isFinite(cagr)&&cagr>0?Math.LN2/Math.log(1+cagr):NaN,real=isFinite(cagr)?(1+cagr)/1.03-1:NaN;$("roiVal").textContent=isFinite(roi)?p(roi):"—";$("roiLbl").textContent="total return on investment"+(y>0?" over "+y+" year"+(y>1?"s":""):"");$("cagrVal").textContent=isFinite(cagr)?p(cagr):"n/a";$("gainVal").textContent=m(gain);$("multVal").textContent=s>0?(tot/s).toFixed(2)+"x":"—";$("avgVal").textContent=y>0?m(gain/y)+" / yr":"—";$("dblVal").textContent=isFinite(dbl)?dbl.toFixed(1)+" yrs":(isFinite(cagr)?"never":"—");$("realVal").textContent=isFinite(real)?p(real):"—";$("detailNote").textContent="From "+m(s)+" to "+m(e)+(ic>0?" plus "+m(ic)+" income received":"")+" over "+y+" year"+(y>1?"s":"")+": net gain of "+m(gain)+"."+(isFinite(cagr)?" Compounded at "+p(cagr)+" a year; assuming 3% inflation the real annual gain is about "+p(real)+".":" No annualized rate is available because this combination includes a non-positive value.")+" Taxes, fees and any money added during the period are not included.";$("result").classList.add("show")}["start","end","yrs","inc"].forEach(function(i){$(i).addEventListener("input",calc);$(i).addEventListener("change",calc)}),$("calcBtn").addEventListener("click",calc),$("resetBtn").addEventListener("click",function(){$("start").value="25000",$("end").value="41000",$("yrs").value="6",$("inc").value="0",calc()}),calc(),window.__bindRealtime&&window.__bindRealtime(document.querySelector(".calc-card"),calc)}();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
