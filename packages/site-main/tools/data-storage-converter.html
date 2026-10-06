@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mquickcalc.com/tools/data-storage-converter">
   <meta property="og:site_name" content="mQuickCalc">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Data Storage Converter","url":"https://mquickcalc.com/tools/data-storage-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert data storage between bits, bytes, KB, MB, GB, TB and their binary equivalents KiB, MiB, GiB, TiB. See why a 1 TB drive shows as 931 GB."}
   </script>
@@ -177,9 +177,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var e=[["bit","Bit",.125],["b","Byte (B)",1],["kb","Kilobyte (KB, 10³)",1e3],["mb","Megabyte (MB, 10⁶)",1e6],["gb","Gigabyte (GB, 10⁹)",1e9],["tb","Terabyte (TB, 10¹²)",1e12],["pb","Petabyte (PB, 10¹⁵)",1e15],["kib","Kibibyte (KiB, 2¹⁰)",1024],["mib","Mebibyte (MiB, 2²⁰)",1048576],["gib","Gibibyte (GiB, 2³⁰)",1073741824],["tib","Tebibyte (TiB, 2⁴⁰)",1099511627776]],t=document.getElementById("val"),n=document.getElementById("from"),i=document.getElementById("rows"),r=document.getElementById("mainVal"),a=document.getElementById("mainUnit"),o=document.getElementById("convNote");function b(e){return isFinite(e)?0===e?"0":Number(e.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:8}):"—"}function m(t){for(var n=0;n<e.length;n++)if(e[n][0]===t)return e[n][2];return 1}function u(t){for(var n=0;n<e.length;n++)if(e[n][0]===t)return e[n][1];return t}var c={b:"bit",bit:"b",kb:"kib",mb:"mib",tb:"tib",pb:"tib"};function g(){var g=parseFloat(t.value);isNaN(g)&&(g=0);for(var l=n.value,d=g*m(l),v="",s=0;s<e.length;s++){var f=e[s][0],B=d/e[s][2];v+="<tr"+(f===l?' class="is-from"':"")+"><td>"+e[s][1]+"</td><td><strong>"+b(B)+"</strong></td></tr>"}i.innerHTML=v;var y=c[l]||("gib"===l?"gb":"gib");r.textContent=b(d/m(y)),a.textContent=b(g)+" "+function(e){var t=u(e),n=/\(([^)]+)\)\s*$/.exec(t),i=n?n[1]:t,r=i.indexOf(",");return r>0?i.slice(0,r):i}(l)+" in "+u(y),o&&(o.textContent="Converting from "+u(l)+". Change the unit to convert the other way — the whole table updates instantly.")}t.addEventListener("input",g),n.addEventListener("change",g),document.getElementById("resetBtn").addEventListener("click",function(){t.value="1",n.value="gb",g()}),function(){var e=new URLSearchParams(window.location.search).get("from"),t=document.getElementById("from");if(t&&e)for(var n=t.getElementsByTagName("option"),i=0;i<n.length;i++)if(n[i].value===e){t.value=e,t.dispatchEvent(new Event("change"));break}}(),g()}();
 </script>
 <script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();

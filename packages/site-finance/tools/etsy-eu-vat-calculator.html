@@ -19,7 +19,7 @@
   <meta property="og:title" content="Etsy EU VAT Calculator — VAT &amp; Fees for EU Sellers | mQuickCalc">
   <meta property="og:description" content="Work out VAT on your Etsy sales to EU buyers with per-country rates, then see your net after Etsy">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Etsy EU VAT Calculator","url":"https://finance.mquickcalc.com/tools/etsy-eu-vat-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate VAT and Etsy fees on EU sales."}
   </script>
@@ -161,9 +161,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){var t,n,d,c=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;d=document.getElementById("inclVat").checked?(t=c)-(n=c/(1+m)):(t=c*(1+m))-(n=c);var l=document.getElementById("showFees").checked,o=l?.065*t+.03*t+.25:0,u=n-o;document.getElementById("vatVal").textContent=e(d),document.getElementById("netVal").textContent=e(n),document.getElementById("grossVal").textContent=e(t),document.getElementById("feeVal").textContent=l?e(o):"—",document.getElementById("finalVal").textContent=l?e(u):"—",document.getElementById("result").classList.add("show")}document.getElementById("country").addEventListener("change",function(){var e=document.getElementById("country").value;""!==e&&(document.getElementById("rate").value=e)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="120.00",document.getElementById("country").value="",document.getElementById("rate").value="20",document.getElementById("inclVat").checked=!0,document.getElementById("showFees").checked=!1,t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

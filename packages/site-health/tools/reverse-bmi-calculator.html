@@ -7,7 +7,7 @@
   <meta name="description" content="Enter your height and target BMI to find your ideal goal weight. Works for both metric (cm/kg) and imperial (ft/lbs) units.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/reverse-bmi-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Reverse BMI Calculator","url":"https://health.mquickcalc.com/tools/reverse-bmi-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find target weight from height and desired BMI."}</script>
 <meta property="og:title" content="Reverse BMI Calculator —Target Weight from BMI Goal | mQuickCalc Health">
 <meta property="og:description" content="Enter your height and target BMI to find your ideal goal weight. Works for both metric (cm/kg) and imperial (ft/lbs) units.">
@@ -119,9 +119,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var e=function(e){return document.getElementById(e)};function i(){var i,t;if("cm"===e("hUnit").value)i=(parseFloat(e("hCm").value)||175)/100;else{var l=parseFloat(e("hFt").value)||5,a=parseFloat(e("hIn").value)||8;i=.0254*(12*l+a)}var s=(t="custom"===e("bmi").value?parseFloat(e("bmiCustom").value)||22:parseFloat(e("bmi").value))*i*i,o=2.20462*s,d='<div class="cell" style="border:2px solid #16a34a;border-radius:8px;background:#f0fdf4;"><div class="lbl" style="font-weight:700;">Your target (BMI '+t+')</div><div class="val" style="font-size:1.25em;color:#16a34a;">'+s.toFixed(1)+' kg</div><div class="dim">'+o.toFixed(1)+" lbs</div></div>";[["Underweight","< 18.5",18.5,"Pre-overweight"],["Normal low","18.5 – 21",21,"Pre-overweight"],["Normal middle","21 – 23",23,"Popular ideal"],["Normal high","23 – 25",25,"Upper healthy"],["Overweight","25 – 30",30,"Consult provider"],["Obese I","30 – 35",35,"Consult provider"],["Obese II","35 – 40",40,"Consult provider"]].forEach(function(e){var t=e[2]*i*i,l=2.20462*t;d+='<div class="cell"><div class="lbl">'+e[0]+" ("+e[1]+')</div><div class="val">'+t.toFixed(1)+' kg</div><div class="dim">'+l.toFixed(1)+" lbs</div></div>"}),e("bmiTable").innerHTML=d,e("result").classList.add("show")}e("hUnit").addEventListener("change",function(){"cm"===this.value?(e("hCm").style.display="",e("ftWrap").style.display="none"):(e("hCm").style.display="none",e("ftWrap").style.display="flex")}),e("bmi").addEventListener("change",function(){"custom"===this.value?(e("bmiCustom").style.display="",e("bmiCustomLabel").style.display=""):(e("bmiCustom").style.display="none",e("bmiCustomLabel").style.display="none")}),["hUnit","hCm","hFt","hIn","bmi","bmiCustom"].forEach(function(t){e(t).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(i,300)})}),i()}();
 </script>
 <script type="application/ld+json">

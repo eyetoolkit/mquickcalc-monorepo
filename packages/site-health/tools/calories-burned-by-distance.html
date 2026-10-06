@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate calories burned walking, running, or cycling a given distance. Enter distance and body weight to see approximate energy expenditure.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/calories-burned-by-distance">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calories Burned by Distance","url":"https://health.mquickcalc.com/tools/calories-burned-by-distance","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate calories burned from distance for running, walking, cycling."}</script>
 <meta property="og:title" content="Calories Burned by Distance —Running, Walking, Cycling | mQuickCalc Health">
 <meta property="og:description" content="Estimate calories burned walking, running, or cycling a given distance. Enter distance and body weight to see approximate energy expenditure.">
@@ -114,9 +114,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var i=function(i){return document.getElementById(i)};function n(){var n=parseFloat(i("distance").value)||5;"mi"===i("distUnit").value&&(n*=1.60934);var t=parseFloat(i("weight").value)||70;"lb"===i("wUnit").value&&(t*=.453592);var a="";[["Walking (slow, 3 km/h)",3,3],["Walking (moderate, 5 km/h)",3.5,5],["Walking (fast, 6.5 km/h)",4.5,6.5],["Jogging (8 km/h)",8,8],["Running (10 km/h)",10,10],["Running fast (12 km/h)",12,12],["Sprinting (16 km/h)",15,16],["Cycling casual (12 km/h)",5,12],["Cycling moderate (18 km/h)",7,18],["Cycling fast (25 km/h)",10,25]].forEach(function(i){var e=i[1],l=i[2],d=n/l,s=Math.round(e*t*d),c=Math.round(60*d);a+='<div class="cell"><div class="lbl">'+i[0]+'</div><div class="val">'+s+' kcal</div><div class="dim">~'+c+" min</div></div>"}),i("burnGrid").innerHTML=a,i("result").classList.add("show")}["distance","distUnit","weight","wUnit"].forEach(function(t){i(t).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(n,300)})}),n()}();
 </script>
 <script type="application/ld+json">

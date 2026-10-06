@@ -7,7 +7,7 @@
   <meta name="description" content="Convert MET (Metabolic Equivalent) values to calories burned for any activity. Enter body weight and activity intensity.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/met-to-calories-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MET to Calories Calculator","url":"https://health.mquickcalc.com/tools/met-to-calories-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate calories burned from MET values for any physical activity."}</script>
 <meta property="og:title" content="MET to Calories Calculator —Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Convert MET (Metabolic Equivalent) values to calories burned for any activity. Enter body weight and activity intensity.">
@@ -133,9 +133,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e=parseFloat(t("weight").value)||70;"lb"===t("weightUnit").value&&(e*=.453592);var a,i=t("activity").value;a="custom"===i?parseFloat(t("customMet").value)||3.5:parseFloat(i);var l=parseFloat(t("duration").value)||30,n=l/60,s=Math.round(a*e*n);t("cal").textContent=s+" kcal",t("formula").textContent=a+" × "+e.toFixed(1)+" kg × "+n.toFixed(2)+" h = "+s;var v="";v+='<div class="cell"><div class="lbl">Calories per minute</div><div class="val">'+Math.round(s/Math.max(l,1))+"</div></div>",v+='<div class="cell"><div class="lbl">Per hour</div><div class="val">'+Math.round(a*e)+" kcal</div></div>",v+='<div class="cell"><div class="lbl">Equivalent to walking</div><div class="val">'+Math.round(s/3.5/e*60)+" min</div></div>",v+='<div class="cell"><div class="lbl">Equivalent to running</div><div class="val">'+Math.round(s/9/e*60)+" min</div></div>",t("quick").innerHTML=v,t("result").classList.add("show")}t("activity").addEventListener("change",function(){var e=this.value;"custom"===e?(t("customMet").style.display="",t("customMetLabel").style.display=""):(t("customMet").style.display="none",t("customMetLabel").style.display="none",t("customMet").value=e)}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("weightUnit").value="kg",t("weight").value="70",t("activity").value="3.5",t("customMet").value="3.5",t("duration").value="30",t("activity").dispatchEvent(new Event("change")),e()}),["weight","weightUnit","activity","customMet","duration"].forEach(function(a){t(a).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">

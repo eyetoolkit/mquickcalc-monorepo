@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cyber Insurance Cost Estimator (B2B)", "url": "https://cover.mquickcalc.com/tools/cyber-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Cyber Insurance Cost Estimator (B2B)", "item": "https://cover.mquickcalc.com/tools/cyber-insurance"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Cyber Insurance Cost Estimator (B2B)", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -102,9 +102,9 @@
 
 
 <footer id="site-footer" class="site-footer"></footer>
-<script src="/js/insurance-data.js" defer></script>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
+<script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=document.getElementById("employees").value,t=document.getElementById("industry").value,i=document.getElementById("data").value,r=document.getElementById("security").value,a=document.getElementById("limit").value;let o={low:500,medium:1e3,high:2e3,very_high:4e3}[t]||1e3;o*={"<10":.7,"10-50":1,"50-200":1.8,"200+":3}[e]||1;o*={no:.5,basic:1,pii:1.5,phi:2.5}[i]||1;o*={basic:1.3,standard:1,advanced:.6}[r]||1,o*="500k"===a?.7:"5m"===a?2.5:1;const d=Math.round(o/12),s=Math.round(o);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">💻 Your cyber insurance estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${n(s)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">≈ ${n(d)} / month · ${a} coverage</div>\n    <div style="padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">\n      ⚠️ <strong>Why you need this:</strong> The average ransomware payment is ~$2M + downtime costs + regulatory fines (GDPR fines up to 4% of global revenue, California CCPA penalties). Cyber insurance covers ransom negotiations, legal fees, customer notification, credit monitoring for affected customers, and public relations. For 60% of SMBs, a major breach leads to closure within 6 months.\n    </div>\n    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Reduce your premium:</strong> Add MFA everywhere, train employees on phishing, encrypt sensitive data, and maintain daily offsite backups. Carriers will verify these — having them reduces both your premium AND your breach risk.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
 </body></html>

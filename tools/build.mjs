@@ -20,6 +20,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
@@ -137,9 +138,41 @@ function replaceLegacySiteJs(siteDir) {
   return touched;
 }
 
+/**
+ * Cache-busting: append ?v=<content-hash> to /css/*.css and /js/*.js
+ * references inside every .html of the site.
+ *
+ * Why: _headers gives /css/* and /js/* `max-age=31536000, immutable`.
+ * Without versioned URLs, every CSS/JS update is stuck in browser caches
+ * (and old service workers) for up to a year. Versioned URLs make each
+ * deploy instantly effective for all visitors.
+ */
+function cacheBustSite(siteDir) {
+  const assets = {};
+  for (const rel of walk(siteDir).map(p => path.relative(siteDir, p).replace(/\\/g, '/'))) {
+    if (/^(css|fonts)\/.+\.css$/.test(rel) || /^js\/.+\.js$/.test(rel)) {
+      const hash = crypto.createHash('md5').update(fs.readFileSync(path.join(siteDir, rel))).digest('hex').slice(0, 8);
+      assets['/' + rel] = hash;
+    }
+  }
+  if (Object.keys(assets).length === 0) return 0;
+  const htmlFiles = walk(siteDir).filter(p => p.endsWith('.html'));
+  let touched = 0;
+  for (const f of htmlFiles) {
+    let html = fs.readFileSync(f, 'utf8');
+    const before = html;
+    for (const [rel, v] of Object.entries(assets)) {
+      const esc = rel.replace(/[.\/]/g, m => '\\' + m);
+      const re = new RegExp('((?:href|src)=["\']' + esc + ')(\\?[^"\']*?)?["\']', 'g');
+      html = html.replace(re, (_m, p1) => p1 + '?v=' + v + '"');
+    }
+    if (html !== before) { fs.writeFileSync(f, html); touched++; }
+  }
+  return touched;
+}
+
 // === Main ===
-const targetArg = process.argv[2];
-const sites = targetArg
+const targetArg = process.argv[2];const sites = targetArg
   ? SITES.filter(s => s.pkg === targetArg)
   : SITES;
 
@@ -159,8 +192,9 @@ for (const site of sites) {
   }
   syncBrandKit(siteDir);
   const replaced = replaceLegacySiteJs(siteDir);
+  const busted = cacheBustSite(siteDir);
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history

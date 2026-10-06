@@ -7,7 +7,7 @@
   <meta name="description" content="Free BMR calculator: estimate your Basal Metabolic Rate using the Mifflin-St Jeor equation. Includes factors affecting BMR, muscle mass guide, metabolic…">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/bmr-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"BMR Calculator (Mifflin-St Jeor)","url":"https://health.mquickcalc.com/tools/bmr-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free BMR calculator using the Mifflin-St Jeor equation. Calculate how many calories your body burns at complete rest. Accurate for most adults."}
   </script>
@@ -139,9 +139,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=parseFloat(e("weight").value)||0,a=parseFloat(e("height").value)||0,n=parseInt(e("age").value)||0,r="male"==e("sex").value?10*t+6.25*a-5*n+5:10*t+6.25*a-5*n-161,i=1.55*r;e("bmrVal").textContent=Math.round(r),e("tdeeVal").textContent=Math.round(i),e("result").classList.add("show")}["age","height","sex","weight"].forEach(function(a){var n=e(a);n&&n.addEventListener("input",t)});var a=e("calcBtn");a&&a.addEventListener("click",t);var n=e("resetBtn");n&&n.addEventListener("click",function(){var a={weight:"70",sex:"male",age:"30",height:"175"};Object.keys(a).forEach(function(t){var n=e(t);n&&(n.value=a[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">

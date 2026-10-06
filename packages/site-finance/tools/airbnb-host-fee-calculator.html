@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Airbnb Host Fee Calculator", "url": "https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods."}</script>
 <meta property="og:title" content="Airbnb Host Fee Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
@@ -112,9 +112,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
-<script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n,a,i=parseFloat(t("price").value)||0,l=parseFloat(t("nights").value)||0,o=t("method").value,c=i*l+(parseFloat(t("cleaning").value)||0);a="host-only"===o?c-(n=.14*c):c-(n=.03*c);var r=c>0?n/c*100:0;t("netVal").textContent="$"+e(a,2),t("subVal").textContent="$"+e(c,2),t("feeVal").textContent="$"+e(n,2),t("rateVal").textContent=e(r,2)+"%",t("result").classList.add("show")}["price","nights","method","cleaning"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("price").value="150",t("nights").value="5",t("method").value="split",t("cleaning").value="0",n()}),n()}();
 </script>
 </body>

@@ -7,7 +7,7 @@
   <meta name="description" content="Free body fat calculator using the US Navy circumference method. Enter height, neck, waist, and hip to estimate body fat %. Includes categories, visceral vs…">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/body-fat-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Body Fat Percentage Calculator","url":"https://health.mquickcalc.com/tools/body-fat-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free body fat calculator using the US Navy method. Enter your height and body circumference measurements to estimate your body fat percentage. No calipers needed."}
   </script>
@@ -149,9 +149,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=parseFloat(e("height").value)||0,a=parseFloat(e("neck").value)||0,n=parseFloat(e("waist").value)||0,s=parseFloat(e("hip").value)||0,l=e("sex").value,i=0;i="male"==l?495/(1.0324-.19077*Math.log10(n-a)+.15456*Math.log10(t))-450:495/(1.29579-.35004*Math.log10(n+s-a)+.221*Math.log10(t))-450,i=Math.max(2,Math.min(60,i));var r="male"==l?i<6?"Essential":i<14?"Athletes":i<18?"Fitness":i<25?"Average":"Obese":i<14?"Essential":i<21?"Athletes":i<25?"Fitness":i<32?"Average":"Obese";e("bfVal").textContent=i.toFixed(1)+"%",e("catVal").textContent=r,e("result").classList.add("show")}["height","hip","neck","sex","waist"].forEach(function(a){var n=e(a);n&&n.addEventListener("input",t)});var a=e("calcBtn");a&&a.addEventListener("click",t);var n=e("resetBtn");n&&n.addEventListener("click",function(){var a={neck:"38",waist:"85",sex:"male",height:"175",hip:"95"};Object.keys(a).forEach(function(t){var n=e(t);n&&(n.value=a[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">

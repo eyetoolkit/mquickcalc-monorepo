@@ -7,7 +7,7 @@
   <meta name="description" content="Convert blood glucose between mg/dL and mmol/L. Quick reference chart for normal, prediabetic, and diabetic ranges.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/blood-sugar-converter">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Blood Sugar Converter","url":"https://health.mquickcalc.com/tools/blood-sugar-converter","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert blood glucose between mg/dL and mmol/L with reference ranges."}</script>
 <meta property="og:title" content="Blood Sugar Converter (mg/dL ↔ mmol/L) —Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Convert blood glucose between mg/dL and mmol/L. Quick reference chart for normal, prediabetic, and diabetic ranges.">
@@ -109,9 +109,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var e=function(e){return document.getElementById(e)},t=1/18.0159;function n(e){return e<70?"Low blood sugar (hypoglycemia) — seek medical attention":e<100?"Normal fasting range":e<126?"Prediabetic range — consider lifestyle changes":e<200?"Diabetic range (fasting) — consult a healthcare provider":"High blood sugar — seek medical advice"}function a(){var a=parseFloat(e("mgdl").value);if(!isNaN(a)){var i=a*t;e("mmoll").value=i.toFixed(2),e("interpret").textContent=n(a)}}e("mgdl").addEventListener("input",a),e("mmoll").addEventListener("input",function(){var t=parseFloat(e("mmoll").value);if(!isNaN(t)){var a=18.0159*t;e("mgdl").value=a.toFixed(1),e("interpret").textContent=n(a)}}),e("resetBtn").addEventListener("click",function(){e("mgdl").value="95",e("mmoll").value="5.28",e("interpret").textContent="Normal fasting range"}),a()}();
 </script>
 <script type="application/ld+json">

@@ -7,7 +7,7 @@
   <meta name="description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/refinance-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Refinance Calculator", "url": "https://finance.mquickcalc.com/tools/refinance-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved."}</script>
 <meta property="og:title" content="Refinance Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
@@ -114,9 +114,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
-<script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(t,e,n){var a=e/100/12;return 0===a?t/n:t*a*Math.pow(1+a,n)/(Math.pow(1+a,n)-1)}function a(){var a=parseFloat(t("curBalance").value)||0,o=parseFloat(t("curRate").value)||0,l=parseFloat(t("curMonths").value)||0,u=parseFloat(t("newRate").value)||0,r=parseFloat(t("newMonths").value)||0,c=parseFloat(t("closing").value)||0,s=n(a,o,l),i=n(a,u,r),v=s*l-a-(i*r-a+c),h=s-i,M=h>0?Math.ceil(c/h):1/0;t("saveVal").textContent=(h>=0?"$"+e(h,2):"-$"+e(-h,2))+"/month",t("dimVal").textContent=h>=0?"Monthly savings":"Monthly increase",t("curMonth").textContent="$"+e(s,2),t("newMonth").textContent="$"+e(i,2),t("totalSave").textContent=v>=0?"$"+e(v,2):"-$"+e(-v,2),t("breakEven").textContent=isFinite(M)?M+" months":"Never",t("result").classList.add("show")}["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("curBalance").value="18000",t("curRate").value="7.5",t("curMonths").value="48",t("newRate").value="5.5",t("newMonths").value="48",t("closing").value="500",a()}),a()}();
 </script>
 </body>

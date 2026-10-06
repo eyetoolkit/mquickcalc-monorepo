@@ -19,7 +19,7 @@
   <meta property="og:title" content="Amazon FBA Revenue Calculator — Fees &amp; Profit | mQuickCalc">
   <meta property="og:description" content="Calculate Amazon FBA profit per unit: referral fee, fulfillment fee, product cost, and inbound shipping. Includes fee breakdown, ROI formula, and FBA vs FBM comparison. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Amazon FBA Revenue Calculator","url":"https://finance.mquickcalc.com/tools/amazon-fba-revenue-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate Amazon FBA profit per unit: referral fee, fulfillment fee, product cost, and inbound shipping. Includes fee breakdown, ROI formula, breakeven analysis, and FBA vs FBM comparison."}
   </script>
@@ -189,9 +189,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=parseFloat(document.getElementById("cogs").value)||0,d=parseFloat(document.getElementById("shipin").value)||0,l=(parseFloat(document.getElementById("referral").value)||0)/100,o=parseFloat(document.getElementById("fbaFee").value)||0,a=t*l,c=a+o,m=n+d,u=t-c-m,r=m>0?u/m:0;document.getElementById("grossLine").textContent="Sale "+e(t)+" · goods+inbound "+e(m),document.getElementById("profitVal").textContent=e(u),document.getElementById("refVal").textContent=e(a),document.getElementById("fbaFeeVal").textContent=e(o),document.getElementById("totVal").textContent=e(c),document.getElementById("roiVal").textContent=(100*r).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("tier").addEventListener("change",function(){document.getElementById("fbaFee").value=this.value}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="29.99",document.getElementById("cogs").value="8.00",document.getElementById("shipin").value="1.50",document.getElementById("referral").value="15",document.getElementById("tier").value="4.50",document.getElementById("fbaFee").value="4.50",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

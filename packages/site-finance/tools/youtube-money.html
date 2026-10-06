@@ -19,7 +19,7 @@
   <meta property="og:title" content="YouTube Money Calculator — Estimate Ad Revenue | mQuickCalc">
   <meta property="og:description" content="Estimate how much a YouTube video or channel earns from views. Enter views and RPM for your niche to estimate ad revenue. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Money Calculator","url":"https://finance.mquickcalc.com/tools/youtube-money","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate YouTube ad revenue from views and RPM."}
   </script>
@@ -141,9 +141,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(){var e,t=Math.max(parseInt(document.getElementById("views").value,10)||0,0),n="custom"===(e=document.getElementById("niche").value)?parseFloat(document.getElementById("rpm").value)||0:parseFloat(e)||0,d=t/1e3*n,c=d/.55,l=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("rpmLine").textContent=t.toLocaleString("en-US")+" views",document.getElementById("revenueVal").textContent=l(d),document.getElementById("rpmVal").textContent=l(n),document.getElementById("cutVal").textContent=l(c),document.getElementById("result").classList.add("show")}document.getElementById("niche").addEventListener("change",function(){document.getElementById("customField").style.display="custom"===this.value?"block":"none"}),document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("niche").value="10",document.getElementById("customField").style.display="none",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
 </body>

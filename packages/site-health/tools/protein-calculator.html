@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/protein-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Protein Calculator", "url": "https://health.mquickcalc.com/tools/protein-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included."}</script>
 <meta property="og:title" content="Protein Calculator — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
@@ -114,9 +114,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
-<script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("weight").value)||0,n=parseFloat(t("activity").value),i=t("goal").value;if(a){var l=.8*a,u=n*a;"build"===i&&(u=Math.max(u,1.6*a)),"cut"===i&&(u=Math.max(u,1.8*a));var o=2.2*a,r=(u=Math.min(u,2.2*a))/3;t("bigVal").textContent=e(u,0)+" g",t("rdaVal").textContent=e(l,0)+" g",t("tgtVal").textContent=e(u,0)+" g",t("upperVal").textContent=e(o,0)+" g",t("perMeal").textContent=e(r,0)+" g",t("result").classList.add("show")}}["weight","activity","goal"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("weight").value="70",t("activity").value="1.2",t("goal").value="build",a()}),a()}();
 </script>
 </body>

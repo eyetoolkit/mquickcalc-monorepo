@@ -7,7 +7,7 @@
   <meta name="description" content="Free lean body mass calculator using the Boer formula. Enter sex, weight, and height to estimate your lean body mass — muscle, bone, and organs.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/lean-body-mass-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Lean Body Mass Calculator","url":"https://health.mquickcalc.com/tools/lean-body-mass-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free lean body mass calculator. Enter your weight and body fat percentage to estimate how much of your weight is lean tissue vs fat mass."}
   </script>
@@ -127,9 +127,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,a=parseFloat(t("height").value)||0,n=t("sex").value;if(!(e<=0||a<=0)){var i="male"==n?.407*e+.267*a-19.2:.252*e+.473*a-48.3,l=Math.max(0,i),c=Math.max(0,e-l),o=(l/e*100).toFixed(1);t("lbmVal").textContent=l.toFixed(1)+" kg",t("fatVal").textContent=c.toFixed(1)+" kg",t("lbmPctVal").textContent=o+"%",t("result").classList.add("show")}}["height","sex","weight"].forEach(function(a){var n=t(a);n&&n.addEventListener("input",e)});var a=t("calcBtn");a&&a.addEventListener("click",e);var n=t("resetBtn");n&&n.addEventListener("click",function(){var a={height:"175",sex:"male",weight:"75"};Object.keys(a).forEach(function(e){var n=t(e);n&&(n.value=a[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">

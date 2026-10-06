@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Workers' Compensation Premium Calculator", "url": "https://cover.mquickcalc.com/tools/workers-comp", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate workers' compensation insurance premiums per employee and total annual cost based on your industry code and payroll."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Workers' Compensation Premium Calculator", "item": "https://cover.mquickcalc.com/tools/workers-comp"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Workers' Compensation Premium Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -92,9 +92,9 @@
 
 
 <footer id="site-footer" class="site-footer"></footer>
-<script src="/js/insurance-data.js" defer></script>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
+<script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=document.getElementById("industry").value,n=+document.getElementById("payroll").value,a=+document.getElementById("employees").value,r={software:.35,retail:1.85,restaurant:2.15,construction:13.2,electrical:9.5,landscaping:5.4,healthcare:3.2,freight:11.8}[t]||2,o=n*a,i=o/100*r,s=i/Math.max(a,1),d=i/12;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">👷 Workers' Comp estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(Math.round(i))}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-top:12px">\n      <tr><td>Total annual payroll</td><td style="text-align:right">${e(o)}</td></tr>\n      <tr><td>Rate per $100 payroll</td><td style="text-align:right">$${r.toFixed(2)}</td></tr>\n      <tr><td>Cost per employee</td><td style="text-align:right">${e(Math.round(s))}/year</td></tr>\n      <tr><td>Monthly (pay-as-you-go)</td><td style="text-align:right">${e(Math.round(d))}</td></tr>\n    </table>\n    <div style="margin-top:16px;padding:12px;background:var(--danger-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2)">\n      ⚠️ Workers' compensation is <strong>legally required</strong> for businesses with employees in every state except Texas. Rates shown are industry averages — your actual rate depends on your claims history (EMR), specific class codes, and whether you use payroll integration. Class codes and rates vary by state.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
 </body></html>

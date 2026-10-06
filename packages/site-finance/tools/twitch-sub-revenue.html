@@ -19,7 +19,7 @@
   <meta property="og:title" content="Twitch Subscription Revenue Calculator — Sub Income | mQuickCalc">
   <meta property="og:description" content="Estimate monthly income from Twitch Tier 1, 2 and 3 subscriptions plus Prime subs, with adjustable streamer revenue split. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Twitch Subscription Revenue Calculator","url":"https://finance.mquickcalc.com/tools/twitch-sub-revenue","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate monthly Twitch subscription income."}
   </script>
@@ -138,9 +138,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var e={t1:4.99,t2:9.99,t3:24.99,prime:4.99};function t(){var t=(parseFloat(document.getElementById("split").value)||50)/100,n=0,c=[],l=0;Object.keys(e).forEach(function(t){var d=Math.max(parseInt(document.getElementById(t).value,10)||0,0),a=d*e[t];n+=a,l+=d,c.push(["Tier "+("prime"===t?"Prime":t.replace("t","")),d,a])});var d=n*t,a=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("totalSubsLine").textContent=l+" total subscriptions · gross sub value "+a(n),document.getElementById("streamerVal").textContent=a(d),document.getElementById("breakdown").innerHTML=c.map(function(e){return'<div class="cell"><div class="lbl">'+e[0]+" · "+e[1]+'</div><div class="val">'+a(e[2])+"</div></div>"}).join(""),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){["t1","t2","t3","prime"].forEach(function(e){document.getElementById(e).value="t1"===e?"100":"0"}),document.getElementById("split").value="50",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

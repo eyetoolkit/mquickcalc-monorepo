@@ -11,7 +11,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <meta name="theme-color" content="#2563eb">
   
   <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   <meta property="og:title" content="Sales Tax Calculator — Add &amp; Remove Tax from a Price | mQuickCalc">
   <meta property="og:description" content="Add sales tax to a price or back the tax out of an inclusive amount. Pick a US state rate or enter your own. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Sales Tax Calculator","url":"https://finance.mquickcalc.com/tools/sales-tax-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add or back out sales tax on any price."}
   </script>
@@ -173,9 +173,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,o,c,l,a=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;document.getElementById("mode").checked?(o=a-(c=a/(1+m)),l=a,t="Backing "+(100*m).toFixed(2)+"% tax out of "+e(a),n=e(c),d="pre-tax amount"):(l=a+(o=a*m),c=a,t="Adding "+(100*m).toFixed(2)+"% tax to "+e(a),n=e(l),d="total including tax"),document.getElementById("firstLine").textContent=t,document.getElementById("secondVal").textContent=n,document.getElementById("secondLbl").textContent=d,document.getElementById("taxVal").textContent=e(o),document.getElementById("preVal").textContent=e(c),document.getElementById("totalVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("state").addEventListener("change",function(){""!==this.value&&(document.getElementById("rate").value=this.value)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("rate").value="8.25",document.getElementById("mode").checked=!1,document.getElementById("state").value="8.25",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

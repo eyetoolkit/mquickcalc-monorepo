@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your target heart rate for different exercise intensities. Enter your age and optional resting heart rate to find ideal cardio workout zones.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/target-heart-rate-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Target Heart Rate Calculator","url":"https://health.mquickcalc.com/tools/target-heart-rate-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find your target heart rate zones for cardio and strength training."}</script>
 <meta property="og:title" content="Target Heart Rate Calculator —Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Calculate your target heart rate for different exercise intensities. Enter your age and optional resting heart rate to find ideal cardio workout zones">
@@ -117,9 +117,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var a=function(a){return document.getElementById(a)};function t(){var t,e=parseInt(a("age").value)||35,n=parseFloat(a("rhr").value)||0,r=a("method").value;t="220"===r?220-e:"208"===r?Math.round(208-.7*e):Math.round(211-.64*e);var o="";[["Warm-up","50%","60%"],["Fat burn","60%","70%"],["Cardio","70%","80%"],["Peak","80%","90%"],["Maximum","90%","100%"]].forEach(function(a){var e,r;n>0?(e=Math.round(n+(t-n)*parseFloat(a[1])/100),r=Math.round(n+(t-n)*parseFloat(a[2])/100)):(e=Math.round(t*parseFloat(a[1])/100),r=Math.round(t*parseFloat(a[2])/100)),o+='<div class="cell"><div class="lbl">'+a[0]+" ("+a[1]+"-"+a[2]+'%)</div><div class="val">'+e+"—"+r+" bpm</div></div>"}),a("mhr").textContent=t+" bpm",a("zones").innerHTML=o,a("result").classList.add("show")}a("calcBtn").addEventListener("click",t),a("resetBtn").addEventListener("click",function(){a("age").value="35",a("rhr").value="",a("method").value="220",t()}),["age","rhr","method"].forEach(function(e){a(e).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(t,400)})}),t()}();
 </script>
 <script type="application/ld+json">

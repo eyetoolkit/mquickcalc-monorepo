@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate Body Surface Area (BSA) using 5 formulas: Du Bois, Mosteller, Haycock, Gehan-George, Boyd. Used in medicine, nutrition, and fitness.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/body-surface-area-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BSA Calculator","url":"https://health.mquickcalc.com/tools/body-surface-area-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate Body Surface Area using 5 different established formulas."}</script>
 <meta property="og:title" content="Body Surface Area (BSA) Calculator —Du Bois, Mosteller, Haycock | mQuickCalc Health">
 <meta property="og:description" content="Calculate your Body Surface Area (BSA) using multiple formulas: Du Bois, Mosteller, Haycock, Gehan-George, and Boyd. BSA is used in medicine, nutritio">
@@ -118,9 +118,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e;"cm"===t("hUnit").value?e=parseFloat(t("hCm").value)||170:e=2.54*(12*(parseFloat(t("hFt").value)||5)+(parseFloat(t("hIn").value)||7));var a=parseFloat(t("weight").value)||65;"lb"===t("wUnit").value&&(a*=.453592);var i=2.20462*a,l=.007184*Math.pow(a,.425)*Math.pow(e,.725),o=Math.sqrt(e*a/3600),n=.024265*Math.pow(a,.5378)*Math.pow(e,.3964),s=.0235*Math.pow(e,.42246)*Math.pow(a,.51456),d=3207e-7*Math.pow(e,.3)*Math.pow(i,.7285-.0188*Math.log(i)),h=(l+o+n+s+d)/5,r="";[["Du Bois (standard)",l,"Most widely cited formula"],["Mosteller (simple)",o,"Easy to calculate"],["Haycock",n,"Good for all ages"],["Gehan-George",s,"Good for children"],["Boyd",d,"Older formula, includes children"]].forEach(function(t){var e=t[0].indexOf("Du Bois")>=0;r+='<div class="cell'+(e?" highlight":"")+'">',r+='<div class="lbl" style="font-weight:'+(e?"700":"500")+'">'+t[0]+"</div>",r+='<div class="val">'+t[1].toFixed(3)+" m²</div>",r+='<div class="dim">'+t[2]+"</div>",r+="</div>"}),t("bsaGrid").innerHTML=r,t("avgLine").textContent="Average BSA: "+h.toFixed(3)+" m² = "+(10.7639*h).toFixed(1)+" ft²",t("result").classList.add("show")}t("hUnit").addEventListener("change",function(){"cm"===this.value?(t("hCm").style.display="",t("ftWrap").style.display="none"):(t("hCm").style.display="none",t("ftWrap").style.display="flex")}),["hUnit","hCm","hFt","hIn","weight","wUnit"].forEach(function(a){t(a).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,300)})}),e()}();
 </script>
 <script type="application/ld+json">

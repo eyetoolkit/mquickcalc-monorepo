@@ -18,7 +18,7 @@
 <meta property="og:title" content="Force Converter - Newtons, lbf, kgf, Dynes | mQuickCalc">
 <meta property="og:description" content="Convert between newtons (SI), pounds-force (imperial), kilograms-force, dynes.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://mquickcalc.com/tools/force-converter"><meta property="og:site_name" content="mQuickCalc">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"💪 Force Converter","url":"https://mquickcalc.com/tools/force-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert between newtons (SI), pounds-force (imperial), kilograms-force, dynes."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Force Converter","item":"https://mquickcalc.com/tools/force-converter"}]}</script>
 <style>.conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}.conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}</style>
@@ -105,9 +105,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We set no tracking cookies. See our <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-icons.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){var e=[["N","Newton (N)",1],["kN","Kilonewton (kN)",1e3],["lbf","Pound-force (lbf)",4.44822],["kgf","Kilogram-force (kgf)",9.80665],["dyn","Dyne (dyn)",1e-5],["kip","Kilopound (kip)",4448.22],["ozf","Ounce-force (ozf)",.278014]],t=document.getElementById("val"),n=document.getElementById("from"),o=document.getElementById("rows"),r=document.getElementById("mainVal"),i=document.getElementById("mainUnit"),a=document.getElementById("convNote");function c(e){return isFinite(e)?0===e?"0":Number(e.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:8}):"—"}function l(t){for(var n=0;n<e.length;n++)if(e[n][0]===t)return e[n][2];return 1}function f(t){for(var n=0;n<e.length;n++)if(e[n][0]===t)return e[n][1];return t}var u={N:"lbf",lbf:"N",kN:"lbf"};function d(){for(var d=parseFloat(t.value)||0,m=n.value,g=d*l(m),v="",s=0;s<e.length;s++){var E=e[s][0],N=g/e[s][2];v+="<tr"+(E===m?' class="is-from"':"")+"><td>"+e[s][1]+"</td><td><strong>"+c(N)+"</strong></td></tr>"}o.innerHTML=v;var h=u[m]||("N"===m?"lbf":"N");r.textContent=c(g/l(h)),i.textContent=c(d)+" "+function(e){var t=f(e),n=/\(([^)]+)\)\s*$/.exec(t),o=n?n[1].trim():t,r=o.indexOf(",");return r>0?o.slice(0,r):o}(m)+" in "+f(h),a&&(a.textContent="Converting from "+f(m)+". Change the unit to convert the other way.")}t.addEventListener("input",d),n.addEventListener("change",d),document.getElementById("resetBtn").addEventListener("click",function(){t.value="1",n.value="N",d()}),function(){var e=new URLSearchParams(window.location.search).get("from"),t=document.getElementById("from");if(t&&e)for(var n=t.getElementsByTagName("option"),o=0;o<n.length;o++)if(n[o].value===e){t.value=e,t.dispatchEvent(new Event("change"));break}}(),d()}();
 </script>
 <script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();

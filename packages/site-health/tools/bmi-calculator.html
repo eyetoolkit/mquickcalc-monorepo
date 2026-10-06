@@ -7,7 +7,7 @@
   <meta name="description" content="Free BMI calculator: estimate your Body Mass Index and category. Includes WHO formula, health risk categories, BMI limitations by ethnicity and age, and how it…">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/bmi-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator","url":"https://health.mquickcalc.com/tools/bmi-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free BMI calculator with WHO categories, health risk explanations, BMI limitations guide, and body fat comparison. Uses standard metric and imperial units."}
   </script>
@@ -165,9 +165,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=parseFloat(e("weight").value)||0,n=(parseFloat(e("height").value)||0)/100,a=t/(n*n),r="";r=a<18.5?"Underweight":a<25?"Normal weight":a<30?"Overweight":"Obese";var i="";i=a<18.5||a<25?"18.5 —24.9":a<30?"25 —29.9":"30+",e("bmiVal").textContent=a.toFixed(1),e("catVal").textContent=r,e("rangeVal").textContent=i;var o=e("bmiMeter");o&&o.setAttribute("data-value",a.toFixed(1)),window.__renderMeters&&window.__renderMeters(),e("result").classList.add("show")}["height","weight"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={height:"175",weight:"70"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">

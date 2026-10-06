@@ -19,7 +19,7 @@
   <meta property="og:title" content="YouTube RPM by Country Calculator — Blended RPM From Your View Mix | mQuickCalc">
   <meta property="og:description" content="See how your viewers">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube RPM by Country Calculator","url":"https://finance.mquickcalc.com/tools/youtube-rpm-by-country","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate blended YouTube RPM by geography."}
   </script>
@@ -141,9 +141,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){for(var t=parseFloat(document.getElementById("views").value)||0,n=[],d=[],l=1;l<=4;l++)n.push(parseFloat(document.getElementById("s"+l).value)||0),d.push(parseFloat(document.getElementById("r"+l).value)||0);var u=n.reduce(function(e,t){return e+t},0),m=0;if(u>0){for(var c=0,o=0;o<4;o++)c+=n[o]*d[o];m=c/u}var a=t/1e3*m;document.getElementById("rpmVal").textContent=e(m),document.getElementById("revVal").textContent=e(a),document.getElementById("perKVal").textContent=e(m),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("s1").value="50",document.getElementById("r1").value="8.00",document.getElementById("s2").value="30",document.getElementById("r2").value="5.50",document.getElementById("s3").value="10",document.getElementById("r3").value="3.00",document.getElementById("s4").value="10",document.getElementById("r4").value="1.00",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

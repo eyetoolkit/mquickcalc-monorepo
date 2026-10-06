@@ -19,7 +19,7 @@
   <meta property="og:title" content="Break-even Calculator — Units to Cover Costs | mQuickCalc">
   <meta property="og:description" content="Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-u">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Break-even Calculator","url":"https://finance.mquickcalc.com/tools/break-even-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Units needed to break even and reach a target profit."}
   </script>
@@ -148,9 +148,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("fixed").value)||0,n=parseFloat(document.getElementById("var").value)||0,l=parseFloat(document.getElementById("price").value)||0,d=parseFloat(document.getElementById("target").value),o=parseFloat(document.getElementById("volume").value),u=l-n,a=u>0?Math.ceil(t/u):1/0,c=u>0&&!isNaN(d)&&d>0?Math.ceil((t+d)/u):null,m=!isNaN(o)&&o>=0&&u>0?o*u-t:null;document.getElementById("contribItem").textContent="Contribution per unit: "+e(u),document.getElementById("unitVal").textContent=isFinite(a)?a:"∞",document.getElementById("contribVal").textContent=e(u),document.getElementById("revVal").textContent=isFinite(a)?e(a*l):"—",document.getElementById("targetVal").textContent=c||"—",document.getElementById("profVal").textContent=null!==m?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("fixed").value="1000.00",document.getElementById("var").value="5.00",document.getElementById("price").value="20.00",document.getElementById("target").value="500.00",document.getElementById("volume").value="200",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

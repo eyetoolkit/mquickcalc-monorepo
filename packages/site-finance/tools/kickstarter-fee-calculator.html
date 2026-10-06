@@ -19,7 +19,7 @@
   <meta property="og:title" content="Kickstarter Fee Calculator — Net Raised After Fees | mQuickCalc">
   <meta property="og:description" content="Estimate what a funded Kickstarter campaign actually nets after the 5% platform fee and payment processing, based on total raised and number of pledge">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Kickstarter Fee Calculator","url":"https://finance.mquickcalc.com/tools/kickstarter-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate net raised after Kickstarter fees."}
   </script>
@@ -152,9 +152,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("raised").value)||0,n=parseFloat(document.getElementById("pledges").value)||0,d=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("proc").value)||0)/100)+n*(parseFloat(document.getElementById("perPledge").value)||0),o=d+l,a=t-o;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(d),document.getElementById("procVal").textContent=e(l),document.getElementById("totVal").textContent=e(o),document.getElementById("effVal").textContent=t>0?(100*(o/t)).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("raised").value="10000.00",document.getElementById("pledges").value="500",document.getElementById("plat").value="5",document.getElementById("proc").value="3",document.getElementById("perPledge").value="0.20",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pet Insurance Value Calculator", "url": "https://cover.mquickcalc.com/tools/pet-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate monthly pet insurance costs for dogs and cats by breed, age, and coverage level. Also calculates whether pet insurance is actually worth it vs self-insuring."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Pet Insurance Value Calculator", "item": "https://cover.mquickcalc.com/tools/pet-insurance"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Pet Insurance Value Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -97,9 +97,9 @@
 
 
 <footer id="site-footer" class="site-footer"></footer>
-<script src="/js/insurance-data.js" defer></script>
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
+<script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=document.getElementById("species").value,t=document.getElementById("breed").value,r=+document.getElementById("age").value,a=document.getElementById("coverage").value;let o="dog"===e?50:30;o*={mixed:1,small_pure:1.1,medium_pure:1.3,large_pure:1.6,brachy:2}[t]||1;let i=1;r<=1?i=1.3:r>=7?i=1.4:r>=10&&(i=1.7),o*=i;o*={basic:.7,standard:1,comprehensive:1.3}[a]||1;const s=Math.round(o),d=12*s,l="dog"===e?400:300,u="dog"===e?1500:1e3;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">🐾 Your estimate</h3>\n    <div style="font-size:28px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${n(s)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">${n(d)} / year — ${a.replace("_"," ")} coverage</div>\n    <details>\n      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Is pet insurance worth it for you?</summary>\n      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n        <p style="margin:0">Average annual vet bills (${e}): <strong>${n(l)}</strong></p>\n        <p style="margin:4px 0">Your pet insurance cost: <strong>${n(d)}</strong></p>\n        <p style="margin:4px 0;color:var(--muted)">If you had an emergency (average ${n(u)}), insurance would pay ~70% = ${n(Math.round(.7*u))}</p>\n        <p style="margin-top:10px;font-weight:600">${d<l?"✅ Insurance makes sense if you'd struggle with a surprise bill":"⚠️ Insurance is more than average annual care. Consider self-insuring by setting aside money monthly."}</p>\n      </div>\n    </details>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
 </body></html>

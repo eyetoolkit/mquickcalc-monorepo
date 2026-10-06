@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://finance.mquickcalc.com/tools/savings-calculator">
   <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Savings Calculator — Interest & Final Balance","url":"https://finance.mquickcalc.com/tools/savings-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate how your savings grow with compound interest."}
   </script>
@@ -149,9 +149,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){for(var t=parseFloat(document.getElementById("principal").value)||0,n=parseFloat(document.getElementById("monthly").value)||0,l=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("years").value)||0,a=Math.max(12*d,0),c=l/12,m=t,o=t,u=0;u<a;u++)m=m*(1+c)+n,o+=n;var r=m-o;document.getElementById("finalVal").textContent=e(m),document.getElementById("contribVal").textContent=e(o),document.getElementById("interestVal").textContent=e(r),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="1000",document.getElementById("monthly").value="200",document.getElementById("rate").value="5",document.getElementById("years").value="10",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

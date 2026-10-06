@@ -7,7 +7,7 @@
   <meta name="description" content="Free sleep calculator: find optimal sleep and wake times based on 90-minute sleep cycles. Includes sleep stages guide (NREM/REM), sleep debt explanation, and…">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/sleep-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Sleep Calculator","url":"https://health.mquickcalc.com/tools/sleep-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free sleep calculator. Enter when you need to wake up or go to sleep to find the optimal times based on 90-minute sleep cycles. Wake up refreshed."}
   </script>
@@ -138,9 +138,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=e("mode").value,n=new Date("2000/01/01 "+e("time").value);if(!isNaN(n)){for(var a="wake"==t?-81e6:81e6,i=[],o=0;o<6;o++){var r=new Date(n.getTime()+a*(o+1)),s=r.getHours(),c=r.getMinutes(),u=s>=12?"PM":"AM";s=s%12||12,i.push((s<10?"0":"")+s+":"+(c<10?"0":"")+c+" "+u)}e("s1").textContent=i[0],e("s2").textContent=i[1],e("s3").textContent=i[2],e("s4").textContent=i[3],e("result").classList.add("show")}}["mode","time"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={time:"07:00",mode:"wake"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">

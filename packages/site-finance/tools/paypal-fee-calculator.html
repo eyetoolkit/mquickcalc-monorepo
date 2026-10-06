@@ -19,7 +19,7 @@
   <meta property="og:title" content="PayPal Fee Calculator — Fee &amp; Net You Receive | mQuickCalc">
   <meta property="og:description" content="Calculate PayPal">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"PayPal Fee Calculator","url":"https://finance.mquickcalc.com/tools/paypal-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate PayPal fees and net payout."}
   </script>
@@ -152,9 +152,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var e={us:{pct:"2.99",fixed:"0.49",currency:"USD",label:"US Domestic"},"us-int":{pct:"4.49",fixed:"0.49",currency:"USD",label:"US International"},uk:{pct:"2.99",fixed:"0.35",currency:"GBP",label:"UK Domestic"},eu:{pct:"3.49",fixed:"0.35",currency:"EUR",label:"Europe"},au:{pct:"3.00",fixed:"0.30",currency:"AUD",label:"Australia"},ca:{pct:"2.99",fixed:"0.49",currency:"CAD",label:"Canada"},jp:{pct:"3.60",fixed:"0.40",currency:"JPY",label:"Japan"},custom:null};function t(e,t){var n=t||"USD";try{return e.toLocaleString("en-US",{style:"currency",currency:n})}catch(t){return e.toFixed(2)}}function n(e){return(100*e).toFixed(2)+"%"}function c(t){var n=e[t];n&&(document.getElementById("pct").value=n.pct,document.getElementById("fixed").value=n.fixed)}function l(){var c=document.getElementById("market").value,l=e[c],a=l?l.currency:"USD",u=parseFloat(document.getElementById("amount").value)||0,d=(parseFloat(document.getElementById("pct").value)||0)/100,o=parseFloat(document.getElementById("fixed").value)||0,m=parseFloat(document.getElementById("goal").value),r=u*d+o,i=u-r,y=!isNaN(m)&&m>0&&1-d>0?(m+o)/(1-d):null,s=l?l.label:"Custom";document.getElementById("detLine").textContent=s+" · gross "+t(u,a)+" at "+n(d)+" + "+t(o,a),document.getElementById("netVal").textContent=t(i,a),document.getElementById("feeVal").textContent=t(r,a),document.getElementById("effVal").textContent=u>0?n(r/u):"—",document.getElementById("coverVal").textContent=y?t(y,a):"—",document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){c(this.value),l()}),document.getElementById("calcBtn").addEventListener("click",l),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("market").value="us",document.getElementById("amount").value="100.00",document.getElementById("goal").value="",c("us"),l()}),c("us"),l(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),l)}();
 </script>
 </body>

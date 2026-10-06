@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mquickcalc.com/tools/tip-calculator">
   <meta property="og:site_name" content="mQuickCalc">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Tip Calculator","url":"https://mquickcalc.com/tools/tip-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate restaurant tip and split the bill among friends."}
   </script>
@@ -165,9 +165,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("amount").value)||0,n=(parseFloat(document.getElementById("pct").value)||0)/100,d=Math.max(parseInt(document.getElementById("people").value,10)||1,1),c=t*n,l=t+c,o=l/d,a=c/d,u=t>0?c/t:0;document.getElementById("tipVal").textContent=e(c),document.getElementById("totalVal").textContent=e(l),document.getElementById("perVal").textContent=e(o),document.getElementById("tipPerVal").textContent=e(a),document.getElementById("effVal").textContent=t>0?(100*u).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.querySelectorAll("button[data-pct]").forEach(function(e){e.addEventListener("click",function(){document.getElementById("pct").value=e.getAttribute("data-pct"),t()})}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="80.00",document.getElementById("pct").value="18",document.getElementById("people").value="2",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

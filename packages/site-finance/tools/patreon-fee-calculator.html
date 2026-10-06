@@ -19,7 +19,7 @@
   <meta property="og:title" content="Patreon Fee Calculator — Creator Take-Home Income | mQuickCalc">
   <meta property="og:description" content="Estimate how much a creator keeps from Patreon membership income after platform and payment processing fees. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Patreon Fee Calculator","url":"https://finance.mquickcalc.com/tools/patreon-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate creator take-home income from Patreon memberships."}
   </script>
@@ -142,9 +142,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("income").value)||0,n=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("paypct").value)||0)/100)+(parseFloat(document.getElementById("payflat").value)||0)*Math.max(parseInt(document.getElementById("txcount").value,10)||0,0),d=n+l,a=t-d;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(n),document.getElementById("payVal").textContent=e(l),document.getElementById("totVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("income").value="1000.00",document.getElementById("plat").value="5",document.getElementById("paypct").value="2.9",document.getElementById("payflat").value="0.30",document.getElementById("txcount").value="100",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 </body>

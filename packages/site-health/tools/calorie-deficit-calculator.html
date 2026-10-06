@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your weekly and monthly fat loss from a calorie deficit. Enter your TDEE and daily calorie intake to see how fast you'll reach your goal.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/calorie-deficit-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Deficit Calculator","url":"https://health.mquickcalc.com/tools/calorie-deficit-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate fat loss from your daily calorie deficit."}</script>
 <meta property="og:title" content="Calorie Deficit Calculator —Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Calculate your weekly and monthly fat loss from a calorie deficit. Enter your TDEE and daily calorie intake to see how fast you">
@@ -113,9 +113,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var a=function(a){return document.getElementById(a)};function e(){var e,l=parseFloat(a("tdee").value)||2200,t=parseFloat(a("target").value)||1800,i=a("goal").value;"deficit"===i?e=l-t:(e=Math.round(7700*parseFloat(i)/7),t=Math.max(300,l-e),a("target").value=t);var s=e/7700*7,d=e/7700*30,c="";c=e>1e3?"Warning: Deficit >1000 kcal/day may cause lean muscle loss. Consider 300-500 kcal for sustainable fat loss.":e<0?"You have a calorie surplus! You will gain weight at ~"+Math.abs(s).toFixed(2)+" kg/week.":e<200?"Small deficit — fat loss will be slow but muscle-friendly.":"Good deficit range for sustainable fat loss.";var o="";o+='<div class="cell"><div class="lbl">Daily deficit</div><div class="val">'+e+" kcal</div></div>",o+='<div class="cell"><div class="lbl">Weekly fat loss</div><div class="val">'+Math.abs(s).toFixed(2)+" kg</div></div>",o+='<div class="cell"><div class="lbl">Monthly fat loss</div><div class="val">'+Math.abs(d).toFixed(1)+" kg</div></div>",o+='<div class="cell"><div class="lbl">Time to lose 5 kg</div><div class="val">'+Math.round(5/Math.abs(s))+" weeks</div></div>",a("stats").innerHTML=o,a("note").textContent=c,a("result").classList.add("show")}a("calcBtn").addEventListener("click",e),a("resetBtn").addEventListener("click",function(){a("tdee").value="2200",a("target").value="1800",a("goal").value="deficit",e()}),["tdee","target","goal"].forEach(function(l){a(l).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">

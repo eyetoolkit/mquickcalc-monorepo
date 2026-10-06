@@ -7,7 +7,7 @@
   <meta name="description" content="Free pregnancy due date calculator. Enter the first day of your last period to estimate your due date. Uses the clinically validated Naegele rule.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/pregnancy-due-date-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Pregnancy Due Date Calculator","url":"https://health.mquickcalc.com/tools/pregnancy-due-date-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free pregnancy due date calculator. Enter the first day of your last period to estimate your due date. Uses the clinically validated Naegele rule."}
   </script>
@@ -119,9 +119,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=new Date(e("lmp").value);if(t&&!isNaN(t)){t.setDate(t.getDate()+280);var n=Math.floor((new Date-t+5184e5)/6048e5);n=40-n;e("dueVal").textContent=t.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}),e("weekVal").textContent=n>=0?"Week "+Math.min(40,Math.max(0,n))+" of pregnancy":"Approximately "+Math.max(0,-n)+" days past due",e("result").classList.add("show")}}["lmp"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={lmp:"2026-06-10"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();
 </script>
 <script type="application/ld+json">

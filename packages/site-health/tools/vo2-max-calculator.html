@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate your VO2 max (maximal oxygen uptake) from age, resting heart rate, or distance performance. Cardiovascular fitness indicator.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/vo2-max-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"VO2 Max Calculator","url":"https://health.mquickcalc.com/tools/vo2-max-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate VO2 max from resting heart rate or distance performance."}</script>
 <meta property="og:title" content="VO2 Max Calculator —Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Estimate your VO2 max (maximal oxygen uptake) from age, resting heart rate, or distance performance. Cardiovascular fitness indicator.">
@@ -152,9 +152,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var e=function(e){return document.getElementById(e)};function r(){var r=e("method").value,t=0;if("cooper"===r){var o=parseFloat(e("cooperDist").value)||2e3;t=Math.round((o-504.9)/44.73*10)/10}else if("rockport"===r){var a=parseFloat(e("rockportAge").value)||35,n=(parseInt(e("rockportGender").value),parseFloat(e("rockportTime").value)||13.5),l=parseFloat(e("rockportHeart").value)||130;t=Math.round(10*(132.853-11.535-.3877*a+6.315-3.2649*n-.1569*l))/10}else{var c=parseFloat(e("rhrAge").value)||35,i=parseFloat(e("rhr").value)||60;t=Math.round(10*(15.3*e("rhrGender").value+15.3*(200-2*c-i)/10))/10}t<0&&(t=0),e("vo2val").textContent=t.toFixed(1)+" mL/kg/min";var u=function(e){return e<27?["Poor","Needs improvement — aim for 30+"]:e<34?["Below average","Average adult sedentary range"]:e<43?["Average","Typical for moderately active adults"]:e<50?["Good","Above average — regular exercise pays off!"]:e<60?["Excellent","Elite fitness level"]:["Superior","Athlete-level cardiovascular fitness"]}(t,e("rhrGender").value);e("rating").textContent=u[0]+" — "+u[1],e("percentile").textContent="Estimated percentile: "+Math.round(2*t)+"th (approximate, depends on age/sex)",e("result").classList.add("show")}e("method").addEventListener("change",function(){["cooperWrap","rockportWrap","rhrWrap"].forEach(function(r){e(r).style.display="none"}),e(this.value+"Wrap").style.display=""}),e("calcBtn").addEventListener("click",r),e("resetBtn").addEventListener("click",function(){e("method").value="cooper",e("cooperDist").value="2000",e("rockportAge").value="35",e("rockportGender").value="1",e("rockportTime").value="13.5",e("rockportHeart").value="130",e("rhrAge").value="35",e("rhr").value="60",e("rhrGender").value="1",e("method").dispatchEvent(new Event("change")),r()}),["cooperDist","rockportAge","rockportTime","rockportHeart","rhrAge","rhr","rhrGender","method"].forEach(function(t){e(t).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(r,500)})}),r()}();
 </script>
 <script type="application/ld+json">

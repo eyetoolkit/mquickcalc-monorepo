@@ -19,7 +19,7 @@
   <meta property="og:title" content="Etsy Fee Calculator — Estimate Fees &amp; Take-Home Profit | mQuickCalc">
   <meta property="og:description" content="Calculate Etsy listing, transaction, payment processing, regulatory and off-site ad fees, then see your estimated net profit per sale. Free, no sign-u">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Etsy Fee Calculator","url":"https://finance.mquickcalc.com/tools/etsy-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Etsy selling fees and net profit."}
   </script>
@@ -186,9 +186,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){const e=function(e){return document.getElementById(e)};function t(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})+" (USD)"}function a(){const a=parseFloat(e("price").value)||0,n=parseFloat(e("shipping").value)||0,s=Math.max(parseInt(e("qty").value,10)||1,1),l=(a+n)*s,i=l*((parseFloat(e("trans").value)||0)/100),c=l*((parseFloat(e("paypct").value)||0)/100)+(parseFloat(e("payflat").value)||0)*s,r=l*((parseFloat(e("reg").value)||0)/100),o=(parseFloat(e("listing").value)||0)*s,d=l*((parseFloat(e("offsite").value)||0)/100),v=i+c+r+o+d,u=l-v;e("grossLine").textContent="Gross revenue: "+t(l)+"  ·  "+s+" item(s) at "+t(a)+" each",e("netVal").textContent=t(u);const p=[["Transaction fee",t(i)],["Payment processing",t(c)],["Regulatory fee",t(r)],["Listing fee",t(o)],["Off-site ads",t(d)]];e("breakdown").innerHTML=p.map(function(e){return'<div class="cell"><div class="lbl">'+e[0]+'</div><div class="val">'+e[1]+"</div></div>"}).join("")+'<div class="cell"><div class="lbl">Total fees</div><div class="val">'+t(v)+"</div></div>",e("result").classList.add("show")}e("calcBtn").addEventListener("click",a),e("resetBtn").addEventListener("click",function(){var t={price:"25.00",shipping:"0",qty:"1",trans:"6.5",paypct:"3.0",payflat:"0.25",reg:"0.25",listing:"0.20",offsite:"0"};Object.keys(t).forEach(function(a){e(a).value=t[a]}),a()}),a(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),a)}();
 </script>
 </body>

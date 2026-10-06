@@ -8,7 +8,7 @@
   
   <link rel="canonical" href="https://health.mquickcalc.com/tools/running-race-time-predictor">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Race Time Predictor","url":"https://health.mquickcalc.com/tools/running-race-time-predictor","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Predict race times for any distance from a recent result."}</script>
 <meta property="og:title" content="Running Race Time Predictor —Predict 5K, 10K, Half, Marathon | mQuickCalc Health">
 <meta property="og:description" content="Predict your race time for any distance using Riegel, Cameron, or Vickers-Lloyd formulas. Enter a recent race result to estimate 5K, 10K, half maratho">
@@ -123,9 +123,9 @@
 
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var t=function(t){return document.getElementById(t)};function e(){var e=parseFloat(t("knownDist").value);"custom"===t("knownDist").value&&(e=parseFloat(t("customDist").value)||5);var i=function(t){if(!t)return NaN;var e=(t=t.trim()).split(":");return 3===e.length?3600*parseInt(e[0])+60*parseInt(e[1])+parseFloat(e[2]):2===e.length?60*parseInt(e[0])+parseFloat(e[1]):parseFloat(t)}(t("timeInput").value),n=t("formula").value;if(!e||!i)return t("predGrid").innerHTML='<div class="cell"><div class="lbl">Enter valid distance and time</div></div>',void t("result").classList.add("show");var a="";[[1,"1 km"],[1.60934,"1 mile"],[3,"3 km"],[5,"5 km"],[8.04672,"5 miles"],[10,"10 km"],[16.0934,"10 miles"],[21.0975,"Half marathon"],[30,"30 km"],[42.195,"Marathon"],[50,"50 km"],[100,"100 km"]].forEach(function(t){if(!(Math.abs(t[0]-e)<.01)){var r=function(t,e,i,n){return"riegel"===n?t*Math.pow(i/e,1.06):"cameron"===n?t*Math.pow(i/e,1.05):t*Math.pow(i/e,1.07)}(i,e,t[0],n),s=r/t[0]/60,l=r/(.621371*t[0])/60;a+='<div class="cell"><div class="lbl" style="font-weight:600;">'+t[1]+'</div><div class="val" style="font-size:1.1em;color:#16a34a;">'+function(t){if(isNaN(t)||t<=0)return"--";var e=Math.floor(t/3600),i=Math.floor(t%3600/60),n=Math.round(t%60);return 60===n&&(i++,n=0),e>0?e+":"+String(i).padStart(2,"0")+":"+String(n).padStart(2,"0"):String(i).padStart(2,"0")+":"+String(n).padStart(2,"0")}(r)+'</div><div class="dim">'+s.toFixed(2)+" min/km | "+l.toFixed(2)+" min/mile</div></div>"}}),t("predGrid").innerHTML=a;var r=i/e/60;t("paceLine").textContent="Your input pace: "+r.toFixed(2)+" min/km ("+(i/(.621371*e)/60).toFixed(2)+" min/mile)",t("result").classList.add("show")}t("knownDist").addEventListener("change",function(){"custom"===this.value?t("customDistWrap").style.display="flex":t("customDistWrap").style.display="none"}),t("calcBtn").addEventListener("click",e),t("resetBtn").addEventListener("click",function(){t("knownDist").value="5",t("customDist").value="",t("timeInput").value="25:30",t("formula").value="riegel",t("customDistWrap").style.display="none",e()}),["knownDist","customDist","timeInput","formula"].forEach(function(i){t(i).addEventListener("input",function(){clearTimeout(window._t),window._t=setTimeout(e,400)})}),e()}();
 </script>
 <script type="application/ld+json">

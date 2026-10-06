@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://health.mquickcalc.com/tools/calories-burned-by-heart-rate">
   <meta property="og:site_name" content="mQuickCalc Health">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Calories Burned by Heart Rate","url":"https://health.mquickcalc.com/tools/calories-burned-by-heart-rate","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate calories burned during cardio exercise using heart rate."}
   </script>
@@ -153,9 +153,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(){var e,t=document.getElementById("sex").value,n=parseFloat(document.getElementById("age").value)||0,d=parseFloat(document.getElementById("weight").value)||0,l=parseFloat(document.getElementById("hr").value)||0,a=parseFloat(document.getElementById("duration").value)||0;e="male"===t?(.6309*l-55.0969+.1988*d+.2017*n)*a/4.184:(.4472*l-20.4022-.1263*d+.074*n)*a/4.184,e=Math.max(0,e);var m=a>0?e/a:0,o=m/4;document.getElementById("kcalVal").textContent=Math.round(e),document.getElementById("perMinVal").textContent=m.toFixed(1),document.getElementById("walkVal").textContent=o.toFixed(1)+" min",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sex").value="male",document.getElementById("age").value="30",document.getElementById("weight").value="70",document.getElementById("hr").value="140",document.getElementById("duration").value="30",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
 </body>

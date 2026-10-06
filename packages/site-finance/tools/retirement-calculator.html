@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/retirement-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Retirement Calculator", "url": "https://finance.mquickcalc.com/tools/retirement-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included."}</script>
 <meta property="og:title" content="Retirement Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
@@ -104,9 +104,9 @@
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
 
-<script src="/js/site-core.js" defer></script>
-<script src="/js/site-enhance.js" defer></script>
-<script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseInt(e("age").value)||0,a=parseInt(e("retireAge").value)||65,r=parseFloat(e("current").value)||0,l=parseFloat(e("monthly").value)||0,u=parseFloat(e("return").value)||0,i=parseInt(e("life").value)||90,o=Math.max(0,a-n),s=12*o;if(0!==s){var c=function(e,t,n,a){var r=n/12;return 0===r?e+t*a:e*Math.pow(1+r,a)+t*(Math.pow(1+r,a)-1)/r}(r,l,u,s),v=r+l*s,f=c-v,d=Math.max(0,i-a),h=d>0?c/(12*d):0,m=.04*c;e("bigVal").textContent="$"+t(c,0),e("yearsVal").textContent=o+" yrs",e("contribVal").textContent="$"+t(v,0),e("interestVal").textContent="$"+t(f,0),e("monthlyRetire").textContent="$"+t(h,0),e("statusVal").textContent=m>=3e4?"✅":m>=15e3?"📈":"⚠️",e("result").classList.add("show")}}["age","retireAge","current","monthly","return","life"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("age").value="35",e("retireAge").value="65",e("current").value="15000",e("monthly").value="800",e("return").value="7",e("life").value="90",n()}),n()}();
 </script>
 </body>

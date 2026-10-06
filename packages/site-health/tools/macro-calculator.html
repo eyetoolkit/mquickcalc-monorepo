@@ -7,7 +7,7 @@
   <meta name="description" content="Free macro calculator. Enter your daily calorie goal and preferred macro split to calculate your daily protein, carbohydrate, and fat targets in grams.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/macro-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Macro Calculator","url":"https://health.mquickcalc.com/tools/macro-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free macro calculator. Enter your daily calorie goal and preferred macro split to calculate your daily protein, carbohydrate, and fat targets in grams."}
   </script>
@@ -131,9 +131,9 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js" defer></script>
-  <script src="/js/site-enhance.js" defer></script>
-  <script src="/js/site-meters.js" defer></script>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+  <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function a(){var a=parseFloat(t("calories").value)||2e3,e=parseFloat(t("protein").value)||30,n=parseFloat(t("carbs").value)||40,r=parseFloat(t("fat").value)||30,o=e+n+r;100!==o&&(e=e/o*100,n=n/o*100,r=r/o*100),t("proVal").textContent=Math.round(a*e/100/4)+"g ("+e+"%)",t("carbVal").textContent=Math.round(a*n/100/4)+"g ("+n+"%)",t("fatVal").textContent=Math.round(a*r/100/9)+"g ("+r+"%)",t("result").classList.add("show")}["calories","carbs","fat","protein"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)});var e=t("calcBtn");e&&e.addEventListener("click",a);var n=t("resetBtn");n&&n.addEventListener("click",function(){var e={calories:"2000",protein:"30",carbs:"40",fat:"30"};Object.keys(e).forEach(function(a){var n=t(a);n&&(n.value=e[a])}),a()}),a()}();
 </script>
 <script type="application/ld+json">
