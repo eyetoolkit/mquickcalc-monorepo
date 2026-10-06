@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Flip — Fair Online Heads or Tails | mQuickCalc</title>
+  <meta name="description" content="Flip a fair coin online — heads or tails, truly random. History log shows streak counts and percentages.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/coin-flip">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Coin Flip","url":"https://mquickcalc.com/tools/coin-flip","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Flip a fair coin online — heads or tails, truly random. History log shows streak counts and percentages."}</script>
+  <meta property="og:title" content="Coin Flip — Fair Online Heads or Tails | mQuickCalc">
+  <meta property="og:description" content="Flip a fair coin online — heads or tails, truly random. History log shows streak counts and percentages.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/coin-flip">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="mQuickCalc">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coin Flip — Fair Online Heads or Tails | mQuickCalc">
+  <meta name="twitter:description" content="Flip a fair coin online — heads or tails, truly random. History log shows streak counts and percentages.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Coin Flip","item":"https://mquickcalc.com/tools/coin-flip"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields."},{"@type":"HowToStep","name":"Click Calculate","text":"Press Calculate or the action button."},{"@type":"HowToStep","name":"Interpret the result","text":"Read the result instantly."}]}</script>
+</head><body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a><a href="/embed">Embeds</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Coin Flip</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>🪙</div>
+<h1 class="page-title">Coin Flip</h1>
+    <p class="lede">Click Flip and get heads or tails instantly. Crypto-random so it is perfectly fair. The classic tiebreaker.</p>
+    <div class="calc-card">
+      <div style="text-align:center;padding:28px 0 10px;font-size:3.5rem;" id="bigVal">🪙</div>
+      <button id="flipBtn" class="btn" style="display:block;margin:0 auto 12px;">Flip Coin</button>
+      <button id="resetBtn" class="btn ghost" style="display:block;margin:0 auto;">Reset</button>
+      <div class="result" id="result">
+        <div class="dim" id="dimVal">Click Flip to start</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Heads</div><div class="val" id="headsCount">0</div></div>
+          <div class="cell"><div class="lbl">Tails</div><div class="val" id="tailsCount">0</div></div>
+          <div class="cell"><div class="lbl">Heads %</div><div class="val" id="headsPct">--</div></div>
+          <div class="cell"><div class="lbl">Streak</div><div class="val" id="streakVal">--</div></div>
+        </div>
+      </div>
+    </div>
+<div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Is this fair?</h2>
+<p>Yes — each flip is independent with exactly a 50% chance of heads or tails. We use <code>crypto.getRandomValues()</code> sourced from OS entropy. No bias, no memory, no way to predict. Physical coins can be slightly biased by weight distribution — this one cannot.</p>
+<h2>The gambler's fallacy</h2>
+<p>Five heads in a row? The next flip is still 50/50. The coin has no memory. This is one of the most common misunderstandings in probability — streakes of any length are always possible and never change the next outcome.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+    <h3>Can I get 10 heads in a row?</h3>
+    <p>Yes — (0.5)^10 ≈ 0.098%. Rare but not impossible. Over 1,000 flips expect roughly one streak of 10.</p>
+    <h3>How is this different from a real coin?</h3>
+    <p>Statistically identical. Physical coins have tiny biases from minting; this one has zero bias.</p>
+    <h3>Multiple coins at once?</h3>
+    <p>Click Flip multiple times quickly — each click is one independent flip.</p>
+    <h3>Deciding among 3+ options?</h3>
+    <p>Use our &lt;a href=&quot;/tools/random-number-generator&quot;&gt;Random Number Generator&lt;/a&gt; with min=1, max=N.</p>
+    <h3>History reset?</h3>
+    <p>Stored only in browser memory — gone on reload or Reset button. Nothing is persisted.</p>
+    </div>
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/dice-roller" class="tool-card"><div class="icon-row"><span class="emoji">🎲</span><div class="tc-title">Dice Roller</div></div><div class="tc-desc">Any-sided dice.</div></a>
+        <a href="/tools/random-number-generator" class="tool-card"><div class="icon-row"><span class="emoji">🔢</span><div class="tc-title">Random Number</div></div><div class="tc-desc">Any range.</div></a>
+        <a href="/tools/password-generator" class="tool-card"><div class="icon-row"><span class="emoji">🔐</span><div class="tc-title">Passwords</div></div><div class="tc-desc">Strong passwords.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-18">Sep 18, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general calculations only. Not financial, tax, or legal advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+
+    <div id="tool-share" class="tool-share-mount" aria-label="Share this calculator"></div>
+    <div id="tool-prev-next" data-prev="/tools/area-converter" data-next="/tools/cooking-converter"></div>
+  </main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/dice-roller">Dice Roller</a></li>
+      <li><a href="/tools/random-number-generator">Random Number</a></li>
+      <li><a href="/#everyday">🪙 All Random</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function sr(max){var a=new Uint32Array(1);do{crypto.getRandomValues(a);}while(a[0]>=Math.floor(0xFFFFFFFF/max)*max);return a[0]%max;}
+  var history=[],streakType=null,streakLen=0;
+  function flip(){
+    var isHeads=sr(2)===0;
+    var result=isHeads?'Heads':'Tails';
+    $('bigVal').textContent=isHeads?'👑':'🦅';
+    $('dimVal').textContent=result;
+    history.push(isHeads);
+    var heads=history.filter(function(r){return r;}).length;
+    var tails=history.length-heads;
+    if(streakType===result){streakLen++;}else{streakType=result;streakLen=1;}
+    $('headsCount').textContent=heads;
+    $('tailsCount').textContent=tails;
+    $('headsPct').textContent=history.length?(heads/history.length*100).toFixed(1)+'%':'--';
+    $('streakVal').textContent=streakLen+' × '+streakType;
+    $('result').classList.add('show');
+  }
+  $('resetBtn').addEventListener('click',function(){history=[];streakType=null;streakLen=0;$('bigVal').textContent='🪙';$('dimVal').textContent='Click Flip to start';$('headsCount').textContent='0';$('tailsCount').textContent='0';$('headsPct').textContent='--';$('streakVal').textContent='--';});
+  $('flipBtn').addEventListener('click',flip);
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I get 10 heads in a row?","acceptedAnswer":{"@type":"Answer","text":"Yes — (0.5)^10 ≈ 0.098%. Rare but not impossible. Over 1,000 flips expect roughly one streak of 10."}},{"@type":"Question","name":"How is this different from a real coin?","acceptedAnswer":{"@type":"Answer","text":"Statistically identical. Physical coins have tiny biases from minting; this one has zero bias."}},{"@type":"Question","name":"Multiple coins at once?","acceptedAnswer":{"@type":"Answer","text":"Click Flip multiple times quickly — each click is one independent flip."}},{"@type":"Question","name":"Deciding among 3+ options?","acceptedAnswer":{"@type":"Answer","text":"Use our <a href=\"/tools/random-number-generator\">Random Number Generator</a> with min=1, max=N."}},{"@type":"Question","name":"History reset?","acceptedAnswer":{"@type":"Answer","text":"Stored only in browser memory — gone on reload or Reset button. Nothing is persisted."}}]}
+</script>

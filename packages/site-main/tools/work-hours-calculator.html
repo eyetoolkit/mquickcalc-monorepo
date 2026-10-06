@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Hours Calculator — Weekly / Daily Timesheet | mQuickCalc</title>
+  <meta name="description" content="Add up daily work hours from clock-in/clock-out times. Enter multiple days with lunch breaks — see weekly totals instantly.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/work-hours-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Work Hours Calculator","url":"https://mquickcalc.com/tools/work-hours-calculator","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add up daily work hours from clock-in/clock-out times. Enter multiple days with lunch breaks — see weekly totals instantly."}</script>
+  <meta property="og:title" content="Work Hours Calculator — Weekly / Daily Timesheet | mQuickCalc">
+  <meta property="og:description" content="Add up daily work hours from clock-in/clock-out times. Enter multiple days with lunch breaks — see weekly totals instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/work-hours-calculator">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="mQuickCalc">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work Hours Calculator — Weekly / Daily Timesheet | mQuickCalc">
+  <meta name="twitter:description" content="Add up daily work hours from clock-in/clock-out times. Enter multiple days with lunch breaks — see weekly totals instantly.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Work Hours Calculator","item":"https://mquickcalc.com/tools/work-hours-calculator"}]}</script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields."},{"@type":"HowToStep","name":"Click Calculate","text":"Press Calculate or the action button."},{"@type":"HowToStep","name":"Interpret the result","text":"Read the result instantly."}]}</script>
+</head><body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a><a href="/embed">Embeds</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Work Hours Calculator</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class='page-hero-emoji'>⏰</div>
+<h1 class="page-title">Work Hours Calculator</h1>
+    <p class="lede">Enter clock-in and clock-out for each day, subtract breaks, and see your weekly sum — decimal hours for payroll.</p>
+    <div class="calc-card">
+      <div id="whRows"></div>
+      <button id="addBtn" class="btn ghost">+ Add day</button>
+      <div class="result" id="result">
+        <div class="big" id="bigVal">—</div>
+        <div class="dim" id="dimVal">Weekly total</div>
+        <div class="grid">
+          <div class="cell"><div class="lbl">Decimal hours</div><div class="val" id="weeklyDec">--</div></div>
+          <div class="cell"><div class="lbl">Avg per day</div><div class="val" id="avgDaily">--</div></div>
+        </div>
+      </div>
+    </div>
+<div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How to use this</h2>
+<p>Enter clock-in and clock-out for each day in 24-hour format. The break field is minutes you took for lunch — we subtract it automatically. If you split a shift, add two rows for the same day. The weekly decimal hours field matches exactly what payroll systems expect (37h 30m = 37.50).</p>
+<h2>Overtime</h2>
+<p>We show total hours only — overtime pay rates are your employer's job (1.5× for hours over 40 in a week in the US). For freelance or consulting, this is your billable time — subtract non-billable (admin, meetings, email) if you track billable vs raw separately.</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+    <h3>Decimal hours for payroll?</h3>
+    <p>We show this in the &quot;Decimal hours&quot; field. Payroll systems almost always use decimal, not hours/minutes.</p>
+    <h3>Work through lunch?</h3>
+    <p>Enter 0 for break minutes — we assume you worked the entire span.</p>
+    <h3>Is this a timesheet?</h3>
+    <p>It is a calculator — nothing is saved. Reload and entries are gone. Copy the result into a spreadsheet or use a dedicated time-tracking app if you need persistence.</p>
+    <h3>Why does a day show &quot;--&quot;?</h3>
+    <p>Either In or Out blank, or Out before In. Fix the times and it populates.</p>
+    <h3>Monthly totals?</h3>
+    <p>Not yet — add up to ~22 workdays per month in the rows and sum manually. A monthly mode may come later.</p>
+    </div>
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/stopwatch" class="tool-card"><div class="icon-row"><span class="emoji">⏱️</span><div class="tc-title">Stopwatch</div></div><div class="tc-desc">Time tasks live.</div></a>
+        <a href="/tools/countdown-timer" class="tool-card"><div class="icon-row"><span class="emoji">⏳</span><div class="tc-title">Countdown Timer</div></div><div class="tc-desc">Pomodoro / meetings.</div></a>
+        <a href="/tools/simple-budget-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Simple Budget</div></div><div class="tc-desc">Does earnings cover expenses?</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-09-18">Sep 18, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general calculations only. Not financial, tax, or legal advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+
+    <div id="tool-share" class="tool-share-mount" aria-label="Share this calculator"></div>
+    <div id="tool-prev-next" data-prev="/tools/weight-converter"></div>
+  </main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/stopwatch">Stopwatch</a></li>
+      <li><a href="/tools/countdown-timer">Countdown Timer</a></li>
+      <li><a href="/speed-time">⏰ All Time</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id){return document.getElementById(id);}
+  function toMin(t){if(!t)return null;var p=t.split(':').map(Number);if(p.length<2)return null;return p[0]*60+p[1];}
+  function fmt(m){var h=Math.floor(m/60),mm=Math.round(m%60);return h+'h '+String(mm).padStart(2,'0')+'m';}
+  function addRow(day,inT,outT,brk){
+    var w=document.createElement('div');w.className='row wh-row';w.style.marginBottom='6px';
+    w.innerHTML='<div class="field" style="min-width:70px;"><label>Day</label><input class="input wh-day" type="text" value="'+(day||'')+'"></div>'
+      +'<div class="field"><label>In</label><input class="input wh-in" type="time" value="'+(inT||'')+'"></div>'
+      +'<div class="field"><label>Out</label><input class="input wh-out" type="time" value="'+(outT||'')+'"></div>'
+      +'<div class="field" style="min-width:100px;"><label>Break (min)</label><input class="input wh-break" type="number" min="0" step="5" value="'+(brk||'30')+'"></div>'
+      +'<div class="field" style="min-width:100px;"><label>Day total</label><input class="input wh-hours" readonly value="--" style="font-family:ui-monospace,Menlo,monospace;"></div>'
+      +'<button class="btn ghost wh-del">✕</button>';
+    $('whRows').appendChild(w);
+    w.querySelectorAll('input').forEach(function(el){el.addEventListener('input',calc);});
+    w.querySelector('.wh-del').addEventListener('click',function(){w.remove();calc();});
+    calc();
+  }
+  function calc(){
+    var weekly=0,n=0;
+    document.querySelectorAll('.wh-row').forEach(function(row){
+      var inT=toMin(row.querySelector('.wh-in').value),outT=toMin(row.querySelector('.wh-out').value);
+      var brk=+row.querySelector('.wh-break').value||0;
+      var hours=row.querySelector('.wh-hours');
+      var daily=(inT!==null&&outT!==null&&outT>inT)?Math.max(0,outT-inT-brk):0;
+      hours.value=daily>0?fmt(daily):'--';
+      if(daily>0){weekly+=daily;n++;}
+    });
+    $('bigVal').textContent=fmt(weekly);
+    $('dimVal').textContent='Weekly total ('+n+' day'+(n===1?'':'s')+')';
+    $('weeklyDec').textContent=(weekly/60).toFixed(2)+' hrs';
+    $('avgDaily').textContent=n>0?fmt(weekly/n):'--';
+    $('result').classList.add('show');
+  }
+  $('addBtn').addEventListener('click',function(){addRow('Fri','09:00','17:30','30');});
+  addRow('Mon','09:00','17:30','30');addRow('Tue','08:30','17:00','30');addRow('Wed','09:15','18:00','45');addRow('Thu','09:00','17:00','30');addRow('Fri','09:00','16:00','30');
+  calc();
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Decimal hours for payroll?","acceptedAnswer":{"@type":"Answer","text":"We show this in the \"Decimal hours\" field. Payroll systems almost always use decimal, not hours/minutes."}},{"@type":"Question","name":"Work through lunch?","acceptedAnswer":{"@type":"Answer","text":"Enter 0 for break minutes — we assume you worked the entire span."}},{"@type":"Question","name":"Is this a timesheet?","acceptedAnswer":{"@type":"Answer","text":"It is a calculator — nothing is saved. Reload and entries are gone. Copy the result into a spreadsheet or use a dedicated time-tracking app if you need persistence."}},{"@type":"Question","name":"Why does a day show \"--\"?","acceptedAnswer":{"@type":"Answer","text":"Either In or Out blank, or Out before In. Fix the times and it populates."}},{"@type":"Question","name":"Monthly totals?","acceptedAnswer":{"@type":"Answer","text":"Not yet — add up to ~22 workdays per month in the rows and sum manually. A monthly mode may come later."}}]}
+</script>
