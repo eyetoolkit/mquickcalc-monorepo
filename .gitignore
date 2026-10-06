@@ -24,3 +24,11 @@ npm-debug.log*
 
 # Logs
 *.log
+
+# Secrets / private keys — never commit (added 2026-10-06 during link rebuild)
+*.pem
+*.key
+*.pfx
+*.p12
+.env
+.env.*
