@@ -19,7 +19,7 @@
   <meta property="og:title" content="Stripe Fee Calculator — Fee &amp; Net per Charge | mQuickCalc">
   <meta property="og:description" content="Estimate the exact Stripe fee on a card charge, see how much you net — or how much to charge to hit a target payout. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Stripe Fee Calculator","url":"https://finance.mquickcalc.com/tools/stripe-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Stripe card-processing fees and net per charge."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#payment'>Payment Fees</a><span class='sep'>›</span><span class='current'>Stripe Fee Calculator</span></nav></div>
 
 
@@ -108,7 +109,8 @@
       <p>Standard card payments cost a <strong>percentage plus a flat amount</strong> (commonly 2.9% + $0.30 in the US). The bigger the charge, the closer the effective rate gets to the headline percentage — which is why a fixed fee matters most on small-ticket sales.</p>
     </div>
 
-    <h2>How Stripe fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Stripe fees work</h2>
 <p>Stripe's standard rate is 2.9% + 30¢ per successful card charge. This applies to most US and European businesses using Stripe Checkout or custom payment forms. The flat 30¢ component dominates small transactions — a $1 coffee charge loses about 17% to Stripe.</p>
 <p>Stripe offers discounted rates for volume merchants (2.7% + 20¢ for 6-figure+ revenue), non-profits (2.2% + 30¢), and ACH bank transfers (0.8% with a $5 cap). Businesses processing mostly small payments should consider ACH or PayPal Here to reduce per-transaction overhead.</p>
 <p>International cards incur an additional 1% fee, and currency conversion adds another 1%. Refunds and disputes still incur the original processing fee — Stripe only waives fees on reversed charges.</p>
@@ -149,5 +151,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var e={us:{pct:"2.9",flat:"0.30",currency:"USD",label:"US Standard"},eu:{pct:"1.4",flat:"0.25",currency:"EUR",label:"EU SEPA"},uk:{pct:"2.9",flat:"0.20",currency:"GBP",label:"UK Domestic"},au:{pct:"1.75",flat:"0.30",currency:"AUD",label:"AU Domestic"},ca:{pct:"2.9",flat:"0.30",currency:"CAD",label:"CA Domestic"},int:{pct:"3.9",flat:"0.30",currency:"USD",label:"International Card"},custom:null};function t(e,t){var n=t||"USD";try{return e.toLocaleString("en-US",{style:"currency",currency:n})}catch(t){return e.toFixed(2)}}function n(t){var n=e[t];n&&(document.getElementById("pct").value=n.pct,document.getElementById("flat").value=n.flat)}function c(){var n=document.getElementById("market").value,c=e[n],l=c?c.currency:"USD",a=parseFloat(document.getElementById("amount").value)||0,u=(parseFloat(document.getElementById("pct").value)||0)/100,d=parseFloat(document.getElementById("flat").value)||0,m=a*u+d,o=a-m,r=a>0?(a+d)/(1-u):0;document.getElementById("netVal").textContent=t(o,l),document.getElementById("feeVal").textContent=t(m,l),document.getElementById("effVal").textContent=a>0?(100*(m/a)).toFixed(2)+"%":"—",document.getElementById("needVal").textContent=a>0?t(r,l):"—",document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){n(this.value),c()}),document.getElementById("calcBtn").addEventListener("click",c),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("market").value="us",n("us"),c()}),n("us"),c(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),c)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

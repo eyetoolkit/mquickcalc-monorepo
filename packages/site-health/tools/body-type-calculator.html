@@ -7,7 +7,7 @@
   <meta name="description" content="Discover your body type (ectomorph, mesomorph, endomorph) based on wrist, waist, hip, shoulder measurements and visual cues.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/body-type-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Body Type Calculator", "url": "https://health.mquickcalc.com/tools/body-type-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Discover your body type (ectomorph, mesomorph, endomorph) based on wrist, waist, hip, shoulder measurements and visual cues."}</script>
 <meta property="og:title" content="Body Type Calculator — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Discover your body type (ectomorph, mesomorph, endomorph) based on wrist, waist, hip, shoulder measurements and visual cues.">
@@ -38,6 +38,7 @@
     <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#sleep">Sleep</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#body'>Body Composition</a><span class='sep'>›</span><span class='current'>Body Type Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -75,7 +76,8 @@
     </div>
     </div>
 
-    <h2>How body type scoring works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How body type scoring works</h2>
     <p>We combine three ratios: wrist-to-height (frame size), waist-to-shoulder (upper body shape), and waist-to-hip (lower body shape). Each ratio contributes weighted points to ectomorph / mesomorph / endomorph categories. The highest-scoring category is your primary type; second-place is your secondary. Most people are a blend.</p>
     
     <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/ideal-weight-calculator" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">Ideal Weight</div></div><div class="tc-desc">Healthy weight range by formula.</div></a><a href="/tools/lean-body-mass-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💪</span><div class="tc-title">Lean Body Mass</div></div><div class="tc-desc">Muscle vs fat estimation.</div></a><a href="/tools/bmi-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📏</span><div class="tc-title">BMI Calculator</div></div><div class="tc-desc">Body Mass Index reference.</div></a></div></div>
@@ -107,5 +109,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function r(){var r=parseFloat(e("wrist").value)||0,i=parseFloat(e("waist").value)||0,a=parseFloat(e("hips").value)||0,o=parseFloat(e("shoulder").value)||0,n=parseFloat(e("height").value)||0;if(r&&i&&a&&o&&n){var s=function(e,t,r,i,a){var o=t/r,n=t/i,s=e/a,l=[0,0,0];s<.1?l[0]+=3:s<.11?(l[0]+=2,l[1]+=1):s<.12?l[1]+=2:l[2]+=3;var u=1/n;u>1.4?(l[1]+=3,l[2]+=1):u>1.25?l[1]+=2:u<1.15&&(l[0]+=2),o<.75?l[0]+=2:o>.88&&(l[2]+=2);var d=["Ectomorph (slim, long-limbed)","Mesomorph (athletic, broad-shouldered)","Endomorph (rounded, wider frame)"],c=l.indexOf(Math.max.apply(null,l)),p=l.slice().sort(function(e,t){return t-e});return{primary:d[c],secondary:p[1]>0?d[(c+1+l.indexOf(p[1],c+1))%3].split(" ")[0]:"Pure",whr:o,wsh:n,frame:s}}(r,i,a,o,n);e("bigVal").textContent=s.primary.split(" ")[0],e("dimVal").textContent=s.primary,e("whr").textContent=t(s.whr,2),e("wsh").textContent=t(s.wsh,2),e("frame").textContent=s.frame<.1?"Small":s.frame<.115?"Medium":"Large",e("secondary").textContent=s.secondary.split(" ")[0];e("advice").textContent={Ectomorph:"Tip: You build muscle slower. Prioritize compound lifts + 300-500 surplus calories + sleep. Protein 1.6-2.0g/kg.",Mesomorph:"Tip: You respond well to both cardio and weights. Focus on progressive overload. 1.6-2.2g protein/kg. Calorie cycling works great.",Endomorph:"Tip: Insulin sensitivity matters. Combine resistance + HIIT + steady-state cardio. Protein 1.8-2.2g/kg. Cycle carbs."}[s.primary.split(" ")[0]]||"",e("result").classList.add("show")}}["wrist","waist","hips","shoulder","height"].forEach(function(t){var i=e(t);i&&i.addEventListener("input",r)}),e("calcBtn").addEventListener("click",r),e("resetBtn").addEventListener("click",function(){e("wrist").value="17",e("waist").value="78",e("hips").value="96",e("shoulder").value="42",e("height").value="175",r()}),r()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

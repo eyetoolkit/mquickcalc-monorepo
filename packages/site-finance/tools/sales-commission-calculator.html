@@ -19,7 +19,7 @@
   <meta property="og:title" content="Sales Commission Calculator — Earnings on a Sale | mQuickCalc">
   <meta property="og:description" content="Calculate commission earned on a sale, total earnings with a base, or how much you must sell to hit an income target. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Sales Commission Calculator","url":"https://finance.mquickcalc.com/tools/sales-commission-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate commission earned and earnings on a sale."}
   </script>
@@ -49,6 +49,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
@@ -103,7 +104,8 @@
     </div>
 
     
-    <h2>How sales commission works</h2><p>Commission = Sales amount times commission rate. Common structures: flat percentage, tiered rates (higher percent at higher volumes), or base salary plus commission. Works backwards too: target commission divided by rate equals required sales.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How sales commission works</h2><p>Commission = Sales amount times commission rate. Common structures: flat percentage, tiered rates (higher percent at higher volumes), or base salary plus commission. Works backwards too: target commission divided by rate equals required sales.</p>
 <h2>Frequently asked questions</h2>
     <h3>How do I calculate a commission?</h3>
     <p>Multiply the sale amount by the commission rate. A $1,000 sale at 10% earns $100 in commission.</p>
@@ -143,5 +145,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("sale").value)||0,n=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("base").value)||0,l=parseFloat(document.getElementById("target").value)||0,a=t*n,c=d+a,m=l>d&&n>0?(l-d)/n:0;document.getElementById("commVal").textContent=e(a),document.getElementById("payVal").textContent=e(c),document.getElementById("needVal").textContent=m>0&&""!==document.getElementById("target").value?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sale").value="1000.00",document.getElementById("rate").value="10",document.getElementById("base").value="0",document.getElementById("target").value="5000.00",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

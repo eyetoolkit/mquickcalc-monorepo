@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+<link rel="stylesheet" href="/css/site.css?v=cd77ef48">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pet Insurance Value Calculator", "url": "https://cover.mquickcalc.com/tools/pet-insurance", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate monthly pet insurance costs for dogs and cats by breed, age, and coverage level. Also calculates whether pet insurance is actually worth it vs self-insuring."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Pet Insurance Value Calculator", "item": "https://cover.mquickcalc.com/tools/pet-insurance"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Pet Insurance Value Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -30,6 +30,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Pet Insurance Value Calculator</span></nav></div>
 <main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">🐾</div>
@@ -74,7 +75,8 @@
     
   
     <div class="related-section">
-      <h2>Related calculators</h2>
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
       <div class="tool-grid">
         <a href="/tools/health-insurance-premium" class="tool-card"><div class="icon-row"><span class="emoji">🏥</span><div class="tc-title">Health Insurance Premium Estimator</div></div><div class="tc-desc">ACA metal tiers, age, and income factors.</div></a>
         <a href="/tools/medigap-cost" class="tool-card"><div class="icon-row"><span class="emoji">💊</span><div class="tc-title">Medigap (Medicare Supplement) Cost Estimator</div></div><div class="tc-desc">Medicare Supplement plans A through N costs.</div></a>
@@ -102,4 +104,5 @@
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=document.getElementById("species").value,t=document.getElementById("breed").value,r=+document.getElementById("age").value,a=document.getElementById("coverage").value;let o="dog"===e?50:30;o*={mixed:1,small_pure:1.1,medium_pure:1.3,large_pure:1.6,brachy:2}[t]||1;let i=1;r<=1?i=1.3:r>=7?i=1.4:r>=10&&(i=1.7),o*=i;o*={basic:.7,standard:1,comprehensive:1.3}[a]||1;const s=Math.round(o),d=12*s,l="dog"===e?400:300,u="dog"===e?1500:1e3;document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">🐾 Your estimate</h3>\n    <div style="font-size:28px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${n(s)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">${n(d)} / year — ${a.replace("_"," ")} coverage</div>\n    <details>\n      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Is pet insurance worth it for you?</summary>\n      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n        <p style="margin:0">Average annual vet bills (${e}): <strong>${n(l)}</strong></p>\n        <p style="margin:4px 0">Your pet insurance cost: <strong>${n(d)}</strong></p>\n        <p style="margin:4px 0;color:var(--muted)">If you had an emergency (average ${n(u)}), insurance would pay ~70% = ${n(Math.round(.7*u))}</p>\n        <p style="margin-top:10px;font-weight:600">${d<l?"✅ Insurance makes sense if you'd struggle with a surprise bill":"⚠️ Insurance is more than average annual care. Consider self-insuring by setting aside money monthly."}</p>\n      </div>\n    </details>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>

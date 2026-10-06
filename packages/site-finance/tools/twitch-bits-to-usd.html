@@ -19,7 +19,7 @@
   <meta property="og:title" content="Twitch Bits to USD Converter — Cheer Bits Value | mQuickCalc">
   <meta property="og:description" content="Convert Twitch cheer bits to dollars instantly. See what a viewer pays for bits and approximately what a streamer receives. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Twitch Bits to USD Converter","url":"https://finance.mquickcalc.com/tools/twitch-bits-to-usd","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert Twitch cheer bits to US dollars."}
   </script>
@@ -49,6 +49,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
@@ -87,7 +88,8 @@
       <p>100 bits = $1 &nbsp;·&nbsp; 1,000 bits = $10 &nbsp;·&nbsp; 5,000 bits = $50 &nbsp;·&nbsp; 10,000 bits = $100. That is the value paid <strong>out</strong> to the streamer. Buying bits costs the viewer more than that in most regions — small web packs run around <strong>$1.40 per 100 bits</strong>, while bulk packs and bonus-bit promos come closer to 1:1 — so the <strong>viewer cost</strong> and the <strong>bit value</strong> are not the same number.</p>
     </div>
 
-    <h2>How Twitch bits work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Twitch bits work</h2>
     <p><strong>Bits</strong> are a donation currency on Twitch. A viewer uses bits to "Cheer" in chat (spending recent donations buys cheer emotes and highlights). The streamer then receives a cash payout for the cheered bits.</p>
     <p>At the standard rate, <strong>100 bits = $1.00</strong>, meaning the dollar value is <code>bits / 100</code>. Some countries and bulk packages shift the exact price a viewer pays, while the payout streamers receive is generally tied to that $0.01-per-bit value before platform deductions.</p>
 
@@ -131,5 +133,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(){const e=Math.max(parseInt(document.getElementById("bits").value,10)||0,0)/100,t=Math.max(parseFloat(document.getElementById("buy").value)||0,0),n=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("usdVal").textContent=n(e),document.getElementById("costVal").textContent=n(e*t),document.getElementById("rateLbl").textContent=n(t),document.getElementById("streamerVal").textContent=n(e),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("buy").addEventListener("input",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("bits").value="1000",document.getElementById("buy").value="1.40",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

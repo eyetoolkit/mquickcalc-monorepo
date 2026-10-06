@@ -19,7 +19,7 @@
   <meta property="og:title" content="Break-even Calculator — Units to Cover Costs | mQuickCalc">
   <meta property="og:description" content="Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-u">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Break-even Calculator","url":"https://finance.mquickcalc.com/tools/break-even-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Units needed to break even and reach a target profit."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance</a><span class='sep'>›</span><span class='current'>Break-even Calculator</span></nav></div>
 
 
@@ -113,7 +114,8 @@
     </div>
 
     
-    <h2>How break-even is calculated</h2><p>Break-even point = Fixed Costs divided by (Price minus Variable Cost per Unit). The contribution margin (how much each sale contributes to covering fixed costs) is the key number. At break-even, profit equals zero.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How break-even is calculated</h2><p>Break-even point = Fixed Costs divided by (Price minus Variable Cost per Unit). The contribution margin (how much each sale contributes to covering fixed costs) is the key number. At break-even, profit equals zero.</p>
 <h2>Frequently asked questions</h2>
     <h3>How many units must I sell to break even?</h3>
     <p>Divide total fixed costs by the profit left on each unit after variable cost. With $1,000 fixed cost and $15 contribution, you need 67 units (~67).</p>
@@ -153,5 +155,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("fixed").value)||0,n=parseFloat(document.getElementById("var").value)||0,l=parseFloat(document.getElementById("price").value)||0,d=parseFloat(document.getElementById("target").value),o=parseFloat(document.getElementById("volume").value),u=l-n,a=u>0?Math.ceil(t/u):1/0,c=u>0&&!isNaN(d)&&d>0?Math.ceil((t+d)/u):null,m=!isNaN(o)&&o>=0&&u>0?o*u-t:null;document.getElementById("contribItem").textContent="Contribution per unit: "+e(u),document.getElementById("unitVal").textContent=isFinite(a)?a:"∞",document.getElementById("contribVal").textContent=e(u),document.getElementById("revVal").textContent=isFinite(a)?e(a*l):"—",document.getElementById("targetVal").textContent=c||"—",document.getElementById("profVal").textContent=null!==m?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("fixed").value="1000.00",document.getElementById("var").value="5.00",document.getElementById("price").value="20.00",document.getElementById("target").value="500.00",document.getElementById("volume").value="200",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

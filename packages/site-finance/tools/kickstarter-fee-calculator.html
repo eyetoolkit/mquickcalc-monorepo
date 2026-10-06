@@ -19,7 +19,7 @@
   <meta property="og:title" content="Kickstarter Fee Calculator — Net Raised After Fees | mQuickCalc">
   <meta property="og:description" content="Estimate what a funded Kickstarter campaign actually nets after the 5% platform fee and payment processing, based on total raised and number of pledge">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Kickstarter Fee Calculator","url":"https://finance.mquickcalc.com/tools/kickstarter-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate net raised after Kickstarter fees."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#creator'>Creator Economy</a><span class='sep'>›</span><span class='current'>Kickstarter Fee Calculator</span></nav></div>
 
 
@@ -112,7 +113,8 @@
       <p>Kickstarter charges a <strong>platform fee</strong> (typically 5%) plus <strong>payment processing</strong> — a percentage of each pledge plus a small per-pledge amount. If a campaign isn't funded, no fees are charged.</p>
     </div>
 
-    <h2>How Kickstarter fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Kickstarter fees work</h2>
 <p>Kickstarter charges a flat 5% platform fee on all funds raised, plus payment processing fees (typically 3-5%) depending on whether you use Stripe or PayPal. The processing fee structure varies by country and currency.</p>
 <p>Backer-pledge refunds also incur fees. If you refund a pledge, the original payment processing fee is not returned to you — only Kickstarter's 5% is refunded. This is why accurate net-profit estimation matters before launching your campaign.</p>
 <p>Successful campaigns also have disbursement timing to consider: funds are typically held for 14 days after the campaign ends before being sent to your bank account. Factor this into your cash flow planning.</p>
@@ -157,5 +159,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("raised").value)||0,n=parseFloat(document.getElementById("pledges").value)||0,d=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("proc").value)||0)/100)+n*(parseFloat(document.getElementById("perPledge").value)||0),o=d+l,a=t-o;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(d),document.getElementById("procVal").textContent=e(l),document.getElementById("totVal").textContent=e(o),document.getElementById("effVal").textContent=t>0?(100*(o/t)).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("raised").value="10000.00",document.getElementById("pledges").value="500",document.getElementById("plat").value="5",document.getElementById("proc").value="3",document.getElementById("perPledge").value="0.20",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

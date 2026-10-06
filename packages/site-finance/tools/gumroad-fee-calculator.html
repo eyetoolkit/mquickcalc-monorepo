@@ -19,7 +19,7 @@
   <meta property="og:title" content="Gumroad Fee Calculator — Creator Net per Sale | mQuickCalc">
   <meta property="og:description" content="Estimate how much a creator keeps from Gumroad after its service fee and payment processing, per sale or across a batch. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Gumroad Fee Calculator","url":"https://finance.mquickcalc.com/tools/gumroad-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Creator net income from Gumroad after fees."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#creator'>Creator Economy</a><span class='sep'>›</span><span class='current'>Gumroad Fee Calculator</span></nav></div>
 
 
@@ -109,7 +110,8 @@
     </div>
 
     
-    <h2>How Gumroad fees work</h2><p>Gumroad takes a flat 10% fee (includes payment processing on most plans). No listing fees — you pay only when you sell. Gumroad handles checkout, delivery, tax collection, and customer support for digital products.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Gumroad fees work</h2><p>Gumroad takes a flat 10% fee (includes payment processing on most plans). No listing fees — you pay only when you sell. Gumroad handles checkout, delivery, tax collection, and customer support for digital products.</p>
 <h2>Frequently asked questions</h2>
     <h3>How much does Gumroad take per sale?</h3>
     <p>Usually a flat service fee near 10% plus payment processing. So a $15 sale might net around $12.5 after about $2.5 in combined fees.</p>
@@ -150,5 +152,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=Math.max(parseInt(document.getElementById("units").value,10)||0,0),l=t*((parseFloat(document.getElementById("service").value)||0)/100)+t*((parseFloat(document.getElementById("proc").value)||0)/100)+(parseFloat(document.getElementById("flat").value)||0),d=t-l,c=l*n,m=d*n;document.getElementById("perLine").textContent=e(t)+" per sale · "+n+" unit(s)",document.getElementById("totalVal").textContent=e(m),document.getElementById("perFeeVal").textContent=e(l),document.getElementById("perNetVal").textContent=e(d),document.getElementById("totVal").textContent=e(c),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="15.00",document.getElementById("units").value="50",document.getElementById("service").value="10",document.getElementById("proc").value="2.9",document.getElementById("flat").value="0.30",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

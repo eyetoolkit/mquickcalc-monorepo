@@ -19,7 +19,7 @@
   <meta property="og:title" content="Etsy Fee Calculator — Estimate Fees &amp; Take-Home Profit | mQuickCalc">
   <meta property="og:description" content="Calculate Etsy listing, transaction, payment processing, regulatory and off-site ad fees, then see your estimated net profit per sale. Free, no sign-u">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Etsy Fee Calculator","url":"https://finance.mquickcalc.com/tools/etsy-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Etsy selling fees and net profit."}
   </script>
@@ -58,6 +58,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>Etsy Fee Calculator</span></nav></div>
 
 
@@ -132,7 +133,8 @@
       <p>These defaults reflect commonly cited Etsy fees, but totals are approximate. Regulatory operating fees differ by country and can be 0% in some locations, and off-site ads only apply to orders attributed to Etsy's off-site ads program.</p>
     </div>
 
-    <h2>How Etsy seller fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Etsy seller fees work</h2>
     <p>Every time you make a sale on Etsy, the platform deducts a series of fees before you receive your payout. Understanding each one is essential before setting your prices — a 30% markup might sound healthy until you realize Etsy takes 12–15% of your gross, leaving you with a much thinner margin than expected. The fees fall into two categories: mandatory fees (transaction fee, payment processing, listing fee) that apply to every sale, and conditional fees (regulatory operating fee, off-site ad fee) that only apply in certain situations. This calculator lets you enter each fee type separately so you can model your exact net margin at any price point.</p>
     <p>The <strong>transaction fee</strong> (currently 6.5% for most categories in the US) is charged on the item price plus any gift-wrapping charges — but not on the shipping fee, which is a common point of confusion. The <strong>payment processing fee</strong> (3% + $0.25 per order in the US) is charged on the item price plus shipping. Combined, these two fees alone take 9.5% + $0.25 from every order before you see a cent. The <strong>listing fee</strong> ($0.20 per listing) is charged when you publish or renew a listing — it does not expire automatically and you are charged each time you manually renew. If a listing renews automatically after 4 months, you are charged again. <strong>Regulatory operating fees</strong> (0.25% in the US, 0% in many other countries) are a relatively recent addition to Etsy's fee structure and vary by seller's location.</p>
 
@@ -191,5 +193,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){const e=function(e){return document.getElementById(e)};function t(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})+" (USD)"}function a(){const a=parseFloat(e("price").value)||0,n=parseFloat(e("shipping").value)||0,s=Math.max(parseInt(e("qty").value,10)||1,1),l=(a+n)*s,i=l*((parseFloat(e("trans").value)||0)/100),c=l*((parseFloat(e("paypct").value)||0)/100)+(parseFloat(e("payflat").value)||0)*s,r=l*((parseFloat(e("reg").value)||0)/100),o=(parseFloat(e("listing").value)||0)*s,d=l*((parseFloat(e("offsite").value)||0)/100),v=i+c+r+o+d,u=l-v;e("grossLine").textContent="Gross revenue: "+t(l)+"  ·  "+s+" item(s) at "+t(a)+" each",e("netVal").textContent=t(u);const p=[["Transaction fee",t(i)],["Payment processing",t(c)],["Regulatory fee",t(r)],["Listing fee",t(o)],["Off-site ads",t(d)]];e("breakdown").innerHTML=p.map(function(e){return'<div class="cell"><div class="lbl">'+e[0]+'</div><div class="val">'+e[1]+"</div></div>"}).join("")+'<div class="cell"><div class="lbl">Total fees</div><div class="val">'+t(v)+"</div></div>",e("result").classList.add("show")}e("calcBtn").addEventListener("click",a),e("resetBtn").addEventListener("click",function(){var t={price:"25.00",shipping:"0",qty:"1",trans:"6.5",paypct:"3.0",payflat:"0.25",reg:"0.25",listing:"0.20",offsite:"0"};Object.keys(t).forEach(function(a){e(a).value=t[a]}),a()}),a(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),a)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

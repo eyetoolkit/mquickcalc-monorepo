@@ -274,3 +274,32 @@ button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 @media(max-width:640px){.header-inner{min-height:56px;height:auto;gap:8px;padding:6px 12px}.site-header nav{flex-wrap:nowrap;gap:0}.site-header nav a{padding:7px 8px;font-size:12.5px;white-space:nowrap}.brand{font-size:16px;flex-shrink:0;gap:6px}.site-tag{display:none}.tool-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}.tool-card{padding:14px}.footer-grid{grid-template-columns:1fr 1fr;gap:20px}.hero{padding:52px 0 40px}}
 @media(max-width:480px){.site-header nav a{padding:7px 6px;font-size:12px}.site-header nav a[href="#categories"]{display:none}}
 @media(max-width:420px){.footer-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr 1fr}}
+
+/* =====================================================================
+   Ad slots (AdSense-ready) — added 2026-10-06
+   Slots are EMPTY containers. They stay invisible (display:none) until
+   real AdSense <ins> code is pasted inside them, so the live site shows
+   no blank boxes before AdSense approval. Reserved min-heights prevent
+   CLS once ads load. See ADSENSE-SETUP.md for the paste-in steps.
+   Positions:
+     .ad-header     — leaderboard strip right below the top nav (位①)
+     .ad-incontent  — block inside the article, before first <h2> (位②, top value)
+     .ad-sticky-mobile — fixed bottom bar, mobile only (位④)
+   ===================================================================== */
+.ad-slot{display:none}
+.ad-header:not(:empty),.ad-incontent:not(:empty){display:block;margin:20px auto;text-align:center;max-width:728px}
+.ad-header:not(:empty){min-height:90px}
+.ad-incontent:not(:empty){min-height:280px}
+.ad-slot>*{margin:0 auto}
+.ad-slot ins{display:block;margin:0 auto}
+.ad-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+/* Mobile sticky: hidden everywhere by default; shows only on <=768px when filled */
+.ad-sticky-mobile{display:none}
+@media(max-width:768px){
+  .ad-sticky-mobile:not(:empty){
+    display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;
+    min-height:50px;background:#fff;border-top:1px solid var(--line);
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);padding:4px 0;text-align:center
+  }
+  body:has(.ad-sticky-mobile:not(:empty)){padding-bottom:56px}
+}

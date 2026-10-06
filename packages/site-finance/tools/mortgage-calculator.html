@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://finance.mquickcalc.com/tools/mortgage-calculator">
   <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator — Monthly Payment & Total Cost","url":"https://finance.mquickcalc.com/tools/mortgage-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly mortgage payment including principal, interest, property tax, and insurance."}
   </script>
@@ -58,6 +58,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Mortgage Calculator — Monthly Payment & Total Cost</span></nav></div>
 
 <main id="main-content" class="page">
@@ -120,7 +121,8 @@
       <p>A $400,000 30-year mortgage at 6.5% costs about $2,528/month PITI, but you pay back $910,000 over 30 years — $510,000 of that is interest, more than the original loan. A 15-year term at the same rate cuts the total interest to $260,000, but the monthly payment is $3,484. The 30-year is more affordable monthly; the 15-year is dramatically cheaper in total.</p>
     </div>
 
-    <h2>How this calculator works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
     <p>PITI = Principal & Interest + monthly property tax + monthly insurance. Principal & Interest is calculated with the standard amortization formula. Property tax is (home price × rate) / 12; insurance is (annual premium) / 12.</p>
 
     <h2>Frequently asked questions</h2>
@@ -167,5 +169,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n=parseFloat(document.getElementById("price").value)||0,a=parseFloat(document.getElementById("down").value)||0,l=Math.max(n-a,0),d=(parseFloat(document.getElementById("rate").value)||0)/100,m=parseFloat(document.getElementById("years").value)||30,o=(parseFloat(document.getElementById("tax").value)||0)/100,c=parseFloat(document.getElementById("insurance").value)||0,u=Math.max(12*m,1),r=d/12;if(0===d)t=l/u;else{var y=Math.pow(1+r,u);t=l*(r*y)/(y-1)}var i=t+n*o/12+c/12,B=t*u-l;document.getElementById("piVal").textContent=e(t),document.getElementById("totalVal").textContent=e(i),document.getElementById("interestVal").textContent=e(B),document.getElementById("loanVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="500000",document.getElementById("down").value="100000",document.getElementById("rate").value="6.5",document.getElementById("years").value="30",document.getElementById("tax").value="1.2",document.getElementById("insurance").value="1800",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

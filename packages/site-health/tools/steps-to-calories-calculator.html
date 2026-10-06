@@ -7,7 +7,7 @@
   <meta name="description" content="Convert steps to calories burned based on your body weight. Works for walking, running, and general movement.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/steps-to-calories-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Steps to Calories Calculator", "url": "https://health.mquickcalc.com/tools/steps-to-calories-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Convert steps to calories burned based on your body weight. Works for walking, running, and general movement."}</script>
 <meta property="og:title" content="Steps to Calories Calculator — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Convert steps to calories burned based on your body weight. Works for walking, running, and general movement.">
@@ -38,6 +38,7 @@
     <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#sleep">Sleep</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#fitness'>Fitness & Exercise</a><span class='sep'>›</span><span class='current'>Steps to Calories Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -74,7 +75,8 @@
     </div>
     </div>
 
-    <h2>How steps convert to calories</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How steps convert to calories</h2>
     <p>The conversion depends on your weight and how vigorously you move. Heavier people burn more calories per step (they're moving more mass). Pace affects it too — brisk walking and running both use more energy per step than strolling. Your smartphone's activity tracker likely uses a similar formula.</p>
     
     <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/met-to-calories-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏃</span><div class="tc-title">MET to Calories</div></div><div class="tc-desc">Any activity by MET value.</div></a><a href="/tools/calories-burned-by-distance" class="tool-card"><div class="icon-row"><span class="emoji">🛣️</span><div class="tc-title">Calories by Distance</div></div><div class="tc-desc">Walk/run/cycle distance → calories.</div></a><a href="/tools/target-heart-rate-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🎯</span><div class="tc-title">Target Heart Rate</div></div><div class="tc-desc">% of max HR for cardio zones.</div></a></div></div>
@@ -105,5 +107,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n=parseFloat(t("steps").value)||0,a=parseFloat(t("weight").value)||0,i=parseFloat(t("pace").value)||.055;if(n&&a){var s=a*n*i,l=7e-4*n,c=l*(60/4.827),o=1e3*a*i;t("bigVal").textContent=e(s,0)+" kcal",t("dimVal").textContent=e(n,0)+" steps",t("distVal").textContent=e(l,2)+" km",t("minVal").textContent=e(c,0)+" min",t("per1k").textContent=e(o,0)+" kcal",t("result").classList.add("show")}}["steps","weight","pace"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("steps").value="8000",t("weight").value="70",t("pace").value="0.055",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

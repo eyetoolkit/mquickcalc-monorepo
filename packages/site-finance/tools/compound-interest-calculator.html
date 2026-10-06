@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://finance.mquickcalc.com/tools/compound-interest-calculator">
   <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Compound Interest Calculator — Final Amount & APY","url":"https://finance.mquickcalc.com/tools/compound-interest-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"See how a single deposit grows with compound interest."}
   </script>
@@ -58,6 +58,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Compound Interest Calculator — Final Amount & APY</span></nav></div>
 
 <main id="main-content" class="page">
@@ -114,7 +115,8 @@
       <p>A 5% rate compounded daily yields 5.1267% APY; compounded monthly it is 5.116%; annually, 5.0%. The difference is small at low rates, but at 20% or higher, daily compounding can add 0.5-1% extra per year. For practical purposes, monthly is the right default for most savings accounts.</p>
     </div>
 
-    <h2>How this calculator works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
     <p>Compound interest is the financial concept that makes money grow faster over time — you earn interest not only on your initial deposit, but also on the interest that accumulates each period. The formula is: <strong>Final = Principal × (1 + rate/n)^(n × years)</strong>, where n is the number of compounding periods per year. This is the same formula used by banks, bond issuers, and investment platforms to calculate the growth of any fixed-rate investment. The effective Annual Percentage Yield (APY) accounts for compounding within the year and is the figure you should compare when shopping for savings accounts or CDs, not the nominal advertised rate.</p>
     <p>To see the actual difference compounding frequency makes: at 5% annual rate, monthly compounding yields (1 + 0.05/12)^12 − 1 = 5.116% APY; daily compounding yields (1 + 0.05/365)^365 − 1 = 5.127% APY. The difference is tiny at low rates — less than 0.02 percentage points. At 20% (some high-yield bonds or aggressive investments), monthly compounding gives 21.94% APY while daily gives 22.13% APY — a more meaningful 0.19 percentage point gap. The lesson: for low-rate savings products, compounding frequency is nearly irrelevant; what matters most is the advertised rate itself.</p>
 
@@ -166,5 +168,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}var t={daily:365,monthly:12,quarterly:4,annually:1};function n(){var n=parseFloat(document.getElementById("principal").value)||0,l=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("years").value)||0,a=document.getElementById("freq"),o=t[a.value]||12,c=n*Math.pow(1+l/o,o*d),m=c-n;document.getElementById("finalVal").textContent=e(c),document.getElementById("interestVal").textContent=e(m),document.getElementById("multipleVal").textContent=n>0?(c/n).toFixed(2)+"x":"—",document.getElementById("effRateVal").textContent=function(e){return(100*e).toFixed(2)+"%"}(Math.pow(1+l/o,o)-1),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",n),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="10000",document.getElementById("rate").value="7",document.getElementById("years").value="20",document.getElementById("freq").value="monthly",n()}),n(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),n)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

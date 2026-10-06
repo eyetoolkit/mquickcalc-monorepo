@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+<link rel="stylesheet" href="/css/site.css?v=cd77ef48">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Medigap (Medicare Supplement) Cost Estimator", "url": "https://cover.mquickcalc.com/tools/medigap-cost", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Medigap Cost Estimator", "item": "https://cover.mquickcalc.com/tools/medigap-cost"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Medigap (Medicare Supplement) Cost Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -30,6 +30,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Medigap (Medicare Supplement) Cost Estimator</span></nav></div>
 <main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">👵</div>
@@ -72,7 +73,8 @@
     
   
     <div class="related-section">
-      <h2>Related calculators</h2>
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
       <div class="tool-grid">
         <a href="/tools/health-insurance-premium" class="tool-card"><div class="icon-row"><span class="emoji">🏥</span><div class="tc-title">Health Insurance Premium Estimator</div></div><div class="tc-desc">ACA metal tiers, age, and income factors.</div></a>
         <a href="/tools/ltc-insurance" class="tool-card"><div class="icon-row"><span class="emoji">👵</span><div class="tc-title">Long-Term Care Insurance Cost Calculator</div></div><div class="tc-desc">Buy at 55 vs 65 — early bird savings.</div></a>
@@ -100,4 +102,5 @@
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,n){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:n||0,maximumFractionDigits:n||0})}function n(n){return"$"+e(n,0)}function t(){const e=+document.getElementById("age").value,t=document.getElementById("gender").value,r=document.getElementById("plan").value;let a={A:90,B:150,C:175,D:140,F:195,G:155,K:85,N:110}[r]||120;const o=Math.max(0,e-65);a*=Math.pow(1.05,o),"male"===t&&(a*=1.1);const i=Math.round(12*a),d=Math.round(a);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">👵 Medigap estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${n(d)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">${n(i)} / year — Plan ${r}</div>\n    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Plan G is the best value for most new enrollees.</strong> It covers everything Plan F covers except the Part B deductible ($226 in 2026). If you're in good health, the premium savings over Plan F usually exceed the Part B deductible cost.\n    </div>\n    <div style="margin-top:12px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n      📅 <strong>Open enrollment:</strong> You can sign up for Medigap during your Medigap open enrollment period — 6 months starting when you turn 65 and have Medicare Part B. During this time, carriers can't deny you coverage or charge more for pre-existing conditions. After that, they can.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",t),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>

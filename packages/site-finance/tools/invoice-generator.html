@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/invoice-generator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Invoice Generator (Pricing)", "url": "https://finance.mquickcalc.com/tools/invoice-generator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days."}</script>
 <meta property="og:title" content="Invoice Generator (Pricing) — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.">
@@ -38,6 +38,7 @@
     <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#tax">Tax</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#creators'>Freelance</a><span class='sep'>›</span><span class='current'>Invoice Generator (Pricing)</span></nav></div>
 
 <main id="main-content" class="page">
@@ -75,7 +76,8 @@
     </div>
     </div>
 
-    <h2>Why most freelancers undercharge</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Why most freelancers undercharge</h2>
     <p>People tend to take their desired salary and divide by 40 hours a week — forgetting that 25-40% of their time is non-billable (invoicing, marketing, admin), plus taxes, benefits, and business expenses. We work backwards from your desired take-home to a rate that actually gets you there.</p>
     
     <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/paypal-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">PayPal Fee</div></div><div class="tc-desc">Processing eats into your rate.</div></a><a href="/tools/stripe-fee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🟪</span><div class="tc-title">Stripe Fee</div></div><div class="tc-desc">Alternatives to PayPal.</div></a><a href="/tools/multi-platform-fee-comparison" class="tool-card"><div class="icon-row"><span class="emoji">🔀</span><div class="tc-title">Fee Comparison</div></div><div class="tc-desc">All platforms side by side.</div></a></div></div>
@@ -107,5 +109,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}var n=null;function a(){var a=parseFloat(t("annualTarget").value)||0,o=(parseFloat(t("tax").value)||0)/100,r=(parseFloat(t("benefits").value)||0)/100,i=parseFloat(t("hours").value)||0,s=parseInt(t("vacation").value)||0;if(a&&i){var u=i*(52-s/5),l=a/(1-o),d=l/(1-r),c=d/u;if(t("bigVal").textContent="$"+e(c,0)+"/hr",t("billHrs").textContent=u.toLocaleString()+" hrs",t("grossNeed").textContent="$"+e(d,0),t("projMonth").textContent="$"+e(c*i*4,0),t("dayRate").textContent="$"+e(8*c,0),t("result").classList.add("show"),window.Chart&&t("rateChart")){n&&n.destroy();var v=t("rateChart").getContext("2d");n=new Chart(v,{type:"doughnut",data:{labels:["Take-home income","Tax","Benefits/overhead"],datasets:[{data:[a,l-a,d-l],backgroundColor:["#059669","#dc2626","#d97706"],borderWidth:0}]},options:{responsive:!0,maintainAspectRatio:!0,plugins:{legend:{position:"bottom",labels:{font:{size:11}}}}}})}}}function o(t){window.Chart||t<=0?a():setTimeout(function(){o(t-1)},50)}["annualTarget","tax","benefits","hours","vacation"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("annualTarget").value="85000",t("tax").value="25",t("benefits").value="15",t("hours").value="30",t("vacation").value="20",a()}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",function(){o(10)}):o(10)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

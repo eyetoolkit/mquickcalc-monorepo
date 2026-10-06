@@ -19,7 +19,7 @@
   <meta property="og:title" content="Discount Calculator — Sale Price &amp; Savings | mQuickCalc">
   <meta property="og:description" content="Find the sale price after a discount or reverse it to recover the original price from a discounted price. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Discount Calculator","url":"https://finance.mquickcalc.com/tools/discount-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate sale price and savings after a discount."}
   </script>
@@ -58,6 +58,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#math'>Math & Percent</a><span class='sep'>›</span><span class='current'>Discount Calculator</span></nav></div>
 
 
@@ -112,7 +113,8 @@
     </div>
 
     
-    <h2>How discount math works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How discount math works</h2>
     <p>Understanding discount math is essential for both consumers and sellers. For consumers, knowing how discounts work prevents the cognitive trap of "fake discounts" — a pricing tactic where a product is listed at an inflated "original" price before a discount that brings it back to its actual market value, creating an illusion of savings. For sellers, understanding discount stacking and the difference between markdowns and markups is fundamental to pricing strategy. The basic principle: to find a sale price, multiply the original price by one minus the discount as a decimal. To find the original price from a sale price, divide by one minus the discount as a decimal.</p>
     <p>Discounts interact in ways that are counterintuitive. Two sequential discounts — say 20% off followed by an additional 15% off — do not equal 35% off total. The math is multiplicative: after the first 20% discount, the price is 80% of original. After the additional 15% off that reduced price, you pay 85% of 80%, which is 68% of original — a total effective discount of 32%, not 35%. This is a common marketing mistake where consumers and even some business owners overestimate the total savings. Compound discounts like this are one reason "buy one get one 50% off" deals are often less valuable than they appear.</p>
 
@@ -169,5 +171,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,o,l,c,m=parseFloat(document.getElementById("amount").value)||0,a=Math.min(parseFloat(document.getElementById("disc").value)||0,100)/100,i=document.getElementById("mode").value;"sale"===i?n=(t=m)*(1-a):(n=m,t=m/(1-a)),d=t-n,o="sale"===i?"Discount of "+(100*a).toFixed(2)+"% on "+e(t):"Recovering original after "+(100*a).toFixed(2)+"% off "+e(n),l=e("sale"===i?n:t),c="sale"===i?"sale price":"original price",document.getElementById("mainLbl").textContent=o,document.getElementById("mainVal").textContent=l,document.getElementById("subLbl").textContent=c,document.getElementById("discAmt").textContent=e(d),document.getElementById("payVal").textContent=e(n),document.getElementById("saveVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("mode").addEventListener("change",function(){document.getElementById("amountLbl").textContent="sale"===this.value?"Original price":"Discount price (what you paid)"}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="80.00",document.getElementById("disc").value="20",document.getElementById("mode").value="sale",document.getElementById("amountLbl").textContent="Original price",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

@@ -19,7 +19,7 @@
   <meta property="og:title" content="Secondhand Platform Fee Calculator — Depop, Vinted, | mQuickCalc">>
   <meta property="og:description" content="Calculate seller fees and net payout across Depop, Vinted, Mercari, Grailed.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Secondhand Platform Fee Calculator","url":"https://finance.mquickcalc.com/tools/secondhand-platform-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate seller fees and net payout across Depop, Vinted, Mercari, and Grailed."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>Secondhand Platform Fee Calculator</span></nav></div>
 
 
@@ -104,7 +105,8 @@
     </div>
 
 
-    <h2>How secondhand platform fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How secondhand platform fees work</h2>
 <p>Secondhand marketplaces charge a <strong>seller fee</strong> (a percentage of the sale price), plus <strong>payment processing</strong> for card transactions. Some add a small fixed fee per sale. Whether you absorb shipping is up to you — the calculator subtracts any seller-paid shipping you enter.</p>
 
     <h2>Per-platform fee reference (defaults)</h2>
@@ -164,5 +166,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d=(t=document.getElementById("platform"),n=t.options[t.selectedIndex],{selling:parseFloat(n.getAttribute("data-selling"))/100||0,proc:parseFloat(n.getAttribute("data-proc"))/100||0,fixed:parseFloat(n.getAttribute("data-fixed"))||0,name:n.value}),l=parseFloat(document.getElementById("price").value)||0,o=parseFloat(document.getElementById("ship").value)||0,a=l*d.selling,c=l*d.proc,m=a+c+d.fixed,i=l-m-o;document.getElementById("netVal").textContent=e(i),document.getElementById("sellVal").textContent=e(a),document.getElementById("procVal").textContent=e(c),document.getElementById("totVal").textContent=e(m),document.getElementById("effVal").textContent=l>0?(100*(m/l)).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.getElementById("platform").addEventListener("change",t),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="25.00",document.getElementById("ship").value="0",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

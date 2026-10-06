@@ -19,7 +19,7 @@
   <meta property="og:title" content="Poshmark Fee Calculator — Net Payout &amp; Seller Fees | mQuickCalc">
   <meta property="og:description" content="Calculate Poshmark">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Poshmark Fee Calculator","url":"https://finance.mquickcalc.com/tools/poshmark-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Poshmark seller fees and net payout."}
   </script>
@@ -49,6 +49,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
@@ -86,7 +87,8 @@
       <p>Items sold for <strong>less than $15</strong> incur a flat <strong>$2.95</strong> fee. Items sold for <strong>$15 or more</strong> incur a <strong>20%</strong> fee. There is no listing fee, and the buyer normally pays shipping via Poshmark's prepaid label.</p>
     </div>
 
-    <h2>How Poshmark seller fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Poshmark seller fees work</h2>
     <p>Poshmark doesn't charge to list an item. When it sells, its bundled selling fee is deducted from your payout. Because the fee is a flat amount below $15 and a percentage above, margin math works very differently on low-priced items — a $10 sale leaves only $7.05, while a $50 sale keeps $40.</p>
 
     <h2>Frequently asked questions</h2>
@@ -130,5 +132,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d=parseFloat(document.getElementById("price").value)||0,c=parseFloat(document.getElementById("ship").value)||0;d<15?(t=2.95,n="Flat $2.95"):(t=.2*d,n="20%");var l=d-t-c;document.getElementById("ruleLine").textContent=d<15?"Under $15 · flat fee tier":"$15+ · percentage tier",document.getElementById("netVal").textContent=e(l),document.getElementById("feeVal").textContent=e(t),document.getElementById("rateVal").textContent=n+(c>0?" · then − "+e(c)+" shipping":""),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="30.00",document.getElementById("ship").value="0",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

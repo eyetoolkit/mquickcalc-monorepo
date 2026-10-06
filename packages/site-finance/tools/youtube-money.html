@@ -19,7 +19,7 @@
   <meta property="og:title" content="YouTube Money Calculator — Estimate Ad Revenue | mQuickCalc">
   <meta property="og:description" content="Estimate how much a YouTube video or channel earns from views. Enter views and RPM for your niche to estimate ad revenue. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Money Calculator","url":"https://finance.mquickcalc.com/tools/youtube-money","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate YouTube ad revenue from views and RPM."}
   </script>
@@ -49,6 +49,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
@@ -102,7 +103,8 @@
       <p><strong>RPM</strong> (revenue per mille) is total estimated revenue per <strong>1,000 views</strong>. Unlike CPM, RPM already reflects both what advertisers pay and YouTube's share. Niche RPMs vary widely, so treat presets as ballpark figures.</p>
     </div>
 
-    <h2>How YouTube revenue works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How YouTube revenue works</h2>
     <p>To earn from ads you need to join the YouTube Partner Program (roughly 1,000 subscribers and 4,000 watch hours in the past year, or 10 million Shorts views). Revenue comes from ads shown on your videos, with YouTube generally keeping roughly half of ad revenue (the effective split is reflected in your RPM).</p>
     <p>Only <strong>monetized</strong> views generate income — views with ad blockers or on un-monetized videos count for nothing. That's why two videos with similar view counts can earn very different amounts.</p>
 
@@ -146,5 +148,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(){var e,t=Math.max(parseInt(document.getElementById("views").value,10)||0,0),n="custom"===(e=document.getElementById("niche").value)?parseFloat(document.getElementById("rpm").value)||0:parseFloat(e)||0,d=t/1e3*n,c=d/.55,l=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("rpmLine").textContent=t.toLocaleString("en-US")+" views",document.getElementById("revenueVal").textContent=l(d),document.getElementById("rpmVal").textContent=l(n),document.getElementById("cutVal").textContent=l(c),document.getElementById("result").classList.add("show")}document.getElementById("niche").addEventListener("change",function(){document.getElementById("customField").style.display="custom"===this.value?"block":"none"}),document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("niche").value="10",document.getElementById("customField").style.display="none",e()}),e(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),e)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Airbnb Host Fee Calculator", "url": "https://finance.mquickcalc.com/tools/airbnb-host-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods."}</script>
 <meta property="og:title" content="Airbnb Host Fee Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Estimate Airbnb host service fees and your net payout. Compare host-only fee vs. split-fee collection methods.">
@@ -38,6 +38,7 @@
     <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Ecommerce</a><span class='sep'>›</span><span class='current'>Airbnb Host Fee Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -81,7 +82,8 @@
     </div>
 
 
-    <h2>How Airbnb fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Airbnb fees work</h2>
     <p><strong>Host-only fee</strong> (14% of booking subtotal): the host absorbs the entire service fee. Airbnb displays all rates to guests without additional service charges. Best for shorter stays or when you want to keep listing rates simpler.</p>
     <p><strong>Split-fee</strong> (3% host + guest service fee): hosts pay just 3% (to cover payment processing) and guests pay a separate 10-12% service fee at checkout. This is the default on most bookings.</p>
     
@@ -117,5 +119,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n,a,i=parseFloat(t("price").value)||0,l=parseFloat(t("nights").value)||0,o=t("method").value,c=i*l+(parseFloat(t("cleaning").value)||0);a="host-only"===o?c-(n=.14*c):c-(n=.03*c);var r=c>0?n/c*100:0;t("netVal").textContent="$"+e(a,2),t("subVal").textContent="$"+e(c,2),t("feeVal").textContent="$"+e(n,2),t("rateVal").textContent=e(r,2)+"%",t("result").classList.add("show")}["price","nights","method","cleaning"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("price").value="150",t("nights").value="5",t("method").value="split",t("cleaning").value="0",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

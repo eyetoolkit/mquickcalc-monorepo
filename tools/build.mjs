@@ -171,6 +171,43 @@ function cacheBustSite(siteDir) {
   return touched;
 }
 
+/**
+ * Inject AdSense-ready ad slots into every HTML page.
+ * Slots are empty containers (data-ad=...) with reserved heights via CSS
+ * (brand-kit/css/site.css). They stay invisible until real AdSense <ins>
+ * code is pasted inside. Idempotent: re-running won't duplicate slots.
+ *
+ * Positions:
+ *   data-ad="header"     → leaderboard strip right after </header> (位①)
+ *   data-ad="incontent"  → block before the first <h2> in <main> (位②, highest value)
+ *   data-ad="mobile"     → fixed bottom bar, mobile-only via CSS (位④)
+ */
+const AD_SLOTS = {
+  header: '<div class="ad-slot ad-header" data-ad="header"></div>',
+  incontent: '<div class="ad-slot ad-incontent" data-ad="incontent"></div>',
+  mobile: '<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>',
+};
+
+function injectAdSlots(siteDir) {
+  const htmlFiles = walk(siteDir).filter(p => p.endsWith('.html'));
+  let touched = 0;
+  for (const f of htmlFiles) {
+    let html = fs.readFileSync(f, 'utf8');
+    const before = html;
+    if (!html.includes('data-ad="header"')) {
+      html = html.replace(/(<\/header>)/, `$1\n${AD_SLOTS.header}`);
+    }
+    if (!html.includes('data-ad="incontent"') && /<h2[\s>]/.test(html)) {
+      html = html.replace(/(<h2(?:\s[^>]*)?>)/, `${AD_SLOTS.incontent}\n$1`);
+    }
+    if (!html.includes('data-ad="mobile"')) {
+      html = html.replace(/(<\/body>)/, `${AD_SLOTS.mobile}\n$1`);
+    }
+    if (html !== before) { fs.writeFileSync(f, html); touched++; }
+  }
+  return touched;
+}
+
 // === Main ===
 const targetArg = process.argv[2];const sites = targetArg
   ? SITES.filter(s => s.pkg === targetArg)
@@ -193,8 +230,9 @@ for (const site of sites) {
   syncBrandKit(siteDir);
   const replaced = replaceLegacySiteJs(siteDir);
   const busted = cacheBustSite(siteDir);
+  const ads = injectAdSlots(siteDir);
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history

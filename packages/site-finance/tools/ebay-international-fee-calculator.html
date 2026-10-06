@@ -19,7 +19,7 @@
   <meta property="og:title" content="eBay International Fee Calculator — Domestic &amp; Cross-Border | mQuickCalc">
   <meta property="og:description" content="Estimate eBay fees for US domestic, US international and UK/DE/CA/AU sales: final value fee, international surcharge and fixed fee. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"eBay International Fee Calculator","url":"https://finance.mquickcalc.com/tools/ebay-international-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate eBay fees for domestic and cross-border sales."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#marketplace'>Marketplace Fees</a><span class='sep'>›</span><span class='current'>eBay International Fee Calculator</span></nav></div>
 
 
@@ -114,7 +115,8 @@
     </div>
 
     
-    <h2>How eBay fees work</h2><p>eBay charges an Insertion fee for listing (free for most categories within monthly free listing allowances) and a Final Value Fee (a percentage of the sale price including shipping). Managed Payments adds payment processing fees.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How eBay fees work</h2><p>eBay charges an Insertion fee for listing (free for most categories within monthly free listing allowances) and a Final Value Fee (a percentage of the sale price including shipping). Managed Payments adds payment processing fees.</p>
 <h2>Frequently asked questions</h2>
     <h3>What is eBay's international fee for US sellers?</h3>
     <p>An extra percentage (commonly 1.65%) charged on top of the final value fee when a US seller's sale is to an international buyer.</p>
@@ -156,5 +158,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}var t={"us-dom":{fee:"13.25",intl:"0",fixed:"0.30"},"us-intl":{fee:"13.25",intl:"1.65",fixed:"0.30"},uk:{fee:"12.80",intl:"0",fixed:"0.30"},de:{fee:"12.00",intl:"0",fixed:"0.35"},ca:{fee:"13.25",intl:"0",fixed:"0.30"},au:{fee:"13.26",intl:"0",fixed:"0.30"}};function n(){var e=t[document.getElementById("market").value];document.getElementById("feePct").value=e.fee,document.getElementById("intlPct").value=e.intl,document.getElementById("fixed").value=e.fixed}function d(){var t=parseFloat(document.getElementById("price").value)||0,n=(parseFloat(document.getElementById("feePct").value)||0)/100,d=(parseFloat(document.getElementById("intlPct").value)||0)/100,l=parseFloat(document.getElementById("fixed").value)||0,c=t*n,m=t*d,i=c+m+l,u=t-i;document.getElementById("totVal").textContent=e(i),document.getElementById("feeVal").textContent=e(c),document.getElementById("intlVal").textContent=e(m),document.getElementById("fixedVal").textContent=e(l),document.getElementById("netVal").textContent=e(u),document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){n(),d()}),document.getElementById("calcBtn").addEventListener("click",d),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("market").value="us-intl",document.getElementById("price").value="100.00",n(),d()}),d(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),d)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

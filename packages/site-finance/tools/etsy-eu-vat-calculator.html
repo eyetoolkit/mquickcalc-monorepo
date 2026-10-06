@@ -19,7 +19,7 @@
   <meta property="og:title" content="Etsy EU VAT Calculator — VAT &amp; Fees for EU Sellers | mQuickCalc">
   <meta property="og:description" content="Work out VAT on your Etsy sales to EU buyers with per-country rates, then see your net after Etsy">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Etsy EU VAT Calculator","url":"https://finance.mquickcalc.com/tools/etsy-eu-vat-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate VAT and Etsy fees on EU sales."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#tax'>Tax</a><span class='sep'>›</span><span class='current'>Etsy EU VAT Calculator</span></nav></div>
 
 
@@ -124,7 +125,8 @@
     </div>
 
     
-    <h2>How Etsy fees are calculated</h2><p>Etsy charges a listing fee per item, a transaction fee on the sale price, and a payment processing fee. Some categories have different fee structures. Offsite Ads participation may add an additional 12% fee.</p> <h2>How EU VAT works</h2><p>VAT = Net price times tax rate (varies 17-27% by country). One Stop Shop (OSS) simplifies cross-border filing. Low-value goods (under 150 euro) may use IOSS for quick EU imports. Reverse charge applies to B2B intra-EU sales.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Etsy fees are calculated</h2><p>Etsy charges a listing fee per item, a transaction fee on the sale price, and a payment processing fee. Some categories have different fee structures. Offsite Ads participation may add an additional 12% fee.</p> <h2>How EU VAT works</h2><p>VAT = Net price times tax rate (varies 17-27% by country). One Stop Shop (OSS) simplifies cross-border filing. Low-value goods (under 150 euro) may use IOSS for quick EU imports. Reverse charge applies to B2B intra-EU sales.</p>
 <h2>Frequently asked questions</h2>
     <h3>Does Etsy collect VAT for EU sellers?</h3>
     <p>For digital items sold to EU buyers, Etsy often collects and remits VAT itself. For physical goods, sellers are typically responsible for VAT accounting. Always check current Etsy rules for your items.</p>
@@ -166,5 +168,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){var t,n,d,c=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;d=document.getElementById("inclVat").checked?(t=c)-(n=c/(1+m)):(t=c*(1+m))-(n=c);var l=document.getElementById("showFees").checked,o=l?.065*t+.03*t+.25:0,u=n-o;document.getElementById("vatVal").textContent=e(d),document.getElementById("netVal").textContent=e(n),document.getElementById("grossVal").textContent=e(t),document.getElementById("feeVal").textContent=l?e(o):"—",document.getElementById("finalVal").textContent=l?e(u):"—",document.getElementById("result").classList.add("show")}document.getElementById("country").addEventListener("change",function(){var e=document.getElementById("country").value;""!==e&&(document.getElementById("rate").value=e)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="120.00",document.getElementById("country").value="",document.getElementById("rate").value="20",document.getElementById("inclVat").checked=!0,document.getElementById("showFees").checked=!1,t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

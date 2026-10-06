@@ -7,7 +7,7 @@
   <meta name="description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/refinance-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Refinance Calculator", "url": "https://finance.mquickcalc.com/tools/refinance-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved."}</script>
 <meta property="og:title" content="Refinance Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.">
@@ -38,6 +38,7 @@
     <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#tax'>Finance</a><span class='sep'>›</span><span class='current'>Refinance Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -83,7 +84,8 @@
     </div>
 
 
-    <h2>How refinancing math works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How refinancing math works</h2>
     <p>Refinancing replaces your existing loan with a new one. You save money when the total cost of the new loan (interest + closing costs) is less than the remaining interest you'd pay on the old loan. The break-even point tells you how long it takes to recoup closing costs from monthly savings.</p>
     <p><strong>Rule of thumb</strong>: refinance if you can lower your rate by 1% or more AND you plan to keep the loan past the break-even point.</p>
     
@@ -119,5 +121,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(t,e,n){var a=e/100/12;return 0===a?t/n:t*a*Math.pow(1+a,n)/(Math.pow(1+a,n)-1)}function a(){var a=parseFloat(t("curBalance").value)||0,o=parseFloat(t("curRate").value)||0,l=parseFloat(t("curMonths").value)||0,u=parseFloat(t("newRate").value)||0,r=parseFloat(t("newMonths").value)||0,c=parseFloat(t("closing").value)||0,s=n(a,o,l),i=n(a,u,r),v=s*l-a-(i*r-a+c),h=s-i,M=h>0?Math.ceil(c/h):1/0;t("saveVal").textContent=(h>=0?"$"+e(h,2):"-$"+e(-h,2))+"/month",t("dimVal").textContent=h>=0?"Monthly savings":"Monthly increase",t("curMonth").textContent="$"+e(s,2),t("newMonth").textContent="$"+e(i,2),t("totalSave").textContent=v>=0?"$"+e(v,2):"-$"+e(-v,2),t("breakEven").textContent=isFinite(M)?M+" months":"Never",t("result").classList.add("show")}["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("curBalance").value="18000",t("curRate").value="7.5",t("curMonths").value="48",t("newRate").value="5.5",t("newMonths").value="48",t("closing").value="500",a()}),a()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

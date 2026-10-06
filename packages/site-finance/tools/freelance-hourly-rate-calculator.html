@@ -19,7 +19,7 @@
   <meta property="og:title" content="Freelance Hourly Rate Calculator — Price Your Time | mQuickCalc">
   <meta property="og:description" content="Turn a target annual income into a freelance hourly rate — factoring billable hours, overhead and taxes. See your hourly, monthly and required gross i">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Hourly Rate Calculator","url":"https://finance.mquickcalc.com/tools/freelance-hourly-rate-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate a freelance hourly rate from target income."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#business'>Business</a><span class='sep'>›</span><span class='current'>Freelance Hourly Rate Calculator</span></nav></div>
 
 
@@ -115,7 +116,8 @@
     </div>
 
     
-    <h2>How to set freelance rates</h2><p>Hourly rate calculation: (desired annual salary plus overhead plus business costs) divided by billable hours per year. Full-time has ~2080 hours but freelancers average only 1200-1600 billable hours due to admin, marketing, and downtime.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How to set freelance rates</h2><p>Hourly rate calculation: (desired annual salary plus overhead plus business costs) divided by billable hours per year. Full-time has ~2080 hours but freelancers average only 1200-1600 billable hours due to admin, marketing, and downtime.</p>
 <h2>Frequently asked questions</h2>
     <h3>How many billable hours does a freelancer work?</h3>
     <p>Realistically 1,000–1,500 a year — the rest goes to admin, marketing and unpaid work. A 40-hour salaried equivalent is ~2,000 hours.</p>
@@ -156,5 +158,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){var t=parseFloat(document.getElementById("target").value)||0,n=parseFloat(document.getElementById("hours").value)||0,d=parseFloat(document.getElementById("weeks").value)||0,l=parseFloat(document.getElementById("overhead").value)||0,a=(parseFloat(document.getElementById("tax").value)||0)/100,o=n*d,m=o>0?(t+l)/(1-a):0,u=o>0?m/o:0;document.getElementById("rateVal").textContent=e(u),document.getElementById("grossVal").textContent=e(m),document.getElementById("billVal").textContent=Math.round(o),document.getElementById("monthVal").textContent=e(m/12),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("target").value="60000",document.getElementById("hours").value="25",document.getElementById("weeks").value="48",document.getElementById("overhead").value="5000",document.getElementById("tax").value="25",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

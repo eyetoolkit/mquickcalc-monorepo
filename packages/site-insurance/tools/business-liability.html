@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+<link rel="stylesheet" href="/css/site.css?v=cd77ef48">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Business Liability Insurance Premium Estimator", "url": "https://cover.mquickcalc.com/tools/business-liability", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate annual general liability insurance costs for small to medium businesses. Input your industry, revenue, and employee count."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Business Liability Insurance Premium Estimator", "item": "https://cover.mquickcalc.com/tools/business-liability"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Business Liability Insurance Premium Estimator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -30,6 +30,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#business">Business</a><span class="sep">›</span><span class="current">Business Liability Insurance Premium Estimator</span></nav></div>
 <main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">🏢</div>
@@ -77,7 +78,8 @@
     
   
     <div class="related-section">
-      <h2>Related calculators</h2>
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
       <div class="tool-grid">
         <a href="/tools/workers-comp" class="tool-card"><div class="icon-row"><span class="emoji">👷</span><div class="tc-title">Workers' Compensation Premium Calculator</div></div><div class="tc-desc">Per-employee rates by industry classification.</div></a>
         <a href="/tools/cyber-insurance" class="tool-card"><div class="icon-row"><span class="emoji">💻</span><div class="tc-title">Cyber Insurance Cost Estimator (B2B)</div></div><div class="tc-desc">Ransomware and breach coverage costs.</div></a>
@@ -103,4 +105,5 @@
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,t){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:t||0,maximumFractionDigits:t||0})}function t(t){return"$"+e(t,0)}function n(){const e=document.getElementById("industry").value,n=document.getElementById("revenue").value,i=+document.getElementById("employees").value,o=document.getElementById("limit").value;let a={tech:700,retail:650,restaurant:850,construction:1200,professional:600,freelance:500,beauty:750,manufacturing:1100}[e]||700;a*={"<100k":.8,"100k-500k":1,"500k-1m":1.3,"1m-5m":1.7,"5m+":2.2}[n]||1,a*=1+.02*i;a*={"1m":1,"2m":1.4,"5m":2}[o]||1;const d=Math.round(.8*a),r=Math.round(1.5*a),l=(Math.round(a/12),document.getElementById("industry").selectedOptions[0].text);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">🏢 Your B2B insurance estimate</h3>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink);margin-bottom:4px">${t(d)} – ${t(r)}<span style="font-size:13px;color:var(--muted);font-weight:var(--fw-medium)"> / year</span></div>\n    <div style="color:var(--muted);margin-bottom:16px">≈ ${t(Math.round(a/12))} / month · ${l} · ${o} liability</div>\n    <div style="padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>Common B2B coverages (in addition to general liability):</strong> Workers' comp (legally required in most states), professional liability / E&O (if you give advice), product liability (if you make/sell products), cyber liability (if you hold customer data), and commercial auto. Each adds cost. Get a bundled BOP (Business Owner's Policy) for the best value.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>

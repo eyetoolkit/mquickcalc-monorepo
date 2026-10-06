@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://finance.mquickcalc.com/tools/loan-calculator">
   <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Loan Calculator — Monthly Payment & Total Interest","url":"https://finance.mquickcalc.com/tools/loan-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly loan payment, total interest paid, and amortization."}
   </script>
@@ -58,6 +58,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Loan Calculator — Monthly Payment & Total Interest</span></nav></div>
 
 <main id="main-content" class="page">
@@ -104,7 +105,8 @@
       <p>Each month the lender charges interest on the remaining principal, then applies the rest of your payment to the balance. Early in the term, most of your payment is interest; later, most is principal. A 7% loan on $25,000 over 5 years costs about $495/month, with $4,700 of that being interest — a reminder of why shorter terms save money.</p>
     </div>
 
-    <h2>How this calculator works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
     <p>The standard formula is M = P × (r(1+r)ⁿ) / ((1+r)ⁿ - 1), where M is monthly payment, P is principal, r is monthly interest rate (annual / 12), and n is number of months.</p>
 
     <h2>Frequently asked questions</h2>
@@ -151,5 +153,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n=parseFloat(document.getElementById("principal").value)||0,a=(parseFloat(document.getElementById("rate").value)||0)/100,l=parseFloat(document.getElementById("years").value)||0,d=Math.max(12*l,0),c=a/12;if(0===a)t=n/Math.max(d,1);else{var m=Math.pow(1+c,d);t=n*(c*m)/(m-1)}var o=t*d,u=o-n;document.getElementById("monthlyVal").textContent=e(t),document.getElementById("totalVal").textContent=e(o),document.getElementById("interestVal").textContent=e(u),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="25000",document.getElementById("rate").value="7",document.getElementById("years").value="5",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

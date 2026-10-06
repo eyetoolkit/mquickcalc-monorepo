@@ -7,7 +7,7 @@
   <meta name="description" content="Free ideal weight calculator: estimate healthy weight range using Devine, Robinson, Miller formulas and WHO BMI 18.5–24.9 range. Includes muscle mass, bone…">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/ideal-weight-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Ideal Weight Calculator", "url": "https://health.mquickcalc.com/tools/ideal-weight-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller)."}</script>
 <meta property="og:title" content="Ideal Weight Calculator — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Estimate your ideal healthy weight range based on height, gender, and body frame. Uses three evidence-based formulas (Devine, Robinson, Miller).">
@@ -48,6 +48,7 @@
     <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#body'>Body Composition</a><span class='sep'>›</span><span class='current'>Ideal Weight Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -93,7 +94,8 @@
     </div>
 
 
-    <h2>How these formulas work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How these formulas work</h2>
     <p>Three formulas are used because no single formula is universally accepted as "correct" for ideal weight. The <strong>Devine formula</strong> (1974) was developed for hospital drug dosing, not for general health — it was built from data on height and weight from a 1974 study and was never intended to be a health target. The <strong>Robinson formula</strong> (1983) and <strong>Miller formula</strong> (1990) are refinements using similar methodology. All three were built from insurance company data on height and weight at different mortality rates — meaning they represent the weight at which people in those studies lived longest, not necessarily the weight at which any individual is healthiest. They all assume a medium frame; we apply a ±10% adjustment for small and large frames.</p>
     <p>The <strong>BMI-based range</strong> (18.5–24.9) is the WHO's healthy weight range and is based on large-scale epidemiological studies linking BMI to health outcomes across populations. It is not perfect — it does not account for muscle mass, bone density, or ethnic differences in body composition. An Olympic athlete with 8% body fat may have a BMI of 27, which falls in the "overweight" category despite being clearly not overweight. Conversely, an elderly person with osteoporosis may have a "normal" BMI despite having excessive body fat.</p>
 
@@ -151,5 +153,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("height").value)||0,a=e("gender").value,l=e("frame").value;if(n){var i=n/2.54,r=Math.max(0,i-60),u="large"===l?1.1:"small"===l?.9:1,o=("male"===a?50:45.5)+2.3*r,d=("male"===a?52:49)+1.9*r,m=("male"===a?56.2:53.1)+1.41*r,c=n/100,g=18.5*c*c,v=24.9*c*c,s=((o*=u)+(d*=u)+(m*=u))/3,f=.05*s;e("rangeVal").textContent=t(s-f,1)+" – "+t(s+f,1)+" kg",e("devineVal").textContent=t(o,1)+" kg",e("robVal").textContent=t(d,1)+" kg",e("millVal").textContent=t(m,1)+" kg",e("bmiRangeVal").textContent=t(g,1)+" – "+t(v,1)+" kg",e("result").classList.add("show")}}["height","gender","frame"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("height").value="175",e("gender").value="male",e("frame").value="medium",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

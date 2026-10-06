@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0f766e">
-<link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+<link rel="stylesheet" href="/css/site.css?v=cd77ef48">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "High vs Low Deductible Trade-off Calculator", "url": "https://cover.mquickcalc.com/tools/deductible-tradeoff", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "The math behind choosing a high or low deductible on any insurance policy. Calculate exactly when a lower deductible is worth the extra premium cost."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "High vs Low Deductible Trade-off Calculator", "item": "https://cover.mquickcalc.com/tools/deductible-tradeoff"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the High vs Low Deductible Trade-off Calculator", "step": [{"@type": "HowToStep", "name": "Enter your details", "text": "Fill in the required fields."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press Calculate to run the estimation."}, {"@type": "HowToStep", "name": "Review the range", "text": "Read your ballpark estimate."}]}</script>
@@ -30,6 +30,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#auto">Auto</a><span class="sep">›</span><span class="current">High vs Low Deductible Trade-off Calculator</span></nav></div>
 <main id="main-content" class="page"><div class="wrap">
 <div class="page-hero-emoji">⚖️</div>
@@ -68,7 +69,8 @@
     
   
     <div class="related-section">
-      <h2>Related calculators</h2>
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
       <div class="tool-grid">
         <a href="/tools/car-insurance-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Car Insurance Premium Estimator</div></div><div class="tc-desc">Ballpark annual cost by state, age, driving record.</div></a>
         <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling home + auto.</div></a>
@@ -96,4 +98,5 @@
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
 <script>!function(){function e(e,t){return null===e||isNaN(e)||!isFinite(e)?"—":e.toLocaleString("en-US",{minimumFractionDigits:t||0,maximumFractionDigits:t||0})}function t(t){return"$"+e(t,0)}function n(){const e=+document.getElementById("cur_premium").value,n=+document.getElementById("cur_deductible").value,a=+document.getElementById("alt_premium").value,i=+document.getElementById("alt_deductible").value,r=+document.getElementById("claim_count").value,l=(document.getElementById("claim_amount").value,a-e),d=n-i,o=-3*l+r*d;let s;s=o>0?"✅ The alternative (lower deductible) saves you money":o<2*-l?"❌ Stick with your current plan":"⚖️ Close call — consider your peace of mind",document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">⚖️ Trade-off analysis (3-year horizon)</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Premium difference (alt − cur)</td><td style="text-align:right">${t(l)} / year</td></tr>\n      <tr><td>Deductible difference per claim</td><td style="text-align:right">${t(d)}</td></tr>\n      <tr><td>Expected claim savings (${r} × ${t(d)})</td><td style="text-align:right">${t(r*d)}</td></tr>\n      <tr><td><strong>Net 3-year result</strong></td><td style="text-align:right;font-weight:700;color:${o>=0?"var(--ok)":"var(--danger)"}">${t(Math.abs(o))} ${o>=0?"savings":"loss"}</td></tr>\n    </table>\n    <div style="font-size:18px;font-weight:600;margin-bottom:8px">${s}</div>\n    <details>\n      <summary style="cursor:pointer;font-size:13px;color:var(--brand-ink)">Break-even analysis</summary>\n      <div style="margin-top:10px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px">\n        <p style="margin:0">How many claims to break even? <strong>${Math.ceil(3*Math.abs(l)/d)}</strong> claims over 3 years</p>\n        <p style="margin:4px 0">${l>0?"If you file more claims than that, the lower deductible pays off. If fewer, stick with higher deductible + lower premium.":"Wait — the alternative premium is actually cheaper! Both premium and deductible are better, so it's clearly the better choice."}</p>\n      </div>\n    </details>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>

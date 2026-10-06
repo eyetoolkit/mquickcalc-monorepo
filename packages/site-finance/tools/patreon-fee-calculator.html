@@ -19,7 +19,7 @@
   <meta property="og:title" content="Patreon Fee Calculator — Creator Take-Home Income | mQuickCalc">
   <meta property="og:description" content="Estimate how much a creator keeps from Patreon membership income after platform and payment processing fees. Free, no sign-up.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Patreon Fee Calculator","url":"https://finance.mquickcalc.com/tools/patreon-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate creator take-home income from Patreon memberships."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#creator'>Creator Economy</a><span class='sep'>›</span><span class='current'>Patreon Fee Calculator</span></nav></div>
 
 
@@ -104,7 +105,8 @@
       <p>Patreon earns a <strong>platform fee</strong> on membership income and separate <strong>payment processing fees</strong> may apply per charge. Whether processing fees are passed to members depends on the creator's settings and plan. Defaults above (5% + 2.9% + $0.30) are common approximations — edit them to match your situation.</p>
     </div>
 
-    <h2>How Patreon fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Patreon fees work</h2>
     <p>A creator sees the membership money before fees; Patreon deducts its platform percentage and, where applicable, payment processing per transaction before the payout lands. Actual take-home therefore varies with your plan, the members' card networks, currency conversion and your country.</p>
 
     <h2>Frequently asked questions</h2>
@@ -147,5 +149,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("income").value)||0,n=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("paypct").value)||0)/100)+(parseFloat(document.getElementById("payflat").value)||0)*Math.max(parseInt(document.getElementById("txcount").value,10)||0,0),d=n+l,a=t-d;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(n),document.getElementById("payVal").textContent=e(l),document.getElementById("totVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("income").value="1000.00",document.getElementById("plat").value="5",document.getElementById("paypct").value="2.9",document.getElementById("payflat").value="0.30",document.getElementById("txcount").value="100",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

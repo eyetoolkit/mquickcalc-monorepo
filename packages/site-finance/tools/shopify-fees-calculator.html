@@ -20,7 +20,7 @@
   <meta property="og:title" content="Shopify Fees Calculator — Transaction Fees per Plan | mQuickCalc">
   <meta property="og:description" content="Estimate monthly Shopify transaction and payment-processing fees for Basic, Shopify and Advanced plans, with Shopify Payments or third-party gateways.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Shopify Fees Calculator","url":"https://finance.mquickcalc.com/tools/shopify-fees-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate Shopify transaction fees by plan and gateway."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
@@ -105,7 +106,8 @@
     </div>
 
     
-    <h2>How Shopify fees work</h2><p>Monthly subscription (Starter to Advanced, 5-399 per month) plus transaction fees (2.9% + 0.30 for external payments, lower for Shopify Payments). Additional fees apply for gift cards, subscriptions, and marketplace apps.</p>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Shopify fees work</h2><p>Monthly subscription (Starter to Advanced, 5-399 per month) plus transaction fees (2.9% + 0.30 for external payments, lower for Shopify Payments). Additional fees apply for gift cards, subscriptions, and marketplace apps.</p>
 <h2>Frequently asked questions</h2>
     <h3>Which Shopify plan has the lowest fees?</h3>
     <p>Advanced has the lowest transaction rate (2.4% + $0.30 with Shopify Payments) but the highest monthly subscription — ideal for high-volume stores. Basic has the highest per-transaction cost.</p>
@@ -147,5 +149,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){var e={basic:{rate:.029,sx:.02},shopify:{rate:.026,sx:.01},advanced:{rate:.024,sx:.005}},t={basic:"Basic — Shopify Payments",shopify:"Shopify — Shopify Payments",advanced:"Advanced — Shopify Payments"};function n(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function d(){var d=parseFloat(document.getElementById("sales").value)||0,a=document.getElementById("plan").value,c=document.getElementById("gateway").checked,o=e[a].rate+(c?e[a].sx:0),l=c?0:30,m=d*o+l;document.getElementById("planLine").textContent=c?t[a]+" (3rd-party surcharge)":t[a],document.getElementById("feeVal").textContent=n(m),document.getElementById("rateVal").textContent=(100*o).toFixed(2)+"%",document.getElementById("fixedVal").textContent=c?"$0.00 (no fixed per-order fee)":n(l)+" (100 orders)",document.getElementById("result").classList.add("show")}document.getElementById("plan").addEventListener("change",function(){document.getElementById("ratePct").value=""}),document.getElementById("gateway").addEventListener("change",function(){document.getElementById("thirdPartyNote").style.display=this.checked?"block":"none"}),document.getElementById("calcBtn").addEventListener("click",d),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sales").value="5000.00",document.getElementById("plan").value="shopify",document.getElementById("gateway").checked=!1,document.getElementById("thirdPartyNote").style.display="none",d()}),d(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),d)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

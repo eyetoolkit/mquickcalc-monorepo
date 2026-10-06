@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://finance.mquickcalc.com/tools/hourly-to-salary">
   <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Hourly to Salary Converter — Annual, Weekly, Daily Pay","url":"https://finance.mquickcalc.com/tools/hourly-to-salary","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert between hourly wage and annual salary."}
   </script>
@@ -50,6 +50,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Hourly to Salary Converter — Annual, Weekly, Daily Pay</span></nav></div>
 
 <main id="main-content" class="page">
@@ -102,7 +103,8 @@
       <p>A $50,000 annual salary equals about $24/hour at 40 hours/week for 52 weeks. A $25/hour job with 40 hours/week and 50 weeks is $50,000 — same money. Salaried positions usually include paid vacation, health insurance, and retirement match, while hourly jobs are more flexible and often pay overtime. Compare total compensation, not just the headline number.</p>
     </div>
 
-    <h2>How this calculator works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
     <p>Annual = (hourly × hours/week × weeks/year) + (overtime hours × 1.5 × hourly). The 1.5x is the US federal overtime rate; some states (California) require 2x after 12 hours/day.</p>
 
     <h2>Frequently asked questions</h2>
@@ -145,5 +147,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("hourly").value)||0,n=parseFloat(document.getElementById("hours").value)||40,l=parseFloat(document.getElementById("weeks").value)||50,d=t*n*l+1.5*(parseFloat(document.getElementById("overtime").value)||0)*t,o=d/12,m=d/26,u=d/52,c=d/(5*l);document.getElementById("annualVal").textContent=e(d),document.getElementById("monthlyVal").textContent=e(o),document.getElementById("weeklyVal").textContent=e(u),document.getElementById("dailyVal").textContent=e(c),document.getElementById("biweeklyVal").textContent=e(m),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("hourly").value="25",document.getElementById("hours").value="40",document.getElementById("weeks").value="50",document.getElementById("overtime").value="0",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

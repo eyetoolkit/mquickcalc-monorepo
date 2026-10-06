@@ -23,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mquickcalc.com/tools/tip-calculator">
   <meta property="og:site_name" content="mQuickCalc">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Tip Calculator","url":"https://mquickcalc.com/tools/tip-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate restaurant tip and split the bill among friends."}
   </script>
@@ -55,6 +55,7 @@
     </nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><span class='current'>Tip Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -111,7 +112,8 @@
       <p>Standard US restaurant tipping is <strong>15-20%</strong> of the pre-tax bill. 18% is a safe default. Lower than 15% reads as a complaint; 25% is for genuinely excellent service. Outside the US, tipping norms differ wildly (often already included, or not expected) — adjust accordingly.</p>
     </div>
 
-    <h2>How this calculator works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
     <p>The calculator multiplies your pre-tax bill amount by your chosen tip percentage, then divides the total (bill plus tip) by the number of people to get each person's share. The "effective percentage" display corrects for the common situation where tax has been added to your bill before tipping — if you tipped the stated percentage on a post-tax total, the effective tip rate is lower than you intended. By entering your pre-tax bill amount and the percentage you meant to tip, the effective percentage shows you exactly what percentage of the pre-tax amount you are actually leaving.</p>
     <p>The tip percentage itself is not arbitrary — it reflects the service industry's labor model. In the United States, tipped servers are paid a subminimum cash wage (as low as $2.13 per hour in some states) on the assumption that tips will bring total earnings to at least the federal minimum wage of $7.25 per hour. This creates a system where service quality is directly compensated by customers, not by employers. This is different from most other countries where service charge is included in the menu price or a service charge is added by default.</p>
 
@@ -170,5 +172,6 @@
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("amount").value)||0,n=(parseFloat(document.getElementById("pct").value)||0)/100,d=Math.max(parseInt(document.getElementById("people").value,10)||1,1),c=t*n,l=t+c,o=l/d,a=c/d,u=t>0?c/t:0;document.getElementById("tipVal").textContent=e(c),document.getElementById("totalVal").textContent=e(l),document.getElementById("perVal").textContent=e(o),document.getElementById("tipPerVal").textContent=e(a),document.getElementById("effVal").textContent=t>0?(100*u).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.querySelectorAll("button[data-pct]").forEach(function(e){e.addEventListener("click",function(){document.getElementById("pct").value=e.getAttribute("data-pct"),t()})}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="80.00",document.getElementById("pct").value="18",document.getElementById("people").value="2",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

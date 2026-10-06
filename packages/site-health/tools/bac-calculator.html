@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/bac-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BAC Calculator (Blood Alcohol)", "url": "https://health.mquickcalc.com/tools/bac-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula."}</script>
 <meta property="og:title" content="BAC Calculator (Blood Alcohol) — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Estimate your blood alcohol content (BAC) from drinks consumed, body weight, and time elapsed. Uses the Widmark formula.">
@@ -38,6 +38,7 @@
     <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#body'>Other</a><span class='sep'>›</span><span class='current'>BAC Calculator (Blood Alcohol)</span></nav></div>
 
 <main id="main-content" class="page">
@@ -86,7 +87,8 @@
     </div>
 
 
-    <h2>How the Widmark formula works</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How the Widmark formula works</h2>
     <p>BAC = grams of alcohol ÷ (body water fraction × body weight in grams) − 0.015 × hours elapsed. The body metabolizes roughly 15mg% of alcohol per hour — about one standard drink per hour.</p>
     
     
@@ -121,5 +123,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("weight").value)||0,a=e("gender").value,r=parseFloat(e("drinks").value)||0,i=parseFloat(e("hours").value)||0;if(n){var l=14*r/(("male"===a?.68:.55)*n)/10,o=l-.015*i;o<0&&(o=0);var u=o>.05?"🚫 YES":"✅ No",s=o/.015;e("bigVal").textContent=t(o,3)+"%",e("dimVal").textContent="Estimated BAC after "+t(i,1)+"h",e("legalVal").textContent=u,e("soberVal").textContent=t(s,1)+" hours",e("peakVal").textContent=t(l,3)+"%",e("result").classList.add("show")}}["weight","gender","drinks","hours"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("weight").value="70",e("gender").value="male",e("drinks").value="3",e("hours").value="2",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Vrbo Host Fee Calculator", "url": "https://finance.mquickcalc.com/tools/vrbo-host-fee-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout."}</script>
 <meta property="og:title" content="Vrbo Host Fee Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Estimate Vrbo pay-per-booking commission and payment processing fees to see your net host payout.">
@@ -38,6 +38,7 @@
     <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#freelance">Freelance</a><a href="/#tax">Tax</a><a href="/about">About</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#ecommerce'>Ecommerce</a><span class='sep'>›</span><span class='current'>Vrbo Host Fee Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -82,7 +83,8 @@
     </div>
 
 
-    <h2>How Vrbo fees work</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How Vrbo fees work</h2>
     <p>Vrbo hosts on the pay-per-booking plan pay a commission (typically 5-14% depending on market + whether you use Vrbo's payment platform) plus payment processing if you use Vrbo Payments. Rates vary by country and time of year.</p>
     
     
@@ -117,5 +119,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=(parseFloat(e("price").value)||0)*(parseFloat(e("nights").value)||0),i=n*(parseFloat(e("commission").value)/100),o=n*(parseFloat(e("processing").value)/100)+(parseFloat(e("servicePerBooking").value)||0),s=n-i-o,a=n>0?(i+o)/n*100:0;e("netVal").textContent="$"+t(s,2),e("grossVal").textContent="$"+t(n,2),e("commVal").textContent="$"+t(i,2),e("procVal").textContent="$"+t(o,2),e("effVal").textContent=t(a,2)+"%",e("result").classList.add("show")}["price","nights","commission","processing","servicePerBooking"].forEach(function(t){var i=e(t);i&&i.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("price").value="180",e("nights").value="7",e("commission").value="8",e("processing").value="3",e("servicePerBooking").value="0.50",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

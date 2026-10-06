@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/protein-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Protein Calculator", "url": "https://health.mquickcalc.com/tools/protein-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included."}</script>
 <meta property="og:title" content="Protein Calculator — Free Tool | mQuickCalc Health">
 <meta property="og:description" content="Calculate your daily protein intake goal based on your weight, activity level, and fitness goal. RDA, muscle-building, and dieting targets included.">
@@ -38,6 +38,7 @@
     <nav><a href="/#body">Body</a><a href="/#nutrition">Nutrition</a><a href="/#heart">Heart</a><a href="/#fitness">Fitness</a><a href="/#pregnancy">Pregnancy</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#nutrition'>Nutrition</a><span class='sep'>›</span><span class='current'>Protein Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -89,7 +90,8 @@
     
     
 <div class="related-section">
-      <h2>Related calculators</h2>
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
       <div class="tool-grid"><a href="/tools/macro-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🥗</span><div class="tc-title">Macro Calculator</div></div><div class="tc-desc">Protein, carbs, fat targets.</div></a><a href="/tools/tdee-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🔥</span><div class="tc-title">TDEE Calculator</div></div><div class="tc-desc">Total daily energy expenditure.</div></a><a href="/tools/water-intake-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💧</span><div class="tc-title">Water Intake</div></div><div class="tc-desc">Daily hydration target.</div></a></div>
     </div>
     <p class="upd">Last updated <time datetime="2026-09-13">September 13, 2026</time></p>
@@ -119,5 +121,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("weight").value)||0,n=parseFloat(t("activity").value),i=t("goal").value;if(a){var l=.8*a,u=n*a;"build"===i&&(u=Math.max(u,1.6*a)),"cut"===i&&(u=Math.max(u,1.8*a));var o=2.2*a,r=(u=Math.min(u,2.2*a))/3;t("bigVal").textContent=e(u,0)+" g",t("rdaVal").textContent=e(l,0)+" g",t("tgtVal").textContent=e(u,0)+" g",t("upperVal").textContent=e(o,0)+" g",t("perMeal").textContent=e(r,0)+" g",t("result").classList.add("show")}}["weight","activity","goal"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("weight").value="70",t("activity").value="1.2",t("goal").value="build",a()}),a()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>

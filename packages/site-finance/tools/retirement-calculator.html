@@ -7,7 +7,7 @@
   <meta name="description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
   <link rel="canonical" href="https://finance.mquickcalc.com/tools/retirement-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=8ca43d85">
+  <link rel="stylesheet" href="/css/site.css?v=cd77ef48">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Retirement Calculator", "url": "https://finance.mquickcalc.com/tools/retirement-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included."}</script>
 <meta property="og:title" content="Retirement Calculator — Free Tool | mQuickCalc Finance">
 <meta property="og:description" content="Calculate how much you need to save for retirement and whether you're on track. Compounding interest + Social Security included.">
@@ -38,6 +38,7 @@
     <nav><a href="/#ecommerce">Ecommerce</a><a href="/#creators">Creators</a><a href="/#tax">Tax</a></nav>
   </div>
 </header>
+<div class="ad-slot ad-header" data-ad="header"></div>
 <div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#tax'>Finance</a><span class='sep'>›</span><span class='current'>Retirement Calculator</span></nav></div>
 
 <main id="main-content" class="page">
@@ -77,7 +78,8 @@
     </div>
     </div>
 
-    <h2>Retirement math simplified</h2>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Retirement math simplified</h2>
     <p>We use the standard compound future-value formula for monthly contributions, then apply the <strong>4% rule</strong> to estimate safe annual withdrawal during retirement. The 4% rule says you can withdraw 4% of your nest egg each year and adjust for inflation, with a 95% chance the money lasts 30+ years. Social Security (if you're in the US) would supplement this — we don't include it here.</p>
     
     <div class="related-section"><h2>Related calculators</h2><div class="tool-grid"><a href="/tools/refinance-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📉</span><div class="tc-title">Refinance</div></div><div class="tc-desc">Should you save vs refinance?</div></a><a href="/tools/auto-loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🚗</span><div class="tc-title">Auto Loan</div></div><div class="tc-desc">Pay off loans vs invest?</div></a><a href="/tools/mortgage-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Mortgage</div></div><div class="tc-desc">Home loan amortization.</div></a></div></div>
@@ -109,5 +111,6 @@
 <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseInt(e("age").value)||0,a=parseInt(e("retireAge").value)||65,r=parseFloat(e("current").value)||0,l=parseFloat(e("monthly").value)||0,u=parseFloat(e("return").value)||0,i=parseInt(e("life").value)||90,o=Math.max(0,a-n),s=12*o;if(0!==s){var c=function(e,t,n,a){var r=n/12;return 0===r?e+t*a:e*Math.pow(1+r,a)+t*(Math.pow(1+r,a)-1)/r}(r,l,u,s),v=r+l*s,f=c-v,d=Math.max(0,i-a),h=d>0?c/(12*d):0,m=.04*c;e("bigVal").textContent="$"+t(c,0),e("yearsVal").textContent=o+" yrs",e("contribVal").textContent="$"+t(v,0),e("interestVal").textContent="$"+t(f,0),e("monthlyRetire").textContent="$"+t(h,0),e("statusVal").textContent=m>=3e4?"✅":m>=15e3?"📈":"⚠️",e("result").classList.add("show")}}["age","retireAge","current","monthly","return","life"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("age").value="35",e("retireAge").value="65",e("current").value="15000",e("monthly").value="800",e("return").value="7",e("life").value="90",n()}),n()}();
 </script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
 </html>
