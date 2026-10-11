@@ -73,8 +73,8 @@ jobs:
           import re, sys
           checks = {
               'packages/site-main/index.html':      'Free Unit Converters',
-              'packages/site-finance/index.html':   'Free Fee & Profit Calculators',
-              'packages/site-health/index.html':    'Free Health & Wellness Calculators',
+              'packages/site-finance/index.html':   'Know your fees',
+              'packages/site-health/index.html':    'Know your numbers',
               'packages/site-insurance/index.html': 'Cover',
           }
           ok = True
