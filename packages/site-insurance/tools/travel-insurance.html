@@ -221,7 +221,7 @@
     $('rangeVal').textContent = money(total * 0.8) + ' – ' + money(total * 1.35);
 
     var medical = age >= 60 ? 250000 : 100000;
-    var evac = usInclusive ? 500000 : 250000;
+    var _region = $('region').value; var evac = _region === '1.35' ? 500000 : 250000;
     var isSchengen = $('region').value === '1.00';   /* Europe / Schengen option */
     var usInclusive = $('region').value === '1.35';
     var rows = [
