@@ -39,10 +39,10 @@
 <div class="calc-card">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
 <div><label for="rent">Monthly rent</label><input id="rent" class="input" type="number" value="1800"></div>
-<div><label for="state">State</label><input id="state" class="input" type="text" placeholder="e.g. CA" value="CA" maxlength="2"></div>
+<div><label for="state">State</label><select id="state" class="input"><option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA" selected>CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select></div>
 <div><label for="content">Estimated value of all your personal belongings</label><input id="content" class="input" type="number" value="25000"></div>
 <div><label for="liability">Liability coverage</label><select id="liability" class="input"><option value="100000">$100,000</option><option value="300000" selected>$300,000</option><option value="500000">$500,000</option></select></div>
-<div><label for="deductible">Deductible</label><select id="deductible" class="input"><option value="250">$250</option><option value="500" selected>$500</option><option value="1000">$1,000</option></select></div>
+<div><label for="deductible">Deductible</label><select id="deductible" class="input"><option value="250">$250</option><option value="500" selected>$500</option><option value="1000">$1,000</option><option value="2500">$2,500</option><option value="5000">$5,000</option></select></div>
 <div><label for="pet">Do you have a dog or cat?</label><select id="pet" class="input"><option value="no" selected>No</option><option value="yes">Yes (add ~10% for liability)</option></select></div>
 </div>
 <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
@@ -100,7 +100,51 @@
 <script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
 <script src="/js/site-core.js?v=f5a9998e" defer></script>
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
-<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=+document.getElementById("rent").value,n=+document.getElementById("content").value,o=+document.getElementById("liability").value,r=document.getElementById("pet").value,i=.008*n,d=5e-4*o;let a=Math.round(i+d);"yes"===r&&(a=Math.round(1.1*a)),a=Math.max(a,120);const l=Math.round(a/12);document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${e(n)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>\n      <tr><td>Liability</td><td style="text-align:right;font-weight:600">${e(o)}</td><td style="text-align:right;color:var(--muted)">< ${e(1e5)} is risky</td></tr>\n      <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${e(3*t)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>\n    </table>\n    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(l)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span> <span style="font-size:13px;color:var(--muted)">(${e(a)}/year)</span></div>\n    <div style="margin-top:12px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n      💡 Renters insurance is <strong>incredibly cheap</strong> — $15-30/month for most people. Your landlord's insurance does NOT cover your belongings. If you have anything worth more than $5,000 total, renters insurance pays for itself after one incident.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
-</script>
+<script>!function(){
+function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}
+function e(e){return"$"+t(e,0)}
+var SR={"AL":4.2,"AK":2.8,"AZ":3,"AR":4.5,"CA":4,"CO":2.8,"CT":3.8,"DE":3,"FL":7,"GA":4.5,"HI":3.5,"ID":2.6,"IL":3.5,"IN":3,"IA":2.5,"KS":3.2,"KY":3.5,"LA":5.5,"ME":3,"MD":3.2,"MA":3.5,"MI":3,"MN":3.2,"MS":4.8,"MO":3.2,"MT":2.8,"NE":2.8,"NV":3.5,"NH":2.8,"NJ":3.2,"NM":3,"NY":3.5,"NC":3.8,"ND":2.3,"OH":3,"OK":3.8,"OR":2.5,"PA":3,"RI":3.3,"SC":4.2,"SD":2.5,"TN":3.5,"TX":4.5,"UT":2.8,"VT":2.5,"VA":3.2,"WA":2.5,"WV":3,"WI":2.8,"WY":2.3};
+var DED={"250":1.2,"500":1.1,"1000":1,"2500":0.85,"5000":0.7};
+var BASE=3.5;
+var stateFactor=function(k){var r=SR[k];return r&&r>0?r/BASE:1};
+var dedFactor=function(v){var f=DED[v];return typeof f==="number"&&f>0?f:DED[500]};
+var n=function(){
+var rent=+document.getElementById("rent").value;
+var content=+document.getElementById("content").value;
+var liab=+document.getElementById("liability").value;
+var pet=document.getElementById("pet").value;
+var state=document.getElementById("state").value;
+var ded=document.getElementById("deductible").value;
+var sf=stateFactor(state);
+var df=dedFactor(ded);
+var contentPrem=.008*content*sf*df;
+var liabPrem=5e-4*liab;
+var prem=Math.round(contentPrem+liabPrem);
+if(pet==='yes'){prem=Math.round(1.1*prem);}
+var premium=Math.max(prem,120);
+var monthly=Math.round(premium/12);
+var hasPet=pet==="yes";
+var dedLabel="$"+ded;
+var stateRate=SR[state]||BASE;
+document.getElementById("result").innerHTML=`\n
+    <h3 style="margin:0 0 12px">📦 Your coverage recommendations</h3>\n
+    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n
+      <tr><td>Personal property</td><td style="text-align:right;font-weight:600">${e(content)}</td><td style="text-align:right;color:var(--muted)">adjust if needed</td></tr>\n
+      <tr><td>Liability</td><td style="text-align:right;font-weight:600">${e(liab)}</td><td style="text-align:right;color:var(--muted)">< ${e(1e5)} is risky</td></tr>\n
+      <tr><td>Additional living expenses</td><td style="text-align:right;font-weight:600">${e(3*rent)}</td><td style="text-align:right;color:var(--muted)">3 months of rent</td></tr>\n
+    </table>\n
+    <div style="font-size:24px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(monthly)}<span style="font-size:14px;color:var(--muted);font-weight:var(--fw-medium)"> / month</span> <span style="font-size:13px;color:var(--muted)">(${e(premium)}/year)</span></div>\n
+    <div style="margin-top:12px;padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n
+      <div style="margin-bottom:6px"><strong>Your inputs:</strong> ${state} · ${dedLabel} deductible${hasPet?" · pet liability":""}</div>\n
+      <div style="margin-bottom:6px">Property rate ${stateRate} per $1,000 in ${state} vs ${BASE} national (${sf.toFixed(2)}×) · Deductible factor ${df.toFixed(2)}×</div>\n
+      💡 Renters insurance is <strong>incredibly cheap</strong> — $15-30/month for most people. Your landlord's insurance does NOT cover your belongings. If you have anything worth more than $5,000 total, renters insurance pays for itself after one incident.\n
+    </div>\n
+  `;
+document.getElementById("result").classList.add("show");
+};
+document.getElementById("calcBtn")?.addEventListener("click",n);
+document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload());
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",n):n();
+}();</script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>

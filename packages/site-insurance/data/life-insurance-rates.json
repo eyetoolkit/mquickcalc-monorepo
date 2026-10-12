@@ -50,6 +50,21 @@
         "age": 65,
         "male": 168,
         "female": 145
+      },
+      {
+        "age": 70,
+        "male": 220,
+        "female": 177
+      },
+      {
+        "age": 75,
+        "male": 272,
+        "female": 218
+      },
+      {
+        "age": 80,
+        "male": 696,
+        "female": 601
       }
     ],
     "term_20": [
@@ -103,14 +118,17 @@
         "male": 275,
         "female": 235
       }
-    ]
+    ],
+    "max_term_20_age": 65,
+    "age_coverage_note": "Average monthly premium per $500,000 of coverage, healthy non-smoker. term_20 stops at 65 because carriers generally stop writing 15/20/30-year terms past that age; older ages fall back to term_10."
   },
   "smoker_premium": 2.2,
   "whole_life_multiplier": 3.5,
   "dime_guide": {
-    "debt_ratio": 1.0,
+    "debt_ratio": 1,
     "income_multiple": 10,
     "mortgage_use": "remaining balance",
     "education_per_child": 150000
-  }
+  },
+  "as_of_year": 2026
 }

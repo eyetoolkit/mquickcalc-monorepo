@@ -237,5 +237,11 @@
     "sports_car": 1.5,
     "electric": 1.1,
     "luxury": 1.6
+  },
+  "mileage_factors": {
+    "under7500": 0.9,
+    "mid": 1,
+    "high": 1.1,
+    "over20000": 1.25
   }
 }

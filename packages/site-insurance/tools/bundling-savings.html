@@ -109,7 +109,59 @@
 <script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
 <script src="/js/site-core.js?v=f5a9998e" defer></script>
 <script src="/js/site-enhance.js?v=65faf024" defer></script>
-<script>!function(){function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}function e(e){return"$"+t(e,0)}function n(){const t=+document.getElementById("auto_premium").value,n=+document.getElementById("home_premium").value;if("yes"===document.getElementById("bundled_now").value)return document.getElementById("result").innerHTML="\n      <h3 style=\"margin:0 0 12px\">📦 You're already bundled!</h3>\n      <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>\n    ",void document.getElementById("result").classList.add("show");const r=t+n,i=[.1,.12,.15],o=Math.round(r*i[0]),d=(Math.round(r*i[1]),Math.round(r*i[2]));document.getElementById("result").innerHTML=`\n    <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>\n    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n      <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${e(r)}</td></tr>\n      <tr><td>Auto premium</td><td style="text-align:right">${e(t)}</td></tr>\n      <tr><td>Home premium</td><td style="text-align:right">${e(n)}</td></tr>\n    </table>\n    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm)">\n      <div style="font-size:14px;color:var(--muted);margin-bottom:4px">Estimated annual savings (10-15% typical)</div>\n      <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(o)} – ${e(d)}</div>\n      <div style="font-size:13px;color:var(--muted)">Save ${e(Math.round(o/12))} – ${e(Math.round(d/12))} per month</div>\n    </div>\n    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px">\n      💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.\n    </div>\n  `,document.getElementById("result").classList.add("show")}document.getElementById("calcBtn")?.addEventListener("click",n),document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload()),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
-</script>
+<script>!function(){
+function t(t,e){return null===t||isNaN(t)||!isFinite(t)?"—":t.toLocaleString("en-US",{minimumFractionDigits:e||0,maximumFractionDigits:e||0})}
+function e(e){return"$"+t(e,0)}
+var BUNDLE=[.1,.15];
+// good student 10-25% -> 0.175；new roof 5-10% -> 0.075；pay-in-full 5%；alarm 按 5-10% -> 0.075
+var BONUS={alarm:.075,safe:.175,paidfull:.05};
+var BONUS_LABEL={alarm:"Home alarm / new roof",safe:"Safe driver / good student",paidfull:"Pay in full"};
+var BONUS_CAP=.2;
+var selectedBonus=function(){
+const el=document.getElementById("safety_bonus");
+const picked=el?Array.from(el.selectedOptions).map(o=>o.value).filter(v=>v in BONUS):[];
+const raw=picked.reduce((a,v)=>a+BONUS[v],0);
+return{picked:picked,raw:raw,applied:Math.min(raw,BONUS_CAP)};
+};
+function n(){
+const t=+document.getElementById("auto_premium").value;
+const n=+document.getElementById("home_premium").value;
+const major=document.getElementById("auto_carrier").value;
+const already=document.getElementById("bundled_now").value;
+const b=selectedBonus();
+const rate=major==="yes"?BUNDLE:[.05,.1];
+if("yes"===already)return document.getElementById("result").innerHTML="\n      <h3 style=\"margin:0 0 12px\">📦 You're already bundled!</h3>\n      <p>You're getting the bundling discount already. You might save a little by shopping around, but you're not missing the biggest discount.</p>\n    ",void document.getElementById("result").classList.add("show");
+const r=t+n;
+const lo=Math.round(r*rate[0]*(1-b.applied));
+const hi=Math.round(r*rate[1]);
+const notes=[];
+if(major!=="yes")notes.push("Non-major auto carriers usually offer a smaller bundling discount, so this estimate uses 5–10% instead of 10–15%.");
+if(b.picked.length)notes.push(b.picked.map(v=>BONUS_LABEL[v]).join(", ")+" discount"+(b.picked.length>1?"s ":" ")+"("+Math.round(b.raw*100)+"%"+(b.raw>BONUS_CAP?" → capped at 20%":")")+" subtracted from the low end.");
+document.getElementById("result").innerHTML=`\n
+    <h3 style="margin:0 0 12px">📦 Potential bundling savings</h3>\n
+    <table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:16px">\n
+      <tr><td>Current annual total</td><td style="text-align:right;font-weight:600">${e(r)}</td></tr>\n
+      <tr><td>Auto premium</td><td style="text-align:right">${e(t)}</td></tr>\n
+      <tr><td>Home premium</td><td style="text-align:right">${e(n)}</td></tr>\n
+    </table>\n
+    <div style="padding:12px;background:var(--brand-bg);border-radius:var(--radius-sm)">\n
+      <div style="font-size:14px;color:var(--muted);margin-bottom:4px">Estimated annual savings (${Math.round(rate[0]*100)}-${Math.round(rate[1]*100)}% typical)</div>\n
+      <div style="font-size:22px;font-weight:var(--fw-black);color:var(--brand-ink)">${e(lo)} – ${e(hi)}</div>\n
+      <div style="font-size:13px;color:var(--muted)">Save ${e(Math.round(lo/12))} – ${e(Math.round(hi/12))} per month</div>\n
+    </div>\n
+    <div style="margin-top:16px;font-size:13px;color:var(--muted)">\n
+      <div style="margin-bottom:6px"><strong>Your inputs:</strong> ${major==="yes"?"Major auto carrier":"Non-major auto carrier"} · Bundling ${Math.round(rate[0]*100)}-${Math.round(rate[1]*100)}%${b.picked.length?" · "+b.picked.length+" discount"+(b.picked.length>1?"s":"")+" selected":" · no extra discounts"}</div>\n
+      ${notes.length?notes.map(x=>`<div style="margin-bottom:4px">• ${x}</div>`).join(""):""}\n
+    </div>\n
+    <div style="margin-top:16px;padding:12px;background:var(--warn-bg);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)">\n
+      💡 <strong>How to use this:</strong> Call 2-3 carriers (start with your auto or home carrier — they want to keep your business). Ask for a "multi-policy discount quote" for both auto and home. Compare to your current separate premiums. Just make sure the coverage limits and deductibles are identical before comparing.\n
+    </div>\n
+  `;
+document.getElementById("result").classList.add("show");
+}
+document.getElementById("calcBtn")?.addEventListener("click",n);
+document.getElementById("resetBtn")?.addEventListener("click",()=>location.reload());
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",n):n();
+}();</script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body></html>
