@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc</title>
-  <meta name="description" content="Free mortgage calculator: estimate monthly PITI payment (principal, interest, tax, insurance) with amortization. Includes 15-year vs 30-year comparison, PMI…">
-  <link rel="canonical" href="https://finance.mquickcalc.com/tools/mortgage-calculator">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="theme-color" content="#059669">
-  <meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc">
-  <meta name="twitter:description" content="Calculate monthly mortgage payment (PITI) including principal, interest, tax, and insurance. Includes 15yr vs 30yr comparison, PMI guide, and escrow explanation. Free, no sign-up.">
-  <meta name="twitter:site" content="@mquickcalcfinance">
-  <meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
-  <meta property="og:title" content="Mortgage Calculator — Monthly Payment & Total Cost | mQuickCalc">
-  <meta property="og:description" content="Calculate monthly mortgage payment (PITI) including principal, interest, tax, and insurance. Includes 15yr vs 30yr comparison, PMI guide, and escrow explanation. Free, no sign-up.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://finance.mquickcalc.com/tools/mortgage-calculator">
-  <meta property="og:site_name" content="mQuickCalc Finance">
-  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator — Monthly Payment & Total Cost","url":"https://finance.mquickcalc.com/tools/mortgage-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly mortgage payment including principal, interest, property tax, and insurance."}
-  </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"How much house can I afford on my salary?","acceptedAnswer":{"@type":"Answer","text":"The 28/36 rule: housing costs (PITI) should not exceed 28% of gross monthly income, and total debt payments should not exceed 36%. So if you earn $10,000/month gross, your maximum housing budget is approximately $2,800/month PITI. Lenders also factor in credit score, debt-to-income ratio, down payment, and employment history."}},
-  {"@type":"Question","name":"Should I put 20% down to avoid PMI?","acceptedAnswer":{"@type":"Answer","text":"Generally yes. PMI costs 0.5–1.5% of the loan balance per year and protects the lender, not you. On a $400,000 home with a $320,000 mortgage, PMI at 0.8% adds $2,560/year. However, if you do not have enough cash for 20% down, putting 10% down with PMI is often better than waiting."}},
-  {"@type":"Question","name":"What is PMI and how do I avoid it?","acceptedAnswer":{"@type":"Answer","text":"Private mortgage insurance protects the lender if you stop making payments. It is required when your down payment is below 20%. On a conventional loan, you can request PMI removal once your loan-to-value ratio drops below 80%. FHA loans carry MIP that cannot be removed without refinancing into a conventional loan once you reach 20% equity."}},
-  {"@type":"Question","name":"What is the difference between a 15-year and 30-year mortgage?","acceptedAnswer":{"@type":"Answer","text":"On a $400,000 loan at 6.5%, a 30-year term costs $2,528/month and $509,000 total interest; a 15-year term costs $3,477/month but only $226,000 total interest — saving $283,000 in interest while paying off 15 years earlier."}},
-  {"@type":"Question","name":"How does the Fed affect mortgage rates?","acceptedAnswer":{"@type":"Answer","text":"The Federal Reserve influences mortgage rates but does not directly set them. When the Fed raises its benchmark rate, mortgage rates typically rise 1–3 months later. Mortgage rates also reflect inflation expectations — if markets expect higher inflation, long-term rates will be higher to compensate lenders for losing purchasing power over 30 years."}},
-  {"@type":"Question","name":"Should I pay points to lower my mortgage rate?","acceptedAnswer":{"@type":"Answer","text":"Each mortgage point costs 1% of the loan amount and typically reduces the rate by 0.25%. Paying points makes sense only if you keep the mortgage for 7+ years. For most buyers, taking the par rate (no points) is the better choice unless you are certain you will stay for 10+ years."}},
-  {"@type":"Question","name":"What is an escrow account and do I need one?","acceptedAnswer":{"@type":"Answer","text":"An escrow account collects money each month as part of your mortgage payment to cover property taxes and homeowners insurance when they come due. Lenders typically require escrow when your down payment is below 20%. The benefit is avoiding large lump-sum bills twice a year; the downside is potential escrow shortages if taxes or insurance costs rise unexpectedly."}}
-]}</script>
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator — Monthly Payment & Total Cost","item":"https://finance.mquickcalc.com/tools/mortgage-calculator"}]}
-  </script>
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculator — Monthly Payment & Amortization Schedule | mQuickCalc Finance</title>
+<meta name="description" content="Free mortgage calculator: monthly payment, total interest, total cost, and full amortization schedule. Supports fixed-rate mortgages in USD with property tax and PMI estimates.">
+<link rel="canonical" href="https://finance.mquickcalc.com/tools/mortgage-calculator">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/site.css?v=e4e09245">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator","url":"https://finance.mquickcalc.com/tools/mortgage-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free mortgage calculator: monthly payment, total interest, total cost, and full amortization schedule."}</script>
+<meta property="og:title" content="Mortgage Calculator — Monthly Payment & Amortization Schedule | mQuickCalc Finance">
+<meta property="og:description" content="Calculate your monthly mortgage payment and see the full amortization schedule.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://finance.mquickcalc.com/tools/mortgage-calculator">
+<meta property="og:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Calculator — Monthly Payment & Amortization Schedule">
+<meta name="twitter:description" content="Calculate your monthly mortgage payment and see the full amortization schedule.">
+<meta name="twitter:image" content="https://finance.mquickcalc.com/og-image.png">
+<meta name="twitter:site" content="@mquickcalcfinance">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://finance.mquickcalc.com/tools/mortgage-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Mortgage Calculator","step":[{"@type":"HowToStep","name":"Enter your loan details","text":"Type the home price, down payment, interest rate, and loan term. The down payment can be a dollar amount or a percentage."},{"@type":"HowToStep","name":"Read your payment summary","text":"The tool shows your monthly principal & interest, estimated monthly taxes and insurance, and the total cost over the life of the loan."},{"@type":"HowToStep","name":"Review the amortization schedule","text":"Scroll down to see how each payment splits between principal and interest over time, and when you will reach 20% equity."}]}</script>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#059669">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -50,125 +32,268 @@
   <div class="header-inner">
     <a class="brand" href="/">m<b>Quick</b>Calc</a>
     <nav>
-      <a href="/#ecommerce">Ecommerce</a>
-      <a href="/#fees">Fees</a>
-      <a href="/#finance">Finance</a>
-      <a href="/#tax">Tax</a>
-      <a href="/#creator">Creator</a>
+      <a href="/#loan">Loans</a>
+      <a href="/#investment">Investment</a>
+      <a href="/#tax">Tax & Payroll</a>
+      <a href="/#budget">Budgeting</a>
     </nav>
   </div>
 </header>
 <div class="ad-slot ad-header" data-ad="header"></div>
-<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#finance'>Finance &amp; Pricing</a><span class='sep'>›</span><span class='current'>Mortgage Calculator — Monthly Payment & Total Cost</span></nav></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#loan">Loans</a><span class="sep">›</span><span class="current">Mortgage Calculator</span></nav></div>
 
 <main id="main-content" class="page">
   <div class="wrap">
-    <div class='page-hero-emoji'>🏠</div>
-<div class="disclaimer-banner" style="background:#fff3cd;border-left:4px solid #e0a800;padding:14px 18px;border-radius:6px;margin:18px 0;font-size:0.9rem;color:#856404;">
-<strong>Estimates only.</strong> Mortgage estimates are based on the rate, term, and tax/insurance you enter. Real mortgages include closing costs, PMI (if down payment is under 20%), HOA fees, and varying property tax rates. Use this for planning, not for an official lender quote.
-</div>
-    <h1 class="page-title">Mortgage Calculator — Monthly Payment & Total Cost</h1>
-    <p class="lede">Work out your monthly mortgage payment including principal, interest, property tax, and home insurance. The classic PITI breakdown that lenders use.</p>
+    <div style="font-size:48px;line-height:1;text-align:center;margin-bottom:8px">🏡</div>
+    <h1 class="page-title">Mortgage Calculator</h1>
+    <p class="lede">Calculate your monthly mortgage payment, total interest, and total cost. See the full amortization schedule — when your payments stop being mostly interest and start being mostly equity.</p>
 
     <div class="calc-card">
-      <label for="price">Home price</label>
-      <input id="price" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="500000.00">
 
-      <div class="row">
-        <div class="field">
-          <label for="down">Down payment</label>
-          <input id="down" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="100000.00">
+      <div class="row" style="margin-bottom:0">
+        <div>
+          <label class="f-label" for="homePrice">Home price (USD)</label>
+          <input id="homePrice" class="input" type="number" inputmode="decimal" min="1000" step="1000" value="450000">
         </div>
-        <div class="field">
-          <label for="rate">Interest rate (%)</label>
-          <input id="rate" class="input" type="number" inputmode="decimal" min="0" step="0.1" value="6.5">
+        <div>
+          <label class="f-label" for="downPct">Down payment</label>
+          <div style="display:flex;gap:8px">
+            <input id="downPct" class="input" type="number" inputmode="decimal" min="0" max="90" step="0.5" value="20" style="width:100px;flex-shrink:0">
+            <select id="downType" class="input" style="flex:1">
+              <option value="pct">%</option>
+              <option value="usd">USD</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="field">
-          <label for="years">Term (years)</label>
-          <input id="years" class="input" type="number" min="1" step="1" value="30">
+      <div class="row" style="margin-top:16px">
+        <div>
+          <label class="f-label" for="rate">Annual interest rate (%)</label>
+          <input id="rate" class="input" type="number" inputmode="decimal" min="0.1" max="25" step="0.05" value="6.75">
         </div>
-        <div class="field">
-          <label for="tax">Property tax (%/year)</label>
-          <input id="tax" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1.2">
-        </div>
-        <div class="field">
-          <label for="insurance">Home insurance ($/year)</label>
-          <input id="insurance" class="input" type="number" inputmode="decimal" min="0" step="1" value="1800">
+        <div>
+          <label class="f-label" for="term">Loan term (years)</label>
+          <select id="term" class="input">
+            <option value="30" selected>30 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+            <option value="10">10 years</option>
+          </select>
         </div>
       </div>
-      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+
+      <div class="row" style="margin-top:16px">
+        <div>
+          <label class="f-label" for="propTax">Annual property tax (USD, optional)</label>
+          <input id="propTax" class="input" type="number" inputmode="decimal" min="0" step="100" placeholder="e.g. 4500">
+        </div>
+        <div>
+          <label class="f-label" for="ins">Annual insurance (USD, optional)</label>
+          <input id="ins" class="input" type="number" inputmode="decimal" min="0" step="100" placeholder="e.g. 1800">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
         <button id="calcBtn" class="btn">Calculate</button>
         <button id="resetBtn" class="btn ghost">Reset</button>
       </div>
-
-      <div id="result" class="result">
-        <div class="big" id="totalVal">$0.00</div>
-        <div class="dim">total monthly payment (PITI)</div>
-        <div class="grid">
-          <div class="cell"><div class="lbl">Principal &amp; interest</div><div class="val" id="piVal">$0.00</div></div>
-          <div class="cell"><div class="lbl">Total interest</div><div class="val" id="interestVal">$0.00</div></div>
-          <div class="cell"><div class="lbl">Loan amount</div><div class="val" id="loanVal">$0.00</div></div>
-        </div>
-        <p class="note" style="margin-top:12px;">Does not include PMI, HOA fees, or closing costs. Property tax defaults to 1.2% (US national average, 2024).</p>
-      </div>
     </div>
 
-    <div class="callout">
-      <div class="t">The real cost of a mortgage</div>
-      <p>A $400,000 30-year mortgage at 6.5% costs about $2,528/month PITI, but you pay back $910,000 over 30 years — $510,000 of that is interest, more than the original loan. A 15-year term at the same rate cuts the total interest to $260,000, but the monthly payment is $3,484. The 30-year is more affordable monthly; the 15-year is dramatically cheaper in total.</p>
+    <div class="result" id="result">
+      <div style="text-align:center;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px">
+        <div class="big" id="monthlyVal">—</div>
+        <div class="dim">Estimated monthly payment (P&amp;I)</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+        <div class="cell">
+          <div class="lbl">Principal &amp; Interest</div>
+          <div class="val" id="piVal">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Property Tax</div>
+          <div class="val" id="taxVal">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Insurance</div>
+          <div class="val" id="insVal">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Total Interest</div>
+          <div class="val" id="totalInt">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Total Cost</div>
+          <div class="val" id="totalCost">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">20% Equity Date</div>
+          <div class="val" id="equityDate">—</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <h3 style="font-size:15px;font-weight:700;margin:0">Amortization Schedule</h3>
+          <button id="toggleSched" class="btn ghost" style="padding:8px 14px;font-size:13px">Show full</button>
+        </div>
+        <div id="schedSummary" style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <thead>
+              <tr style="background:var(--bg-muted)">
+                <th style="padding:8px 10px;text-align:left;font-weight:600;color:var(--muted)">Month</th>
+                <th style="padding:8px 10px;text-align:right;font-weight:600;color:var(--muted)">Payment</th>
+                <th style="padding:8px 10px;text-align:right;font-weight:600;color:var(--muted)">Principal</th>
+                <th style="padding:8px 10px;text-align:right;font-weight:600;color:var(--muted)">Interest</th>
+                <th style="padding:8px 10px;text-align:right;font-weight:600;color:var(--muted)">Balance</th>
+              </tr>
+            </thead>
+            <tbody id="schedBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="fullSched" style="display:none;margin-top:10px;max-height:360px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--radius-md)">
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead style="position:sticky;top:0;background:var(--bg-muted);z-index:1">
+            <tr>
+              <th style="padding:7px 8px;text-align:left;font-weight:600;color:var(--muted)">#</th>
+              <th style="padding:7px 8px;text-align:right;font-weight:600;color:var(--muted)">Year-Month</th>
+              <th style="padding:7px 8px;text-align:right;font-weight:600;color:var(--muted)">Payment</th>
+              <th style="padding:7px 8px;text-align:right;font-weight:600;color:var(--muted)">Principal</th>
+              <th style="padding:7px 8px;text-align:right;font-weight:600;color:var(--muted)">Interest</th>
+              <th style="padding:7px 8px;text-align:right;font-weight:600;color:var(--muted)">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="fullBody"></tbody>
+        </table>
+      </div>
+
+      <p class="dim" style="margin-top:14px;font-size:12px">Property tax and insurance are estimates added to the monthly P&I payment. Actual amounts depend on your location and insurer. Consult a mortgage broker for exact figures.</p>
     </div>
 
     <div class="ad-slot ad-incontent" data-ad="incontent"></div>
-<h2>How this calculator works</h2>
-    <p>PITI = Principal & Interest + monthly property tax + monthly insurance. Principal & Interest is calculated with the standard amortization formula. Property tax is (home price × rate) / 12; insurance is (annual premium) / 12.</p>
 
-    <h2>Frequently asked questions</h2>
-    <h3>How much house can I afford on my salary?</h3>    <p>The most common rule is the 28/36 rule: your total housing costs (principal, interest, property tax, insurance, and HOA) should not exceed 28% of your gross monthly income, and your total debt payments (housing plus car loans, student loans, credit cards, etc.) should not exceed 36%. So if you earn $10,000/month gross, your maximum housing budget is approximately $2,800/month PITI. However, lenders also factor in your credit score, debt-to-income ratio, down payment size, and employment history. Pre-qualification from a lender gives you a more precise number than the rule-of-thumb calculation.</p>
-    <h3>Should I put 20% down to avoid PMI?</h3>    <p>Generally yes — PMI (private mortgage insurance) costs 0.5–1.5% of the loan balance per year and protects the lender, not you, if you default. On a $400,000 home with a $320,000 mortgage, PMI at 0.8% adds $2,560/year ($213/month) to your cost. Putting 20% down eliminates this cost entirely. However, if you do not have enough cash for a 20% down payment, putting 10% down with PMI is still better than waiting — the monthly PMI cost is often less than the additional rent you would pay while saving. Once you reach 20% equity (either through payments or home price appreciation), you can request PMI removal.</p>
-    <h3>What is PMI and how do I avoid it?</h3>    <p>Private mortgage insurance protects the lender — not you — if you stop making payments and the home goes to foreclosure. It is typically required when your down payment is less than 20% of the home's purchase price. On a conventional loan, you can request PMI removal once your loan-to-value ratio drops below 80% (typically after 5–7 years of payments on a 30-year mortgage, depending on home appreciation). Federal Housing Administration (FHA) loans carry MIP (mortgage insurance premium) that works differently — MIP cannot be removed without refinancing into a conventional loan once you reach 20% equity.</p>
-    <h3>What is the difference between a 15-year and 30-year mortgage?</h3>    <p>A 15-year mortgage has dramatically higher monthly payments but saves enormous amounts of total interest. On a $400,000 loan at 6.5%: a 30-year term costs $2,528/month and $509,000 in total interest over 30 years; a 15-year term costs $3,477/month but only $226,000 in total interest — saving $283,000 in interest while paying off 15 years earlier. The 15-year is the better financial decision if you can comfortably afford the higher payment. If the 15-year payment would strain your budget or cause you to skip retirement contributions, the 30-year with extra principal payments is a reasonable alternative — you get flexibility without sacrificing the interest savings of a shorter term.</p>
-    <h3>How does the Fed affect mortgage rates?</h3>    <p>Federal Reserve monetary policy influences mortgage rates but does not directly set them. When the Fed raises its benchmark interest rate, mortgage rates typically rise 1–3 months later as lenders adjust to the changed cost of capital. Mortgage rates also reflect expectations for future inflation — if markets expect higher inflation, long-term mortgage rates (which are fixed for 30 years) will be higher to compensate lenders for losing purchasing power over time. The Fed's actions and language can move mortgage rates by 0.25–0.50% within days. When the Fed cuts rates, mortgage rates tend to fall gradually rather than immediately, because lenders also factor in the economic outlook and their own cost of funds.</p>
-    <h3>Should I pay points to lower my mortgage rate?</h3>    <p>Mortgage points (also called discount points) are upfront fees paid at closing to reduce the interest rate — each point costs 1% of the loan amount and typically reduces the rate by 0.25%. On a $320,000 loan, one point costs $3,200 and might reduce the rate from 6.5% to 6.25%. Whether paying points makes sense depends on how long you keep the mortgage: if you keep it for 7 years, the $3,200 upfront cost is roughly break-even against the monthly savings. If you sell or refinance within 5 years, paying points is a net loss. For most buyers, taking the lender's par rate (no points) is the right choice unless you are certain you will stay in the home for 10+ years.</p>
-    <h3>What is an escrow account and do I need one?</h3>    <p>An escrow account (or impound account) is a separate account where your lender collects money each month as part of your mortgage payment to cover property taxes and homeowners insurance when they come due. Lenders typically require escrow accounts when your down payment is less than 20%, and they may allow (or require) it even with larger down payments. The lender manages the account and pays your tax and insurance bills on your behalf when due. The main benefit is that you avoid a large lump-sum bill twice a year; the downside is that you pay 1/12 of the annual cost each month and can face escrow shortages if taxes or insurance costs rise unexpectedly.</p>
-
-    <div class="related-section">
-      <h2>Related calculators</h2>
-      <div class="tool-grid">
-        <a href="/tools/loan-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Loan Calculator</div></div><div class="tc-desc">Auto, personal, or student loan monthly payment.</div></a>
-        <a href="/tools/savings-calculator" class="tool-card"><div class="icon-row"><span class="emoji">💰</span><div class="tc-title">Savings Calculator</div></div><div class="tc-desc">See how saving grows with compound interest.</div></a>
-        <a href="/tools/break-even-calculator" class="tool-card"><div class="icon-row"><span class="emoji">📊</span><div class="tc-title">Break-Even Calculator</div></div><div class="tc-desc">Find how many units you need to sell to break even.</div></a>
-        <a href="/tools/sales-tax-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🧾</span><div class="tc-title">Sales Tax Calculator</div></div><div class="tc-desc">Add or remove sales tax from a price.</div></a>
-      </div>
+    <div style="margin-top:36px;max-width:760px">
+      <h2 style="font-size:20px;letter-spacing:-.02em;margin:0 0 16px">How mortgage amortization works</h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7">
+        In the early years of a mortgage, most of your monthly payment goes toward interest — the bank is earning back the risk of lending you a large sum. As the principal balance shrinks, the interest portion of each payment decreases and the principal portion grows. This is why making extra principal payments early in a loan's life has an outsized effect on total interest paid.
+      </p>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-top:12px">
+        The <strong>20% equity date</strong> shows when your remaining balance drops to 80% of the original home value — the threshold at which you can typically cancel private mortgage insurance (PMI). If you put down less than 20%, lenders typically require PMI until you reach this point.
+      </p>
     </div>
-    <p class="upd">Last updated <time datetime="2026-09-13">Sep 13, 2026</time> — rates and figures change over time, so always confirm with the current source.</p>    <p class="note" style="margin-top:22px;">Estimates for general information only, not financial advice — see our <a href="/disclaimer">disclaimer</a>.</p>
-    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+
   </div>
 </main>
-<section class="see-also">
-  <h2>See also</h2>
-  <ul>
-      <li><a href="/tools/auto-loan-calculator">Auto Loan Calculator</a></li>
-      <li><a href="/tools/loan-calculator">Loan Calculator — Monthly Payment & Total Interest</a></li>
-      <li><a href="/tools/refinance-calculator">Refinance Calculator</a></li>
-      <li><a href="/loans-mortgages">📂 All Loans & Mortgages Calculators</a></li>
-  </ul>
-</section>
 
-
-
-<footer id="site-footer" class="site-footer"></footer>
-<div id="cookiebar" class="cookiebar">
-  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
-  <button id="cookie-accept" class="btn">Got it</button>
-</div>
-<script src="/js/site-core.js?v=f5a9998e" defer></script>
-  <script src="/js/site-enhance.js?v=65faf024" defer></script>
-  <script src="/js/site-meters.js?v=3b464033" defer></script>
-<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n=parseFloat(document.getElementById("price").value)||0,a=parseFloat(document.getElementById("down").value)||0,l=Math.max(n-a,0),d=(parseFloat(document.getElementById("rate").value)||0)/100,m=parseFloat(document.getElementById("years").value)||30,o=(parseFloat(document.getElementById("tax").value)||0)/100,c=parseFloat(document.getElementById("insurance").value)||0,u=Math.max(12*m,1),r=d/12;if(0===d)t=l/u;else{var y=Math.pow(1+r,u);t=l*(r*y)/(y-1)}var i=t+n*o/12+c/12,B=t*u-l;document.getElementById("piVal").textContent=e(t),document.getElementById("totalVal").textContent=e(i),document.getElementById("interestVal").textContent=e(B),document.getElementById("loanVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="500000",document.getElementById("down").value="100000",document.getElementById("rate").value="6.5",document.getElementById("years").value="30",document.getElementById("tax").value="1.2",document.getElementById("insurance").value="1800",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
-</script>
+<footer class="site-footer">
+  <div class="wrap" style="padding:0 20px">
+    <p style="font-size:13px;color:#64748b;text-align:center;line-height:1.6">
+      Estimates are for orientation only. This tool does not constitute financial advice. Consult a qualified mortgage professional before making financial decisions.
+    </p>
+  </div>
+</footer>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+  function fmt(n){return '$'+Math.round(n).toLocaleString()}
+  function y_fmt(n){return '$'+n.toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0})}
+
+  function compute(){
+    var price=parseFloat($('homePrice').value)||0;
+    var downType=$('downType').value;
+    var downPct=parseFloat($('downPct').value)||0;
+    var down=downType==='pct'? price*downPct/100 : downPct;
+    var rate=parseFloat($('rate').value)||0;
+    var term=parseInt($('term').value,10)||30;
+    var propTax=parseFloat($('propTax').value)||0;
+    var ins=parseFloat($('ins').value)||0;
+
+    var principal=price-down;
+    if(principal<=0)return;
+
+    var monthlyRate=rate/100/12;
+    var n=term*12;
+
+    var pmt=principal*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1);
+    if(!isFinite(pmt))pmt=principal/n;
+
+    var totalInt=pmt*n-principal;
+    var totalCost=principal+totalInt;
+    var equity80price=price*0.8;
+
+    var balance=principal;
+    var schedule=[];
+    for(var i=1;i<=n;i++){
+      var interestPayment=balance*monthlyRate;
+      var principalPayment=pmt-interestPayment;
+      balance=Math.max(0,balance-principalPayment);
+      schedule.push({m:i,pmt:pmt,principal:principalPayment,interest:interestPayment,balance:balance});
+    }
+
+    // Find when balance hits 80% of original price (PMI cancel point)
+    var equityMonth=1;
+    for(var j=0;j<schedule.length;j++){
+      if(price-schedule[j].balance<=price*0.2)break;
+      equityMonth=j+2;
+    }
+
+    var year=Math.floor((equityMonth-1)/12)+1;
+    var month=(equityMonth-1)%12+1;
+    var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    $('monthlyVal').textContent=fmt(pmt+(propTax+ins)/12);
+    $('piVal').textContent=fmt(pmt);
+    $('taxVal').textContent=propTax>0? fmt(propTax/12)+'/mo' : '—';
+    $('insVal').textContent=ins>0? fmt(ins/12)+'/mo' : '—';
+    $('totalInt').textContent=y_fmt(totalInt);
+    $('totalCost').textContent=y_fmt(principal+totalInt+propTax*term+ins*term);
+    $('equityDate').textContent=equityMonth<=n? 'Year '+year+', '+months[month-1] : 'N/A';
+
+    // Summary: first year, midpoint, last year
+    var summary=['<tr><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:left">Year 1, Jan</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right">'+fmt(schedule[0].pmt)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;color:var(--ok)">'+fmt(schedule[0].principal)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;color:var(--muted)">'+fmt(schedule[0].interest)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;font-weight:600">'+fmt(schedule[0].balance)+'</td></tr>'];
+    var midIdx=Math.floor(n/2);
+    summary.push('<tr style="background:var(--bg-soft)"><td style="padding:8px 10px;border-bottom:1px solid var(--line)">Year '+(Math.floor(midIdx/12)+1)+', month '+((midIdx%12)+1)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right">'+fmt(schedule[midIdx].pmt)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;color:var(--ok)">'+fmt(schedule[midIdx].principal)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;color:var(--muted)">'+fmt(schedule[midIdx].interest)+'</td><td style="padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;font-weight:600">'+fmt(schedule[midIdx].balance)+'</td></tr>');
+    var last=schedule[schedule.length-1];
+    summary.push('<tr><td style="padding:8px 10px">Final payment</td><td style="padding:8px 10px;text-align:right">'+fmt(last.balance+last.interest)+'</td><td style="padding:8px 10px;text-align:right;color:var(--ok)">'+fmt(last.balance)+'</td><td style="padding:8px 10px;text-align:right;color:var(--muted)">'+fmt(last.interest)+'</td><td style="padding:8px 10px;text-align:right;font-weight:600">$0</td></tr>');
+    $('schedBody').innerHTML=summary.join('');
+
+    // Full schedule
+    var fullRows=schedule.map(function(r,i){
+      var yr=Math.floor(i/12)+1;
+      var mo=(i%12)+1;
+      return '<tr><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:left">'+r.m+'</td><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:right">Y'+yr+'M'+mo+'</td><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:right">'+fmt(r.pmt)+'</td><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:right">'+fmt(r.principal)+'</td><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:right">'+fmt(r.interest)+'</td><td style="padding:5px 8px;border-bottom:1px solid var(--line);text-align:right;font-weight:600">'+fmt(r.balance)+'</td></tr>';
+    });
+    $('fullBody').innerHTML=fullRows.join('');
+
+    $('result').classList.add('show');
+  }
+
+  $('calcBtn').addEventListener('click',compute);
+  $('resetBtn').addEventListener('click',function(){
+    $('homePrice').value=450000;$('downPct').value=20;$('downType').value='pct';
+    $('rate').value=6.75;$('term').value='30';$('propTax').value='';$('ins').value='';
+    $('result').classList.remove('show');
+  });
+
+  $('toggleSched').addEventListener('click',function(){
+    var el=$('fullSched');
+    el.style.display=el.style.display==='none'?'block':'none';
+    this.textContent=el.style.display==='none'?'Show full':'Hide';
+  });
+
+  ['homePrice','downPct','rate','term','propTax','ins'].forEach(function(id){
+    var el=$(id);if(el)el.addEventListener('input',compute);
+  });
+  $('downType').addEventListener('change',compute);
+  compute();
+})();
+</script>
 </body>
 </html>

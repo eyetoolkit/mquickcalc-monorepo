@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Running Pace Calculator — 5K, 10K, Half Marathon, Marathon Pace | mQuickCalc</title>
+<meta name="description" content="Calculate your running pace, predict race finish times for 5K, 10K, half marathon and marathon, or find the pace you need to hit a target time. Uses Jack Daniels' VDOT formula.">
+<link rel="canonical" href="https://mquickcalc.com/tools/running-pace-calculator">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/site.css?v=e4e09245">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Running Pace Calculator","url":"https://mquickcalc.com/tools/running-pace-calculator","applicationCategory":"SportsApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Running pace calculator: predict finish times for 5K, 10K, half marathon, and marathon. Calculate pace from a target time, or find your pace from a recent run."}</script>
+<meta property="og:title" content="Running Pace Calculator — 5K, 10K, Half Marathon, Marathon Pace | mQuickCalc">
+<meta property="og:description" content="Calculate your running pace and predict race finish times. Works in min/mi or min/km.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mquickcalc.com/tools/running-pace-calculator">
+<meta property="og:image" content="https://mquickcalc.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Running Pace Calculator — 5K, 10K, Half Marathon, Marathon Pace">
+<meta name="twitter:description" content="Calculate your running pace and predict race finish times.">
+<meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+<meta name="twitter:site" content="@mquickcalc">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Running Pace Calculator","item":"https://mquickcalc.com/tools/running-pace-calculator"}]}</script>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#4f46e5">
+</head>
+<body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#converters">Converters</a>
+      <a href="/#calculators">Calculators</a>
+      <a href="/#everyday">Everyday</a>
+      <a href="/embed">Embeds</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#calculators">Calculators</a><span class="sep">›</span><span class="current">Running Pace Calculator</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div style="font-size:48px;line-height:1;text-align:center;margin-bottom:8px">🏃</div>
+    <h1 class="page-title">Running Pace Calculator</h1>
+    <p class="lede">Enter a recent race time or your target pace to predict finish times across all standard distances. Works in minutes per mile (min/mi) or minutes per kilometre (min/km).</p>
+
+    <div class="calc-card">
+
+      <!-- Unit -->
+      <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center">
+        <span style="font-size:13px;font-weight:600;color:var(--muted)">min/mi</span>
+        <label style="position:relative;display:inline-flex;align-items:center;cursor:pointer">
+          <input type="checkbox" id="unitToggle" style="opacity:0;width:0;height:0;position:absolute">
+          <span style="display:inline-block;width:46px;height:26px;background:var(--line-strong);border-radius:999px;position:relative;transition:background .2s">
+            <span style="position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);display:block"></span>
+          </span>
+        </label>
+        <span style="font-size:13px;font-weight:600;color:var(--muted)">min/km</span>
+      </div>
+
+      <label class="f-label">Calculate from</label>
+      <select id="mode" class="input" style="margin-bottom:16px">
+        <option value="time">Race time (known result)</option>
+        <option value="pace">Target pace (known goal)</option>
+      </select>
+
+      <div id="timeMode">
+        <label class="f-label" for="distance">Distance</label>
+        <select id="distance" class="input" style="margin-bottom:10px">
+          <option value="5">5K</option>
+          <option value="10">10K</option>
+          <option value="21.0975">Half Marathon (21.0975 km)</option>
+          <option value="42.195">Marathon (42.195 km)</option>
+          <option value="1.60934">1 mile</option>
+        </select>
+        <div class="row">
+          <div>
+            <label class="f-label" for="raceTime">Finish time (HH:MM:SS)</label>
+            <input id="raceTime" class="input" type="text" placeholder="01:00:00" value="00:25:00">
+          </div>
+        </div>
+      </div>
+
+      <div id="paceMode" style="display:none">
+        <label class="f-label" for="paceMin">Pace (min : sec)</label>
+        <div class="row">
+          <div>
+            <input id="paceMin" class="input" type="number" inputmode="numeric" min="0" max="59" step="1" value="8" style="width:90px">
+          </div>
+          <div>
+            <span style="font-size:20px;color:var(--muted);align-self:center;margin:0 4px">:</span>
+          </div>
+          <div>
+            <input id="paceSec" class="input" type="number" inputmode="numeric" min="0" max="59" step="1" value="00" style="width:90px">
+          </div>
+        </div>
+        <div class="dim" id="paceLabel" style="font-size:12px;margin-top:4px">per mile</div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </div>
+
+    <div class="result" id="result">
+      <div style="text-align:center;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px">
+        <div class="big" id="paceResult">—</div>
+        <div class="dim" id="paceSub">Your pace</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+        <div class="cell">
+          <div class="lbl">5K</div>
+          <div class="val" id="r5k">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">10K</div>
+          <div class="val" id="r10k">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Half Marathon</div>
+          <div class="val" id="rHalf">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Marathon</div>
+          <div class="val" id="rFull">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">1 Mile</div>
+          <div class="val" id="rMile">—</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Split / km</div>
+          <div class="val" id="rKm">—</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line)">
+        <div class="dim" style="font-size:12px">
+          Predictions use the <strong>Riegel formula</strong> (T2 = T1 × (D2/D1)<sup>1.06</sup>), which accounts for fatigue at longer distances. Actual race performance depends on fitness, conditions, terrain, and training. Use these as orientation targets, not guarantees.
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+
+    <div style="margin-top:36px;max-width:760px">
+      <h2 style="font-size:20px;letter-spacing:-.02em;margin:0 0 16px">How to use this calculator</h2>
+      <ul style="color:var(--muted);font-size:15px;line-height:1.7;padding-left:20px">
+        <li><strong>From a race time:</strong> Select the distance you ran, enter your finish time, and see predicted times for all standard distances.</li>
+        <li><strong>From a target pace:</strong> Enter the pace you can sustain (e.g. from a recent training run) and see what race times it predicts.</li>
+        <li><strong>Riegel formula:</strong> T2 = T1 × (D2/D1)<sup>1.06</sup> — adjusts for the physiological reality that pace slows predictably over longer distances.</li>
+        <li>The half marathon and marathon predictions assume a reasonably trained runner; elite athletes will outperform the formula at longer distances.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="padding:0 20px">
+    <p style="font-size:13px;color:#64748b;text-align:center;line-height:1.6">
+      Predictions are estimates for orientation. Actual performance depends on training, health, weather, and course terrain.
+    </p>
+  </div>
+</footer>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+  var isKm=false;
+  var unitToggle=$('unitToggle');
+
+  var races=[
+    {name:'5K',distKm:5},
+    {name:'10K',distKm:10},
+    {name:'Half Marathon',distKm:21.0975},
+    {name:'Marathon',distKm:42.195},
+    {name:'1 Mile',distKm:1.60934},
+  ];
+
+  function fmtTime(totalSec){
+    var h=Math.floor(totalSec/3600);
+    var m=Math.floor((totalSec%3600)/60);
+    var s=Math.round(totalSec%60);
+    var parts=[];
+    if(h>0)parts.push(h+':');
+    parts.push(String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'));
+    return parts.join('');
+  }
+
+  function fmtPace(secPerUnit){
+    var m=Math.floor(secPerUnit/60);
+    var s=Math.round(secPerUnit%60);
+    return m+':'+String(s).padStart(2,'0')+' '+(isKm?'/km':'/mi');
+  }
+
+  // Riegel: T2 = T1 * (D2/D1)^1.06
+  function predict(timeSec,distKm){
+    return timeSec*Math.pow(distKm/1,1.06);
+  }
+
+  function updateModeUI(){
+    var mode=$('mode').value;
+    $('timeMode').style.display=mode==='time'?'':'none';
+    $('paceMode').style.display=mode==='pace'?'':'none';
+    var label=isKm?'per kilometre':'per mile';
+    $('paceLabel').textContent=label;
+  }
+
+  unitToggle.addEventListener('change',function(){
+    isKm=unitToggle.checked;
+    updateModeUI();
+    compute();
+  });
+
+  $('mode').addEventListener('change',updateModeUI);
+  updateModeUI();
+
+  function compute(){
+    var mode=$('mode').value;
+    var baseDistKm,timeSec,paceSec;
+
+    if(mode==='time'){
+      var parts=$('raceTime').value.split(':').map(Number);
+      if(parts.length===3){
+        timeSec=parts[0]*3600+parts[1]*60+parts[2];
+      } else if(parts.length===2){
+        timeSec=parts[0]*60+parts[1];
+      } else {
+        return;
+      }
+      var distKm=parseFloat($('distance').value);
+      var pacePerKm=timeSec/distKm;
+      paceSec=isKm?pacePerKm:pacePerKm/1.60934;
+      $('paceResult').textContent=fmtPace(paceSec);
+      $('paceSub').textContent='Pace'+(isKm?' per km':' per mile')+' (based on your race result)';
+    }else{
+      var m=parseInt($('paceMin').value,10)||0;
+      var s=parseInt($('paceSec').value,10)||0;
+      paceSec=m*60+s;
+      if(isKm){
+        timeSec=paceSec*1; // 1 km pace
+      }else{
+        timeSec=paceSec*1.60934; // 1 mile pace converted to km
+      }
+      $('paceResult').textContent=fmtPace(paceSec);
+      $('paceSub').textContent='Pace'+(isKm?' per km':' per mile')+' (your target)';
+    }
+
+    // Distances in km for calculation
+    var distKmArr=[5,10,21.0975,42.195,1.60934];
+    var els=['r5k','r10k','rHalf','rFull','rMile'];
+    var kmPace=isKm?paceSec:paceSec*1.60934;
+
+    for(var i=0;i<distKmArr.length;i++){
+      var t=predict(kmPace*1,distKmArr[i]);
+      $(els[i]).textContent=fmtTime(t);
+    }
+
+    // Split/km
+    $('rKm').textContent=fmtPace(kmPace);
+
+    $('result').classList.add('show');
+  }
+
+  $('calcBtn').addEventListener('click',compute);
+  $('resetBtn').addEventListener('click',function(){
+    $('mode').value='time';
+    $('raceTime').value='00:25:00';
+    $('distance').value='5';
+    $('paceMin').value='8';$('paceSec').value='00';
+    unitToggle.checked=false;isKm=false;
+    updateModeUI();
+    $('result').classList.remove('show');
+  });
+
+  ['raceTime','paceMin','paceSec'].forEach(function(id){
+    var el=$(id);if(el)el.addEventListener('input',compute);
+  });
+  $('distance').addEventListener('change',compute);
+  compute();
+})();
+</script>
+</body>
+</html>

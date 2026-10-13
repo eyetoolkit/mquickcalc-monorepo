@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sleep Cycle Calculator — Best Time to Sleep & Wake Up | mQuickCalc Health</title>
+<meta name="description" content="Find the best time to go to bed or wake up based on 90-minute sleep cycles. Enter a target wake time or bed time and get an optimal schedule with cycle count and sleep quality.">
+<link rel="canonical" href="https://health.mquickcalc.com/tools/sleep-cycle-calculator">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/site.css?v=e4e09245">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Sleep Cycle Calculator","url":"https://health.mquickcalc.com/tools/sleep-cycle-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find the best time to go to bed or wake up based on 90-minute sleep cycles. Enter a target wake time or bed time and get an optimal schedule."}</script>
+<meta property="og:title" content="Sleep Cycle Calculator — Best Time to Sleep & Wake Up | mQuickCalc Health">
+<meta property="og:description" content="Find the best time to go to bed or wake up based on 90-minute sleep cycles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://health.mquickcalc.com/tools/sleep-cycle-calculator">
+<meta property="og:image" content="https://health.mquickcalc.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sleep Cycle Calculator — Best Time to Sleep & Wake Up">
+<meta name="twitter:description" content="Find the best time to go to bed or wake up based on 90-minute sleep cycles.">
+<meta name="twitter:image" content="https://health.mquickcalc.com/og-image.png">
+<meta name="twitter:site" content="@mquickcalchealth">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://health.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Body Metrics","item":"https://health.mquickcalc.com/#body"},{"@type":"ListItem","position":3,"name":"Sleep Cycle Calculator","item":"https://health.mquickcalc.com/tools/sleep-cycle-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Sleep Cycle Calculator","step":[{"@type":"HowToStep","name":"Choose your goal","text":"Select whether you want to find the best bed time (from a fixed wake time) or the best wake time (from a fixed bed time)."},{"@type":"HowToStep","name":"Enter your time","text":"Type the target time you plan to wake up or go to bed. Add a fall-asleep buffer if needed."},{"@type":"HowToStep","name":"Read your optimal schedule","text":"The tool shows 6 optimal times based on 90-minute sleep cycles, from 3 to 8 cycles. Aim to wake between cycles 4–6 for the best quality rest."}]}</script>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#e11d48">
+</head>
+<body data-site="health">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/#body">Body</a>
+      <a href="/#nutrition">Nutrition</a>
+      <a href="/#heart">Heart</a>
+      <a href="/#fitness">Fitness</a>
+      <a href="/#pregnancy">Pregnancy</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#body">Body Metrics</a><span class="sep">›</span><span class="current">Sleep Cycle Calculator</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div style="font-size:48px;line-height:1;text-align:center;margin-bottom:8px">🌙</div>
+    <h1 class="page-title">Sleep Cycle Calculator</h1>
+    <p class="lede">Plan your sleep around 90-minute cycles so you wake at the end of a light-sleep phase — refreshed instead of groggy. Enter your target wake time or bed time below.</p>
+
+    <div class="calc-card">
+
+      <label class="f-label">What do you know?</label>
+      <div style="display:flex;gap:10px;margin-bottom:16px" id="goalGroup">
+        <label style="flex:1;cursor:pointer">
+          <input type="radio" name="goal" value="wake" checked style="display:none">
+          <span id="goalWake" style="display:block;text-align:center;padding:11px;border:1.5px solid var(--brand);border-radius:var(--radius-md);font-size:14px;font-weight:600;background:var(--brand-bg);color:var(--brand-ink)">I know my wake time</span>
+        </label>
+        <label style="flex:1;cursor:pointer">
+          <input type="radio" name="goal" value="sleep" style="display:none">
+          <span id="goalSleep" style="display:block;text-align:center;padding:11px;border:1.5px solid var(--line);border-radius:var(--radius-md);font-size:14px;font-weight:600;background:var(--bg);color:var(--muted)">I know my bed time</span>
+        </label>
+      </div>
+
+      <div class="row" style="margin-bottom:16px">
+        <div>
+          <label class="f-label" for="targetTime">Target wake time</label>
+          <input id="targetTime" class="input" type="time" value="07:00">
+        </div>
+      </div>
+
+      <label class="f-label" for="fallAsleep">Fall-asleep buffer (minutes)</label>
+      <input id="fallAsleep" class="input" type="number" min="0" max="60" step="1" value="15" style="margin-bottom:20px">
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button id="calcBtn" class="btn">Calculate</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </div>
+
+    <div class="result" id="result">
+      <div style="text-align:center;margin-bottom:20px">
+        <div class="big" id="primaryLabel" style="font-size:clamp(20px,3vw,30px)">—</div>
+        <div class="dim" id="primarySub">—</div>
+      </div>
+
+      <div class="grid" id="scheduleGrid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))"></div>
+
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
+        <div class="dim" style="font-size:12px">
+          <strong>About sleep cycles:</strong> A full sleep cycle lasts ~90 minutes and alternates between light sleep, deep sleep, and REM. Waking at the end of a cycle (during light sleep) leaves you feeling more refreshed than waking during deep sleep. Aim for 4–6 cycles (6–9 hours) per night. Adults typically need 7–9 hours.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;max-width:760px">
+      <h2 style="font-size:20px;letter-spacing:-.02em;margin:0 0 16px">How it works</h2>
+      <ul style="color:var(--muted);font-size:15px;line-height:1.7;padding-left:20px">
+        <li>Each sleep cycle lasts <strong>90 minutes</strong>. Count backward from your target time in 90-minute increments.</li>
+        <li>Add a <strong>fall-asleep buffer</strong> (default 15 min) to account for the time it takes to actually fall asleep after going to bed.</li>
+        <li>The schedule shows options from <strong>3 cycles (4.5 h)</strong> to <strong>8 cycles (12 h)</strong>. Fewer than 4 cycles is not recommended for most adults.</li>
+        <li>The highlighted rows (4–6 cycles) represent the recommended range for most adults.</li>
+      </ul>
+    </div>
+
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="padding:0 20px">
+    <p style="font-size:13px;color:#64748b;text-align:center;line-height:1.6">
+      Estimates are for orientation only. Sleep needs vary by age, health, and lifestyle. This tool does not provide medical advice.
+    </p>
+  </div>
+</footer>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+
+<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script>
+(function(){
+  var CYCLE=90; // minutes
+  var FALLOASLEEP_DEFAULT=15;
+
+  var goalWake=document.getElementById('goalWake');
+  var goalSleep=document.getElementById('goalSleep');
+  var targetTime=document.getElementById('targetTime');
+  var fallAsleep=document.getElementById('fallAsleep');
+  var calcBtn=document.getElementById('calcBtn');
+  var resetBtn=document.getElementById('resetBtn');
+
+  function updateGoalUI(){
+    var isWake=document.querySelector('input[name="goal"]:checked').value==='wake';
+    if(isWake){
+      goalWake.style.background='var(--brand-bg)';goalWake.style.borderColor='var(--brand)';goalWake.style.color='var(--brand-ink)';
+      goalSleep.style.background='var(--bg)';goalSleep.style.borderColor='var(--line)';goalSleep.style.color='var(--muted)';
+      targetTime.labels[0].textContent='Target wake time';
+    }else{
+      goalSleep.style.background='var(--brand-bg)';goalSleep.style.borderColor='var(--brand)';goalSleep.style.color='var(--brand-ink)';
+      goalWake.style.background='var(--bg)';goalWake.style.borderColor='var(--line)';goalWake.style.color='var(--muted)';
+      targetTime.labels[0].textContent='Target bed time';
+    }
+  }
+
+  document.querySelectorAll('input[name="goal"]').forEach(function(inp){
+    inp.addEventListener('change',updateGoalUI);
+  });
+  updateGoalUI();
+
+  function parseTime(t){
+    var parts=t.split(':');
+    return parseInt(parts[0],10)*60+parseInt(parts[1],10);
+  }
+  function formatTime(min){
+    var h=Math.floor(((min%1440)+1440)%1440/60);
+    var m=Math.floor(((min%1440)+1440)%1440%60);
+    var ampm=h>=12?'PM':'AM';
+    var h12=h%12||12;
+    return h12+':'+String(m).padStart(2,'0')+' '+ampm;
+  }
+
+  function calculate(){
+    var isWake=document.querySelector('input[name="goal"]:checked').value==='wake';
+    var target=parseTime(targetTime.value);
+    var buffer=parseInt(fallAsleep.value,10)||FALLOASLEEP_DEFAULT;
+    var grid=document.getElementById('scheduleGrid');
+    grid.innerHTML='';
+
+    var cycles=[];
+    for(var i=3;i<=8;i++){
+      var sleepMin=i*CYCLE+buffer;
+      var opposite;
+      if(isWake){
+        opposite=(target-sleepMin+1440)%1440;
+      }else{
+        opposite=(target+buffer+(i*CYCLE)+1440)%1440;
+      }
+      cycles.push({num:i,sleepMin:sleepMin,time:formatTime(opposite)});
+    }
+
+    if(isWake){
+      document.getElementById('primaryLabel').textContent='Go to sleep at:';
+      document.getElementById('primarySub').textContent='Based on waking at '+formatTime(target)+' + '+buffer+' min fall-asleep buffer';
+    }else{
+      document.getElementById('primaryLabel').textContent='Wake up at:';
+      document.getElementById('primarySub').textContent='Based on going to bed at '+formatTime(target)+' + '+buffer+' min fall-asleep buffer';
+    }
+
+    cycles.forEach(function(c){
+      var recommended=c.num>=4&&c.num<=6;
+      var cell=document.createElement('div');
+      cell.className='cell';
+      if(recommended)cell.style.background='var(--brand-bg)';
+      cell.innerHTML='<div class="lbl">'+(isWake?'Bed time':'Wake time')+'</div><div class="val" style="color:'+(recommended?'var(--brand)':'')+';font-size:clamp(15px,2vw,18px)">'+c.time+'</div><div class="dim" style="font-size:12px">'+c.num+' cycles · '+c.sleepMin+' min sleep</div>';
+      grid.appendChild(cell);
+    });
+
+    document.getElementById('result').classList.add('show');
+  }
+
+  calcBtn.addEventListener('click',calculate);
+  resetBtn.addEventListener('click',function(){
+    document.querySelector('input[name="goal"][value="wake"]').checked=true;
+    updateGoalUI();
+    targetTime.value='07:00';
+    fallAsleep.value='15';
+    document.getElementById('result').classList.remove('show');
+  });
+
+  ['targetTime','fallAsleep'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',calculate);
+  });
+  document.querySelectorAll('input[name="goal"]').forEach(function(inp){
+    inp.addEventListener('change',calculate);
+  });
+})();
+</script>
+</body>
+</html>
