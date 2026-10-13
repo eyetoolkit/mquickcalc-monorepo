@@ -1,17 +1,21 @@
 #!/usr/bin/env node
 /**
- * mQuickCalc sitemap generator
+ * mQuickCalc sitemap generator + sitemap-index builder
  *
- * Auto-generates sitemap.xml for each site from actual file structure.
- * - Top-level HTML files (homepage + topical/legal pages)
- * - tools/*.html (the actual converter/calculator pages)
- * - embed/*.html (embed iframes, main site only)
+ * Auto-generates sitemap.xml for each site from actual file structure,
+ * plus a sitemap-index.xml pointing to it.
+ *
+ * Files included:
+ *   - Homepage and top-level HTML pages
+ *   - tools pages
+ *   - compare pages
+ *   - embed pages: intentionally excluded (noindex, canonicalized to tool pages)
  *
  * lastmod is taken from git log for each file (real last-modified date).
  *
  * Usage:
- *   node tools/gen-sitemap.mjs                  # all three sites
- *   node tools/gen-sitemap.mjs site-main        # one site
+ *   node tools/gen-sitemap.mjs                  # all four sites
+ *   node tools/gen-sitemap.mjs site-main       # one site
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,7 +40,6 @@ if (TARGET_ARG && sites.length === 0) {
 }
 
 function gitLastModifiedDate(filePath) {
-  // 取文件最后一次 commit 的日期 (ISO date YYYY-MM-DD)
   try {
     const out = execSync(
       `git log -1 --format="%ad" --date=short -- "${filePath}"`,
@@ -84,7 +87,7 @@ function buildSitemap(site) {
   const topLevel = listHtmlFiles(siteDir);
   for (const f of topLevel) {
     const name = path.basename(f, '.html');
-    if (name === 'index' || name === '404') continue;  // skip — homepage added separately, 404 not in sitemap
+    if (name === 'index' || name === '404') continue;
     const loc = `${site.origin}/${name}`;
     const lastmod = gitLastModifiedDate(f);
     const priority = '0.5';
@@ -92,7 +95,7 @@ function buildSitemap(site) {
     entries.push(urlEntry(loc, lastmod, changefreq, priority));
   }
 
-  // 3. tools/*.html
+  // 3. tools pages
   const toolsDir = path.join(siteDir, 'tools');
   const tools = listHtmlFiles(toolsDir);
   for (let i = 0; i < tools.length; i++) {
@@ -104,7 +107,7 @@ function buildSitemap(site) {
     entries.push(urlEntry(loc, lastmod, 'monthly', priority));
   }
 
-  // 4. compare/*/index.html — GEO pages, ordinary indexable content.
+  // 4. compare pages
   const compareDir = path.join(siteDir, 'compare');
   if (fs.existsSync(compareDir)) {
     for (const slug of fs.readdirSync(compareDir, { withFileTypes: true })) {
@@ -119,10 +122,7 @@ function buildSitemap(site) {
     }
   }
 
-  // 5. embed/*.html — intentionally NOT included: embed pages are full
-  // duplicates of tool pages (canonicalized) and are marked noindex.
-  // Keeping them out of the sitemap saves crawl budget and avoids
-  // duplicate-URL signals.
+  // embed pages: intentionally NOT included (noindex, canonicalized to tool pages)
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -132,16 +132,34 @@ ${entries.join('\n')}
   return xml;
 }
 
+// ── Sitemap-index ────────────────────────────────────────────────────────────
+function buildSitemapIndex(site) {
+  const today = new Date().toISOString().slice(0, 10);
+  const sitemapLoc = `${site.origin}/sitemap.xml`;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${sitemapLoc}</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+</sitemapindex>
+`;
+}
+
 let totalUrls = 0;
 for (const site of sites) {
   const xml = buildSitemap(site);
   if (!xml) continue;
   const outPath = path.join(ROOT, 'packages', site.pkg, 'sitemap.xml');
   fs.writeFileSync(outPath, xml);
-  // 数 url 数量
   const urlCount = (xml.match(/<url>/g) || []).length;
   totalUrls += urlCount;
-  console.log(`   ✅ ${site.pkg}: ${urlCount} URLs → ${path.relative(ROOT, outPath)}`);
+  console.log(`   ✅ ${site.pkg}: ${urlCount} URLs -> ${path.relative(ROOT, outPath)}`);
+
+  const idx = buildSitemapIndex(site);
+  const idxPath = path.join(ROOT, 'packages', site.pkg, 'sitemap-index.xml');
+  fs.writeFileSync(idxPath, idx);
+  console.log(`   ✅ ${site.pkg}: sitemap-index -> ${path.relative(ROOT, idxPath)}`);
 }
 
 console.log(`\n🎉 done. ${totalUrls} URLs across ${sites.length} site(s)`);

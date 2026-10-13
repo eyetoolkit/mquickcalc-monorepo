@@ -13,4 +13,4 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-Sitemap: https://cover.mquickcalc.com/sitemap.xml
+Sitemap: https://cover.mquickcalc.com/sitemap-index.xml

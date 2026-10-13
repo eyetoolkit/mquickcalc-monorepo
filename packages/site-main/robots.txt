@@ -30,7 +30,7 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-Sitemap: https://mquickcalc.com/sitemap.xml
-Sitemap: https://finance.mquickcalc.com/sitemap.xml
-Sitemap: https://health.mquickcalc.com/sitemap.xml
-Sitemap: https://cover.mquickcalc.com/sitemap.xml
+Sitemap: https://mquickcalc.com/sitemap-index.xml
+Sitemap: https://finance.mquickcalc.com/sitemap-index.xml
+Sitemap: https://health.mquickcalc.com/sitemap-index.xml
+Sitemap: https://cover.mquickcalc.com/sitemap-index.xml
