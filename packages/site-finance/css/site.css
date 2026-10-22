@@ -785,3 +785,17 @@ main.page h2{margin-top:var(--space-12)}
 .empty b{color:var(--ink);font-size:15px;display:block;margin-bottom:4px}
 .empty small{font-size:13px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.skeleton::after{animation:none}}
+
+/* ---------- P1 hero entrance stagger for home heroes (batch-applied) ---------- */
+.hero .hero-copy .kicker{animation:riseIn .5s cubic-bezier(.22,1,.36,1) both}
+.hero .hero-copy h1{animation:riseIn .55s cubic-bezier(.22,1,.36,1) .05s both}
+.hero .hero-copy p.sub{animation:riseIn .55s cubic-bezier(.22,1,.36,1) .1s both}
+.hero .hero-actions,.hero .hero-search{animation:riseIn .55s cubic-bezier(.22,1,.36,1) .14s both}
+.hero .hero-chips{animation:riseIn .55s cubic-bezier(.22,1,.36,1) .18s both}
+.hero .hero-stats{animation:riseIn .55s cubic-bezier(.22,1,.36,1) .22s both}
+@media (prefers-reduced-motion:reduce){.hero .hero-copy *,.hero .hero-actions,.hero .hero-chips,.hero .hero-stats{animation:none}}
+
+/* ---------- P2 empty-state auto-fill for result boxes (CSS-only, no JS needed) ---------- */
+.result:empty::before{content:"\1F9AE  还没有结果";display:block;font-weight:600;font-size:15px;color:var(--ink);text-align:center;padding:22px 0 14px}
+.result:empty::after{content:"填写上方数值，点 Calculate 即可立刻出结果";display:block;font-size:13px;color:var(--muted);text-align:center;padding-bottom:18px}
+@media (prefers-reduced-motion:reduce){.result.show{animation:none}}
