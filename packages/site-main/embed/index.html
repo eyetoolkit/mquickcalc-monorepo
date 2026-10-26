@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed mQuickCalc converters — free iframe snippets</title>
+<meta name="description" content="Embed any mQuickCalc unit converter on your blog or site with a single iframe snippet. Free to use, runs entirely in the visitor's browser.">
+<link rel="canonical" href="https://mquickcalc.com/embed">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Embed mQuickCalc converters">
+<meta property="og:description" content="Embed any mQuickCalc unit converter on your blog or site with a single iframe snippet.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mquickcalc.com/embed">
+<meta property="og:image" content="https://mquickcalc.com/og-image.png">
+<meta property="og:site_name" content="mQuickCalc">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/site.css">
+<meta name="theme-color" content="#4f46e5">
+<style>
+.embed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:24px 0}
+.embed-card{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff}
+.embed-card h3{margin:0 0 4px;font-size:15.5px}
+.embed-card p{margin:0 0 10px;font-size:13px;color:var(--muted)}
+.embed-card textarea{width:100%;height:64px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;line-height:1.5;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#f8fafc;color:#0f172a;resize:vertical}
+.embed-actions{display:flex;gap:8px;align-items:center;margin-top:8px}
+.embed-actions button{font:inherit;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer}
+.embed-actions button:hover{background:var(--brand-ink)}
+.embed-actions a{font-size:13px}
+.copy-ok{font-size:12px;color:#059669;font-weight:600}
+</style>
+</head>
+<body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="/">m<b>Quick</b>Calc</a>
+<nav><a href="/">All converters</a><a href="/embed">Embeds</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+</div></header>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <h1 class="page-title">Embed a calculator on your site</h1>
+    <p class="lede">Every converter below can be dropped into your own page with one iframe. The tools are free, need no sign-up, and the maths runs in your visitor's browser — no data leaves their device.</p>
+
+    <div class="note" style="border-left:3px solid var(--brand);background:#fff;padding:14px 16px;border-radius:0 10px 10px 0;margin:18px 0;font-size:14px">
+      <strong>How to use:</strong> pick a converter, copy the snippet, paste it into your HTML where you want it to appear. The iframe is responsive (100% width) and lazily loaded, so it does not slow your page down. Attribution is appreciated but not required.
+    </div>
+
+    <div class="embed-grid" id="embed-grid"></div>
+
+    <h2>Prefer a link?</h2>
+    <p>You can also link straight to any tool page — for example <a href="/tools/length-converter">Length Converter</a>, <a href="/tools/weight-converter">Weight Converter</a> or <a href="/tools/temperature-converter">Temperature Converter</a>.</p>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="/js/site-core.js"></script>
+<script>
+(function(){
+  var list = [
+    ["length-converter","Length Converter","cm, inches, feet, metres, miles"],
+    ["weight-converter","Weight Converter","kg, lb, stone, ounces, tonnes"],
+    ["temperature-converter","Temperature Converter","Celsius, Fahrenheit, Kelvin"],
+    ["height-converter","Height Converter","cm to feet/inches and back"],
+    ["area-converter","Area Converter","m², ft², acres, hectares"],
+    ["volume-converter","Volume Converter","litres, gallons, cups, fluid ounces"],
+    ["speed-converter","Speed Converter","km/h, mph, knots, m/s"],
+    ["time-converter","Time Converter","seconds, minutes, hours, days, weeks"],
+    ["angle-converter","Angle Converter","degrees, radians, gradians"],
+    ["energy-converter","Energy Converter","joules, calories, kWh, BTU"],
+    ["power-converter","Power Converter","watts, kW, horsepower, BTU/h"],
+    ["force-converter","Force Converter","newtons, lbf, kgf, dynes"],
+    ["pressure-converter","Pressure Converter","Pa, bar, psi, atm, mmHg"],
+    ["pressure-head-converter","Pressure Head Converter","head in metres vs pressure"],
+    ["flow-rate-converter","Flow Rate Converter","L/min, m³/h, gpm, cfs"],
+    ["frequency-converter","Frequency Converter","Hz, kHz, MHz, GHz"],
+    ["wavelength-frequency-converter","Wavelength Converter","wavelength ↔ frequency"],
+    ["data-storage-converter","Data Storage Converter","bytes, KB/MB/GB, KiB/MiB/GiB, PiB"],
+    ["data-transfer-rate-converter","Data Transfer Rate","Mbps, MB/s, Gbps"],
+    ["fuel-consumption-converter","Fuel Consumption Converter","L/100km, mpg (US/UK), km/L"],
+    ["fuel-volume-converter","Fuel Volume Converter","litres, US/UK gallons"],
+    ["cooking-converter","Cooking Converter","cups, grams, tablespoons, ounces"]
+  ];
+  var grid = document.getElementById("embed-grid");
+  var html = "";
+  list.forEach(function(item){
+    var slug = item[0], name = item[1], desc = item[2];
+    var src = "https://mquickcalc.com/embed/" + slug;
+    var code = '<iframe src="' + src + '" width="100%" height="480" frameborder="0" loading="lazy" title="' + name + ' — mQuickCalc"></iframe>';
+    html += '<div class="embed-card"><h3>' + name + '</h3><p>' + desc + '</p>'
+      + '<textarea readonly aria-label="Embed code for ' + name + '" onclick="this.select()">' + code.replace(/</g, "&lt;").replace(/>/g, "&gt;") + '</textarea>'
+      + '<div class="embed-actions"><button type="button" data-code="' + code.replace(/"/g, "&quot;") + '">Copy code</button>'
+      + '<a href="/tools/' + slug + '">Open tool →</a></div></div>';
+  });
+  grid.innerHTML = html;
+  grid.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-code]");
+    if(!btn) return;
+    var code = btn.getAttribute("data-code");
+    var done = function(){
+      var old = btn.textContent;
+      btn.textContent = "Copied";
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(code).then(done, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = btn.closest(".embed-card").querySelector("textarea");
+      ta.select(); document.execCommand("copy"); done();
+    }
+  });
+})();
+</script>
+</body>
+</html>
