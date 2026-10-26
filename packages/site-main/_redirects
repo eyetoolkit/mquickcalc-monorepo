@@ -4,6 +4,9 @@
 
 https://mquickcalc.com/*.html  https://mquickcalc.com/:splat  301
 
+# merged: digital-storage page duplicated data-storage-converter
+/tools/digital-storage-converter  /tools/data-storage-converter  301
+
 # ===== Bidirectional converter shortlinks (SEO) - 77 entries (auto-generated)
   /angle/grad-to-deg  /tools/angle-converter?from=grad&target=deg  301
   /angle/rad-to-deg  /tools/angle-converter?from=rad&target=deg  301
@@ -23,10 +26,10 @@ https://mquickcalc.com/*.html  https://mquickcalc.com/:splat  301
   /data-storage/tb-to-tib  /tools/data-storage-converter?from=tb&target=tib  301
   /data-transfer-rate/gbps-to-GBps  /tools/data-transfer-rate-converter?from=gbps&target=GBps  301
   /data-transfer-rate/mbps-to-MBps  /tools/data-transfer-rate-converter?from=mbps&target=MBps  301
-  /digital-storage/GB-to-GiB  /tools/digital-storage-converter?from=GB&target=GiB  301
-  /digital-storage/MB-to-MiB  /tools/digital-storage-converter?from=MB&target=MiB  301
-  /digital-storage/TB-to-TiB  /tools/digital-storage-converter?from=TB&target=TiB  301
-  /digital-storage/KB-to-KiB  /tools/digital-storage-converter?from=KB&target=KiB  301
+  /digital-storage/GB-to-GiB  /tools/data-storage-converter?from=gb&target=gib  301
+  /digital-storage/MB-to-MiB  /tools/data-storage-converter?from=mb&target=mib  301
+  /digital-storage/TB-to-TiB  /tools/data-storage-converter?from=tb&target=tib  301
+  /digital-storage/KB-to-KiB  /tools/data-storage-converter?from=kb&target=kib  301
   /energy/cal-to-kj  /tools/energy-converter?from=cal&target=kj  301
   /energy/kcal-to-kj  /tools/energy-converter?from=kcal&target=kj  301
   /energy/wh-to-kj  /tools/energy-converter?from=wh&target=kj  301

@@ -4,7 +4,7 @@
   { "namespace": "cooking",            "tool": "cooking-converter",            "pairs": [["tsp-us", "ml"], ["tbsp-us", "ml"], ["cup-us", "ml"]] },
   { "namespace": "data-storage",       "tool": "data-storage-converter",       "pairs": [["bit", "b"], ["b", "bit"], ["kb", "kib"], ["mb", "mib"], ["pb", "tib"], ["tb", "tib"]] },
   { "namespace": "data-transfer-rate", "tool": "data-transfer-rate-converter", "pairs": [["gbps", "GBps"], ["mbps", "MBps"]] },
-  { "namespace": "digital-storage",    "tool": "digital-storage-converter",    "pairs": [["GB", "GiB"], ["MB", "MiB"], ["TB", "TiB"], ["KB", "KiB"]] },
+  { "namespace": "digital-storage",    "tool": "data-storage-converter",       "pairs": [["gb", "gib"], ["mb", "mib"], ["tb", "tib"], ["kb", "kib"]] },
   { "namespace": "energy",             "tool": "energy-converter",             "pairs": [["cal", "kj"], ["kcal", "kj"], ["wh", "kj"]] },
   { "namespace": "flow-rate",          "tool": "flow-rate-converter",          "pairs": [["l-min", "gpm"], ["m3-h", "cfm"], ["l-s", "gpm"]] },
   { "namespace": "force",              "tool": "force-converter",              "pairs": [["n", "lbf"], ["kgf", "n"], ["dyn", "n"]] },
