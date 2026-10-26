@@ -85,7 +85,7 @@
   var U = [
     ["mpg", "Miles per gallon (US)", 100],              // base factor = 100/v -> gal per 100mi
     ["mpg_uk", "Miles per gallon (UK)", 120.095],       // 100/v * (4.5461/3.7854)
-    ["kmpl", "Kilometers per liter (km/L)", 235.215],   // 100/v * 1.60934
+    ["kmpl", "Kilometers per liter (km/L)", 42.5144],   // 100/v * 1.60934
     ["l100km", "Liters per 100 km (L/100km)", 235.215], // target = 235.215 / source_gal100mi
     ["lp100mi", "Liters per 100 miles", 378.54]
   ];
@@ -98,7 +98,7 @@
     // Convert source value into gallons (US) per 100 miles
     if(srcId==="mpg") return 100/v;
     if(srcId==="mpg_uk") return 120.095/v;
-    if(srcId==="kmpl") return 235.215/v;
+    if(srcId==="kmpl") return 42.5144/v;
     if(srcId==="l100km") return v / 235.215 * 100; // wait, invert? Let me just do direct factor
     if(srcId==="lp100mi") return v / 3.7854;
     return 0;
@@ -106,7 +106,7 @@
   function fromGalPer100mi(tgtId, g){
     if(tgtId==="mpg") return 100/g;
     if(tgtId==="mpg_uk") return 120.095/g;
-    if(tgtId==="kmpl") return 235.215/g;
+    if(tgtId==="kmpl") return 42.5144/g;
     if(tgtId==="l100km") return g * 2.35215;
     if(tgtId==="lp100mi") return g * 3.7854;
     return 0;

@@ -82,10 +82,10 @@
           <option value="tsp-us">Teaspoon (US)</option>
           <option value="tbsp-us">Tablespoon (US)</option>
           <option value="floz-us">Fluid ounce (US)</option>
-          <option value="cup-us" selected>Cup (US, 240 mL recipe cup)</option>
+          <option value="cup-us" selected>Cup (US customary, 236.6 mL)</option>
           <option value="pt-us">Pint (US)</option>
           <option value="floz-uk">Fluid ounce (UK)</option>
-          <option value="cup-uk">Cup (UK / metric, 250 mL)</option>
+          <option value="cup-uk">Cup (UK imperial, 284.1 mL)</option>
         </select>
       </div>
 
@@ -122,8 +122,8 @@
   var bigLbl = document.getElementById('mainUnit');
   var LABEL = { 'ml': 'Milliliter (mL)', 'l': 'Liter (L)', 'tsp-us': 'Teaspoon (US)',
                 'tbsp-us': 'Tablespoon (US)', 'floz-us': 'Fluid ounce (US)',
-                'cup-us': 'Cup (US, 240 mL recipe cup)', 'floz-uk': 'Fluid ounce (UK)',
-                'cup-uk': 'Cup (UK / metric, 250 mL)', 'pt-us': 'Pint (US)' };
+                'cup-us': 'Cup (US customary, 236.6 mL)', 'floz-uk': 'Fluid ounce (UK)',
+                'cup-uk': 'Cup (UK imperial, 284.1 mL)', 'pt-us': 'Pint (US)' };
 
   function fmt(n) {
     if (!isFinite(n)) return '—';

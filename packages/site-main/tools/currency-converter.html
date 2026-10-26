@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "How do currency conversions work?", "acceptedAnswer": {"@type": "Answer", "text": "All rates are anchored to one unit — the US dollar — so any currency can be converted to any other. To convert an amount, multiply it by the target rate divided by the source rate. For example, with 1 USD = 0.8667 EUR and 1 USD = 155.08 JPY, 100 EUR = 100 × (155.08 ÷ 0.8667) ≈ 17,897 JPY."}},
+      {"@type": "Question", "name": "How do currency conversions work?", "acceptedAnswer": {"@type": "Answer", "text": "All rates are anchored to one unit — the US dollar — so any currency can be converted to any other. To convert an amount, multiply it by the target rate divided by the source rate. For example, with 1 USD = 0.8921 EUR and 1 USD = 157.98 JPY, 100 EUR = 100 × (157.98 ÷ 0.8921) ≈ 17,709 JPY."}},
       {"@type": "Question", "name": "Are these the live exchange rates?", "acceptedAnswer": {"@type": "Answer", "text": "The rates shown are indicative mid-market rates provided by exchangerate-api.com, last updated 6 October 2026. They are a reference point, not a guarantee — the rate your bank or card issuer applies will include their own spread and fees."}},
       {"@type": "Question", "name": "Why does my bank show a different rate?", "acceptedAnswer": {"@type": "Answer", "text": "Banks and payment processors add a spread on top of the mid-market rate to cover their costs and risk. The published mid-market rate never includes that markup, so the amount actually charged on a card or wire transfer is usually a little worse than the rate you see here."}},
       {"@type": "Question", "name": "What are mid-market rates?", "acceptedAnswer": {"@type": "Answer", "text": "Mid-market rates are the midpoint between the buy and sell prices on the global currency market — the rate traders use with each other, not the rate consumers get. They are the fairest reference for comparing conversions across providers."}}
@@ -144,9 +144,9 @@
     <table class="conv-table class="ref-table">
       <thead><tr><th>1 USD in</th><th style="text-align:right;">Value</th></tr></thead>
       <tbody>
-        <tr><td>Euro (EUR)</td><td>0.8667</td></tr>
+        <tr><td>Euro (EUR)</td><td>0.8921</td></tr>
         <tr><td>British pound (GBP)</td><td>0.7420</td></tr>
-        <tr><td>Japanese yen (JPY)</td><td>155.08</td></tr>
+        <tr><td>Japanese yen (JPY)</td><td>157.98</td></tr>
         <tr><td>Chinese yuan (CNY)</td><td>6.7268</td></tr>
         <tr><td>Indian rupee (INR)</td><td>95.99</td></tr>
         <tr><td>Australian dollar (AUD)</td><td>1.4031</td></tr>
@@ -157,7 +157,7 @@
 
     <h2>Frequently asked questions</h2>
     <h3>How do currency conversions work?</h3>
-    <p>Every currency has a rate relative to the US dollar, so conversion between any two currencies is a simple multiplication and division. Multiply your amount by the target currency's rate, then divide by the source currency's rate. For example, to find what 100 euros is in yen when 1 USD = 0.8667 EUR and 1 USD = 155.08 JPY, compute 100 × (155.08 ÷ 0.8667), which gives about 17,897 yen. This works in reverse for any currency pair without needing a separate table for each combination.</p>
+    <p>Every currency has a rate relative to the US dollar, so conversion between any two currencies is a simple multiplication and division. Multiply your amount by the target currency's rate, then divide by the source currency's rate. For example, to find what 100 euros is in yen when 1 USD = 0.8921 EUR and 1 USD = 157.98 JPY, compute 100 × (157.98 ÷ 0.8921), which gives about 17,709 yen. This works in reverse for any currency pair without needing a separate table for each combination.</p>
     <h3>Are these the live exchange rates?</h3>
     <p>The rates shown are indicative mid-market rates sourced from exchangerate-api.com, last updated on 6 October 2026. They give you a fair reference for comparing conversions, but they are not a guarantee of the rate any provider will apply to your transaction. Exchange rates also move with markets throughout the day, so for large amounts, check the current rate before committing.</p>
     <h3>Why does my bank show a different rate?</h3>

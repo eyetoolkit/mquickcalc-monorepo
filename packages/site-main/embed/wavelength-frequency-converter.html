@@ -89,17 +89,17 @@
   var PAIRS = {"GHz": "cm", "MHz": "m", "nm": "Hz"};
   function render(){
     var v=parseFloat(inp.value)||0, from=sel.value;
-    var base=v*factorOf(from);
+    var isF=function(id){return id==='Hz'||id==='kHz'||id==='MHz'||id==='GHz'};var freq=isF(from)?v*factorOf(from):(v>0?299792458/(v*factorOf(from)):0);var outOf=function(f,id){return isF(id)?f/factorOf(id):(f>0?299792458/f/factorOf(id):0)};
     var rows='';
     for(var i=0;i<U.length;i++){
-      var id=U[i][0], out=base/U[i][2], isFrom=(id===from);
+      var id=U[i][0], out=outOf(freq,id), isFrom=(id===from);
       rows += '<tr'+(isFrom?' class="is-from"':'')+'><td>'+U[i][1]+'</td><td><strong>'+fmt(out)+'</strong></td></tr>';
     }
     tb.innerHTML=rows;
     var target=PAIRS[from]||((from===PRI)?ALT:PRI);
-    big.textContent = fmt(base/factorOf(target));
+    big.textContent = fmt(outOf(freq,target));
     bigLbl.textContent = fmt(v) + ' ' + symOf(from) + ' in ' + labelOf(target);
-    if(note) note.textContent='Converting from '+labelOf(from)+'. Change the unit to convert the other way.';
+    if(note) note.textContent='Assumes electromagnetic waves in vacuum (c = 299,792,458 m/s).';
   }
   inp.addEventListener('input',render); sel.addEventListener('change',render);
   document.getElementById('resetBtn').addEventListener('click',function(){inp.value='1';sel.value='GHz';render()});
