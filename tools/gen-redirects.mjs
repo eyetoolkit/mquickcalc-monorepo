@@ -36,6 +36,7 @@ if (!SITE_ORIGIN[TARGET]) {
 }
 
 const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+const aliases = data.filter(e => e.alias);
 
 const lines = [];
 lines.push(`# ${SITE_ORIGIN[TARGET]} - Cloudflare Pages redirects`);
@@ -48,12 +49,13 @@ lines.push('');
 // 按 namespace 分组，输出注释块
 const byNs = {};
 for (const entry of data) {
+  if (entry.alias) continue;
   byNs[entry.namespace] = byNs[entry.namespace] || [];
   byNs[entry.namespace].push(entry);
 }
 
 const namespaces = Object.keys(byNs).sort();
-const totalPairs = data.reduce((s, e) => s + e.pairs.length, 0);
+const totalPairs = data.filter(e => !e.alias).reduce((s, e) => s + e.pairs.length, 0);
 lines.push(`# ===== Bidirectional converter shortlinks (SEO) - ${totalPairs} entries (auto-generated)`);
 
 for (const ns of namespaces) {
@@ -65,6 +67,12 @@ for (const ns of namespaces) {
       // 不生成反向（from-to-target 已经是 SEO 友好的；反向通过工具页面内部 query 即可）
     }
   }
+}
+
+if (aliases.length) {
+  lines.push('');
+  lines.push('# ===== Merged pages (old URL -> keeper) =====');
+  for (const a of aliases) lines.push(`${a.alias}  /tools/${a.tool}  301`);
 }
 
 const content = lines.join('\n') + '\n';

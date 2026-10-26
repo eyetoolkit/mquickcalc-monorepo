@@ -186,7 +186,7 @@
     if(sel && fromParam){
       var opts=sel.getElementsByTagName('option');
       for(var i=0;i<opts.length;i++){
-        if(opts[i].value===fromParam){
+        if(opts[i].value===fromParam.toLowerCase()){fromParam=fromParam.toLowerCase();
           sel.value=fromParam;
           sel.dispatchEvent(new Event('change'));
           break;
