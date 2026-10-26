@@ -23,7 +23,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Patreon Fee Calculator","url":"https://finance.mquickcalc.com/tools/patreon-fee-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate creator take-home income from Patreon memberships."}
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage does Patreon take?","acceptedAnswer":{"@type":"Answer","text":"Patreon currently charges a platform fee in the range of roughly 5%, plus potential payment processing fees. Because the exact fees changed across Patreon's pricing history, confirm the current rates on Patreon's site."}},{"@type":"Question","name":"Do creators pay for payment processing?","acceptedAnswer":{"@type":"Answer","text":"It depends on plan and settings — some creators pass processing to members, some absorb it. Adjust the editable fields to reflect your setup."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage does Patreon take?","acceptedAnswer":{"@type":"Answer","text":"Patreon charges new creators a 10% platform fee, plus payment processing of about 2.9% + $0.30 per pledge. Creators who joined before August 2025 keep legacy rates of roughly 5%, 8% or 12% depending on plan, so confirm your own rate in your Patreon dashboard."}},{"@type":"Question","name":"Do creators pay for payment processing?","acceptedAnswer":{"@type":"Answer","text":"It depends on plan and settings — some creators pass processing to members, some absorb it. Adjust the editable fields to reflect your setup."}}]}</script>
 <meta property="og:url" content="https://finance.mquickcalc.com/tools/patreon-fee-calculator">
 <meta property="og:site_name" content="mQuickCalc Finance">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://finance.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Patreon Fee Calculator","item":"https://finance.mquickcalc.com/tools/patreon-fee-calculator"}]}</script>
@@ -66,7 +66,7 @@
       <input id="income" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="1000.00">
 
       <label for="plat">Platform fee %</label>
-      <input id="plat" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="5">
+      <input id="plat" class="input" type="number" inputmode="decimal" min="0" step="0.01" value="10">
 
       <div class="row">
         <div class="field">
@@ -102,7 +102,7 @@
 
     <div class="callout">
       <div class="t">Fee model note</div>
-      <p>Patreon earns a <strong>platform fee</strong> on membership income and separate <strong>payment processing fees</strong> may apply per charge. Whether processing fees are passed to members depends on the creator's settings and plan. Defaults above (5% + 2.9% + $0.30) are common approximations — edit them to match your situation.</p>
+      <p>Patreon earns a <strong>platform fee</strong> on membership income and separate <strong>payment processing fees</strong> may apply per charge. Whether processing fees are passed to members depends on the creator's settings and plan. Defaults above (10% + 2.9% + $0.30, the rate for creators who joined from August 2025) are common approximations — edit them to match your situation.</p>
     </div>
 
     <div class="ad-slot ad-incontent" data-ad="incontent"></div>
@@ -111,7 +111,7 @@
 
     <h2>Frequently asked questions</h2>
     <h3>What percentage does Patreon take?</h3>
-    <p>Patreon currently charges a platform fee in the range of roughly 5%, plus potential payment processing fees. Because the exact fees changed across Patreon's pricing history, confirm the current rates on Patreon's site.</p>
+    <p>Patreon charges new creators a 10% platform fee, plus payment processing of about 2.9% + $0.30 per pledge. Creators who joined before August 2025 keep legacy rates of roughly 5%, 8% or 12% depending on plan, so check your own dashboard before relying on a single number.</p>
     <h3>Do creators pay for payment processing?</h3>
     <p>It depends on plan and settings — some creators pass processing to members, some absorb it. Adjust the editable fields to reflect your setup.</p>
 
@@ -148,7 +148,7 @@
 <script src="/js/site-core.js?v=f5a9998e" defer></script>
   <script src="/js/site-enhance.js?v=65faf024" defer></script>
   <script src="/js/site-meters.js?v=3b464033" defer></script>
-<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("income").value)||0,n=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("paypct").value)||0)/100)+(parseFloat(document.getElementById("payflat").value)||0)*Math.max(parseInt(document.getElementById("txcount").value,10)||0,0),d=n+l,a=t-d;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(n),document.getElementById("payVal").textContent=e(l),document.getElementById("totVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("income").value="1000.00",document.getElementById("plat").value="5",document.getElementById("paypct").value="2.9",document.getElementById("payflat").value="0.30",document.getElementById("txcount").value="100",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
+<script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("income").value)||0,n=t*((parseFloat(document.getElementById("plat").value)||0)/100),l=t*((parseFloat(document.getElementById("paypct").value)||0)/100)+(parseFloat(document.getElementById("payflat").value)||0)*Math.max(parseInt(document.getElementById("txcount").value,10)||0,0),d=n+l,a=t-d;document.getElementById("netVal").textContent=e(a),document.getElementById("platVal").textContent=e(n),document.getElementById("payVal").textContent=e(l),document.getElementById("totVal").textContent=e(d),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("income").value="1000.00",document.getElementById("plat").value="10",document.getElementById("paypct").value="2.9",document.getElementById("payflat").value="0.30",document.getElementById("txcount").value="100",t()}),t(),window.__bindRealtime&&window.__bindRealtime(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
 </body>
