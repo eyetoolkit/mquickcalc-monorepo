@@ -1,5 +1,6 @@
 [
   { "alias": "/tools/digital-storage-converter", "tool": "data-storage-converter" },
+  { "alias": "/tools/digital-storage-converter.html", "tool": "data-storage-converter" },
   { "namespace": "angle",              "tool": "angle-converter",              "pairs": [["grad", "deg"], ["rad", "deg"], ["turn", "deg"]] },
   { "namespace": "area",               "tool": "area-converter",               "pairs": [["acre", "ha"], ["cm2", "ft2"], ["ha", "acre"], ["km2", "ha"]] },
   { "namespace": "cooking",            "tool": "cooking-converter",            "pairs": [["tsp-us", "ml"], ["tbsp-us", "ml"], ["cup-us", "ml"]] },

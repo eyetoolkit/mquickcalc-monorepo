@@ -85,3 +85,4 @@ https://mquickcalc.com/*.html  https://mquickcalc.com/:splat  301
 
 # ===== Merged pages (old URL -> keeper) =====
 /tools/digital-storage-converter  /tools/data-storage-converter  301
+/tools/digital-storage-converter.html  /tools/data-storage-converter  301

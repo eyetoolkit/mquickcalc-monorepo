@@ -6,3 +6,4 @@ https://health.mquickcalc.com/*.html  https://health.mquickcalc.com/:splat  301
 
 # merged: heart-rate-zones was a strict subset of target-heart-rate
 /tools/heart-rate-zones-calculator  /tools/target-heart-rate-calculator  301
+/tools/heart-rate-zones-calculator.html  /tools/target-heart-rate-calculator  301
