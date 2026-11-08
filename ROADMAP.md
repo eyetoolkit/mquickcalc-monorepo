@@ -1,4 +1,40 @@
 # mQuickCalc 实施路线图
+---
+
+## ⚠️ 现状对照（2026-11-08 实测，覆盖本文件的历史口径）
+
+> **本文件是 2026-09-18 的历史规划快照（v1.0），不是当前执行清单。**
+> 下文所有「目标」「打勾」「预计完成」均按当时口径保留，便于追溯；**当前排期以 `C:\TOOL\tools-roadmap-20261108.html` 为准**。
+> 本次核实的标记为 `D1D2-STATUS-20261108`，请勿删除。
+
+### 关键数字对照
+
+| 本文件原口径 | 2026-11-08 实测 | 处置 |
+|---|---|---|
+| 3 个站点（隐含） / 174 URLs / 118→188 工具 | **4 站**；sitemap 可索引 **204**（72/60/41/31）；工具页 **143**（46/45/33/19） | 以实测为准 |
+| P0 交付物「GSC 覆盖率 95%+」「排名 11–20 页面 Title/Meta 全部优化」「≥3 个目录提交成功」全部打勾 | 五域首页无 GSC 验证 meta / 文件，站点侧无导出数据、无目录提交证据 | **打勾无证据，视为未完成** |
+| 「所有工具页 FAQ JSON-LD 就位」 | 190/234 页有 `FAQPage`，44 页缺；230/234 有 canonical + JSON-LD | 部分属实，覆盖率非 100% |
+| P1「工具总数达 188 个」「月自然访客 ≥1,000」 | 未达成；近 7 天搜索会话 0，严格 UV 仅 1 天净 5 | 目标不是事实 |
+| P2-3「访客 ≥1 万/月才申请 AdSense」 | AdSense 无公开最低流量门槛，审核看内容质量与政策合规 | **自设门槛不成立，已取消** |
+| 收录 URL 174 → 250 → 400 → 500+ 的扩量路线 | 正文词数中位 384，**190/234 页 <600 词、74 页 <300 词** | 薄页率未收敛前**不扩工具数**，Stage 0 不新增页面 |
+| 资源需求列「ECS（火山云）」 | ECS 部署脚本自 2026-09-18 起停用、无 cron；唯一入口是 GitHub Actions | 见同仓 `AGENT.md` 现行版 |
+
+| 维度 | 2026-11-08 实测 |
+|---|---|
+| 生产站点 | mQuickCalc **4 个**：`mquickcalc` / `mquickcalc-finance` / `mquickcalc-health` / `mquickcalc-cover`（源码目录分别是 `packages/site-main` / `site-finance` / `site-health` / **`site-insurance`**） |
+| 页面数 | mQC 源码 234 个 HTML、工具页 143 个，线上 sitemap 可索引 **204**（主 72 / finance 60 / health 41 / cover 31）；Jsonversal 源码 95 个 Astro 页 + 12 个静态 HTML，线上 sitemap **105** |
+| 部署唯一入口 | `git push origin main` → GitHub Actions `deploy.yml`（mQC，wrangler 直传 4 站）；Jsonversal 由 CF Pages GitHub App `github:push` 自动构建 `jsonversal-main-v2` |
+| 流量基线 | 近 7 天两站搜索会话 **0 / 0**、空 referer 100%；第一方严格 UV 目前只有 2026-11-08 一天（净 5：mQC 4 / JV 1），**0 不等于零访客** |
+| 变现层 | mQC 234/234 页有 3 个广告容器但零 `ca-pub-` / `adsbygoogle`；Jsonversal 当前无广告容器；五域 `ads.txt` 全 404；GSC 五域站点侧未见验证痕迹 |
+| 现行规划 | `C:\TOOL\tools-roadmap-20261108.html`（离线自包含，26 项待办；Stage 0 = 能测 / 能申请，明确不新增页面） |
+
+### 本文件仍然有效的部分
+
+- 愿景、KPI 框架、P3 产品设想可作为**背景参考**；
+- `llms.txt` 已创建且 4 套 robots / sitemap / llms 均 200，这一项属实；
+- 但**任何以「已完成 / 已打勾」为依据的排期决策都必须重新取证**。
+
+---
 
 > 版本：v1.0 | 日期：2026-09-18 | 状态：规划中
 
@@ -58,6 +94,8 @@
 | SuperStats | https://www.superstats.org/directory | 申请中 |
 
 ### P0 交付物
+
+> ⚠️ 2026-11-08 复核：以下 5 项打勾**均无证据佐证**（GSC 未验证、无导出文件、无目录提交记录），按未完成处理。
 
 - [x] Search Console 覆盖率达 95%+
 - [x] 所有工具页 FAQ JSON-LD 就位
@@ -146,7 +184,7 @@
 | 阶段 | 条件 | 动作 |
 |---|---|---|
 | **立即可做** | — | 预留广告位模板（页脚/侧栏） |
-| **访客 1 万+** | 访客 ≥ 1 万/月 | 申请 Google AdSense |
+| ~~**访客 1 万+**~~ | ~~访客 ≥ 1 万/月~~（2026-11-08 判定不成立，AdSense 无公开最低流量门槛） | 申请 Google AdSense |
 | **DA 30+** | AdSense 批准后 | 申请 Mediavine / Raptive（$25–50 RPM） |
 | **访客 5 万+** | 访客 ≥ 5 万/月 | 谈 Programmatic 直客广告 |
 
@@ -239,6 +277,8 @@ GET /api/v1/tdee?weight=70&height=175&age=30&sex=m&activity=sedentary
 ---
 
 ## 下一步行动（第 1 周）
+
+> ⚠️ 历史快照：本节已不是当前排期；现行 Stage 0 明确「不新增页面、不投放量」，见 `C:\TOOL\tools-roadmap-20261108.html`。
 
 > 按顺序执行，不要跳跃
 

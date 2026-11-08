@@ -1,156 +1,128 @@
-# AGENT.md — mquickcalc 部署协议（固化版）
+# AGENT.md — mQuickCalc 部署协议（现行版）
 
-> **任何 agent (TRAE / WorkBuddy / 新会话 / 人类) 接手 mquickcalc 时必须先读这个文件**
-> 上次更新: 2026-09-18
-> 性质: 长期不变的项目宪法，低频修改。运行时状态看 `.workbuddy/MEMORY.md`
+> **任何 agent (TRAE / WorkBuddy / 新会话 / 人类) 接手 mQuickCalc 时必须先读本文件**
+> 上次核实：2026-11-08（待办 D1+D2：文档纠偏 + 部署链单通道核实）
+> 性质：项目宪法，低频修改。运行时状态看 `C:\TOOL\.workbuddy\memory\`
+> 现行规划与待办：`C:\TOOL\tools-roadmap-20261108.html`
+> 本版标记：`D1D2-STATUS-20261108`
 
 ---
 
-## 0. 核心事实（先知道这些）
+## 0. 一句话结论
+
+**唯一生效的上线入口：`git push origin main` → GitHub Actions `.github/workflows/deploy.yml` → `wrangler pages deploy` × 4。**
+
+2026-09-18 旧版「GitHub Actions 额度耗尽，只走 ECS `/opt/mquickcalc/scripts/deploy.sh`」**已废止并证伪**：
+Actions 近 6 次 push 全部 `success`，4 个生产 Pages 项目的 commit 与 GitHub `main` 逐一对应；
+ECS 脚本、工作副本与凭据仍在服务器上，但自 2026-09-18 起再未运行、无 cron / systemd timer，**禁止执行**。
+
+---
+
+## 1. 核心事实（2026-11-08 实测）
 
 | 项目 | 值 |
 |---|---|
-| **Canonical 源码** | GitHub `eyetoolkit/mquickcalc-monorepo`（单一真相源） |
-| **ECS 工作副本** | `/root/mquickcalc/monorepo` |
-| **Cloudflare Account** | `00cb5cd6be4881053e57a338ce62de2f` |
-| **4 个 Pages 项目** | `mquickcalc` / `mquickcalc-finance` / `mquickcalc-health` / `mquickcalc-cover` |
-| **当前唯一部署入口** | ⛔ GitHub Actions 额度耗尽 — **只走 ECS 手动脚本** |
-| **ECS SSH 别名** | `ssh volc` |
-| **ECS 部署脚本** | `bash /opt/mquickcalc/scripts/deploy.sh` |
-| **ECS 体检脚本** | `bash /opt/mquickcalc/scripts/check-integration.sh` |
-| **CF 凭证** | `/opt/env/tri-sites.env` 里的 `CLOUDFLARE_API_TOKEN`（与 tri-sites 共用账户 token A） |
-| **冻结开关** | 存在 `/opt/mquickcalc/scripts/DEPLOY_FREEZE` 即拒绝部署 |
+| Canonical 源码 | GitHub `eyetoolkit/mquickcalc-monorepo`，分支 `main` |
+| 核实时的 main HEAD | `903f3b9d6`（2026-11-08）；本文件提交后会前进，以 `git ls-remote` 为准 |
+| 生产 Pages 项目 | `mquickcalc` / `mquickcalc-finance` / `mquickcalc-health` / `mquickcalc-cover` |
+| 源码目录 | `packages/site-main` / `site-finance` / `site-health` / **`site-insurance`（→ cover，名字不对称，别改错）** |
+| Cloudflare Account | `00cb5cd6be4881053e57a338ce62de2f` |
+| 唯一入口 | GitHub Actions `deploy.yml`（`push: branches: [main]` + `workflow_dispatch`） |
+| CF 部署触发类型 | `ad_hoc`（wrangler 直传，带 `--commit-hash=${{ github.sha }}`） |
+| CI 校验 | `pr-check.yml`：build + 文件数 + JSON-LD + H1 关键字检查 |
+| 线上页面 | 源码 234 个 HTML；线上 sitemap 可索引 204（72/60/41/31） |
+| ECS 状态 | `/opt/mquickcalc/scripts/deploy.sh` 保留但**已停用**；最后日志 2026-09-18 20:39；无 cron / timer；工作副本 HEAD `a579e2c`（落后 51 天） |
 
 ---
 
-## 1. 部署模型（唯一入口）
+## 2. 现行部署模型（唯一入口）
 
 ```
-本地开发 → git push origin main → SSH 到 ECS → deploy.sh 一键部署 → 4 站点自动上线
-                                     ↑
-                                     | 唯一入口，只有这个脚本跑 wrangler
+本地开发 → git push origin main
+              ├─ pr-check.yml   → build + 文件数 / JSON-LD / H1 校验
+              └─ deploy.yml     → node tools/build.mjs
+                                  → wrangler pages deploy × 4
+                                     (mquickcalc / -finance / -health / -cover)
+                                  → CF Pages production，commit-hash = github.sha
 ```
 
-**⛔ 禁止事项:**
+### 连续两次 push 的线上一致性（D2 验收证据）
 
-- 禁止在 GitHub Settings 恢复 self-hosted runner（已经丢了，不要再装回来）
-- 禁止打开 Cloudflare Pages 的 Git 自动构建（会与 ECS 直传双通道冲突，参考 tri-sites 09:41 事故）
-- 禁止直接手动 `wrangler pages deploy` 单站（必须走 deploy.sh，有冻结 + 防回滚 + 冒烟）
-- 禁止从本地 Windows 直接 wrangler deploy（本地 token/代理不稳定，ECS 才是枢纽）
+| push (UTC) | GitHub HEAD | Actions deploy run | 4 个 Pages 生产部署 (UTC) | 结果 |
+|---|---|---|---|---|
+| 2026-11-08 10:04:20 | `165e8582` | `42469840121` success | 10:04:37 / 10:04:42 / 10:04:48 / 10:04:53，均 `165e8582` | ✅ 一致 |
+| 2026-11-08 12:58:17 | `903f3b9d6` | `42482696483` success | 12:58:33 / 12:58:38 / 12:58:43 / 12:58:47，均 `903f3b9d6` | ✅ 一致 |
 
-**✅ 允许事项:**
-
-- `git push origin main` 推 GitHub（但不要指望 GitHub Actions 自动部署）
-- `ssh volc "bash /opt/mquickcalc/scripts/deploy.sh"` 手动部署（**唯一上线路径**）
-- `ssh volc "bash /opt/mquickcalc/scripts/check-integration.sh"` 冒烟测试
-- `ssh volc "bash /opt/mquickcalc/scripts/deploy.sh --only site-main"` 单站（如果以后加参数）
+`mquickcalc` / `-finance` / `-health` 三个项目的 `source` 已为 `null`（Git 集成已断开），
+只有 `ad_hoc` 部署；`deploy.yml` 用仓库 secrets `CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_KEY` / `CLOUDFLARE_EMAIL`（Global API Key + Email），
+**不是** `CLOUDFLARE_API_TOKEN`（旧 README 写错了）。
 
 ---
 
-## 2. 防回滚保护（deploy.sh 内置）
+## 3. ⛔ 禁止事项
 
-deploy.sh 启动时会：
+- **禁止执行 ECS 部署**：`ssh volc "bash /opt/mquickcalc/scripts/deploy.sh"` 及其等价命令。脚本会先 `git pull` 再 `wrangler pages deploy` × 4，
+  一旦运行就产生第二次 `ad_hoc` 部署，与 Actions 抢生产版本；且其工作副本带 4 个未提交改动（`sitemap.xml` × 3、`_redirects`）。
+  该脚本的防回滚保护只防「本地落后于线上」，**不防「手动重复部署」**。
+- **禁止从本地 Windows 直接 `wrangler pages deploy`**，也禁止改 CF Pages 生产分支 / 构建配置来绕过 Actions。
+- **禁止把 CF Pages Git 自动构建重新接成生产通道**（见第 5 节残留项；要不要清理需用户拍板）。
+- **禁止 `git checkout -f` / `reset --hard` 本地 clone**：`C:\TOOL\mquickcalc` 常落后远端且带未提交改动。
+  要改远端文件，走 GitHub Git Data API 在 `main` 上精确提交（等价于一次可追溯的 push，仍由 Actions 部署）。
+- 禁止在未同步 `tools/held-pages.json` 的情况下重新生成 sitemap / llms：health 四个医学页按 2026-11-08 拍板「保留文件、暂不上线」。
 
-1. 从 Cloudflare API 拉每个项目的当前生产部署 commit
-2. 与 ECS 本地 `git rev-parse main` 比祖先关系
-3. 若本地 main 落后于线上 → **拒绝部署**（exit 1），提示同步
-4. 若本地 main 包含线上 → 正常继续
+## ✅ 允许事项
 
-这和 tri-sites `deploy-frontend.sh` 完全一致，参考 2026-09-18 09:41 事故教训。
-
----
-
-## 3. 冻结开关
-
-紧急情况（如线上回滚期间、用户要求暂停）：
-
-```bash
-# 冻结 — 立即阻断所有部署
-touch /opt/mquickcalc/scripts/DEPLOY_FREEZE
-
-# 解冻
-rm /opt/mquickcalc/scripts/DEPLOY_FREEZE
-```
-
-deploy.sh 开头 3 秒内就会检测到并 exit 1。
+- `git push origin main`（或 Git Data API 精确提交）→ 自动部署；`workflow_dispatch` 手动重跑 `deploy.yml`。
+- 只读核查：GitHub Actions runs、CF Pages deployments / `source` / `deployment_trigger.metadata.commit_hash`、线上 HTTP 验收。
+- 本地 `node tools/build.mjs` 自检（不上传）。
 
 ---
 
-## 4. 工作目录结构
+## 4. 静态资源改动的三层配套（沿用既有纪律）
 
-```
-/root/mquickcalc/          # ECS 工作区根
-├── monorepo/              # git clone，canonical 副本
-│   ├── packages/{main,finance,health,insurance}/
-│   └── tools/build.mjs    # 构建脚本
-├── scripts/
-│   ├── deploy.sh          # ⭐ 唯一部署入口
-│   └── check-integration.sh # 冒烟测试
-├── logs/                  # deploy.sh 每次运行写日志
-├── .workbuddy/MEMORY.md   # 运行时状态（可高频更新）
-└── AGENT.md               # 本文件（低频更新）
-```
+改 `brand-kit` / 共享 JS / SW 后必须同时做，否则页面会拿到旧缓存：
+
+1. Service Worker `CACHE_VERSION` bump，并在 fetch handler 保留 `/__uv` bypass（匿名计数绝不缓存、绝不离线回落）；
+2. CF 定向 purge：apex / www × 带 query / 不带 query 都发（缓存键可能忽略 query）；
+3. 线上复验：**用前端实际发出的完整 URL（含 query）测**，不要只测裸路径。
+
+另：`/compare/` 页与 3 个 `404.html` 由 `tools/gen-compare.mjs` 生成、直接提交进仓库，
+既不引用 `site-core.js` 也不走共享布局；任何全站注入必须「产物 + 生成器模板」同步改，否则下次重新生成会丢。
 
 ---
 
-## 5. 与同机其他 agent 的边界
+## 5. ⚠️ 已知残留风险（本轮只记录，未改配置）
 
-这台 ECS 同时承载多个项目：
+CF Pages 的 GitHub 集成没有全部断开：
 
-| 项目 | 工作目录 | 部署方式 | 负责人 |
-|---|---|---|---|
-| **mquickcalc (4 站)** | `/root/mquickcalc/monorepo` | ECS 手动 deploy.sh | **当前会话** |
-| tri-sites (boardduel/memoryduel) | `/opt/deploy/tri-sites` | GitHub webhook + ECS deploy-frontend.sh | WorkBuddy |
-| eyetoolkit/blog (科普 6 站) | `/opt/blog` | CF webhook 自动构建 | WorkBuddy |
-| eyetoolkit-site (工具站) | `/opt/eyetoolkit-site` | CF webhook 自动构建 | WorkBuddy |
-| jsonversal (4 站) | `/opt/jsonversal` | JSON 沙盒 | JSON Agent |
-
-**冲突防护:**
-
-- mquickcalc 与 tri-sites **共用 Cloudflare account**（`00cb5cd6...`）但**项目名完全不同**，wrangler deploy 互不干扰
-- `/opt/env/tri-sites.env` 是 **账号级 token**，所有项目共享这一把。deploy.sh 直接 source 它，不要创建 mquickcalc 专属 env 文件
-- WorkBuddy 的记忆里还记着旧 SSH key (`volcano_key`)，**已过期**。当前有效 SSH 密钥是 `~/.ssh/game_ed25519`
-
----
-
-## 6. 快速操作手册
-
-```bash
-# 部署（唯一路径）
-ssh volc "bash /opt/mquickcalc/scripts/deploy.sh"
-
-# 只 pull + build 不部署（先验证产物对）
-ssh volc "cd /root/mquickcalc/monorepo && git pull && node tools/build.mjs"
-
-# 冒烟测试
-ssh volc "bash /opt/mquickcalc/scripts/check-integration.sh"
-
-# 查看最近部署日志
-ssh volc "ls -lt /root/mquickcalc/logs/ | head -5"
-
-# 紧急冻结
-ssh volc "touch /opt/mquickcalc/scripts/DEPLOY_FREEZE"
-
-# 检查线上版本 vs ECS main
-ssh volc "cd /root/mquickcalc/monorepo && git log -1 --oneline"
-```
-
----
-
-## 7. 故障处理矩阵
-
-| 故障 | 先看什么 | 处置 |
+| 项目 | 现状 | 影响 |
 |---|---|---|
-| deploy.sh 报"冻结" | 冻结文件 | `rm /opt/mquickcalc/scripts/DEPLOY_FREEZE`（确认后） |
-| deploy.sh 报"落后于线上" | GitHub main vs ECS main | `ssh volc "cd /root/mquickcalc/monorepo && git pull"` |
-| deploy.sh 报"token 无效" | token 有效期 | `cat /opt/env/tri-sites.env` 检查 `CLOUDFLARE_API_TOKEN` |
-| 4 站 500 或白屏 | check-integration.sh | 最后一次成功的 CF deployment 里 rollback |
-| 想恢复 GitHub Actions | 用户决策 | 去 Settings 放开 runner 限制 → 但要同时关 CF Git 自动构建 |
+| `mquickcalc-cover` | `source.type=github`，`deployments_enabled=true`，路径限定 `packages/site-insurance/**` 等 | 每次 push 额外产生一个 `github:push` 部署，状态 `idle`，随后被 Actions 的 `ad_hoc` 部署覆盖为生产 |
+| `mquickcalc-health-v2` | 同样连着 GitHub，但只绑 `*.pages.dev`，是闲置项目 | 每次 push 产生一个空转 `github:push` 部署（`idle`） |
+| `mquickcalc` / `-finance` / `-health` | `source=null`，仅 `ad_hoc` | 无残留 |
+
+即：**当前生产只有一条生效通道，但仍有两条空转的触发链**。清理（断开 Git 集成 / 删除闲置项目）属于改部署链，
+按「重大项等拍板」原则本轮未动，已登记为后续待办。误跑 ECS 脚本是另一个潜在第二通道，见第 3 节。
+
+ECS 侧的 `deploy-watchdog.timer`（每 5 分钟）只服务 `eyetoolkit.com` 集群，`deploy-map.json` 与脚本中均无 mQuickCalc / Jsonversal，
+与本仓库无关，不要误判为双通道。
 
 ---
 
-## 8. 变更历史
+## 6. 凭据与环境（不落明文）
+
+- GitHub Actions secrets：`CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_KEY` / `CLOUDFLARE_EMAIL`。
+- 本地脚本：`GH_TOKEN`（或项目内 `C:\TOOL\PUSH_VERSAL.bat` 的 `TOK`）、用户级环境变量 `CLOUDFLARE_EMAIL` / `CLOUDFLARE_API_KEY`。
+- 服务器 `/opt/env/tri-sites.env` 里的账号级 token 仅供历史 ECS 脚本使用；**文档与记忆不得写入任何密钥明文**。
+- ECS `ssh volc` 别名在本沙箱不解析，需 `ssh -i ~/.ssh/game_ed25519 root@101.96.194.237`；仅用于只读核查。
+
+---
+
+## 7. 变更历史
 
 | 日期 | 变更 | 原因 |
 |---|---|---|
-| 2026-09-18 | 初始创建，固化 ECS 手动 deploy.sh 为唯一入口 | GitHub Actions 额度耗尽，self-hosted runner 丢失 |
+| 2026-09-18 | 初版：固化 ECS 手动 `deploy.sh` 为唯一入口 | 当时 GitHub Actions 额度耗尽 / self-hosted runner 丢失 |
+| 2026-11-08 | **现行版**：改判 GitHub Actions `deploy.yml` 为唯一入口；ECS 脚本标记停用并禁止执行；补连续两次 push 一致性证据、残留 Git 集成清单、静态资源三层配套 | D1+D2 实测：Actions 已恢复且连续 6 次成功，ECS 51 天未运行且无定时任务；旧宪法会把后续开发带偏 |
+
+> 2026-09-18 旧版全文已废止，不再作为操作依据；其历史内容可从本仓库 git 历史查阅。
