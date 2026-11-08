@@ -158,6 +158,10 @@ ${rows}
 <p>Machine-readable catalogue: <a href="/llms.txt">llms.txt</a></p>
 </div>
 <footer><div class="wrap">© mQuickCalc · Estimates are for orientation — verify before relying on them. © 2026</div></footer>
+<!-- First-party anonymous visit count (edge /__uv); cookieless, no third party. -->
+<script>
+(function(){try{var p=new Image(1,1);p.referrerPolicy="no-referrer";p.src="/__uv?t="+Date.now()}catch(e){}})();
+</script>
 </body>
 </html>
 `;
@@ -204,6 +208,10 @@ ${cards}
 <p>Machine-readable catalogue: <a href="/llms.txt">llms.txt</a></p>
 </div>
 <footer><div class="wrap">© mQuickCalc · Estimates are for orientation — verify before relying on them. © 2026</div></footer>
+<!-- First-party anonymous visit count (edge /__uv); cookieless, no third party. -->
+<script>
+(function(){try{var p=new Image(1,1);p.referrerPolicy="no-referrer";p.src="/__uv?t="+Date.now()}catch(e){}})();
+</script>
 </body>
 </html>
 `;
