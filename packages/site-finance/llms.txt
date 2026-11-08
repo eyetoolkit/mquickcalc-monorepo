@@ -40,8 +40,8 @@ Revenue share, profit and margin tools.
 
 VAT, GST and sales-tax impact.
 
-- [Income Tax Calculator — 2026 Federal Tax Estimate](https://finance.mquickcalc.com/tools/income-tax-calculator): Free US income tax calculator for tax year 2026: estimate federal income tax from gross income and filing status, with a full bracket-by-bracket breakdown, marginal and effective rate. Standard deduction built in.
-- [Paycheck Calculator — Take-Home Pay Estimator 2026](https://finance.mquickcalc.com/tools/paycheck-calculator): Free paycheck calculator: estimate your US take-home pay per paycheck or find the gross salary you need for a target net. Uses 2026 federal tax brackets, standard deduction, Social Security and Medicare. No sign-up.
+- [Income Tax Calculator — 2026 Federal Tax Estimate](https://finance.mquickcalc.com/tools/income-tax-calculator): Free US income tax calculator for 2026: estimate federal tax from gross income and filing status, with a bracket-by-bracket breakdown and effective rate.
+- [Paycheck Calculator — Take-Home Pay Estimator 2026](https://finance.mquickcalc.com/tools/paycheck-calculator): Free paycheck calculator: estimate your US take-home pay per paycheck or find the gross salary you need for a target net.
 - [Sales Commission Calculator — Earnings on a Sale](https://finance.mquickcalc.com/tools/sales-commission-calculator): Calculate commission earned on a sale, total earnings with a base, or how much you must sell to hit an income target. Free, no sign-up.
 - [Sales Tax Calculator](https://finance.mquickcalc.com/tools/sales-tax-calculator): Free sales tax calculator: add or back out US sales tax on any price. Includes state/local rate breakdown, VAT vs sales tax comparison, economic nexus rules…
 - [VAT Calculator — Add or Remove UK & EU VAT](https://finance.mquickcalc.com/tools/vat-calculator): Add or remove VAT on any amount in one click. Enter a net or gross figure, choose your rate, and see the VAT and the other figure instantly. Free.
@@ -59,13 +59,13 @@ Markup, margin, break-even and unit price.
 - [Auto Loan Calculator — Free Tool](https://finance.mquickcalc.com/tools/auto-loan-calculator): Calculate monthly car loan payments, total interest, and amortization. Includes dealer vs bank loan comparison, 72 vs 84 month guide, gap insurance,…
 - [Booking.com Fee Calculator — Free Tool](https://finance.mquickcalc.com/tools/booking-fee-calculator): Estimate Booking.com commission and your net revenue from hotel or short-stay bookings.
 - [Break-even Calculator — Units to Cover Costs](https://finance.mquickcalc.com/tools/break-even-calculator): Find how many units you must sell to break even, plus the units needed for a target profit, from fixed costs, variable cost and price. Free, no sign-up.
-- [Compound Interest Calculator — Investment Growth & Savings](https://finance.mquickcalc.com/tools/compound-interest-calculator): Free compound interest calculator: see your investment grow over time with annual contributions, variable rates, and inflation adjustment. Supports monthly, quarterly and annual compounding.
+- [Compound Interest Calculator — Investment Growth & Savings](https://finance.mquickcalc.com/tools/compound-interest-calculator): Free compound interest calculator: see your investment grow over time with annual contributions, variable rates, and inflation adjustment.
 - [eBay Seller Fee Calculator](https://finance.mquickcalc.com/tools/ebay-fee-calculator): Estimate eBay final value fees and how much you net from a sale. Includes the per-order fee and optional $7,500 tier. Free, no sign-up.
 - [Etsy Fee Calculator & Net Profit](https://finance.mquickcalc.com/tools/etsy-fee-calculator): Calculate Etsy seller fees: transaction fee, payment processing, listing fee, regulatory fee, and off-site ads. See your estimated take-home profit per sale.…
 - [Hourly to Salary Converter — Annual, Weekly, Daily](https://finance.mquickcalc.com/tools/hourly-to-salary): Convert between hourly wage and annual salary. Account for overtime, unpaid time off, and weeks worked per year. Free, no sign-up.
 - [Invoice Generator (Pricing) — Free Tool](https://finance.mquickcalc.com/tools/invoice-generator): Calculate your hourly or project rate to hit your target annual income. Accounts for taxes, benefits, and vacation days.
 - [Loan Calculator — Monthly Payment & Total Interest](https://finance.mquickcalc.com/tools/loan-calculator): Free loan calculator: calculate monthly payment, total interest, and amortization for any fixed-rate loan. Includes loan term comparison, amortization…
-- [Mortgage Calculator — Monthly Payment & Amortization Schedule](https://finance.mquickcalc.com/tools/mortgage-calculator): Free mortgage calculator: monthly payment, total interest, total cost, and full amortization schedule. Supports fixed-rate mortgages in USD with property tax and PMI estimates.
+- [Mortgage Calculator — Monthly Payment & Amortization Schedule](https://finance.mquickcalc.com/tools/mortgage-calculator): Free mortgage calculator: monthly payment, total interest, total cost, and full amortization schedule.
 - [Multi-Platform Fee Comparison — Free Tool](https://finance.mquickcalc.com/tools/multi-platform-fee-comparison): Compare seller fees across 6 platforms (eBay, Etsy, Amazon, Shopify, PayPal, Stripe) side-by-side. See which platform keeps the most for you.
 - [PayPal Fee Calculator — Fee & Net You Receive](https://finance.mquickcalc.com/tools/paypal-fee-calculator): Calculate PayPal's fee and the exact net you receive — or how much to charge to hit a target payout. Free, no sign-up.
 - [Refinance Calculator — Free Tool](https://finance.mquickcalc.com/tools/refinance-calculator): Compare your current loan vs. refinance offer to see if you save money. Break-even point, monthly savings, total interest saved.
@@ -77,11 +77,11 @@ Markup, margin, break-even and unit price.
 
 ## finance
 
-- [Amortization Schedule Calculator — Full Payment Table](https://finance.mquickcalc.com/tools/amortization-schedule-calculator): Free amortization schedule calculator: monthly payment plus a complete month-by-month table of interest, principal and remaining balance. Add extra payments to see how much interest you save and how soon the loan ends.
-- [Credit Card Payoff Calculator — Time & Total Interest](https://finance.mquickcalc.com/tools/credit-card-payoff-calculator): Free credit card payoff calculator: enter balance, APR and monthly payment to see how many months until debt-free, the total interest you will pay, and how much minimum payments would cost instead. No sign-up.
+- [Amortization Schedule Calculator — Full Payment Table](https://finance.mquickcalc.com/tools/amortization-schedule-calculator): Free amortization schedule calculator: monthly payment plus a complete month-by-month table of interest, principal and remaining balance.
+- [Credit Card Payoff Calculator — Time & Total Interest](https://finance.mquickcalc.com/tools/credit-card-payoff-calculator): Free credit card payoff calculator: enter balance, APR and monthly payment to see months to debt-free, total interest, and how much minimum payments would cost.
 - [Markup & Margin Calculator — Pricing from Cost](https://finance.mquickcalc.com/tools/markup-margin-calculator): Turn a product cost into the right selling price by markup % or target margin %, and see both markup and margin at once. Free, no sign-up.
-- [NPV & IRR Calculator — Net Present Value and Rate of Return](https://finance.mquickcalc.com/tools/npv-irr-calculator): Free NPV and IRR calculator: net present value, internal rate of return, profitability index and payback period from a list of yearly cash flows. Compare an investment against your discount rate instantly.
-- [ROI & CAGR Calculator — Return on Investment](https://finance.mquickcalc.com/tools/roi-cagr-calculator): Free ROI and CAGR calculator: total return on investment plus the annualized compound growth rate between two values. Includes dividends or income received, gain multiple and doubling time. Runs entirely in your browser.
+- [NPV & IRR Calculator — Net Present Value and Rate of Return](https://finance.mquickcalc.com/tools/npv-irr-calculator): Free NPV and IRR calculator: net present value, internal rate of return, profitability index and payback period from a list of yearly cash flows.
+- [ROI & CAGR Calculator — Return on Investment](https://finance.mquickcalc.com/tools/roi-cagr-calculator): Free ROI and CAGR calculator: total return on investment plus the annualized compound growth rate between two values.
 
 ## Policies
 
@@ -93,5 +93,5 @@ Markup, margin, break-even and unit price.
 ## Sister sites
 
 - [mQuickCalc](https://mquickcalc.com/): Free unit converters and everyday calculators — length, weight, temperature, volume, area, speed, data storage, time, height and cooking.
-- [mQuickCalc Health](https://health.mquickcalc.com/): Free health and wellness calculators — body metrics, nutrition, heart, fitness and pregnancy.
+- [mQuickCalc Health](https://health.mquickcalc.com/): Free health and wellness calculators — body metrics, nutrition, heart and fitness.
 - [mQuickCalc Cover](https://cover.mquickcalc.com/): Free insurance cost estimators — auto, home, renters, life and health premiums, deductibles and coverage comparisons.

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pregnancy Due Date Calculator — Free Tool | mQuickCalc Health</title>
   <meta name="description" content="Free pregnancy due date calculator. Enter the first day of your last period to estimate your due date. Uses the clinically validated Naegele rule.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/pregnancy-due-date-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Pregnancy Due Date Calculator","url":"https://health.mquickcalc.com/tools/pregnancy-due-date-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free pregnancy due date calculator. Enter the first day of your last period to estimate your due date. Uses the clinically validated Naegele rule."}
   </script>
@@ -105,7 +106,9 @@
 <div class="related-section">
       <h2>Related calculators</h2>
       <div class="tool-grid">
-        <a href="/tools/ovulation-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌸</span><div class="tc-title">Ovulation Calculator</div></div><div class="tc-desc">Fertile window and ovulation date from cycle length.</div></a>
+        <!-- HELD link
+<a href="/tools/ovulation-calculator" class="tool-card"><div class="icon-row"><span class="emoji">🌸</span><div class="tc-title">Ovulation Calculator</div></div><div class="tc-desc">Fertile window and ovulation date from cycle length.</div></a>
+-->
       </div>
     </div>
     <p class="upd">Last updated <time datetime="2026-09-08">9月 8, 2026</time></p>
@@ -116,9 +119,13 @@
 <section class="see-also">
   <h2>See also</h2>
   <ul>
-      <li><a href="/tools/ovulation-calculator">Ovulation Calculator</a></li>
+      <li><!-- HELD link
+<a href="/tools/ovulation-calculator">Ovulation Calculator</a>
+--></li>
       <li><a href="/tools/bac-calculator">BAC Calculator (Blood Alcohol)</a></li>
-      <li><a href="/tools/blood-sugar-converter">Blood Sugar Converter</a></li>
+      <li><!-- HELD link
+<a href="/tools/blood-sugar-converter">Blood Sugar Converter</a>
+--></li>
       <li><a href="/specialized">📂 All Specialized Calculators</a></li>
   </ul>
 </section>
@@ -130,7 +137,7 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
   <script src="/js/site-enhance.js?v=65faf024" defer></script>
   <script src="/js/site-meters.js?v=3b464033" defer></script>
 <script>!function(){function e(e){return document.getElementById(e)}function t(){var t=new Date(e("lmp").value);if(t&&!isNaN(t)){var lmpMs=t.getTime();t.setDate(t.getDate()+280);var gest=Math.floor((Date.now()-lmpMs)/6048e5);e("dueVal").textContent=t.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}),e("weekVal").textContent=gest<40?"Week "+Math.max(0,gest)+" of pregnancy":"Approximately "+((gest-40)*7)+" days past due",e("result").classList.add("show")}}["lmp"].forEach(function(n){var a=e(n);a&&a.addEventListener("input",t)});var n=e("calcBtn");n&&n.addEventListener("click",t);var a=e("resetBtn");a&&a.addEventListener("click",function(){var n={lmp:"2026-06-10"};Object.keys(n).forEach(function(t){var a=e(t);a&&(a.value=n[t])}),t()}),t()}();

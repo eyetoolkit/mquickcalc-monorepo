@@ -265,7 +265,7 @@ for (const site of sites) {
 // After build: regenerate sitemap.xml with real lastmod from git history
 console.log(`\n🗺  regenerating sitemaps...`);
 try {
-  execFileSync('node', [path.join(ROOT, 'tools', 'gen-sitemap.mjs')], { stdio: 'inherit' });
+  execFileSync(process.execPath, [path.join(ROOT, 'tools', 'gen-sitemap.mjs')], { stdio: 'inherit' });
 } catch (e) {
   console.error('   ⚠️ sitemap generation failed (non-fatal):', e.message);
 }

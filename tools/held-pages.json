@@ -1,0 +1,9 @@
+{
+  "_note": "刘哥 2026-11-08 拍板：health 四个医学页『保留文件、暂不上线』。gen-sitemap.mjs / gen-llms.mjs / hold-medical-pages.py 共同读取本文件；清空对应数组并运行 python tools/hold-medical-pages.py --restore 即可恢复上线。",
+  "site-health": [
+    "ovulation-calculator",
+    "pregnancy-due-date-calculator",
+    "blood-sugar-converter",
+    "mean-arterial-pressure-calculator"
+  ]
+}

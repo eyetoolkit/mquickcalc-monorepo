@@ -7,7 +7,7 @@
   <meta name="description" content="Free one rep max (1RM) calculator. Enter a weight you lifted and how many reps you did to estimate your theoretical 1RM. Supports multiple formulas.">
   <link rel="canonical" href="https://health.mquickcalc.com/tools/one-rep-max-calculator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/site.css?v=e4e09245">
+  <link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"One Rep Max (1RM) Calculator","url":"https://health.mquickcalc.com/tools/one-rep-max-calculator","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free one rep max (1RM) calculator. Enter a weight you lifted and how many reps you did to estimate your theoretical 1RM. Supports multiple formulas."}
   </script>
@@ -76,7 +76,7 @@
       <div class="big" id="ormVal">--</div>
       <div class="dim">Estimated 1RM (Epley formula)</div>
       <div class="grid">
-        <div class="cell"><div class="lbl">Epley formula</div><div class="val" id="epleyVal">--</div><div class="dim">kg</div></div>
+        <div class="cell"><div class="lbl">Lander formula</div><div class="val" id="landerVal">--</div><div class="dim">kg</div></div>
         <div class="cell"><div class="lbl">Brzycki formula</div><div class="val" id="brzyckiVal">--</div><div class="dim">kg</div></div>
       </div>
     </div>
@@ -84,7 +84,7 @@
 
     
     <div class="ad-slot ad-incontent" data-ad="incontent"></div>
-<h2>How 1RM is estimated</h2><p>Epley: weight×(1+reps/30). Brzycki: weight×36/(37−reps). Both validated for 3-10 rep sub-maximal lifts. Most reliable with 5RM or 10RM choices. Very high reps (>15) produce unreliable predictions.</p>
+<h2>How 1RM is estimated</h2><p>Epley: weight×(1+reps/30) — used for the headline estimate. Lander: weight×1.0278^(reps−1). Brzycki: weight×36/(37−reps). Both validated for 3-10 rep sub-maximal lifts. Most reliable with 5RM or 10RM choices. Very high reps (>15) produce unreliable predictions.</p>
     <h2>Frequently asked questions</h2>
 <div class="faq-list">
 <h3>How accurate are the results?</h3>
@@ -134,10 +134,10 @@
   <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
   <button id="cookie-accept" class="btn">Got it</button>
 </div>
-<script src="/js/site-core.js?v=f5a9998e" defer></script>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
   <script src="/js/site-enhance.js?v=65faf024" defer></script>
   <script src="/js/site-meters.js?v=3b464033" defer></script>
-<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,n=Math.max(1,parseInt(t("reps").value)||1),a=e*Math.pow(1.0278,n-1),r=e*(1+n/30),o=36*e/(37-n);t("ormVal").textContent=Math.round(a),t("epleyVal").textContent=Math.round(r),t("brzyckiVal").textContent=Math.round(o),t("result").classList.add("show")}["reps","weight"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)});var n=t("calcBtn");n&&n.addEventListener("click",e);var a=t("resetBtn");a&&a.addEventListener("click",function(){var n={reps:"8",weight:"80"};Object.keys(n).forEach(function(e){var a=t(e);a&&(a.value=n[e])}),e()}),e()}();
+<script>!function(){function t(t){return document.getElementById(t)}function e(){var e=parseFloat(t("weight").value)||0,n=Math.min(36,Math.max(1,parseInt(t("reps").value)||1)),a=e*Math.pow(1.0278,n-1),r=e*(1+n/30),o=36*e/(37-n);t("ormVal").textContent=Math.round(r),t("landerVal").textContent=Math.round(a),t("brzyckiVal").textContent=Math.round(o),t("result").classList.add("show")}["reps","weight"].forEach(function(n){var a=t(n);a&&a.addEventListener("input",e)});var n=t("calcBtn");n&&n.addEventListener("click",e);var a=t("resetBtn");a&&a.addEventListener("click",function(){var n={reps:"8",weight:"80"};Object.keys(n).forEach(function(e){var a=t(e);a&&(a.value=n[e])}),e()}),e()}();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the results?","acceptedAnswer":{"@type":"Answer","text":"Formulas here are population estimates validated in studies. Individual genetics, body composition, and conditions affect accuracy."}},{"@type":"Question","name":"Should I consult a professional?","acceptedAnswer":{"@type":"Answer","text":"If you have specific health concerns or plan significant changes, consult a qualified healthcare provider."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when weight changes 5%, activity shifts, or every 3-6 months for routine monitoring."}}]}

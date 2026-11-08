@@ -32,6 +32,10 @@ const SITES = [
   { pkg: 'site-insurance', origin: 'https://cover.mquickcalc.com' },
 ];
 
+// 「保留文件、暂不上线」清单（刘哥 2026-11-08 拍板）。列出 slug 的页面不进 sitemap。
+// 真相源在 tools/held-pages.json；清空数组即恢复上线。
+const HELD = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools', 'held-pages.json'), 'utf8'));
+
 const TARGET_ARG = process.argv[2];
 const sites = TARGET_ARG ? SITES.filter(s => s.pkg === TARGET_ARG) : SITES;
 if (TARGET_ARG && sites.length === 0) {
@@ -101,6 +105,7 @@ function buildSitemap(site) {
   for (let i = 0; i < tools.length; i++) {
     const f = tools[i];
     const name = path.basename(f, '.html');
+    if ((HELD[site.pkg] || []).includes(name)) continue;
     const loc = `${site.origin}/tools/${name}`;
     const lastmod = gitLastModifiedDate(f);
     const priority = i < 5 ? '0.9' : '0.8';

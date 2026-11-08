@@ -38,25 +38,25 @@ Home, renters and deductible estimators.
 Long-term care and Medicare supplement costs.
 
 - [Long-Term Care Insurance Cost Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/ltc-insurance): Estimate annual premiums for long-term care insurance (nursing home, assisted living, home health care). Compare buying at 55 vs 65 to see the early-bird…
-- [Medigap (Medicare Supplement) Cost Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/medigap-cost): Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay.
+- [Medigap (Medicare Supplement) Cost Estimator](https://cover.mquickcalc.com/tools/medigap-cost): Estimate monthly premiums for Medicare Supplement plans A through N. Medigap covers what Medicare Parts A and B don't pay.
 
 ## Travel insurance
 
 Trip and travel coverage estimators.
 
-- [Travel Insurance Cost Estimator — Trip Premium & Coverage](https://cover.mquickcalc.com/tools/travel-insurance): Estimate what a single-trip travel insurance policy might cost, based on trip cost, trip length, traveller age, destination region, plan level, deductible and add-ons. Also shows the medical, evacuation and cancellation limits to look for.
+- [Travel Insurance Cost Estimator — Trip Premium & Coverage](https://cover.mquickcalc.com/tools/travel-insurance): Estimate what a single-trip travel insurance policy might cost from trip cost, length, traveller age, destination and plan level.
 
 ## Business insurance
 
 Liability and commercial coverage.
 
-- [Business Liability Insurance Premium Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/business-liability): Estimate annual general liability insurance costs for small to medium businesses. Input your industry, revenue, and employee count.
+- [Business Liability Insurance Premium Estimator](https://cover.mquickcalc.com/tools/business-liability): Estimate annual general liability insurance costs for small to medium businesses. Input your industry, revenue, and employee count.
 - [Cyber Insurance Cost Estimator (B2B) — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/cyber-insurance): Estimate annual cyber insurance premiums for small and medium businesses. Covers data breaches, ransomware, business interruption, and regulatory fines.
 - [Workers' Compensation Premium Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/workers-comp): Estimate workers' compensation insurance premiums per employee and total annual cost based on your industry code and payroll.
 
 ## All tools
 
-- [Bundling Home + Auto Insurance Savings Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/bundling-savings): How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.
+- [Bundling Home + Auto Insurance Savings Calculator](https://cover.mquickcalc.com/tools/bundling-savings): How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.
 - [Car Insurance Premium Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/car-insurance-calculator): Ballpark annual car insurance cost based on your state, age, driving record, vehicle type, and coverage level. Free, no sign-up, no data collected.
 - [Health Insurance Premium Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/health-insurance-premium): Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate.
 - [Home Insurance Cost Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/home-insurance-estimator): Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.
@@ -75,4 +75,4 @@ Liability and commercial coverage.
 
 - [mQuickCalc](https://mquickcalc.com/): Free unit converters and everyday calculators — length, weight, temperature, volume, area, speed, data storage, time, height and cooking.
 - [mQuickCalc Finance](https://finance.mquickcalc.com/): Free fee, profit and revenue calculators for marketplaces, payment processors and creator platforms.
-- [mQuickCalc Health](https://health.mquickcalc.com/): Free health and wellness calculators — body metrics, nutrition, heart, fitness and pregnancy.
+- [mQuickCalc Health](https://health.mquickcalc.com/): Free health and wellness calculators — body metrics, nutrition, heart and fitness.
