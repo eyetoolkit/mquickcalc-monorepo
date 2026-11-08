@@ -23,6 +23,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { buildVerificationPanel } from './verification-data.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -209,6 +210,33 @@ function injectAdSlots(siteDir) {
 }
 
 /**
+ * C1 — inject the verifiability panel into finance tool pages.
+ *
+ * Rendered from tools/verification-data.mjs (single source of truth), so the
+ * checked-in HTML and the CI build output are byte-identical. Idempotent: any
+ * previously injected panel is removed first, then re-rendered. Standalone
+ * templates (404 / compare) are deliberately excluded — they do not live in
+ * site-finance/tools and have their own injection path.
+ */
+function injectVerification(siteDir) {
+  const dir = path.join(siteDir, 'tools');
+  if (!exists(dir)) return 0;
+  let touched = 0;
+  for (const f of walk(dir).filter(p => p.endsWith('.html'))) {
+    let html = fs.readFileSync(f, 'utf8');
+    html = html.replace(/\n?<!-- C1:VERIFY:START -->[\s\S]*?<!-- C1:VERIFY:END -->\n?/g, '\n');
+    const slug = path.basename(f, '.html');
+    const panel = buildVerificationPanel(slug);
+    const marker = '</main>';
+    if (!html.includes(marker)) continue;
+    html = html.replace(marker, panel + '\n' + marker);
+    fs.writeFileSync(f, html);
+    touched++;
+  }
+  return touched;
+}
+
+/**
  * Regenerate llms.txt for every site.
  *
  * llms.txt is the entry point AI assistants read to decide what a site is
@@ -257,9 +285,10 @@ for (const site of sites) {
   const replaced = replaceLegacySiteJs(siteDir);
   const busted = cacheBustSite(siteDir);
   const ads = injectAdSlots(siteDir);
+  const verified = site.pkg === 'site-finance' ? injectVerification(siteDir) : 0;
   const llms = genLlmstxt();
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history

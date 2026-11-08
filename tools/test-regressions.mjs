@@ -311,7 +311,28 @@ console.log('\n[8] cache-bust integrity');
     !fs.readFileSync(abs, 'utf8').includes('site-core.js?v=' + expected));
   check('every HTML references the current site-core.js hash', stale.length === 0, `${stale.length} stale, expected ?v=${expected}`);
   const refs = allHtml.filter(abs => fs.readFileSync(abs, 'utf8').includes('site-core.js?v=')).length;
-  check('227 HTML pages reference site-core.js', refs === 227, `found ${refs}`);
+  // 2026-11-08 (C1): the hard-coded 227 was stale (228 linked pages today) and
+  // failed the whole suite on every deploy. Replace it with an explicit
+  // standalone-template allowlist: any NEW page that silently misses the shared
+  // injection now fails CI, while adding an ordinary page never breaks the count.
+  const STANDALONE = [
+    'packages/site-finance/404.html',
+    'packages/site-health/404.html',
+    'packages/site-main/404.html',
+    'packages/site-main/compare/index.html',
+    'packages/site-main/compare/bmi-calculator/index.html',
+    'packages/site-main/compare/percentage-calculator/index.html',
+    'packages/site-main/compare/unit-converter/index.html',
+  ];
+  const noRef = allHtml.filter(abs => !/site-core\.js\?v=/.test(fs.readFileSync(abs, 'utf8'))).map(relOf);
+  const unexpected = noRef.filter(p => !STANDALONE.includes(p));
+  const missing = STANDALONE.filter(p => !noRef.includes(p));
+  check('every HTML page is site-core-linked or an explicit standalone template',
+    unexpected.length === 0 && missing.length === 0,
+    `unexpected=${unexpected.join(',')} missing=${missing.join(',')}`);
+  check('standalone templates all carry the inline /__uv beacon',
+    STANDALONE.every(p => /\/__uv\?t=/.test(read(p))), `checked ${STANDALONE.length} pages`);
+  check('site-core.js reference count stays at or above the audited baseline', refs >= 228, `found ${refs}`);
 }
 
 console.log(`\n${'='.repeat(56)}`);
