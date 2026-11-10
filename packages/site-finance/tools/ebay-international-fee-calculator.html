@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -182,5 +183,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}var t={"us-dom":{fee:"13.25",intl:"0",fixed:"0.30"},"us-intl":{fee:"13.25",intl:"1.65",fixed:"0.30"},uk:{fee:"12.80",intl:"0",fixed:"0.30"},de:{fee:"12.00",intl:"0",fixed:"0.35"},ca:{fee:"13.25",intl:"0",fixed:"0.30"},au:{fee:"13.26",intl:"0",fixed:"0.30"}};function n(){var e=t[document.getElementById("market").value];document.getElementById("feePct").value=e.fee,document.getElementById("intlPct").value=e.intl,document.getElementById("fixed").value=e.fixed}function d(){var t=parseFloat(document.getElementById("price").value)||0,n=(parseFloat(document.getElementById("feePct").value)||0)/100,d=(parseFloat(document.getElementById("intlPct").value)||0)/100,l=parseFloat(document.getElementById("fixed").value)||0,c=t*n,m=t*d,i=c+m+l,u=t-i;document.getElementById("totVal").textContent=e(i),document.getElementById("feeVal").textContent=e(c),document.getElementById("intlVal").textContent=e(m),document.getElementById("fixedVal").textContent=e(l),document.getElementById("netVal").textContent=e(u),document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){n(),d()}),document.getElementById("calcBtn").addEventListener("click",d),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("market").value="us-intl",document.getElementById("price").value="100.00",n(),d()}),d(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),d)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

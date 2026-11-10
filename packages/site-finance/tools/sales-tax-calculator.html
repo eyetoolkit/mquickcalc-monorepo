@@ -45,6 +45,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -203,5 +204,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,o,c,l,a=parseFloat(document.getElementById("amount").value)||0,m=(parseFloat(document.getElementById("rate").value)||0)/100;document.getElementById("mode").checked?(o=a-(c=a/(1+m)),l=a,t="Backing "+(100*m).toFixed(2)+"% tax out of "+e(a),n=e(c),d="pre-tax amount"):(l=a+(o=a*m),c=a,t="Adding "+(100*m).toFixed(2)+"% tax to "+e(a),n=e(l),d="total including tax"),document.getElementById("firstLine").textContent=t,document.getElementById("secondVal").textContent=n,document.getElementById("secondLbl").textContent=d,document.getElementById("taxVal").textContent=e(o),document.getElementById("preVal").textContent=e(c),document.getElementById("totalVal").textContent=e(l),document.getElementById("result").classList.add("show")}document.getElementById("state").addEventListener("change",function(){""!==this.value&&(document.getElementById("rate").value=this.value)}),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("rate").value="8.25",document.getElementById("mode").checked=!1,document.getElementById("state").value="8.25",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

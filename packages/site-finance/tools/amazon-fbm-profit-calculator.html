@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -180,5 +181,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=t*((parseFloat(document.getElementById("referral").value)||0)/100),l=(parseFloat(document.getElementById("cogs").value)||0)+(parseFloat(document.getElementById("packaging").value)||0)+(parseFloat(document.getElementById("shipping").value)||0),d=t-n-l,o=l>0?d/l:0;document.getElementById("grossLine").textContent="Sale "+e(t)+" · referral "+e(n),document.getElementById("profitVal").textContent=e(d),document.getElementById("refVal").textContent=e(n),document.getElementById("costVal").textContent=e(l),document.getElementById("totVal").textContent=e(t-n),document.getElementById("roiVal").textContent=(100*o).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="24.99",document.getElementById("referral").value="15",document.getElementById("cogs").value="7.00",document.getElementById("packaging").value="0.50",document.getElementById("shipping").value="3.00",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

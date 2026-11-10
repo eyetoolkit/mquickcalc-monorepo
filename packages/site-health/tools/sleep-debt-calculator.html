@@ -28,6 +28,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#0d9488">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields."}, {"@type": "HowToStep", "name": "See results instantly", "text": "Your result updates as you type or click Calculate."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read labels and ranges to understand the number."}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="health">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -120,5 +121,6 @@
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("ideal").value)||0,n=parseInt(t("days").value)||7,i=parseFloat(t("avg").value)||0;if(a){var r,l=Math.max(0,a-i),o=l*n,d=l>0?Math.ceil(o/1):0;r=o<=2?"✅ Mild":o<=5?"⚠️ Moderate":o<=10?"🚨 Significant":"🛑 Critical",t("bigVal").textContent=e(o,1)+" hours",t("dimVal").textContent="Over "+n+" nights",t("perNight").textContent=e(l,1)+" h",t("total").textContent=e(o,1)+" h",t("payback").textContent=d+" extra hours",t("severity").textContent=r,t("result").classList.add("show")}}["ideal","days","avg"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("ideal").value="7.5",t("days").value="7",t("avg").value="6.2",a()}),a()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -190,5 +191,6 @@ document.getElementById("pct").value=n?n.pct:"",document.getElementById("fixed")
 function resolveKey(t){if(!/International/.test(e[t]?e[t].label:"")){if(!document.getElementById("inter").checked)return t;var alt=e[t+"-int"];if(alt)return t+"-int"}return t}function l(){var c=document.getElementById("market").value,key=resolveKey(c),l=e[key],a=l?l.currency:"USD",u=parseFloat(document.getElementById("amount").value)||0,d=(parseFloat(document.getElementById("pct").value)||0)/100,o=parseFloat(document.getElementById("fixed").value)||0,m=parseFloat(document.getElementById("goal").value),r=u*d+o,i=u-r,y=!isNaN(m)&&m>0&&1-d>0?(m+o)/(1-d):null,s=l?l.label:"Custom";document.getElementById("detLine").textContent=s+" · gross "+t(u,a)+" at "+n(d)+" + "+t(o,a),document.getElementById("netVal").textContent=t(i,a),document.getElementById("feeVal").textContent=t(r,a),document.getElementById("effVal").textContent=u>0?n(r/u):"—",document.getElementById("coverVal").textContent=y?t(y,a):"—",document.getElementById("result").classList.add("show")}document.getElementById("market").addEventListener("change",function(){c(this.value),l()}),document.getElementById("inter").addEventListener("change",function(){c(document.getElementById("market").value),l()});document.getElementById("calcBtn").addEventListener("click",l),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("inter").checked=false,document.getElementById("market").value="us",document.getElementById("amount").value="100.00",document.getElementById("goal").value="",c("us"),l()}),c("us"),l(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),l)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

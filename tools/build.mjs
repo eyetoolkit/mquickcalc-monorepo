@@ -173,6 +173,47 @@ function cacheBustSite(siteDir) {
 }
 
 /**
+ * UI-FIX 2026-11-10 — inject the shared design-system repair layer.
+ *
+ * One CSS + one JS, both copied from brand-kit by syncBrandKit(). Injecting
+ * here (rather than editing 235 HTML files) means every page, including the
+ * generator-produced /compare/ pages, gets the same fixes on every build.
+ * Idempotent: re-running never duplicates the tags.
+ *
+ * Must run BEFORE cacheBustSite() so the new asset URLs get their ?v= hash.
+ */
+function injectUiFix(siteDir) {
+  const htmlFiles = walk(siteDir).filter(p => p.endsWith('.html'));
+  let touched = 0;
+  for (const f of htmlFiles) {
+    let html = fs.readFileSync(f, 'utf8');
+    const before = html;
+    if (!html.includes('/css/ui-fix.css')) {
+      html = html.replace('</head>', '  <link rel="stylesheet" href="/css/ui-fix.css">\n</head>');
+    }
+    if (!html.includes('/js/site-uifix.js')) {
+      html = html.replace('</body>', '  <script src="/js/site-uifix.js" defer></script>\n</body>');
+    }
+    if (html !== before) { fs.writeFileSync(f, html); touched++; }
+  }
+  return touched;
+}
+
+/**
+ * Build-time contrast gate (P1-3). The three semantic ink tokens are the
+ * single source for every WCAG AA fix in ui-fix.css; if one disappears in a
+ * future edit, fail the build instead of silently regressing contrast.
+ */
+function assertContrastTokens() {
+  const css = fs.readFileSync(path.join(BRAND_KIT, 'css', 'ui-fix.css'), 'utf8');
+  const required = ['--tap-min:', '--text-on-brand:', '--success-ink:', '--text-dim:', '--danger-ink:'];
+  const missing = required.filter(t => !css.includes(t));
+  if (missing.length) {
+    throw new Error(`UI-FIX contrast gate failed — missing tokens in ui-fix.css: ${missing.join(', ')}`);
+  }
+}
+
+/**
  * Inject AdSense-ready ad slots into every HTML page.
  * Slots are empty containers (data-ad=...) with reserved heights via CSS
  * (brand-kit/css/site.css). They stay invisible until real AdSense <ins>
@@ -274,6 +315,8 @@ if (targetArg && sites.length === 0) {
 }
 
 console.log(`🔧 build ${sites.length} site(s)...\n`);
+assertContrastTokens();
+console.log('   ✅ UI-FIX contrast token gate passed\n');
 
 for (const site of sites) {
   const siteDir = path.join(ROOT, 'packages', site.pkg);
@@ -283,12 +326,13 @@ for (const site of sites) {
   }
   syncBrandKit(siteDir);
   const replaced = replaceLegacySiteJs(siteDir);
+  const uifix = injectUiFix(siteDir);
   const busted = cacheBustSite(siteDir);
   const ads = injectAdSlots(siteDir);
   const verified = site.pkg === 'site-finance' ? injectVerification(siteDir) : 0;
   const llms = genLlmstxt();
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (cache-busted ${busted} html)  (ad-slots ${ads})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (ui-fix ${uifix} html)  (cache-busted ${busted} html)  (ad-slots ${ads})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history

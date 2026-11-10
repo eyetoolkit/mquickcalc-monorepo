@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -163,5 +164,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("order").value)||0,n=(parseFloat(document.getElementById("tier").value)||15)/100,d=t*n,c=t-d;document.getElementById("adFeeVal").textContent=e(d),document.getElementById("afterVal").textContent=e(c),document.getElementById("rateVal").textContent=(100*n).toFixed(1)+"%",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("order").value="50.00",document.getElementById("tier").value="15",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

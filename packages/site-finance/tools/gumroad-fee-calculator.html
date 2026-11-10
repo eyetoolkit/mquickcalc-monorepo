@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -176,5 +177,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("price").value)||0,n=Math.max(parseInt(document.getElementById("units").value,10)||0,0),l=t*((parseFloat(document.getElementById("service").value)||0)/100)+t*((parseFloat(document.getElementById("proc").value)||0)/100)+(parseFloat(document.getElementById("flat").value)||0),d=t-l,c=l*n,m=d*n;document.getElementById("perLine").textContent=e(t)+" per sale · "+n+" unit(s)",document.getElementById("totalVal").textContent=e(m),document.getElementById("perFeeVal").textContent=e(l),document.getElementById("perNetVal").textContent=e(d),document.getElementById("totVal").textContent=e(c),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="15.00",document.getElementById("units").value="50",document.getElementById("service").value="10",document.getElementById("proc").value="2.9",document.getElementById("flat").value="0.30",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

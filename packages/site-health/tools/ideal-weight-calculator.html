@@ -38,6 +38,7 @@
   {"@type":"Question","name":"How does age affect ideal weight?","acceptedAnswer":{"@type":"Answer","text":"With aging, muscle mass naturally declines (sarcopenia) and fat mass tends to increase even without weight change. Studies show that elderly individuals with a BMI of 25–27 often have better health outcomes than those at lower BMIs, partly because the extra weight reflects preserved muscle mass. The ideal weight formulas do not account for age-specific health targets — the BMI range alone is more useful than the formula-based targets for older adults."}}
 ]}
 </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="health">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -154,5 +155,6 @@
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("height").value)||0,a=e("gender").value,l=e("frame").value;if(n){var i=n/2.54,r=Math.max(0,i-60),u="large"===l?1.1:"small"===l?.9:1,o=("male"===a?50:45.5)+2.3*r,d=("male"===a?52:49)+1.9*r,m=("male"===a?56.2:53.1)+1.41*r,c=n/100,g=18.5*c*c,v=24.9*c*c,s=((o*=u)+(d*=u)+(m*=u))/3,f=.05*s;e("rangeVal").textContent=t(s-f,1)+" – "+t(s+f,1)+" kg",e("devineVal").textContent=t(o,1)+" kg",e("robVal").textContent=t(d,1)+" kg",e("millVal").textContent=t(m,1)+" kg",e("bmiRangeVal").textContent=t(g,1)+" – "+t(v,1)+" kg",e("result").classList.add("show")}else e("result").classList.remove("show")}["height","gender","frame"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("height").value="175",e("gender").value="male",e("frame").value="medium",n()}),n()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

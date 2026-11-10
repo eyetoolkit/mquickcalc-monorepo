@@ -7,7 +7,7 @@
 // v5 (2026-11-08, C1): finance tool URLs have no .html suffix and were
 // cache-first, so the 45 updated verification panels required a cache eviction.
 // /__uv is now passed straight through to the edge counter.
-const CACHE_NAME = 'mquickcalc-v5';
+const CACHE_NAME = 'mquickcalc-v6-uifix';
 const PRECACHE = ['/', '/manifest.webmanifest', '/favicon.svg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())); });

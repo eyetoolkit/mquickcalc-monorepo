@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -169,5 +170,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("sale").value)||0,n=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("base").value)||0,l=parseFloat(document.getElementById("target").value)||0,a=t*n,c=d+a,m=l>d&&n>0?(l-d)/n:0;document.getElementById("commVal").textContent=e(a),document.getElementById("payVal").textContent=e(c),document.getElementById("needVal").textContent=m>0&&""!==document.getElementById("target").value?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sale").value="1000.00",document.getElementById("rate").value="10",document.getElementById("base").value="0",document.getElementById("target").value="5000.00",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

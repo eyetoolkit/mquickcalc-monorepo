@@ -36,6 +36,7 @@
   {"@type":"Question","name":"What is an auto loan pre-approval?","acceptedAnswer":{"@type":"Answer","text":"A pre-approval is a conditional loan offer from a bank or credit union specifying the maximum amount, interest rate, and term you qualify for, based on a soft credit inquiry that does not affect your score. Pre-approvals typically last 30-60 days and give you a clear budget before negotiating with dealers."}},
   {"@type":"Question","name":"How does my credit score affect the rate I get?","acceptedAnswer":{"@type":"Answer","text":"Credit scores are the single largest determinant of your auto loan rate. A score of 760+ typically qualifies for 5-6.5% on a new car. A score of 660-719 might see 7-10%, and scores below 660 often see 11-18%. Your score is affected by payment history (35%), amounts owed relative to credit limits (30%), length of credit history (15%), credit mix (10%), and new credit inquiries (10%)."}}
 ]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -171,5 +172,6 @@
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a,n=parseFloat(t("price").value)||0,r=parseFloat(t("down").value)||0,l=parseFloat(t("trade").value)||0,o=parseFloat(t("rate").value)||0,u=parseInt(t("term").value)||60,i=n-r-l,c=o/100/12,d=(a=0===c?i/u:i*c*Math.pow(1+c,u)/(Math.pow(1+c,u)-1))*u,s=d-i;t("monthVal").textContent="$"+e(a,2),t("loanVal").textContent="$"+e(i,2),t("intVal").textContent="$"+e(s,2),t("totalVal").textContent="$"+e(r+l+d,2),t("dpVal").textContent="$"+e(r+l,2),t("result").classList.add("show")}["price","down","trade","rate","term"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("price").value="25000",t("down").value="5000",t("trade").value="0",t("rate").value="5.5",t("term").value="60",a()}),a()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

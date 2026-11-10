@@ -41,6 +41,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -193,5 +194,6 @@
 <script>!function(){function m(n){return n.toLocaleString("en-US",{style:"currency",currency:"USD"})}function p(n){return(100*n).toFixed(2)+"%"}function $(i){return document.getElementById(i)}function calc(){var s=parseFloat($("start").value)||0,e=parseFloat($("end").value)||0,y=parseFloat($("yrs").value)||0,ic=parseFloat($("inc").value)||0,tot=e+ic,gain=tot-s,roi=s>0?gain/s:NaN,cagr=s>0&&tot>0&&y>0?Math.pow(tot/s,1/y)-1:NaN,dbl=isFinite(cagr)&&cagr>0?Math.LN2/Math.log(1+cagr):NaN,real=isFinite(cagr)?(1+cagr)/1.03-1:NaN;$("roiVal").textContent=isFinite(roi)?p(roi):"—";$("roiLbl").textContent="total return on investment"+(y>0?" over "+y+" year"+(y>1?"s":""):"");$("cagrVal").textContent=isFinite(cagr)?p(cagr):"n/a";$("gainVal").textContent=m(gain);$("multVal").textContent=s>0?(tot/s).toFixed(2)+"x":"—";$("avgVal").textContent=y>0?m(gain/y)+" / yr":"—";$("dblVal").textContent=isFinite(dbl)?dbl.toFixed(1)+" yrs":(isFinite(cagr)?"never":"—");$("realVal").textContent=isFinite(real)?p(real):"—";$("detailNote").textContent="From "+m(s)+" to "+m(e)+(ic>0?" plus "+m(ic)+" income received":"")+" over "+y+" year"+(y>1?"s":"")+": net gain of "+m(gain)+"."+(isFinite(cagr)?" Compounded at "+p(cagr)+" a year; assuming 3% inflation the real annual gain is about "+p(real)+".":" No annualized rate is available because this combination includes a non-positive value.")+" Taxes, fees and any money added during the period are not included.";$("result").classList.add("show")}["start","end","yrs","inc"].forEach(function(i){$(i).addEventListener("input",calc);$(i).addEventListener("change",calc)}),$("calcBtn").addEventListener("click",calc),$("resetBtn").addEventListener("click",function(){$("start").value="25000",$("end").value="41000",$("yrs").value="6",$("inc").value="0",calc()}),calc(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.querySelector(".calc-card"),calc)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

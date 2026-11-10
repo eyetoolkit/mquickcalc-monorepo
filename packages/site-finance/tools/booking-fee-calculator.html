@@ -28,6 +28,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#059669">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -146,5 +147,6 @@
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(){var n=(parseFloat(t("price").value)||0)*(parseFloat(t("nights").value)||0),a=n*(parseFloat(t("commission").value)/100),i=(n-a)*(parseFloat(t("tax").value)/100),o=n-a-i,s=n>0?(a+i)/n*100:0;t("netVal").textContent="$"+e(o,2),t("grossVal").textContent="$"+e(n,2),t("commVal").textContent="$"+e(a,2),t("taxVal").textContent="$"+e(i,2),t("effVal").textContent=e(s,2)+"%",t("result").classList.add("show")}["price","nights","commission","tax"].forEach(function(e){var a=t(e);a&&a.addEventListener("input",n)}),t("calcBtn").addEventListener("click",n),t("resetBtn").addEventListener("click",function(){t("price").value="200",t("nights").value="3",t("commission").value="18",t("tax").value="0",n()}),n()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

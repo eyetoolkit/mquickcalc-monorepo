@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -157,5 +158,6 @@
 <script>!function(){function e(){const e=Math.max(parseInt(document.getElementById("bits").value,10)||0,0)/100,t=Math.max(parseFloat(document.getElementById("buy").value)||0,0),n=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("usdVal").textContent=n(e),document.getElementById("costVal").textContent=n(e*t),document.getElementById("rateLbl").textContent=n(t),document.getElementById("streamerVal").textContent=n(e),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("buy").addEventListener("input",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("bits").value="1000",document.getElementById("buy").value="1.40",e()}),e(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),e)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

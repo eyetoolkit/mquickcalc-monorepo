@@ -28,6 +28,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#4f46e5">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Percentage Calculator","step":[{"@type":"HowToStep","name":"Choose a calculation mode","text":"Pick from: Find X% of Y, X is what % of Y, X is Y% of what, or % change between two values."},{"@type":"HowToStep","name":"Enter your numbers","text":"Fill in the two input fields with your values."},{"@type":"HowToStep","name":"Read the answer","text":"All four calculations update in real time as you type, with formula explanations shown."}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="main">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -147,5 +148,6 @@
   {"@type": "Question", "name": "Why does the third mode sometimes show strange results?", "acceptedAnswer": {"@type": "Answer", "text": "Mode three (X is Y% of what) solves for the original whole. If you enter 0 as the percentage, any number multiplied by 0 is 0, so the result is mathematically undefined — we show 0 as a safe fallback. If you enter an unusually large or small percentage, the original number may be very large or very small, which is mathematically correct but contextually unusual."}}
 ]}
 </script><div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

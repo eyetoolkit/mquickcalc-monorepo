@@ -28,6 +28,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#059669">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -144,5 +145,6 @@
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function n(t,e,n){var a=e/100/12;return 0===a?t/n:t*a*Math.pow(1+a,n)/(Math.pow(1+a,n)-1)}function a(){var a=parseFloat(t("curBalance").value)||0,o=parseFloat(t("curRate").value)||0,l=parseFloat(t("curMonths").value)||0,u=parseFloat(t("newRate").value)||0,r=parseFloat(t("newMonths").value)||0,c=parseFloat(t("closing").value)||0,s=n(a,o,l),i=n(a,u,r),v=s*l-a-(i*r-a+c),h=s-i,M=h>0?Math.ceil(c/h):1/0;t("saveVal").textContent=(h>=0?"$"+e(h,2):"-$"+e(-h,2))+"/month",t("dimVal").textContent=h>=0?"Monthly savings":"Monthly increase",t("curMonth").textContent="$"+e(s,2),t("newMonth").textContent="$"+e(i,2),t("totalSave").textContent=v>=0?"$"+e(v,2):"-$"+e(-v,2),t("breakEven").textContent=isFinite(M)?M+" months":"Never",t("result").classList.add("show")}["curBalance","curRate","curMonths","newRate","newMonths","closing"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("curBalance").value="18000",t("curRate").value="7.5",t("curMonths").value="48",t("newRate").value="5.5",t("newMonths").value="48",t("closing").value="500",a()}),a()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

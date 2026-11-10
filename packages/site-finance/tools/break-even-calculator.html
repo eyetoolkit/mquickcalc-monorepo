@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -178,5 +179,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t=parseFloat(document.getElementById("fixed").value)||0,n=parseFloat(document.getElementById("var").value)||0,l=parseFloat(document.getElementById("price").value)||0,d=parseFloat(document.getElementById("target").value),o=parseFloat(document.getElementById("volume").value),u=l-n,a=u>0?Math.ceil(t/u):1/0,c=u>0&&!isNaN(d)&&d>0?Math.ceil((t+d)/u):null,m=!isNaN(o)&&o>=0&&u>0?o*u-t:null;document.getElementById("contribItem").textContent="Contribution per unit: "+e(u),document.getElementById("unitVal").textContent=isFinite(a)?a:"∞",document.getElementById("contribVal").textContent=e(u),document.getElementById("revVal").textContent=isFinite(a)?e(a*l):"—",document.getElementById("targetVal").textContent=c||"—",document.getElementById("profVal").textContent=null!==m?e(m):"—",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("fixed").value="1000.00",document.getElementById("var").value="5.00",document.getElementById("price").value="20.00",document.getElementById("target").value="500.00",document.getElementById("volume").value="200",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

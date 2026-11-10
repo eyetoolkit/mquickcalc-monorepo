@@ -42,6 +42,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -179,5 +180,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){for(var t=parseFloat(document.getElementById("principal").value)||0,n=parseFloat(document.getElementById("monthly").value)||0,l=(parseFloat(document.getElementById("rate").value)||0)/100,d=parseFloat(document.getElementById("years").value)||0,a=Math.max(12*d,0),c=l/12,m=t,o=t,u=0;u<a;u++)m=m*(1+c)+n,o+=n;var r=m-o;document.getElementById("finalVal").textContent=e(m),document.getElementById("contribVal").textContent=e(o),document.getElementById("interestVal").textContent=e(r),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("principal").value="1000",document.getElementById("monthly").value="200",document.getElementById("rate").value="5",document.getElementById("years").value="10",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

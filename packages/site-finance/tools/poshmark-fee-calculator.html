@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -156,5 +157,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d=parseFloat(document.getElementById("price").value)||0,c=parseFloat(document.getElementById("ship").value)||0;d<15?(t=2.95,n="Flat $2.95"):(t=.2*d,n="20%");var l=d-t-c;document.getElementById("ruleLine").textContent=d<15?"Under $15 · flat fee tier":"$15+ · percentage tier",document.getElementById("netVal").textContent=e(l),document.getElementById("feeVal").textContent=e(t),document.getElementById("rateVal").textContent=n+(c>0?" · then − "+e(c)+" shipping":""),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="30.00",document.getElementById("ship").value="0",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

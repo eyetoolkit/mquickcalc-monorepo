@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -190,5 +191,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d=(t=document.getElementById("platform"),n=t.options[t.selectedIndex],{selling:parseFloat(n.getAttribute("data-selling"))/100||0,proc:parseFloat(n.getAttribute("data-proc"))/100||0,fixed:parseFloat(n.getAttribute("data-fixed"))||0,name:n.value}),l=parseFloat(document.getElementById("price").value)||0,o=parseFloat(document.getElementById("ship").value)||0,a=l*d.selling,c=l*d.proc,m=a+c+d.fixed,i=l-m-o;document.getElementById("netVal").textContent=e(i),document.getElementById("sellVal").textContent=e(a),document.getElementById("procVal").textContent=e(c),document.getElementById("totVal").textContent=e(m),document.getElementById("effVal").textContent=l>0?(100*(m/l)).toFixed(2)+"%":"—",document.getElementById("result").classList.add("show")}document.getElementById("platform").addEventListener("change",t),document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("price").value="25.00",document.getElementById("ship").value="0",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

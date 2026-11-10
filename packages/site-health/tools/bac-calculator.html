@@ -28,6 +28,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#0d9488">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="health">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -142,5 +143,6 @@
 <script>!function(){function e(e){return document.getElementById(e)}function t(e,t=2){return isFinite(e)?Number(e).toFixed(t):"--"}function n(){var n=parseFloat(e("weight").value)||0,a=e("gender").value,r=parseFloat(e("drinks").value)||0,i=parseFloat(e("hours").value)||0;if(n){var l=14*r/(("male"===a?.68:.55)*n)/10,o=l-.015*i;o<0&&(o=0);var u=o>.05?"🚫 YES":"✅ No",s=o/.015;e("bigVal").textContent=t(o,3)+"%",e("dimVal").textContent="Estimated BAC after "+t(i,1)+"h",e("legalVal").textContent=u,e("soberVal").textContent=t(s,1)+" hours",e("peakVal").textContent=t(l,3)+"%",e("result").classList.add("show")}}["weight","gender","drinks","hours"].forEach(function(t){var a=e(t);a&&a.addEventListener("input",n)}),e("calcBtn").addEventListener("click",n),e("resetBtn").addEventListener("click",function(){e("weight").value="70",e("gender").value="male",e("drinks").value="3",e("hours").value="2",n()}),n()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

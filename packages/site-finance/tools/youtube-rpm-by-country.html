@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -172,5 +173,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2})}function t(){for(var t=parseFloat(document.getElementById("views").value)||0,n=[],d=[],l=1;l<=4;l++)n.push(parseFloat(document.getElementById("s"+l).value)||0),d.push(parseFloat(document.getElementById("r"+l).value)||0);var u=n.reduce(function(e,t){return e+t},0),m=0;if(u>0){for(var c=0,o=0;o<4;o++)c+=n[o]*d[o];m=c/u}var a=t/1e3*m;document.getElementById("rpmVal").textContent=e(m),document.getElementById("revVal").textContent=e(a),document.getElementById("perKVal").textContent=e(m),document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("s1").value="50",document.getElementById("r1").value="8.00",document.getElementById("s2").value="30",document.getElementById("r2").value="5.50",document.getElementById("s3").value="10",document.getElementById("r3").value="3.00",document.getElementById("s4").value="10",document.getElementById("r4").value="1.00",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="health">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -161,5 +162,6 @@
 <script>!function(){function e(){var e,t=document.getElementById("sex").value,n=parseFloat(document.getElementById("age").value)||0,d=parseFloat(document.getElementById("weight").value)||0,l=parseFloat(document.getElementById("hr").value)||0,a=parseFloat(document.getElementById("duration").value)||0;e="male"===t?(.6309*l-55.0969+.1988*d+.2017*n)*a/4.184:(.4472*l-20.4022-.1263*d+.074*n)*a/4.184,e=Math.max(0,e);var m=a>0?e/a:0,o=m/4;document.getElementById("kcalVal").textContent=Math.round(e),document.getElementById("perMinVal").textContent=m.toFixed(1),document.getElementById("walkVal").textContent=o.toFixed(1)+" min",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("sex").value="male",document.getElementById("age").value="30",document.getElementById("weight").value="70",document.getElementById("hr").value="140",document.getElementById("duration").value="30",e()}),e(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),e)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

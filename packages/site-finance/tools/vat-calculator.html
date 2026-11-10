@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -164,5 +165,6 @@
 <script>!function(){function e(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})}function t(){var t,n,d,l=parseFloat(document.getElementById("amount").value)||0,c=(parseFloat(document.getElementById("rate").value)||0)/100,m=document.getElementById("mode").value;d="add"===m?(n=l*(1+c))-(t=l):(n=l)-(t=l/(1+c)),document.getElementById("vatVal").textContent=e(d),document.getElementById("netVal").textContent=e(t),document.getElementById("grossVal").textContent=e(n),document.getElementById("whichLine").textContent="add"===m?"VAT added":"VAT included",document.getElementById("result").classList.add("show")}document.getElementById("calcBtn").addEventListener("click",t),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("amount").value="100.00",document.getElementById("rate").value="20",document.getElementById("mode").value="add",t()}),t(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),t)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

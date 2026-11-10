@@ -42,6 +42,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="finance">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -217,5 +218,6 @@
 <script>!function(){const e=function(e){return document.getElementById(e)};function t(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})+" (USD)"}function a(){const a=parseFloat(e("price").value)||0,n=parseFloat(e("shipping").value)||0,s=Math.max(parseInt(e("qty").value,10)||1,1),l=(a+n)*s,i=l*((parseFloat(e("trans").value)||0)/100),c=l*((parseFloat(e("paypct").value)||0)/100)+(parseFloat(e("payflat").value)||0)*s,r=l*((parseFloat(e("reg").value)||0)/100),o=(parseFloat(e("listing").value)||0)*s,d=l*((parseFloat(e("offsite").value)||0)/100),v=i+c+r+o+d,u=l-v;e("grossLine").textContent="Gross revenue: "+t(l)+"  ·  "+s+" item(s) at "+t(a)+" each",e("netVal").textContent=t(u);const p=[["Transaction fee",t(i)],["Payment processing",t(c)],["Regulatory fee",t(r)],["Listing fee",t(o)],["Off-site ads",t(d)]];e("breakdown").innerHTML=p.map(function(e){return'<div class="cell"><div class="lbl">'+e[0]+'</div><div class="val">'+e[1]+"</div></div>"}).join("")+'<div class="cell"><div class="lbl">Total fees</div><div class="val">'+t(v)+"</div></div>",e("result").classList.add("show")}e("calcBtn").addEventListener("click",a),e("resetBtn").addEventListener("click",function(){var t={price:"25.00",shipping:"0",qty:"1",trans:"6.5",paypct:"3.0",payflat:"0.25",reg:"0.25",listing:"0.20",offsite:"0"};Object.keys(t).forEach(function(a){e(a).value=t[a]}),a()}),a(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),a)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

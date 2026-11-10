@@ -29,6 +29,7 @@
   <meta name="theme-color" content="#0d9488">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use this calculator", "step": [{"@type": "HowToStep", "name": "Enter your values", "text": "Fill in the required input fields with your measurements or numbers."}, {"@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to run the formula."}, {"@type": "HowToStep", "name": "Interpret the result", "text": "Read your result instantly with category labels and reference ranges where applicable."}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much protein do I need per day?","acceptedAnswer":{"@type":"Answer","text":"The RDA is 0.8 g per kg of body weight, about 56 g for a sedentary 70 kg adult. Active adults and those building muscle usually need 1.2 to 2.0 g/kg."}},{"@type":"Question","name":"Is too much protein harmful?","acceptedAnswer":{"@type":"Answer","text":"For healthy adults, intakes up to about 2 g/kg are generally safe. Very high long-term intake may stress the kidneys in people with preexisting kidney disease. This calculator gives target ranges, not medical advice."}},{"@type":"Question","name":"Should I count protein on training days only?","acceptedAnswer":{"@type":"Answer","text":"Spreading intake across the day supports muscle protein synthesis better than one large dose. Aim for a consistent per-meal target rather than loading only on workout days."}}]}</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body data-site="health">
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -141,5 +142,6 @@
 <script>!function(){function t(t){return document.getElementById(t)}function e(t,e=2){return isFinite(t)?Number(t).toFixed(e):"--"}function a(){var a=parseFloat(t("weight").value)||0,n=parseFloat(t("activity").value),i=t("goal").value;if(a){var l=.8*a,u=n*a;"build"===i&&(u=Math.max(u,1.6*a)),"cut"===i&&(u=Math.max(u,1.8*a));var o=2.2*a,r=(u=Math.min(u,2.2*a))/3;t("bigVal").textContent=e(u,0)+" g",t("rdaVal").textContent=e(l,0)+" g",t("tgtVal").textContent=e(u,0)+" g",t("upperVal").textContent=e(o,0)+" g",t("perMeal").textContent=e(r,0)+" g",t("result").classList.add("show")}}["weight","activity","goal"].forEach(function(e){var n=t(e);n&&n.addEventListener("input",a)}),t("calcBtn").addEventListener("click",a),t("resetBtn").addEventListener("click",function(){t("weight").value="70",t("activity").value="1.2",t("goal").value="build",a()}),a()}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

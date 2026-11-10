@@ -34,6 +34,7 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use this calculator","step":[{"@type":"HowToStep","name":"Enter your values","text":"Fill in the required input fields with your measurements or numbers."},{"@type":"HowToStep","name":"Click Calculate","text":"Press the Calculate button to run the formula."},{"@type":"HowToStep","name":"Interpret the result","text":"Read your result instantly with category labels and reference ranges where applicable."}]}
   </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4afe225b">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -172,5 +173,6 @@
 <script>!function(){function e(){var e,t=Math.max(parseInt(document.getElementById("views").value,10)||0,0),n="custom"===(e=document.getElementById("niche").value)?parseFloat(document.getElementById("rpm").value)||0:parseFloat(e)||0,d=t/1e3*n,c=d/.55,l=function(e){return e.toLocaleString("en-US",{style:"currency",currency:"USD"})};document.getElementById("rpmLine").textContent=t.toLocaleString("en-US")+" views",document.getElementById("revenueVal").textContent=l(d),document.getElementById("rpmVal").textContent=l(n),document.getElementById("cutVal").textContent=l(c),document.getElementById("result").classList.add("show")}document.getElementById("niche").addEventListener("change",function(){document.getElementById("customField").style.display="custom"===this.value?"block":"none"}),document.getElementById("calcBtn").addEventListener("click",e),document.getElementById("resetBtn").addEventListener("click",function(){document.getElementById("views").value="100000",document.getElementById("niche").value="10",document.getElementById("customField").style.display="none",e()}),e(),!function(c,f){c=c||document;["input","change"].forEach(function(v){c.addEventListener(v,function(e){if(e.target&&e.target.matches&&e.target.matches("input,select,textarea"))f()})})}(document.getElementById("calc-card"),e)}();
 </script>
 <div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
 </body>
 </html>

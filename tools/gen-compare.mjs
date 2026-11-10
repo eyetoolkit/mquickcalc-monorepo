@@ -17,34 +17,40 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(__dirname, '../packages/site-main/compare');
 
-const CSS = `:root{--brand:#4f46e5;--ink:#0b1220;--muted:#5a6780;--line:#e6e9f0;--bg:#f7f8fb;--ok:#059669;--warn:#b45309}
+const CSS = `:root{--cmp-brand:var(--brand-ink,#4338ca);--cmp-ink:var(--ink,#0b1220);--cmp-muted:var(--text-dim,#475569);--cmp-line:var(--line,#e5eaf1);--cmp-bg:var(--bg,#fff);--cmp-soft:var(--bg-soft,#f8fafc);--cmp-ok:var(--success-ink,#047857);--cmp-no:var(--danger-ink,#b91c1c);--cmp-warn:#92400e}
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+body{margin:0;font-family:var(--font-sans,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif);color:var(--cmp-ink);background:var(--cmp-soft);line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:920px;margin:0 auto;padding:32px 20px 64px}
-header.top{border-bottom:1px solid var(--line);background:#fff}
-header.top .wrap{padding:16px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.logo{font-weight:700;color:var(--brand);font-size:18px;text-decoration:none}
-.site-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:#e0e7ff;padding:3px 8px;border-radius:999px}
-h1{font-size:28px;line-height:1.25;margin:8px 0}
-h2{font-size:20px;margin:32px 0 10px}
-p.lede{color:var(--muted);font-size:17px;margin-top:0}
-a{color:var(--brand)}
-table{width:100%;border-collapse:collapse;margin:18px 0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:14.5px}
-th{background:#f1f5f9;font-weight:600}
+header.top{border-bottom:1px solid var(--cmp-line);background:var(--cmp-bg)}
+header.top .wrap{padding:14px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+header.top nav{display:flex;align-items:center;gap:4px;margin-left:auto;flex-wrap:wrap}
+header.top nav a{min-height:44px;display:inline-flex;align-items:center;padding:8px 12px;border-radius:12px;font-size:14px;font-weight:600;color:var(--cmp-muted)}
+header.top nav a:hover{color:var(--cmp-brand);background:var(--brand-bg,#eef2ff)}
+.logo{font-weight:800;color:var(--cmp-brand);font-size:18px;text-decoration:none}
+.site-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cmp-brand);background:var(--brand-bg,#e0e7ff);padding:3px 8px;border-radius:999px}
+h1{font-size:clamp(34px,5.4vw,58px);font-weight:var(--fw-black,900);line-height:1.06;letter-spacing:-.03em;margin:8px 0;color:var(--cmp-ink)}
+h2{font-size:clamp(22px,2.4vw,26px);font-weight:var(--fw-bold,700);margin:32px 0 10px;color:var(--cmp-ink)}
+p.lede{color:var(--cmp-muted);font-size:var(--fs-lg,18px);margin-top:0}
+a{color:var(--cmp-brand)}
+table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--cmp-bg);border:1px solid var(--cmp-line);border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--cmp-line);vertical-align:top;font-size:14.5px;color:var(--cmp-ink)}
+th{background:var(--bg-muted,#f1f5f9);font-weight:600}
 tr:last-child td{border-bottom:none}
-.yes{color:var(--ok);font-weight:600}
-.no{color:#b91c1c;font-weight:600}
-.mid{color:var(--warn);font-weight:600}
-.cta{display:inline-block;margin-top:8px;background:var(--brand);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600}
-.note{border-left:3px solid var(--brand);background:#fff;padding:14px 16px;border-radius:0 8px 8px 0;margin:20px 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:16px 0}
-.cards a{border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit}
-.cards a:hover{border-color:var(--brand)}
-.cards strong{display:block;color:var(--brand);font-size:15px;margin-bottom:2px}
-.cards span{font-size:13.5px;color:var(--muted)}
-footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0;color:var(--muted);font-size:14px}
-@media(max-width:640px){h1{font-size:22px}th,td{padding:10px;font-size:13.5px}}`;
+.yes{color:var(--cmp-ok);font-weight:700}
+.no{color:var(--cmp-no);font-weight:700}
+.mid{color:var(--cmp-warn);font-weight:700}
+.cta{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;background:var(--cmp-brand);color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600}
+.note{border-left:3px solid var(--cmp-brand);background:var(--cmp-bg);padding:14px 16px;border-radius:0 12px 12px 0;margin:20px 0}
+.cards,.related{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:16px 0}
+.cards a,.related a{border:1px solid var(--cmp-line);background:var(--cmp-bg);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.cards a:hover,.related a:hover{border-color:var(--cmp-brand)}
+.cards strong,.related strong{display:block;color:var(--cmp-brand);font-size:15px;margin-bottom:2px}
+.cards span,.related span{font-size:13.5px;color:var(--cmp-muted)}
+footer{border-top:1px solid var(--cmp-line);margin-top:48px;padding:24px 0;color:var(--cmp-muted);font-size:14px}
+:root[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+:root[data-theme="dark"] header.top,:root[data-theme="dark"] table,:root[data-theme="dark"] .note,:root[data-theme="dark"] .cards a,:root[data-theme="dark"] .related a{background:#1e293b;border-color:#334155}
+:root[data-theme="dark"] th{background:#0f172a}
+@media(max-width:640px){h1{font-size:32px}th,td{padding:10px;font-size:13.5px}header.top nav{width:100%;margin-left:0}}`;
 
 const PAGES = [
   {
@@ -130,11 +136,14 @@ function render(p) {
 <meta name="description" content="${esc(p.lede)}">
 <link rel="canonical" href="https://mquickcalc.com/compare/${p.slug}/">
 <script type="application/ld+json" is:inline>${JSON.stringify(faqLd)}</script>
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/ui-fix.css">
+<script>(function(){var k="mquickcalc-theme",v=null;try{v=localStorage.getItem(k)}catch(e){}if(!v&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)v="dark";if(v)document.documentElement.setAttribute("data-theme",v)})();</script>
 <style>${CSS}</style>
 </head>
-<body>
-<header class="top"><div class="wrap"><a class="logo" href="https://mquickcalc.com/">m<b>Quick</b>Calc</a><span class="site-tag">Comparisons</span></div></header>
-<div class="wrap">
+<body data-site="main">
+<header class="top"><div class="wrap"><a class="logo" href="https://mquickcalc.com/">m<b>Quick</b>Calc</a><span class="site-tag">Comparisons</span><nav aria-label="Comparisons"><a href="/compare/">All comparisons</a><a href="/">Home</a><a href="/about">About</a></nav></div></header>
+<main id="main-content" class="wrap">
 <h1>${esc(p.title)}</h1>
 <p class="lede">${esc(p.lede)}</p>
 <h2>Comparison</h2>
@@ -156,7 +165,7 @@ ${rows}
 <h2>About mQuickCalc</h2>
 <p>mQuickCalc is a network of four sites — everyday converters, finance and creator fees, health metrics and insurance estimates — with about 200 calculators in total. Every calculation runs in the visitor's browser, so nothing you type is uploaded, there are no accounts, and the pages carry no advertising or tracking cookies.</p>
 <p>Machine-readable catalogue: <a href="/llms.txt">llms.txt</a></p>
-</div>
+</main>
 <footer><div class="wrap">© mQuickCalc · Estimates are for orientation — verify before relying on them. © 2026</div></footer>
 <!-- First-party anonymous visit count (edge /__uv); cookieless, no third party. -->
 <script>
@@ -188,14 +197,17 @@ const hub = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>mQuickCalc vs other calculators — side-by-side comparisons</title>
 <meta name="description" content="Honest side-by-side comparisons of mQuickCalc against Omni Calculator, Calculator.net, WebMD and Wikipedia — including where the bigger tools win.">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/ui-fix.css">
+<script>(function(){var k="mquickcalc-theme",v=null;try{v=localStorage.getItem(k)}catch(e){}if(!v&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)v="dark";if(v)document.documentElement.setAttribute("data-theme",v)})();</script>
 <style>${CSS}
 .cards__item{display:flex;flex-direction:column;border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit}
 .cards__item:hover{border-color:var(--brand)}
 </style>
 </head>
-<body>
-<header class="top"><div class="wrap"><a class="logo" href="https://mquickcalc.com/">m<b>Quick</b>Calc</a><span class="site-tag">Comparisons</span></div></header>
-<div class="wrap">
+<body data-site="main">
+<header class="top"><div class="wrap"><a class="logo" href="https://mquickcalc.com/">m<b>Quick</b>Calc</a><span class="site-tag">Comparisons</span><nav aria-label="Comparisons"><a href="/compare/">All comparisons</a><a href="/">Home</a><a href="/about">About</a></nav></div></header>
+<main id="main-content" class="wrap">
 <h1>mQuickCalc vs other calculators</h1>
 <p class="lede">Most calculator sites work fine. These pages say plainly where mQuickCalc is the better choice and where a larger tool wins — including the cases where a bigger catalogue is simply the right answer.</p>
 <div class="cards">
@@ -206,7 +218,7 @@ ${cards}
 <h2>About mQuickCalc</h2>
 <p>Four sites — everyday converters, finance and creator fees, health metrics, insurance estimates — with about 200 calculators. No advertising or tracking cookies today.</p>
 <p>Machine-readable catalogue: <a href="/llms.txt">llms.txt</a></p>
-</div>
+</main>
 <footer><div class="wrap">© mQuickCalc · Estimates are for orientation — verify before relying on them. © 2026</div></footer>
 <!-- First-party anonymous visit count (edge /__uv); cookieless, no third party. -->
 <script>
