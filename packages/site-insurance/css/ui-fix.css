@@ -46,6 +46,10 @@ pre,code,.output-text{overflow-wrap:anywhere;word-break:break-word}
 /* ---------- 3. Mobile navigation: hamburger + drawer (P0-1) ------------- */
 .mq-burger{display:none}
 .mq-drawer{display:none}
+/* The header creates a stacking context (z-index:100). The in-flow cookie
+   strip has the same z-index and comes later in the DOM, so without raising
+   the header the open drawer's first link would sit under the notice. */
+.site-header{z-index:101}
 @media (max-width:768px){
   .header-inner{position:relative;height:56px;min-height:56px;gap:10px;padding:0 14px;flex-wrap:nowrap;overflow:visible}
   .brand{font-size:16px;flex-shrink:1;min-width:0}
@@ -62,25 +66,29 @@ pre,code,.output-text{overflow-wrap:anywhere;word-break:break-word}
   }
   .mq-burger:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
   .mq-burger[aria-expanded="true"]{border-color:var(--brand);background:var(--brand-bg)}
-  .mq-drawer{
+  /* NOTE: .site-header nav{display:flex} in site.css has specificity (0,1,1).
+     A bare .mq-drawer loses that cascade and would stay permanently open on
+     mobile, covering the hero. These selectors deliberately outrank it. */
+  .site-header .mq-drawer{
     position:absolute;top:56px;left:0;right:0;
-    display:none;flex-direction:column;gap:2px;
-    max-height:calc(100vh - 56px);overflow-y:auto;
+    display:none;flex-direction:column;align-items:stretch;gap:2px;
+    margin-left:0;max-height:calc(100vh - 56px);overflow-y:auto;
     padding:12px 14px 18px;
     background:var(--uifix-surface);color:var(--uifix-ink);
     border-bottom:1px solid var(--uifix-line);
     box-shadow:0 18px 32px -14px rgba(15,23,42,.28);
     z-index:99;
   }
-  .mq-drawer.is-open{display:flex}
-  .mq-drawer a{
-    display:flex;align-items:center;min-height:var(--tap-min);
+  .site-header .mq-drawer.is-open{display:flex}
+  .site-header .mq-drawer a{
+    display:flex;align-items:center;justify-content:flex-start;text-align:left;
+    min-height:var(--tap-min);margin:0;
     padding:10px 12px;border-radius:var(--radius-md);
     color:var(--uifix-ink);font-size:var(--fs-base);font-weight:var(--fw-semibold);
     border:1px solid transparent;
   }
-  .mq-drawer a:hover,.mq-drawer a:focus-visible{background:var(--brand-bg);color:var(--brand-ink);border-color:var(--brand-pill)}
-  .mq-drawer .mq-drawer__tools{border-top:1px solid var(--uifix-line);margin-top:8px;padding-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .site-header .mq-drawer a:hover,.site-header .mq-drawer a:focus-visible{background:var(--brand-bg);color:var(--brand-ink);border-color:var(--brand-pill)}
+  .site-header .mq-drawer .mq-drawer__tools{border-top:1px solid var(--uifix-line);margin-top:8px;padding-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   /* the runtime-injected theme toggle lives in the drawer on small screens */
   .mq-drawer .theme-toggle{margin:0;flex:0 0 var(--tap-min);width:var(--tap-min);height:var(--tap-min)}
   .site-header .header-inner > .theme-toggle{display:none}
