@@ -1,0 +1,4 @@
+main node tools/build.mjs site-main
+cover node tools/build.mjs site-insurance
+finance node tools/build.mjs site-finance
+health node tools/build.mjs site-health
