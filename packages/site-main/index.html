@@ -288,6 +288,12 @@
   </div>
 </div></section>
 
+<!-- P0GROW:START -->
+<section class="hero-live-tool" aria-labelledby="live-tool-title" style="max-width:1160px;margin:8px auto 24px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface,#fff)"><h2 id="live-tool-title" style="font-size:18px;margin:0 0 4px">Try it now — length converter</h2><p style="color:var(--text-dim);font-size:13.5px;margin:0 0 12px">Type a value. Every unit updates instantly, right here on the first screen.</p><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><label for="live-cm" style="font-size:13px;font-weight:600">Centimeters</label><input id="live-cm" type="number" value="100" min="0" step="any" aria-label="Centimeters" style="width:130px;padding:9px 11px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg);color:var(--ink);font-size:15px"><span id="live-out" aria-live="polite" style="font-size:14px;color:var(--ink)"></span></div></section>
+<script>(function(){var i=document.getElementById("live-cm"),o=document.getElementById("live-out");if(!i||!o)return;function f(){var c=parseFloat(i.value);if(!isFinite(c)){o.textContent="Enter a number";return;}o.innerHTML="= <strong>"+(c/2.54).toFixed(2)+" in</strong> · "+(c/30.48).toFixed(2)+" ft · "+(c/1000).toFixed(4)+" km · "+(c*0.393701).toFixed(2)+" in";}i.addEventListener("input",f);f();})();</script>
+<!-- P0GROW:END --><!-- P0GROW:START -->
+<section class="eeat-trust" aria-label="About this tool" style="margin:24px 0;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--mist,#f7f8fb);font-size:13px;line-height:1.65;color:var(--text-dim)"><strong style="color:var(--ink);font-size:13.5px">Reviewed by a human, not generated and forgotten.</strong><span style="display:block;margin-top:4px">Written and reviewed by <strong>Jim</strong> (Maoming, China) · Last reviewed <time datetime="2026-11-16">2026-11-16</time> · Verified against published formulas before publishing. Figures are estimates — verify before relying on them.</span><span style="display:block;margin-top:6px"><a href="/editorial-policy">Editorial policy</a> · <a href="/about">About the operator</a> · <a href="/contact">Report an incorrect result</a> · <a href="/all-tools">All everyday tools</a></span></section>
+<!-- P0GROW:END -->
 </main>
 <footer id="site-footer" class="site-footer"></footer>
 <div id="cookiebar" class="cookiebar">

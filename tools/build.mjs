@@ -353,6 +353,19 @@ function genLlmstxt() {
   }
 }
 
+function injectP0Growth(sitePkg) {
+  const script = path.join(__dirname, 'p0-growth.mjs');
+  if (!exists(script)) return 0;
+  try {
+    const out = execFileSync(process.execPath, [script, sitePkg], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+    process.stdout.write(out);
+    return 1;
+  } catch (e) {
+    console.error('   ⚠️ P0 growth injection failed:', e.message);
+    return 0;
+  }
+}
+
 // === Main ===
 const targetArg = process.argv[2];const sites = targetArg
   ? SITES.filter(s => s.pkg === targetArg)
@@ -380,10 +393,11 @@ for (const site of sites) {
   const busted = cacheBustSite(siteDir);
   const ads = injectAdSlots(siteDir);
   const brands = injectBrandMatrix(siteDir);
+  const p0 = injectP0Growth(site.pkg);
   const verified = site.pkg === 'site-finance' ? injectVerification(siteDir) : 0;
   const llms = genLlmstxt();
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (ui-fix ${uifix} html)  (cache-busted ${busted} html)  (ad-slots ${ads}) (brand-matrix ${brands})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (ui-fix ${uifix} html)  (cache-busted ${busted} html)  (ad-slots ${ads}) (brand-matrix ${brands})  (p0-growth ${p0})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history
