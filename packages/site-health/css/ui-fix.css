@@ -24,6 +24,8 @@
   --uifix-surface:var(--bg);
   --uifix-line:var(--line);
   --uifix-ink:var(--ink);
+  --mist:#f7f8fb;
+  --surface:#ffffff;
 }
 :root[data-theme="dark"]{
   --success-ink:#6ee7b7;
@@ -32,7 +34,11 @@
   --uifix-surface:#1e293b;
   --uifix-line:#334155;
   --uifix-ink:#f1f5f9;
+  --mist:#162032;
+  --surface:#1e293b;
 }
+
+@media (prefers-color-scheme: dark){:root{--mist:#162032;--surface:#1e293b}}
 
 /* ---------- 2. Hard stop for horizontal page scroll (P0-1) --------------- */
 html,body{overflow-x:clip}
