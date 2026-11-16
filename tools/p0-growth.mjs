@@ -185,10 +185,13 @@ for (const site of SITES_TO_BUILD) {
     const before = html;
     // strip any prior P0 block (idempotent)
     html = html.replace(new RegExp(START + '[\\s\\S]*?' + END + '\\n?', 'g'), '');
+    const isHome = f === path.join(siteDir, 'index.html');
+    const inject = (isHome && home ? home : '') + eeat;
     if (html.includes('</main>')) {
-      const isHome = f === path.join(siteDir, 'index.html');
-      const inject = (isHome && home ? home : '') + eeat;
       html = html.replace('</main>', inject + '\n</main>');
+    } else if (html.includes('</body>')) {
+      // some pages (e.g. cover/index.html) omit </main>; fall back to before </body>
+      html = html.replace('</body>', inject + '\n</body>');
     }
     if (html !== before) { fs.writeFileSync(f, html); total.eeat++; if (home && path.basename(f) === 'index.html') total.home++; }
   }
