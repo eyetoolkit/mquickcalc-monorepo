@@ -1,0 +1,28 @@
+{
+  "name": "versal matrix (mQuickCalc)",
+  "updated": "2026-11-16",
+  "items": [
+    {
+      "label": "jsonversal",
+      "desc": "JSON / YAML tools",
+      "href": "https://jsonversal.com",
+      "external": true,
+      "kind": "chip"
+    },
+    {
+      "label": "mQuickCalc",
+      "desc": "67 clinical calculators",
+      "href": "https://mquickcalc.com",
+      "external": false,
+      "kind": "chip",
+      "current": true
+    },
+    {
+      "label": "EyeToolkit",
+      "desc": "3 ophthalmic tools",
+      "href": "https://eyetoolkit.com",
+      "external": true,
+      "kind": "chip"
+    }
+  ]
+}

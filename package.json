@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "terser": "^5.51.2"
+  },
+  "scripts": {
+    "sync:brand": "node scripts/sync-brand-kit.mjs"
   }
 }

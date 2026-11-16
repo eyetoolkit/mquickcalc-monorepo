@@ -259,6 +259,56 @@ function injectAdSlots(siteDir) {
  * templates (404 / compare) are deliberately excluded — they do not live in
  * site-finance/tools and have their own injection path.
  */
+
+/**
+ * P2-1 — build-time brand injection (matrix + footer chips).
+ *
+ * Renders two placeholder divs from packages/brand-kit/matrix.json (single
+ * source of truth), so adding/removing a cross-brand entry updates every
+ * site without editing 4 index.html files:
+ *   1) <div class="matrix" data-matrix="site-xxx">   -> matrix chips
+ *   2) <div class="footer-brand-chips" data-source>  -> footer chips
+ * Idempotent: placeholders keep data-* attrs; injected content is wrapped
+ * in a marker comment and re-injected (not duplicated) on rebuild.
+ */
+function injectBrandMatrix(siteDir) {
+  const matrixFile = path.join(BRAND_KIT, 'matrix.json');
+  if (!exists(matrixFile)) return 0;
+  const matrix = JSON.parse(fs.readFileSync(matrixFile, 'utf8'));
+  const items = matrix.items || [];
+
+  // 2) footer chips: all items, external get target=_blank, current gets aria-current
+  const chip = (it) => {
+    const ext = it.external ? ' target="_blank" rel="noopener"' : '';
+    const cur = it.current ? ' aria-current="page"' : '';
+    return '<a href="' + it.href + '"' + ext + cur + ' class="footer-brand-chip"><strong>' + it.label + '</strong><span>' + it.desc + '</span></a>';
+  };
+  const footerHtml = '<!-- footer chips: from brand-kit/matrix.json -->\n' + items.map(chip).join('\n') + '\n';
+
+  // 1) matrix: external entries only (the "other brands" you can jump to);
+  // current entry is this site itself, skip it to avoid a self-link.
+  const matrixHtml = '<!-- matrix: from brand-kit/matrix.json -->\n' +
+    items.filter(it => it.external).map((it, idx) => {
+      const cls = ['js','fin','hea','med'][idx] || 'x';
+      return '<a class="m-go m-' + cls + '" href="' + it.href + '" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:14px 18px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg);text-decoration:none;transition:transform .15s,box-shadow .15s" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.transform=\'none\';this.style.boxShadow=\'none\'"><span class="m-ico" style="display:flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/></svg></span><span><b>' + it.label + '</b><span>' + it.desc + '</span></span></a>';
+    }).join(' ') + '\n';
+
+  const htmlFiles = walk(siteDir).filter(p => p.endsWith('.html'));
+  let touched = 0;
+  for (const f of htmlFiles) {
+    let html = fs.readFileSync(f, 'utf8');
+    const before = html;
+    // footer-brand-chips placeholder
+    html = html.replace(/(<div class="footer-brand-chips"[^>]*>)([\s\S]*?)(<\/div>)/g,
+      (m, open, inner, close) => inner.includes('footer-brand-chip<') ? m : open + footerHtml + close);
+    // matrix placeholder
+    html = html.replace(/(<div class="matrix" data-matrix="[^"]*">)([\s\S]*?)(<\/div>)/g,
+      (m, open, inner, close) => inner.includes('m-go m-') ? m : open + matrixHtml + close);
+    if (html !== before) { fs.writeFileSync(f, html); touched++; }
+  }
+  return touched;
+}
+
 function injectVerification(siteDir) {
   const dir = path.join(siteDir, 'tools');
   if (!exists(dir)) return 0;
@@ -329,10 +379,11 @@ for (const site of sites) {
   const uifix = injectUiFix(siteDir);
   const busted = cacheBustSite(siteDir);
   const ads = injectAdSlots(siteDir);
+  const brands = injectBrandMatrix(siteDir);
   const verified = site.pkg === 'site-finance' ? injectVerification(siteDir) : 0;
   const llms = genLlmstxt();
   const r = reportSite(site);
-  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (ui-fix ${uifix} html)  (cache-busted ${busted} html)  (ad-slots ${ads})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
+  console.log(`   ✅ ${site.pkg.padEnd(15)} ${r.files} 文件, ${(r.bytes/1024).toFixed(1)} KB  ${replaced ? `(replaced ${replaced} site.js refs)` : ''}  (ui-fix ${uifix} html)  (cache-busted ${busted} html)  (ad-slots ${ads}) (brand-matrix ${brands})  (verify-panels ${verified})  (llms.txt ×${llms})  → deploy: wrangler pages deploy packages/${site.pkg} --project-name=${site.cfProject}`);
 }
 
 // After build: regenerate sitemap.xml with real lastmod from git history

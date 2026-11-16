@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter — Free USD, EUR, GBP &amp; JPY | mQuickCalc</title>
+  <meta name="description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
+  <link rel="canonical" href="https://mquickcalc.com/embed/currency-converter">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Currency Converter — Free USD, EUR, GBP &amp; JPY | mQuickCalc">
+  <meta name="twitter:description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Currency Converter — Free USD, EUR, GBP &amp; JPY | mQuickCalc">
+  <meta property="og:description" content="Convert money between 40+ currencies with indicative mid-market rates. Enter an amount, pick the currency and see every value instantly — free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/embed/currency-converter">
+  <meta property="og:site_name" content="mQuickCalc">
+  <link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Currency Converter","url":"https://mquickcalc.com/embed/currency-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert money between 40+ currencies with indicative mid-market exchange rates. Enter an amount, pick the currency, and see every value instantly — free, no sign-up."}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do currency conversions work?", "acceptedAnswer": {"@type": "Answer", "text": "All rates are anchored to one unit — the US dollar — so any currency can be converted to any other. To convert an amount, multiply it by the target rate divided by the source rate. For example, with 1 USD = 0.8921 EUR and 1 USD = 157.98 JPY, 100 EUR = 100 × (157.98 ÷ 0.8921) ≈ 17,709 JPY."}},
+      {"@type": "Question", "name": "Are these the live exchange rates?", "acceptedAnswer": {"@type": "Answer", "text": "The rates shown are indicative mid-market rates provided by exchangerate-api.com, last updated 6 October 2026. They are a reference point, not a guarantee — the rate your bank or card issuer applies will include their own spread and fees."}},
+      {"@type": "Question", "name": "Why does my bank show a different rate?", "acceptedAnswer": {"@type": "Answer", "text": "Banks and payment processors add a spread on top of the mid-market rate to cover their costs and risk. The published mid-market rate never includes that markup, so the amount actually charged on a card or wire transfer is usually a little worse than the rate you see here."}},
+      {"@type": "Question", "name": "What are mid-market rates?", "acceptedAnswer": {"@type": "Answer", "text": "Mid-market rates are the midpoint between the buy and sell prices on the global currency market — the rate traders use with each other, not the rate consumers get. They are the fairest reference for comparing conversions across providers."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},
+    {"@type":"ListItem","position":2,"name":"Currency Converter","item":"https://mquickcalc.com/embed/currency-converter"}
+  ]}
+  </script>
+  <style>
+    .conv-table td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+    .conv-table tr.is-from td{background:var(--brand-bg);font-weight:var(--fw-semibold)}
+    .conv-table tr.is-to td{background:#eef2ff}
+    .swap-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-top:14px}
+    .swap-wrap > div{flex:1;min-width:200px}
+    .swap-btn{margin-bottom:1px}
+    .swap-btn svg{display:inline-block;vertical-align:-2px;margin-right:4px}
+    @media (max-width:640px){.swap-wrap{flex-direction:column}.swap-wrap > div{min-width:0}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use this converter",
+    "step": [
+      {"@type": "HowToStep", "name": "Enter an amount", "text": "Type the amount you want to convert into the amount field."},
+      {"@type": "HowToStep", "name": "Pick your currencies", "text": "Choose the source currency and the target currency from the dropdowns, or use the swap button to exchange them."},
+      {"@type": "HowToStep", "name": "Read the results", "text": "The headline shows the converted value and the full table lists every currency at a glance."}
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=4039cbf5">
+</head>
+<body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav>
+      <a href="/">All converters</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <h1 class="page-title">Currency Converter</h1>
+    <p class="lede">Convert money between 40+ currencies in one place. Enter an amount, pick the source currency, and the table updates as you type — no need to run the same search twice for "USD to EUR" and "EUR to USD".</p>
+
+    <div class="calc-card" id="calc-card">
+      <label for="val">Amount</label>
+      <input id="val" class="input" type="number" inputmode="decimal" step="any" value="100">
+
+      <div class="swap-wrap">
+        <div>
+          <label for="from">Convert from</label>
+          <select id="from" class="input"></select>
+        </div>
+        <button id="swapBtn" class="btn ghost swap-btn" type="button" title="Swap currencies" aria-label="Swap currencies"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4M7 4L3 8M7 4l4 4"/><path d="M17 8v12M17 20l4-4M17 20l-4-4"/></svg>Swap</button>
+        <div>
+          <label for="to">Convert to</label>
+          <select id="to" class="input"></select>
+        </div>
+      </div>
+
+      <div id="result" class="result show">
+        <div class="big" id="mainVal">—</div>
+        <div class="dim" id="mainUnit"></div>
+      </div>
+
+      <table class="ref-table conv-table" style="margin-top:20px;">
+        <thead><tr><th>Currency</th><th style="text-align:right;">Value</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="note" id="convNote"></p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </div>
+
+
+<div id="embed-cta" style="margin-top:20px;padding:16px;border:1px dashed #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <strong>🔧 Embed this converter on your site</strong>
+  <p class="dim" style="margin:4px 0 10px 0;">Copy the code below and paste it into any blog, wiki, or course page. Free, no tracking.</p>
+  <button id="embedBtn" class="btn">Show embed code</button>
+  <div id="embedCode" style="display:none;margin-top:12px;background:#0f172a;color:#e2e8f0;padding:12px;border-radius:6px;font-family:monospace;font-size:13px;overflow-x:auto;">
+<iframe src="https://mquickcalc.com/embed/currency-converter" width="100%" height="480" frameborder="0" loading="lazy" title="Free currency converter from mQuickCalc"></iframe>
+  </div>
+</div>
+
+<div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How it works</h2>
+    <p>Every conversion on this page runs through one base currency: the US dollar. Each currency has a rate — how many units of it equal one US dollar — so converting between any two currencies is a single calculation: amount × (target rate ÷ source rate). There is no separate formula for each currency pair, because every rate is anchored to the same dollar.</p>
+    <p>The rates used here are mid-market rates, the midpoint between the buy and sell prices on the global currency market. That is the rate traders use with each other, and it is the fairest reference point for comparing what different providers charge. It is not the rate you will actually get: banks, card issuers and transfer services add a spread and sometimes fees on top, so the amount charged for a real transaction is usually a little worse than the rate shown here.</p>
+    <p>Rates are refreshed periodically from exchangerate-api.com; the date shown below tells you exactly when the rates on this page were last updated. Because exchange rates move with markets, always check the live rate before making a large transfer or signing a contract in a foreign currency.</p>
+
+    <h2>Real-world applications</h2>
+    <p>Currency conversion is a daily necessity in online shopping, travel and cross-border business. When you buy from an overseas store, the price in your currency tells you what you will actually pay — and whether a bargain in dollars is still a bargain after conversion. Travelers use it to budget for trips and to spot unreasonable ATM or airport exchange rates.</p>
+    <p>Freelancers and sellers earning in foreign currencies need to know what a payment is worth in their home currency before accepting a rate. E-commerce sellers pricing products for multiple markets also rely on conversion to keep margins consistent across currencies. For anything beyond a quick check, compare against your bank or card provider's actual rate, since that is the number that will appear on your statement.</p>
+
+    <h2>Common currency conversions</h2>
+    <table class="conv-table ref-table">
+      <thead><tr><th>1 USD in</th><th style="text-align:right;">Value</th></tr></thead>
+      <tbody>
+        <tr><td>Euro (EUR)</td><td>0.8921</td></tr>
+        <tr><td>British pound (GBP)</td><td>0.7420</td></tr>
+        <tr><td>Japanese yen (JPY)</td><td>157.98</td></tr>
+        <tr><td>Chinese yuan (CNY)</td><td>6.7268</td></tr>
+        <tr><td>Indian rupee (INR)</td><td>95.99</td></tr>
+        <tr><td>Australian dollar (AUD)</td><td>1.4031</td></tr>
+        <tr><td>Canadian dollar (CAD)</td><td>1.3913</td></tr>
+        <tr><td>Swiss franc (CHF)</td><td>0.8190</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How do currency conversions work?</h3>
+    <p>Every currency has a rate relative to the US dollar, so conversion between any two currencies is a simple multiplication and division. Multiply your amount by the target currency's rate, then divide by the source currency's rate. For example, to find what 100 euros is in yen when 1 USD = 0.8921 EUR and 1 USD = 157.98 JPY, compute 100 × (157.98 ÷ 0.8921), which gives about 17,709 yen. This works in reverse for any currency pair without needing a separate table for each combination.</p>
+    <h3>Are these the live exchange rates?</h3>
+    <p>The rates shown are indicative mid-market rates sourced from exchangerate-api.com, last updated on 6 October 2026. They give you a fair reference for comparing conversions, but they are not a guarantee of the rate any provider will apply to your transaction. Exchange rates also move with markets throughout the day, so for large amounts, check the current rate before committing.</p>
+    <h3>Why does my bank show a different rate?</h3>
+    <p>Banks and payment processors add a spread on top of the mid-market rate to cover their costs and risk. The rate published here never includes that markup, so the amount actually charged on a card, ATM withdrawal or wire transfer is usually a little worse than what you see here. Some providers also charge a fixed fee per transaction, which makes the effective rate worse again for small amounts.</p>
+    <h3>What are mid-market rates?</h3>
+    <p>Mid-market rates are the midpoint between the buy and sell prices on the global currency market — the rate that traders exchange currencies at with each other. They are the fairest reference for comparing how much different providers charge, because every provider starts from the same mid-market number and then adds their own spread and fees on top.</p>
+    <h3>Can I convert between any two currencies?</h3>
+    <p>Yes. Because every currency in the table is anchored to the US dollar, any currency can be converted to any other in a single step — including currencies that rarely trade directly against each other, such as the Nigerian naira and the Thai baht. Pick both currencies above, enter an amount, and the result updates instantly.</p>
+
+    <div class="related-section">
+      <h2>Related calculators</h2>
+      <div class="tool-grid">
+      <a class="tool-card" href="/tools/percentage-calculator"><div class="icon-row"><div class="tc-title">Percentage Calculator</div></div><div class="tc-desc">X% of Y, what % is X of Y, % change — all modes in one.</div></a>
+      <a class="tool-card" href="/tools/tip-calculator"><div class="icon-row"><div class="tc-title">Tip Calculator</div></div><div class="tc-desc">Calculate tip and split the bill among friends.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-10-06">October 6, 2026</time> — exchange rates are indicative mid-market rates from exchangerate-api.com. <span id="rate-stale" style="display:none;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;margin-left:6px;">⚠ 汇率数据已过期</span></p>
+    <p class="note" style="margin-top:22px;">Estimates are for general information only — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all converters</a></p>
+  </div>
+</main>
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/percentage-calculator">Percentage Calculator</a></li>
+      <li><a href="/everyday-math">📂 All Everyday Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
+  <script src="/js/site-icons.js?v=95ffdd32" defer></script>
+  <script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script>!function(){var e={USD:1,EUR:0.892111,GBP:0.756485,JPY:157.98213,CNY:6.714466,AUD:1.435728,CAD:1.425621,CHF:0.831139,HKD:7.847095,SGD:1.279827,INR:96.380408,KRW:1342.7746,MXN:18.106072,BRL:5.017022,RUB:85.174283,ZAR:16.647823,TWD:31.785048,SEK:10.040826,NOK:9.593804,DKK:6.670463,NZD:1.78636,THB:33.69142,AED:3.6725,SAR:3.75,TRY:49.164125,ILS:3.051319,PLN:3.907701,CZK:21.808407,HUF:327.74918,IDR:17892.584,PHP:62.641606,MYR:4.086922,VND:25966.233,VES:872.3927,UAH:45.071661,NGN:1330.998,ARS:1519.2481,CLP:988.7276,COP:3286.0049,EGP:52.431625,RON:4.759064},n=[["USD","United States dollar (USD)"],["EUR","Euro (EUR)"],["GBP","British pound (GBP)"],["JPY","Japanese yen (JPY)"],["CNY","Chinese yuan (CNY)"],["AUD","Australian dollar (AUD)"],["CAD","Canadian dollar (CAD)"],["CHF","Swiss franc (CHF)"],["HKD","Hong Kong dollar (HKD)"],["SGD","Singapore dollar (SGD)"],["INR","Indian rupee (INR)"],["KRW","South Korean won (KRW)"],["MXN","Mexican peso (MXN)"],["BRL","Brazilian real (BRL)"],["RUB","Russian ruble (RUB)"],["ZAR","South African rand (ZAR)"],["TWD","New Taiwan dollar (TWD)"],["SEK","Swedish krona (SEK)"],["NOK","Norwegian krone (NOK)"],["DKK","Danish krone (DKK)"],["NZD","New Zealand dollar (NZD)"],["THB","Thai baht (THB)"],["AED","UAE dirham (AED)"],["SAR","Saudi riyal (SAR)"],["TRY","Turkish lira (TRY)"],["ILS","Israeli shekel (ILS)"],["PLN","Polish zloty (PLN)"],["CZK","Czech koruna (CZK)"],["HUF","Hungarian forint (HUF)"],["IDR","Indonesian rupiah (IDR)"],["PHP","Philippine peso (PHP)"],["MYR","Malaysian ringgit (MYR)"],["VND","Vietnamese dong (VND)"],["VES","Venezuelan bolivar (VES)"],["UAH","Ukrainian hryvnia (UAH)"],["NGN","Nigerian naira (NGN)"],["ARS","Argentine peso (ARS)"],["CLP","Chilean peso (CLP)"],["COP","Colombian peso (COP)"],["EGP","Egyptian pound (EGP)"],["RON","Romanian leu (RON)"]],a={USD:"EUR",EUR:"USD",GBP:"USD",JPY:"USD",CNY:"USD",AUD:"USD",CAD:"USD",CHF:"USD",HKD:"USD",SGD:"USD",INR:"USD",KRW:"USD",MXN:"USD",BRL:"USD",RUB:"USD",ZAR:"USD",TWD:"USD",SEK:"USD",NOK:"USD",DKK:"USD",NZD:"USD",THB:"USD",AED:"USD",SAR:"USD",TRY:"USD",ILS:"USD",PLN:"USD",CZK:"USD",HUF:"USD",IDR:"USD",PHP:"USD",MYR:"USD",VND:"USD",VES:"USD",UAH:"USD",NGN:"USD",ARS:"USD",CLP:"USD",COP:"USD",EGP:"USD",RON:"USD"},t=document.getElementById("val"),i=document.getElementById("from"),r=document.getElementById("to"),D=document.getElementById("rows"),o=document.getElementById("mainVal"),S=document.getElementById("mainUnit"),U=document.getElementById("convNote");function l(e){return isFinite(e)?0===e?"0":Number(e.toPrecision(8)).toLocaleString("en-US",{maximumFractionDigits:4}):"—"}function u(e,a){for(var t="",i=0;i<n.length;i++)t+='<option value="'+n[i][0]+'"'+(n[i][0]===a?" selected":"")+">"+n[i][1]+"</option>";e.innerHTML=t}function d(){var a=parseFloat(t.value);isNaN(a)&&(a=0);for(var u=i.value,d=r.value,s=e[u]||1,R=e[d]||1,N="",v=0;v<n.length;v++){var E=n[v][0],c=a*(e[E]||0)/s,m="";E===u?m=' class="is-from"':E===d&&(m=' class="is-to"'),N+="<tr"+m+"><td>"+n[v][1]+"</td><td><strong>"+l(c)+"</strong></td></tr>"}D.innerHTML=N,o.textContent=l(a*R/s),S.textContent=l(a)+" "+u+" in "+function(e){for(var a=0;a<n.length;a++)if(n[a][0]===e)return n[a][1];return e}(d),U&&(U.textContent="Mid-market rates from exchangerate-api.com, updated 6 Oct 2026. Banks and card providers add spreads and fees, so actual charged amounts differ.")}u(i,"USD"),u(r,"EUR"),t.addEventListener("input",d),i.addEventListener("change",function(){if(!("EUR"===r.value&&"USD"===i.value||"USD"===r.value&&"EUR"===i.value)){var e=r.value;r.value=(a[i.value]||"USD")===e?"USD"===i.value?"EUR":"USD":a[i.value]||"USD",d()}}),r.addEventListener("change",d),document.getElementById("swapBtn").addEventListener("click",function(){var e=i.value,n=r.value;i.value=n,r.value=e,d()}),document.getElementById("resetBtn").addEventListener("click",function(){t.value="100",i.value="USD",r.value="EUR",d()}),function(){var e=new URLSearchParams(window.location.search),n=e.get("from"),t=e.get("to");if(n)for(var D=i.getElementsByTagName("option"),o=0;o<D.length;o++)if(D[o].value===n){i.value=n;break}if(t){for(var S=r.getElementsByTagName("option"),U=0;U<S.length;U++)if(S[U].value===t){r.value=t;break}}else n&&(r.value=(a[n]||"USD")===n?"USD":a[n]||"USD");d()}(),d(),function(){var D=new Date("2026-10-06");if((Date.now()-D.getTime())/86400000>7){var el=document.getElementById("rate-stale");if(el)el.style.display="inline-block"}};
+</script>
+<script>!function(){var e=document.getElementById("embedBtn"),t=document.getElementById("embedCode");e&&t&&e.addEventListener("click",function(){"none"===t.style.display?(t.style.display="block",e.textContent="Hide embed code"):(t.style.display="none",e.textContent="Show embed code")})}();
+</script>
+
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
