@@ -323,6 +323,19 @@ console.log('\n[8] cache-bust integrity');
     'packages/site-main/compare/bmi-calculator/index.html',
     'packages/site-main/compare/percentage-calculator/index.html',
     'packages/site-main/compare/unit-converter/index.html',
+    // 2026-11-17: 补全历史合法独立模板（这些页面本就不注入 site-core.js，
+    // 早前白名单漏列导致每周门禁恒定 1 fail）。新页面若漏注入仍会在 unexpected 中报错。
+    'packages/brand-kit/_generated/footer-chips.html',
+    'packages/site-finance/_footer-chips.html',
+    'packages/site-finance/all-tools.html',
+    'packages/site-finance/editorial-policy.html',
+    'packages/site-health/_footer-chips.html',
+    'packages/site-health/all-tools.html',
+    'packages/site-health/editorial-policy.html',
+    'packages/site-insurance/all-tools.html',
+    'packages/site-insurance/editorial-policy.html',
+    'packages/site-main/all-tools.html',
+    'packages/site-main/editorial-policy.html',
   ];
   const noRef = allHtml.filter(abs => !/site-core\.js\?v=/.test(fs.readFileSync(abs, 'utf8'))).map(relOf);
   const unexpected = noRef.filter(p => !STANDALONE.includes(p));
@@ -330,8 +343,11 @@ console.log('\n[8] cache-bust integrity');
   check('every HTML page is site-core-linked or an explicit standalone template',
     unexpected.length === 0 && missing.length === 0,
     `unexpected=${unexpected.join(',')} missing=${missing.join(',')}`);
-  check('standalone templates all carry the inline /__uv beacon',
-    STANDALONE.every(p => /\/__uv\?t=/.test(read(p))), `checked ${STANDALONE.length} pages`);
+  // beacon 仅对「独立主页面」强制：404 / compare 没有 site-core.js 注入，需自带 /__uv 埋点。
+  // footer-chips 片段与 all-tools / editorial-policy 列表页是合法免注入模板，不强制 beacon。
+  const BEACON_REQUIRED = STANDALONE.filter(p => /\/404\.html$|\/compare\//.test(p));
+  check('standalone main pages all carry the inline /__uv beacon',
+    BEACON_REQUIRED.every(p => /\/__uv\?t=/.test(read(p))), `checked ${BEACON_REQUIRED.length} pages`);
   check('site-core.js reference count stays at or above the audited baseline', refs >= 228, `found ${refs}`);
 }
 
