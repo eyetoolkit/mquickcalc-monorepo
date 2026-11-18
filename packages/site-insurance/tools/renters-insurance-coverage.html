@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renters Insurance Coverage Estimator | mQuickCalc</title>
+<meta name="description" content="Estimate the renters insurance coverage you need. Add up your belongings, set your liability limit, and check whether you are underinsured. Free, in your browser.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/renters-insurance-coverage">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:title" content="Renters Insurance Coverage Estimator | mQuickCalc Cover">
+<meta property="og:description" content="Add up your belongings and liability to see how much renters insurance you actually need. Free, nothing uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/renters-insurance-coverage">
+<meta property="og:site_name" content="mQuickCalc">
+<meta name="twitter:title" content="Renters Insurance Coverage Estimator | mQuickCalc Cover">
+<meta name="twitter:description" content="Estimate your renters insurance personal property and liability coverage. Free, in your browser.">
+<meta name="twitter:site" content="@mquickcalc">
+<link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Renters Insurance Coverage Estimator","url":"https://cover.mquickcalc.com/tools/renters-insurance-coverage","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate the personal property and liability coverage you need for renters insurance by adding up your belongings and comparing to your limits. Free, nothing uploaded."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cover.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Renters Insurance Coverage Estimator","item":"https://cover.mquickcalc.com/tools/renters-insurance-coverage"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Renters Insurance Coverage Estimator","step":[{"@type":"HowToStep","name":"List your belongings","text":"Add the replacement value of your electronics, furniture, and other items."},{"@type":"HowToStep","name":"Set your liability limit","text":"Choose the personal liability coverage you want (typical $100k–$300k)."},{"@type":"HowToStep","name":"See your gap","text":"Compare your property total to your personal property limit to find underinsurance."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does renters insurance cover?","acceptedAnswer":{"@type":"Answer","text":"Typically three things: your personal property (theft or damage, including off-premises), personal liability if someone is hurt in your unit or you cause damage, and loss of use if you have to move out temporarily after a covered event. Your landlord's policy does not cover your belongings."}},{"@type":"Question","name":"How do I figure out how much property coverage I need?","acceptedAnswer":{"@type":"Answer","text":"Total the replacement cost of your belongings, not the resale value. Most renters need $20,000–$50,000 in personal property coverage; the more electronics and furniture you own, the higher it goes. This estimator adds your items up so you can compare the total to your policy limit."}},{"@type":"Question","name":"What is the gap this tool shows?","acceptedAnswer":{"@type":"Answer","text":"If your belongings total more than your personal property limit, the difference is the amount you would have to cover out of pocket after a total loss. A large gap means you are underinsured and should raise the limit or add a rider."}},{"@type":"Question","name":"Does liability coverage have a minimum?","acceptedAnswer":{"@type":"Answer","text":"Policies usually start around $100,000 and many renters carry $300,000 because a serious injury or property-damage claim can far exceed that. If you own a home or have significant assets, an umbrella policy on top of your liability is worth considering."}}]}
+</script>
+<link rel="stylesheet" href="/css/ui-fix.css?v=f2eb918b">
+</head>
+<body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#home">Home</a><span class="sep">›</span><span class="current">Renters Insurance Coverage Estimator</span></nav></div>
+<main id="main-content" class="page"><div class="wrap">
+<div class="page-hero-emoji">📦</div>
+<h1 class="page-title">Renters Insurance Coverage Estimator</h1>
+<p class="lede">Add up what you actually own, set your liability limit, and see whether your renters policy leaves a gap. Runs in your browser — nothing is uploaded.</p>
+<div class="calc-card">
+  <label for="items">Your belongings (one line each: description — $value)</label>
+  <textarea id="items" class="input" rows="6" placeholder="Laptop — $1,200&#10;Furniture — $2,500&#10;Clothing — $800&#10;Appliances — $1,000">Laptop — $1,200
+Furniture — $2,500
+Clothing — $800
+Appliances — $1,000</textarea>
+
+  <label for="liability">Liability limit</label>
+  <select id="liability" class="input">
+    <option value="100000">$100,000</option>
+    <option value="300000" selected>$300,000</option>
+    <option value="500000">$500,000</option>
+  </select>
+
+  <label for="ppLimit" style="margin-top:14px;">Your personal property limit (renters policy)</label>
+  <input id="ppLimit" class="input" type="number" min="0" value="20000">
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+    <button id="calcBtn" class="btn">Estimate</button>
+    <button id="resetBtn" class="btn ghost">Reset</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="grid">
+      <div class="cell"><div class="lbl">Property total</div><div class="val" id="propVal">--</div></div>
+      <div class="cell"><div class="lbl">Liability limit</div><div class="val" id="liabVal">--</div></div>
+      <div class="cell"><div class="lbl">Personal property limit</div><div class="val" id="limitVal">--</div></div>
+      <div class="cell"><div class="lbl">Coverage gap</div><div class="val" id="gapVal">--</div></div>
+    </div>
+    <div id="gapNote" style="margin-top:10px;font-size:0.9rem;"></div>
+  </div>
+</div>
+<div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this coverage estimator works</h2>
+<p>It reads the dollar values from your item list (the number before the "$" on each line) and sums them into a property total. It then compares that total to your personal property limit. If your belongings are worth more than the limit, the difference is your gap — the amount you would absorb out of pocket after a total loss. Liability is reported separately because it protects you from claims others make against you, not from loss of your own stuff.</p>
+<h2>What to use it for</h2>
+<p>Check you are not underinsured after a move or when you buy expensive electronics, decide whether to raise your property limit or add a scheduled-personal-property endorsement for high-value items, and compare a couple of liability tiers before you sign.</p>
+<div class="related-section">
+  <h2>Related tools</h2>
+  <div class="tool-grid">
+    <a href="/tools/renters-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Renters Insurance</div></div><div class="tc-desc">Premium vs deductible.</div></a>
+    <a href="/tools/home-insurance-estimator" class="tool-card"><div class="icon-row"><span class="emoji">🏘️</span><div class="tc-title">Home Insurance</div></div><div class="tc-desc">Estimate your premium.</div></a>
+    <a href="/tools/umbrella-insurance" class="tool-card"><div class="icon-row"><span class="emoji">☂️</span><div class="tc-title">Umbrella Insurance</div></div><div class="tc-desc">Extra liability cover.</div></a>
+  </div>
+</div>
+<p class="upd">Last updated <time datetime="2026-11-19">Nov 19, 2026</time></p>
+<p class="note" style="margin-top:22px;">Planning estimate only, not insurance advice or a quote. Confirm coverage with your insurer — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note"><a href="/">&larr; Back to all tools</a></p>
+</div>
+<!-- P0GROW:START -->
+<section class="eeat-trust" aria-label="About this tool" style="margin:24px 0;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--mist,#f7f8fb);font-size:13px;line-height:1.65;color:var(--text-dim)"><strong style="color:var(--ink);font-size:13.5px">Reviewed by a human, not generated and forgotten.</strong><span style="display:block;margin-top:4px">Written and reviewed by <strong>Jim</strong> (Maoming, China) · Last reviewed <time datetime="2026-11-16">2026-11-16</time> · Verified against published formulas before publishing. Figures are estimates, not financial or medical advice — verify against the official source.</span><span style="display:block;margin-top:6px"><a href="/editorial-policy">Editorial policy</a> · <a href="/about">About the operator</a> · <a href="/contact">Report an incorrect result</a> · <a href="/all-tools">All cover tools</a></span></section>
+<!-- P0GROW:END -->
+<!-- P1ENGAGE:START -->
+<section class="p1-related" aria-label="More tools you may need" style="margin:22px 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius-md);background:var(--mist,#f7f8fb)"><h2 style="font-size:16px;margin:0 0 10px">💡 More tools for this task</h2><ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px"><li style="font-size:13.5px;line-height:1.5"><a href="/tools/renters-insurance.html">Renters Insurance Coverage Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— renters + insurance</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/burial-expense.html">Burial &amp; Final Expense Cost Estimator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— insurance + estimator</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/umbrella-insurance.html">Umbrella Liability Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— insurance + coverage</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/business-liability.html">Business Liability Insurance Premium Estimator</a> <span style="color:var(--text-dim)">— insurance + estimator</span></li></ul></section><div class="p1-tool-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px;font-size:13.5px"><button type="button" id="p1-download-btn" class="btn" style="cursor:pointer">⬇ Download result</button><a href="/contact?tool=renters-insurance-coverage&subject=result-error">Report an incorrect result</a><span style="color:var(--text-dim)">Runs in your browser — nothing is uploaded.</span></div><script>(function(){var b=document.getElementById("p1-download-btn");if(!b)return;function text(){var s=["#output","#result",".result",".output","[id$=\"-result\"]","pre","table"];for(var i=0;i<s.length;i++){var ns=document.querySelectorAll(s[i]);for(var j=0;j<ns.length;j++){var t=(ns[j].textContent||"").trim();if(t&&t!=="—"&&t.length>1&&!/^(output|result)$/i.test(t))return t;}}return "";}b.addEventListener("click",function(){var t=text();if(!t){if(window.mqc&&window.mqc.toast)window.mqc.toast("Run the calculator first — no result to download yet.");return;}var n=(location.pathname.split("/").filter(Boolean).pop()||"result")+".txt";var u=URL.createObjectURL(new Blob([t],{type:"text/plain;charset=utf-8"}));var a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);if(window.mqc&&window.mqc.toast)window.mqc.toast("Downloaded "+n);});try{var k="mquickcalc-recent",a=JSON.parse(localStorage.getItem(k)||"[]"),h=location.pathname.replace(/\/$/,""),ti=document.title.split("|")[0].trim();a=a.filter(function(x){return x.href!==h;});a.unshift({href:h,title:ti});localStorage.setItem(k,JSON.stringify(a.slice(0,5)));}catch(e){}})();</script>
+<!-- P1ENGAGE:END -->
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function money(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+  function sumItems() {
+    var total = 0, count = 0;
+    var lines = $('items').value.split(/\n+/);
+    for (var i = 0; i < lines.length; i++) {
+      var m = lines[i].match(/\$\s*([\d,]+)/);
+      if (m) { total += parseInt(m[1].replace(/,/g, ''), 10); count++; }
+    }
+    return { total: total, count: count };
+  }
+  function calc() {
+    var s = sumItems();
+    var liab = parseInt($('liability').value, 10);
+    var limit = parseInt($('ppLimit').value, 10);
+    if (s.count === 0 || isNaN(limit)) {
+      $('result').classList.remove('show');
+      return;
+    }
+    $('propVal').textContent = money(s.total) + ' (' + s.count + ' items)';
+    $('liabVal').textContent = money(liab);
+    $('limitVal').textContent = money(limit);
+    var gap = s.total - limit;
+    if (gap > 0) {
+      $('gapVal').textContent = money(gap) + ' short';
+      $('gapNote').textContent = 'You appear to be underinsured by ' + money(gap) + '. Consider raising your personal property limit or adding a scheduled-personal-property endorsement for high-value items.';
+      $('gapNote').style.color = '#b91c1c';
+    } else {
+      $('gapVal').textContent = 'covered';
+      $('gapNote').textContent = 'Your personal property limit of ' + money(limit) + ' covers your ' + money(s.total) + ' of belongings with ' + money(limit - s.total) + ' to spare.';
+      $('gapNote').style.color = '#047857';
+    }
+    $('result').classList.add('show');
+  }
+  $('calcBtn').addEventListener('click', calc);
+  ['liability', 'ppLimit'].forEach(function (id) {
+    $(id).addEventListener('input', calc);
+    $(id).addEventListener('change', calc);
+  });
+  $('resetBtn').addEventListener('click', function () {
+    $('items').value = ''; $('ppLimit').value = '';
+    ['propVal','liabVal','limitVal','gapVal'].forEach(function (id) { $(id).textContent = '--'; });
+    $('gapNote').textContent = '';
+    $('result').classList.remove('show');
+  });
+  calc();
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+<script src="/js/site-uifix.js?v=b7adb11b" defer></script>
+</body>
+</html>

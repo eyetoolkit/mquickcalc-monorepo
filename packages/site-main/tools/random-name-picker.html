@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Name Picker — Pick a Name at Random | mQuickCalc</title>
+  <meta name="description" content="Free random name picker. Type a list of names, set how many to draw, and spin for a fair random winner — no wheel needed. Works on phone, nothing uploaded.">
+  <link rel="canonical" href="https://mquickcalc.com/tools/random-name-picker">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#4f46e5">
+  <meta property="og:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mquickcalc.com/og-image.png">
+  <meta property="og:title" content="Random Name Picker — Pick a Name at Random | mQuickCalc">
+  <meta property="og:description" content="Free random name picker. Type a list of names, set how many to draw, and spin for a fair random winner. Works on phone, nothing is uploaded.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mquickcalc.com/tools/random-name-picker">
+  <meta property="og:site_name" content="mQuickCalc">
+  <meta name="twitter:title" content="Random Name Picker — Pick a Name at Random | mQuickCalc">
+  <meta name="twitter:description" content="Free random name picker. Type a list of names and spin for a fair random winner. No wheel needed.">
+  <meta name="twitter:site" content="@mquickcalc">
+  <link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Random Name Picker","url":"https://mquickcalc.com/tools/random-name-picker","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free random name picker. Type a list of names, set how many to draw, and spin for a fair random winner. No wheel needed, nothing uploaded."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Random Name Picker","item":"https://mquickcalc.com/tools/random-name-picker"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to use the Random Name Picker","step":[{"@type":"HowToStep","name":"Enter names","text":"Type or paste a list of names, one per line or separated by commas."},{"@type":"HowToStep","name":"Choose how many","text":"Set how many winners you want to draw and whether to remove them from the pool."},{"@type":"HowToStep","name":"Spin","text":"Press Spin to reveal a random winner."}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the name picker pick randomly?","acceptedAnswer":{"@type":"Answer","text":"It uses the browser's cryptographically secure random API (crypto.getRandomValues), not Math.random(). For each winner it picks a random index from the remaining pool, so every unused name has an equal chance."}},{"@type":"Question","name":"Does it save my names?","acceptedAnswer":{"@type":"Answer","text":"No. The list lives only in your browser tab. Nothing is sent to a server; clear the page and it is gone."}},{"@type":"Question","name":"Can I remove a name once it is picked?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on 'Remove picked' and each winner is dropped from the pool so the same name cannot appear twice. Turn it off to allow repeats."}},{"@type":"Question","name":"Is it fair for a group decision?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each draw is uniform over the remaining options, so no name is favored. It is the same logic as shaking a hat of folded-up slips."}}]}
+  </script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=f2eb918b">
+</head>
+<body data-site="main">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">m<b>Quick</b>Calc</a>
+    <nav><a href="/#converters">Converters</a><a href="/#calculators">Calculators</a><a href="/#everyday">Everyday</a><a href="/embed/">Embeds</a><a href="/about">About</a></nav>
+  </div>
+</header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class='wrap'><nav class='breadcrumb'><a href='/'>Home</a><span class='sep'>›</span><a href='/#everyday'>Everyday</a><span class='sep'>›</span><span class='current'>Random Name Picker</span></nav></div>
+
+<main id="main-content" class="page">
+  <div class="wrap">
+    <div class="page-hero-emoji">🎲</div>
+<h1 class="page-title">Random Name Picker</h1>
+    <p class="lede">A fair random draw from any list of names. No wheel to spin, no app to install — type the names, pick how many to draw, and let chance decide.</p>
+    <div class="calc-card">
+      <label for="names">Names (one per line or comma-separated)</label>
+      <textarea id="names" class="input" rows="6" placeholder="Alex, Jamie, Sam, Taylor">Alex
+Jamie
+Sam
+Taylor</textarea>
+
+      <label for="count">How many winners to draw</label>
+      <input id="count" class="input" type="number" min="1" value="1">
+
+      <label class="input" style="display:flex;align-items:center;gap:8px;margin-top:8px;cursor:pointer">
+        <input id="removePicked" type="checkbox" checked style="width:auto"> Remove picked names from the pool (no repeats)
+      </label>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button id="spinBtn" class="btn">Spin</button>
+        <button id="clearBtn" class="btn ghost">Clear winners</button>
+      </div>
+
+      <div class="result" id="result">
+        <div class="dim" id="resLabel">Winners</div>
+        <div id="winners" style="font-size:1.15rem;font-weight:600;line-height:1.7;"></div>
+      </div>
+    </div>
+    <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+
+<h2>How this name picker works</h2>
+<p>Each draw reads a secure random number from your browser via <code>crypto.getRandomValues</code> and picks one name uniformly from the options still in the pool. If "remove picked" is on, winners are taken out so nobody appears twice; if it is off, every draw is independent and the same name can come up again.</p>
+<h2>What to use it for</h2>
+<p>Pick who takes out the trash, split a gift-buying group, choose a presentation speaker, draw the first prize, or settle a "we can't decide" between two options. It is the same result as folding the names into slips and shaking a hat.</p>
+    <div class="related-section">
+      <h2>Related tools</h2>
+      <div class="tool-grid">
+        <a href="/tools/coin-flip" class="tool-card"><div class="icon-row"><span class="emoji">🪙</span><div class="tc-title">Coin Flip</div></div><div class="tc-desc">Heads or tails, logged.</div></a>
+        <a href="/tools/dice-roller" class="tool-card"><div class="icon-row"><span class="emoji">🎲</span><div class="tc-title">Dice Roller</div></div><div class="tc-desc">Roll dice, 1 to 6 sides.</div></a>
+        <a href="/tools/counter" class="tool-card"><div class="icon-row"><span class="emoji">🔢</span><div class="tc-title">Counter</div></div><div class="tc-desc">Big click counter with laps.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-11-19">Nov 19, 2026</time></p>
+    <p class="note" style="margin-top:22px;">For general use only. Results are random and not advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+<!-- P0GROW:START -->
+<section class="eeat-trust" aria-label="About this tool" style="margin:24px 0;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--mist,#f7f8fb);font-size:13px;line-height:1.65;color:var(--text-dim)"><strong style="color:var(--ink);font-size:13.5px">Reviewed by a human, not generated and forgotten.</strong><span style="display:block;margin-top:4px">Written and reviewed by <strong>Jim</strong> (Maoming, China) · Last reviewed <time datetime="2026-11-16">2026-11-16</time> · Verified against published formulas before publishing. Figures are estimates — verify before relying on them.</span><span style="display:block;margin-top:6px"><a href="/editorial-policy">Editorial policy</a> · <a href="/about">About the operator</a> · <a href="/contact">Report an incorrect result</a> · <a href="/all-tools">All everyday tools</a></span></section>
+<!-- P0GROW:END -->
+<!-- P1ENGAGE:START -->
+<section class="p1-related" aria-label="More tools you may need" style="margin:22px 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius-md);background:var(--mist,#f7f8fb)"><h2 style="font-size:16px;margin:0 0 10px">💡 More tools for this task</h2><ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px"><li style="font-size:13.5px;line-height:1.5"><a href="/tools/random-letter-generator.html">Random Letter Generator — Random Letters &amp;amp; Sequences</a> <span style="color:var(--text-dim)">— random + nothing</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/coin-flip.html">Coin Flip — Fair Online Heads or Tails</a> <span style="color:var(--text-dim)">— random + fair</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/password-generator.html">Password Generator — Strong, Random Passwords</a> <span style="color:var(--text-dim)">— random + nothing</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/random-number-generator.html">Random Number Generator — Free Online</a> <span style="color:var(--text-dim)">— random + many</span></li></ul></section><div class="p1-tool-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px;font-size:13.5px"><button type="button" id="p1-download-btn" class="btn" style="cursor:pointer">⬇ Download result</button><a href="/contact?tool=random-name-picker&subject=result-error">Report an incorrect result</a><span style="color:var(--text-dim)">Runs in your browser — nothing is uploaded.</span></div><script>(function(){var b=document.getElementById("p1-download-btn");if(!b)return;function text(){var s=["#output","#result",".result",".output","[id$=\"-result\"]","pre","table"];for(var i=0;i<s.length;i++){var ns=document.querySelectorAll(s[i]);for(var j=0;j<ns.length;j++){var t=(ns[j].textContent||"").trim();if(t&&t!=="—"&&t.length>1&&!/^(output|result)$/i.test(t))return t;}}return "";}b.addEventListener("click",function(){var t=text();if(!t){if(window.mqc&&window.mqc.toast)window.mqc.toast("Run the calculator first — no result to download yet.");return;}var n=(location.pathname.split("/").filter(Boolean).pop()||"result")+".txt";var u=URL.createObjectURL(new Blob([t],{type:"text/plain;charset=utf-8"}));var a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);if(window.mqc&&window.mqc.toast)window.mqc.toast("Downloaded "+n);});try{var k="mquickcalc-recent",a=JSON.parse(localStorage.getItem(k)||"[]"),h=location.pathname.replace(/\/$/,""),ti=document.title.split("|")[0].trim();a=a.filter(function(x){return x.href!==h;});a.unshift({href:h,title:ti});localStorage.setItem(k,JSON.stringify(a.slice(0,5)));}catch(e){}})();</script>
+<!-- P1ENGAGE:END -->
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar">
+  <p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  <button id="cookie-accept" class="btn">Got it</button>
+</div>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function pool() {
+    return $('names').value.split(/[\n,]+/).map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+  function pickN(arr, n) {
+    var src = arr.slice(), out = [];
+    for (var i = 0; i < n && src.length; i++) {
+      var idx = crypto.getRandomValues(new Uint32Array(1))[0] % src.length;
+      out.push(src.splice(idx, 1)[0]);
+    }
+    return out;
+  }
+  $('spinBtn').addEventListener('click', function () {
+    var p = pool();
+    if (!p.length) { $('resLabel').textContent = 'Add at least one name first.'; $('winners').textContent = ''; $('result').classList.add('show'); return; }
+    var n = parseInt($('count').value, 10) || 1;
+    if (n > p.length) n = p.length;
+    var winners = pickN(p, n);
+    if ($('removePicked').checked) {
+      var drop = new Set(winners);
+      $('names').value = p.filter(function (x) { return !drop.has(x); }).join('\n');
+    }
+    $('resLabel').textContent = n === 1 ? 'Winner' : n + ' winners';
+    $('winners').textContent = winners.join(', ');
+    $('result').classList.add('show');
+  });
+  $('clearBtn').addEventListener('click', function () {
+    $('winners').textContent = ''; $('result').classList.remove('show');
+  });
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+<script src="/js/site-uifix.js?v=b7adb11b" defer></script>
+</body>
+</html>
