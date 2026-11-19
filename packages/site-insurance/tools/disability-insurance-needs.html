@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disability Insurance Needs Calculator | mQuickCalc</title>
+<meta name="description" content="Estimate how much disability income insurance you need. Set your income, replacement rate and existing coverage to find your monthly and annual coverage gap. Free, in your browser.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/disability-insurance-needs">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:title" content="Disability Insurance Needs Calculator | mQuickCalc Cover">
+<meta property="og:description" content="Find your disability coverage gap from your income, replacement target and existing benefits. Runs locally, nothing uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/disability-insurance-needs">
+<meta property="og:site_name" content="mQuickCalc">
+<meta name="twitter:title" content="Disability Insurance Needs Calculator | mQuickCalc Cover">
+<meta name="twitter:description" content="Estimate the monthly disability benefit you need and the annual coverage gap, entirely in your browser.">
+<meta name="twitter:site" content="@mquickcalc">
+<link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Disability Insurance Needs Calculator","url":"https://cover.mquickcalc.com/tools/disability-insurance-needs","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate how much disability income insurance you need: enter income, replacement rate and existing monthly benefits to see your coverage gap. Free, nothing uploaded."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cover.mquickcalc.com/"},{"@type":"ListItem","position":2,"name":"Disability Insurance Needs Calculator","item":"https://cover.mquickcalc.com/tools/disability-insurance-needs"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Disability Insurance Needs Calculator","step":[{"@type":"HowToStep","name":"Enter your income","text":"Type your annual pre-tax income and the share of it you want to replace if you cannot work."},{"@type":"HowToStep","name":"Add existing coverage","text":"Enter any monthly disability benefit you already get from an employer or a private policy."},{"@type":"HowToStep","name":"Set your buffer","text":"Add essential monthly expenses and the waiting period before benefits begin."},{"@type":"HowToStep","name":"Read the gap","text":"See the extra monthly benefit to buy, the annual coverage gap and a typical premium budget."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much of my income should disability insurance replace?","acceptedAnswer":{"@type":"Answer","text":"Most advisers suggest replacing about 60 to 70 percent of your gross income. You will no longer commute or pay payroll tax on the full amount, so you rarely need 100 percent. If a large share of your income is bonus or commission, use a conservative average."}},{"@type":"Question","name":"Does my employer's disability plan cover me fully?","acceptedAnswer":{"@type":"Answer","text":"Group long-term disability plans commonly replace around 60 percent of base salary and often cap the monthly benefit. They may also exclude bonuses and can be taxable if the employer pays the premium. Check the plan document before assuming you are fully covered."}},{"@type":"Question","name":"What is an elimination or waiting period?","acceptedAnswer":{"@type":"Answer","text":"It is the number of days or months you must be disabled before benefits start, often 30, 60 or 90 days. Until then you need savings or short-term disability coverage. This calculator estimates a cash buffer for that gap."}},{"@type":"Question","name":"How much does disability insurance cost?","acceptedAnswer":{"@type":"Answer","text":"For an individual long-term disability policy, a rough planning range is 1 to 3 percent of annual income. The actual price depends on age, health, occupation class, benefit amount, elimination period and any riders. Get a real quote before buying."}}]}
+</script>
+  <link rel="stylesheet" href="/css/ui-fix.css?v=f2eb918b">
+</head>
+<body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Disability Insurance Needs Calculator</span></nav></div>
+<main id="main-content" class="page"><div class="wrap">
+<div class="page-hero-emoji">🧮</div>
+<h1 class="page-title">Disability Insurance Needs Calculator</h1>
+<p class="lede">Work out how much disability income cover you actually need. Enter your income, a replacement target and any existing benefit to see the monthly and annual gap. Runs in your browser — nothing is uploaded.</p>
+<div class="calc-card">
+  <label for="income">Annual pre-tax income</label>
+  <input id="income" class="input" type="number" min="0" value="60000">
+
+  <label for="rate" style="margin-top:14px;">Income you want to replace (%)</label>
+  <select id="rate" class="input">
+    <option value="50">50%</option>
+    <option value="60" selected>60%</option>
+    <option value="70">70%</option>
+    <option value="80">80%</option>
+    <option value="100">100%</option>
+  </select>
+
+  <label for="existing" style="margin-top:14px;">Existing monthly disability benefit (from all sources)</label>
+  <input id="existing" class="input" type="number" min="0" value="0">
+
+  <label for="expenses" style="margin-top:14px;">Essential monthly expenses</label>
+  <input id="expenses" class="input" type="number" min="0" value="3000">
+
+  <label for="wait" style="margin-top:14px;">Waiting period before benefits start (months)</label>
+  <input id="wait" class="input" type="number" min="0" value="3">
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+    <button id="calcBtn" class="btn">Calculate</button>
+    <button id="resetBtn" class="btn ghost">Reset</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="grid">
+      <div class="cell"><div class="lbl">Target monthly benefit</div><div class="val" id="targetVal">--</div></div>
+      <div class="cell"><div class="lbl">Existing monthly benefit</div><div class="val" id="existingVal">--</div></div>
+      <div class="cell"><div class="lbl">Extra monthly benefit needed</div><div class="val" id="gapVal">--</div></div>
+      <div class="cell"><div class="lbl">Annual coverage gap</div><div class="val" id="annualVal">--</div></div>
+      <div class="cell"><div class="lbl">Cash buffer for waiting period</div><div class="val" id="cushionVal">--</div></div>
+      <div class="cell"><div class="lbl">Typical premium budget / year</div><div class="val" id="premiumVal">--</div></div>
+    </div>
+    <div id="gapNote" style="margin-top:10px;font-size:0.9rem;"></div>
+  </div>
+</div>
+<div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>How this calculator works</h2>
+<p>It turns your annual income into a target monthly benefit using the replacement rate you choose, then subtracts any disability benefit you already receive. The remainder is the extra monthly cover to buy; multiplied by twelve it is your annual coverage gap. The waiting-period buffer is simply your essential monthly expenses times the number of months before benefits begin, and the premium range is a rough 1–3% of income planning figure.</p>
+<h2>What to use it for</h2>
+<p>Use it before a job change, when comparing an employer group plan with an individual policy, or when deciding whether to top up an existing benefit. Remember that group plans may cap monthly payments and exclude bonus income, so check your plan documents and get a real quote — this is a planning estimate, not insurance advice.</p>
+<div class="related-section">
+  <h2>Related tools</h2>
+  <div class="tool-grid">
+    <a href="/tools/life-insurance-needs" class="tool-card"><div class="icon-row"><span class="emoji">🛡️</span><div class="tc-title">Life Insurance Needs</div></div><div class="tc-desc">How much life cover you need.</div></a>
+    <a href="/tools/health-insurance-premium" class="tool-card"><div class="icon-row"><span class="emoji">🏥</span><div class="tc-title">Health Insurance Premium</div></div><div class="tc-desc">Estimate your premium.</div></a>
+    <a href="/tools/ltc-insurance" class="tool-card"><div class="icon-row"><span class="emoji">🧓</span><div class="tc-title">Long-Term Care</div></div><div class="tc-desc">Plan for care costs.</div></a>
+  </div>
+</div>
+<p class="upd">Last updated <time datetime="2026-11-20">Nov 20, 2026</time></p>
+<p class="note" style="margin-top:22px;">Planning estimate only, not insurance advice or a quote. Confirm coverage with your insurer — see our <a href="/disclaimer">disclaimer</a>.</p>
+<p class="note"><a href="/">&larr; Back to all tools</a></p>
+</div>
+<!-- P0GROW:START -->
+<section class="eeat-trust" aria-label="About this tool" style="margin:24px 0;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--mist,#f7f8fb);font-size:13px;line-height:1.65;color:var(--text-dim)"><strong style="color:var(--ink);font-size:13.5px">Reviewed by a human, not generated and forgotten.</strong><span style="display:block;margin-top:4px">Written and reviewed by <strong>Jim</strong> (Maoming, China) · Last reviewed <time datetime="2026-11-16">2026-11-16</time> · Verified against published formulas before publishing. Figures are estimates, not financial or medical advice — verify against the official source.</span><span style="display:block;margin-top:6px"><a href="/editorial-policy">Editorial policy</a> · <a href="/about">About the operator</a> · <a href="/contact">Report an incorrect result</a> · <a href="/all-tools">All cover tools</a></span></section>
+<!-- P0GROW:END -->
+<!-- P1ENGAGE:START -->
+<section class="p1-related" aria-label="More tools you may need" style="margin:22px 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius-md);background:var(--mist,#f7f8fb)"><h2 style="font-size:16px;margin:0 0 10px">💡 More tools for this task</h2><ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px"><li style="font-size:13.5px;line-height:1.5"><a href="/tools/life-insurance-needs.html">Life Insurance Needs Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— insurance + needs</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/umbrella-insurance.html">Umbrella Liability Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— insurance + how</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/renters-insurance-coverage.html">Renters Insurance Coverage Estimator</a> <span style="color:var(--text-dim)">— insurance + estimate</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/renters-insurance.html">Renters Insurance Coverage Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— insurance + estimate</span></li></ul></section><div class="p1-tool-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px;font-size:13.5px"><button type="button" id="p1-download-btn" class="btn" style="cursor:pointer">⬇ Download result</button><a href="/contact?tool=disability-insurance-needs&subject=result-error">Report an incorrect result</a><span style="color:var(--text-dim)">Runs in your browser — nothing is uploaded.</span></div><script>(function(){var b=document.getElementById("p1-download-btn");if(!b)return;function text(){var s=["#output","#result",".result",".output","[id$=\"-result\"]","pre","table"];for(var i=0;i<s.length;i++){var ns=document.querySelectorAll(s[i]);for(var j=0;j<ns.length;j++){var t=(ns[j].textContent||"").trim();if(t&&t!=="—"&&t.length>1&&!/^(output|result)$/i.test(t))return t;}}return "";}b.addEventListener("click",function(){var t=text();if(!t){if(window.mqc&&window.mqc.toast)window.mqc.toast("Run the calculator first — no result to download yet.");return;}var n=(location.pathname.split("/").filter(Boolean).pop()||"result")+".txt";var u=URL.createObjectURL(new Blob([t],{type:"text/plain;charset=utf-8"}));var a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);if(window.mqc&&window.mqc.toast)window.mqc.toast("Downloaded "+n);});try{var k="mquickcalc-recent",a=JSON.parse(localStorage.getItem(k)||"[]"),h=location.pathname.replace(/\/$/,""),ti=document.title.split("|")[0].trim();a=a.filter(function(x){return x.href!==h;});a.unshift({href:h,title:ti});localStorage.setItem(k,JSON.stringify(a.slice(0,5)));}catch(e){}})();</script>
+<!-- P1ENGAGE:END -->
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<div id="cookiebar" class="cookiebar"><p>We currently set no tracking or advertising cookies. A single non-identifying preference is stored on your device to remember this notice. If advertising or analytics partners that set cookies are added later, we will ask for your consent first. See our <a href="/privacy#cookies">Cookie notice</a> and <a href="/privacy">Privacy Policy</a>.</p><button id="cookie-accept" class="btn">Got it</button></div>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script src="/js/site-meters.js?v=3b464033" defer></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function val(id) { var v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; }
+  function money(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+  function calc() {
+    var income = val('income');
+    var rate = val('rate') / 100;
+    var existing = Math.max(0, parseFloat($('existing').value) || 0);
+    var expenses = val('expenses');
+    var wait = val('wait');
+    if (!income) { $('result').classList.remove('show'); return; }
+    var target = income * rate / 12;
+    var gap = Math.max(0, target - existing);
+    var annual = gap * 12;
+    var cushion = expenses * wait;
+    var low = income * 0.01, high = income * 0.03;
+    $('targetVal').textContent = money(target) + '/mo';
+    $('existingVal').textContent = money(existing) + '/mo';
+    $('gapVal').textContent = gap > 0 ? money(gap) + '/mo' : 'none';
+    $('annualVal').textContent = money(annual);
+    $('cushionVal').textContent = money(cushion);
+    $('premiumVal').textContent = money(low) + ' - ' + money(high);
+    if (gap > 0) {
+      $('gapNote').textContent = 'You are about ' + money(annual) + ' a year short of your ' + Math.round(rate * 100) + '% replacement target. Consider an individual long-term disability policy to close the gap.';
+      $('gapNote').style.color = '#b91c1c';
+    } else {
+      $('gapNote').textContent = 'Your existing monthly benefit already meets or exceeds your replacement target. You may still want to check benefit caps and how bonuses are treated.';
+      $('gapNote').style.color = '#047857';
+    }
+    $('result').classList.add('show');
+  }
+  $('calcBtn').addEventListener('click', calc);
+  ['income','rate','existing','expenses','wait'].forEach(function (id) {
+    $(id).addEventListener('input', calc);
+    $(id).addEventListener('change', calc);
+  });
+  $('resetBtn').addEventListener('click', function () {
+    $('income').value = ''; $('existing').value = ''; $('expenses').value = ''; $('wait').value = '';
+    $('result').classList.remove('show');
+  });
+  calc();
+})();
+</script>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+</body>
+</html>
