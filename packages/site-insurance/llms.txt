@@ -58,10 +58,12 @@ Liability and commercial coverage.
 
 - [Bundling Home + Auto Insurance Savings Calculator](https://cover.mquickcalc.com/tools/bundling-savings): How much can you save by putting home and auto insurance with the same carrier? Compare your current situation vs bundled discounts.
 - [Car Insurance Premium Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/car-insurance-calculator): Ballpark annual car insurance cost based on your state, age, driving record, vehicle type, and coverage level. Free, no sign-up, no data collected.
+- [Disability Insurance Needs Calculator](https://cover.mquickcalc.com/tools/disability-insurance-needs): Estimate how much disability income insurance you need. Set your income, replacement rate and existing coverage to find your monthly and annual coverage gap. Free, in your browser.
 - [Health Insurance Premium Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/health-insurance-premium): Ballpark monthly health insurance premiums by metal tier (Bronze/Silver/Gold/Platinum), age, state, and family size. Includes government subsidy estimate.
 - [Home Insurance Cost Estimator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/home-insurance-estimator): Estimate annual homeowners insurance premiums based on your state, home size, age, and deductible choice. Includes common discounts.
 - [Life Insurance Needs Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/life-insurance-needs): Use the DIME method (Debts + Income × 10 + Mortgage + Education) to estimate how much life insurance you need. Ballpark monthly premiums for term vs whole life.
 - [Pet Insurance Value Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/pet-insurance): Estimate monthly pet insurance costs for dogs and cats by breed, age, and coverage level. Also calculates whether pet insurance is actually worth it vs…
+- [Renters Insurance Coverage Estimator](https://cover.mquickcalc.com/tools/renters-insurance-coverage): Estimate the renters insurance coverage you need. Add up your belongings, set your liability limit, and check whether you are underinsured. Free, in your browser.
 - [Umbrella Liability Calculator — Cover by mQuickCalc](https://cover.mquickcalc.com/tools/umbrella-insurance): How much umbrella insurance do you need? Calculate based on your total assets and annual income. Umbrella coverage kicks in when your auto/home liability…
 
 ## Policies

@@ -283,6 +283,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finance.mquickcalc.com/tools/percentage-profit-calculator</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finance.mquickcalc.com/tools/poshmark-fee-calculator</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>

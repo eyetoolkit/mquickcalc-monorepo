@@ -331,6 +331,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mquickcalc.com/tools/random-letter-generator</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mquickcalc.com/tools/random-name-picker</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mquickcalc.com/tools/random-number-generator</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
