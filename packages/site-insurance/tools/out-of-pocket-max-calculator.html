@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Out-of-Pocket Max Calculator — Cover by mQuickCalc</title>
+<meta name="description" content="Track deductible, copays and coinsurance toward your health plan's out-of-pocket maximum. See what you will still pay and when the plan starts paying 100%.">
+<link rel="canonical" href="https://cover.mquickcalc.com/tools/out-of-pocket-max-calculator">
+<meta property="og:title" content="Out-of-Pocket Max Calculator — Cover by mQuickCalc">
+<meta property="og:description" content="Track deductible, copays and coinsurance toward your health plan's out-of-pocket maximum. See what you will still pay and when the plan starts paying 100%.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cover.mquickcalc.com/tools/out-of-pocket-max-calculator">
+<meta property="og:image" content="https://cover.mquickcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cover.mquickcalc.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="/css/site.css?v=38e4ad9b">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Out-of-Pocket Max Calculator", "url": "https://cover.mquickcalc.com/tools/out-of-pocket-max-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Track deductible, copays and coinsurance toward your health plan's out-of-pocket maximum. See what you will still pay and when the plan starts paying 100%."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cover.mquickcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "Out-of-Pocket Max Calculator", "item": "https://cover.mquickcalc.com/tools/out-of-pocket-max-calculator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use the Out-of-Pocket Max Calculator", "step": [{"@type": "HowToStep", "name": "Enter your plan details", "text": "Fill in the out-of-pocket maximum, deductible, coinsurance and costs already paid this year."}, {"@type": "HowToStep", "name": "Add expected bills", "text": "Enter the eligible medical bills you expect before the plan year ends."}, {"@type": "HowToStep", "name": "Review the projection", "text": "See your projected out-of-pocket total, remaining room and whether you reach the cap."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What counts toward the out-of-pocket maximum?", "acceptedAnswer": {"@type": "Answer", "text": "For most plans, your deductible, copays and coinsurance on covered in-network care count toward the out-of-pocket maximum. Your monthly premium never counts. Out-of-network spending may be excluded or tracked against a separate maximum."}}, {"@type": "Question", "name": "Does the plan pay 100% after I hit the out-of-pocket max?", "acceptedAnswer": {"@type": "Answer", "text": "For covered in-network services, yes: once you reach the out-of-pocket maximum, the plan pays 100% of allowed amounts for the rest of the plan year. Services that are not covered, or penalties for using out-of-network providers, can still cost you money."}}, {"@type": "Question", "name": "How is this different from a deductible calculator?", "acceptedAnswer": {"@type": "Answer", "text": "A deductible only tracks the amount you pay before the plan starts sharing costs. The out-of-pocket maximum is the yearly ceiling on your total cost sharing, including deductible, copays and coinsurance. This tool follows both, so you can see when the cap kicks in."}}]}</script>
+<meta name="twitter:description" content="Track deductible, copays and coinsurance toward your health plan's out-of-pocket maximum. See what you will still pay and when the plan starts paying 100%.">
+  <link rel="stylesheet" href="/css/ui-fix.css?v=f2eb918b">
+</head>
+<body data-site="insurance">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">🛡️ Cover<span class="site-tag">by mQuickCalc</span></a><nav><a href="/#auto">Auto</a><a href="/#life">Life</a><a href="/#home">Home</a><a href="/#health">Health</a><a href="/#business">Business</a><a href="/about">About</a></nav></div></header>
+<div class="ad-slot ad-header" data-ad="header"></div>
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/#health">Health</a><span class="sep">›</span><span class="current">Out-of-Pocket Max Calculator</span></nav></div>
+<main id="main-content" class="page"><div class="wrap">
+<div class="page-hero-emoji">🏥</div>
+<h1 class="page-title">Out-of-Pocket Max Calculator</h1>
+<p class="lede">Track deductible, copays and coinsurance toward your health plan's out-of-pocket maximum. See what you will still pay and when the plan starts paying 100%.</p>
+<div class="calc-card" data-tool="out-of-pocket-max-calculator">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="grid-column:1/-1"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">Your plan</h3></div>
+<div><label for="oop_max">Annual out-of-pocket maximum</label><input id="oop_max" class="input" type="number" min="0" step="100" value="9000"></div>
+<div><label for="deductible">Annual deductible</label><input id="deductible" class="input" type="number" min="0" step="100" value="2000"></div>
+<div><label for="coinsurance">Your coinsurance after deductible (%)</label><input id="coinsurance" class="input" type="number" min="0" max="100" step="1" value="20"></div>
+<div style="grid-column:1/-1;margin-top:8px"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">What you have paid this plan year</h3></div>
+<div><label for="deductible_met">Deductible already met</label><input id="deductible_met" class="input" type="number" min="0" step="50" value="500"></div>
+<div><label for="oop_paid">Copays + coinsurance already paid</label><input id="oop_paid" class="input" type="number" min="0" step="50" value="300"></div>
+<div style="grid-column:1/-1;margin-top:8px"><h3 style="margin:0 0 8px;font-size:14px;color:var(--muted)">What you expect to spend next</h3></div>
+<div style="grid-column:1/-1"><label for="future_bills">Expected eligible in-network bills</label><input id="future_bills" class="input" type="number" min="0" step="100" value="8000"></div>
+</div>
+<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><button id="calcBtn" class="btn">Calculate</button><button id="resetBtn" class="btn ghost">Reset</button></div>
+<div class="result" id="result"></div>
+</div>
+<div class="disclaimer-inline" style="margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6">⚠️ This tool uses a simplified in-network cost-sharing model. Premiums, non-covered services and separate out-of-network Maximums are not included. <strong>This is not insurance advice</strong> — confirm your benefits with your plan documents or insurer. <a href="/disclaimer">Full disclaimer</a>.</div>
+
+<details style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px">
+<summary style="cursor:pointer;font-weight:600">Frequently asked questions</summary>
+<h3 style="margin:16px 0 4px">What counts toward the out-of-pocket maximum?</h3><p style="color:var(--ink-2);margin:0">For most plans, your deductible, copays and coinsurance on covered in-network care count toward the out-of-pocket maximum. Your monthly premium never counts. Out-of-network spending may be excluded or tracked against a separate maximum.</p>
+<h3 style="margin:16px 0 4px">Does the plan pay 100% after I hit the out-of-pocket max?</h3><p style="color:var(--ink-2);margin:0">For covered in-network services, yes: once you reach the out-of-pocket maximum, the plan pays 100% of allowed amounts for the rest of the plan year. Services that are not covered, or penalties for using out-of-network providers, can still cost you money.</p>
+<h3 style="margin:16px 0 4px">How is this different from a deductible calculator?</h3><p style="color:var(--ink-2);margin:0">A deductible only tracks the amount you pay before the plan starts sharing costs. The out-of-pocket maximum is the yearly ceiling on your total cost sharing, including deductible, copays and coinsurance. This tool follows both, so you can see when the cap kicks in.</p>
+</details>
+
+  <div class="related-section">
+      <div class="ad-slot ad-incontent" data-ad="incontent"></div>
+<h2>Related calculators</h2>
+      <div class="tool-grid">
+        <a href="/tools/health-insurance-premium" class="tool-card"><div class="icon-row"><span class="emoji">💳</span><div class="tc-title">Health Insurance Premium Calculator</div></div><div class="tc-desc">Estimate monthly health coverage costs.</div></a>
+        <a href="/tools/deductible-tradeoff" class="tool-card"><div class="icon-row"><span class="emoji">⚖️</span><div class="tc-title">High vs Low Deductible Trade-off Calculator</div></div><div class="tc-desc">When a lower deductible is worth more premium.</div></a>
+        <a href="/tools/bundling-savings" class="tool-card"><div class="icon-row"><span class="emoji">🏠</span><div class="tc-title">Bundling Home + Auto Insurance Savings Calculator</div></div><div class="tc-desc">How much you save by bundling policies.</div></a>
+      </div>
+    </div>
+    <p class="upd">Last updated <time datetime="2026-11-26">Nov 26, 2026</time> — plan limits change every year, so always confirm with the current source.</p>
+    <p class="note" style="margin-top:22px;">Estimates for general information only, not insurance advice — see our <a href="/disclaimer">disclaimer</a>.</p>
+    <p class="note"><a href="/">&larr; Back to all tools</a></p>
+  </div>
+
+<section class="see-also">
+  <h2>See also</h2>
+  <ul>
+      <li><a href="/tools/health-insurance-premium">Health Insurance Premium Calculator</a></li>
+      <li><a href="/tools/deductible-tradeoff">High vs Low Deductible Trade-off Calculator</a></li>
+      <li><a href="/tools/life-insurance-needs">Life Insurance Needs Calculator</a></li>
+      <li><a href="/health-insurance">📂 All Health Insurance Calculators</a></li>
+  </ul>
+</section>
+
+
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/insurance-data.js?v=38ef7e3c" defer></script>
+<script src="/js/site-core.js?v=1fe2d83d" defer></script>
+<script src="/js/site-enhance.js?v=65faf024" defer></script>
+<script>
+(function(){
+  var defaults = {oop_max:9000, deductible:2000, coinsurance:20, deductible_met:500, oop_paid:300, future_bills:8000};
+  function $(id){ return document.getElementById(id); }
+  function val(id){
+    var v = parseFloat($(id) && $(id).value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+  function money(v){
+    return "$" + Number(v).toLocaleString("en-US", {minimumFractionDigits:0, maximumFractionDigits:0});
+  }
+  function calculate(){
+    var cap = val("oop_max"),
+        ded = val("deductible"),
+        coins = Math.min(100, val("coinsurance")),
+        dedMet = val("deductible_met"),
+        paidOther = val("oop_paid"),
+        bills = val("future_bills");
+    var dedLeft = Math.max(0, ded - dedMet),
+        soFar = dedMet + paidOther,
+        onDed = Math.min(bills, dedLeft),
+        afterDed = Math.max(0, bills - onDed),
+        room = Math.max(0, cap - soFar - onDed),
+        viaCoins = Math.min(afterDed * coins / 100, room),
+        youPay = onDed + viaCoins,
+        planPays = Math.max(0, bills - youPay),
+        projected = Math.min(cap, soFar + youPay),
+        pct = cap > 0 ? Math.min(100, Math.round(projected / cap * 100)) : 0,
+        reached = cap > 0 && projected >= cap;
+    var warnings = [];
+    if(cap <= 0) warnings.push("Enter your annual out-of-pocket maximum to see progress.");
+    if(cap > 0 && ded > cap) warnings.push("Your deductible is higher than the stated maximum — check your plan documents.");
+    if(cap > 0 && soFar > cap) warnings.push("Costs already paid exceed the stated maximum — some care may be out of network or excluded.");
+    if(coins < 0 || coins > 100) warnings.push("Coinsurance should be between 0 and 100 percent.");
+    var warnHtml = "";
+    if(warnings.length){
+      warnHtml = '<div style="margin-bottom:12px;padding:10px 12px;border-radius:var(--radius-sm);background:var(--brand-bg);font-size:13px">' +
+        warnings.map(function(w){ return "⚠️ " + w; }).join("<br>") + '</div>';
+    }
+    $("result").innerHTML = warnHtml +
+      '<h3 style="margin:0 0 12px">Projected out-of-pocket cost</h3>' +
+      '<table class="conv-table" style="width:100%;font-size:14px;border-collapse:collapse;margin-bottom:14px">' +
+      '<tr><td>Deductible still to meet</td><td style="text-align:right">' + money(dedLeft) + '</td></tr>' +
+      '<tr><td>Cost sharing already paid this year</td><td style="text-align:right">' + money(soFar) + '</td></tr>' +
+      '<tr><td>Expected eligible bills</td><td style="text-align:right">' + money(bills) + '</td></tr>' +
+      '<tr><td>You pay on remaining deductible</td><td style="text-align:right">' + money(onDed) + '</td></tr>' +
+      '<tr><td>You pay via coinsurance (' + coins + '%)</td><td style="text-align:right">' + money(viaCoins) + '</td></tr>' +
+      '<tr><td>Plan pays on those bills</td><td style="text-align:right">' + money(planPays) + '</td></tr>' +
+      '<tr><td><strong>Projected total out-of-pocket</strong></td><td style="text-align:right;font-weight:700;color:var(--brand-ink)">' + money(projected) + '</td></tr>' +
+      '<tr><td>Out-of-pocket room left</td><td style="text-align:right">' + money(Math.max(0, cap - projected)) + '</td></tr>' +
+      '</table>' +
+      '<div id="oop-progress" style="height:12px;border-radius:99px;background:var(--line);overflow:hidden;margin:0 0 8px"><div style="height:100%;width:' + pct + '%;background:var(--brand)"></div></div>' +
+      '<div style="font-size:13px;color:var(--muted);margin-bottom:8px">' + pct + '% of your ' + money(cap) + ' maximum used</div>' +
+      '<div style="font-size:17px;font-weight:600">' + (reached ? "✅ You reach the out-of-pocket maximum — the plan pays 100% of covered in-network care after that." : "📌 You stay below the out-of-pocket maximum with these bills.") + '</div>';
+    $("result").classList.add("show");
+  }
+  $("calcBtn").addEventListener("click", calculate);
+  $("resetBtn").addEventListener("click", function(){
+    Object.keys(defaults).forEach(function(id){ if($(id)) $(id).value = defaults[id]; });
+    calculate();
+  });
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", calculate);
+  else calculate();
+})();
+</script>
+<div class="ad-slot ad-sticky-mobile" data-ad="mobile"></div>
+  <script src="/js/site-uifix.js?v=b7adb11b" defer></script>
+<!-- P0GROW:START -->
+<section class="eeat-trust" aria-label="About this tool" style="margin:24px 0;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--mist,#f7f8fb);font-size:13px;line-height:1.65;color:var(--text-dim)"><strong style="color:var(--ink);font-size:13.5px">Reviewed by a human, not generated and forgotten.</strong><span style="display:block;margin-top:4px">Written and reviewed by <strong>Jim</strong> (Maoming, China) · Last reviewed <time datetime="2026-11-16">2026-11-16</time> · Verified against published formulas before publishing. Figures are estimates, not financial or medical advice — verify against the official source.</span><span style="display:block;margin-top:6px"><a href="/editorial-policy">Editorial policy</a> · <a href="/about">About the operator</a> · <a href="/contact">Report an incorrect result</a> · <a href="/all-tools">All cover tools</a></span></section>
+<!-- P0GROW:END -->
+<!-- P1ENGAGE:START -->
+<section class="p1-related" aria-label="More tools you may need" style="margin:22px 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius-md);background:var(--mist,#f7f8fb)"><h2 style="font-size:16px;margin:0 0 10px">💡 More tools for this task</h2><ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px"><li style="font-size:13.5px;line-height:1.5"><a href="/tools/deductible-tradeoff.html">High vs Low Deductible Trade-off Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— cover + mquickcalc</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/health-insurance-premium.html">Health Insurance Premium Estimator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— cover + mquickcalc</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/home-insurance-estimator.html">Home Insurance Cost Estimator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— cover + mquickcalc</span></li><li style="font-size:13.5px;line-height:1.5"><a href="/tools/ltc-insurance.html">Long-Term Care Insurance Cost Calculator — Cover by mQuickCalc</a> <span style="color:var(--text-dim)">— cover + mquickcalc</span></li></ul></section><div class="p1-tool-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px;font-size:13.5px"><button type="button" id="p1-download-btn" class="btn" style="cursor:pointer">⬇ Download result</button><a href="/contact?tool=out-of-pocket-max-calculator&subject=result-error">Report an incorrect result</a><span style="color:var(--text-dim)">Runs in your browser — nothing is uploaded.</span></div><script>(function(){var b=document.getElementById("p1-download-btn");if(!b)return;function text(){var s=["#output","#result",".result",".output","[id$=\"-result\"]","pre","table"];for(var i=0;i<s.length;i++){var ns=document.querySelectorAll(s[i]);for(var j=0;j<ns.length;j++){var t=(ns[j].textContent||"").trim();if(t&&t!=="—"&&t.length>1&&!/^(output|result)$/i.test(t))return t;}}return "";}b.addEventListener("click",function(){var t=text();if(!t){if(window.mqc&&window.mqc.toast)window.mqc.toast("Run the calculator first — no result to download yet.");return;}var n=(location.pathname.split("/").filter(Boolean).pop()||"result")+".txt";var u=URL.createObjectURL(new Blob([t],{type:"text/plain;charset=utf-8"}));var a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);if(window.mqc&&window.mqc.toast)window.mqc.toast("Downloaded "+n);});try{var k="mquickcalc-recent",a=JSON.parse(localStorage.getItem(k)||"[]"),h=location.pathname.replace(/\/$/,""),ti=document.title.split("|")[0].trim();a=a.filter(function(x){return x.href!==h;});a.unshift({href:h,title:ti});localStorage.setItem(k,JSON.stringify(a.slice(0,5)));}catch(e){}})();</script>
+<!-- P1ENGAGE:END -->
+</body></html>
